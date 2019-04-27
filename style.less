@@ -86,7 +86,11 @@ header {
 			font-size: 1rem;
 		}
 		ul {
-			word-break: all;
+			margin-top: 1rem;
+			margin-left: 1rem;
+			@media @max-width {
+				margin-left: 0;
+			}
 		}
 	}
 }

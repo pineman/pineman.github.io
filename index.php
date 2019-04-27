@@ -32,12 +32,13 @@
 	<h1>Hi! I'm João.</h1>
 	<span>Software • Systems • Curiosity</span>
 	<ul>
-	<li><i class="fa fa-envelope"></i><a href="mailto:joaocastropinheiro@gmail.com">joaocastropinheiro@gmail.com</a>&nbsp<wbr>[<a href="pubkey.asc" target="_blank">PGP key</a>]</li>
+	<li><i class="fa fa-envelope"></i><a href="mailto:joaocastropinheiro@gmail.com">joaocastropinheiro<wbr>@gmail.com</a></li>
 	<li><i class="fab fa-github"></i><a href="https://github.com/pineman" target="_blank">GitHub</a></li>
 	<li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/joaocastropinheiro" target="_blank">LinkedIn</a></li>
 	<li><i class="fas fa-file-alt" style="padding-left:1px;"></i>CV: <a href="cv/cv.pdf" target="_blank">PDF</a> or <a href="cv" target="_blank">HTML</a></li>
 	<li><i class="fab fa-keybase"></i><a href="https://keybase.io/pineman" target="_blank">Keybase</a></li>
-	<li><i class="fas fa-comments" style="font-size:0.9rem;padding:0 5px 0 -2px;"></i><code>pineman</code> on FreeNode and MozNet
+	<li><i class="fas fa-key"></i><a href="pubkey.asc" target="_blank">PGP key</a></li>
+	<!--<li><i class="fas fa-comments" style="font-size:0.9rem;padding:0 5px 0 -2px;"></i><code>pineman</code> on FreeNode and MozNet-->
 	</ul>
 	</div>
 	</header>
