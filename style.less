@@ -1,0 +1,92 @@
+@fontsize: 18px;
+@lineheight: 1.5;
+@text-width: 80ch;
+@max-width: ~"(max-width: 795px)";
+@text-padding: 4rem 4rem 0;
+
+@text-color: #232323;
+@fg_white: #fffffa;
+@bg_grey: shade(hsl(@fg_white), 65%);
+@vrule: 0.5px solid #b9b9b9;
+
+@font-face {
+	font-family: 'Ebrima';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Ebrima'), url("assets/ebrima.woff2") format('woff2');
+}
+
+html, body, ul {
+	margin: 0;
+	padding: 0;
+	word-break: break-word;
+}
+ul {
+	list-style-position: inside;
+	list-style-type: none;
+}
+a {
+	color: inherit;
+}
+i {
+	padding-right: 7px;
+}
+
+body {
+	min-height: 100vh;
+	font-family: 'Ebrima', monospace;
+	font-size: @fontsize;
+	line-height: @lineheight;
+	display: flex;
+	justify-content: center;
+	background-color: @bg_grey;
+	color: @text-color;
+}
+
+#wrap {
+	padding: @text-padding;
+	box-sizing: border-box;
+	max-width: @text-width;
+	border-right: @vrule;
+	border-left: @vrule;
+	background-color: @fg_white;
+	min-height: 100vh;
+	@media @max-width {
+		padding: 1rem 1rem 0;
+	}
+}
+
+header {
+	display: grid;
+	grid-template-columns: 47% 53%;
+	justify-content: center;
+	@media @max-width {
+		grid-template-columns: initial;
+	}
+
+	img {
+		border-radius: 10000px;
+		max-width: 90%;
+		@media @max-width {
+			width: 60%;
+			margin: auto auto 0.7rem;
+		}
+	}
+	#header-text {
+		line-height: @lineheight + 0.1;
+		h1 {
+			margin: 0;
+			text-align: center;
+		}
+		span {
+			display: block;
+			text-align: center;
+			font-weight: bold;
+			margin-top: -0.5rem;
+			font-size: 1rem;
+		}
+		ul {
+			word-break: all;
+		}
+	}
+}
