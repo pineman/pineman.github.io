@@ -48,8 +48,20 @@
 
 	<p>Currently I'm experienced in <b>C</b>, <b>Python</b>, <b>JavaScript</b> (& <b>Node.js</b>), and <b>C++/Qt</b>. I'm most comfortable on <b>GNU/Linux</b> but I love Operating Systems generally, as I'm always very keen on learning new technologies and solutions. When I can, I dabble with Functional Programming and I'm very interested in Rust and Erlang/Elixir.</p>
 
-	<p>This server is running <a href="https://www.archlinux.org/" target="_blank">Arch Linux</a> (<?php echo trim(shell_exec('uptime -p'));?>) and I manage it since 2014 as a learning platform. It runs various services like <b>HTTP</b> (nginx), <b>Git</b>, <b>SMB</b>, <b>SMTP</b> (postfix), <b>IMAP</b> (dovecot), ZNC and Radicale (all config files available <a href="https://github.com/pineman/pinecone" target="_blank">here</a>). It also hosts some friend's webpages, and some projects, like <a href="https://abra.pineman.win" target="_blank">abra</a>, a keyboard typing speed browser game.</p>
+	<p>This server is running <a href="https://www.archlinux.org/" target="_blank">Arch Linux</a> (<span id="uptime"></span>) and I manage it since 2014 as a learning platform. It runs various services like <b>HTTP</b> (nginx), <b>Git</b>, <b>SMB</b>, <b>SMTP</b> (postfix), <b>IMAP</b> (dovecot), ZNC and Radicale (all config files available <a href="https://github.com/pineman/pinecone" target="_blank">here</a>). It also hosts some friend's webpages, and some projects, like <a href="https://abra.pineman.win" target="_blank">abra</a>, a keyboard typing speed browser game.</p>
 	</article>
 </div>
+<script>
+	'use strict';
+	(function uptime() {
+		let req = new XMLHttpRequest();
+		req.addEventListener('load', function () {
+			document.getElementById('uptime').textContent = this.responseText.trim();
+		});
+		req.open("GET", "/uptime");
+		req.send();
+		setTimeout(uptime, 30*1000);
+	})();
+</script>
 </body>
 </html>
