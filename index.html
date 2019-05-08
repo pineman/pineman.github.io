@@ -90,6 +90,7 @@
 </head>
 <body>
 <div id="wrap">
+<div id="wrap-anim" class="fadetop-init">
 	<header>
 	<img src="assets/me2.jpg" />
 	<div id ="header-text">
@@ -115,8 +116,13 @@
 	<p>This server is running <a href="https://www.archlinux.org/" target="_blank">Arch Linux</a> (<span id="uptime"></span>) and I manage it since 2014 as a learning platform. It runs various services like <b>HTTP</b> (nginx), <b>Git</b>, <b>SMB</b>, <b>SMTP</b> (postfix), <b>IMAP</b> (dovecot) and ZNC (all config files available <a href="https://github.com/pineman/pinecone" target="_blank">here</a>). It also hosts some friend's webpages, and some projects, like <a href="https://abra.pineman.win" target="_blank">abra</a>, a keyboard typing speed browser game.</p>
 	</article>
 </div>
+</div>
 <script>
 	'use strict';
+	window.addEventListener('load', function () {
+		document.getElementById('wrap-anim').classList.remove('fadetop-init');
+		document.getElementById('wrap-anim').classList.add('fadetop-end');
+	});
 	(function uptime() {
 		let req = new XMLHttpRequest();
 		req.addEventListener('load', function () {

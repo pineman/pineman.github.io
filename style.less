@@ -56,6 +56,17 @@ body {
 	}
 }
 
+.fadetop-init {
+	opacity: 0;
+	transform: translateY(-1%);
+}
+
+.fadetop-end {
+	opacity: 1;
+	transition: opacity 1s ease-out 0.1s, transform 0.7s ease-in 0.1s;
+	transform: none;
+}
+
 header {
 	display: grid;
 	grid-template-columns: 45% 55%;
