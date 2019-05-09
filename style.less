@@ -1,13 +1,17 @@
 @fontsize: 18px;
-@lineheight: 1.5;
+@lineheight: 1.6;
 @text-width: 80ch;
 @max-width: ~"(max-width: 795px)";
-@text-padding: 4rem 4rem 0;
+@text-padding: 4rem;
 
-@text-color: #232323;
-@fg_white: #fffffa;
-@bg_grey: shade(hsl(@fg_white), 65%);
-@vrule: 0.5px solid #b9b9b9;
+//@text-color: #232323;
+//@fg_white: #fffffa;
+//@bg_grey: shade(hsl(@fg_white), 65%);
+@text-color: black;
+@fg_white: #fffcf5;
+@bg_grey: @fg_white;
+//@vrule: 0.5px solid #b9b9b9;
+@vrule: 0.5px solid @fg_white;
 
 @font-face {
 	font-family: 'Ebrima';
@@ -104,4 +108,8 @@ header {
 			}
 		}
 	}
+}
+
+article {
+	padding-top: 2.5rem;
 }
