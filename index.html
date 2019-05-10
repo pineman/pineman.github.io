@@ -123,13 +123,12 @@
 		document.getElementById('wrap-anim').classList.remove('fadetop-init');
 		document.getElementById('wrap-anim').classList.add('fadetop-end');
 	});
+
+	uptimeSpan = document.getElementById('uptime');
 	(function uptime() {
-		let req = new XMLHttpRequest();
-		req.addEventListener('load', function () {
-			document.getElementById('uptime').textContent = this.responseText.trim();
-		});
-		req.open("GET", "/uptime");
-		req.send();
+		fetch('uptime')
+		.then(r => r.text())
+		.then(r => uptimeSpan.textContent = r.trim());
 		setTimeout(uptime, 30*1000);
 	})();
 </script>
