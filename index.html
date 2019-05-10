@@ -124,7 +124,7 @@
 		document.getElementById('wrap-anim').classList.add('fadetop-end');
 	});
 
-	uptimeSpan = document.getElementById('uptime');
+	let uptimeSpan = document.getElementById('uptime');
 	(function uptime() {
 		fetch('uptime')
 		.then(r => r.text())
