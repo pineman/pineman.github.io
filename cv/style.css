@@ -1,0 +1,182 @@
+html, body, h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+  font-family: 'Ebrima';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ebrima'), url("assets/ebrima.woff2") format('woff2');
+}
+
+html {
+	font-family: "Ebrima", sans-serif;
+	line-height: 1.5;
+	font-size: 16px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: dotted 0.5px;
+}
+a:hover {
+	border-bottom: solid 0.5px;
+}
+
+/* Font Awesome icons */
+i {
+	padding-right: 7px;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 1.8rem;
+	margin-bottom: 0.3rem;
+}
+
+h3 {
+	font-size: 1.2rem;
+}
+
+p {
+	text-indent: 1rem;
+}
+
+.center {
+	text-align: center;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 35vw auto;
+	grid-template-rows: auto auto;
+	height: 100vh;
+}
+
+#content {
+	background-color: white;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	padding: 0 1rem 0.5rem;
+}
+
+#side {
+	background-image: url("assets/mine2.jpg");
+	background-position: bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: white;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	padding: 1rem;
+	line-height: 1.7;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 830px) {
+  #side {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row: 1;
+	}
+	#content {
+		grid-column-start: 1;
+		grid-row: 2;
+	}
+}
+
+#img {
+	text-align: center;
+	padding: 1rem 1rem 0;
+}
+
+.photo {
+	border-radius: 500px;
+	max-width: 98%;
+	max-height: 33vh;
+}
+
+#side ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+#ver {
+	font-size: 0.75rem;
+}
+
+#descr {
+	margin-top: -10px;
+}
+
+#content hr {
+	width: 100%;
+	border: none;
+	border: 1px solid #f1f1f1;
+	/*margin: 0.5rem;*/
+}
+
+.parent-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.parent-item h4 {
+	font-weight: normal;
+}
+
+.item {
+	display: grid;
+	grid-template-columns: 15% auto;
+	grid-template-rows: auto auto;
+}
+.item i {
+	color: grey;
+	font-size: 15px;
+}
+
+.item-img {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.item-img img {
+	max-width: 95%;
+	max-height: 80%;
+}
+
+.item-sum {
+	padding-left: 0.5rem;
+	grid-column-start: 2;
+	grid-column-end: 3;
+}
+.item-sum .fix {
+	margin-right: 3px;
+	margin-left: 2px;
+}
+
+.item-descr {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	padding-top: 0.4rem;
+	font-size: 0.95rem;
+}
+
+#proj {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
