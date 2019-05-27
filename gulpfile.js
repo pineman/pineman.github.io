@@ -37,7 +37,7 @@ gulp.task('watch', () => {
 gulp.task('less', (done) => {
 	const opt = [
 		'--verbose',
-		'--source-map-map-inline',
+		'--source-map-map-inline', // TODO: Stop using Less plugins and use the things directly
 		'--clean-css',
 		'--autoprefix="> 0.2%"'
 	].join(' ');
