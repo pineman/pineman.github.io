@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+	<title>pineman's lit playlist</title>
+
+	<style>
+		body, html {
+			margin: 0;
+			padding: 0;
+			background-color: black;
+			color: white;
+			font-family: "Helvetica", sans-serif;
+
+			overflow: hidden;
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			border-bottom: 0.5px dotted;
+		}
+	</style>
+</head>
+
+<body>
+<div id="wrap">
+	<h1>Now playing:</h1>
+	<h1 id="title"></h1>
+	<audio controls>
+		<source src="http://pineman.eu:8080" type="audio/ogg">
+	</audio>
+	<h3>Filename: <span id="filename"></span></h3>
+	<h4><a href="cmd/playlist.php" target="_blank">current mpd playlist</a></h4>
+	<h4><a href="/music" target="_blank">file index</a></h4>
+</div>
+<script>
+	// Yes this should use websockets.
+	// TODO: use websockets.
+	// Ha. ha.
+	let title = document.getElementById('title');
+	let filename = document.getElementById('filename');
+	(function nowPlaying() {
+		fetch('cmd/playing.php')
+		.then(r => r.text())
+		.then(r => {
+			let info = r.trim().split('\v');
+			title.textContent = info[0];
+			filename.textContent = info[1];
+		});
+		setTimeout(nowPlaying, 5*1000);
+	})();
+</script>
+</body>
+</html>
