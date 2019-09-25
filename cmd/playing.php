@@ -1,1 +1,1 @@
-<?= `mpc -f "[%title%[ - %artist%]]|<no tags>" current` ?>
+<?= `mpc current -f "[%title%[ - %artist%]]|<no tags>"` ?>

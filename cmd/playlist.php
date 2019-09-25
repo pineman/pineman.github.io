@@ -1,3 +1,3 @@
 <pre>
-<?= `mpc -f "[%track%. ]%artist% - %title% - [%album% [(%date%)]] #(%time%#) #[%file%#]" playlist` ?>
+<?= `mpc playlist -f "[%track%. ]%artist% - %title% - [%album% [(%date%)]] #(%time%#) #[%file%#]"` ?>
 </pre>

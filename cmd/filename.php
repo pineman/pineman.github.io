@@ -1,1 +1,1 @@
-<?= `mpc -f "[%name% - ]%file%" current` ?>
+<?= `mpc current -f "[%name% - ]%file%"` ?>
