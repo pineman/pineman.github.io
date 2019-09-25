@@ -1,1 +1,1 @@
-<?php echo `uptime -p` ?>
+<?= `uptime -p` ?>
