@@ -34,7 +34,7 @@
 
 <body>
 <div id="wrap">
-	<h1>Now playing:</h1>
+	<h1 id="state"></h1>
 	<h1 id="playing"></h1>
 	<audio controls autoplay loop>
 		<source src="http://pineman.eu:8080" type="audio/ogg">
@@ -47,9 +47,14 @@
 	// Yes this should use websockets.
 	// TODO: use websockets.
 	// Ha. ha.
+	let state = document.getElementById('state');
 	let playing = document.getElementById('playing');
 	let filename = document.getElementById('filename');
 	(function nowPlaying() {
+		fetch('cmd/state.php')
+		.then(r => r.text())
+		.then(r => state.textContent = r.trim() || 'stopped');
+
 		fetch('cmd/playing.php')
 		.then(r => r.text())
 		.then(r => playing.textContent = r.trim());
