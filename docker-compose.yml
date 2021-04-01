@@ -1,0 +1,10 @@
+services:
+  homepage:
+    build: .
+    image: homepage
+    volumes:
+    - type: bind
+      source: ./src
+      target: /var/www/html
+    ports:
+    - "80:80"
