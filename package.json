@@ -6,7 +6,7 @@
   "author": "João Pinheiro",
   "license": "MIT",
   "scripts": {
-    "build": "lessc --verbose --source-map-map-inline --clean-css src/style.less src/style.css",
+    "build": "lessc --verbose --source-map-map-inline --clean-css src/style.less http/build/style.css",
     "watch": "npm-watch build",
     "serve": "browser-sync start --config bs-config.js",
     "start": "run-p watch serve"

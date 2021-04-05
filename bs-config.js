@@ -13,7 +13,7 @@
  |
  */
 module.exports = {
-    server: 'src',
+    server: 'http/build',
     ui: false,
     logLevel: 'silent',
     watch: true,
