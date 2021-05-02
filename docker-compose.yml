@@ -1,7 +1,7 @@
 services:
   http:
     build: http
-    image: docker.io/pineman/homepage-http:1.0.0
+    image: registry.gitlab.com/pineman/images/homepage-http:1.0.0-2
     environment:
       HP_DB_HOST: "homepage_db_1"
     volumes:
@@ -14,7 +14,7 @@ services:
     - db
   db:
     build: db
-    image: docker.io/pineman/homepage-db:1.0.0
+    image: registry.gitlab.com/pineman/images/homepage-db:1.0.0-2
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
