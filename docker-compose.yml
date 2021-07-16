@@ -1,21 +1,13 @@
 services:
-  http:
-    build: http
-    image: registry.gitlab.com/pineman/images/homepage-http:1.0.0-2
-    environment:
-      HP_DB_HOST: "homepage_db_1"
-    volumes:
-    - type: bind
-      source: ./http/build
-      target: /var/www/html
+  homepage: &homepage
+    build:
+      context: .
+      cache_from: ["registry.gitlab.com/pineman/images/homepage:latest"]
+      args: ["BUILDKIT_INLINE_CACHE=1"]
+    image: registry.gitlab.com/pineman/images/homepage:1.0.0-2
     ports:
     - "80:80"
-    depends_on:
-    - db
-  db:
-    build: db
-    image: registry.gitlab.com/pineman/images/homepage-db:1.0.0-2
-    environment:
-      POSTGRES_HOST_AUTH_METHOD: trust
-    ports:
-    - "5432:5432"
+  homepage-latest:
+    <<: *homepage
+    image: registry.gitlab.com/pineman/images/homepage:latest
+    profiles: ["push"]
