@@ -2,12 +2,12 @@ services:
   homepage: &homepage
     build:
       context: .
-      cache_from: ["registry.gitlab.com/pineman/images/homepage:latest"]
+      cache_from: ["registry.gitlab.com/pineman/services/homepage:latest"]
       args: ["BUILDKIT_INLINE_CACHE=1"]
-    image: registry.gitlab.com/pineman/images/homepage:1.0.0-2
+    image: registry.gitlab.com/pineman/services/homepage:1.0.1
     ports:
     - "80:80"
   homepage-latest:
     <<: *homepage
-    image: registry.gitlab.com/pineman/images/homepage:latest
+    image: registry.gitlab.com/pineman/services/homepage:latest
     profiles: ["push"]
