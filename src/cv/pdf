@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euxo pipefail
+
+sd 'rev:.*' "rev: $(git rev-parse --short HEAD)" index.html
+npx electron-pdf -b true $(pwd)/index.html $(pwd)/cv.pdf
