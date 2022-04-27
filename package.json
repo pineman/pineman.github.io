@@ -2,7 +2,7 @@
   "name": "homepage",
   "version": "1.0.0",
   "description": "Personal homepage",
-  "main": "src/index.html",
+  "main": "index.html",
   "author": "João Pinheiro",
   "license": "MIT",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "watch": {
     "build": {
-      "patterns": "src/style.less"
+      "patterns": "style.less"
     }
   },
   "devDependencies": {
