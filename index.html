@@ -90,7 +90,6 @@
 </head>
 <body>
 <div id="wrap">
-<div id="wrap-anim" class="fadetop-init">
 <header>
 	<img src="assets/me2.jpg" />
 	<div id ="header-text">
@@ -102,7 +101,7 @@
 	<li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/joaocastropinheiro" target="_blank">LinkedIn</a></li>
 	<li><i class="fas fa-file-alt" style="padding-left:1px;"></i>CV: <a href="cv/cv.pdf" target="_blank">PDF</a> or <a href="cv" target="_blank">HTML</a></li>
 	<li><i class="fab fa-keybase"></i><a href="https://keybase.io/pineman" target="_blank">Keybase</a></li>
-	<li><i class="fas fa-key"></i><a href="pubkey.asc" target="_blank">PGP key</a></li>
+	<li><i class="fas fa-key"></i><a href="assets/pubkey.asc" target="_blank">PGP key</a></li>
 	<!--<li><i class="fas fa-comments" style="font-size:0.9rem;padding:0 5px 0 -2px;"></i><code>pineman</code> on FreeNode and MozNet</li>-->
 	</ul>
 	</div>
@@ -110,32 +109,13 @@
 <article>
 	<h1>About me</h1>
 	<p>My name is João Pinheiro (aka pineman) and I'm from Lisbon, Portugal. I'm a 4th year Electrical and Computer Engineering student at <a href="https://tecnico.ulisboa.pt/" target="_blank">Técnico Lisboa</a>. I'm passionate about software - especially large distributed systems and infrastructure. I love reading the manual - check out what I'm currently reading over at <a href="https://www.goodreads.com/review/list/30442257-jo-o-pinheiro?order=d&shelf=now-computer" target="_blank">my goodreads</a>.</p>
-
 	<p>Currently I'm most experienced with <b>C</b>, <b>Python</b>, <b>Java</b>, <b>JavaScript</b> (& <b>Node.js</b>) and <b>C++/Qt</b>. I love learning new languages and stacks: when I can, I dabble with Functional Programming and I'm very interested in <a href="https://www.youtube.com/watch?v=BXmOlCy0oBM" target="_blank">Erlang</a>/<a href="https://www.youtube.com/watch?v=JvBT4XBdoUE" target="_blank">Elixir</a>, Rust and Go.
-
-	<p>This server is running on a container on <a href="https://www.archlinux.org/" target="_blank">Arch Linux</a> (<span id="uptime"></span>) on a VM on my college Thinkpad X220 on ZFS on a consumer network connection in my parents house (phew!). It runs various services - all config files available <a href="https://github.com/pineman/services" target="_blank">here</a>. It also hosts some projects, like <a href="https://abra.pineman.eu" target="_blank">abra</a>, a keyboard typing speed browser game.</p>
-
+	<br />
 	<br />
 	<a href="https://www.eff.org/" style="border-bottom: none;"><img src="https://www.eff.org/files/eff-join2_0.png" alt="Join EFF!" border="0"></a>
 	<a href="https://www.fsf.org/" style="border-bottom: none;"><img src="https://static.fsf.org/nosvn/associate/crm/3217362.png" alt="Join the FSF!"></a>
 	<div id="test"></div>
 </article>
 </div>
-</div>
-<script>
-	'use strict';
-	window.addEventListener('load', function () {
-		document.getElementById('wrap-anim').classList.remove('fadetop-init');
-		document.getElementById('wrap-anim').classList.add('fadetop-end');
-	});
-
-	let uptimeSpan = document.getElementById('uptime');
-	(function uptime() {
-		fetch('cmd/uptime.php')
-		.then(r => r.text())
-		.then(r => uptimeSpan.textContent = r.trim());
-		setTimeout(uptime, 10*1000);
-	})();
-</script>
 </body>
 </html>
