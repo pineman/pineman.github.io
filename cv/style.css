@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Ebrima';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: local('Ebrima'), url("../assets/ebrima.woff2") format('woff2');
+}
 * {
     box-sizing: border-box;
 }
@@ -84,7 +91,7 @@ aside hr {
 	text-align: center;
 }
 #photo img {
-	border-radius: 500px;
+	border-radius: 50%;
 	max-width: 100%;
 	max-height: 33vh;
 }

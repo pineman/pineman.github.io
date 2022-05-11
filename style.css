@@ -5,9 +5,10 @@
   font-display: block;
   src: local('Ebrima'), url("assets/ebrima.woff2") format('woff2');
 }
-html,
-body,
-ul {
+* {
+    box-sizing: border-box;
+}
+html, body, ul {
   margin: 0;
   padding: 0;
   word-break: break-word;
@@ -19,83 +20,70 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 0.5px dotted;
+  border-bottom: dotted 0.03125rem;
 }
 a:hover {
-  border-bottom: 0.5px solid;
+  border-bottom: solid 0.03125rem;
 }
 i {
-  padding-right: 7px;
+  padding-right: 0.5rem;
 }
-body {
-  min-height: 100vh;
-  font-family: 'Ebrima', monospace;
+html {
+  font-family: 'Ebrima', sans-serif;
   font-size: 18px;
   line-height: 1.6;
   display: flex;
   justify-content: center;
-  background-color: white;
-  color: black;
 }
 #wrap {
-  padding: 4rem;
-  box-sizing: border-box;
+  padding: 1rem 1rem 0;
   max-width: 80ch;
-  border-right: 0.5px solid white;
-  border-left: 0.5px solid white;
-  background-color: white;
-  min-height: 100vh;
-}
-@media (max-width: 795px) {
-  #wrap {
-    padding: 1rem 1rem 0;
-  }
 }
 header {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 40% 60%;
   justify-content: center;
 }
-@media (max-width: 795px) {
-  header {
-    grid-template-columns: initial;
-  }
-}
 header img {
-  margin: auto;
-  border-radius: 10000px;
+  border-radius: 50%;
   max-width: 100%;
 }
-@media (max-width: 795px) {
-  header img {
-    width: 60%;
-    margin: auto auto 0.7rem;
-  }
-}
-header #header-text {
-  margin-top: -0.5rem;
+#header-text {
   line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-header #header-text h1 {
+#header-text h1 {
   margin: 0;
   text-align: center;
 }
-header #header-text span {
+#header-text span {
   display: block;
   text-align: center;
   font-weight: bold;
   margin-top: -0.5rem;
-  font-size: 1rem;
 }
-header #header-text ul {
+#header-text ul {
   margin-top: 1rem;
   margin-left: 2.5rem;
 }
-@media (max-width: 795px) {
-  header #header-text ul {
+@media (max-width: 80ch) {
+  header {
+    grid-template-columns: initial;
+  }
+  header img {
+    width: 60%;
+    margin: auto auto 0.7rem;
+  }
+  #header-text ul {
     margin-left: 0;
   }
 }
 article {
-  padding-top: 2.5rem;
+  margin-top: 2.5rem;
 }
+.img-link {
+  border-bottom: none;
+}
+
