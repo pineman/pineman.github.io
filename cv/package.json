@@ -9,9 +9,6 @@
     "pdf": "./pdf"
   },
   "devDependencies": {
-    "electron-pdf": "15.0.0"
-  },
-  "overrides": {
-    "electron": "18.1.0"
+    "electron-pdf": "20.0.0"
   }
 }

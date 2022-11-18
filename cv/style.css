@@ -120,7 +120,6 @@ article {
 	grid-column: 2 / 3;
 	padding: 0 1rem 0.75rem;
 	overflow-wrap: anywhere;
-	text-align: justify;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
