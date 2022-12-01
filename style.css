@@ -25,6 +25,12 @@ a {
 a:hover {
   border-bottom: solid 0.03125rem;
 }
+.img-link {
+  border-bottom: none;
+}
+.img-link:hover {
+  border-bottom: none;
+}
 i {
   padding-right: 0.5rem;
 }
@@ -83,7 +89,3 @@ header img {
 article {
   margin-top: 2.5rem;
 }
-.img-link {
-  border-bottom: none;
-}
-
