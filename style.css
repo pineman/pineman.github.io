@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'Ebrima';
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: local('Ebrima'), url("assets/ebrima.woff2") format('woff2');
-}
 * {
     box-sizing: border-box;
 }
@@ -35,7 +28,7 @@ i {
   padding-right: 0.5rem;
 }
 html {
-  font-family: 'Ebrima', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 18px;
   line-height: 1.6;
   display: flex;
