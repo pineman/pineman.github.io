@@ -31,6 +31,9 @@ ul {
 #wrap {
   max-width: 76ch;
 }
+pre {
+  overflow: scroll;
+}
 /* Header styles */
 header {
   display: grid;
