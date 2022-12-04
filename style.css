@@ -34,14 +34,23 @@ ul {
 /* Header styles */
 header {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 35% 65%;
 }
-header img {
+#header-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header-img img {
   border-radius: 50%;
   max-width: 100%;
+  height: auto;
 }
 #header-text {
   line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #header-text h1 {
   margin: 0;
@@ -55,9 +64,9 @@ header img {
 }
 #header-text ul {
   padding: 0;
+  margin-left: 2.5rem;
   word-break: break-word;
   list-style-type: none;
-  margin-left: 2.5rem;
 }
 #header-text i {
   padding-right: 0.5rem;
@@ -68,7 +77,6 @@ header img {
     margin-bottom: 0;
   }
   header img {
-    width: 60%;
     margin: auto auto 0.7rem;
   }
   #header-text ul {
