@@ -1,14 +1,15 @@
 * {
     box-sizing: border-box;
 }
-html, body, ul {
-  margin: 0;
-  padding: 0;
-  word-break: break-word;
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 18px;
+  line-height: 1.6;
 }
-ul {
-  list-style-position: inside;
-  list-style-type: none;
+body {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
 }
 a {
   color: inherit;
@@ -24,24 +25,16 @@ a:hover {
 .img-link:hover {
   border-bottom: none;
 }
-i {
-  padding-right: 0.5rem;
-}
-html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 18px;
-  line-height: 1.6;
-  display: flex;
-  justify-content: center;
+ul {
+  list-style-position: inside;
 }
 #wrap {
-  padding: 1rem 1rem 0;
-  max-width: 80ch;
+  max-width: 76ch;
 }
+/* Header styles */
 header {
   display: grid;
   grid-template-columns: 40% 60%;
-  justify-content: center;
 }
 header img {
   border-radius: 50%;
@@ -49,27 +42,30 @@ header img {
 }
 #header-text {
   line-height: 1.7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 #header-text h1 {
   margin: 0;
   text-align: center;
+  font-weight: normal;
 }
 #header-text span {
   display: block;
   text-align: center;
-  font-weight: bold;
   margin-top: -0.5rem;
 }
 #header-text ul {
-  margin-top: 1rem;
+  padding: 0;
+  word-break: break-word;
+  list-style-type: none;
   margin-left: 2.5rem;
 }
-@media (max-width: 80ch) {
+#header-text i {
+  padding-right: 0.5rem;
+}
+@media (max-width: 76ch) {
   header {
     grid-template-columns: initial;
+    margin-bottom: 0;
   }
   header img {
     width: 60%;
@@ -78,7 +74,4 @@ header img {
   #header-text ul {
     margin-left: 0;
   }
-}
-article {
-  margin-top: 2.5rem;
 }
