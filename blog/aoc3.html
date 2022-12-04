@@ -12,6 +12,10 @@
 	<meta property="og:site_name" content="João Pinheiro" />
   <!-- end common head -->
   <!-- start specific head -->
+  <!--<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/darcula.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>-->
 	<meta property="og:type" content="article" />
 	<meta property="article:author" content="https://pineman.github.io" />
 	<meta property="article:section" content="João Pinheiro's Blog" />
@@ -47,8 +51,7 @@
 	<p>I suspect by now everyone sees the problem with this reasoning, that of course I didn't at the time. <b>The big-oh numbers I just wrote are all wrong!</b> Maybe not in a theoretical sense, but in a practical sense (but probably in a theoretical sense as well): this problem is so simple, its volume of data so small and well crafted, that just the map overhead is overwhelming! Or, at least, cpu time complexity is not the whole story, because I didn't even think about memory access! Or yet some other reason I clearly missed! Because here's the proof: using a bigger input <a id ="footnote-2-ref" href="#footnote-2">[2]</a>, and using <code>go test -bench</code>, my set solution takes 5.42 seconds to solve part two (not counting reading the input file and turning into an array of string), while the 'naive', 'dumb', more procedural solution runs in 139ms (more on this solution later). That's a ~39x speedup (!!). And that's pretty slow: I saw some rust and C++ going at just ~10ms for part two, another order of magnitude faster. So, I took this opportunity to profile my Go code. Find all my (bad) code <a href="https://github.com/pineman/code/tree/main/chall/aoc2022/day3">here</a>.</p>
 	<h3>Profiling for fun</h3>
 	<p>These are the resources I followed: <a href="https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/">https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/</a> and <a href="https://go.dev/blog/pprof">https://go.dev/blog/pprof</a> (in fact, the first half of this latter link describes exactly the problem I had: using a map when an array is sufficient). Of course, my code today is contrived and basically holds no mystery. But nonetheless, all I had to do was run <code>go test -bench</code> with the <code>-cpuprofile</code> and <code>-memprofile</code> flags, as I already had benchmark functions in my test file. This produces output files that <code>go tool pprof</code> can read and then generate output in text, or even png or pdf. Here's the cpu time breakdown, generated with <code>go tool pprof -top -cum cpu.out</code>, for part two only (truncated):</p>
-<pre>
-      flat  flat%   sum%        cum   cum%
+<pre><code class="language-plaintext">      flat  flat%   sum%        cum   cum%
          0     0%     0%      5.50s 84.23%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy_set
          0     0%     0%      5.50s 84.23%  testing.(*B).run1.func1
          0     0%     0%      5.50s 84.23%  testing.(*B).runN
@@ -57,10 +60,9 @@
      1.54s 23.58% 28.64%      3.67s 56.20%  runtime.mapassign_fast32
      0.07s  1.07% 29.71%      1.37s 20.98%  github.com/pineman/code/chall/aoc2022/go/day3.intersectMap (inline)
          0     0% 29.71%      1.09s 16.69%  runtime.systemstack
-</pre>
+</code></pre>
   <p>From the cumulative column, it looks like <code>itemMap</code> and <code>intersectMap</code> were on the stack 59% and 21% of the time, respectively, to the shock of no one. Just building maps and iterating through them away, heating my house. Imagine all the hashing and pointer chasing... Well, here's the memory profile:</p>
-<pre>
-      flat  flat%   sum%        cum   cum%
+<pre><code class="language-plaintext">      flat  flat%   sum%        cum   cum%
          0     0%     0%  2395.03MB 99.69%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy_set
          0     0%     0%  2395.03MB 99.69%  testing.(*B).run1.func1
          0     0%     0%  2395.03MB 99.69%  testing.(*B).runN
@@ -73,10 +75,9 @@
          0     0% 95.74%    49.07MB  2.04%  strings.Split (inline)
    49.07MB  2.04% 97.78%    49.07MB  2.04%  strings.genSplit
       46MB  1.91% 99.69%       46MB  1.91%  github.com/pineman/code/chall/aoc2022/go/day3.getFirstKey (inline)
-</pre>
+</code></pre>
   <p>Is that... 2GB <b>just</b> in maps? Is this right?... Oh god... The input file is 100MB, as noted by <code>getInput</code>! I think I've had quite enough of this embarrassment. For comparison, heres the cpu and mem profiles of the 'procedural' version:</p>
-<pre>
-      flat  flat%   sum%        cum   cum%
+<pre><code class="language-plaintext">      flat  flat%   sum%        cum   cum%
          0     0%     0%      3.18s 93.26%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy
          0     0%     0%      3.18s 93.26%  testing.(*B).runN
      0.60s 17.60% 17.60%      2.92s 85.63%  github.com/pineman/code/chall/aoc2022/go/day3.partTwo
@@ -85,9 +86,8 @@
      0.39s 11.44% 33.72%      2.14s 62.76%  strings.IndexRune
      0.12s  3.52% 37.24%      1.80s 52.79%  strings.IndexByte (inline)
      1.54s 45.16% 82.40%      1.54s 45.16%  indexbytebody
-</pre>
-<pre>
-      flat  flat%   sum%        cum   cum%
+</code></pre>
+<pre><code class="language-plaintext">      flat  flat%   sum%        cum   cum%
          0     0%     0%   250.88MB 97.64%  testing.(*B).run1.func1
          0     0%     0%   250.88MB 97.64%  testing.(*B).runN
          0     0%     0%   250.38MB 97.44%  github.com/pineman/code/chall/aoc2022/go.GetBigBoyInput
@@ -96,7 +96,7 @@
   100.66MB 39.17% 78.34%   101.16MB 39.37%  os.ReadFile
          0     0% 78.34%    49.07MB 19.10%  strings.Split (inline)
    49.07MB 19.10% 97.44%    49.07MB 19.10%  strings.genSplit
-</pre>
+</code></pre>
   <p>Nothing much to say here. 70% of time comparing characters, which is the core of what we want to do, anyway, and not much extra memory consumption compared to the input file size. For extra fun, here's the svg files <code>pprof</code> can generate, for the slow version: <a href="profile001.svg">cpu</a>, <a href="profile002.svg">mem</a>; and for the fast version: <a href="profile003.svg">cpu</a>, <a href="profile004.svg">mem</a><p>
   <h3>Conclusion</h3>
   <p><a href="https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast">"Make it work. Make it right. Make it fast."</a> - I know this! Normally I'd like to think I do this (or, at least, when 'making it work' doesn't envolve a huge amount of tech debt I guess). Also: measure before you optimize! Performance assumptions are sometimes hard to make out of intuition. Also also: <a href="https://wiki.c2.com/?PrematureOptimization">something something premature optimization</a> (I love computer science quotes). <b>SO WHY DIDN'T I DO THIS FROM THE START?</b> Why did I chase "full generality" just for the sake of it? I know it is wrong. I have no answers for you, dear reader. It might even be an unconfortable answer for me. I'm half blaming it on <a href="https://en.wikipedia.org/wiki/Priming_(psychology)">mental priming</a>, and the fact that I'm using AOC2022 to learn Go (after "learning Go" twice in the last three years) - so it makes sense to implement more things, in more generality, to learn more about the language; and indeed I did that for day one and two. Still, it hurts a little... But that's not all.</p>
