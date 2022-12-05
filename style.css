@@ -29,10 +29,11 @@ ul {
   list-style-position: inside;
 }
 #wrap {
+  overflow: auto;
   max-width: 76ch;
 }
 pre {
-  overflow: scroll;
+  overflow: auto;
 }
 /* Header styles */
 header {
