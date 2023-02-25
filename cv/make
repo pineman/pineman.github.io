@@ -2,5 +2,5 @@
 set -euo pipefail
 
 sd 'rev:.*' "rev: $(git rev-parse --short HEAD)" index.html
-if [[ $(uname) =~ Linux ]]; then xhost + &>/dev/null; fi
+xhost + &>/dev/null
 npx electron-pdf -b true $(pwd)/index.html $(pwd)/cv.pdf
