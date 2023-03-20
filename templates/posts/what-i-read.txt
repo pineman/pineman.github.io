@@ -1,91 +1,91 @@
-March 2023
-	https://www.youtube.com/watch?v=DMQ_HcNSOAI
-	https://opensource.com/article/22/12/old-camera-webcam-linux
-	https://www.youtube.com/watch?v=4PaWFYm0kEw
-	https://www.youtube.com/watch?v=VzdVSMRu16g
-	rewatch most of bryan cantrill's talks
-	https://blog.wesleyac.com/posts/consider-sqlite
-	https://www.youtube.com/watch?v=nPDomZQ8jI4
-	https://forums.somethingawful.com/showthread.php?threadid=3863535&pagenumber=940#lastpost
-	https://evertpot.com/jwt-is-a-bad-default/
-February 2023
-	https://viewsourcecode.org/why/hacking/theFullyUpturnedBin.html
-	https://www.youtube.com/watch?v=6hC9IxqdDDw
-	https://www.youtube.com/watch?v=XZWQ2MoN6-M
-	https://guilhermesimoes.github.io/blog/installing-gems-per-project-directory
-	https://dev.to/abstractart/easy-way-to-setup-debugger-and-autocomplete-for-ruby-in-visual-studio-code-2gcc
-	https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
-	https://gist.github.com/gtallen1187/e83ed02eac6cc8d7e185
-	lots of rachelbythebay
-	https://anthonyhobday.com/sideprojects/saferules/
-	https://exactly-once.github.io/posts/notes-on-2pc
-	http://dbmsmusings.blogspot.com/2019/01/its-time-to-move-on-from-two-phase.html
-	https://docs.particular.net/nservicebus/outbox/
-	https://github.blog/2023-02-06-the-technology-behind-githubs-new-code-search/
-	https://www.postgresql.org/docs/current/transaction-iso.html
-	https://yosefk.com/blog/people-can-read-their-managers-mind.html
-	http://radar.oreilly.com/2014/11/if-it-werent-for-the-people.html
-	https://gavinray97.github.io/blog/postgres-wire-protocol-jdk-21
-	https://gavinray97.github.io/blog/a-day-without-a-copilot
-	lots of rachelbythebay
-	https://www.youtube.com/watch?v=V6VP-2aIcSc -- I have lots of thoughts on this one.
-	https://programmingisterrible.com/post/181841346708/what-the-hell-is-rest-anyway
-	https://programmingisterrible.com/post/188942142748/scaling-in-the-presence-of-errorsdont-ignore
-	https://twitter.com/Foone/status/1059308377740726272
-	http://lists.busybox.net/pipermail/busybox/2010-December/074114.html
-	https://www.youtube.com/watch?v=xDuwrtwYHu8
-January 2023
-	https://www.youtube.com/@tom7/videos
-	https://www.youtube.com/watch?v=A60q6dcoCjw
-	https://www.youtube.com/watch?v=wL3uWO-KLUE
-	https://tratt.net/laurie/blog/2023/compiled_and_interpreted_languages_two_ways_of_saying_tomato.html
-	https://www.morling.dev/blog/getting-started-with-java-development-2023/
-	https://discord.com/blog/why-discord-is-switching-from-go-to-rust
-	https://news.ycombinator.com/item?id=30115078
-	https://news.ycombinator.com/item?id=30706743
-	https://danluu.com/startup-options/
-	https://yosefk.com/blog/stock-options-a-balanced-approach.html
-	https://uselessdevblog.wordpress.com/2022/11/10/stop-lying-to-yourself-you-will-never-fix-it-later/
-	https://news.ycombinator.com/item?id=10933524
-	https://blog.dziban.net/coroutines/
-	https://vladmihalcea.com/optimistic-vs-pessimistic-locking/
-	https://www.postgresql.org/docs/current/explicit-locking.html - still confused
-	https://news.ycombinator.com/item?id=34530052&p=2
-	https://rampantgames.com/blog/?p=7745
-	http://canonical.org/~kragen/tao-of-programming
-	https://www.youtube.com/watch?v=p8u_k2LIZyo
-	https://rubyonrails.org/doctrine
-	https://www.youtube.com/watch?v=UAUdIQZKV88 - interesting discussion in the comments about do it (crafting) right/premature optimization, but probably just different philosophical values
-	https://web.dev/webtransport
-	https://how.complexsystems.fail/
-	https://www.reddit.com/r/rust/comments/10dpw5r/c_vs_rust_which_is_faster_x86_assembly_inside/
-	https://hynek.me/articles/semver-will-not-save-you/
-	https://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/
-	http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/
-	https://www.stevenbuccini.com/8-hard-truths-on-getting-laid-off
-	https://withinboredom.info/blog/2022/12/29/golang-is-evil-on-shitty-networks/
-	https://fasterthanli.me/articles/lies-we-tell-ourselves-to-keep-using-golang
-	https://fasterthanli.me/articles/i-won-free-load-testing
-	https://fasterthanli.me/articles/downloads-gone-wrong
-	https://words.filippo.io/rustgo/
-	https://tomforb.es/i-scanned-every-package-on-pypi-and-found-57-live-aws-keys/
-	https://tomforb.es/i-hope-i-hate-this-code-one-day/
-	https://bvisness.me/advent-of-dreams/
-	https://thume.ca/2023/01/02/one-machine-twitter/
-	https://programmingisterrible.com/post/162346490883/how-do-you-cut-a-monolith-in-half
-December 2022
-	https://eli.thegreenplace.net/2021/rest-servers-in-go-part-7-graphql - all parts actually
-	https://eli.thegreenplace.net/2017/benefits-of-dependencies-in-software-projects-as-a-function-of-effort/
-	https://eli.thegreenplace.net/2021/life-of-an-http-request-in-a-go-server/#
-	https://eli.thegreenplace.net/2019/on-concurrency-in-go-http-servers
-	https://eli.thegreenplace.net/2018/beware-of-copying-mutexes-in-go/
-	https://www.joelonsoftware.com/2001/10/14/in-defense-of-not-invented-here-syndrome/
-	https://signalsandthreads.com/multicast-and-the-markets/
-	https://signalsandthreads.com/state-machine-replication-and-why-you-should-care/
-	https://rcoh.me/posts/linear-time-median-finding
-	https://rcoh.me/posts/why-you-can-have-a-million-go-routines-but-only-1000-java-threads
-	https://www.youtube.com/watch?v=9j0oQkqzhAE
-	https://www.youtube.com/watch?v=bxhYNfFeVF4
-	https://www.youtube.com/watch?v=CZ3wIuvmHeM
-	https://blog.miris.design/not-a-programmer
-	http://www.paulgraham.com/avg.html
+# March 2023
+https://www.youtube.com/watch?v=DMQ_HcNSOAI
+https://opensource.com/article/22/12/old-camera-webcam-linux
+https://www.youtube.com/watch?v=4PaWFYm0kEw
+https://www.youtube.com/watch?v=VzdVSMRu16g
+rewatch most of bryan cantrill's talks
+https://blog.wesleyac.com/posts/consider-sqlite
+https://www.youtube.com/watch?v=nPDomZQ8jI4
+https://forums.somethingawful.com/showthread.php?threadid=3863535&pagenumber=940#lastpost
+https://evertpot.com/jwt-is-a-bad-default/
+# February 2023
+https://viewsourcecode.org/why/hacking/theFullyUpturnedBin.html
+https://www.youtube.com/watch?v=6hC9IxqdDDw
+https://www.youtube.com/watch?v=XZWQ2MoN6-M
+https://guilhermesimoes.github.io/blog/installing-gems-per-project-directory
+https://dev.to/abstractart/easy-way-to-setup-debugger-and-autocomplete-for-ruby-in-visual-studio-code-2gcc
+https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
+https://gist.github.com/gtallen1187/e83ed02eac6cc8d7e185
+lots of rachelbythebay
+https://anthonyhobday.com/sideprojects/saferules/
+https://exactly-once.github.io/posts/notes-on-2pc
+http://dbmsmusings.blogspot.com/2019/01/its-time-to-move-on-from-two-phase.html
+https://docs.particular.net/nservicebus/outbox/
+https://github.blog/2023-02-06-the-technology-behind-githubs-new-code-search/
+https://www.postgresql.org/docs/current/transaction-iso.html
+https://yosefk.com/blog/people-can-read-their-managers-mind.html
+http://radar.oreilly.com/2014/11/if-it-werent-for-the-people.html
+https://gavinray97.github.io/blog/postgres-wire-protocol-jdk-21
+https://gavinray97.github.io/blog/a-day-without-a-copilot
+lots of rachelbythebay
+https://www.youtube.com/watch?v=V6VP-2aIcSc -- I have lots of thoughts on this one.
+https://programmingisterrible.com/post/181841346708/what-the-hell-is-rest-anyway
+https://programmingisterrible.com/post/188942142748/scaling-in-the-presence-of-errorsdont-ignore
+https://twitter.com/Foone/status/1059308377740726272
+http://lists.busybox.net/pipermail/busybox/2010-December/074114.html
+https://www.youtube.com/watch?v=xDuwrtwYHu8
+# January 2023
+https://www.youtube.com/@tom7/videos
+https://www.youtube.com/watch?v=A60q6dcoCjw
+https://www.youtube.com/watch?v=wL3uWO-KLUE
+https://tratt.net/laurie/blog/2023/compiled_and_interpreted_languages_two_ways_of_saying_tomato.html
+https://www.morling.dev/blog/getting-started-with-java-development-2023/
+https://discord.com/blog/why-discord-is-switching-from-go-to-rust
+https://news.ycombinator.com/item?id=30115078
+https://news.ycombinator.com/item?id=30706743
+https://danluu.com/startup-options/
+https://yosefk.com/blog/stock-options-a-balanced-approach.html
+https://uselessdevblog.wordpress.com/2022/11/10/stop-lying-to-yourself-you-will-never-fix-it-later/
+https://news.ycombinator.com/item?id=10933524
+https://blog.dziban.net/coroutines/
+https://vladmihalcea.com/optimistic-vs-pessimistic-locking/
+https://www.postgresql.org/docs/current/explicit-locking.html - still confused
+https://news.ycombinator.com/item?id=34530052&p=2
+https://rampantgames.com/blog/?p=7745
+http://canonical.org/~kragen/tao-of-programming
+https://www.youtube.com/watch?v=p8u_k2LIZyo
+https://rubyonrails.org/doctrine
+https://www.youtube.com/watch?v=UAUdIQZKV88 - interesting discussion in the comments about do it (crafting) right/premature optimization, but probably just different philosophical values
+https://web.dev/webtransport
+https://how.complexsystems.fail/
+https://www.reddit.com/r/rust/comments/10dpw5r/c_vs_rust_which_is_faster_x86_assembly_inside/
+https://hynek.me/articles/semver-will-not-save-you/
+https://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/
+http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/
+https://www.stevenbuccini.com/8-hard-truths-on-getting-laid-off
+https://withinboredom.info/blog/2022/12/29/golang-is-evil-on-shitty-networks/
+https://fasterthanli.me/articles/lies-we-tell-ourselves-to-keep-using-golang
+https://fasterthanli.me/articles/i-won-free-load-testing
+https://fasterthanli.me/articles/downloads-gone-wrong
+https://words.filippo.io/rustgo/
+https://tomforb.es/i-scanned-every-package-on-pypi-and-found-57-live-aws-keys/
+https://tomforb.es/i-hope-i-hate-this-code-one-day/
+https://bvisness.me/advent-of-dreams/
+https://thume.ca/2023/01/02/one-machine-twitter/
+https://programmingisterrible.com/post/162346490883/how-do-you-cut-a-monolith-in-half
+# December 2022
+https://eli.thegreenplace.net/2021/rest-servers-in-go-part-7-graphql - all parts actually
+https://eli.thegreenplace.net/2017/benefits-of-dependencies-in-software-projects-as-a-function-of-effort/
+https://eli.thegreenplace.net/2021/life-of-an-http-request-in-a-go-server/#
+https://eli.thegreenplace.net/2019/on-concurrency-in-go-http-servers
+https://eli.thegreenplace.net/2018/beware-of-copying-mutexes-in-go/
+https://www.joelonsoftware.com/2001/10/14/in-defense-of-not-invented-here-syndrome/
+https://signalsandthreads.com/multicast-and-the-markets/
+https://signalsandthreads.com/state-machine-replication-and-why-you-should-care/
+https://rcoh.me/posts/linear-time-median-finding
+https://rcoh.me/posts/why-you-can-have-a-million-go-routines-but-only-1000-java-threads
+https://www.youtube.com/watch?v=9j0oQkqzhAE
+https://www.youtube.com/watch?v=bxhYNfFeVF4
+https://www.youtube.com/watch?v=CZ3wIuvmHeM
+https://blog.miris.design/not-a-programmer
+http://www.paulgraham.com/avg.html
