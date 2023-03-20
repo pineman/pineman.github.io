@@ -16,11 +16,11 @@ it's easy and does it. I'll take this opportunity to share some of my
 favorite blogs, from people I admire (this excludes of course eng. blogs
 from companies like netflix, dropbox, twitter, cloudflare, ...):
 
--   <https://jvns.ca/>
--   <https://rachelbythebay.com/w/>
--   <https://www.brendangregg.com/blog/>
--   <https://martin.kleppmann.com/archive.html>
--   <http://dtrace.org/blogs/bmc/>
+- <https://jvns.ca/>
+- <https://rachelbythebay.com/w/>
+- <https://www.brendangregg.com/blog/>
+- <https://martin.kleppmann.com/archive.html>
+- <http://dtrace.org/blogs/bmc/>
 
 But onwards to today's topic!
 
@@ -191,7 +191,8 @@ ChatGPT](https://news.ycombinator.com/item?id=33847479), I'm convinced
 it won't put me out of a job just yet, or even next year. But in the
 next 10, 20 years?... I'm much more anxious.
 
-[^1]: Assuming lookup is O(1)... approximately. Of course, it's more
+[^1]:
+    Assuming lookup is O(1)... approximately. Of course, it's more
     like amortized cost - in a terrible hash table (or just a terrible
     day or input) buckets are arrays, and using a terrible hash function
     all items end up in the same bucket, so the cost starts to look a
@@ -199,6 +200,7 @@ next 10, 20 years?... I'm much more anxious.
     more like O(n^2) (maybe O(nlg n) using un-sorted trees). I bet all
     of this is wrong though.
 
-[^2]: People on... the internet... usually craft these so-called 'big
+[^2]:
+    People on... the internet... usually craft these so-called 'big
     boy' inputs. [Here's the one I
     used](https://github.com/pineman/AoC2022/blob/main/2022/input/3/bigboy.7z).

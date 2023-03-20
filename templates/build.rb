@@ -44,18 +44,20 @@ def build_what_i_read
   content = ""
   file = File.new("posts/what-i-read.txt")
   time = file.mtime
-  file.readlines.each do |l|
+  file.readlines.each_with_index do |l, i|
     l.strip!
     case l
     when /^# /
-      content += "</ul>\n<h4>#{l[2..]}</h4>\n<ul>\n"
+      content += "</ul>\n" if i != 0
+      content += "<h4>#{l[2..]}</h4>\n<ul>\n"
     when /^https?:\/\//
       url, descr = l.split(" ", 2)
-      content += "  <li><a href=\"#{url}\">#{url}</a> #{descr}</li>"
+      content += "  <li><a href=\"#{url}\">#{url}</a> #{descr}</li>\n"
     else
       content += "  <li>#{l}</li>\n"
     end
   end
+  content += "</ul>\n"
   File.write("../what-i-read.html", templ.result(binding))
 end
 
