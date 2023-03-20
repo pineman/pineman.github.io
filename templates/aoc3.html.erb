@@ -1,29 +1,5 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-  <!-- start common head -->
-	<meta charset="UTF-8" />
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<link rel="stylesheet" href="/style.css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="author" content="João Pinheiro" />
-	<meta name="keywords" content="technology computer software engineering" />
-	<meta property="og:image" content="https://pineman.github.io/assets/me.webp" />
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:site_name" content="João Pinheiro" />
-  <!-- end common head -->
-  <!-- start specific head -->
-  <!--<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/darcula.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>-->
-	<meta property="og:type" content="article" />
-	<meta property="article:author" content="https://pineman.github.io" />
-	<meta property="article:section" content="pineman's Blog" />
-	<meta property="article:tag" content="technology" />
-	<meta property="article:tag" content="computer" />
-	<meta property="article:tag" content="software" />
-	<meta property="article:tag" content="engineering" />
+<%= File.read('head.html') %>
+<%= File.read('article_head.html') %>
 	<meta property="og:url" content="https://pineman.github.io/blog/aoc3.html" />
 	<meta property="article:published_time" content="20221203" />
 	<meta property="article:modified_time" content="20221203" />
@@ -31,11 +7,10 @@
 	<meta property="og:title" content="AoC 2022: day 3, profiling Go, existential crisis" />
 	<meta name="description" content="AoC 2022: day 3, profiling Go, existential crisis" />
 	<meta property="og:description" content="AoC 2022: day 3, profiling Go, existential crisis" />
-  <!-- end specific head -->
 </head>
 <body>
 <div id="wrap">
-<a href="../index.html#blog">&lt; back</a>
+<a href="index.html#blog">&lt; back</a>
 <article>
 	<h1>AoC 2022: day 3, profiling Go, existential crisis</h1>
 	<h6>2022/12/03</h6>
@@ -99,11 +74,11 @@
          0     0% 78.34%    49.07MB 19.10%  strings.Split (inline)
    49.07MB 19.10% 97.44%    49.07MB 19.10%  strings.genSplit
 </code></pre>
-	<p>Nothing much to say here. 70% of time comparing characters, which is the core of what we want to do, anyway, and not much extra memory consumption compared to the input file size. For extra fun, here's the svg files <code>pprof</code> can generate, for the slow version: <a href="profile001.svg">cpu</a>, <a href="profile002.svg">mem</a>; and for the fast version: <a href="profile003.svg">cpu</a>, <a href="profile004.svg">mem</a><p>
+	<p>Nothing much to say here. 70% of time comparing characters, which is the core of what we want to do, anyway, and not much extra memory consumption compared to the input file size. For extra fun, here's the svg files <code>pprof</code> can generate, for the slow version: <a href="assets/profile001.svg">cpu</a>, <a href="assets/profile002.svg">mem</a>; and for the fast version: <a href="assets/profile003.svg">cpu</a>, <a href="assets/profile004.svg">mem</a><p>
 	<h3>Conclusion</h3>
 	<p><a href="https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast">"Make it work. Make it right. Make it fast."</a> - I know this! Normally I'd like to think I do this (or, at least, when 'making it work' doesn't involve a huge amount of tech debt I guess). Also: measure before you optimize! Performance assumptions are sometimes hard to make out of intuition. Also also: <a href="https://wiki.c2.com/?PrematureOptimization">something something premature optimization</a> (I love computer science quotes). <b>SO WHY DIDN'T I DO THIS FROM THE START?</b> Why did I chase "full generality" just for the sake of it? I have no answers for you, dear reader. It might even be an unconfortable answer for me. I'm half blaming it on <a href="https://en.wikipedia.org/wiki/Priming_(psychology)">mental priming</a>, and the fact that I'm using AoC2022 to learn Go (after "learning Go" twice in the last three years) - so it makes sense to implement more things, in more generality, to learn more about the language; and indeed I did that for day one and two, even though I couldn't resist the temptation of writing a <a href="https://github.com/pineman/aoc/blob/main/2022/day1/python/one_oneliner.py">one liner in python for day one</a>. Still, it hurts a little... But that's not all.</p>
 	<p>When I finish solving a day, I go and browse other people's solutions to compare to mine. I open an image with maybe 30 lines of code. As I read it, I realize: hey, this is exactly the same as my solution, but taking out all the set logic! It's even well commented. Instead of building a set for each compartment and then intersecting them, just directly check if each item of the first is in the second and third. "Right, I thought of this solution. It even looks exactly the same as mine, bar two lines of code", I said to myself, half proudly still. "It's gotta be slower". So I implement it. And it's faster. 39x faster. And this is the real kick in the teeth: <b>the solution I was looking at was written by <a href="https://openai.com/blog/chatgpt/">ChatGPT</a></b>. At first I didn't know how to feel. Some thirty minutes in, and I find my solution is stupid and completely obliterated by an AI that took just 2 seconds to do it... Welp, after <a href="https://news.ycombinator.com/item?id=33847479">reading up more on ChatGPT</a>, I'm convinced it won't put me out of a job just yet, or even next year. But in the next 10, 20 years?... I'm much more anxious.</p>
-	<a href="../index.html#blog">&lt; back</a>
+	<a href="index.html#blog">&lt; back</a>
 	<h5>Footnotes</h5>
 	<ol>
 		<li id="fn1"><p>Assuming lookup is O(1)... approximately. Of course, it's more like amortized cost - in a terrible hash table (or just a terrible day or input) buckets are arrays, and using a terrible hash function all items end up in the same bucket, so the cost starts to look a lot more like O(n) due to linear searches, and intersection goes more like O(n^2) (maybe O(nlg n) using un-sorted trees). I bet all of this is wrong though. <a href="#fn1-ref">↩</a></p></li>
