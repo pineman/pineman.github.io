@@ -31,7 +31,7 @@ ul {
 }
 #wrap {
   overflow: auto;
-  max-width: 76ch;
+  max-width: 65ch;
 }
 pre {
   overflow: auto;
