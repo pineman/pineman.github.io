@@ -1,4 +1,4 @@
-<%= File.read('head.html') %>
+<%= File.read('partials/head.html') %>
   <link rel="stylesheet" href="assets/fontawesome/css/all.css">
   <title>João Pinheiro</title>
   <meta name="description" content="Personal homepage of João Pinheiro" />
@@ -11,7 +11,7 @@
   <meta property="profile:username" content="pineman" />
   <meta property="profile:gender" content="male" />
 </head>
-<%= File.read('pinecone.html') %>
+<%= File.read('partials/pinecone.html') %>
 <body>
 <div id="wrap">
 <header>
@@ -35,15 +35,15 @@
   <p>Here are some <a href="what-i-read.html">cool articles</a> I found on the web, and some <a href="https://www.goodreads.com/review/list/30442257-jo-o-pinheiro?order=d&shelf=read-computer" target="_blank">books</a> I've read. Alas, there are many more things I'd like to read and do.</p>
   <h1 id="blog">Blog</h1>
   <ul>
-    <li>2022/12/03 - <a href="aoc3.html">AoC 2022: day 3, profiling Go, existential crisis</a></li>
+    <%= posts %>
   </ul>
   <a href="https://www.eff.org/" class="img-link"><img src="https://www.eff.org/files/eff-join2_0.png" alt="Join EFF!" width="128px" height="128px"></a>
   <a href="https://www.fsf.org/" class="img-link"><img src="https://static.fsf.org/nosvn/associate/crm/3217362.png" alt="Join the FSF!" width="180px" height="45px"></a>
 </article>
 </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 <script>
   document.getElementById('years').innerText = moment("2014-02-01").fromNow();
-</script>
+</script>-->
 </html>

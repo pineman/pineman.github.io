@@ -1,6 +1,5 @@
-#!/bin/bash
-set -euo pipefail
+#!/usr/bin/env bash
 
-ROOT=$(pwd)
+echo file://$(pwd)/index.html
 cd templates
-ls * | entr fd '\.erb$' -x sh -c "erb {} > $ROOT/{.}"
+ls posts/*.md *.erb | entr -d ruby build.rb | ts '[%Y-%m-%d %H:%M:%S]'
