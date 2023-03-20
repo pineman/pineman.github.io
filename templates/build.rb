@@ -3,8 +3,9 @@ start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 require "ERB"
 require "pathname"
 
-def convert_markdown
+def format_convert_markdown
   Dir["posts/*.md"].each do |file|
+    `\pandoc #{file} -f markdown-smart -t markdown-smart -o #{file}`
     `\pandoc --no-highlight #{file} -f markdown-smart -o #{Pathname.new(file).sub_ext(".html")}`
   end
 end
@@ -61,7 +62,7 @@ def build_what_i_read
   File.write("../what-i-read.html", templ.result(binding))
 end
 
-convert_markdown
+format_convert_markdown
 build_index
 build_posts
 build_what_i_read
