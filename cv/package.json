@@ -6,7 +6,7 @@
   "author": "João Pinheiro",
   "license": "MIT",
   "scripts": {
-    "pdf": "./pdf"
+    "pdf": "./make"
   },
   "devDependencies": {
     "electron-pdf": "20.0.0"
