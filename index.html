@@ -11,7 +11,6 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="João Pinheiro" />
 
-  <!--<script src="moment.min.js" async></script>-->
   <link rel="stylesheet" href="assets/fontawesome/css/all.css">
   <title>João Pinheiro</title>
   <meta name="description" content="Personal homepage of João Pinheiro" />
@@ -119,7 +118,8 @@
 </article>
 </div>
 </body>
-<!--<script>
-  document.getElementById('years').innerText = moment().diff(moment("2014-02-01"), 'years', true).toFixed(1);
-</script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script>
+  document.getElementById('years').innerText = moment("2014-02-01").fromNow();
+</script>
 </html>
