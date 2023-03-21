@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 
 require "ERB"
@@ -23,28 +24,29 @@ class Post
 end
 
 def build_index
-  templ = ERB.new(File.read("index.html.erb"), trim_mode: ">")
+  template = ERB.new(File.read("index.html.erb"), trim_mode: ">")
   posts = ""
   Dir["posts/*.html"].each do |file|
     post = Post.new(file)
     posts += "<li>#{post.time} - <a href=\"#{post.url}\">#{post.title}</a></li>\n"
   end
-  File.write("../index.html", templ.result(binding))
+  File.write("../index.html", template.result(binding))
 end
 
 def build_posts
-  templ = ERB.new(File.read("post.html.erb"), trim_mode: ">")
+  template = ERB.new(File.read("post.html.erb"), trim_mode: ">")
   Dir["posts/*.html"].each do |file|
     post = Post.new(file)
-    File.write("../#{post.url}", templ.result(binding))
+    File.write("../#{post.url}", template.result(binding))
+    File.delete(file)
   end
 end
 
 def build_what_i_read
-  templ = ERB.new(File.read("what-i-read.html.erb"), trim_mode: ">")
-  content = ""
+  template = ERB.new(File.read("what-i-read.html.erb"), trim_mode: ">")
   file = File.new("posts/what-i-read.txt")
   time = file.mtime
+  content = ""
   file.readlines.each_with_index do |l, i|
     l.strip!
     case l
@@ -59,7 +61,7 @@ def build_what_i_read
     end
   end
   content += "</ul>\n"
-  File.write("../what-i-read.html", templ.result(binding))
+  File.write("../what-i-read.html", template.result(binding))
 end
 
 format_convert_markdown
