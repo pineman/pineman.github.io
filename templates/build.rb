@@ -6,8 +6,8 @@ require "pathname"
 
 def format_convert_markdown
   Dir["posts/*.md"].each do |file|
-    `\pandoc #{file} -f markdown-smart -t markdown-smart -o #{file}`
-    `\pandoc --no-highlight #{file} -f markdown-smart -o #{Pathname.new(file).sub_ext(".html")}`
+    `pandoc #{file} -f markdown-smart -t markdown-smart -o #{file}`
+    `pandoc --no-highlight #{file} -f markdown-smart -o #{Pathname.new(file).sub_ext(".html")}`
   end
 end
 
