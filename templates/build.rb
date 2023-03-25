@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 
-require "ERB"
+require "erb"
 require "pathname"
 
 def format_convert_markdown

@@ -1,4 +1,5 @@
 # March 2023
+https://yehudakatz.com/2009/11/15/metaprogramming-in-ruby-its-all-about-the-self/
 https://www.youtube.com/watch?v=EY6q5dv_B-o
 https://www.youtube.com/watch?v=kaandEt_pKw
 https://www.youtube.com/watch?v=DMQ_HcNSOAI
