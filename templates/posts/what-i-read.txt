@@ -1,4 +1,15 @@
 # March 2023
+https://fly.io/blog/gossip-glomers/
+https://www.speedshop.co/2020/05/11/the-ruby-gvl-and-scaling.html
+https://www.speedshop.co/2017/10/12/appserver.html
+https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#recommended-default-puma-process-and-thread-configuration
+//https://dnlserrano.dev/talks
+https://api.rubyonrails.org/classes/ActiveRecord/Locking/Pessimistic.html
+https://api.rubyonrails.org/classes/ActiveRecord/Locking/Optimistic.html
+https://web.archive.org/web/20221007024342/https://www.2ndquadrant.com/en/blog/postgresql-anti-patterns-read-modify-write-cycles/
+https://ceronman.com/2021/07/22/my-experience-crafting-an-interpreter-with-rust/
+https://antisoftware.club/manifesto/2020/03/16/part-1.html
+https://www.infoq.com/articles/framework-architectural-decisions/
 https://yehudakatz.com/2009/11/15/metaprogramming-in-ruby-its-all-about-the-self/
 https://www.youtube.com/watch?v=EY6q5dv_B-o
 https://www.youtube.com/watch?v=kaandEt_pKw
