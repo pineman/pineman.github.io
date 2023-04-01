@@ -17,7 +17,11 @@
     <div id="description">Software • Systems • Curiosity</div>
     <hr />
     <ul id="details">
-      <li><i class="fas fa-birthday-cake"></i>26</li>
+      <li><i class="fas fa-birthday-cake"></i><%=
+        require 'Date'
+        dob, today = Date.new(1997, 3, 29), Date.today
+        today.year - dob.year - ((today.month < dob.month || (today.month == dob.month && today.day < dob.day)) ? 1 : 0)
+      %></li>
       <li><i class="fas fa-map-marker-alt"></i>Lisbon, Portugal</li>
       <li><i class="fa fa-envelope"></i><a target="_blank" href="mailto:joaocastropinheiro@gmail.com">joaocastropinheiro@gmail.com</a></li>
       <li><i class="fas fa-phone"></i><a target="_blank" href="tel:+351968818031">+351 968 818 031</a></li>
@@ -37,8 +41,7 @@
       <a target="_blank" href="https://abra.fly.dev">abra</a>, <a target="_blank" href="https://github.com/pineman/LEDmatrix">LED Matrix</a>, <a target="_blank" href="https://github.com/pineman/code">playground</a>, <a target="_blank" href="https://github.com/pineman/pineman.github.io">website</a>
   </side-wrap>
   <version>
-    <a target="_blank" href="https://pineman.github.io/cv">HTML version</a> | <a target="_blank" href="https://pineman.github.io/cv/cv.pdf">PDF version</a> | rev: a2c232e
-
+    <a target="_blank" href="https://pineman.github.io/cv">HTML version</a> | <a target="_blank" href="https://pineman.github.io/cv/cv.pdf">PDF version</a> | rev: <%= `git rev-parse --short HEAD` %>
   </version>
 </aside>
 
