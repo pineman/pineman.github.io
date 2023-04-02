@@ -1,3 +1,8 @@
+# April 2023
+https://www.pathsensitive.com/2022/09/bet-you-cant-solve-these-9-dependency.html
+https://ivoanjo.me/blog/2023/02/11/ruby-unexpected-io-vs-cpu-unfairness/
+https://ivoanjo.me/blog/2018/10/13/spotting-unsafe-ruby-patterns/
+https://www.youtube.com/watch?v=5VHc27SYAIw
 # March 2023
 http://www.incompleteideas.net/IncIdeas/BitterLesson.html
 https://eugenkiss.github.io/7guis/tasks
