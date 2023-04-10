@@ -1,9 +1,17 @@
 # April 2023
+https://www.youtube.com/watch?app=desktop&v=ZSRHeXYDLko
+https://www.youtube.com/watch?app=desktop&v=PLeJYFUBhbU
+https://www.youtube.com/watch?app=desktop&v=OtozASk68Os
+https://www.youtube.com/watch?app=desktop&v=B76gFi43HvM&feature=youtu.be
+https://utcc.utoronto.ca/~cks/space/blog/programming/GoCLibraryAPIIssues
+https://utcc.utoronto.ca/~cks/space/blog/programming/Go116OpenBSDUsesLibc
+https://www.youtube.com/watch?app=desktop&v=Qncdi-Fg0-I
 https://www.pathsensitive.com/2022/09/bet-you-cant-solve-these-9-dependency.html
 https://ivoanjo.me/blog/2023/02/11/ruby-unexpected-io-vs-cpu-unfairness/
 https://ivoanjo.me/blog/2018/10/13/spotting-unsafe-ruby-patterns/
 https://www.youtube.com/watch?v=5VHc27SYAIw
 https://lobste.rs/s/u7y4lk/modules_matter_most_for_masses#c_chlqbq
+https://www.honeycomb.io/blog/deploys-wrong-way-change-user-experience
 # March 2023
 http://www.incompleteideas.net/IncIdeas/BitterLesson.html
 https://eugenkiss.github.io/7guis/tasks
