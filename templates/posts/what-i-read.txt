@@ -1,4 +1,11 @@
 # April 2023
+https://stanko.io/rabbitmq-is-more-than-a-sidekiq-replacement-b730d8176fb
+https://www.crunchydata.com/blog/message-queuing-using-native-postgresql
+https://www.migops.com/blog/select-for-update-and-its-behavior-with-foreign-keys-in-postgresql/
+https://microservices.io/patterns/data/transactional-outbox.html
+https://en.m.wikipedia.org/wiki/Dead_letter_queue
+https://www.cockroachlabs.com/blog/living-without-atomic-clocks/
+https://jamesdunne.dev/posts/must-have-programming-tools/
 https://www.youtube.com/watch?app=desktop&v=ZSRHeXYDLko
 https://www.youtube.com/watch?app=desktop&v=PLeJYFUBhbU
 https://www.youtube.com/watch?app=desktop&v=OtozASk68Os
