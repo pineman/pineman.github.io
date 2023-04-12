@@ -1,4 +1,5 @@
 # April 2023
+https://www.youtube.com/watch?v=5IUj1EZwpJY
 https://stanko.io/rabbitmq-is-more-than-a-sidekiq-replacement-b730d8176fb
 https://www.crunchydata.com/blog/message-queuing-using-native-postgresql
 https://www.migops.com/blog/select-for-update-and-its-behavior-with-foreign-keys-in-postgresql/
