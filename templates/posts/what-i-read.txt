@@ -62,6 +62,7 @@ https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-i
 https://gist.github.com/gtallen1187/e83ed02eac6cc8d7e185
 lots of rachelbythebay
 https://anthonyhobday.com/sideprojects/saferules/
+https://anthonyhobday.com/sideprojects/saferules/
 https://exactly-once.github.io/posts/notes-on-2pc
 http://dbmsmusings.blogspot.com/2019/01/its-time-to-move-on-from-two-phase.html
 https://docs.particular.net/nservicebus/outbox/
@@ -122,7 +123,6 @@ https://eli.thegreenplace.net/2021/rest-servers-in-go-part-7-graphql - all parts
 https://eli.thegreenplace.net/2017/benefits-of-dependencies-in-software-projects-as-a-function-of-effort/
 https://eli.thegreenplace.net/2021/life-of-an-http-request-in-a-go-server/#
 https://eli.thegreenplace.net/2019/on-concurrency-in-go-http-servers
-https://eli.thegreenplace.net/2018/beware-of-copying-mutexes-in-go/
 https://www.joelonsoftware.com/2001/10/14/in-defense-of-not-invented-here-syndrome/
 https://signalsandthreads.com/multicast-and-the-markets/
 https://signalsandthreads.com/state-machine-replication-and-why-you-should-care/
