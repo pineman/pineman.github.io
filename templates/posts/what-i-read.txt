@@ -1,4 +1,5 @@
 # April 2023
+https://data-room-software.org/erlangonxen/
 https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript - always important to occasionally rewatch
 https://www.youtube.com/watch?v=G7OCOqXsw7s
 https://www.youtube.com/watch?v=ZQnyApKysg4&list=PLzg3FkRs7fcRUx5GhdFJt75s-nxk7ofFX
