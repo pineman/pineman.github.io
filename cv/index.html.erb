@@ -20,7 +20,7 @@
       <li><i class="fas fa-birthday-cake"></i><%=
         require 'date'
         dob, today = Date.new(1997, 3, 29), Date.today
-        today.year - dob.year - ((today.month < dob.month || (today.month == dob.month && today.day < dob.day)) ? 1 : 0)
+        today.year - dob.year - ((today.month < dob.month || today.month == dob.month && today.day < dob.day) ? 1 : 0)
       %></li>
       <li><i class="fas fa-map-marker-alt"></i>Lisbon, Portugal</li>
       <li><i class="fa fa-envelope"></i><a target="_blank" href="mailto:joaocastropinheiro@gmail.com">joaocastropinheiro@gmail.com</a></li>
