@@ -16,11 +16,11 @@ it's easy and does it. I'll take this opportunity to share some of my
 favorite blogs, from people I admire (this excludes of course eng. blogs
 from companies like netflix, dropbox, twitter, cloudflare, ...):
 
--   <https://jvns.ca/>
--   <https://rachelbythebay.com/w/>
--   <https://www.brendangregg.com/blog/>
--   <https://martin.kleppmann.com/archive.html>
--   <http://dtrace.org/blogs/bmc/>
+- <https://jvns.ca/>
+- <https://rachelbythebay.com/w/>
+- <https://www.brendangregg.com/blog/>
+- <https://martin.kleppmann.com/archive.html>
+- <http://dtrace.org/blogs/bmc/>
 
 But onwards to today's topic!
 
@@ -28,14 +28,14 @@ So this year I'm yet again trying to follow through on Advent of Code,
 instead of... forgetting about it on day two, as with the past
 *whatever* years. As I read [day three's
 statement](https://adventofcode.com/2022/day/3), I immediately thought
-of the "obvious" O(n\^2) solution: for each item in the first
+of the "obvious" O(n^2) solution: for each item in the first
 compartment, check if it's in the second compartment - on the first hit,
 sum its priority and break (this description is almost executable python
 of course, but I'm solving this year entirely in Go for now).
 
 So here's the problem, and why I'm writing this: I promptly decided not
 to implement this solution, without a second more of consideration. My
-intuition always steers away from O(n\^2), as it's usually the fastest
+intuition always steers away from O(n^2), as it's usually the fastest
 (slowest?) way to fail an interview problem. So I wanted to be smarter.
 And, for some reason, my intution also thinks sets are really smart
 (probably from solving leetcode in python, plus hash tables are
@@ -61,10 +61,9 @@ bigger input [^2], and using `go test -bench`, my set solution takes
 5.42 seconds to solve part two (not counting reading the input file and
 turning it into an array of string), while the 'naive', 'dumb', more
 procedural solution runs in 139ms (more on this solution later). That's
-a \~39x speedup (!!). And that's pretty slow: I saw some rust and C++
-going at just \~10ms for part two, another order of magnitude faster.
-So, I took this opportunity to profile my Go code. Find all my (bad)
-code
+a ~39x speedup (!!). And that's pretty slow: I saw some rust and C++
+going at just ~10ms for part two, another order of magnitude faster. So,
+I took this opportunity to profile my Go code. Find all my (bad) code
 [here](https://github.com/pineman/AoC2022/blob/main/2022/day3/three.go#L48).
 
 ### Profiling for fun
@@ -196,7 +195,7 @@ next 10, 20 years?... I'm much more anxious.
     day or input) buckets are arrays, and using a terrible hash function
     all items end up in the same bucket, so the cost starts to look a
     lot more like O(n) due to linear searches, and intersection goes
-    more like O(n\^2) (maybe O(nlog n) using un-sorted trees). I bet all
+    more like O(n^2) (maybe O(nlog n) using un-sorted trees). I bet all
     of this is wrong though.
 
 [^2]: People on... the internet... usually craft these so-called 'big

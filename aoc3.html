@@ -35,7 +35,7 @@ profiling Go, existential crisis" />
 <article>
 <h1 id="aoc-2022-day-3-profiling-go-existential-crisis">AoC 2022: day 3,
 profiling Go, existential crisis</h1>
-<h6 id="section">2022/12/03</h6>
+<h6 id="20221203">2022/12/03</h6>
 <p>Ok hi! One of my first projects ever was a <a
 href="https://github.com/pineman/code/tree/main/old_proj/pineblog">blog
 written in python flask</a> (please don't look at it, it was 2015). Even
@@ -51,15 +51,15 @@ opportunity to share some of my favorite blogs, from people I admire
 (this excludes of course eng. blogs from companies like netflix,
 dropbox, twitter, cloudflare, ...):</p>
 <ul>
-<li><a href="https://jvns.ca/" class="uri">https://jvns.ca/</a></li>
-<li><a href="https://rachelbythebay.com/w/"
-class="uri">https://rachelbythebay.com/w/</a></li>
-<li><a href="https://www.brendangregg.com/blog/"
-class="uri">https://www.brendangregg.com/blog/</a></li>
-<li><a href="https://martin.kleppmann.com/archive.html"
-class="uri">https://martin.kleppmann.com/archive.html</a></li>
-<li><a href="http://dtrace.org/blogs/bmc/"
-class="uri">http://dtrace.org/blogs/bmc/</a></li>
+<li><a href="https://jvns.ca/">https://jvns.ca/</a></li>
+<li><a
+href="https://rachelbythebay.com/w/">https://rachelbythebay.com/w/</a></li>
+<li><a
+href="https://www.brendangregg.com/blog/">https://www.brendangregg.com/blog/</a></li>
+<li><a
+href="https://martin.kleppmann.com/archive.html">https://martin.kleppmann.com/archive.html</a></li>
+<li><a
+href="http://dtrace.org/blogs/bmc/">http://dtrace.org/blogs/bmc/</a></li>
 </ul>
 <p>But onwards to today's topic!</p>
 <p>So this year I'm yet again trying to follow through on Advent of
@@ -107,19 +107,17 @@ to profile my Go code. Find all my (bad) code <a
 href="https://github.com/pineman/AoC2022/blob/main/2022/day3/three.go#L48">here</a>.</p>
 <h3 id="profiling-for-fun">Profiling for fun</h3>
 <p>These are the resources I followed: <a
-href="https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/"
-class="uri">https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/</a>
-and <a href="https://go.dev/blog/pprof"
-class="uri">https://go.dev/blog/pprof</a> (in fact, the first half of
-this latter link describes exactly the problem I had: using a map when
-an array is sufficient). Of course, my code today is contrived and
-basically holds no mystery. But nonetheless, all I had to do was run
-<code>go test -bench</code> with the <code>-cpuprofile</code> and
-<code>-memprofile</code> flags, as I already had benchmark functions in
-my test file. This produces output files that <code>go tool pprof</code>
-can read and then generate output in text, or even png or pdf. Here's
-the cpu time breakdown, generated with
-<code>go tool pprof -top -cum cpu.out</code>, for part two only
+href="https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/">https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/</a>
+and <a href="https://go.dev/blog/pprof">https://go.dev/blog/pprof</a>
+(in fact, the first half of this latter link describes exactly the
+problem I had: using a map when an array is sufficient). Of course, my
+code today is contrived and basically holds no mystery. But nonetheless,
+all I had to do was run <code>go test -bench</code> with the
+<code>-cpuprofile</code> and <code>-memprofile</code> flags, as I
+already had benchmark functions in my test file. This produces output
+files that <code>go tool pprof</code> can read and then generate output
+in text, or even png or pdf. Here's the cpu time breakdown, generated
+with <code>go tool pprof -top -cum cpu.out</code>, for part two only
 (truncated):</p>
 <pre class="plaintext"><code>     flat  flat%   sum%        cum   cum%
         0     0%     0%      5.50s 84.23%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy_set
