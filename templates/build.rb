@@ -23,27 +23,30 @@ class Post
   end
 end
 
+def template(template_file, destination_file, caller_binding)
+  template = ERB.new(File.read(template_file), trim_mode: ">")
+  File.write(destination_file, template.result(caller_binding))
+end
+
 def build_index
-  template = ERB.new(File.read("index.html.erb"), trim_mode: ">")
   posts = ""
   Dir["posts/*.html"].each do |file|
     post = Post.new(file)
     posts += "<li>#{post.time} - <a href=\"#{post.url}\">#{post.title}</a></li>\n"
   end
-  File.write("../index.html", template.result(binding))
+  template("index.html.erb", "../index.html", binding)
 end
 
 def build_posts
   template = ERB.new(File.read("post.html.erb"), trim_mode: ">")
   Dir["posts/*.html"].each do |file|
     post = Post.new(file)
-    File.write("../#{post.url}", template.result(binding))
+    template("post.html.erb", "../#{post.url}", binding)
     File.delete(file)
   end
 end
 
 def build_what_i_read
-  template = ERB.new(File.read("what-i-read.html.erb"), trim_mode: ">")
   file = File.new("posts/what-i-read.txt")
   time = file.mtime
   content = ""
@@ -63,12 +66,15 @@ def build_what_i_read
     end
   end
   content += "</ul>\n"
-  File.write("../what-i-read.html", template.result(binding))
+  template("what-i-read.html.erb", "../what-i-read.html", binding)
 end
 
-format_convert_markdown
-build_index
-build_posts
-build_what_i_read
-took = Process.clock_gettime(Process::CLOCK_MONOTONIC) - start
-puts "success, took #{(took * 1000).round(3)}ms"
+# This allows me to `load` this file to play with its functions in irb
+if $PROGRAM_NAME == __FILE__
+  format_convert_markdown
+  build_index
+  build_posts
+  build_what_i_read
+  took = Process.clock_gettime(Process::CLOCK_MONOTONIC) - start
+  puts "success, took #{(took * 1000).round(3)}ms"
+end
