@@ -1,4 +1,8 @@
 # April 2023
+https://shopify.engineering/shopify-monolith
+https://engineering.gusto.com/laying-the-cultural-and-technical-foundation-for-big-rails/
+https://mailchi.mp/railsspeed/gvl-sql-shotgun-memory-leaks-and-more
+https://blog.peterzhu.ca/ruby-range-bsearch/
 http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html
 https://web.archive.org/web/20111107031226/http://blog.brianbeck.com/post/10967024222/node-js-cures-cancer
 http://widgetsandshit.com/teddziuba/2011/10/node-js-is-cancer.html -- re-reading old drama
