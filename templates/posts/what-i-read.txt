@@ -1,4 +1,5 @@
 # April 2023
+https://news.ycombinator.com/item?id=25510116
 https://shopify.engineering/shopify-monolith
 https://engineering.gusto.com/laying-the-cultural-and-technical-foundation-for-big-rails/
 https://mailchi.mp/railsspeed/gvl-sql-shotgun-memory-leaks-and-more
