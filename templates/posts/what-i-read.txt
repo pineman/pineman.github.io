@@ -1,4 +1,5 @@
 # April 2023
+http://gameprogrammingpatterns.com/state.html
 https://github.com/tigerbeetledb/tigerbeetle/blob/main/docs/HISTORY.md
 https://news.ycombinator.com/item?id=25510116
 https://shopify.engineering/shopify-monolith
