@@ -1,4 +1,7 @@
 # April 2023
+https://compileralchemy.substack.com/p/merge-sort-and-its-early-history
+https://www.kmjn.org/notes/prolog_lost_steam.html
+https://openjdk.org/projects/valhalla/design-notes/in-defense-of-erasure
 https://refactoring.guru/design-patterns/state
 http://gameprogrammingpatterns.com/state.html
 https://github.com/tigerbeetledb/tigerbeetle/blob/main/docs/HISTORY.md
