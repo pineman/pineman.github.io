@@ -1,4 +1,5 @@
 # April 2023
+https://about.sourcegraph.com/blog/postgres-text-search-balancing-query-time-and-relevancy
 https://compileralchemy.substack.com/p/merge-sort-and-its-early-history
 https://www.kmjn.org/notes/prolog_lost_steam.html
 https://openjdk.org/projects/valhalla/design-notes/in-defense-of-erasure
