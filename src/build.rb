@@ -35,6 +35,10 @@ def template(template_file, caller_binding)
 end
 
 def build_index(posts)
+  content = ''
+  posts.each do |post|
+    content += "<li>#{post.time} - <a href=\"#{post.url}\">#{post.title}</a></li>\n"
+  end
   html = template("index.html.erb", binding)
   File.write("../index.html", html)
 end
@@ -44,11 +48,11 @@ def build_posts
     `pandoc #{md} -f gfm -t gfm -o #{md}`
     `pandoc --no-highlight #{md} -f gfm -t html5 -o #{Pathname.new(md).sub_ext(".html")}`
   end
-  Dir["posts/*.html"].map do |html|
-    post = Post.new(html)
+  Dir["posts/*.html"].map do |html_file|
+    post = Post.new(html_file)
     html = template("post.html.erb", binding)
     File.write("../#{post.url}", html)
-    File.delete(html)
+    File.delete(html_file)
     post
   end
 end
