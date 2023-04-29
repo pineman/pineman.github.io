@@ -3,6 +3,7 @@ start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 
 require "erb"
 require "pathname"
+require "nokogiri"
 
 def format_convert_markdown
   Dir["posts/*.md"].each do |file|
@@ -23,9 +24,29 @@ class Post
   end
 end
 
+def highlight(html)
+  # TODO: add 'shell' and 'nokogiri' Gemfile
+  h = Nokogiri::HTML(html)
+  h.css('pre code').each { |code|
+    code['class'] = 'hljs'
+    lang = code.parent['class']
+    # TODO: dont have this require here
+    require 'shell'
+    Shell.verbose = false
+    sh = Shell.new
+    # Text streams are a universal interface. Curiously those are not even
+    # the original words in the Holy Scripture
+    # https://en.wikipedia.org/wiki/Unix_philosophy#Origin
+    code.inner_html = (sh.echo(code.text) | sh.system("node highlight.js #{lang}")).to_s
+  }
+  h.to_s
+end
+
 def template(template_file, destination_file, caller_binding)
   template = ERB.new(File.read(template_file), trim_mode: ">")
-  File.write(destination_file, template.result(caller_binding))
+  html = template.result(caller_binding)
+  html = highlight(html)
+  File.write(destination_file, html)
 end
 
 def build_index
