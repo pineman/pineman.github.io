@@ -24,20 +24,15 @@ class Post
   end
 end
 
-    require 'shell'
 def highlight(html)
-  # TODO: add 'shell' and 'nokogiri' Gemfile
   h = Nokogiri::HTML(html)
   h.css('pre code').each { |code|
     code['class'] = 'hljs'
     lang = code.parent['class']
-    # TODO: dont have this require here
-    Shell.verbose = false
-    sh = Shell.new
     # Text streams are a universal interface. Curiously those are not even
     # the original words in the Holy Scripture
     # https://en.wikipedia.org/wiki/Unix_philosophy#Origin
-    code.inner_html = (sh.echo(code.text) | sh.system("node highlight.js #{lang}")).to_s
+    code.inner_html = `echo '#{code.text}' | node highlight.js #{lang}`
   }
   h.to_s
 end
