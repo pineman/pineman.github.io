@@ -32,6 +32,7 @@ def highlight(html)
     # Text streams are a universal interface. Curiously those are not even
     # the original words in the Holy Scripture
     # https://en.wikipedia.org/wiki/Unix_philosophy#Origin
+    # TODO: shell escape
     code.inner_html = `echo '#{code.text}' | node highlight.js #{lang}`
   }
   h.to_s
