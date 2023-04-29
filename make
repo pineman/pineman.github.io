@@ -3,12 +3,12 @@
 echo "file://$(pwd)/index.html"
 
 build() {
-  cd templates
+  cd src
   ./build.rb
 }
 
 watch() {
-  cd templates
+  cd src
   ls posts/*.md *.erb | entr -d ./build.rb | ts '[%Y-%m-%d %H:%M:%S]'
 }
 
