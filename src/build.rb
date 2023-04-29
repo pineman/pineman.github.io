@@ -24,6 +24,7 @@ class Post
   end
 end
 
+    require 'shell'
 def highlight(html)
   # TODO: add 'shell' and 'nokogiri' Gemfile
   h = Nokogiri::HTML(html)
@@ -31,7 +32,6 @@ def highlight(html)
     code['class'] = 'hljs'
     lang = code.parent['class']
     # TODO: dont have this require here
-    require 'shell'
     Shell.verbose = false
     sh = Shell.new
     # Text streams are a universal interface. Curiously those are not even
