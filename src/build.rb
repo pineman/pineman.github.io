@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-
 require "erb"
 require "pathname"
 require "nokogiri"
@@ -46,15 +44,13 @@ def build_posts
     `pandoc #{md} -f gfm -t gfm -o #{md}`
     `pandoc --no-highlight #{md} -f gfm -t html5 -o #{Pathname.new(md).sub_ext(".html")}`
   end
-  posts = []
-  Dir["posts/*.html"].each do |html|
+  Dir["posts/*.html"].map do |html|
     post = Post.new(html)
-    File.delete(html)
-    posts << post
     html = template("post.html.erb", binding)
     File.write("../#{post.url}", html)
+    File.delete(html)
+    post
   end
-  posts
 end
 
 def build_what_i_read
@@ -83,6 +79,7 @@ end
 
 # This allows me to `load` this file to play with its functions in irb
 if $PROGRAM_NAME == __FILE__
+  start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
   posts = build_posts
   build_index(posts)
   build_what_i_read
