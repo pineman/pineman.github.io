@@ -53,7 +53,7 @@ def build_posts
     html = template("post.html.erb", binding)
     File.write("../#{post.url}", html)
     File.delete(html_file)
-    post
+    post # TODO: should return an array of posts, will break in the future
   end
 end
 
