@@ -1,4 +1,5 @@
 # May 2023
+http://www.paulgraham.com/notnot.html
 https://www.sunsama.com/blog/true-asynch
 https://charity.wtf/2023/05/01/choose-boring-technology-culture/
 https://www.citusdata.com/blog/2016/03/30/five-ways-to-paginate/
