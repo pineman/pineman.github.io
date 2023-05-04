@@ -1,4 +1,7 @@
 # May 2023
+https://charity.wtf/2023/05/01/choose-boring-technology-culture/
+https://www.citusdata.com/blog/2016/03/30/five-ways-to-paginate/
+https://blog.sentry.io/2015/07/23/transaction-id-wraparound-in-postgres/
 https://news.ycombinator.com/item?id=35790367
 https://severalnines.com/blog/overview-caching-postgresql/
 https://thoughtbot.com/blog/skinny-controllers-skinny-models
