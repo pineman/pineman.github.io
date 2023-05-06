@@ -44,11 +44,11 @@ def build_index(posts)
 end
 
 def build_posts
-  Dir["posts/*.md"].each do |md|
+  Dir["../posts/*.md"].each do |md|
     `pandoc #{md} -f gfm -t gfm -o #{md}`
     `pandoc --no-highlight #{md} -f gfm -t html5 -o #{Pathname.new(md).sub_ext(".html")}`
   end
-  Dir["posts/*.html"].map do |html_file|
+  Dir["../posts/*.html"].map do |html_file|
     post = Post.new(html_file)
     html = template("post.html.erb", binding)
     File.write("../#{post.url}", html)
@@ -58,7 +58,7 @@ def build_posts
 end
 
 def build_what_i_read
-  file = File.new("posts/what-i-read.txt")
+  file = File.new("../posts/what-i-read.txt")
   time = file.mtime
   content = ""
   file.readlines.each_with_index do |l, i|

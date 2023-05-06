@@ -4,6 +4,8 @@ echo "file://$(pwd)/index.html"
 
 build() {
   cd src
+  npm ci
+  bundle
   ./build.rb
 }
 
