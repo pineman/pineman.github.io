@@ -1,4 +1,5 @@
 # May 2023
+https://reddit.com/r/java/comments/12jaul0/good_java_industry_blogs/
 https://www.reddit.com/r/programmingcirclejerk/comments/135k7zs/i_write_code_100_hoursweek_heres_why_i_probably/
 https://world.hey.com/dhh/even-amazon-can-t-make-sense-of-serverless-or-microservices-59625580
 https://world.hey.com/dhh/they-re-rebuilding-the-death-star-of-complexity-4fb5d08d
