@@ -4,6 +4,8 @@ GEM
     e2mmap (0.1.0)
     nokogiri (1.14.3-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.14.3-x86_64-linux)
+      racc (~> 1.4)
     racc (1.6.2)
     shell (0.8.1)
       e2mmap
@@ -12,6 +14,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   nokogiri (~> 1.14)
