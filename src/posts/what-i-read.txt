@@ -1,4 +1,14 @@
 # May 2023
+https://blog.rubyhero.dev/advanced-active-record
+https://blog.rubyhero.dev/good-practices-with-active-record
+https://prirai.github.io/books/unix-koans.html
+https://shopify.engineering/adventures-in-garbage-collection
+https://en.wikipedia.org/wiki/Foobar
+https://blog.lambda.cx/posts/lesser-known-irb-features/
+https://hypermedia.systems/book/hypermedia-reintroduction/
+https://quii.dev/How_my_website_works
+https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
+https://quii.dev/HTMX_is_the_Future
 http://www.paulgraham.com/notnot.html
 https://www.sunsama.com/blog/true-asynch
 https://charity.wtf/2023/05/01/choose-boring-technology-culture/
