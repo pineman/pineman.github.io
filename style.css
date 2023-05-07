@@ -87,12 +87,16 @@ header {
     padding: 0;
   }
 }
+:root {
+  --oceanic-bg: #1b2b34;
+  --oceanic-fg: #c0c5ce;
+}
 code {
   border-radius: 0.3em;
   padding: 0 0.3em;
-  color: #c0c5ce;
-  background: #1b2b34;
-  border: 1px #1b2b34 solid;
+  color: var(--oceanic-fg);
+  background: var(--oceanic-bg);
+  border: 1px var(--oceanic-bg) solid;
 }
 @media (prefers-color-scheme: dark) {
   body {
@@ -100,6 +104,6 @@ code {
     color: #fafafa;
   }
   code {
-    border: 1px #c0c5ce solid;
+    border: 1px var(--oceanic-fg) solid;
   }
 }
