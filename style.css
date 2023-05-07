@@ -94,11 +94,19 @@ header {
   --oceanic-bg: #1b2b34;
   --oceanic-fg: #c0c5ce;
 }
-code {
+pre {
   border-radius: 0.3em;
-  padding: 0 0.3em;
+}
+pre code {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+code:not(pre code) {
   color: var(--oceanic-fg);
   background: var(--oceanic-bg);
+  border-radius: 0.3em;
+  padding: 0 0.3em;
   border: 1px var(--oceanic-bg) solid;
 }
 @media (prefers-color-scheme: dark) {
@@ -106,7 +114,7 @@ code {
     background: #2a2a2a;
     color: #fafafa;
   }
-  code {
+  pre, code:not(pre code) {
     border: 1px var(--oceanic-fg) solid;
   }
 }

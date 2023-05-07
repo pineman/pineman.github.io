@@ -1,8 +1,8 @@
 <%= File.read('partials/head.html') %>
 <%= File.read('partials/article-head.html') %>
   <meta property="og:url" content="https://pineman.github.io/<%= post.url %>" />
-  <meta property="article:published_time" content="<%= post.date.gsub('/', '') %>" />
-  <meta property="article:modified_time" content="<%= post.date.gsub('/', '') %>" />
+  <meta property="article:published_time" content="<%= post.date.gsub('-', '') %>" />
+  <meta property="article:modified_time" content="<%= post.date.gsub('-', '') %>" />
   <title><%= post.title %></title>
   <meta property="og:title" content="<%= post.title %>" />
   <meta name="description" content="<%= post.title %>" />
@@ -17,4 +17,7 @@
 <a href="index.html">&lt; back</a>
 </div>
 </body>
+<link rel="stylesheet" href="assets/oceanicnext.min.css">
+<script src="assets/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </html>

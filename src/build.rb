@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require "fileutils"
 require "erb"
 require "nokogiri"
 require "shellwords"
@@ -11,28 +12,25 @@ end
 
 class Post
   attr_reader :url, :content, :title, :date, :description
-  TITLE_REGEX = /<h1.*?>(.*?)<\/h1>/m
-  TIME_REGEX = /<h6.*?>(.*?)<\/h6>/m
   def initialize(file)
-    @url = File.basename(file)
-    @content = File.read(file)
-    @title = @content[TITLE_REGEX, 1].strip
-    @date = @content[TIME_REGEX, 1].strip
-    @description = first_two_paragraphs(@content)
-  end
-  private
-  def first_two_paragraphs(html)
-    h = Nokogiri::HTML(html)
-    descr = h.search('//body/p[1] | //body/p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
-    descr + '<p>...</p>'
+    @date, @url = File.basename(file).split('_')
+    h = Nokogiri::HTML.fragment(File.read(file))
+    h1 = h.at('h1')
+    @title = h1.text
+    h1.after("<time datetime=\"#{@date}\">#{@date}</time>")
+    @content = h.to_s
+    descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
+    @description = descr + '<p>...</p>'
   end
 end
 
 def build_posts
+  FileUtils.rm_rf('../posts/html')
+  FileUtils.mkdir('../posts/html')
   Dir["../posts/*.md"].each do |md|
     # Using pandoc 3.1.2
     `pandoc #{md} -f gfm -t gfm -o #{md}`
-    html = "#{File.dirname(md)}/html/#{File.basename(md, '.*')}.html"
+    html = "../posts/html/#{File.basename(md, '.*')}.html"
     `pandoc --no-highlight #{md} -f gfm -t html5 -o #{html}`
   end
   Dir["../posts/html/*.html"].map do |html_file|
@@ -46,7 +44,7 @@ end
 def build_index(posts)
   content = ''
   posts.sort_by(&:date).reverse.each do |post|
-    content += "<li>#{post.date} - <a href=\"#{post.url}\">#{post.title}</a></li>\n"
+    content += "<li><time datetime=\"#{post.date}\">#{post.date}</time> <a href=\"#{post.url}\">#{post.title}</a></li>\n"
   end
   html = template("index.html.erb", binding)
   File.write("../index.html", html)

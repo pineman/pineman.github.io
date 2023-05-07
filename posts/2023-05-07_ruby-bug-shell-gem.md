@@ -1,7 +1,5 @@
 # I found a (microscopic) ruby bug and it got fixed in 3 hours
 
-###### 2023/05/07
-
 I'm using [highlight.js](https://highlightjs.org/) for syntax
 highlighting in this blog, client-side. I was looking to pre-compute it
 statically, so I wrote a little node.js helper that reads stdin,
