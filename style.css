@@ -75,6 +75,9 @@ header {
 #header-text i {
   padding-right: 0.5rem;
 }
+#header-text i.fas.fa-file-alt {
+  padding-left: 1px;
+}
 @media (max-width: 76ch) {
   header {
     grid-template-columns: initial;

@@ -1,18 +1,23 @@
 #!/usr/bin/env ruby
 require "erb"
-require "pathname"
 require "nokogiri"
 require "shellwords"
 
+def template(template_file, caller_binding)
+  template = ERB.new(File.read(template_file), trim_mode: ">")
+  template.result(caller_binding)
+end
+
 class Post
-  attr_reader :url, :content, :title, :time
+  attr_reader :url, :content, :title, :date, :description
   TITLE_REGEX = /<h1.*?>(.*?)<\/h1>/m
   TIME_REGEX = /<h6.*?>(.*?)<\/h6>/m
   def initialize(file)
     @url = File.basename(file)
     @content = highlight(File.read(file))
     @title = @content[TITLE_REGEX, 1].strip
-    @time = @content[TIME_REGEX, 1].strip
+    @date = @content[TIME_REGEX, 1].strip
+    @description = first_two_paragraphs(@content)
   end
   private
   def highlight(html)
@@ -27,35 +32,54 @@ class Post
     }
     h.to_s
   end
-end
-
-def template(template_file, caller_binding)
-  template = ERB.new(File.read(template_file), trim_mode: ">")
-  template.result(caller_binding)
-end
-
-def build_index(posts)
-  posts = posts.sort_by(&:time).reverse
-  content = ''
-  posts.each do |post|
-    content += "<li>#{post.time} - <a href=\"#{post.url}\">#{post.title}</a></li>\n"
+  def first_two_paragraphs(html)
+    h = Nokogiri::HTML(html)
+    descr = h.search('//body/p[1] | //body/p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
+    descr + '<p>...</p>'
   end
-  html = template("index.html.erb", binding)
-  File.write("../index.html", html)
 end
 
 def build_posts
   Dir["../posts/*.md"].each do |md|
+    # Using pandoc 3.1.2
     `pandoc #{md} -f gfm -t gfm -o #{md}`
-    `pandoc --no-highlight #{md} -f gfm -t html5 -o #{Pathname.new(md).sub_ext(".html")}`
+    `pandoc --no-highlight #{md} -f gfm -t html5 -o #{File.dirname(md)}/html/#{File.basename(md, '.*')}.html`
   end
-  Dir["../posts/*.html"].map do |html_file|
+  Dir["../posts/html/*.html"].map do |html_file|
     post = Post.new(html_file)
     html = template("post.html.erb", binding)
     File.write("../#{post.url}", html)
-    File.delete(html_file)
     post
   end
+end
+
+def build_rss(posts)
+  require "rss"
+  rss = RSS::Maker.make("atom") do |maker|
+    maker.channel.author = "João Pinheiro"
+    maker.channel.title = "João Pinheiro"
+    maker.channel.about = "https://pineman.github.io"
+    maker.channel.updated = posts.last.date
+    posts.each do |post|
+      maker.items.new_item do |item|
+        item.title = post.title
+        item.link = "https://pineman.github.io/#{post.url}"
+        item.updated = post.date
+        item.description = post.description
+      end
+    end
+  end
+  File.write("../atom.xml", rss)
+end
+
+def build_index(posts)
+  posts = posts.sort_by(&:date).reverse
+  content = ''
+  posts.each do |post|
+    content += "<li>#{post.date} - <a href=\"#{post.url}\">#{post.title}</a></li>\n"
+  end
+  html = template("index.html.erb", binding)
+  File.write("../index.html", html)
 end
 
 def build_what_i_read
@@ -86,6 +110,7 @@ end
 if $PROGRAM_NAME == __FILE__
   start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
   posts = build_posts
+  build_rss(posts)
   build_index(posts)
   build_what_i_read
   took = Process.clock_gettime(Process::CLOCK_MONOTONIC) - start

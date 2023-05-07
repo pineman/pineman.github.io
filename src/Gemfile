@@ -2,8 +2,5 @@
 
 source "https://rubygems.org"
 
-# gem "rails"
-
-gem "nokogiri", "~> 1.14"
-
-gem "shell", "~> 0.8.1"
+gem "nokogiri", "1.14.3"
+gem "rss", "0.2.9"
