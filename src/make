@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo "file://$(pwd)/../index.html"
+
+build() {
+  bundle
+  ./build.rb
+}
+
+watch() {
+  ls ../posts/*.md ../style.css *.erb | entr -d ./build.rb | ts '[%Y-%m-%d %H:%M:%S]'
+}
+
+eval "${@:-build}"

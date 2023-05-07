@@ -28,18 +28,16 @@ profiling Go, existential crisis" />
 profiling Go, existential crisis" />
   <meta property="og:description" content="AoC 2022: day 3,
 profiling Go, existential crisis" />
-  <link rel="stylesheet" href="assets/oceanicnext.min.css">
 </head>
 <body>
 <div id="wrap">
 <a href="index.html">&lt; back</a>
 <article>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<html><body>
 <h1 id="aoc-2022-day-3-profiling-go-existential-crisis">AoC 2022: day 3,
 profiling Go, existential crisis</h1>
 <h6 id="20221203">2022/12/03</h6>
-<p>Ok hi! One of my first projects ever was a <a href="https://github.com/pineman/code/tree/main/old_proj/pineblog">blog
+<p>Ok hi! One of my first projects ever was a <a
+href="https://github.com/pineman/code/tree/main/old_proj/pineblog">blog
 written in python flask</a> (please don't look at it, it was 2015). Even
 though I shut it down a couple of months after having it up on my server
 (a VPS at the time), my admiration for blogging didn't stop and, of
@@ -54,15 +52,20 @@ opportunity to share some of my favorite blogs, from people I admire
 dropbox, twitter, cloudflare, ...):</p>
 <ul>
 <li><a href="https://jvns.ca/">https://jvns.ca/</a></li>
-<li><a href="https://rachelbythebay.com/w/">https://rachelbythebay.com/w/</a></li>
-<li><a href="https://www.brendangregg.com/blog/">https://www.brendangregg.com/blog/</a></li>
-<li><a href="https://martin.kleppmann.com/archive.html">https://martin.kleppmann.com/archive.html</a></li>
-<li><a href="http://dtrace.org/blogs/bmc/">http://dtrace.org/blogs/bmc/</a></li>
+<li><a
+href="https://rachelbythebay.com/w/">https://rachelbythebay.com/w/</a></li>
+<li><a
+href="https://www.brendangregg.com/blog/">https://www.brendangregg.com/blog/</a></li>
+<li><a
+href="https://martin.kleppmann.com/archive.html">https://martin.kleppmann.com/archive.html</a></li>
+<li><a
+href="http://dtrace.org/blogs/bmc/">http://dtrace.org/blogs/bmc/</a></li>
 </ul>
 <p>But onwards to today's topic!</p>
 <p>So this year I'm yet again trying to follow through on Advent of
 Code, instead of... forgetting about it on day two, as with the past
-<em>whatever</em> years. As I read <a href="https://adventofcode.com/2022/day/3">day three's statement</a>, I
+<em>whatever</em> years. As I read <a
+href="https://adventofcode.com/2022/day/3">day three's statement</a>, I
 immediately thought of the "obvious" O(n^2) solution: for each item in
 the first compartment, check if it's in the second compartment - on the
 first hit, sum its priority and break (this description is almost
@@ -76,7 +79,8 @@ And, for some reason, my intution also thinks sets are really smart
 (probably from solving leetcode in python, plus hash tables are
 amazing). So, a-ha, idea: build a set for each compartment, and
 intersect them. Building a set should be O(n), intersecting them should
-be linear as well <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and voilà! Linear time without
+be linear as well <a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>, and voilà! Linear time without
 "ugly" for loops (... in python, which I guess is my brain's default
 language). So I eagerly went along, and implemented my set-based
 solution (in Go, which doesn't have sets in the stdlib, which I just
@@ -91,16 +95,19 @@ problem is so simple, its volume of data so small and well crafted, that
 just the map overhead is overwhelming! Or, at least, cpu time complexity
 is not the whole story, because I didn't even think about memory access!
 Or yet some other reason I clearly missed! Because here's the proof:
-using a bigger input <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, and using
+using a bigger input <a href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>, and using
 <code>go test -bench</code>, my set solution takes 5.42 seconds to solve
 part two (not counting reading the input file and turning it into an
 array of string), while the 'naive', 'dumb', more procedural solution
 runs in 139ms (more on this solution later). That's a ~39x speedup (!!).
 And that's pretty slow: I saw some rust and C++ going at just ~10ms for
 part two, another order of magnitude faster. So, I took this opportunity
-to profile my Go code. Find all my (bad) code <a href="https://github.com/pineman/AoC2022/blob/main/2022/day3/three.go#L48">here</a>.</p>
+to profile my Go code. Find all my (bad) code <a
+href="https://github.com/pineman/AoC2022/blob/main/2022/day3/three.go#L48">here</a>.</p>
 <h3 id="profiling-for-fun">Profiling for fun</h3>
-<p>These are the resources I followed: <a href="https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/">https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/</a>
+<p>These are the resources I followed: <a
+href="https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/">https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/</a>
 and <a href="https://go.dev/blog/pprof">https://go.dev/blog/pprof</a>
 (in fact, the first half of this latter link describes exactly the
 problem I had: using a map when an array is sufficient). Of course, my
@@ -112,7 +119,7 @@ files that <code>go tool pprof</code> can read and then generate output
 in text, or even png or pdf. Here's the cpu time breakdown, generated
 with <code>go tool pprof -top -cum cpu.out</code>, for part two only
 (truncated):</p>
-<pre class="plaintext"><code class="hljs">     flat  flat%   sum%        cum   cum%
+<pre class="plaintext"><code>     flat  flat%   sum%        cum   cum%
         0     0%     0%      5.50s 84.23%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy_set
         0     0%     0%      5.50s 84.23%  testing.(*B).run1.func1
         0     0%     0%      5.50s 84.23%  testing.(*B).runN
@@ -120,14 +127,13 @@ with <code>go tool pprof -top -cum cpu.out</code>, for part two only
     0.30s  4.59%  5.05%      3.83s 58.65%  github.com/pineman/code/chall/aoc2022/go/day3.itemMap (inline)
     1.54s 23.58% 28.64%      3.67s 56.20%  runtime.mapassign_fast32
     0.07s  1.07% 29.71%      1.37s 20.98%  github.com/pineman/code/chall/aoc2022/go/day3.intersectMap (inline)
-        0     0% 29.71%      1.09s 16.69%  runtime.systemstack
-</code></pre>
+        0     0% 29.71%      1.09s 16.69%  runtime.systemstack</code></pre>
 <p>From the cumulative column, it looks like <code>itemMap</code> and
 <code>intersectMap</code> were on the stack 59% and 21% of the time,
 respectively, to the shock of no one. Just building maps and iterating
 through them away, heating my house. Imagine all the hashing and pointer
 chasing... Well, here's the memory profile:</p>
-<pre class="plaintext"><code class="hljs">     flat  flat%   sum%        cum   cum%
+<pre class="plaintext"><code>     flat  flat%   sum%        cum   cum%
         0     0%     0%  2395.03MB 99.69%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy_set
         0     0%     0%  2395.03MB 99.69%  testing.(*B).run1.func1
         0     0%     0%  2395.03MB 99.69%  testing.(*B).runN
@@ -139,13 +145,12 @@ chasing... Well, here's the memory profile:</p>
  100.66MB  4.19% 95.74%   100.66MB  4.19%  os.ReadFile
         0     0% 95.74%    49.07MB  2.04%  strings.Split (inline)
   49.07MB  2.04% 97.78%    49.07MB  2.04%  strings.genSplit
-     46MB  1.91% 99.69%       46MB  1.91%  github.com/pineman/code/chall/aoc2022/go/day3.getFirstKey (inline)
-</code></pre>
+     46MB  1.91% 99.69%       46MB  1.91%  github.com/pineman/code/chall/aoc2022/go/day3.getFirstKey (inline)</code></pre>
 <p>Is that... 2GB <strong>just</strong> in maps? Is this right?... Oh
 god... The input file is 100MB, as noted by <code>getInput</code>! I
 think I've had quite enough of this embarrassment. For comparison, heres
 the cpu and mem profiles of the 'procedural' version:</p>
-<pre class="plaintext"><code class="hljs">     flat  flat%   sum%        cum   cum%
+<pre class="plaintext"><code>     flat  flat%   sum%        cum   cum%
         0     0%     0%      3.18s 93.26%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy
         0     0%     0%      3.18s 93.26%  testing.(*B).runN
     0.60s 17.60% 17.60%      2.92s 85.63%  github.com/pineman/code/chall/aoc2022/go/day3.partTwo
@@ -153,9 +158,8 @@ the cpu and mem profiles of the 'procedural' version:</p>
     0.16s  4.69% 22.29%      2.30s 67.45%  strings.ContainsRune (inline)
     0.39s 11.44% 33.72%      2.14s 62.76%  strings.IndexRune
     0.12s  3.52% 37.24%      1.80s 52.79%  strings.IndexByte (inline)
-    1.54s 45.16% 82.40%      1.54s 45.16%  indexbytebody
-</code></pre>
-<pre class="plaintext"><code class="hljs">     flat  flat%   sum%        cum   cum%
+    1.54s 45.16% 82.40%      1.54s 45.16%  indexbytebody</code></pre>
+<pre class="plaintext"><code>     flat  flat%   sum%        cum   cum%
         0     0%     0%   250.88MB 97.64%  testing.(*B).run1.func1
         0     0%     0%   250.88MB 97.64%  testing.(*B).runN
         0     0%     0%   250.38MB 97.44%  github.com/pineman/code/chall/aoc2022/go.GetBigBoyInput
@@ -163,29 +167,35 @@ the cpu and mem profiles of the 'procedural' version:</p>
         0     0% 39.17%   250.38MB 97.44%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy
  100.66MB 39.17% 78.34%   101.16MB 39.37%  os.ReadFile
         0     0% 78.34%    49.07MB 19.10%  strings.Split (inline)
-  49.07MB 19.10% 97.44%    49.07MB 19.10%  strings.genSplit
-</code></pre>
+  49.07MB 19.10% 97.44%    49.07MB 19.10%  strings.genSplit</code></pre>
 <p>Nothing much to say here. 70% of time comparing characters, which is
 the core of what we want to do, anyway, and not much extra memory
 consumption compared to the input file size. For extra fun, here's the
-svg files <code>pprof</code> can generate, for the slow version: <a href="assets/profile001.svg">cpu</a>, <a href="assets/profile002.svg">mem</a>; and for the fast version: <a href="assets/profile003.svg">cpu</a>, <a href="assets/profile004.svg">mem</a></p>
+svg files <code>pprof</code> can generate, for the slow version: <a
+href="assets/profile001.svg">cpu</a>, <a
+href="assets/profile002.svg">mem</a>; and for the fast version: <a
+href="assets/profile003.svg">cpu</a>, <a
+href="assets/profile004.svg">mem</a></p>
 <h3 id="conclusion">Conclusion</h3>
 <p><a href="https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast">"Make
 it work. Make it right. Make it fast."</a> - I know this! Normally I'd
 like to think I do this (or, at least, when 'making it work' doesn't
 involve a huge amount of tech debt I guess). Also: measure before you
 optimize! Performance assumptions are sometimes hard to make out of
-intuition. Also also: <a href="https://wiki.c2.com/?PrematureOptimization">something something
+intuition. Also also: <a
+href="https://wiki.c2.com/?PrematureOptimization">something something
 premature optimization</a> (I love computer science quotes). <strong>SO
 WHY DIDN'T I DO THIS FROM THE START?</strong> Why did I chase "full
 generality" just for the sake of it? I have no answers for you, dear
 reader. It might even be an unconfortable answer for me. I'm half
-blaming it on <a href="https://en.wikipedia.org/wiki/Priming_(psychology)">mental
+blaming it on <a
+href="https://en.wikipedia.org/wiki/Priming_(psychology)">mental
 priming</a>, and the fact that I'm using AoC2022 to learn Go (after
 "learning Go" twice in the last three years) - so it makes sense to
 implement more things, in more generality, to learn more about the
 language; and indeed I did that for day one and two, even though I
-couldn't resist the temptation of writing a <a href="https://github.com/pineman/aoc/blob/main/2022/day1/python/one_oneliner.py">one
+couldn't resist the temptation of writing a <a
+href="https://github.com/pineman/aoc/blob/main/2022/day1/python/one_oneliner.py">one
 liner in python for day one</a>. Still, it hurts a little... But that's
 not all.</p>
 <p>When I finish solving a day, I go and browse other people's solutions
@@ -198,15 +208,18 @@ directly check if each item of the first is in the second and third.
 mine, bar two lines of code", I said to myself, half proudly still.
 "It's gotta be slower". So I implement it. And it's faster. 39x faster.
 And this is the real kick in the teeth: <strong>the solution I was
-looking at was written by <a href="https://openai.com/blog/chatgpt/">ChatGPT</a></strong>. At first I
+looking at was written by <a
+href="https://openai.com/blog/chatgpt/">ChatGPT</a></strong>. At first I
 didn't know how to feel. Some thirty minutes in, and I find my solution
 is stupid and completely obliterated by an AI that took just 2 seconds
-to do it... Welp, after <a href="https://news.ycombinator.com/item?id=33847479">reading up more on
+to do it... Welp, after <a
+href="https://news.ycombinator.com/item?id=33847479">reading up more on
 ChatGPT</a>, I'm convinced it won't put me out of a job just yet, or
 even next year. But in the next 10, 20 years?... I'm much more
 anxious.</p>
-<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
 <ol>
 <li id="fn1"><p>Assuming lookup is O(1)... approximately. Of course,
 it's more like amortized cost - in a terrible hash table (or just a
@@ -214,15 +227,20 @@ terrible day or input) buckets are arrays, and using a terrible hash
 function all items end up in the same bucket, so the cost starts to look
 a lot more like O(n) due to linear searches, and intersection goes more
 like O(n^2) (maybe O(nlog n) using un-sorted trees). I bet all of this
-is wrong though.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+is wrong though.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>People on... the internet... usually craft these
-so-called 'big boy' inputs. <a href="https://github.com/pineman/AoC2022/blob/main/2022/input/3/bigboy.7z">Here's
-the one I used</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+so-called 'big boy' inputs. <a
+href="https://github.com/pineman/AoC2022/blob/main/2022/input/3/bigboy.7z">Here's
+the one I used</a>.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
-</body></html>
 </article>
 <a href="index.html">&lt; back</a>
 </div>
 </body>
+<link rel="stylesheet" href="assets/oceanicnext.min.css">
+<script src="assets/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </html>

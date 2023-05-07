@@ -16,15 +16,17 @@ prototyping, I put the `require` statement right next to its usage, in a
 loop. When I tried hoisting it outside, where `require` normally goes,
 the script started raising an error:
 
-    .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:261:in `close': uninitialized stream (IOError)
-        from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:261:in `block (4 levels) in sfork'
-        from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:259:in `each_object'
-        from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:259:in `block (3 levels) in sfork'
-        from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:251:in `fork'
-        from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:251:in `block (2 levels) in sfork'
-        from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:64:in `synchronize'
-        from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:64:in `block_output_synchronize'
-        from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:243:in `block in sfork'
+``` plaintext
+.../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:261:in `close': uninitialized stream (IOError)
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:261:in `block (4 levels) in sfork'
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:259:in `each_object'
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:259:in `block (3 levels) in sfork'
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:251:in `fork'
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:251:in `block (2 levels) in sfork'
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:64:in `synchronize'
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:64:in `block_output_synchronize'
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:243:in `block in sfork'
+```
 
 That is... strange? I try and look for usages of this gem on
 [sourcegraph](https://sourcegraph.com/search), but my code seems okay.
@@ -66,7 +68,9 @@ and introspectable, right? So I use `ObjectSpace.dump_all(output: io)`
 to dump all objects, and cross-ref with address of the failed IO object
 from my debug log. I get something like this:
 
-    {"address":"0x101315888", "type":"FILE", "class":"0x10109ea50", "file":"./build.rb", "line":14, "method":"`", "generation":16, "memsize":40}
+``` plaintext
+{"address":"0x101315888", "type":"FILE", "class":"0x10109ea50", "file":"./build.rb", "line":14, "method":"`", "generation":16, "memsize":40}
+```
 
 And line 14 is exactly where I call `pandoc` using backticks.
 `0x10109ea50` is the `IO` class object.
