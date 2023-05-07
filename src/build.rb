@@ -43,7 +43,8 @@ end
 
 def build_index(posts)
   content = ''
-  posts.sort_by(&:date).reverse.each do |post|
+  posts.sort_by!(&:date)
+  posts.reverse.each do |post|
     content += "<li><time datetime=\"#{post.date}\">#{post.date}</time> <a href=\"#{post.url}\">#{post.title}</a></li>\n"
   end
   html = template("index.html.erb", binding)
@@ -54,7 +55,7 @@ def build_index(posts)
       maker.channel.title = "João Pinheiro"
       maker.channel.about = "https://pineman.github.io"
       maker.channel.updated = posts.last.date
-      posts.sort_by(&:date).each do |post|
+      posts.each do |post|
         maker.items.new_item do |item|
           item.title = post.title
           item.link = "https://pineman.github.io/#{post.url}"
