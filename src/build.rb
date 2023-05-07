@@ -19,7 +19,7 @@ class Post
     h = Nokogiri::HTML(html)
     h.css('pre code').each { |code|
       code['class'] = 'hljs'
-      lang = code.parent['class']
+      lang = code.parent['class'] || 'plaintext'
       # Text streams are a universal interface
       # Curiously those are not even the original words in the Holy Scripture
       # https://en.wikipedia.org/wiki/Unix_philosophy#Origin
@@ -35,6 +35,7 @@ def template(template_file, caller_binding)
 end
 
 def build_index(posts)
+  posts = posts.sort_by(&:time).reverse
   content = ''
   posts.each do |post|
     content += "<li>#{post.time} - <a href=\"#{post.url}\">#{post.title}</a></li>\n"
@@ -53,7 +54,7 @@ def build_posts
     html = template("post.html.erb", binding)
     File.write("../#{post.url}", html)
     File.delete(html_file)
-    post # TODO: should return an array of posts, will break in the future
+    post
   end
 end
 

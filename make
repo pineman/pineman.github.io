@@ -11,7 +11,7 @@ build() {
 
 watch() {
   cd src
-  ls posts/*.md *.erb | entr -d ./build.rb | ts '[%Y-%m-%d %H:%M:%S]'
+  ls ../posts/*.md *.erb | entr -d ./build.rb | ts '[%Y-%m-%d %H:%M:%S]'
 }
 
 eval "${@:-build}"

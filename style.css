@@ -87,3 +87,19 @@ header {
     padding: 0;
   }
 }
+code {
+  border-radius: 0.3em;
+  padding: 0 0.3em;
+  color: #c0c5ce;
+  background: #1b2b34;
+  border: 1px #1b2b34 solid;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #2a2a2a;
+    color: #fafafa;
+  }
+  code {
+    border: 1px #c0c5ce solid;
+  }
+}
