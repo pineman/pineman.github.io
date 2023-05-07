@@ -3,13 +3,13 @@
 echo "file://$(pwd)/index.html"
 
 build() {
-  cd src
+  cd lib
   bundle
   ./build.rb
 }
 
 watch() {
-  cd src
+  cd lib
   ls ../posts/*.md *.erb build.rb | entr -d ./build.rb | ts '[%Y-%m-%d %H:%M:%S]'
 }
 
