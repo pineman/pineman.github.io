@@ -1,0 +1,11 @@
+* ver prepend_features.rb
+
+* modules can be instantiated
+
+* bypass private
+
+* koans: about_objects.rb:40
+	 best explanation: https://stackoverflow.com/a/25744887
+	 my friend tito found an integer with an even object_id
+	 (0..).lazy.map(&:object_id).find(&:even?)
+	 (0..2**64).bsearch { _1.object_id.even? }
