@@ -1,4 +1,10 @@
 # May 2023
+https://www.akshaykhot.com/throw-and-catch-in-ruby/
+https://subtls.pages.dev/
+https://engineering.gusto.com/singed-a-profiler-front-end-for-ruby-and-rails-applications/
+https://blog.appsignal.com/2023/05/10/organize-business-logic-in-your-ruby-on-rails-application.html
+https://blog.thelifeofkenneth.com/2023/05/building-micro-mirror-free-software-cdn.html?m=1
+https://www.aha.io/engineering/articles/solving-a-critical-bug-in-the-default-rails-caching-library
 https://www.timescale.com/blog/how-to-fix-transaction-id-wraparound/
 https://philbooth.me/blog/nine-ways-to-shoot-yourself-in-the-foot-with-postgresql
 https://iamvery.com/2022/10/19/better-live-view-tests.html
