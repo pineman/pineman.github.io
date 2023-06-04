@@ -1,4 +1,12 @@
 # June 2023
+https://databasearchitects.blogspot.com/2021/06/what-every-programmer-should-know-about.html?m=1
+https://fly.io/blog/carving-the-scheduler-out-of-our-orchestrator/
+https://qntm.org/ratchet
+https://pkolaczk.github.io/memory-consumption-of-async/
+https://pkolaczk.github.io/server-slower-than-a-laptop/
+https://lethain.com/migrations/
+https://www.vector-logic.com/blog/posts/three-things-to-avoid-when-building-rails-controllers
+http://tenderlovemaking.com/
 https://web.archive.org/web/20110714074727/http://erlang.2086793.n4.nabble.com/Erlang-Web-Servers-challenge-td3643848.html
 https://www.youtube.com/watch?v=LMe7hf2G1po
 # May 2023
