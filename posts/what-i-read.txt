@@ -1,4 +1,8 @@
 # June 2023
+https://firehydrant.com/blog/using-advisory-locks-to-avoid-race-conditions-in-rails/
+https://use-the-index-luke.com/3-minute-test/postgresql
+https://use-the-index-luke.com/blog/2016-07-29/on-ubers-choice-of-databases
+https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most/
 https://databasearchitects.blogspot.com/2021/06/what-every-programmer-should-know-about.html?m=1
 https://fly.io/blog/carving-the-scheduler-out-of-our-orchestrator/
 https://qntm.org/ratchet
