@@ -1,4 +1,5 @@
 # June 2023
+https://www.youtube.com/watch?v=B1J2RMorJXM
 https://www.youtube.com/watch?v=5rb0vvJ7NCY -- really good!
 https://www.figma.com/blog/how-figma-scaled-to-multiple-databases/
 https://firehydrant.com/blog/using-advisory-locks-to-avoid-race-conditions-in-rails/
