@@ -1,4 +1,6 @@
 # June 2023
+https://hauleth.dev/post/beam-process-memory-usage/?utm_medium=email&utm_source=elixir-radar
+https://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html
 https://www.youtube.com/watch?v=B1J2RMorJXM
 https://www.youtube.com/watch?v=5rb0vvJ7NCY -- really good!
 https://www.figma.com/blog/how-figma-scaled-to-multiple-databases/
