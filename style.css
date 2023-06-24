@@ -13,6 +13,11 @@ body {
   display: flex;
   justify-content: center;
 }
+svg {
+  fill: white;
+  vertical-align: text-bottom;
+  width: 1em;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -74,9 +79,6 @@ header {
 }
 #header-text i {
   padding-right: 0.5rem;
-}
-#header-text i.fas.fa-file-alt {
-  padding-left: 1px;
 }
 @media (max-width: 76ch) {
   header {
