@@ -1,4 +1,5 @@
 # June 2023
+https://surfingcomplexity.blog/2017/06/24/a-conjecture-on-why-reliable-systems-fail/
 https://www.youtube.com/watch?v=Ox5P7QyL774
 https://instagram-engineering.com/copy-on-write-friendly-python-garbage-collection-ad6ed5233ddf
 https://shopify.engineering/ruby-execution-models
