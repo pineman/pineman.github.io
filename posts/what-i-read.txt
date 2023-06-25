@@ -1,4 +1,6 @@
 # June 2023
+https://admcpr.com/postgres-full-text-search-is-better-than-part-2/ https://chat.openai.com/share/25455953-641d-4387-85f0-d448d4ae55ec
+https://admcpr.com/postgres-full-text-search-is-better-than-part1/
 https://www.oreilly.com/radar/how-i-failed/
 https://korennoy.com/2023/06/09/adding-io_uring-to-java/
 https://nanovms.com/dev/tutorials/running-postgres-as-a-unikernel https://news.ycombinator.com/item?id=364208900
