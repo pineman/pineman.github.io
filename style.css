@@ -14,7 +14,7 @@ body {
   justify-content: center;
 }
 svg {
-  fill: white;
+  fill: black;
   vertical-align: text-bottom;
   width: 1em;
 }
@@ -118,5 +118,8 @@ code:not(pre code) {
   }
   pre, code:not(pre code) {
     border: 1px var(--oceanic-fg) solid;
+  }
+  svg {
+    fill: white;
   }
 }
