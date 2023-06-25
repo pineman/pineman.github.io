@@ -1,4 +1,13 @@
 # June 2023
+https://xeiaso.net/blog/anything-message-queue
+https://docs.google.com/presentation/d/1g3XoBToWJF2jO0hDYk1n-24oSPsm5WkZCWo0Lq5fNGE/mobilepresent?slide=id.g2222d5322d9_3_1
+https://underjord.io/the-many-states-of-elixir.html
+http://www.aaronsw.com/weblog/rewritingreddit (RIP)
+https://web.archive.org/web/20060206185841/http://reddit.com:80/blog/2005/12/on-lisp.html
+https://lwn.net/SubscriberLink/934940/3abb2d4086680b78/
+https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/ (https://news.ycombinator.com/item?id=36429986)
+http://dtrace.org/blogs/bmc/2005/07/19/dtrace-safety/
+https://blog.devgenius.io/analyzing-new-unique-identifier-formats-uuidv6-uuidv7-and-uuidv8-d6cc5cd7391a
 https://www.umsl.edu/~siegelj/information_theory/classassignments/Lombardo/04_intractableproblems.html
 https://fly.io/phoenix-files/make-your-liveview-feel-faster/
 https://surfingcomplexity.blog/2017/06/24/a-conjecture-on-why-reliable-systems-fail/
