@@ -73,12 +73,11 @@ def build_what_i_read
   file = File.new("../posts/what-i-read.txt")
   time = file.mtime
   content = ""
-  file.readlines.each_with_index do |l, i|
+  file.readlines.each do |l|
     l.strip!
     case l
     when /^# /
-      content += "</ul>\n" if i != 0
-      content += "<h4>#{l[2..]}</h4>\n<ul>\n"
+      content += "</ul>\n<h4>#{l[2..]}</h4>\n<ul>\n"
     when /^https?:\/\//
       url, descr = l.split(" ", 2)
       content += "  <li><a href=\"#{url}\">#{url}</a> #{descr}</li>\n"
@@ -89,6 +88,7 @@ def build_what_i_read
     end
   end
   content += "</ul>\n"
+  content.sub!("</ul>\n", "")
   html = template("what-i-read.html.erb", binding)
   File.write("../what-i-read.html", html)
 end
