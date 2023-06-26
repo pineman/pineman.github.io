@@ -2,7 +2,6 @@
 require "fileutils"
 require "erb"
 require "nokogiri"
-require "shellwords"
 require "rss"
 
 def template(template_file, caller_binding)
