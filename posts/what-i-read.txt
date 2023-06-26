@@ -1,4 +1,5 @@
 # June 2023
+https://www.youtube.com/watch?v=MZvmYaFkNJI
 https://thepugautomatic.com/2020/07/optimising-data-over-the-wire-in-phoenix-liveview/
 https://elixirforum.com/t/liveview-re-renders-all-assigns-inside-for-loop-not-only-the-ones-that-changed/37587/4
 https://dockyard.com/blog/2022/08/18/liveview-rendering-pitfalls-and-how-to-avoid-them
