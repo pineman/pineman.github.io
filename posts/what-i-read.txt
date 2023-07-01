@@ -1,4 +1,5 @@
 # June 2023
+https://www.paweldabrowski.com/articles/five-things-you-did-not-know-about-rails-transactions
 https://cohost.org/tef/post/1764930-how-not-to-write-a
 https://www.bitecode.dev/p/hype-cycles
 https://web.archive.org/web/20160416000938/https://circleci.com/blog/it-really-is-the-future/
