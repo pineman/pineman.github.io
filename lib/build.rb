@@ -18,7 +18,8 @@ class Post
     @title = h1.text
     h1.after("<time datetime=\"#{@date}\">#{@date}</time>")
     @content = h.to_s
-    descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
+    #descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
+    descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m]
     @description = descr + '<p>...</p>'
   end
 end
