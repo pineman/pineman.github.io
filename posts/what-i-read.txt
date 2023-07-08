@@ -1,3 +1,14 @@
+# July 2023
+https://meetryanflowers.com/that-wont-work/
+https://cohost.org/tef/post/1794038-special-interest-inf
+https://www.youtube.com/watch?app=desktop&v=ZM8lJIJb2Q4
+https://medium.com/airbnb-engineering/sunsetting-react-native-1868ba28e30a
+https://apenwarr.ca/log/?m=202306
+https://usefathom.com/blog/worlds-fastest-analytics
+https://usefathom.com/blog/does-laravel-scale
+https://usefathom.com/blog/migrating-our-database
+https://cohost.org/tef/post/1764930-how-not-to-write-a
+http://paulgraham.com/greatwork.html
 # June 2023
 https://www.paweldabrowski.com/articles/five-things-you-did-not-know-about-rails-transactions
 https://cohost.org/tef/post/1764930-how-not-to-write-a
