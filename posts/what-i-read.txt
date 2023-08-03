@@ -1,4 +1,6 @@
 # July 2023
+http://www.paulgraham.com/avg.html
+http://www.randomhacks.net.s3-website-us-east-1.amazonaws.com/2005/12/03/why-ruby-is-an-acceptable-lisp/
 https://www.youtube.com/watch?v=W8qiDhlFVCE
 https://cyber.dabamos.de/unix/x11/
 https://davidgomes.com/what-should-software-engineers-work-on-as-they-grow/
