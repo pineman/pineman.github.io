@@ -1,6 +1,7 @@
-# July 2023
+# August 2023
 https://morningcoffee.io/interfaces-in-ruby.html
 https://www.youtube.com/watch?v=J1f5b4vcxCQ
+# July 2023
 http://www.paulgraham.com/avg.html
 http://www.randomhacks.net.s3-website-us-east-1.amazonaws.com/2005/12/03/why-ruby-is-an-acceptable-lisp/
 https://www.youtube.com/watch?v=W8qiDhlFVCE
