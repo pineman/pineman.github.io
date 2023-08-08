@@ -7,24 +7,12 @@
     </div>
   </body>
   <script>
-    // global state
-    const new9x9Matrix = () =>
-      Array(9)
-        .fill()
-        .map(() => Array(9).fill());
-    let rows = new9x9Matrix();
-    let cols = new9x9Matrix();
-    let boxes = new9x9Matrix();
     let sel = undefined;
-    // grid
     const test = (e) => {
       [_, r, c] = e.target.id;
       if (solution[r][c] == sel) {
-        rows[r][c] = sel;
-        cols[c][r] = sel;
-        boxes[box][boxi] = sel;
         e.target.innerText = sel;
-        if (!rows.flat().includes(undefined)) {
+        if (!puzzle.flat().includes(undefined)) {
           document.querySelector("#grid").style.backgroundColor = 'lightgreen';
         }
       }
@@ -51,7 +39,6 @@
         cell.onclick = test;
       }
     }
-    // pad
     const selectNumber = (e) => {
       sel = e.target.innerText;
     };
@@ -94,21 +81,7 @@
     };
     puzzle = get_puzzle();
     solution = solve(puzzle);
-    const parse = (a) => {
-      rows = a;
-      cols = a[0].map((_, i) => a.map((row) => row[i]));
-      boxes = new9x9Matrix();
-      a.map((row, r) => {
-        row.map((num, c) => {
-          box = Math.floor(r / 3) * 3 + Math.floor(c / 3);
-          boxi = (r % 3) * 3 + (c % 3);
-          boxes[box][boxi] = num;
-        });
-      });
-      return [rows, cols, boxes];
-    };
-    [rows, cols, boxes] = parse(puzzle);
-    rows.forEach((row, r) => {
+    puzzle.forEach((row, r) => {
       row.forEach((num, c) => {
         document.querySelector(`#c${r}${c}`).innerText = num ?? "";
       });
