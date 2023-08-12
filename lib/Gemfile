@@ -1,6 +1,0 @@
-# frozen_string_literal: true
-
-source "https://rubygems.org"
-
-gem "nokogiri", "1.14.3"
-gem "rss", "0.2.9"

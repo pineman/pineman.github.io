@@ -4,7 +4,6 @@ echo "file://$(pwd)/index.html"
 
 build() {
   cd lib
-  bundle
   ./build.rb
 }
 

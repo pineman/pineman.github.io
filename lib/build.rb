@@ -1,8 +1,14 @@
 #!/usr/bin/env ruby
+
+require "rss"
 require "fileutils"
 require "erb"
-require "nokogiri"
-require "rss"
+
+require "bundler/inline"
+gemfile do
+  source "https://rubygems.org"
+  gem "nokogiri", "1.14.3"
+end
 
 def template(template_file, caller_binding)
   template = ERB.new(File.read(template_file), trim_mode: ">")
