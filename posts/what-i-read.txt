@@ -1,4 +1,8 @@
 # August 2023
+https://josephg.com/blog/war-over-being-nice/
+https://pracucci.com/kubernetes-dns-resolution-ndots-options-and-why-it-may-affect-application-performances.html
+https://dashbit.co/blog/why-the-dot
+https://smallrye.io/smallrye-stork/1.1.1/load-balancer/power-of-two-choices/
 https://www.youtube.com/watch?v=eglMl21DJz0
 https://www.applied-cartography.com/goon-squad?t=4
 https://www.youtube.com/watch?v=mrGfahzt-4Q
