@@ -1,4 +1,8 @@
 # August 2023
+https://latacora.micro.blog/2020/02/19/stop-using-encrypted.html
+https://latacora.micro.blog/2019/07/16/the-pgp-problem.html
+https://www.kalzumeus.com/2012/01/23/salary-negotiation/ (re-read from a bazillion years ago. not that I got any better)
+https://www.kalzumeus.com/2014/11/07/doing-business-in-japan/
 https://josephg.com/blog/war-over-being-nice/
 https://pracucci.com/kubernetes-dns-resolution-ndots-options-and-why-it-may-affect-application-performances.html
 https://dashbit.co/blog/why-the-dot
