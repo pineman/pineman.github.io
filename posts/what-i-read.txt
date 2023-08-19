@@ -1,4 +1,8 @@
 # August 2023
+https://newosxbook.com/articles/MemoryPressure.html
+https://stackoverflow.com/questions/32664679/what-is-the-limit-on-virtual-memory-for-ios
+https://htmx.org/essays/locality-of-behaviour/
+https://htmx.org/essays/complexity-budget/
 https://www.youtube.com/watch?v=6MOtFkl2tq0 - tho if you wanted to save files why go through userspace in the first place
 https://latacora.micro.blog/2020/02/19/stop-using-encrypted.html
 https://latacora.micro.blog/2019/07/16/the-pgp-problem.html
