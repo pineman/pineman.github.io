@@ -1,4 +1,5 @@
 # August 2023
+https://luispcosta.com/managing-small-team
 https://www.youtube.com/watch?v=SquGNt4FhY0
 https://newosxbook.com/articles/MemoryPressure.html
 https://stackoverflow.com/questions/32664679/what-is-the-limit-on-virtual-memory-for-ios
