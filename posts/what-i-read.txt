@@ -1,4 +1,18 @@
 # August 2023
+https://news.ycombinator.com/item?id=36663509
+https://railsatscale.com//2023-06-12-rewriting-the-ruby-parser/
+https://fresh.deno.dev/docs/getting-started/adding-interactivity
+https://joajfreitas.com/is-prime-code-golf/
+https://news.ycombinator.com/item?id=36719409
+http://blog.syncpup.com/posts/two-erlang-patterns-i-love.html
+https://news.ycombinator.com/item?id=37244503
+https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826fc4
+https://news.ycombinator.com/item?id=37272362
+https://news.ycombinator.com/item?id=37114457
+https://blog.jetbrains.com/dotnet/2023/07/27/introducing-predictive-debugging-a-game-changing-look-into-the-future/?utm_source=marketo&utm_medium=email&utm_campaign=community_newsletter_2023_08&utm_content=newsletter
+https://betterprogramming.pub/load-balancing-the-intuition-behind-the-power-of-two-random-choices-6de2e139ac2f
+https://en.wikipedia.org/wiki/Priority_inversion
+https://www.youtube.com/watch?v=oKg1hTOQXoY
 https://www.youtube.com/watch?v=tr2KcekX2kk
 https://www.youtube.com/watch?v=GcJgGy-dfvE
 https://www.youtube.com/watch?v=YtkIWDE36qU
