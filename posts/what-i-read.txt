@@ -1,4 +1,6 @@
 # August 2023
+https://news.ycombinator.com/item?id=36887091
+https://www.youtube.com/watch?v=KXuZi9aeGTw
 https://news.ycombinator.com/item?id=36663509
 https://railsatscale.com//2023-06-12-rewriting-the-ruby-parser/
 https://fresh.deno.dev/docs/getting-started/adding-interactivity
