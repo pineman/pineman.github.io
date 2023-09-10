@@ -44,35 +44,16 @@ def build_posts
     html = template("post.html.erb", binding)
     File.write("../#{post.url}", html)
     post
-  end
+  end.sort_by!(&:date)
 end
 
 def build_index(posts)
   content = ''
-  posts.sort_by!(&:date)
   posts.reverse.each do |post|
     content += "<li><time datetime=\"#{post.date}\">#{post.date}</time> <a href=\"#{post.url}\">#{post.title}</a></li>\n"
   end
   html = template("index.html.erb", binding)
   File.write("../index.html", html)
-  def build_rss(posts)
-    rss = RSS::Maker.make("atom") do |maker|
-      maker.channel.author = "João Pinheiro"
-      maker.channel.title = "João Pinheiro"
-      maker.channel.about = "https://pineman.github.io"
-      maker.channel.updated = posts.last.date
-      posts.each do |post|
-        maker.items.new_item do |item|
-          item.title = post.title
-          item.link = "https://pineman.github.io/#{post.url}"
-          item.updated = post.date
-          item.description = post.description
-        end
-      end
-    end
-    File.write("../atom.xml", rss)
-  end
-  build_rss(posts)
 end
 
 def build_what_i_read
@@ -99,16 +80,25 @@ def build_what_i_read
   File.write("../what-i-read.html", html)
 end
 
-def measure
-  #caller_locations(1, 1).first.tap{|loc| puts "#{loc.path}:#{loc.lineno}"}
-  start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-  yield
-  took = Process.clock_gettime(Process::CLOCK_MONOTONIC) - start
-  puts "success, took #{(took * 1000).round(3)}ms"
+def build_rss(posts)
+  rss = RSS::Maker.make("atom") do |maker|
+    maker.channel.author = "João Pinheiro"
+    maker.channel.title = "João Pinheiro"
+    maker.channel.about = "https://pineman.github.io"
+    maker.channel.updated = posts.last.date
+    posts.each do |post|
+      maker.items.new_item do |item|
+        item.title = post.title
+        item.link = "https://pineman.github.io/#{post.url}"
+        item.updated = post.date
+        item.description = post.description
+      end
+    end
+  end
+  File.write("../atom.xml", rss)
 end
 
-measure {
-  posts = build_posts
-  build_index(posts)
-  build_what_i_read
-}
+posts = build_posts
+build_index(posts)
+build_rss(posts)
+build_what_i_read

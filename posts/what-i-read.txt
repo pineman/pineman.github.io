@@ -1,4 +1,22 @@
+# September 2023
+https://www.cis.upenn.edu/~bcpierce/courses/670Fall04/GreatWorksInPL.shtml
+https://github.com/sidekiq/sidekiq/wiki/Really-Complex-Workflows-with-Batches
+https://www.youtube.com/watch?v=BE5C2ydN0y0
+https://web.archive.org/web/20141231201113/http://blog.serverfault.com/2011/06/27/per-second-measurements-dont-cut-it
+https://web.archive.org/web/20141018061959/http://www.snookles.com/slf-blog/2012/01/05/tcp-incast-what-is-it/
+http://www.randomhacks.net.s3-website-us-east-1.amazonaws.com/2005/12/03/why-ruby-is-an-acceptable-lisp/
+http://www.paulgraham.com/icad.html
+https://mailchi.mp/railsspeed/scaling-is-queue-management?e=0ab8ee608c
+https://ferd.ca/queues-don-t-fix-overload.html
+https://www.youtube.com/watch?v=eQmAzkaHuXw
+https://softwareengineering.stackexchange.com/a/395738 best analogy ive seen for downstream/upstream, always confuse the two
 # August 2023
+https://github.com/puma/puma/blob/master/docs/architecture.md
+https://news.ycombinator.com/item?id=682364
+https://news.ycombinator.com/item?id=37308747&p=2
+http://www.paulgraham.com/makersschedule.html
+https://blog.allegro.tech/2023/08/management-engineering-acrobatics.html
+https://www.youtube.com/watch?v=PSIPhVjWBO0
 https://news.ycombinator.com/item?id=36887091
 https://www.youtube.com/watch?v=KXuZi9aeGTw
 https://news.ycombinator.com/item?id=36663509
