@@ -1,4 +1,22 @@
 # September 2023
+https://buttondown.email/hillelwayne/archive/github-has-too-many-hidden-features/
+https://tekin.co.uk/2023/07/active-record-connection-timeout-errors-with-puma
+https://elixirforum.com/t/how-does-oban-compare-to-sidekiq-in-rails-in-terms-of-architecture/55956/19
+https://supergood.software/writing-code-you-do-not-intend-to-keep/
+https://ordecon.com/2020/07/pandoc-as-a-site-generator/index.html
+https://benhoyt.com/writings/awk-make/
+https://benhoyt.com/writings/goawk-csv/
+https://asahilinux.org/2022/11/tales-of-the-m1-gpu/
+https://terralang.org/
+https://docs.bullmq.io/
+https://github.com/statelyai/xstate/
+https://jvns.ca/blog/2023/09/14/in-a-git-repository--where-do-your-files-live-/
+https://www.youtube.com/watch?v=C2w45qRc3aU
+https://news.ycombinator.com/item?id=37459495
+https://news.ycombinator.com/item?id=37466475
+https://hylang.org/
+https://www.youtube.com/watch?v=Y29SSOS4UOc
+http://www.continuousthinking.com/2014/11/06/pedants--man.html
 https://www.cis.upenn.edu/~bcpierce/courses/670Fall04/GreatWorksInPL.shtml
 https://github.com/sidekiq/sidekiq/wiki/Really-Complex-Workflows-with-Batches
 https://www.youtube.com/watch?v=BE5C2ydN0y0
@@ -275,7 +293,7 @@ https://programmingisterrible.com/post/181841346708/what-the-hell-is-rest-anyway
 https://programmingisterrible.com/post/188942142748/scaling-in-the-presence-of-errorsdont-ignore
 https://twitter.com/Foone/status/1059308377740726272
 http://lists.busybox.net/pipermail/busybox/2010-December/074114.html
-https://www.youtube.com/watch?v=xDuwrtwYHu8
+https://www.youtube.com/watch?v=xDuwrtwYHu8 -- sagas
 # January 2023
 https://www.youtube.com/@tom7/videos
 https://www.youtube.com/watch?v=A60q6dcoCjw

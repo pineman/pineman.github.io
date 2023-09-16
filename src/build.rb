@@ -34,7 +34,6 @@ def build_posts
   FileUtils.rm_rf('../posts/html')
   FileUtils.mkdir('../posts/html')
   Dir["../posts/*.md"].each do |md|
-    # Using pandoc 3.1.2
     `pandoc #{md} -f gfm -t gfm -o #{md}`
     html = "../posts/html/#{File.basename(md, '.*')}.html"
     `pandoc --no-highlight #{md} -f gfm -t html5 -o #{html}`
