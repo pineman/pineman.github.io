@@ -1,4 +1,7 @@
 # September 2023
+https://news.ycombinator.com/item?id=37539350 "Use your database to power state machines"
+https://c9x.me/compile/
+https://100r.co/site/uxn.html
 https://www.a1k0n.net/2011/07/20/donut-math.html
 https://mnt.io/2021/10/04/i-leave-wasmer/
 https://www.cs.cmu.edu/~wkw/humour/carproblems.txt
@@ -34,8 +37,8 @@ https://docs.bullmq.io/
 https://github.com/statelyai/xstate/
 https://jvns.ca/blog/2023/09/14/in-a-git-repository--where-do-your-files-live-/
 https://www.youtube.com/watch?v=C2w45qRc3aU "The Absolute Best Intro to Monads For Software Engineers"
-https://news.ycombinator.com/item?id=37459495
-https://news.ycombinator.com/item?id=37466475
+https://news.ycombinator.com/item?id=37459495 "Knightmare: A DevOps Cautionary Tale (2014)"
+https://news.ycombinator.com/item?id=37466475 "Unix Domain Sockets vs Loopback TCP Sockets (2014)"
 https://hylang.org/
 https://www.youtube.com/watch?v=Y29SSOS4UOc "[EN] Don't Wait For Me! Scalable Concurrency for Ruby 3! / Samuel Williams @ioquatix"
 http://www.continuousthinking.com/2014/11/06/pedants--man.html
@@ -52,23 +55,23 @@ https://www.youtube.com/watch?v=eQmAzkaHuXw "The Architecture of Oban | Parker S
 https://softwareengineering.stackexchange.com/a/395738 best analogy ive seen for downstream/upstream, always confuse the two
 # August 2023
 https://github.com/puma/puma/blob/master/docs/architecture.md
-https://news.ycombinator.com/item?id=682364
-https://news.ycombinator.com/item?id=37308747&p=2
+https://news.ycombinator.com/item?id=682364 "Ask HN: Why Python over Ruby?"
+https://news.ycombinator.com/item?id=37308747&p=2 "Ask HN: Why did Python win?"
 http://www.paulgraham.com/makersschedule.html
 https://blog.allegro.tech/2023/08/management-engineering-acrobatics.html
 https://www.youtube.com/watch?v=PSIPhVjWBO0 "SREcon16 - A Young Lady's Illustrated Primer to Technical Decision-Making"
-https://news.ycombinator.com/item?id=36887091
+https://news.ycombinator.com/item?id=36887091 "It's 2023, so of course I'm learning Common Lisp"
 https://www.youtube.com/watch?v=KXuZi9aeGTw "User-level threads....... with threads. - Paul Turner - Google"
-https://news.ycombinator.com/item?id=36663509
+https://news.ycombinator.com/item?id=36663509 "The controller pattern is awful, and other OO heresy (2013)"
 https://railsatscale.com//2023-06-12-rewriting-the-ruby-parser/
 https://fresh.deno.dev/docs/getting-started/adding-interactivity
 https://joajfreitas.com/is-prime-code-golf/
-https://news.ycombinator.com/item?id=36719409
+https://news.ycombinator.com/item?id=36719409 "Looming demise of the 10x developer – an era of enthusiast programmers is ending"
 http://blog.syncpup.com/posts/two-erlang-patterns-i-love.html
-https://news.ycombinator.com/item?id=37244503
+https://news.ycombinator.com/item?id=37244503 "Print(“lol”) doubled the speed of my Go function "
 https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826fc4
-https://news.ycombinator.com/item?id=37272362
-https://news.ycombinator.com/item?id=37114457
+https://news.ycombinator.com/item?id=37272362 "Earning the privilege to work on unoriginal problems"
+https://news.ycombinator.com/item?id=37114457 "Thoughts on Elixir, Phoenix and LiveView after 18 months of commercial use"
 https://blog.jetbrains.com/dotnet/2023/07/27/introducing-predictive-debugging-a-game-changing-look-into-the-future/?utm_source=marketo&utm_medium=email&utm_campaign=community_newsletter_2023_08&utm_content=newsletter
 https://betterprogramming.pub/load-balancing-the-intuition-behind-the-power-of-two-random-choices-6de2e139ac2f
 https://en.wikipedia.org/wiki/Priority_inversion
@@ -133,7 +136,7 @@ https://admcpr.com/postgres-full-text-search-is-better-than-part-2/ https://chat
 https://admcpr.com/postgres-full-text-search-is-better-than-part1/
 https://www.oreilly.com/radar/how-i-failed/
 https://korennoy.com/2023/06/09/adding-io_uring-to-java/
-https://nanovms.com/dev/tutorials/running-postgres-as-a-unikernel https://news.ycombinator.com/item?id=364208900
+https://news.ycombinator.com/item?id=364208900 "Running Postgres as a Unikernel"
 https://db.cs.cmu.edu/mmap-cidr2022/
 https://xeiaso.net/blog/anything-message-queue
 https://docs.google.com/presentation/d/1g3XoBToWJF2jO0hDYk1n-24oSPsm5WkZCWo0Lq5fNGE/mobilepresent?slide=id.g2222d5322d9_3_1
@@ -141,7 +144,7 @@ https://underjord.io/the-many-states-of-elixir.html
 http://www.aaronsw.com/weblog/rewritingreddit (RIP)
 https://web.archive.org/web/20060206185841/http://reddit.com:80/blog/2005/12/on-lisp.html
 https://lwn.net/SubscriberLink/934940/3abb2d4086680b78/
-https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/ (https://news.ycombinator.com/item?id=36429986)
+https://news.ycombinator.com/item?id=36429986 "Unexpected downsides of UUID keys in PostgreSQL"
 http://dtrace.org/blogs/bmc/2005/07/19/dtrace-safety/
 https://blog.devgenius.io/analyzing-new-unique-identifier-formats-uuidv6-uuidv7-and-uuidv8-d6cc5cd7391a
 https://www.umsl.edu/~siegelj/information_theory/classassignments/Lombardo/04_intractableproblems.html
@@ -205,7 +208,7 @@ https://www.sunsama.com/blog/true-asynch
 https://charity.wtf/2023/05/01/choose-boring-technology-culture/
 https://www.citusdata.com/blog/2016/03/30/five-ways-to-paginate/
 https://blog.sentry.io/2015/07/23/transaction-id-wraparound-in-postgres/
-https://news.ycombinator.com/item?id=35790367
+https://news.ycombinator.com/item?id=35790367 "Mojo – a new programming language for AI developers"
 https://severalnines.com/blog/overview-caching-postgresql/
 https://thoughtbot.com/blog/skinny-controllers-skinny-models
 https://www.honeybadger.io/blog/ruby-exception-vs-standarderror-whats-the-difference/
@@ -219,7 +222,7 @@ https://openjdk.org/projects/valhalla/design-notes/in-defense-of-erasure
 https://refactoring.guru/design-patterns/state
 http://gameprogrammingpatterns.com/state.html
 https://github.com/tigerbeetledb/tigerbeetle/blob/main/docs/HISTORY.md
-https://news.ycombinator.com/item?id=25510116
+https://news.ycombinator.com/item?id=25510116 "How does Hotwire compare to Phoenix LiveView?"
 https://shopify.engineering/shopify-monolith
 https://engineering.gusto.com/laying-the-cultural-and-technical-foundation-for-big-rails/
 https://mailchi.mp/railsspeed/gvl-sql-shotgun-memory-leaks-and-more
@@ -323,16 +326,16 @@ https://www.youtube.com/watch?v=wL3uWO-KLUE "The algorithmic trick that solves R
 https://tratt.net/laurie/blog/2023/compiled_and_interpreted_languages_two_ways_of_saying_tomato.html
 https://www.morling.dev/blog/getting-started-with-java-development-2023/
 https://discord.com/blog/why-discord-is-switching-from-go-to-rust
-https://news.ycombinator.com/item?id=30115078
-https://news.ycombinator.com/item?id=30706743
+https://news.ycombinator.com/item?id=30115078 "Ask HN: FOMO by working in startups only vs. Big companies"
+https://news.ycombinator.com/item?id=30706743 "Ask HN: Anyone have stock option horror stories?"
 https://danluu.com/startup-options/
 https://yosefk.com/blog/stock-options-a-balanced-approach.html
 https://uselessdevblog.wordpress.com/2022/11/10/stop-lying-to-yourself-you-will-never-fix-it-later/
-https://news.ycombinator.com/item?id=10933524
+https://news.ycombinator.com/item?id=10933524 "The Unreasonable Effectiveness of Dynamic Typing for Practical Programs"
 https://blog.dziban.net/coroutines/
 https://vladmihalcea.com/optimistic-vs-pessimistic-locking/
 https://www.postgresql.org/docs/current/explicit-locking.html - still confused
-https://news.ycombinator.com/item?id=34530052&p=2
+https://news.ycombinator.com/item?id=34530052&p=2 "Ask HN: What would be your stack if you are building an MVP today?"
 https://rampantgames.com/blog/?p=7745
 http://canonical.org/~kragen/tao-of-programming
 https://www.youtube.com/watch?v=p8u_k2LIZyo "Fast Inverse Square Root — A Quake III Algorithm"
