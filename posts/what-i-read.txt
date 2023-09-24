@@ -1,4 +1,7 @@
 # September 2023
+https://blog.asrpo.com/debugging_c_like_python
+https://blog.asrpo.com/are_there_interpreted_languages
+https://blog.asrpo.com/bootstrap_chicken_or_egg
 http://dtrace.org/blogs/wesolows/2014/12/29/golang-is-trash/
 http://dtrace.org/blogs/ahl/2016/08/02/i-love-go-i-hate-go/
 http://dtrace.org/blogs/bmc/2004/08/28/the-economics-of-software/
