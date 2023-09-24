@@ -1,4 +1,10 @@
 # September 2023
+https://www.a1k0n.net/2011/07/20/donut-math.html
+https://mnt.io/2021/10/04/i-leave-wasmer/
+https://www.cs.cmu.edu/~wkw/humour/carproblems.txt
+https://www.youtube.com/watch?v=kK0M74E8PS4 "Microsoft Office 95 - "Hall of Tortured Souls""
+http://phrack.org/issues/49/14.html
+https://gist.github.com/slotrans/353952c4f383596e6fe8777db5d098f0
 https://blog.asrpo.com/debugging_c_like_python
 https://blog.asrpo.com/are_there_interpreted_languages
 https://blog.asrpo.com/bootstrap_chicken_or_egg
