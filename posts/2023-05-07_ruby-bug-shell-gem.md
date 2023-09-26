@@ -91,6 +91,10 @@ development model of the world, as an old friend reminded me, after I
 kept him waiting for beers as I was typing out the bug report very
 nervously :)
 
+**UPDATE 20/09/2023**: Turns out it wasn't a bug in ruby after all!...
+I'll declare this as "not my fault" as I explicitly asked if the code
+was incorrect 😅
+
 All in all, a pretty cool win for me, even if I couldn't actually fix
 the (microcospic!) bug myself, and it took a whole weekend! Hopefully
 this kicks off a series of open source contributions for me :)
