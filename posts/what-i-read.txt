@@ -1,4 +1,39 @@
+# October 2023
+https://news.ycombinator.com/item?id=37890453
+https://bofh.bjash.com/
+http://www.paulgraham.com/rootsoflisp.html (https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf)
+http://www.paulgraham.com/hundred.html
+http://www.paulgraham.com/procrastination.html
+http://www.paulgraham.com/gh.html
+https://news.ycombinator.com/item?id=11104356
+https://www.joelonsoftware.com/2005/01/02/advice-for-computer-science-college-students/
+https://zverok.space/blog/2023-10-11-syntax-sugar1-numeric-block-args.html -- cool blog
+https://zverok.space/blog/2022-01-13-it-evolves.html
+https://news.ycombinator.com/item?id=37951343 (https://en.wikipedia.org/wiki/Partial_evaluation#Futamura_projections)
+http://www.catb.org/~esr/faqs/things-every-hacker-once-knew/#_ascii
+https://franz.com/support/documentation/10.1/ansicl/dictentr/carcdrca.htm
+https://www.gnu.org/software/emacs/manual/html_node/eintr/Strange-Names.html
+https://en.m.wikipedia.org/wiki/Philips_VG-8020 -- computador do nuno
+https://rachelbythebay.com/w/2023/10/16/env/
+https://programming.guide/worlds-most-copied-so-snippet.html
+https://news.ycombinator.com/item?id=37630391
+https://zinascii.com/2023/debugging-a-zig-test-failure.html
+https://www.youtube.com/watch?v=JqYCt9rTG8g
+https://www.toptal.com/ruby/ruby-pattern-matching-tutorial
+https://news.ycombinator.com/item?id=37532439
+https://www.dtreelabs.com/blog/parallel-queries-in-rails-using-load-async
+https://pawelurbanek.com/rails-load-async
+https://www.youtube.com/watch?v=HyzD8pNlpwI
+https://www.youtube.com/watch?v=p6Jrr3l5cx4
+https://muratbuffalo.blogspot.com/2023/09/review-performance-modeling-and-design.html
+https://smallcultfollowing.com/babysteps/blog/2012/04/15/syntax-matters-dot-dot-dot/
+http://calculist.org/blog/2012/04/17/homoiconicity-isnt-the-point/
+https://www.youtube.com/watch?v=J9S0qiGkAQY
+http://johnsalvatier.org/blog/2017/reality-has-a-surprising-amount-of-detail
+https://intercoolerjs.org/2016/02/17/api-churn-vs-security.html
+
 # September 2023
+https://www.youtube.com/watch?v=pQ0CvjAJXz4 "GigCityElixir23 - Bryan Hunter"
 https://www.ash-hq.org/
 https://news.ycombinator.com/item?id=37539350 "Use your database to power state machines"
 https://c9x.me/compile/
