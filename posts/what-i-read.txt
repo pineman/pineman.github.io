@@ -1,4 +1,5 @@
 # October 2023
+https://www.youtube.com/watch?v=R_b2B5tKBUM "The Simpsons Hit & Run Source Code Comments, Read by Comic Book Guy"
 https://news.ycombinator.com/item?id=37890453
 https://bofh.bjash.com/
 http://www.paulgraham.com/rootsoflisp.html (https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf)
@@ -18,17 +19,17 @@ https://rachelbythebay.com/w/2023/10/16/env/
 https://programming.guide/worlds-most-copied-so-snippet.html
 https://news.ycombinator.com/item?id=37630391
 https://zinascii.com/2023/debugging-a-zig-test-failure.html
-https://www.youtube.com/watch?v=JqYCt9rTG8g
+https://www.youtube.com/watch?v=JqYCt9rTG8g ""Why Programming Languages Matter" by Andrew Black"
 https://www.toptal.com/ruby/ruby-pattern-matching-tutorial
 https://news.ycombinator.com/item?id=37532439
 https://www.dtreelabs.com/blog/parallel-queries-in-rails-using-load-async
 https://pawelurbanek.com/rails-load-async
-https://www.youtube.com/watch?v=HyzD8pNlpwI
-https://www.youtube.com/watch?v=p6Jrr3l5cx4
+https://www.youtube.com/watch?v=HyzD8pNlpwI "The Ultimate Game Boy Talk (33c3)"
+https://www.youtube.com/watch?v=p6Jrr3l5cx4 "Why Templates Sucks and Are Better than JSX"
 https://muratbuffalo.blogspot.com/2023/09/review-performance-modeling-and-design.html
 https://smallcultfollowing.com/babysteps/blog/2012/04/15/syntax-matters-dot-dot-dot/
 http://calculist.org/blog/2012/04/17/homoiconicity-isnt-the-point/
-https://www.youtube.com/watch?v=J9S0qiGkAQY
+https://www.youtube.com/watch?v=J9S0qiGkAQY "RailsConf 2022 - Laying the Cultural and Technical Foundation for Big Rails by Alex Evanczuk"
 http://johnsalvatier.org/blog/2017/reality-has-a-surprising-amount-of-detail
 https://intercoolerjs.org/2016/02/17/api-churn-vs-security.html
 
