@@ -16,7 +16,7 @@ def template(template_file, caller_binding)
 end
 
 class Post
-  attr_reader :url, :content, :title, :date, :description
+  attr_reader :url, :content, :title, :date, :html_descr, :text_descr
   def initialize(file)
     @date, @url = File.basename(file).split('_')
     h = Nokogiri::HTML.fragment(File.read(file))
@@ -26,7 +26,9 @@ class Post
     @content = h.to_s
     #descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
     descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m]
-    @description = descr + '<p>...</p>'
+    @html_descr = descr + '<p>...</p>'
+    @text_descr = Nokogiri::HTML(descr).text
+    @text_descr = "#{@text_descr[...157]}..." if @text_descr.length > 160
   end
 end
 
@@ -36,7 +38,7 @@ def build_posts
   Dir["../posts/*.md"].each do |md|
     `pandoc #{md} -f gfm -t gfm -o #{md}`
     html = "../posts/html/#{File.basename(md, '.*')}.html"
-    `pandoc --no-highlight #{md} -f gfm -t html5 -o #{html}`
+    `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o #{html}`
   end
   Dir["../posts/html/*.html"].map do |html_file|
     post = Post.new(html_file)
@@ -90,7 +92,7 @@ def build_rss(posts)
         item.title = post.title
         item.link = "https://pineman.github.io/#{post.url}"
         item.updated = post.date
-        item.description = post.description
+        item.description = post.html_descr
       end
     end
   end
