@@ -28,9 +28,9 @@ the script started raising an error:
 
 That is... strange? I try and look for usages of this gem on
 [sourcegraph](https://sourcegraph.com/search), but my code seems okay.
-So I look into the gem's code, and it essentially forks and then closes
-all IO objects except stdin/out/err, and it's failing to close some of
-them. I attempt to debug the script, but it fails due to the IO objects
+So I look into the gem's code. It essentially forks and then closes all
+IO objects except stdin/out/err, and it's failing to close some of them.
+I attempt to debug the script, but it fails due to the IO objects
 closing and the debugger losing connection! [^2]
 
 I play with the gem's code, writing debug output to a file directly,
@@ -53,13 +53,13 @@ I get an idea: I'll compile ruby with debug symbols, hoping that I can
 inspect the IO object that fails. This turns out to be slightly tricky
 and the binary I build is missing many things (probably missing lots of
 configure flags), so I use ruby-build and its env vars. This works - I
-can debug ruby, create a breakpoint in `io.c`, where `close` is
-implemented, and inspect the object at the address I got earlier. I
-print some bytes off the pointer, and the only interesting thing I see
-is the string `pandoc`, which I am running using the backticks method to
-convert markdown to html. This gives me a clue that the IO object is
-coming from the backticks method somehow [^4], somewhere, but I want to
-be completely sure.
+can debug ruby (using `lldb`), create a breakpoint in `io.c`, where
+`close` is implemented, and inspect the object at the address I got
+earlier. I print some bytes off the pointer, and the only interesting
+thing I see is the string `pandoc`, which I am running using the
+backticks method to convert markdown to html. This gives me a clue that
+the IO object is coming from the backticks method somehow [^4],
+somewhere, but I want to be completely sure.
 
 I realize I'm in a nice VM environment - it ought to be instrumentable
 and introspectable, right? So I use `ObjectSpace.dump_all(output: io)`
