@@ -12,14 +12,14 @@
   <meta property="og:site_name" content="João Pinheiro" />
   <meta property="og:type" content="article" />
   <meta property="article:author" content="https://pineman.github.io" />
-  <meta property="article:section" content="pineman's Blog" />
+  <meta property="article:section" content="blog" />
   <meta property="article:tag" content="technology" />
   <meta property="article:tag" content="computer" />
   <meta property="article:tag" content="software" />
   <meta property="article:tag" content="engineering" />
   <meta property="og:url" content="https://pineman.github.io/ruby-bug-shell-gem.html" />
-  <meta property="article:published_time" content="20230507" />
-  <meta property="article:modified_time" content="20230507" />
+  <meta property="article:published_time" content="2023-05-07T00:00:00+00:00" />
+  <meta property="article:modified_time" content="2023-05-07T00:00:00+00:00" />
   <title>I found a (microscopic) ruby bug and it got fixed in 3 hours</title>
   <meta property="og:title" content="I found a (microscopic) ruby bug and it got fixed in 3 hours" />
   <meta name="description" content="I'm using highlight.js for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that..." />
@@ -29,7 +29,7 @@
 <div id="wrap">
 <a href="index.html">&lt; back</a>
 <article>
-<h1 id="i-found-a-microscopic-ruby-bug-and-it-got-fixed-in-3-hours">I found a (microscopic) ruby bug and it got fixed in 3 hours</h1><time datetime="2023-05-07">2023-05-07</time>
+<h1 id="i-found-a-microscopic-ruby-bug-and-it-got-fixed-in-3-hours">I found a (microscopic) ruby bug and it got fixed in 3 hours</h1><time datetime="2023-05-07T00:00:00+00:00" pubdate="pubdate">2023/05/07</time>
 <p>I'm using <a href="https://highlightjs.org/">highlight.js</a> for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that reads stdin, highlights the html using the library, and prints to stdout (not only is it more unixy, I already have too many temp files being created). So to call it from ruby, I found the <a href="https://github.com/ruby/shell">shell gem</a>. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It used to be in the stdlib and the DSL syntax is super cool, with me being a rubyist now and all.</p>
 <p>Anyway, I tried it and it seemed to work. However, since I was prototyping, I put the <code>require</code> statement right next to its usage, in a loop. When I tried hoisting it outside, where <code>require</code> normally goes, the script started raising an error:</p>
 <pre class="plaintext"><code>.../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:261:in `close': uninitialized stream (IOError)

@@ -6,7 +6,7 @@
   </author>
   <id>https://pineman.github.io</id>
   <title>João Pinheiro</title>
-  <updated>2023-05-07T00:00:00+01:00</updated>
+  <updated>2023-05-07T00:00:00+00:00</updated>
   <entry>
     <id>https://pineman.github.io/aoc3.html</id>
     <link href="https://pineman.github.io/aoc3.html"/>
@@ -29,8 +29,8 @@
     <summary>&lt;p&gt;I'm using &lt;a href=&quot;https://highlightjs.org/&quot;&gt;highlight.js&lt;/a&gt; for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that reads stdin, highlights the html using the library, and prints to stdout (not only is it more unixy, I already have too many temp files being created). So to call it from ruby, I found the &lt;a href=&quot;https://github.com/ruby/shell&quot;&gt;shell gem&lt;/a&gt;. &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; It used to be in the stdlib and the DSL syntax is super cool, with me being a rubyist now and all.&lt;/p&gt;
 &lt;p&gt;Anyway, I tried it and it seemed to work. However, since I was prototyping, I put the &lt;code&gt;require&lt;/code&gt; statement right next to its usage, in a loop. When I tried hoisting it outside, where &lt;code&gt;require&lt;/code&gt; normally goes, the script started raising an error:&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
     <title>I found a (microscopic) ruby bug and it got fixed in 3 hours</title>
-    <updated>2023-05-07T00:00:00+01:00</updated>
-    <dc:date>2023-05-07T00:00:00+01:00</dc:date>
+    <updated>2023-05-07T00:00:00+00:00</updated>
+    <dc:date>2023-05-07T00:00:00+00:00</dc:date>
   </entry>
-  <dc:date>2023-05-07T00:00:00+01:00</dc:date>
+  <dc:date>2023-05-07T00:00:00+00:00</dc:date>
 </feed>

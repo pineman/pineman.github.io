@@ -1,8 +1,8 @@
 <%= File.read('partials/head.html') %>
 <%= File.read('partials/article-head.html') %>
   <meta property="og:url" content="https://pineman.github.io/what-i-read.html" />
-  <meta property="article:published_time" content="<%= time.strftime('%Y%m%d') %>" />
-  <meta property="article:modified_time" content="<%= time.strftime('%Y%m%d') %>" />
+  <meta property="article:published_time" content="<%= date.iso8601 %>" />
+  <meta property="article:modified_time" content="<%= date.iso8601 %>" />
   <title>What I read</title>
   <meta property="og:title" content="What I read" />
   <meta name="description" content="What I read" />
@@ -13,7 +13,7 @@
 <a href="index.html">&lt; back</a>
 <article>
   <h1>What I read</h1>
-  <h6>last updated: <%= time.strftime('%Y/%m/%d') %></h6>
+  <h6>last updated: <%= date.strftime('%Y/%m/%d') %></h6>
 <%= content %>
 </article>
 <a href="index.html">&lt; back</a>

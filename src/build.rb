@@ -19,10 +19,11 @@ class Post
   attr_reader :url, :content, :title, :date, :html_descr, :text_descr
   def initialize(file)
     @date, @url = File.basename(file).split('_')
+    @date = DateTime.parse(@date)
     h = Nokogiri::HTML.fragment(File.read(file))
     h1 = h.at('h1')
     @title = h1.text
-    h1.after("<time datetime=\"#{@date}\">#{@date}</time>")
+    h1.after("<time datetime=\"#{@date.iso8601}\" pubdate=\"pubdate\">#{@date.strftime("%Y/%m/%d")}</time>")
     @content = h.to_s
     #descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
     descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m]
@@ -51,7 +52,7 @@ end
 def build_index(posts)
   content = ''
   posts.reverse.each do |post|
-    content += "<li><time datetime=\"#{post.date}\">#{post.date}</time> <a href=\"#{post.url}\">#{post.title}</a></li>\n"
+    content += "<li><time datetime=\"#{post.date.iso8601}\">#{post.date.strftime("%Y/%m/%d")}</time> <a href=\"#{post.url}\">#{post.title}</a></li>\n"
   end
   html = template("index.html.erb", binding)
   File.write("../index.html", html)
@@ -59,7 +60,7 @@ end
 
 def build_what_i_read
   file = File.new("../posts/what-i-read.txt")
-  time = file.mtime
+  date = file.mtime
   content = ""
   file.readlines.each do |l|
     l.strip!
@@ -86,12 +87,12 @@ def build_rss(posts)
     maker.channel.author = "João Pinheiro"
     maker.channel.title = "João Pinheiro"
     maker.channel.about = "https://pineman.github.io"
-    maker.channel.updated = posts.last.date
+    maker.channel.updated = posts.last.date.iso8601
     posts.each do |post|
       maker.items.new_item do |item|
         item.title = post.title
         item.link = "https://pineman.github.io/#{post.url}"
-        item.updated = post.date
+        item.updated = post.date.iso8601
         item.description = post.html_descr
       end
     end
