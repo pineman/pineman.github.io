@@ -23,7 +23,7 @@ class Post
     h = Nokogiri::HTML.fragment(File.read(file))
     h1 = h.at('h1')
     @title = h1.text
-    h1.after("<time datetime=\"#{@date.iso8601}\" pubdate=\"pubdate\">#{@date.strftime("%Y/%m/%d")}</time>")
+    h1.after("<time datetime=\"#{@date.iso8601}\" pubdate=\"pubdate\">#{@date.strftime("%Y-%m-%d")}</time>")
     @content = h.to_s
     #descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
     descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m]
@@ -52,7 +52,7 @@ end
 def build_index(posts)
   content = ''
   posts.reverse.each do |post|
-    content += "<li><time datetime=\"#{post.date.iso8601}\">#{post.date.strftime("%Y/%m/%d")}</time> <a href=\"#{post.url}\">#{post.title}</a></li>\n"
+    content += "<li><time datetime=\"#{post.date.iso8601}\">#{post.date.strftime("%Y-%m-%d")}</time> <a href=\"#{post.url}\">#{post.title}</a></li>\n"
   end
   html = template("index.html.erb", binding)
   File.write("../index.html", html)
