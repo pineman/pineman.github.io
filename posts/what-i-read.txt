@@ -1,4 +1,12 @@
 # October 2023
+https://www.youtube.com/watch?v=um5bC20NTQ0
+https://railsatscale.com/2023-10-24-memoization-pattern-and-object-shapes/
+https://marcellerusu.com/using_prolog_as_the_ast.html
+https://souffle-lang.github.io/docs.html
+https://pnewman.org/engineering_mgmt_checklist.txt
+https://zverok.space/blog/2023-10-20-syntax-sugar2-pattern-matching.html
+https://zverok.space/blog/2023-10-27-syntax-sugar2-pattern-matching-cont.html
+https://buttondown.email/hillelwayne/archive/raku-is-surprisingly-good-for-clis/
 https://dev.betterdoc.org/docker/linux/container/signals/pid1/2021/06/18/how-docker-forced-me-to-learn-more-about-linux.html
 https://www.youtube.com/watch?v=R_b2B5tKBUM "The Simpsons Hit & Run Source Code Comments, Read by Comic Book Guy"
 https://news.ycombinator.com/item?id=37890453
