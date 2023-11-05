@@ -6,7 +6,7 @@
   </author>
   <id>https://pineman.github.io</id>
   <title>João Pinheiro</title>
-  <updated>2023-05-07T00:00:00+00:00</updated>
+  <updated>2023-11-05T00:00:00+00:00</updated>
   <entry>
     <id>https://pineman.github.io/aoc3.html</id>
     <link href="https://pineman.github.io/aoc3.html"/>
@@ -32,5 +32,14 @@
     <updated>2023-05-07T00:00:00+00:00</updated>
     <dc:date>2023-05-07T00:00:00+00:00</dc:date>
   </entry>
-  <dc:date>2023-05-07T00:00:00+00:00</dc:date>
+  <entry>
+    <id>https://pineman.github.io/ruby-ascii-8bit.html</id>
+    <link href="https://pineman.github.io/ruby-ascii-8bit.html"/>
+    <summary>&lt;p&gt;We've hit a couple of bugs during a recent feature launch. This feature's 1.0 is an email - so no takesies backsies, you better get it right the first time. Unfortunately, this was not the case. We did hit a couple of bugs (curse you &lt;a href=&quot;https://wiki.c2.com/?StringlyTyped&quot;&gt;string types&lt;/a&gt;. Maybe don't store booleans in CSVs? Maybe don't read data off CSVs. But I digress).&lt;/p&gt;
+&lt;p&gt;We initially shrugged off one of them during the first batch of emails, but it came back around for the second batch. Luckily it only affected our own dog fooding account. This is the error:&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
+    <title>Ruby's ASCII-8BIT, mailers and feature launches</title>
+    <updated>2023-11-05T00:00:00+00:00</updated>
+    <dc:date>2023-11-05T00:00:00+00:00</dc:date>
+  </entry>
+  <dc:date>2023-11-05T00:00:00+00:00</dc:date>
 </feed>
