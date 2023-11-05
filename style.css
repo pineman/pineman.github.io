@@ -103,6 +103,7 @@ pre code {
   display: block;
   overflow-x: auto;
   padding: 1em;
+  font-size: 16px;
 }
 code:not(pre code) {
   color: var(--oceanic-fg);
