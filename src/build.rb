@@ -26,7 +26,7 @@ class Post
     h1.after("<time datetime=\"#{@date.iso8601}\" pubdate=\"pubdate\">#{@date.strftime("%Y-%m-%d")}</time>")
     @content = h.to_s
     #descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
-    descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m]
+    descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m] || ''
     @html_descr = descr + '<p>...</p>'
     @text_descr = Nokogiri::HTML(descr).text
     @text_descr = "#{@text_descr[...157]}..." if @text_descr.length > 160
@@ -37,7 +37,7 @@ def build_posts
   FileUtils.rm_rf('../posts/html')
   FileUtils.mkdir('../posts/html')
   Dir["../posts/*.md"].each do |md|
-    `pandoc #{md} -f gfm -t gfm -o #{md}`
+    `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
     html = "../posts/html/#{File.basename(md, '.*')}.html"
     `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o #{html}`
   end

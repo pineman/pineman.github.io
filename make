@@ -9,6 +9,7 @@ build() {
 
 watch() {
   cd src
+  export NOFORMAT=
   ls ../posts/*.md *.erb build.rb | entr -d ./build.rb | ts '[%Y-%m-%d %H:%M:%S]'
 }
 
