@@ -5,6 +5,7 @@ echo "file://$(pwd)/index.html"
 build() {
   cd src
   ./build.rb
+  sd -s "<summary>" "<summary type=\"html\">" ../atom.xml
 }
 
 watch() {

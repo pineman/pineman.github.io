@@ -84,9 +84,13 @@ end
 
 def build_rss(posts)
   rss = RSS::Maker.make("atom") do |maker|
+    maker.channel.links.new_link do |link|
+      link.href = "https://pineman.github.io/atom.xml"
+      link.rel = "self"
+    end
     maker.channel.author = "João Pinheiro"
     maker.channel.title = "João Pinheiro"
-    maker.channel.about = "https://pineman.github.io"
+    maker.channel.about = "https://pineman.github.io/"
     maker.channel.updated = posts.last.date.iso8601
     posts.each do |post|
       maker.items.new_item do |item|
