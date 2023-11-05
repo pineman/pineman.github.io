@@ -1,3 +1,23 @@
+# November 2023
+https://brooker.co.za/blog/2014/07/16/pacelc.html
+https://codahale.com/you-cant-sacrifice-partition-tolerance/#errata10221010
+https://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf
+https://aphyr.com/posts/288-the-network-is-reliable
+https://cacm.acm.org/blogs/blog-cacm/83396-errors-in-database-systems-eventual-consistency-and-the-cap-theorem/fulltext
+https://brooker.co.za/blog/2023/10/18/optimism.html
+https://brooker.co.za/blog/2021/01/22/cloud-scale.html
+https://aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems/
+https://www.youtube.com/watch?v=IxkSlnrRFqc
+https://dukope.com/devlogs/papers-please/lcdplease/
+https://news.ycombinator.com/item?id=38095699
+https://users.ece.utexas.edu/~adnan/pike.html
+https://retrocomputing.stackexchange.com/questions/27926/who-invented-file-extensions-in-file-names
+https://sergeyteplyakov.github.io/Blog/benchmarking/2023/11/02/Performance_Comparison_For_Classes_vs_Structs.html
+https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge
+https://shmck.substack.com/p/no-dogs-were-harmed-in-the-making
+https://lukeplant.me.uk/blog/posts/no-one-actually-wants-simplicity/
+https://world.hey.com/dhh/acting-your-wage-will-atrophy-your-abilities-1ca261c4
+
 # October 2023
 https://www.youtube.com/watch?v=um5bC20NTQ0
 https://railsatscale.com/2023-10-24-memoization-pattern-and-object-shapes/
