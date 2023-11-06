@@ -1,4 +1,5 @@
 # November 2023
+https://www.informatika.bg/jeffdean
 https://brooker.co.za/blog/2014/07/16/pacelc.html
 https://codahale.com/you-cant-sacrifice-partition-tolerance/#errata10221010
 https://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf

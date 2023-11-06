@@ -29,11 +29,11 @@ alias](https://idiosyncratic-ruby.com/56-us-ascii-8bit.html#aliases) for
 investigation.
 
 I guess the "8bit" part gives it away, but I interpreted it as *"ASCII,
-but some random character has the 7th bit set so it's complaining loudly
-ohgodwhy"*. Maybe if I had immediately seen `BINARY` the investigation
-could've been cut shorter, but it was pretty short by most accounts.
-[What else am I gonna blog about
-tho](https://twitter.com/pineman_/status/1720426537768386659)? Let's
+except some random character has the 7th bit set so it's complaining
+loudly ohgodwhy"*. Maybe if I had immediately seen `BINARY` the
+investigation could've been cut shorter, but it was already pretty short
+by most accounts. [What else am I gonna blog
+about](https://twitter.com/pineman_/status/1720426537768386659)? Let's
 dive in.
 
 ### Investigation
@@ -57,10 +57,11 @@ boring old me however wants to be 100% sure.
 This where I notice it fails in this `concat` method - so I have the
 second good idea of monkey patching it. Again, how great is that?! Here
 my co-worker notes, in a much less enthusiastic tone, that while yes
-ruby is pretty cool, you probably wouldn't even have the need to monkey
-patch now because the bug wouldn't even exist. I silently nod in
-approval, but move on as what would life be without gnarly bugs? Another
-digression, another hit of the rubberband on the wrist.
+ruby is pretty cool, in another language you probably wouldn't even have
+the need to monkey patch this method now because the bug wouldn't even
+exist. I silently nod in approval, but move on as what would life be
+without gnarly bugs? Another digression, another hit of the rubberband
+on the wrist.
 
 I read the method (cmd-p `output_safety`, `197G`, thanks rubymine) - it
 uses an `ActiveSupport::SafeBuffer` and calls `original_concat`. I try
@@ -86,8 +87,8 @@ here: my repro case says
 `incompatible character encodings: UTF-8 and ASCII-8BIT` while the
 original error says
 `incompatible character encodings: ASCII-8BIT and UTF-8`. Which means
-the email template was ASCII-8BIT at the time of the concatenation with
-e.g. an emoji. I assumed that mailers' views were encoded as
+the email template was `ASCII-8BIT` at the time of the concatenation
+with e.g. an emoji. I assumed that mailers' views were encoded as
 `ASCII-8BIT` due to *"\*hand-wave\* email"* (foreshadowing 🫠) and moved
 on. I want to find out on *what string* it's blowing up on. This is the
 initial monkey-patch, printing the whole buffer and the small string to
@@ -118,7 +119,7 @@ This gets me closer - running the mailer again now prints:
 (irb):310:in `concat': incompatible character encodings: ASCII-8BIT and UTF-8 (Encoding::CompatibilityError)
 ```
 
-So we've got a mysterious `F0` byte somewhere. It's coming form the
+So we've got a mysterious `F0` byte somewhere. It's coming from the
 latter parts of the email, which our feature didn't touch. The buffer
 and the backtrace didn't print then though, for some reason, but did
 when I changed the `puts` to just `p`. So now I know exactly where it's
@@ -138,10 +139,15 @@ people an illusion of my mind? Is the name value coming from the DB as
 encoding different? Sure enough, everything from the DB comes as
 `UTF-8`, our paranoia is unjustified and other people are real.
 
-I reproduce the bug using the mailer again. Scrolling... Wait, look! Why
-does the buffer *already* contain an `F0`? The original buffer already
-has this emoji?! Shows up as hexa escapes though - I chalk it up to
-being due to using `p` instead of `puts`, but clearly the emoji was
+I reproduce the bug using the mailer again. Scrolling... Wait, look!
+
+``` text
+... f06\"> \xF0\x9F\x94\x80Rec ...
+```
+
+Why does the buffer *already* contain an `F0`? The original buffer
+already has this emoji?! Shows up as hexa escapes though - I chalk it up
+to being due to using `p` instead of `puts`, but clearly the emoji was
 concated succesfully before we crashed?!? And, perplexingly, this
 earlier part of the email is the new part that we created for the
 feature. Why is it breaking further down the line in code we didn't
@@ -156,13 +162,13 @@ This is where the third great idea comes in: smoke break with the
 airpods still on. It's time for some serious pair hypothesis crafting,
 despite the rain and dark.
 
-**Clearly** the view knows how to template emojis in, since it already
-has this same copy. What if the buffer starts out as `UTF-8`, the first
-emoji concat works... but then switches to being `ASCII-8BIT` at some
-point, causing the second emoji concat to fail? Let's go for broke,
-print the buffer's `.encoding` at each call, and trace exactly when it
-switches (spewing large amounts of text to my terminal will forever be
-my superpower. Thanks tmux and vim). This is the final monkey patch:
+Clearly the view *does* knows how to render emojis all along. What if
+the buffer starts out as `UTF-8`, the first emoji concat works... but
+then switches to being `ASCII-8BIT` at some point, causing the second
+emoji concat to fail? Let's go for broke, print the buffer's `.encoding`
+at each call, and trace exactly when it switches (spewing large amounts
+of text to my terminal will forever be my superpower. Thanks tmux and
+vim). This is the final monkey patch:
 
 ``` ruby
 module ActiveSupport
@@ -189,21 +195,22 @@ end
 
 We trigger the mailer again, and sure enough it starts out life as
 `UTF-8`, and we see it grow incrementally. We get to the first emoji
-concat. The buffer was `UTF-8`, but the string itself... it's
+concat. The buffer was `UTF-8`, but the string itself... is in
 `ASCII-8BIT`? Why...? We'd just seen that the value from the DB is
 `UTF-8`. And sure enough, as soon as this `ASCII-8BIT` string is
 concated with the buffer, it too is tainted to become `ASCII-8BIT`! It
 blows up further ahead when the now `ASCII-8BIT` tries to concat the
-second emoji string, which this time correctly encoded as `UTF-8`!
+second emoji string, which this time is correctly encoded as `UTF-8`!
 
 This is when it becomes clear to my colleague that the "tainted"
 `ASCII-8BIT` string is actually coming from a CSV file we built for the
 new feature. This file is generated on demand but then cached, so
 subsequent emails download and parse it from Google Cloud Storage (side
-note: do not parse csvs. But if you do, remember to convert strings to
-booleans on a boolean column 🫠). This file's encoding is coming from
-GCloud as `ASCII-8BIT`, so my coworker does a simple
-`.force_encoding(Encoding::UTF8)` on it, which cleanly fixes the bug.
+note: do not make CSV parsing load bearing. But if you do, remember to
+convert strings to booleans on a boolean column 🫠). This file's
+encoding is coming from GCloud as `ASCII-8BIT`, so my coworker does a
+simple `.force_encoding(Encoding::UTF8)` on it, which cleanly fixes the
+bug.
 
 ### ASCII-8BIT? WHY GOOGLE WHY
 
