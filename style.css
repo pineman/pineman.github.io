@@ -113,7 +113,7 @@ pre code {
 }
 /* Inlines */
 code:not(pre code) {
-  padding: 0 0.2em;
+  padding: 0.2em;
 }
 @media (prefers-color-scheme: dark) {
   body {
