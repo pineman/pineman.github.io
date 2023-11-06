@@ -1,4 +1,5 @@
 # November 2023
+https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/
 https://www.informatika.bg/jeffdean
 https://brooker.co.za/blog/2014/07/16/pacelc.html
 https://codahale.com/you-cant-sacrifice-partition-tolerance/#errata10221010
