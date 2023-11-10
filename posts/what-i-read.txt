@@ -1,4 +1,6 @@
 # November 2023
+https://www.youtube.com/watch?v=HDKUEXBF3B4 "Ruby on Rails: The Documentary"
+https://www.youtube.com/watch?v=dFIqNZ8VbRY "*(char*)0 = 0; - What Does the C++ Programmer Intend With This Code? - JF Bastien - C++ on Sea 2023"
 https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/
 https://www.informatika.bg/jeffdean
 https://brooker.co.za/blog/2014/07/16/pacelc.html
@@ -9,7 +11,7 @@ https://cacm.acm.org/blogs/blog-cacm/83396-errors-in-database-systems-eventual-c
 https://brooker.co.za/blog/2023/10/18/optimism.html
 https://brooker.co.za/blog/2021/01/22/cloud-scale.html
 https://aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems/
-https://www.youtube.com/watch?v=IxkSlnrRFqc
+https://www.youtube.com/watch?v=IxkSlnrRFqc "SREcon19 Europe/Middle East/Africa - Advanced Napkin Math: Estimating System..."
 https://dukope.com/devlogs/papers-please/lcdplease/
 https://news.ycombinator.com/item?id=38095699
 https://users.ece.utexas.edu/~adnan/pike.html
@@ -21,7 +23,7 @@ https://lukeplant.me.uk/blog/posts/no-one-actually-wants-simplicity/
 https://world.hey.com/dhh/acting-your-wage-will-atrophy-your-abilities-1ca261c4
 
 # October 2023
-https://www.youtube.com/watch?v=um5bC20NTQ0
+https://www.youtube.com/watch?v=um5bC20NTQ0 "P99 CONF 2023 | Corporate Open Source Anti-Patterns: A Decade Later by Bryan Cantrill, Oxide"
 https://railsatscale.com/2023-10-24-memoization-pattern-and-object-shapes/
 https://marcellerusu.com/using_prolog_as_the_ast.html
 https://souffle-lang.github.io/docs.html

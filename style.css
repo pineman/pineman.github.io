@@ -124,3 +124,6 @@ code:not(pre code) {
     fill: white;
   }
 }
+.footnote-back {
+  margin-left: 0.3em;
+}
