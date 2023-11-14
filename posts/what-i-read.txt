@@ -1,4 +1,8 @@
 # November 2023
+https://www.youtube.com/watch?v=AdNJ3fydeao "Rich Harris - Rethinking reactivity"
+https://www.youtube.com/watch?v=BCqGjGzWI48 ""The New COBOL" - Benno Rice (PyCon AU 2019)"
+https://patrickkarsh.medium.com/three-different-strategies-for-debouncing-requests-in-ruby-on-rails-7dbe0e9a9fdf
+https://blog.cloudflare.com/explaining-cloudflares-abr-analytics/
 https://www.youtube.com/watch?v=HDKUEXBF3B4 "Ruby on Rails: The Documentary"
 https://www.youtube.com/watch?v=dFIqNZ8VbRY "*(char*)0 = 0; - What Does the C++ Programmer Intend With This Code? - JF Bastien - C++ on Sea 2023"
 https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/
