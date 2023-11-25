@@ -1,4 +1,39 @@
 # November 2023
+https://zverok.space/blog/2023-11-24-syntax-sugar4-argument-forwarding.html
+https://www.youtube.com/watch?v=QGYvbsHDPxo "Adding Nested Loops Makes this Algorithm 120x FASTER?"
+https://www.youtube.com/watch?v=qC_ioJQpv4E "Programming’s Greatest Mistakes - Mark Rendle - NDC Copenhagen 2022"
+https://www.scattered-thoughts.net/writing/speed-matters/
+https://www.scattered-thoughts.net/writing/emotional-management/
+https://www.scattered-thoughts.net/writing/moving-faster/
+https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/
+https://blog.nelhage.com/2016/12/how-i-test/
+https://danluu.com/algorithms-interviews
+https://danluu.com/programmer-moneyball
+https://danluu.com/learning-to-program
+https://robertrode.com/2023/11/15/operating-an-entire-company-on-a-minimal-two-core-postgresql-instance-query-optimization-insights-part-1.html
+https://blog.nelhage.com/post/computers-can-be-understood/
+https://darekkay.com/blog/debugging-dynamic-content/
+https://aaronfrancis.com/2023/read-the-docs-like-a-book
+https://diamondssuck.com/
+https://news.ycombinator.com/item?id=38285251
+https://www.youtube.com/watch?v=bQfJi7rjuEk "Intelligence is not Enough | Bryan Cantrill | Monktoberfest 2023"
+https://news.ycombinator.com/item?id=38259148 "I accidentally a scheme"
+https://news.ycombinator.com/item?id=38257024 "My favorite coding question to give candidates (and why)"
+https://brandur.org/fragments/events
+https://www.kalzumeus.com/2020/10/09/four-years-at-stripe
+https://news.ycombinator.com/item?id=13752887
+https://danluu.com/productivity-velocity - love this one
+https://danluu.com/corp-eng-blogs/
+https://danluu.com/wat/
+https://danluu.com/look-stupid/
+https://danluu.com/culture/
+https://danluu.com/p95-skill/
+https://twitter.com/danluu/status/1442945072144678914
+https://www.youtube.com/watch?v=xWqOR-cdIUQ "Four patterns to save your codebase and your sanity | Marcelo Lebre | Code BEAM V"
+https://news.ycombinator.com/item?id=10649128 "The C standard formalized in Coq"
+https://www.youtube.com/watch?v=GVyoCh2chEs "The Rise & Fall of LISP - Too Good For The Rest Of the World"
+https://www.youtube.com/watch?v=zO5TqJo04vI "Freestanding Erlang Porting BEAM close to the metal. Ihor Kuz & Kent McLeod | Code BEAM America 2022"
+https://blog.boot.dev/clean-code/youre-not-qualified-for-tech-opinions/
 https://www.youtube.com/watch?v=AdNJ3fydeao "Rich Harris - Rethinking reactivity"
 https://www.youtube.com/watch?v=BCqGjGzWI48 ""The New COBOL" - Benno Rice (PyCon AU 2019)"
 https://patrickkarsh.medium.com/three-different-strategies-for-debouncing-requests-in-ruby-on-rails-7dbe0e9a9fdf

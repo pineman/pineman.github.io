@@ -117,7 +117,7 @@ code:not(pre code) {
 }
 @media (prefers-color-scheme: dark) {
   body {
-    background: #202020;
+    background: #242424;
     color: #fafafa;
   }
   svg {
