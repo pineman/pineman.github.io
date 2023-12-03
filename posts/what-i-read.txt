@@ -1,4 +1,41 @@
+# December 2023
+https://www.youtube.com/watch?v=bJ0y7Oqr4Zo "Tech Leader Speaker Series ft. Bryan Cantrill, Chief Technology Officer at Oxide" -- great Q&A!!
+https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/
+https://news.ycombinator.com/item?id=38392540 "	Retries – An interactive study of request retry methods"
+https://callstacking.com/
+https://blog.rust-lang.org/inside-rust/2023/10/23/coroutines.html
+https://riverqueue.com/docs/transactional-enqueueing
+https://retrocomputing.stackexchange.com/questions/5748/comparing-raw-performance-of-the-z80-and-the-6502
+https://bcantrill.dtrace.org/2023/11/26/what-punch-cards-teach-us-about-ai-risk/
+https://instagram-engineering.com/dismissing-python-garbage-collection-at-instagram-4dca40b29172
+https://olano.dev/2023-11-30-code-is-run-more-than-read/
+https://news.ycombinator.com/item?id=38499134 "Ask HN: What are some unpopular technologies you wish people knew more about?"
+https://harmful.cat-v.org/people/basic-laws-of-human-stupidity/
+https://matklad.github.io/2022/10/06/hard-mode-rust.html
+https://abrams.cc/rust-dropping-things-in-another-thread
+https://matklad.github.io/2023/03/26/zig-and-rust.html
+https://www.youtube.com/watch?v=HgtRAbE1nBM "Is It Time to Rewrite the Operating System in Rust?"
+http://venge.net/graydon/talks/intro-talk.pdf
+https://www.scattered-thoughts.net/writing/assorted-thoughts-on-zig-and-rust/
+https://matklad.github.io/2023/11/15/push-ifs-up-and-fors-down.html
+https://sled.rs/simulation.html
+https://www.youtube.com/watch?v=UQR6b81xawE "Bryan Cantrill talks Sun Microsystems, DTrace, and Shouting in the Datacenter (old)"
+https://www.youtube.com/watch?v=YKv_IDN0zCA "The Summer of Rust"
+https://medium.com/criteo-engineering/how-we-reduced-our-prometheus-infrastructure-footprint-by-a-third-8bf8171e46b1
+
 # November 2023
+https://www.youtube.com/watch?v=dWfA5460HYU "P99 CONF: High-Performance Networking Using eBPF, XDP, and io_uring"
+https://www.youtube.com/watch?v=cuvp-e4ztC0 "P99 CONF: Rust, Wright's Law, and the Future of Low-Latency Systems"
+https://www.youtube.com/watch?v=lvKQh3Od6V4 "32 Reasons WHY TS IS BETTER Than Go"
+https://www.shade.inc/posts/vscode-vs-jetbrains-revisited-update-sep-2023
+https://computers-are-fast.github.io/
+https://k0kubun.medium.com/ruby-3-jit-can-make-rails-faster-756310f235a
+https://aphyr.com/posts/341-hexing-the-technical-interview
+https://aphyr.com/posts/340-reversing-the-technical-interview
+https://dineshgowda.com/posts/demystifying-database-transcations/ - ddia still better i think
+https://netflixtechblog.com/kubernetes-and-kernel-panics-ed620b9c6225#2965
+https://www.scattered-thoughts.net/writing/coding/
+https://caseymuratori.com/blog_0015
 https://zverok.space/blog/2023-11-24-syntax-sugar4-argument-forwarding.html
 https://www.youtube.com/watch?v=QGYvbsHDPxo "Adding Nested Loops Makes this Algorithm 120x FASTER?"
 https://www.youtube.com/watch?v=qC_ioJQpv4E "Programming’s Greatest Mistakes - Mark Rendle - NDC Copenhagen 2022"
@@ -162,6 +199,7 @@ https://mailchi.mp/railsspeed/scaling-is-queue-management?e=0ab8ee608c
 https://ferd.ca/queues-don-t-fix-overload.html
 https://www.youtube.com/watch?v=eQmAzkaHuXw "The Architecture of Oban | Parker Selbert | Code BEAM V America 21"
 https://softwareengineering.stackexchange.com/a/395738 best analogy ive seen for downstream/upstream, always confuse the two
+
 # August 2023
 https://github.com/puma/puma/blob/master/docs/architecture.md
 https://news.ycombinator.com/item?id=682364 "Ask HN: Why Python over Ruby?"
@@ -209,6 +247,7 @@ https://www.youtube.com/watch?v=mrGfahzt-4Q "Email vs Capitalism, or, Why We Can
 https://www.youtube.com/watch?v=6avJHaC3C2U "The Art of Code - Dylan Beattie"
 https://morningcoffee.io/interfaces-in-ruby.html
 https://www.youtube.com/watch?v=J1f5b4vcxCQ "Dependency Injection, The Best Pattern"
+
 # July 2023
 http://www.paulgraham.com/avg.html
 http://www.randomhacks.net.s3-website-us-east-1.amazonaws.com/2005/12/03/why-ruby-is-an-acceptable-lisp/
@@ -230,6 +269,7 @@ https://usefathom.com/blog/does-laravel-scale
 https://usefathom.com/blog/migrating-our-database
 https://cohost.org/tef/post/1764930-how-not-to-write-a
 http://paulgraham.com/greatwork.html
+
 # June 2023
 https://www.paweldabrowski.com/articles/five-things-you-did-not-know-about-rails-transactions
 https://cohost.org/tef/post/1764930-how-not-to-write-a
@@ -284,6 +324,7 @@ https://www.vector-logic.com/blog/posts/three-things-to-avoid-when-building-rail
 http://tenderlovemaking.com/
 https://web.archive.org/web/20110714074727/http://erlang.2086793.n4.nabble.com/Erlang-Web-Servers-challenge-td3643848.html
 https://www.youtube.com/watch?v=LMe7hf2G1po "Eat My Data: How Everybody gets File IO Wrong"
+
 # May 2023
 https://www.akshaykhot.com/throw-and-catch-in-ruby/
 https://subtls.pages.dev/
@@ -321,6 +362,7 @@ https://news.ycombinator.com/item?id=35790367 "Mojo – a new programming langua
 https://severalnines.com/blog/overview-caching-postgresql/
 https://thoughtbot.com/blog/skinny-controllers-skinny-models
 https://www.honeybadger.io/blog/ruby-exception-vs-standarderror-whats-the-difference/
+
 # April 2023
 https://www.youtube.com/watch?v=FADQAnq0RpA&t=1s "Keynote: The Road To LiveView 1.0 by Chris McCord | ElixirConf EU 2023"
 https://www.youtube.com/watch?v=fEdwfbv8LUc "Yukihiro Matsumoto. What made Rails Possible"
@@ -372,6 +414,7 @@ https://ivoanjo.me/blog/2018/10/13/spotting-unsafe-ruby-patterns/
 https://www.youtube.com/watch?v=5VHc27SYAIw "Spotting Unsafe Concurrent Ruby Patterns (Meetup talk)"
 https://lobste.rs/s/u7y4lk/modules_matter_most_for_masses#c_chlqbq
 https://www.honeycomb.io/blog/deploys-wrong-way-change-user-experience
+
 # March 2023
 http://www.incompleteideas.net/IncIdeas/BitterLesson.html
 https://eugenkiss.github.io/7guis/tasks
@@ -428,6 +471,7 @@ https://programmingisterrible.com/post/188942142748/scaling-in-the-presence-of-e
 https://twitter.com/Foone/status/1059308377740726272
 http://lists.busybox.net/pipermail/busybox/2010-December/074114.html
 https://www.youtube.com/watch?v=xDuwrtwYHu8 "Applying the Saga Pattern • Caitie McCaffrey • GOTO 2015" -- sagas
+
 # January 2023
 https://www.youtube.com/@tom7/videos
 https://www.youtube.com/watch?v=A60q6dcoCjw "The hidden beauty of the A* algorithm"
@@ -467,6 +511,7 @@ https://tomforb.es/i-hope-i-hate-this-code-one-day/
 https://bvisness.me/advent-of-dreams/
 https://thume.ca/2023/01/02/one-machine-twitter/
 https://programmingisterrible.com/post/162346490883/how-do-you-cut-a-monolith-in-half
+
 # December 2022
 https://eli.thegreenplace.net/2021/rest-servers-in-go-part-7-graphql - all parts actually
 https://eli.thegreenplace.net/2017/benefits-of-dependencies-in-software-projects-as-a-function-of-effort/
