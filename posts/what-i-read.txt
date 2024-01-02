@@ -1,4 +1,51 @@
+# January 2024
+https://yosefk.com/blog/compensation-rationality-and-the-projectperson-fit.html
+https://danluu.com/testing
+https://bcantrill.dtrace.org/2007/07/28/on-the-beauty-in-beautiful-code/
+https://charity.wtf/2021/03/09/know-your-one-job-continued/
+https://noidea.dog/glue
+https://charity.wtf/2021/03/07/know-your-one-job-and-do-it-first/
+https://charity.wtf/2023/12/15/why-should-you-or-anyone-become-an-engineering-manager/
+https://world.hey.com/dhh/commit-to-competence-in-this-coming-year-feb7d7c5
+https://world.hey.com/dhh/picking-a-purpose-bd8ff341
+https://m.signalvnoise.com/writing-software-is-hard/
+https://world.hey.com/dhh/programmers-should-stop-celebrating-incompetence-de1a4725
+https://nick-black.com/dankwiki/index.php/Book_list_for_streetfighting_computer_scientists
+https://dev.37signals.com/introducing-solid-queue/
+https://crawshaw.io/blog/one-process-programming-notes
+https://patrickcollison.com/fast
+https://psychclassics.yorku.ca/Lovelace/menabrea.ht
+https://danluu.com/seo-spam
+
 # December 2023
+https://codahale.com/work-is-work/
+https://aphyr.com/posts/354-unifying-the-technical-interview
+https://aphyr.com/posts/353-rewriting-the-technical-interview
+https://aphyr.com/posts/342-typing-the-technical-interview
+https://www.leadingsapiens.com/cognitive-distortions-leaders/
+https://brooker.co.za/blog/2023/01/06/erasure.html
+https://www.scattered-thoughts.net/writing/pain-we-forgot/
+https://www.scattered-thoughts.net/writing/against-sql/
+https://news.ycombinator.com/item?id=38570261&p=2 "You are never taught how to build quality software"
+https://tontinton.com/posts/database-fundementals/
+https://algorithmica.org/en/eytzinger
+https://muratbuffalo.blogspot.com/2023/02/designing-access-methods-rum-conjecture.html
+https://muratbuffalo.blogspot.com/2023/04/the-end-of-myth-distributed.html
+https://muratbuffalo.blogspot.com/2023/01/is-scalable-oltp-in-cloud-solved.html
+https://news.ycombinator.com/item?id=38688453
+https://steve-yegge.blogspot.com/2008/02/portrait-of-n00b.html
+https://pathelland.substack.com/p/i-am-so-glad-im-uncoordinated
+https://pgtune.leopard.in.ua/
+https://news.ycombinator.com/item?id=38555768 "Everyday performance rules for Ruby on Rails developers"
+https://www.youtube.com/watch?v=EK32jo7i5LQ "Why do prime numbers make these spirals? | Dirichlet’s theorem and pi approximations"
+https://www.youtube.com/watch?v=zqmOSMAtadc "Why Railroads Don't Need Expansion Joints"
+https://www.youtube.com/watch?v=qLJCSpOrb9s "C++ and Rust At The Same Time | Prime Reacts"
+https://www.youtube.com/watch?v=sGjAe6y299g "Never write another loop again"
+https://www.youtube.com/watch?v=prgWXy9vGc4 "When Zig Outshines Rust | Prime Reacts"
+https://github.blog/2023-12-07-upgrading-github-com-to-mysql-8-0/
+https://en.wikipedia.org/wiki/Variable_envelope_return_path
+https://www.youtube.com/watch?v=Z1Nf8KcG4ro "Playing Video Games One Frame at a Time - Ólafur Waage - NDC TechTown 2023"
+https://www.scattered-thoughts.net/writing/how-safe-is-zig/
 https://www.youtube.com/watch?v=bJ0y7Oqr4Zo "Tech Leader Speaker Series ft. Bryan Cantrill, Chief Technology Officer at Oxide" -- great Q&A!!
 https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/
 https://news.ycombinator.com/item?id=38392540 "	Retries – An interactive study of request retry methods"
