@@ -1,4 +1,14 @@
 # January 2024
+https://news.ycombinator.com/item?id=38958789 "Ask HN: What is the current driver of tech layoffs?"
+https://engineering.talkdesk.com/an-incremental-approach-to-a-database-migration-or-how-throughput-and-latency-are-not-the-same-c871ff2ec163
+https://course.ccs.neu.edu/cs5500f14/Notes/Prototyping1/planToThrowOneAway.html
+https://jkatz05.com/post/postgres/postgresql-2024/
+https://mailchi.mp/railsspeed/when-you-should-ignore-gc?e=0ab8ee608c
+https://chompie.rip/Blog+Posts/Attacking+Firecracker+-+AWS'+microVM+Monitor+Written+in+Rust
+https://overreacted.io/the-two-reacts/
+https://github.com/sidekiq/sidekiq/wiki/Reliability
+https://danluu.com/file-consistency/
+https://gregoryszorc.com/blog/2021/04/06/surprisingly-slow/ - incredible!
 https://yosefk.com/blog/compensation-rationality-and-the-projectperson-fit.html
 https://danluu.com/testing
 https://bcantrill.dtrace.org/2007/07/28/on-the-beauty-in-beautiful-code/
