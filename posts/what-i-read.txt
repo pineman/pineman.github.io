@@ -1,4 +1,31 @@
 # January 2024
+https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html?m=1
+https://fangpenlin.com/posts/2024/01/14/high-speed-usb4-mesh-network/
+https://read.engineerscodex.com/p/how-apple-built-icloud-to-store-billions
+https://www.youtube.com/watch?v=kkfIXUjkYqE "Cursed Units"
+https://groups.google.com/g/net.unix-wizards/c/G0zSjVAD4N8/m/gdXIB0Lxf8IJ
+https://norvig.com/21-days.html
+https://news.ycombinator.com/item?id=39048317 "How we migrated our PostgreSQL database with 11 seconds downtime"
+https://www.youtube.com/watch?v=qKQLZ9WsEQs
+https://www.ycombinator.com/library/6S-on-starting-and-scaling-dropbox-yc-w07
+https://en.wikipedia.org/wiki/Slowly_changing_dimension
+https://reclaim-the-stack.com/docs/kubernetes-platform/introduction
+https://www.johndcook.com/blog/2008/10/21/what-happens-when-you-add-a-new-teller/
+https://www.johndcook.com/blog/2009/01/30/server-utilization-joel-on-queuing/
+https://www.youtube.com/watch?v=4LiP39gJuqE :chefskiss:
+https://en.m.wikipedia.org/wiki/Hotelling%27s_law
+https://pganalyze.com/blog/5mins-postgres-17-incremental-backups
+https://lwn.net/2000/0824/a/esr-sharing.php3
+https://danluu.com/julialang
+https://norvig.com/java-lisp.html
+http://blog.metaobject.com/2014/06/the-safyness-of-static-typing.html
+https://danluu.com/empirical-pl/
+https://www.erlang.org/blog/otp-23-highlights/#take-cpu-quotas-into-account
+https://www.riverphillips.dev/blog/go-cfs/ how is this still a problem in 2023
+https://web.archive.org/web/20170626010309/http://blog.barbershoplabs.com/blog/2014/04/24/screw-tdd/
+https://world.hey.com/dhh/keeping-the-lights-on-while-leaving-the-cloud-be7c2d67
+https://en.m.wikipedia.org/wiki/The_Market_for_Lemons
+https://gamehistory.org/eclipse-the-demo-that-sold-3d-to-nintendo/
 https://news.ycombinator.com/item?id=38958789 "Ask HN: What is the current driver of tech layoffs?"
 https://engineering.talkdesk.com/an-incremental-approach-to-a-database-migration-or-how-throughput-and-latency-are-not-the-same-c871ff2ec163
 https://course.ccs.neu.edu/cs5500f14/Notes/Prototyping1/planToThrowOneAway.html
