@@ -1,4 +1,13 @@
 # January 2024
+https://bcantrill.dtrace.org/2008/11/10/fishworks-now-it-can-be-told/
+https://codedrift.com/thunked/time-based-queues-serverless-docmq
+https://zachholman.com/posts/only-90s-developers/
+https://zachholman.com/talk/utc-is-enough-for-everyone-right - reread
+https://wordsandbuttons.online/SYTYKC.pdf
+https://zed.dev/blog/zed-is-now-open-source
+https://zed.dev/blog/why-the-big-rewrite
+https://underjord.io/unpacking-elixir-phoenix.html
+https://www.youtube.com/watch?v=fxMKuv0A6z4 "Penn and Teller's Lab Scam" Arno Penzias
 https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html?m=1
 https://fangpenlin.com/posts/2024/01/14/high-speed-usb4-mesh-network/
 https://read.engineerscodex.com/p/how-apple-built-icloud-to-store-billions
