@@ -1,4 +1,33 @@
+# February 2024
+https://blog.cloudflare.com/how-stacks-are-handled-in-go/
+https://www.youtube.com/watch?v=1I1WmeSjRSw "GopherCon 2020: Austin Clements - Pardon the Interruption: Loop Preemption in Go 1.14"
+https://www.youtube.com/watch?v=JwjjUT8K7po&list=PLixnExCn6lRq261O0iwo4ClYxHpM9qfVy&index=1 "How Citus Distributes PostgreSQL"
+https://news.ycombinator.com/item?id=28776786 "Lessons learned from sharding Postgres at Notion"
+https://www.notion.so/blog/data-model-behind-notion
+https://planetscale.com/blog/why-we-chose-nanoids-for-planetscales-api
+https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/ -- re-read, see https://youtu.be/i-R704I8ySE?t=1559 "Nathaniel J Smith - Python Concurrency for Mere Mortals - Pyninsula #10"
+https://without.boats/blog/why-async-rust/
+https://daniel.haxx.se/blog/2023/10/11/how-i-made-a-heap-overflow-in-curl/
+https://without.boats/blog/let-futures-be-futures/
+https://scratchpad.avikdas.com/elf-explanation/elf-explanation.html
+https://monkey.org/~marius/futures-arent-ersatz-threads.html
+https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
+
 # January 2024
+https://sudhir.io/the-big-little-guide-to-message-queues
+https://news.ycombinator.com/item?id=39081948 "C23: A slightly better C"
+https://www.mcmillen.dev/language_checklist.html
+https://bernsteinbear.com/blog/scrapscript/
+https://paulgraham.com/todo.html
+https://macwright.com/2024/01/28/work-hard-and-take-everything-seriously -- I like this one
+https://blog.pinboard.in/2014/07/pinboard_turns_five/
+https://en.m.wikipedia.org/wiki/The_purpose_of_a_system_is_what_it_does
+http://minikanren.org/
+https://jvns.ca/blog/2014/09/06/how-to-read-an-executable/
+https://www.youtube.com/watch?v=qKQcUDEo-ZI "[EN] Fibers Are the Right Solution / Samuel Williams @ioquatix"
+https://programmingisterrible.com/post/176657481103/repeat-yourself-do-more-than-one-thing-and
+https://programmingisterrible.com/post/173883533613/code-to-debug
+https://docs.paradedb.com/blog/introducing_analytics
 https://bcantrill.dtrace.org/2008/11/10/fishworks-now-it-can-be-told/
 https://codedrift.com/thunked/time-based-queues-serverless-docmq
 https://zachholman.com/posts/only-90s-developers/
