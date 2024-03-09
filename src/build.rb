@@ -7,7 +7,7 @@ require "erb"
 require "bundler/inline"
 gemfile do
   source "https://rubygems.org"
-  gem "nokogiri", "1.14.3"
+  gem "nokogiri", "1.16.2"
 end
 
 def template(template_file, caller_binding)

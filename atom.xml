@@ -12,7 +12,7 @@
   <entry>
     <id>https://pineman.github.io/aoc3.html</id>
     <link href="https://pineman.github.io/aoc3.html"/>
-    <summary type="html">&lt;p&gt;Ok hi! One of my first projects ever was a &lt;a href=&quot;https://github.com/pineman/code/tree/main/old_proj/pineblog&quot;&gt;blog written in python flask&lt;/a&gt; (please don't look at it, it was 2015). Even though I shut it down a couple of months after having it up on my server (a VPS at the time), my admiration for blogging didn't stop and, of course, I read a bazillion blog posts since then. But now, here we are, finally! My own tech blog, v2.0. Just some flat hand-made HTML files to start this time, maybe some templating soon, then we'll see. I'm also deliberately putting only a medium amount of effort on this writing, at best, otherwise I'll end up not writing anything. Trying to keep it real simple, so my brain thinks it's easy and does it. I'll take this opportunity to share some of my favorite blogs, from people I admire (this excludes of course eng. blogs from companies like netflix, dropbox, twitter, cloudflare, ...):&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Ok hi! One of my first projects ever was a &lt;a href=&quot;https://github.com/pineman/code/tree/main/old_proj/pineblog&quot;&gt;blog written in python flask&lt;/a&gt; (please don&#39;t look at it, it was 2015). Even though I shut it down a couple of months after having it up on my server (a VPS at the time), my admiration for blogging didn&#39;t stop and, of course, I read a bazillion blog posts since then. But now, here we are, finally! My own tech blog, v2.0. Just some flat hand-made HTML files to start this time, maybe some templating soon, then we&#39;ll see. I&#39;m also deliberately putting only a medium amount of effort on this writing, at best, otherwise I&#39;ll end up not writing anything. Trying to keep it real simple, so my brain thinks it&#39;s easy and does it. I&#39;ll take this opportunity to share some of my favorite blogs, from people I admire (this excludes of course eng. blogs from companies like netflix, dropbox, twitter, cloudflare, ...):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://jvns.ca/&quot;&gt;https://jvns.ca/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://rachelbythebay.com/w/&quot;&gt;https://rachelbythebay.com/w/&lt;/a&gt;&lt;/li&gt;
@@ -20,7 +20,7 @@
 &lt;li&gt;&lt;a href=&quot;https://martin.kleppmann.com/archive.html&quot;&gt;https://martin.kleppmann.com/archive.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dtrace.org/blogs/bmc/&quot;&gt;http://dtrace.org/blogs/bmc/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;But onwards to today's topic!&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
+&lt;p&gt;But onwards to today&#39;s topic!&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
     <title>AoC 2022: day 3, profiling Go, existential crisis</title>
     <updated>2022-12-03T00:00:00+00:00</updated>
     <dc:date>2022-12-03T00:00:00+00:00</dc:date>
@@ -28,7 +28,7 @@
   <entry>
     <id>https://pineman.github.io/ruby-bug-shell-gem.html</id>
     <link href="https://pineman.github.io/ruby-bug-shell-gem.html"/>
-    <summary type="html">&lt;p&gt;I'm using &lt;a href=&quot;https://highlightjs.org/&quot;&gt;highlight.js&lt;/a&gt; for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that reads stdin, highlights the html using the library, and prints to stdout (not only is it more unixy, I already have too many temp files being created). So to call it from ruby, I found the &lt;a href=&quot;https://github.com/ruby/shell&quot;&gt;shell gem&lt;/a&gt;. &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; It used to be in the stdlib and the DSL syntax is super cool, with me being a rubyist now and all.&lt;/p&gt;
+    <summary type="html">&lt;p&gt;I&#39;m using &lt;a href=&quot;https://highlightjs.org/&quot;&gt;highlight.js&lt;/a&gt; for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that reads stdin, highlights the html using the library, and prints to stdout (not only is it more unixy, I already have too many temp files being created). So to call it from ruby, I found the &lt;a href=&quot;https://github.com/ruby/shell&quot;&gt;shell gem&lt;/a&gt;. &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; It used to be in the stdlib and the DSL syntax is super cool, with me being a rubyist now and all.&lt;/p&gt;
 &lt;p&gt;Anyway, I tried it and it seemed to work. However, since I was prototyping, I put the &lt;code&gt;require&lt;/code&gt; statement right next to its usage, in a loop. When I tried hoisting it outside, where &lt;code&gt;require&lt;/code&gt; normally goes, the script started raising an error:&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
     <title>I found a (microscopic) ruby bug and it got fixed in 3 hours</title>
     <updated>2023-05-07T00:00:00+00:00</updated>
@@ -37,9 +37,9 @@
   <entry>
     <id>https://pineman.github.io/ruby-ascii-8bit.html</id>
     <link href="https://pineman.github.io/ruby-ascii-8bit.html"/>
-    <summary type="html">&lt;p&gt;We've hit a couple of bugs during a recent feature launch. This feature's 1.0 is an email - so no takesies backsies, you better get it right the first time. Unfortunately, this was not the case. We did hit a couple of bugs (curse you &lt;a href=&quot;https://wiki.c2.com/?StringlyTyped&quot;&gt;string types&lt;/a&gt;. Maybe don't store booleans in CSVs? Maybe don't read data off CSVs. But I digress).&lt;/p&gt;
+    <summary type="html">&lt;p&gt;We&#39;ve hit a couple of bugs during a recent feature launch. This feature&#39;s 1.0 is an email - so no takesies backsies, you better get it right the first time. Unfortunately, this was not the case. We did hit a couple of bugs (curse you &lt;a href=&quot;https://wiki.c2.com/?StringlyTyped&quot;&gt;string types&lt;/a&gt;. Maybe don&#39;t store booleans in CSVs? Maybe don&#39;t read data off CSVs. But I digress).&lt;/p&gt;
 &lt;p&gt;We initially shrugged off one of them during the first batch of emails, but it came back around for the second batch. Luckily it only affected our own dog fooding account. This is the error:&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
-    <title>Ruby's ASCII-8BIT, mailers and feature launches</title>
+    <title>Ruby&#39;s ASCII-8BIT, mailers and feature launches</title>
     <updated>2023-11-05T00:00:00+00:00</updated>
     <dc:date>2023-11-05T00:00:00+00:00</dc:date>
   </entry>

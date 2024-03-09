@@ -1,4 +1,51 @@
+# March 2024
+https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts
+https://www.justinweiss.com/articles/how-to-debug-ruby-performance-problems-in-production/
+https://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/
+http://blog.headius.com/2008/02/ruby-threadraise-threadkill-timeoutrb.html
+https://news.ycombinator.com/item?id=39587947 - "Twenty years is nothing"
+https://news.ycombinator.com/item?id=39592771 - "Improving Network Performance with Linux Flowtables"
+https://keygen.sh/blog/that-one-time-keygen-went-down-for-5-hours-twice/
+https://tailscale.com/blog/an-unlikely-database-migration
+https://mtlynch.io/human-code-reviews-2/
+https://mtlynch.io/human-code-reviews-1/
+https://mtlynch.io/code-review-love/
+https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html
+https://news.ycombinator.com/item?id=39444674
+https://medium.com/@mithunmk93/algorithm-behind-splitwises-debt-simplification-feature-8ac485e97688
+https://dev.to/molly/10-tips-for-debugging-in-production-ko1
+https://en.m.wikipedia.org/wiki/Gordon_Moore
+https://en.m.wikipedia.org/wiki/Andy_Bechtolsheim
+https://en.m.wikipedia.org/wiki/Ken_Thompson
+https://en.m.wikipedia.org/wiki/Jim_Gray_(computer_scientist)
+https://news.ycombinator.com/item?id=39420453
+https://www.compart.com/en/unicode/U+FDFD
+https://adoptingerlang.org/docs/development/otp_high_level/
+https://elixirforum.com/t/origin-of-the-name-elixir/2303
+https://www.scattered-thoughts.net/writing/unexplanations-sql-declarative/
+https://erikbern.com/2016/12/05/the-half-life-of-code.html
+https://explainextended.com/2023/12/31/happy-new-year-15/
+https://www.evalapply.org/posts/how-to-not-die-by-a-thousand-cuts/index.html
+https://notes.eatonphil.com/distributed-postgres.html
+https://austinkleon.com/2014/08/30/what-your-days-look-like/
+https://www.youtube.com/watch?v=30YWsGDr8mA ""Making Hard Things Easy" by Julia Evans (Strange Loop 2023)"
+
 # February 2024
+https://www.youtube.com/watch?v=qDhTjE0XmkE "Evolution of Financial Exchange Architectures"
+https://wiki.alopex.li/ElixirNitpicks
+https://news.ycombinator.com/item?id=39313623&p=2
+https://ferd.ca/a-distributed-systems-reading-list.html
+https://scholar.harvard.edu/files/mickens/files/thesaddestmoment.pdf
+https://mailchi.mp/railsspeed/to-reduce-queues-reduce-the-95th-percentile
+https://www.timescale.com/blog/how-percentile-approximation-works-and-why-its-more-useful-than-averages/
+https://www.youtube.com/watch?v=lJ8ydIuPFeU -- ""How NOT to Measure Latency" by Gil Tene" coordinated omission
+https://www.fosskers.ca/en/blog/rounds-of-lisp
+https://www.fosskers.ca/en/blog/software-dev-langs
+https://www.youtube.com/watch?v=HB5TrK7A4pI -- ""We Really Don't Know How to Compute!" - Gerald Sussman (2011)"
+https://www.youtube.com/watch?v=8Ab3ArE8W3s -- "Stop Writing Dead Programs" by Jack Rusher (Strange Loop 2022)"
+https://scrollprize.org/grandprize -- Vesuvius Challenge
+https://www.youtube.com/watch?v=yE5Tpp2BSGw "19. Rob Pike - What We Got Right, What We Got Wrong | GopherConAU 2023"
+https://miris.blog/attention-atrophy/
 https://blog.cloudflare.com/how-stacks-are-handled-in-go/
 https://www.youtube.com/watch?v=1I1WmeSjRSw "GopherCon 2020: Austin Clements - Pardon the Interruption: Loop Preemption in Go 1.14"
 https://www.youtube.com/watch?v=JwjjUT8K7po&list=PLixnExCn6lRq261O0iwo4ClYxHpM9qfVy&index=1 "How Citus Distributes PostgreSQL"
