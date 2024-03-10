@@ -1,4 +1,20 @@
 # March 2024
+https://lobste.rs/s/njr9cn/maybe_everything_is_coroutine
+https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb
+https://news.ycombinator.com/item?id=39574240 - "Interlisp-D and MIT CADR Lisp Machine demos for IJCAI Conference (1981)"
+https://dreamsongs.com/WorseIsBetter.html
+https://dreamsongs.com/RiseOfWorseIsBetter.html
+https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
+https://www.crunchydata.com/blog/tags-aand-postgres-arrays-a-purrfect-combination
+https://www.postgresql.org/message-id/12553.1135634231@sss.pgh.pa.us
+https://www.youtube.com/watch?v=f84n5oFoZBc "Hammock Driven Development - Rich Hickey"
+https://lobste.rs/s/hru0ib/how_lose_control_your_shell
+https://registerspill.thorstenball.com/p/how-to-lose-control-of-your-shell
+https://www.rowledge.org/resources/tim%27s-Home-page/Squeak/RTOSinSmalltalk.html.pdf
+https://www.joelonsoftware.com/2002/01/06/fire-and-motion/
+https://news.ycombinator.com/item?id=39591910 - "Do literally anything"
+https://utcc.utoronto.ca/~cks/space/blog/unix/XWindowsAllTheWayDown
+https://www.youtube.com/watch?v=2V1FtfBDsLU "Effective Programs - 10 Years of Clojure - Rich Hickey"
 https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts
 https://www.justinweiss.com/articles/how-to-debug-ruby-performance-problems-in-production/
 https://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/
