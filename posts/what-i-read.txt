@@ -1,4 +1,5 @@
 # March 2024
+http://antirez.com/news/112 - "The mythical 10x programmer" reread. seems obvious when put this way
 https://lobste.rs/s/njr9cn/maybe_everything_is_coroutine
 https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb
 https://news.ycombinator.com/item?id=39574240 - "Interlisp-D and MIT CADR Lisp Machine demos for IJCAI Conference (1981)"
@@ -27,14 +28,14 @@ https://mtlynch.io/human-code-reviews-2/
 https://mtlynch.io/human-code-reviews-1/
 https://mtlynch.io/code-review-love/
 https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html
-https://news.ycombinator.com/item?id=39444674
+https://news.ycombinator.com/item?id=39444674 - "A response to "Erlang – overhyped or underestimated" (2010)"
 https://medium.com/@mithunmk93/algorithm-behind-splitwises-debt-simplification-feature-8ac485e97688
 https://dev.to/molly/10-tips-for-debugging-in-production-ko1
 https://en.m.wikipedia.org/wiki/Gordon_Moore
 https://en.m.wikipedia.org/wiki/Andy_Bechtolsheim
 https://en.m.wikipedia.org/wiki/Ken_Thompson
 https://en.m.wikipedia.org/wiki/Jim_Gray_(computer_scientist)
-https://news.ycombinator.com/item?id=39420453
+https://news.ycombinator.com/item?id=39420453 - "RoR Debugbar"
 https://www.compart.com/en/unicode/U+FDFD
 https://adoptingerlang.org/docs/development/otp_high_level/
 https://elixirforum.com/t/origin-of-the-name-elixir/2303
@@ -49,7 +50,7 @@ https://www.youtube.com/watch?v=30YWsGDr8mA ""Making Hard Things Easy" by Julia 
 # February 2024
 https://www.youtube.com/watch?v=qDhTjE0XmkE "Evolution of Financial Exchange Architectures"
 https://wiki.alopex.li/ElixirNitpicks
-https://news.ycombinator.com/item?id=39313623&p=2
+https://news.ycombinator.com/item?id=39313623&p=2 - "Almost every infrastructure decision I endorse or regret"
 https://ferd.ca/a-distributed-systems-reading-list.html
 https://scholar.harvard.edu/files/mickens/files/thesaddestmoment.pdf
 https://mailchi.mp/railsspeed/to-reduce-queues-reduce-the-95th-percentile
@@ -170,7 +171,7 @@ https://algorithmica.org/en/eytzinger
 https://muratbuffalo.blogspot.com/2023/02/designing-access-methods-rum-conjecture.html
 https://muratbuffalo.blogspot.com/2023/04/the-end-of-myth-distributed.html
 https://muratbuffalo.blogspot.com/2023/01/is-scalable-oltp-in-cloud-solved.html
-https://news.ycombinator.com/item?id=38688453
+https://news.ycombinator.com/item?id=38688453 - "I Love Ruby"
 https://steve-yegge.blogspot.com/2008/02/portrait-of-n00b.html
 https://pathelland.substack.com/p/i-am-so-glad-im-uncoordinated
 https://pgtune.leopard.in.ua/
@@ -186,7 +187,7 @@ https://www.youtube.com/watch?v=Z1Nf8KcG4ro "Playing Video Games One Frame at a 
 https://www.scattered-thoughts.net/writing/how-safe-is-zig/
 https://www.youtube.com/watch?v=bJ0y7Oqr4Zo "Tech Leader Speaker Series ft. Bryan Cantrill, Chief Technology Officer at Oxide" -- great Q&A!!
 https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/
-https://news.ycombinator.com/item?id=38392540 "	Retries – An interactive study of request retry methods"
+https://news.ycombinator.com/item?id=38392540 "Retries – An interactive study of request retry methods"
 https://callstacking.com/
 https://blog.rust-lang.org/inside-rust/2023/10/23/coroutines.html
 https://riverqueue.com/docs/transactional-enqueueing
@@ -237,13 +238,13 @@ https://blog.nelhage.com/post/computers-can-be-understood/
 https://darekkay.com/blog/debugging-dynamic-content/
 https://aaronfrancis.com/2023/read-the-docs-like-a-book
 https://diamondssuck.com/
-https://news.ycombinator.com/item?id=38285251
+https://news.ycombinator.com/item?id=38285251 - "How to build trust as a new engineering manager"
 https://www.youtube.com/watch?v=bQfJi7rjuEk "Intelligence is not Enough | Bryan Cantrill | Monktoberfest 2023"
 https://news.ycombinator.com/item?id=38259148 "I accidentally a scheme"
 https://news.ycombinator.com/item?id=38257024 "My favorite coding question to give candidates (and why)"
 https://brandur.org/fragments/events
 https://www.kalzumeus.com/2020/10/09/four-years-at-stripe
-https://news.ycombinator.com/item?id=13752887
+https://news.ycombinator.com/item?id=13752887 - "Qualities that I believe make the most difference in programmers’ productivity"
 https://danluu.com/productivity-velocity - love this one
 https://danluu.com/corp-eng-blogs/
 https://danluu.com/wat/
@@ -274,7 +275,7 @@ https://brooker.co.za/blog/2021/01/22/cloud-scale.html
 https://aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems/
 https://www.youtube.com/watch?v=IxkSlnrRFqc "SREcon19 Europe/Middle East/Africa - Advanced Napkin Math: Estimating System..."
 https://dukope.com/devlogs/papers-please/lcdplease/
-https://news.ycombinator.com/item?id=38095699
+https://news.ycombinator.com/item?id=38095699 - "How Bear does analytics with CSS"
 https://users.ece.utexas.edu/~adnan/pike.html
 https://retrocomputing.stackexchange.com/questions/27926/who-invented-file-extensions-in-file-names
 https://sergeyteplyakov.github.io/Blog/benchmarking/2023/11/02/Performance_Comparison_For_Classes_vs_Structs.html
@@ -294,28 +295,28 @@ https://zverok.space/blog/2023-10-27-syntax-sugar2-pattern-matching-cont.html
 https://buttondown.email/hillelwayne/archive/raku-is-surprisingly-good-for-clis/
 https://dev.betterdoc.org/docker/linux/container/signals/pid1/2021/06/18/how-docker-forced-me-to-learn-more-about-linux.html
 https://www.youtube.com/watch?v=R_b2B5tKBUM "The Simpsons Hit & Run Source Code Comments, Read by Comic Book Guy"
-https://news.ycombinator.com/item?id=37890453
+https://news.ycombinator.com/item?id=37890453 - "Background job queues and priorities may be the wrong path"
 https://bofh.bjash.com/
 http://www.paulgraham.com/rootsoflisp.html (https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf)
 http://www.paulgraham.com/hundred.html
 http://www.paulgraham.com/procrastination.html
 http://www.paulgraham.com/gh.html
-https://news.ycombinator.com/item?id=11104356
+https://news.ycombinator.com/item?id=11104356 - "Why I No Longer Use MVC Frameworks"
 https://www.joelonsoftware.com/2005/01/02/advice-for-computer-science-college-students/
 https://zverok.space/blog/2023-10-11-syntax-sugar1-numeric-block-args.html -- cool blog
 https://zverok.space/blog/2022-01-13-it-evolves.html
-https://news.ycombinator.com/item?id=37951343 (https://en.wikipedia.org/wiki/Partial_evaluation#Futamura_projections)
+https://news.ycombinator.com/item?id=37951343 - "Which Interpreters Are Faster, AST or Bytecode?" (https://en.wikipedia.org/wiki/Partial_evaluation#Futamura_projections)
 http://www.catb.org/~esr/faqs/things-every-hacker-once-knew/#_ascii
 https://franz.com/support/documentation/10.1/ansicl/dictentr/carcdrca.htm
 https://www.gnu.org/software/emacs/manual/html_node/eintr/Strange-Names.html
 https://en.m.wikipedia.org/wiki/Philips_VG-8020 -- computador do nuno
 https://rachelbythebay.com/w/2023/10/16/env/
 https://programming.guide/worlds-most-copied-so-snippet.html
-https://news.ycombinator.com/item?id=37630391
+https://news.ycombinator.com/item?id=37630391 - "Permuting Bits with GF2P8AFFINEQB"
 https://zinascii.com/2023/debugging-a-zig-test-failure.html
 https://www.youtube.com/watch?v=JqYCt9rTG8g ""Why Programming Languages Matter" by Andrew Black"
 https://www.toptal.com/ruby/ruby-pattern-matching-tutorial
-https://news.ycombinator.com/item?id=37532439
+https://news.ycombinator.com/item?id=37532439 - "Queueing Theory: An introduction for software development"
 https://www.dtreelabs.com/blog/parallel-queries-in-rails-using-load-async
 https://pawelurbanek.com/rails-load-async
 https://www.youtube.com/watch?v=HyzD8pNlpwI "The Ultimate Game Boy Talk (33c3)"
