@@ -18,27 +18,27 @@ end
 class Post
   attr_reader :url, :content, :title, :date, :html_descr, :text_descr
   def initialize(file)
-    @date, @url = File.basename(file).split('_')
+    @date, @url = File.basename(file).split("_")
     @date = DateTime.parse(@date)
     h = Nokogiri::HTML.fragment(File.read(file))
-    h1 = h.at('h1')
+    h1 = h.at("h1")
     @title = h1.text
     h1.after("<time datetime=\"#{@date.iso8601}\" pubdate=\"pubdate\">#{@date.strftime("%Y-%m-%d")}</time>")
     @content = h.to_s
-    #descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
-    descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m] || ''
-    @html_descr = descr + '<p>...</p>'
+    # descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
+    descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m] || ""
+    @html_descr = descr + "<p>...</p>"
     @text_descr = Nokogiri::HTML(descr).text
     @text_descr = "#{@text_descr[...157]}..." if @text_descr.length > 160
   end
 end
 
 def build_posts
-  FileUtils.rm_rf('../posts/html')
-  FileUtils.mkdir('../posts/html')
+  FileUtils.rm_rf("../posts/html")
+  FileUtils.mkdir("../posts/html")
   Dir["../posts/*.md"].each do |md|
     `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
-    html = "../posts/html/#{File.basename(md, '.*')}.html"
+    html = "../posts/html/#{File.basename(md, ".*")}.html"
     `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o #{html}`
   end
   Dir["../posts/html/*.html"].map do |html_file|
@@ -50,8 +50,8 @@ def build_posts
 end
 
 def build_index(posts)
-  content = ''
-  posts.reverse.each do |post|
+  content = ""
+  posts.reverse_each do |post|
     content += "<li><time datetime=\"#{post.date.iso8601}\">#{post.date.strftime("%Y-%m-%d")}</time> <a href=\"#{post.url}\">#{post.title}</a></li>\n"
   end
   html = template("index.html.erb", binding)
@@ -101,7 +101,8 @@ def build_rss(posts)
       end
     end
   end
-  File.write("../atom.xml", rss)
+  rss_s = rss.to_s.gsub!("<summary>", '<summary type="html">')
+  File.write("../atom.xml", rss_s)
 end
 
 posts = build_posts
