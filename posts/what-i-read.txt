@@ -1,3 +1,38 @@
+# April 2024
+http://rhaas.blogspot.com/2018/01/do-or-undo-there-is-no-vacuum.html zheap
+https://brandur.org/postgres-connections
+https://ottertune.com/blog/yes-postgresql-has-problems-but-we-re-sticking-with-it
+https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most - reread
+https://engineering.fb.com/2016/08/31/core-infra/myrocks-a-space-and-write-optimized-mysql-database/
+https://github.com/postgres/postgres/blob/master/src/backend/access/heap/README.HOT - heap only in the sense that they are tuples which dont have indexes, only the standard tuple storage (heap).
+https://gwern.net/nootropic/nootropics
+https://pganalyze.com/blog/5mins-postgres-figma-dbproxy-sharding-postgres?utm_medium=email&_hsmi=301803043&utm_content=301806330&utm_source=hs_email
+https://kenkantzer.com/lessons-after-a-half-billion-gpt-tokens/
+https://lobste.rs/s/zag1bo/on_tech_debt_my_rust_library_is_now_cdo
+https://rbranson.medium.com/10-things-i-hate-about-postgresql-20dbab8c2791
+https://web.archive.org/web/20240113173753/https://www.orioledata.com/blog/no-more-vacuum-in-postgresql
+https://gwern.net/note/faster
+https://news.ycombinator.com/item?id=30462695 "OrioleDB – solving some PostgreSQL wicked problems"
+https://www.coinbase.com/en-pt/blog/a-follow-up-to-coinbase-being-a-mission-focused-company
+https://www.uber.com/en-PT/blog/mezzanine-codebase-data-migration/
+https://registerspill.thorstenball.com/p/the-basics
+https://news.ycombinator.com/item?id=39844439 "Finding memory leaks in Postgres C code"
+https://news.ycombinator.com/item?id=39836852 "Why Elixir (2014)"
+https://web.archive.org/web/20231203114625/http://kernelnewbies.org/FAQ/LinkedLists
+https://developers.redhat.com/articles/2024/04/03/improvements-static-analysis-gcc-14-compiler#solving_the_halting_problem_
+https://govleaders.org/rickover.htm
+https://www.pypy.org/posts/2024/03/fixing-bug-incremental-gc.html
+https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html
+https://pganalyze.com/blog/5mins-postgres-17-faster-vacuum-adaptive-radix-trees
+https://www.experimental-history.com/p/so-you-wanna-de-bog-yourself
+https://www.stilldrinking.org/programming-sucks
+https://lobste.rs/s/agywrp/irc_client_your_motherboard
+https://www.uber.com/en-PT/blog/postgres-to-mysql-migration/ - followup: schemaless; "It results in fewer context switches. Data accessed via the InnoDB buffer pool doesn’t require any user/kernel context switches. The worst case behavior is the occurrence of a TLB miss, which is relatively cheap and can be minimized by using huge pages.";
+https://news.ycombinator.com/item?id=39916144 https://blog.sequin.io/liveview-is-best-with-svelte
+https://jobs.netflix.com/culture
+https://www.coinbase.com/blog/coinbase-is-a-mission-focused-company
+https://world.hey.com/dhh/you-re-not-guaranteed-a-spot-on-the-team-95080248
+
 # March 2024
 https://www.mattkeeter.com/blog/2024-03-25-packing/
 https://oxide.computer/blog/engineering-culture
