@@ -1,4 +1,28 @@
 # April 2024
+https://mattklein123.dev/2024/04/17/1000x-the-telemetry/
+https://mattklein123.dev/2024/04/10/do-you-need-to-store-that-telemetry/
+https://mattklein123.dev/2024/04/03/observability-cost-crisis/
+https://web.archive.org/web/20161108030709/http://www.solarisinternals.com/wiki/index.php/DTrace_Topics_Overhead,
+https://www.cs.dartmouth.edu/~sergey/cs108/2009/dtrace-internals-x86.pdf
+https://oxide.computer/podcasts/oxide-and-friends/1843393
+https://research.swtch.com/xz-script
+https://research.swtch.com/xz-timeline
+https://medium.com/@grubbycoder/porting-8-bit-sonic-2-to-the-ti-84-ce-7ec99f9981c9
+https://news.ycombinator.com/item?id=40103407 - "Programming Is Mostly Thinking"
+https://en.wikipedia.org/wiki/Rule_110
+https://news.ycombinator.com/item?id=25882695 - "But how, exactly, do databases use mmap?"
+https://www.theintrinsicperspective.com/p/why-we-stopped-making-einsteins
+https://kaveland.no/careful-with-that-lock-eugene.html - sort of like our autovacuum prevention
+https://news.ycombinator.com/item?id=39980345 "The simple beauty of XOR floating point compression"
+https://mailman.nanog.org/pipermail/nanog/2024-April/225407.html
+https://www.amazingcto.com/postgres-for-everything/
+https://swtch.com/~rsc/regexp/regexp4.html
+https://github.blog/2023-02-06-the-technology-behind-githubs-new-code-search/
+https://blog.val.town/blog/search-notes/
+https://progrium.github.io/blog/2007/05/03/web-hooks-to-revolutionize-the-web/
+https://andyatkinson.com/blog/2024/04/16/postgresql-17-merge-split-partitions
+https://leontrolski.github.io/pglockpy.html
+https://pganalyze.com/blog/5mins-postgres-high-memory-usage-prepared-statements
 http://rhaas.blogspot.com/2018/01/do-or-undo-there-is-no-vacuum.html zheap
 https://brandur.org/postgres-connections
 https://ottertune.com/blog/yes-postgresql-has-problems-but-we-re-sticking-with-it
