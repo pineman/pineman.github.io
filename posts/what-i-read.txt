@@ -1,4 +1,6 @@
 # April 2024
+https://www.youtube.com/watch?v=19ae5Mq2lJE - "Why is PS3 emulation so fast: RPCS3 optimizations explained" - im all about that GF2P8AFFINEQB
+https://www.danschulz.co/p/sebastian-mallaby
 https://mattklein123.dev/2024/04/17/1000x-the-telemetry/
 https://mattklein123.dev/2024/04/10/do-you-need-to-store-that-telemetry/
 https://mattklein123.dev/2024/04/03/observability-cost-crisis/
@@ -708,7 +710,7 @@ https://fly.io/blog/gossip-glomers/
 https://www.speedshop.co/2020/05/11/the-ruby-gvl-and-scaling.html
 https://www.speedshop.co/2017/10/12/appserver.html
 https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#recommended-default-puma-process-and-thread-configuration
-//https://dnlserrano.dev/talks
+https://dnlserrano.dev/talks
 https://api.rubyonrails.org/classes/ActiveRecord/Locking/Pessimistic.html
 https://api.rubyonrails.org/classes/ActiveRecord/Locking/Optimistic.html
 https://web.archive.org/web/20221007024342/https://www.2ndquadrant.com/en/blog/postgresql-anti-patterns-read-modify-write-cycles/
@@ -727,6 +729,7 @@ https://blog.wesleyac.com/posts/consider-sqlite
 https://www.youtube.com/watch?v=nPDomZQ8jI4 "DuckDB An Embeddable Analytical Database"
 https://forums.somethingawful.com/showthread.php?threadid=3863535&pagenumber=940#lastpost
 https://evertpot.com/jwt-is-a-bad-default/
+
 # February 2023
 https://viewsourcecode.org/why/hacking/theFullyUpturnedBin.html
 https://www.youtube.com/watch?v=6hC9IxqdDDw "Mathieu Ropert “This Videogame Programmer Used the STL and You Will Never Guess What Happened Next”"
@@ -736,7 +739,6 @@ https://dev.to/abstractart/easy-way-to-setup-debugger-and-autocomplete-for-ruby-
 https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
 https://gist.github.com/gtallen1187/e83ed02eac6cc8d7e185
 lots of rachelbythebay
-https://anthonyhobday.com/sideprojects/saferules/
 https://anthonyhobday.com/sideprojects/saferules/
 https://exactly-once.github.io/posts/notes-on-2pc
 http://dbmsmusings.blogspot.com/2019/01/its-time-to-move-on-from-two-phase.html
