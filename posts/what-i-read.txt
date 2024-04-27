@@ -1,4 +1,24 @@
 # April 2024
+https://vincent.bernat.ch/en/blog/2018-systemd-golang-socket-activation
+https://www.youtube.com/watch?v=8VWIPgXdwrQ - "SINFO 23 - Tiago Paiva (Talkdesk)"
+https://blog.wesleyac.com/posts/consider-sqlite
+https://kerkour.com/sqlite-for-servers
+https://mailchi.mp/railsspeed/how-many-ruby-processes-per-cpu-is-ideal?e=0ab8ee608c
+https://www.youtube.com/watch?v=rI4XlFvMNEw - "[EN] Understanding the Ruby Global VM Lock by observing it / Ivo Anjo @KnuX" - rewatch
+https://newsletter.pragmaticengineer.com/p/bluesky
+https://shopify.engineering/horizontally-scaling-the-rails-backend-of-shop-app-with-vitess
+https://shopify.engineering/a-pods-architecture-to-allow-shopify-to-scale
+https://bedrockdb.com/
+https://use.expensify.com/blog/scaling-sqlite-to-4m-qps-on-a-single-server
+https://news.ycombinator.com/item?id=32680957 - "One million queries per second with MySQL"
+https://blog.appsignal.com/2024/04/23/deep-diving-into-the-erlang-scheduler.html
+https://news.ycombinator.com/item?id=40111184 - "Ruby vs. Python comes down to the for loop (2021)"
+https://24.sapo.pt/atualidade/artigos/jorge-buescu-os-novos-programas-de-matematica-representam-um-retrocesso-de-30-anos
+https://discuss.rubyonrails.org/t/truffleruby-vs-mri-performance-comparison/81281
+https://www.johnhawthorn.com/2024/ruby-might-be-faster-than-you-think/
+https://news.ycombinator.com/item?id=40172033 - "Leaving Rust gamedev after 3 years"
+https://www.youtube.com/watch?v=72y2EC5fkcE - "Tomorrow Corporation Tech Demo"
+https://www.henrikkarlsson.xyz/p/search-query
 https://www.youtube.com/watch?v=19ae5Mq2lJE - "Why is PS3 emulation so fast: RPCS3 optimizations explained" - im all about that GF2P8AFFINEQB
 https://www.danschulz.co/p/sebastian-mallaby
 https://mattklein123.dev/2024/04/17/1000x-the-telemetry/
