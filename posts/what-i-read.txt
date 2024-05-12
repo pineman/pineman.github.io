@@ -1,4 +1,25 @@
 # April 2024
+https://oxide.computer/podcasts/oxide-and-friends/838557 -- aws s3 agile
+https://oxide.computer/podcasts/oxide-and-friends/1468302
+https://blog.pragmaticengineer.com/software-engineering-salaries-in-the-netherlands-and-europe/?ref=davidgomes.com
+https://davidgomes.com/growing-singlestore-portugal/
+https://sqlite-users.sqlite.narkive.com/CVRvSKBs/50-faster-than-3-7-17
+https://postgres.ai/blog/20220525-common-db-schema-change-mistakes
+https://postgres.ai/blog/20210923-zero-downtime-postgres-schema-migrations-lock-timeout-and-retries
+https://pragtob.wordpress.com/2024/05/01/10-elixir-gotchas/
+https://news.ycombinator.com/item?id=40213400 - "Dear Europe, please wake up"
+https://dotat.at/@/2019-04-04-a-curious-perl-quine.html
+https://rhaas.blogspot.com/2024/05/hacking-on-postgresql-is-really-hard.html?m=1
+https://blog.funcall.org//lisp%20psychoacoustics/2024/05/01/worlds-loudest-lisp-program/
+https://oldmoe.blog/2024/04/30/backup-strategies-for-sqlite-in-production/
+https://pbs.twimg.com/media/GMH1AZmbgAAEt5F?format=jpg&name=4096x4096
+https://vorakl.com/articles/sq3r/
+https://news.ycombinator.com/item?id=40206752 - "Why SQLite Uses Bytecode"
+https://lesenechal.fr/en/linux/unwinding-the-stack-the-hard-way
+http://sevangelatos.com/john-carmack-on/
+https://www.youtube.com/watch?v=pzm6I4liJlg - "Charles Nutter - Bringing Ruby to the JVM: Making the Impossible Possible // Carolina Code Conf 2023"
+https://www.youtube.com/watch?v=EDfm2fVS4Bo - "Simplifying Systems with Elixir • Sasa Juric • YOW! 2020"
+https://planetscale.com/resources/tech-talk-database-caching-optimizing-performance
 https://vincent.bernat.ch/en/blog/2018-systemd-golang-socket-activation
 https://www.youtube.com/watch?v=8VWIPgXdwrQ - "SINFO 23 - Tiago Paiva (Talkdesk)"
 https://blog.wesleyac.com/posts/consider-sqlite
