@@ -1,4 +1,8 @@
 # April 2024
+https://gist.github.com/richhickey/1563cddea1002958f96e7ba9519972d9
+https://cra.mr/youre-not-a-ceo
+https://cra.mr/work-life-balance
+https://cra.mr/enterprise-is-dead
 https://oxide.computer/podcasts/oxide-and-friends/838557 -- aws s3 agile
 https://oxide.computer/podcasts/oxide-and-friends/1468302
 https://blog.pragmaticengineer.com/software-engineering-salaries-in-the-netherlands-and-europe/?ref=davidgomes.com
@@ -195,7 +199,7 @@ https://ferd.ca/a-distributed-systems-reading-list.html
 https://scholar.harvard.edu/files/mickens/files/thesaddestmoment.pdf
 https://mailchi.mp/railsspeed/to-reduce-queues-reduce-the-95th-percentile
 https://www.timescale.com/blog/how-percentile-approximation-works-and-why-its-more-useful-than-averages/
-https://www.youtube.com/watch?v=lJ8ydIuPFeU -- ""How NOT to Measure Latency" by Gil Tene" coordinated omission
+https://www.youtube.com/watch?v=lJ8ydIuPFeU -- ""How NOT to Measure Latency" by Gil Tene" coordinated omission load tester load testing locust gatling k6 https://github.com/gatling/gatling/issues/2077#issuecomment-204326800 https://news.ycombinator.com/item?id=10486215
 https://www.fosskers.ca/en/blog/rounds-of-lisp
 https://www.fosskers.ca/en/blog/software-dev-langs
 https://www.youtube.com/watch?v=HB5TrK7A4pI -- ""We Really Don't Know How to Compute!" - Gerald Sussman (2011)"

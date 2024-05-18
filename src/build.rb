@@ -64,6 +64,7 @@ def build_what_i_read
   content = ""
   file.readlines.each do |l|
     l.strip!
+    next if l.empty?
     case l
     when /^# /
       content += "</ul>\n<h4>#{l[2..]}</h4>\n<ul>\n"
