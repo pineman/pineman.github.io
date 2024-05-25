@@ -1,4 +1,14 @@
-# April 2024
+# May 2024
+https://www.smily.com/engineering/rds-database-migration-series---facing-the-giant-how-we-migrated-11-tb-database
+https://phoenixframework.org/blog/phoenix-liveview-1.0-released
+https://pganalyze.com/blog/5mins-postgres-planner-order-by-limit?utm_content=292009059&utm_medium=social&utm_source=twitter&hss_channel=tw-1952665526
+https://www.folklore.org/Negative_2000_Lines_Of_Code.html
+https://blog.pragmaticengineer.com/software-engineering-salaries-in-the-netherlands-and-europe/
+https://marshallbrain.com/manna1
+https://davidgomes.com/2023-portuguese-startup-law/
+https://registerspill.thorstenball.com/p/exploring-the-c4-compiler
+https://news.ycombinator.com/item?id=40372296 - "Making a Postgres query 1k times faster"
+https://erkin.party/blog/200715/evolution/
 https://gist.github.com/richhickey/1563cddea1002958f96e7ba9519972d9
 https://cra.mr/youre-not-a-ceo
 https://cra.mr/work-life-balance
@@ -24,6 +34,8 @@ http://sevangelatos.com/john-carmack-on/
 https://www.youtube.com/watch?v=pzm6I4liJlg - "Charles Nutter - Bringing Ruby to the JVM: Making the Impossible Possible // Carolina Code Conf 2023"
 https://www.youtube.com/watch?v=EDfm2fVS4Bo - "Simplifying Systems with Elixir • Sasa Juric • YOW! 2020"
 https://planetscale.com/resources/tech-talk-database-caching-optimizing-performance
+
+# April 2024
 https://vincent.bernat.ch/en/blog/2018-systemd-golang-socket-activation
 https://www.youtube.com/watch?v=8VWIPgXdwrQ - "SINFO 23 - Tiago Paiva (Talkdesk)"
 https://blog.wesleyac.com/posts/consider-sqlite
@@ -162,8 +174,8 @@ https://utcc.utoronto.ca/~cks/space/blog/unix/XWindowsAllTheWayDown
 https://www.youtube.com/watch?v=2V1FtfBDsLU "Effective Programs - 10 Years of Clojure - Rich Hickey"
 https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts
 https://www.justinweiss.com/articles/how-to-debug-ruby-performance-problems-in-production/
+https://web.archive.org/web/20110903054547/http://blog.headius.com/2008/02/ruby-threadraise-threadkill-timeoutrb.htm
 https://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/
-http://blog.headius.com/2008/02/ruby-threadraise-threadkill-timeoutrb.html
 https://news.ycombinator.com/item?id=39587947 - "Twenty years is nothing"
 https://news.ycombinator.com/item?id=39592771 - "Improving Network Performance with Linux Flowtables"
 https://keygen.sh/blog/that-one-time-keygen-went-down-for-5-hours-twice/

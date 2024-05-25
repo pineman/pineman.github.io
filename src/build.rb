@@ -71,8 +71,6 @@ def build_what_i_read
     when /^https?:\/\//
       url, descr = l.split(" ", 2)
       content += "  <li><a href=\"#{url}\">#{url}</a> #{descr}</li>\n"
-    when /\/\//
-      next
     else
       content += "  <li>#{l}</li>\n"
     end

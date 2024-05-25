@@ -8,7 +8,7 @@
   <link href="https://pineman.github.io/atom.xml"
     rel="self"/>
   <title>João Pinheiro</title>
-  <updated>2023-11-05T00:00:00+00:00</updated>
+  <updated>2024-05-25T00:00:00+00:00</updated>
   <entry>
     <id>https://pineman.github.io/aoc3.html</id>
     <link href="https://pineman.github.io/aoc3.html"/>
@@ -43,5 +43,14 @@
     <updated>2023-11-05T00:00:00+00:00</updated>
     <dc:date>2023-11-05T00:00:00+00:00</dc:date>
   </entry>
-  <dc:date>2023-11-05T00:00:00+00:00</dc:date>
+  <entry>
+    <id>https://pineman.github.io/just-use-curl.html</id>
+    <link href="https://pineman.github.io/just-use-curl.html"/>
+    <summary type="html">&lt;p&gt;Recently we&#39;ve needed to do a lot of HTTP requests to weird APIs. One endpoint in particular is basically the wild west of HTTP - High, unpredictable latency and redirects a lot: often absolutely, from HTTPS to HTTP and even to non-resolving URLs.&lt;/p&gt;
+&lt;p&gt;I started this endeavour with good ole &lt;a href=&quot;https://github.com/httprb/http&quot;&gt;HTTP.rb&lt;/a&gt;, as one does, blissfully unaware of this long tail of responses. I configured a 15s timeout for this endpoint call to deal with its unpredictability. And things were going great! HTTP.rb does The Right Thing 99% of the time regarding following redirects and other errors, so I went on my merry way.&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
+    <title>Just use curl (or how to lose 2 days configuring a timeout)</title>
+    <updated>2024-05-25T00:00:00+00:00</updated>
+    <dc:date>2024-05-25T00:00:00+00:00</dc:date>
+  </entry>
+  <dc:date>2024-05-25T00:00:00+00:00</dc:date>
 </feed>
