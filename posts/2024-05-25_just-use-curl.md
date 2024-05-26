@@ -66,12 +66,12 @@ just for the open timeout), so I skipped it for now.
 
 Then I looked at [async-http](https://github.com/socketry/async-http),
 which was exciting - if everything is nonblocking, cancelling on a timer
-is a non-issue (or even just raising an exception like
-`Task.with_timeout` does). But I had lots of trouble trying to port all
-the behavior I was used to in HTTP.rb, with redirections, ssl options,
-headers, all that. The API wasn't as ergonomic as I'd hoped [^3]. I
-tried using it with the [Faraday adapter](), but I found out that I
-coulnd't use Faraday for entirely different, project-specific, reasons.
+is a non-issue (or even just raising an error like `Task.with_timeout`
+does). But I had lots of trouble trying to port all the behavior I was
+used to in HTTP.rb, with redirections, ssl options, headers, all that.
+The API wasn't as ergonomic as I'd hoped [^3]. I tried using it with the
+[Faraday adapter](), but I found out that I coulnd't use Faraday for
+entirely different, project-specific, reasons.
 
 Next I checked out [httpx](https://github.com/HoneyryderChuck/httpx) on
 a recommendation. It uses `IO.select` and even ships with its own
