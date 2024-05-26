@@ -16,6 +16,16 @@ def write_html(html_file, template_file, caller_binding)
   File.write(html_file, html)
 end
 
+module Helpers
+  def self.years_ago(date)
+    date = Date.parse(date)
+    today = Date.today
+    y = today.year - date.year
+    y -= 1 if today.month < date.month || today.month == date.month && today.day < date.day
+    y
+  end
+end
+
 class Post
   attr_reader :url, :content, :title, :date, :html_descr, :text_descr
   def initialize(file)
