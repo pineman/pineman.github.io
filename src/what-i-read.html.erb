@@ -1,8 +1,9 @@
 <%= File.read('partials/head.html') %>
 <%= File.read('partials/article-head.html') %>
+<% file = File.new("../posts/what-i-read.txt") %>
   <meta property="og:url" content="https://pineman.github.io/what-i-read.html" />
-  <meta property="article:published_time" content="<%= date.iso8601 %>" />
-  <meta property="article:modified_time" content="<%= date.iso8601 %>" />
+  <meta property="article:published_time" content="<%= file.mtime.iso8601 %>" />
+  <meta property="article:modified_time" content="<%= file.mtime.iso8601 %>" />
   <title>What I read</title>
   <meta property="og:title" content="What I read" />
   <meta name="description" content="What I read" />
@@ -13,8 +14,21 @@
 <a href="index.html">&lt; back</a>
 <article>
   <h1>An incomplete list of what I read/heard/saw (<a href="https://www.goodreads.com/review/list/30442257-jo-o-pinheiro?order=d&shelf=read-computer" target="_blank">books</a>)</h1>
-  last updated: <%= date.strftime('%Y-%m-%d') %>
-<%= content %>
+  last updated: <%= file.mtime.strftime('%Y-%m-%d') %>
+<% file.readlines.each do |l| %>
+  <% l.strip! %>
+  <% if l.match?(/^# /) %>
+    <h4><%= l[2..] %></h4>
+    <ul>
+  <% elsif l.match?(/^https?:\/\//) %>
+    <% url, descr = l.split(" ", 2) %>
+    <li><a href="<%= url %>"><%= url %></a> <%= descr %></li>
+  <% elsif l.empty? %>
+    </ul>
+  <% else %>
+    <li><%= l %></li>
+  <% end %>
+<% end %>
 </article>
 <a href="index.html">&lt; back</a>
 </div>

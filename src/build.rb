@@ -10,9 +10,10 @@ gemfile do
   gem "nokogiri", "1.16.2"
 end
 
-def template(template_file, caller_binding)
+def write_html(html_file, template_file, caller_binding)
   template = ERB.new(File.read(template_file), trim_mode: ">")
-  template.result(caller_binding)
+  html = template.result(caller_binding)
+  File.write(html_file, html)
 end
 
 class Post
@@ -42,42 +43,7 @@ def build_posts
   }
   posts = Dir["../posts/html/*.html"].map { |html_file|
     Post.new(html_file)
-  }
-  posts.each { |post|
-    html = template("post.html.erb", binding)
-    File.write("../#{post.url}", html)
-  }
-  posts.sort_by!(&:date)
-end
-
-def build_index(posts)
-  html = template("index.html.erb", binding)
-  File.write("../index.html", html)
-end
-
-def build_what_i_read
-  # TODO: move this logic directly into the erb template.
-  #  it's weird to have markup like this randomly in the code.
-  file = File.new("../posts/what-i-read.txt")
-  date = file.mtime
-  content = ""
-  file.readlines.each do |l|
-    l.strip!
-    next if l.empty?
-    case l
-    when /^# /
-      content += "</ul>\n<h4>#{l[2..]}</h4>\n<ul>\n"
-    when /^https?:\/\//
-      url, descr = l.split(" ", 2)
-      content += "  <li><a href=\"#{url}\">#{url}</a> #{descr}</li>\n"
-    else
-      content += "  <li>#{l}</li>\n"
-    end
-  end
-  content += "</ul>\n"
-  content.sub!("</ul>\n", "")
-  html = template("what-i-read.html.erb", binding)
-  File.write("../what-i-read.html", html)
+  }.sort_by!(&:date)
 end
 
 def build_rss(posts)
@@ -99,11 +65,14 @@ def build_rss(posts)
       end
     end
   end
-  rss_s = rss.to_s.gsub!("<summary>", '<summary type="html">')
-  File.write("../atom.xml", rss_s)
+  rss.to_s.gsub!("<summary>", '<summary type="html">')
 end
 
 posts = build_posts
-build_index(posts)
-build_rss(posts)
-build_what_i_read
+posts.each { |post|
+  write_html("../#{post.url}", "post.html.erb", binding)
+}
+write_html("../index.html", "index.html.erb", binding)
+rss = build_rss(posts)
+File.write("../atom.xml", rss)
+write_html("../what-i-read.html", "what-i-read.html.erb", binding)
