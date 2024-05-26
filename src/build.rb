@@ -36,17 +36,18 @@ end
 def build_posts
   FileUtils.rm_rf("../posts/html")
   FileUtils.mkdir("../posts/html")
-  Dir["../posts/*.md"].each do |md|
+  Dir["../posts/*.md"].each { |md|
     `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
-    html = "../posts/html/#{File.basename(md, ".*")}.html"
-    `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o #{html}`
-  end
-  Dir["../posts/html/*.html"].map do |html_file|
-    post = Post.new(html_file)
+    `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o "../posts/html/#{File.basename(md, ".*")}.html"`
+  }
+  posts = Dir["../posts/html/*.html"].map { |html_file|
+    Post.new(html_file)
+  }
+  posts.each { |post|
     html = template("post.html.erb", binding)
     File.write("../#{post.url}", html)
-    post
-  end.sort_by!(&:date)
+  }
+  posts.sort_by!(&:date)
 end
 
 def build_index(posts)
