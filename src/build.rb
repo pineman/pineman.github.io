@@ -50,12 +50,6 @@ def build_posts
 end
 
 def build_index(posts)
-  # TODO: move this logic directly into the erb template.
-  #  it's weird to have markup like this randomly in the code.
-  content = ""
-  posts.reverse_each do |post|
-    content += "<li><time datetime=\"#{post.date.iso8601}\">#{post.date.strftime("%Y-%m-%d")}</time> <a href=\"#{post.url}\">#{post.title}</a></li>\n"
-  end
   html = template("index.html.erb", binding)
   File.write("../index.html", html)
 end
