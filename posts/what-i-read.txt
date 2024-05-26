@@ -1,4 +1,8 @@
 # May 2024
+https://camhashemi.com/posts/building-through-uncertainty/
+https://newsletter.techworld-with-milan.com/p/inside-shopifys-modular-monolith
+https://gist.github.com/tagomoris/4392f1091f658294bd4d473d8ff631cb
+https://speakerdeck.com/tagomoris/namespace-what-and-why
 https://www.smily.com/engineering/rds-database-migration-series---facing-the-giant-how-we-migrated-11-tb-database
 https://phoenixframework.org/blog/phoenix-liveview-1.0-released
 https://pganalyze.com/blog/5mins-postgres-planner-order-by-limit?utm_content=292009059&utm_medium=social&utm_source=twitter&hss_channel=tw-1952665526

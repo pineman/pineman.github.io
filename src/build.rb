@@ -50,6 +50,8 @@ def build_posts
 end
 
 def build_index(posts)
+  # TODO: move this logic directly into the erb template.
+  #  it's weird to have markup like this randomly in the code.
   content = ""
   posts.reverse_each do |post|
     content += "<li><time datetime=\"#{post.date.iso8601}\">#{post.date.strftime("%Y-%m-%d")}</time> <a href=\"#{post.url}\">#{post.title}</a></li>\n"
@@ -59,6 +61,8 @@ def build_index(posts)
 end
 
 def build_what_i_read
+  # TODO: move this logic directly into the erb template.
+  #  it's weird to have markup like this randomly in the code.
   file = File.new("../posts/what-i-read.txt")
   date = file.mtime
   content = ""
