@@ -1,5 +1,8 @@
-<%= File.read('partials/head.html') %>
-<%= File.read('partials/article-head.html') %>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <%= File.read('partials/head.html') %>
+  <%= File.read('partials/article-head.html') %>
   <meta property="og:url" content="https://pineman.github.io/<%= post.url %>" />
   <meta property="article:published_time" content="<%= post.date.iso8601 %>" />
   <meta property="article:modified_time" content="<%= post.date.iso8601 %>" />
