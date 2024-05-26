@@ -95,12 +95,12 @@ uses `Timeout::timeout` as well... And
 [httparty](https://github.com/jnunemaker/httparty) calls Net::HTTP...
 [Excon](https://github.com/excon/excon) uses `IO.select` - yay!
 
-But then I found [Typhoeus](https://github.com/typhoeus/typhoeus) which
-is a wrapper around the legendary libcurl, which I know has a global
-timeout including redirects (`--max-time` through the `curl` cli). I
-tried it out and it's pretty simple, easy to use and does the right
-thing (of course, it's `curl`)! So this seems to be the endgame, the
-ultimate solution for my usecase today, at least from my testing so far.
+But then I found [Typhoeus](https://github.com/typhoeus/typhoeus), a
+wrapper around libcurl, which I know has a global timeout including
+redirects (`--max-time` through the `curl` cli). I tried it out and it's
+pretty simple, easy to use and does the right thing (of course, it's
+`curl`)! So this seems to be the endgame, the ultimate solution for my
+usecase today, at least from my testing so far.
 
 So, is the conclusion that we should all just use cURL? Really?! A C
 project started almost 30 years ago?!
