@@ -61,7 +61,8 @@ So. What to do? Time to look for alternatives, I guess... I'll try not
 to get into hideous technical detail, for both your sake and mine.
 
 I checked and it seemed to me that the stdlib Net:HTTP also used
-`Timeout::timeout`, albeit less than HTTP.rb, so I skipped it for now.
+`Timeout::timeout`, albeit less than HTTP.rb (looks like to me that it's
+just for the open timeout), so I skipped it for now.
 
 Then I looked at [async-http](https://github.com/socketry/async-http),
 which was exciting - if everything is nonblocking, cancelling on a timer
@@ -107,7 +108,10 @@ project started almost 30 years ago?!
 Yes.
 
 Tongue-in-cheek. But, in retrospect, it sounds obvious - cURL is
-venerable and legendary. Lindy's law in effect!
+venerable and legendary. Lindy's law in effect! Of course though, pure
+ruby gems have many advantages compared to ffi/native gems, not least of
+which not randomly segfaulting. But we'll see how it goes for me and
+curl wrappers.
 
 Also, please burn `Timeout::timeout` with fire.
 
