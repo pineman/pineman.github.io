@@ -54,15 +54,14 @@ doing, so how wasn't it rescued there?!... Oh. God. Wait. It's
 
 It was. I suspect it was doubly-bad as HTTP.rb itself uses
 `Timeout::timeout` for its timeouts [^2]. I was triggering this
-condition fairly often, in just hundreds of requests, in my machine -
+condition fairly often, in just hundreds of requests, on my machine -
 there's no way we can ship it like this.
 
-So. What to do? Time to look for alternatives, I guess... I'll try not
-to get into hideous technical detail, for both your sake and mine.
-
-I checked and it seemed to me that the stdlib Net:HTTP also used
-`Timeout::timeout`, albeit less than HTTP.rb (looks like to me that it's
-just for the open timeout), so I skipped it for now.
+Time to look for alternatives, I guess... I'll try not to get into
+hideous technical detail, for both your sake and mine. I checked, and it
+seemed to me that the stdlib Net:HTTP also used `Timeout::timeout` -
+albeit less than HTTP.rb (looks like that it's just for the open
+timeout), so I skipped it for now.
 
 Then I looked at [async-http](https://github.com/socketry/async-http),
 which was exciting - if everything is nonblocking, cancelling on a timer

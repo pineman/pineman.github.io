@@ -26,10 +26,6 @@ a {
 a:hover {
   border-bottom: solid 0.0625rem;
 }
-time {
-  width: 9ch;
-  display: inline-block;
-}
 .img-link {
   border-bottom: none;
 }
