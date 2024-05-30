@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require "rss"
-require "fileutils"
 require "erb"
 
 require "bundler/inline"
@@ -32,9 +31,8 @@ class Post
     @url = url
     @date = DateTime.parse(date)
     html = Nokogiri::HTML.fragment(html)
-    h1 = html.at("h1")
-    @title = h1.text
-    h1.remove
+    @title = html.at("h1").text
+    html.at("h1").remove
     @content = html.to_s
     # descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
     descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m] || ""
@@ -45,8 +43,6 @@ class Post
 end
 
 def build_posts
-  FileUtils.rm_rf("../posts/html")
-  FileUtils.mkdir("../posts/html")
   Dir["../posts/*.md"].map { |md|
     `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
     html = "../posts/html/#{File.basename(md, ".*")}.html"
@@ -79,6 +75,7 @@ def build_rss(posts)
   rss.to_s.gsub!("<summary>", '<summary type="html">')
 end
 
+`rm -f ../posts/html/*; rm -f ../*.html`
 posts = build_posts
 posts.each { |post|
   write_html("../#{post.url}", "post.html.erb", binding)

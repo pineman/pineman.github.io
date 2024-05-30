@@ -1,4 +1,12 @@
 # May 2024
+https://www.meticulous.ai/
+https://news.ycombinator.com/item?id=40467297 - "Writing a Unix clone in about a month"
+https://tcm.computerhistory.org/ - must visit The Computer Museum one day :)
+https://news.ycombinator.com/item?id=40419856 - "Enlightenmentware"
+https://tembo.io/blog/pg-timeseries
+https://smudge.ai/blog/ratelimit-algorithms
+https://yarchive.net/comp/index.html - Usenet archive
+https://daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/
 https://evilmartians.com/chronicles/viewcomponent-in-the-wild-building-modern-rails-frontends
 https://viewcomponent.org/guide/getting-started.html
 https://yehudakatz.com/2009/10/04/emulating-smalltalks-conditionals-in-ruby/
