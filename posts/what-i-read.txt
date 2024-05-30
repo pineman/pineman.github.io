@@ -1,4 +1,6 @@
 # May 2024
+https://evilmartians.com/chronicles/viewcomponent-in-the-wild-building-modern-rails-frontends
+https://viewcomponent.org/guide/getting-started.html
 https://yehudakatz.com/2009/10/04/emulating-smalltalks-conditionals-in-ruby/
 https://lobste.rs/s/sdxsa9/do_i_not_like_ruby_anymore
 https://news.ycombinator.com/item?id=40509572 - "Three Laws of Software Complexity"

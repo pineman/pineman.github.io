@@ -29,15 +29,17 @@ really, really didn't want to do this, as I had already read the
 Nutter](https://web.archive.org/web/20110903054547/http://blog.headius.com/2008/02/ruby-threadraise-threadkill-timeoutrb.html)
 (and the "repost" [by Mike
 Perham](https://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/))
-about how fundamentally broken it is. As a quick summary,
-`Timeout::timeout` essentially spins up a whole new thread (if not using
-Fibers), just to sleep in it for the duration of the timeout. If the
-block of code runs before the timeout is elapsed, the thread is killed,
-and so it doesn't wake up. If it does wake up, however, it uses
-`Thread#raise` to raise an error in the calling thread at any point,
-arbritarily, which is SUPER dangerous! There's no guarantee as to when
-exactly the sleeping thread will run or when the calling thread will
-receive the signal, so all manner of standard race problems apply.
+about how fundamentally broken it is.
+
+As a quick summary, `Timeout::timeout` essentially spins up a whole new
+thread (if not using Fibers), just to sleep in it for the duration of
+the timeout. If the block of code runs before the timeout is elapsed,
+the thread is killed, and so it doesn't wake up. If it does wake up,
+however, it uses `Thread#raise` to raise an error in the calling thread
+at any point, arbritarily, which is SUPER dangerous! There's no
+guarantee as to when exactly the sleeping thread will run or when the
+calling thread will receive the signal, so all manner of standard race
+problems apply.
 
 Speaking with some colleagues we noted the probable Right Way™ to solve
 this would be to use Fibers and async-http, possibly with Faraday. I,

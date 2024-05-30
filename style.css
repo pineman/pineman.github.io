@@ -35,11 +35,9 @@
     }
   }
 }
-.index-blog-li {
-  display: flex;
-  time {
-    min-width: 6rem;
-  }
+.index-post-time {
+  min-width: 5.7rem;
+  display: inline-block;
 }
 .img-link {
   border-bottom: none;
@@ -108,8 +106,13 @@ a {
 #wrap {
   max-width: 41rem;
 }
-/* formula: fontsize * (#wrap max-width + 2*body margin) */
-@media (max-width: calc(18px * (41rem + 2*1rem))) {
+/*
+  Formula: fontsize * (#wrap max-width + 2*body margin)
+  This works because wrap max-width and body margin is set in rem.
+  Setting a number directly like 43rem isn't working because rem
+  is not the same in the media query, for some reason.
+*/
+@media (max-width: calc(18px * (41 + 2*1))) {
   #index-header {
     grid-template-columns: initial;
     margin-bottom: 0;
