@@ -47,6 +47,7 @@ end
 def build_posts
   FileUtils.rm_rf("../posts/html")
   FileUtils.mkdir("../posts/html")
+  # TODO: move this to inside Post initializer
   Dir["../posts/*.md"].each { |md|
     `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
     `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o "../posts/html/#{File.basename(md, ".*")}.html"`

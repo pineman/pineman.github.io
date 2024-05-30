@@ -1,4 +1,10 @@
 # May 2024
+https://yehudakatz.com/2009/10/04/emulating-smalltalks-conditionals-in-ruby/
+https://lobste.rs/s/sdxsa9/do_i_not_like_ruby_anymore
+https://news.ycombinator.com/item?id=40509572 - "Three Laws of Software Complexity"
+https://mathetake.github.io/posts/runtime-code-generation-in-go-part-1
+https://news.ycombinator.com/item?id=37778069 - "Database Performance at Scale – A free book"
+https://cedardb.com/blog/ode_to_postgres/
 https://camhashemi.com/posts/building-through-uncertainty/
 https://newsletter.techworld-with-milan.com/p/inside-shopifys-modular-monolith
 https://gist.github.com/tagomoris/4392f1091f658294bd4d473d8ff631cb

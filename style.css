@@ -96,7 +96,6 @@ header {
   --oceanic-bg: #1b2b34;
   --oceanic-fg: #c0c5ce;
 }
-/* Inlines & blocks */
 code {
   border-radius: 0.25em;
   border: 0.25px #4e585d solid; /* oceanic-fg but darker */
@@ -104,7 +103,6 @@ code {
   background: var(--oceanic-bg);
   font-size: 16px;
 }
-/* Blocks */
 pre code {
   /* Early apply of hljs styles to avoid FOUC */
   display: block;

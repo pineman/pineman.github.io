@@ -17,7 +17,6 @@
 <a href="index.html">&lt; back</a>
 <article>
   <h1>An incomplete list of what I read/heard/saw (<a href="https://www.goodreads.com/review/list/30442257-jo-o-pinheiro?order=d&shelf=read-computer" target="_blank">books</a>)</h1>
-  last updated: <%= file.mtime.strftime('%Y-%m-%d') %>
 <% file.readlines.each do |l| %>
   <% l.strip! %>
   <% if l.match?(/^# /) %>
