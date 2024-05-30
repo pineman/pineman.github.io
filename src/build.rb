@@ -27,11 +27,11 @@ module Helpers
 end
 
 class Post
-  attr_reader :url, :content, :title, :date, :html_descr, :text_descr
-  def initialize(file)
-    @date, @url = File.basename(file).split("_")
-    @date = DateTime.parse(@date)
-    h = Nokogiri::HTML.fragment(File.read(file))
+  attr_reader :url, :title, :content, :date, :html_descr, :text_descr
+  def initialize(date, url, html)
+    @url = url
+    @date = DateTime.parse(date)
+    h = Nokogiri::HTML.fragment(html)
     h1 = h.at("h1")
     @title = h1.text
     h1.after("<time datetime=\"#{@date.iso8601}\" pubdate=\"pubdate\">#{@date.strftime("%Y-%m-%d")}</time>")
@@ -47,13 +47,13 @@ end
 def build_posts
   FileUtils.rm_rf("../posts/html")
   FileUtils.mkdir("../posts/html")
-  # TODO: move this to inside Post initializer
-  Dir["../posts/*.md"].each { |md|
+  Dir["../posts/*.md"].map { |md|
     `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
-    `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o "../posts/html/#{File.basename(md, ".*")}.html"`
-  }
-  posts = Dir["../posts/html/*.html"].map { |html_file|
-    Post.new(html_file)
+    html = "../posts/html/#{File.basename(md, ".*")}.html"
+    `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o #{html}`
+    date, url = File.basename(html).split("_")
+    html = File.read(html)
+    Post.new(date, url, html)
   }.sort_by!(&:date)
 end
 
