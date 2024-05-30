@@ -28,7 +28,11 @@
 <div id="wrap">
 <a href="index.html">&lt; back</a>
 <article>
-<h1 id="just-use-curl-or-how-to-lose-2-days-configuring-a-timeout">Just use curl (or how to lose 2 days configuring a timeout)</h1><time datetime="2024-05-25T00:00:00+00:00" pubdate="pubdate">2024-05-25</time>
+  <header>
+    <h1>Just use curl (or how to lose 2 days configuring a timeout)</h1>
+    <h5><time datetime="2024-05-25T00:00:00+00:00" pubdate="pubdate">2024-05-25</time></h5>
+  </header>
+
 <p>Recently we've needed to do a lot of HTTP requests to weird APIs. One endpoint in particular is basically the wild west of HTTP - High, unpredictable latency and redirects a lot: often absolutely, from HTTPS to HTTP and even to non-resolving URLs.</p>
 <p>I started this endeavour with good ole <a href="https://github.com/httprb/http">HTTP.rb</a>, as one does, blissfully unaware of this long tail of responses. I configured a 15s timeout for this endpoint call to deal with its unpredictability. And things were going great! HTTP.rb does The Right Thing 99% of the time regarding following redirects and other errors, so I went on my merry way.</p>
 <p>... Until I started tracking my requests more closely and noticed some were taking longer than 15s. Much longer, in fact. Turns out the timeout settings are per-HTTP-request - i.e., a call to <code>HTTP.get</code> with <code>max_hops: 10</code> and <code>timeout: 15</code> can take up to 150s, modulo other shenanigans we'll get to. This is not okay as each redirect can easily take 10s, wrecking my performance SLO - which, while relatively lax, is certainly not to exceed around 30s, and very hopefully below that. I needed a way to set a global timeout for ALL redirects in this call to <code>HTTP.get</code> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>

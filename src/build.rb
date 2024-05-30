@@ -31,15 +31,15 @@ class Post
   def initialize(date, url, html)
     @url = url
     @date = DateTime.parse(date)
-    h = Nokogiri::HTML.fragment(html)
-    h1 = h.at("h1")
+    html = Nokogiri::HTML.fragment(html)
+    h1 = html.at("h1")
     @title = h1.text
-    h1.after("<time datetime=\"#{@date.iso8601}\" pubdate=\"pubdate\">#{@date.strftime("%Y-%m-%d")}</time>")
-    @content = h.to_s
+    h1.remove
+    @content = html.to_s
     # descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
     descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m] || ""
     @html_descr = descr + "<p>...</p>"
-    @text_descr = Nokogiri::HTML(descr).text
+    @text_descr = Nokogiri::HTML.fragment(descr).text
     @text_descr = "#{@text_descr[...157]}..." if @text_descr.length > 160
   end
 end

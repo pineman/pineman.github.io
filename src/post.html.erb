@@ -15,6 +15,10 @@
 <div id="wrap">
 <a href="index.html">&lt; back</a>
 <article>
+  <header>
+    <h1><%= post.title %></h1>
+    <h5><time datetime="<%= post.date.iso8601 %>" pubdate="pubdate"><%= post.date.strftime("%Y-%m-%d") %></time></h5>
+  </header>
 <%= post.content %>
 </article>
 <a href="index.html">&lt; back</a>
