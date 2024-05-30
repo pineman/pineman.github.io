@@ -35,12 +35,10 @@
     }
   }
 }
-#index-article {
-  li {
-    display: flex;
-    time {
-      min-width: 6rem;
-    }
+.index-blog-li {
+  display: flex;
+  time {
+    min-width: 6rem;
   }
 }
 .img-link {
