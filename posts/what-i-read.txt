@@ -1,4 +1,20 @@
+# June 2024
+https://changelog.com/podcast/592 - "From Sun to Oxide, with Bryan Cantrill"
+https://evilmartians.com/chronicles/viewcomponent-in-the-wild-building-modern-rails-frontends
+https://evilmartians.com/chronicles/gemfile-of-dreams-libraries-we-use-to-build-rails-apps
+https://brandur.org/two-phase-render
+https://www.mikeperham.com/how-sidekiq-works
+https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55
+https://redgetan.cc/understanding-timeouts-in-cruby
+https://judoscale.com/blog/planning-sidekiq-queues
+https://www.kalzumeus.com/2011/07/08/business-psychology/
+https://news.ycombinator.com/item?id=40544283 - "Arthur Whitney releases an open-source K with MIT license"
+
 # May 2024
+https://stevenharman.net/so-we-have-a-memory-leak
+https://registerspill.thorstenball.com/p/be-findable
+https://news.ycombinator.com/item?id=40529556 - "A week with Elixir (2013)"
+https://github.com/readme/guides/finish-your-projects
 https://www.meticulous.ai/
 https://news.ycombinator.com/item?id=40467297 - "Writing a Unix clone in about a month"
 https://tcm.computerhistory.org/ - must visit The Computer Museum one day :)

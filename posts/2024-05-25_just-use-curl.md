@@ -29,7 +29,9 @@ really, really didn't want to do this, as I had already read the
 Nutter](https://web.archive.org/web/20110903054547/http://blog.headius.com/2008/02/ruby-threadraise-threadkill-timeoutrb.html)
 (and the "repost" [by Mike
 Perham](https://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/))
-about how fundamentally broken it is.
+about how fundamentally broken it is. [This
+post](https://redgetan.cc/understanding-timeouts-in-cruby/) is
+incredible - it goes into the internals of how Timeout works in CRuby.
 
 As a quick summary, `Timeout::timeout` essentially spins up a whole new
 thread (if not using Fibers), just to sleep in it for the duration of
