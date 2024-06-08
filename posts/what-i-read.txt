@@ -1,4 +1,19 @@
 # June 2024
+https://jpcamara.com/2024/06/04/your-ruby-programs.html#fnref:14
+https://brandur.org/sqlc
+https://github.com/aitva/sqlc-exp
+https://docs.sqlc.dev/en/stable/tutorials/getting-started-sqlite.html - how does it handle nullable? Sql.NullString
+https://blog.ploeh.dk/2024/06/03/youll-regret-using-natural-keys/
+https://dashbit.co/blog/web-apps-have-client-and-server-state
+https://brooker.co.za/blog/2014/12/06/random.html
+https://blog.regehr.org/archives/1393
+https://technology.riotgames.com/news/riot-messaging-service
+https://www.paulgraham.com/power.html
+https://jvns.ca/blog/2015/11/27/why-rubys-timeout-is-dangerous-and-thread-dot-raise-is-terrifying/
+https://world.hey.com/jorge/the-popover-drama-48e317b3
+https://world.hey.com/jorge/aging-programmer-d448bdec
+https://world.hey.com/jorge/don-t-block-yourself-a-remote-worker-super-power-7322c679
+https://www.aha.io/engineering/articles/debugging-ruby-the-hard-way
 https://changelog.com/podcast/592 - "From Sun to Oxide, with Bryan Cantrill"
 https://evilmartians.com/chronicles/viewcomponent-in-the-wild-building-modern-rails-frontends
 https://evilmartians.com/chronicles/gemfile-of-dreams-libraries-we-use-to-build-rails-apps
