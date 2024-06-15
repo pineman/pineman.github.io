@@ -113,8 +113,8 @@ Yes.
 Tongue-in-cheek. But, in retrospect, it sounds obvious - cURL is
 venerable and legendary. Lindy's law in effect! Of course though, pure
 ruby gems have many advantages compared to ffi/native gems, not least of
-which not randomly segfaulting. But we'll see how it goes for me and
-curl wrappers.
+which not randomly segfaulting [^4]. But we'll see how it goes for me
+and curl wrappers.
 
 Also, please burn `Timeout::timeout` with fire.
 
@@ -127,3 +127,7 @@ Also, please burn `Timeout::timeout` with fire.
 
 [^3]: This is when it hits me that HTTP clients are SUPER non-trivial.
     You'd think making HTTP requests was easy. Yeah.
+
+[^4]: Also, pure ruby gems work in async! A curl wrapper can't yield to
+    the event loop since it's off in libcurl - which isn't obviously
+    isn't aware that we're running it in a fiber in an event loop!

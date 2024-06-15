@@ -1,5 +1,9 @@
 # June 2024
-https://jpcamara.com/2024/06/04/your-ruby-programs.html#fnref:14
+https://codeblog.jonskeet.uk/2019/03/27/storing-utc-is-not-a-silver-bullet - is it an instant in time or is it a date (in a timezone)?
+https://news.ycombinator.com/item?id=40681862 - "I am not yet ready to switch to Zig from Rust"
+https://fly.io/blog/globally-distributed-postgres
+https://news.ycombinator.com/item?id=40660761 - "The GJK Algorithm: A weird and beautiful way to do a simple thing"
+https://jpcamara.com/2024/06/04/your-ruby-programs.html
 https://brandur.org/sqlc
 https://github.com/aitva/sqlc-exp
 https://docs.sqlc.dev/en/stable/tutorials/getting-started-sqlite.html - how does it handle nullable? Sql.NullString
