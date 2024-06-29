@@ -43,6 +43,7 @@ class Post
 end
 
 def build_posts
+  `rm -f ../posts/html/*; rm -f ../*.html`
   Dir["../posts/*.md"].map { |md|
     `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
     html = "../posts/html/#{File.basename(md, ".*")}.html"
@@ -75,12 +76,10 @@ def build_rss(posts)
   rss.to_s.gsub!("<summary>", '<summary type="html">')
 end
 
-`rm -f ../posts/html/*; rm -f ../*.html`
 posts = build_posts
 posts.each { |post|
   write_html("../#{post.url}", "post.html.erb", binding)
 }
 write_html("../index.html", "index.html.erb", binding)
-rss = build_rss(posts)
-File.write("../atom.xml", rss)
+File.write("../atom.xml", build_rss(posts))
 write_html("../what-i-read.html", "what-i-read.html.erb", binding)

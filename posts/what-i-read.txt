@@ -1,4 +1,38 @@
 # June 2024
+https://qntm.org/assist
+https://blog.regehr.org/archives/1393
+https://schneems.com/2017/08/01/is-webrick-webscale/
+https://blog.archive.org/2024/06/01/the-backrooms-of-the-internet-archive/
+https://brandur.org/fragments/sqlc-2024
+https://scoutapm.com/blog/how-to-make-text-searches-in-postgresql-faster-with-trigram-similarity
+https://alexklibisz.com/2022/02/18/optimizing-postgres-trigram-search
+https://news.ycombinator.com/item?id=40714544 - "What happens to latency if service time is cut in half (2022)"
+https://lobste.rs/s/o51y4t/why_people_are_angry_over_go_1_23_iterators
+https://news.ycombinator.com/item?id=40737511 - "The Pre-Scheme Restoration"
+https://offlinemark.com/an-obscure-quirk-of-proc
+https://lobste.rs/s/zfdwiu/ruby_great_language_for_shell_scripts https://news.ycombinator.com/item?id=40763640
+https://en.m.wikipedia.org/wiki/Real_Programmers_Don't_Use_Pascal
+https://www.honeycomb.io/blog/anything-but-tech-debt
+https://en.m.wikipedia.org/wiki/Pauli_effect
+https://charap.co/reading-group-chardonnay-fast-and-general-datacenter-transactions-for-on-disk-databases/
+https://newsletter.pragmaticengineer.com/p/oxide-part-2?utm_source=substack&utm_medium=email
+https://medium.com/@johnpcutler/by-default-ship-nothing-a5d651422aa3
+https://island94.org/2023/08/appropriately-using-rubys-thread-handle_interrupt
+https://www.crunchydata.com/blog/time-partitioning-and-custom-time-intervals-in-postgres-with-pg_partman
+https://gomakethings.com/why-not-htmx/
+https://danluu.com/essential-complexity
+https://www.scattered-thoughts.net/writing/select-wat-from-sql/
+https://v2thegreat.com/2024/06/19/lessons-learned-from-scaling-to-multi-terabyte-datasets/
+https://lobste.rs/s/o51y4t/why_people_are_angry_over_go_1_23_iterators
+https://news.ycombinator.com/item?id=40711661 - "A Note on Essential Complexity"
+https://newsletter.pragmaticengineer.com/p/lessons-from-bootstrapped-companies
+https://www.reddit.com/r/ruby/comments/qj4s94/async_ruby/ - https://brunosutic.com/blog/async-ruby
+https://www.youtube.com/watch?v=e_9ziFKcEhw 1BRC
+https://news.ycombinator.com/item?id=40695001 - "Hello world in C inline assembly (2020)"
+https://news.ycombinator.com/item?id=40699684 - "MicroMac, a Macintosh for under £5"
+https://folklore.org/Round_Rects_Are_Everywhere.html
+https://news.ycombinator.com/item?id=40702146 - "I learned Haskell in just 15 years"
+https://www.youtube.com/watch?v=inRB6ull5WQ - ""The Life & Death of htmx" by Alexander Petros at Big Sky Dev Con 2024"
 https://codeblog.jonskeet.uk/2019/03/27/storing-utc-is-not-a-silver-bullet - is it an instant in time or is it a date (in a timezone)?
 https://news.ycombinator.com/item?id=40681862 - "I am not yet ready to switch to Zig from Rust"
 https://fly.io/blog/globally-distributed-postgres
