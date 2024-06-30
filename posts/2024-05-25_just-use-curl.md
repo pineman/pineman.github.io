@@ -129,5 +129,5 @@ Also, please burn `Timeout::timeout` with fire.
     You'd think making HTTP requests was easy. Yeah.
 
 [^4]: Also, pure ruby gems work in async! A curl wrapper can't yield to
-    the event loop since it's off in libcurl - which isn't obviously
-    isn't aware that we're running it in a fiber in an event loop!
+    the event loop since it's off in libcurl - which obviously isn't
+    aware that we're running it in a fiber in an event loop!
