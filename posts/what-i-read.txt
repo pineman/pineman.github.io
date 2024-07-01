@@ -1,4 +1,13 @@
 # June 2024
+https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf
+https://how.complexsystems.fail/#3
+https://github.blog/2021-03-18-how-we-found-and-fixed-a-rare-race-condition-in-our-session-handling/
+https://news.ycombinator.com/item?id=40818809 - "Ask HN: What is the best code base you ever worked on?"
+https://jonathan-frere.com/posts/why-test/
+https://strangestloop.io/essays/things-that-arent-doing-the-thing
+https://news.ycombinator.com/item?id=890558
+https://news.ycombinator.com/item?id=40835274 - "Weekend projects: getting silly with C"
+https://news.ycombinator.com/item?id=40829607 - "A bunch of programming advice I'd give to myself 15 years ago"
 https://qntm.org/assist
 https://blog.regehr.org/archives/1393
 https://schneems.com/2017/08/01/is-webrick-webscale/
