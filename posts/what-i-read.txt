@@ -1,3 +1,16 @@
+# July 2024
+https://lobste.rs/s/foi6sk/software_crisis
+https://lobste.rs/s/vbivyq/synchronous_core_asynchronous_shell
+https://sourcegraph.com/blog/the-death-of-the-junior-developer
+https://www.youtube.com/watch?v=CTUMNtKQLl8 - "I ported THOUSANDS of apps to Windows 95"
+https://www.youtube.com/watch?v=EaHs2tmiU9U - "Introspection Gaps | Rachel Stephens | Monktoberfest 2022"
+https://www.youtube.com/watch?app=desktop&v=IcN7yFTS8j - "Peter Zhu - Rails and the Ruby Garbage Collector: How to Speed Up Your Rails App - Rails World 2023"
+https://lobste.rs/s/n4inn0/quality_productivity_are_not - excellent points made in the article
+https://evanhahn.com/programming-beliefs-as-of-july-2024/
+https://news.ycombinator.com/item?id=40843778 - "RegreSSHion: RCE in OpenSSH's server, on glibc-based Linux systems"
+https://github.com/tigerbeetle/tigerbeetle/blob/main/docs/TIGER_STYLE.md
+https://notes.eatonphil.com/2024-07-01-a-write-ahead-log-is-not-a-universal-part-of-durability.html
+
 # June 2024
 https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf
 https://how.complexsystems.fail/#3
