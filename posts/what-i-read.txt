@@ -1,4 +1,17 @@
 # July 2024
+https://itsallaboutthebit.com/arc-mutex/
+https://news.ycombinator.com/item?id=40940241
+https://blog.pragmaticengineer.com/project-management-at-big-tech/
+https://lobste.rs/s/x0j0iv/just_use_postgres_for_everything
+https://aws.amazon.com/blogs/database/understanding-statistics-in-postgresql/ - extended statistics sound very handy
+https://steveklabnik.com/writing/should-you-learn-c-to-learn-how-the-computer-works
+https://www.radicalsimpli.city/
+https://retrocomputing.stackexchange.com/questions/5341/how-did-people-use-ed/5343#5343
+https://newsletter.pragmaticengineer.com/p/what-is-old-is-new-again?utm_source=substack&utm_medium=email
+https://www.mikeperham.com/2024/07/03/iteration-and-sidekiq-7.3.0/
+https://daedtech.com/how-to-keep-your-best-programmers/
+https://randsinrepose.com/archives/bored-people-quit/
+https://thedailywtf.com/articles/Up-or-Out-Solving-the-IT-Turnover-Crisis
 https://lobste.rs/s/foi6sk/software_crisis
 https://lobste.rs/s/vbivyq/synchronous_core_asynchronous_shell
 https://sourcegraph.com/blog/the-death-of-the-junior-developer
