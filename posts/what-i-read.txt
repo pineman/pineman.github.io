@@ -1,4 +1,10 @@
 # July 2024
+https://mazzo.li/posts/fast-pipes.html
+https://dirtypipe.cm4all.com/ - yes, the guy who wrote mpd is absolute machine
+https://fly.io/blog/docker-without-docker/
+https://jpcamara.com/2024/07/15/ruby-methods-are.html
+https://pointersgonewild.com/2024/04/20/the-alternative-implementation-problem/ (https://x.com/Love2Code/status/1781724317765484786)
+https://media.defcon.org/DEF%20CON%2031/DEF%20CON%2031%20presentations/byt3bl33d3r%20-%20SpamChannel%20Spoofing%20Emails%20From%202%20Million%20Domains%20and%20Virtually%20Becoming%20Satan.pdf
 https://itsallaboutthebit.com/arc-mutex/
 https://news.ycombinator.com/item?id=40940241
 https://blog.pragmaticengineer.com/project-management-at-big-tech/
