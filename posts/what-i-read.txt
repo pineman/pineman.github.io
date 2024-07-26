@@ -1,4 +1,13 @@
 # July 2024
+https://lobste.rs/s/avxnht/wruby_single_file_minimal_site_generator
+https://lobste.rs/s/rvqez7/how_i_use_git_worktrees
+https://news.ycombinator.com/item?id=41068719 - "Show HN: Haystack – an IDE for exploring and editing code on an infinite canvas" - been wanting do to something like this for a while now!
+https://xata.io/blog/postgres-major-version-upgrades
+https://news.ycombinator.com/item?id=41062072 - "Generating sudokus for fun and no profit"
+https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html
+https://news.ycombinator.com/item?id=41033579 - "No More Blue Fridays"
+https://lobste.rs/s/40a2yb/git_spice_manage_stacked_git_branches
+https://lobste.rs/s/cdkkp6/software_engineers_are_not_should_not_be
 https://mazzo.li/posts/fast-pipes.html
 https://dirtypipe.cm4all.com/ - yes, the guy who wrote mpd is absolute machine
 https://fly.io/blog/docker-without-docker/
