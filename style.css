@@ -105,6 +105,7 @@ a {
 }
 #wrap {
   max-width: 41rem;
+  width: 100%;
 }
 /*
   Formula: fontsize * (#wrap max-width + 2*body margin)
