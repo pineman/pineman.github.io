@@ -1,4 +1,37 @@
 # July 2024
+https://lobste.rs/s/aotvqu/functional_programming_languages
+https://prophetlabs.de/posts/classTries.html
+https://lobste.rs/s/awdn3y/http_0_9_from_scratch
+https://justine.lol/sectorlisp2/
+https://registerspill.thorstenball.com/p/things-you-can-to-with-codebases
+https://news.ycombinator.com/item?id=41108068 - 1 man saas playbook
+https://news.ycombinator.com/item?id=41111324 - advice
+https://news.ycombinator.com/item?id=41147787
+https://eli.thegreenplace.net/2024/notes-on-taylor-and-maclaurin-series
+https://lobste.rs/s/z0vpdn/go_reasonable_good_language
+https://web.archive.org/web/20230607033544/https://old.reddit.com/r/rails/comments/6jz7tq/source_code_lobsters_a_hacker_news_clone_built/
+https://blog.sequinstream.com/build-your-own-sqs-or-kafka-with-postgres/
+https://steveklabnik.com/writing
+https://go.dev/blog/go1.13-errors
+https://lobste.rs/s/7rtvnp/async_rust_challenges_iroh
+https://bitfieldconsulting.com/posts/iterators
+https://lobste.rs/s/uxbvru/translating_all_c_rust_tractor
+https://engineering.gusto.com/how-we-made-gusto-page-loads-40-faster-245cea3d090e
+https://stackoverflow.blog/2024/06/10/generative-ai-is-not-going-to-build-your-engineering-team-for-you/
+https://eieio.games/essays/scaling-one-million-checkboxes/
+https://www.putsdebug.com/posts/git-commits
+https://tenderlovemaking.com/2016/02/05/i-am-a-puts-debuggerer/
+https://www.cl.cam.ac.uk/~mr10/BCPL.html
+https://filtra.io/rust-meilisearch-jul-24
+https://nee.lv/2021/02/28/How-I-cut-GTA-Online-loading-times-by-70/
+https://lobste.rs/s/bjx13v/strlcpy_how_cpus_can_defy_common_sense
+https://lobste.rs/s/ttr8op/lobsters_interview_with_david_chisnall#c_k16zu8
+https://lobste.rs/s/7bv1yb/two_threads_one_core_how_simultaneous
+https://brooker.co.za/blog/2024/05/09/nagle.html
+https://brooker.co.za/blog/2024/07/25/cap-again.html
+https://lobste.rs/s/bo0yqm/cap_theorem_is_irrelevant_for_cloud
+https://blog.acolyer.org/2019/03/06/keeping-calm-when-distributed-consistency-is-easy/
+https://en.wikipedia.org/wiki/PACELC_theorem
 https://lobste.rs/s/avxnht/wruby_single_file_minimal_site_generator
 https://lobste.rs/s/rvqez7/how_i_use_git_worktrees
 https://news.ycombinator.com/item?id=41068719 - "Show HN: Haystack – an IDE for exploring and editing code on an infinite canvas" - been wanting do to something like this for a while now!
