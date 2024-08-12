@@ -1,3 +1,14 @@
+# August 2024
+https://www.jamesarmes.com/2023/03/bidirectional-replication-postgresql-pglogical.html
+https://aws.amazon.com/blogs/database/postgresql-bi-directional-replication-using-pglogical/
+https://news.ycombinator.com/item?id=41159797 - How to Get or Create in PostgreSQL
+https://lobste.rs/s/hxauaw/y_all_are_sleeping_on_http_3
+https://news.ycombinator.com/item?id=41164885 - Debugging a rustc segfault on Illumos
+https://willj.net/posts/you-should-use-the-rails-logger-block-syntax/
+https://brooker.co.za/blog/2014/07/04/iostat-pct.html
+https://brooker.co.za/blog/2021/04/19/latency.html
+https://brooker.co.za/blog/2017/12/28/mean.html
+
 # July 2024
 https://news.ycombinator.com/item?id=41146239 - ""We ran out of columns""
 https://news.ycombinator.com/item?id=41147191 - categories or tagging in postgres
