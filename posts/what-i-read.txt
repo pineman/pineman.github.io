@@ -1,4 +1,7 @@
 # August 2024
+https://rfd.shared.oxide.computer/rfd/0110
+https://rfd.shared.oxide.computer/rfd/0053
+https://stackoverflow.com/a/75391120
 https://www.jamesarmes.com/2023/03/bidirectional-replication-postgresql-pglogical.html
 https://aws.amazon.com/blogs/database/postgresql-bi-directional-replication-using-pglogical/
 https://news.ycombinator.com/item?id=41159797 - How to Get or Create in PostgreSQL
