@@ -1,4 +1,26 @@
 # August 2024
+https://www.maragu.dev/blog/go-is-my-hammer-and-everything-is-a-nail
+https://lobste.rs/s/yko6ox/go_structs_are_copied_on_assignment_other
+https://fly.io/blog/soc2-the-screenshots-will-continue-until-security-improves/
+https://outerproduct.net/2021-02-13_att-asm.html
+https://www.shayon.dev/post/2024/225/stop-relying-on-if-not-exists-for-concurrent-index-creation-in-postgresql/
+https://steveklabnik.com/writing/against-names/
+https://railsatscale.com/2024-07-18-mastering-ruby-code-navigation-major-enhancements-in-ruby-lsp-2024/
+https://lobste.rs/s/hcjxaa/just_use_postgres
+https://www.allthingsdistributed.com/2024/08/continuous-reinvention-a-brief-history-of-block-storage-at-aws.html
+https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/code-review-antipatterns/
+https://www.earth.li/~noodles/blog/2024/08/aoc-thoughts.html
+https://zodvik.com/posts/on-writing-well/
+https://registerspill.thorstenball.com/p/no-really-yagni?triedRedirect=true
+https://www.bennorthrop.com/Essays/2013/pair-programming-my-personal-nightmare.php
+https://www.bennorthrop.com/Essays/2013/developer-motivation.php?
+https://blog.kerollmops.com/meilisearch-is-too-slow
+https://www.putsdebug.com/posts/uncovering-weaknesses
+https://spinscale.de/posts/2021-09-15-understanding-elasticsearch-percolate-query.html
+https://lobste.rs/s/uhtjdz/rust_vs_zig_reality_somewhat_friendly
+https://blog.allegro.tech/2021/10/how-to-ruin-elasticsearch-performance-part-ii.html
+https://blog.allegro.tech/2021/09/how-to-ruin-elasticsearch-performance-part-i.html
+https://riverqueue.com/blog/launching-workflows-and-river-pro
 https://rfd.shared.oxide.computer/rfd/0110
 https://rfd.shared.oxide.computer/rfd/0053
 https://stackoverflow.com/a/75391120
