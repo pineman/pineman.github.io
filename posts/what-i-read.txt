@@ -1,4 +1,47 @@
+# September 2024
+https://mxb.dev/blog/buildless/
+https://en.m.wikipedia.org/wiki/Scheduler_activations
+https://registerspill.thorstenball.com/p/joy-and-curiosity-70
+https://jvns.ca/blog/2015/12/30/do-the-math-on-your-stock-options
+https://world.hey.com/dhh/optimize-for-bio-cores-first-silicon-cores-second-112a6c3f
+https://www.shayon.dev/post/2024/244/pg_easy_replicate-supports-schema-change-tracking-during-logical-replication/
+https://paulgraham.com/foundermode.html
+https://lethain.com/work-on-what-matters/
+https://lethain.com/forty-year-career/
+https://lethain.com/productivity-in-the-age-of-hypergrowth/
+https://lethain.com/magnitudes-of-exploration/
+https://rakyll.medium.com/things-i-wished-more-developers-knew-about-databases-2d0178464f78
+https://vinted.engineering/2024/09/05/goodbye-elasticsearch-hello-vespa/
+https://1999.37signals.com/ - I miss the 90s
+https://37signals.com/group-chat-problems/#alldaymeeting
+https://brandur.org/postgres-connections
+https://jpcamara.com/2023/04/12/pgbouncer-is-useful.html
+https://www.youtube.com/watch?&v=7_o-YRxf_cc - "Visualizing memory layout of Rust's data types"
+https://jpcamara.com/2024/08/26/the-thread-api.html#thread-scheduling
+https://jemma.dev/blog/gc-compaction
+https://oxide.computer/blog/reflections-on-founder-mode
+https://modecollapse.substack.com/p/game-development-is-not-a-lottery
+
 # August 2024
+https://go.news.fly.io/deliveries/dgSN7QkDAKDCFZ_CFQGRm5Fteg8cZV_2FMOjZP8=
+https://daniel.haxx.se/blog/2024/08/14/slow-tcp-connect-on-windows/
+https://saagarjha.com/blog/2020/05/10/why-we-at-famous-company-switched-to-hyped-technology/
+https://tailscale.com/blog/heart-of-dark-mode?utm_source=twitter&utm_medium=owned-social&utm_campaign=devrel-social
+https://news.ycombinator.com/item?id=41395413
+https://matklad.github.io/2023/01/26/rusts-ugly-syntax.html
+https://nav.al/skill-business
+https://nav.al/work-hard
+https://nav.al/the-80-hour-myth
+https://world.hey.com/dhh/we-once-more-have-no-full-time-managers-at-37signals-f8611085
+https://www.startuplessonslearned.com/2009/01/sharding-for-startups.html#comment-form
+https://notes.eatonphil.com/2023-10-01-intercepting-and-modifying-linux-system-calls-with-ptrace.html
+https://www.elastic.co/guide/en/elasticsearch/reference/8.15/query-dsl-percolate-query.html
+https://lobste.rs/s/gd1pre/sql_has_problems_we_can_fix_them_pipe
+https://lobste.rs/s/fspevs/queueing_shell_game
+https://blog.danslimmon.com/2016/08/26/the-most-important-thing-to-understand-about-queues/
+https://lobste.rs/s/rmba3f/zig_emulators
+https://dev.jimgrey.net/2024/07/03/lessons-learned-in-35-years-of-making-software/
+https://www.youtube.com/watch?v=_94Ja45AVzU - "Lazygit creator interviews DHH (Rails creator)"
 https://www.maragu.dev/blog/go-is-my-hammer-and-everything-is-a-nail
 https://lobste.rs/s/yko6ox/go_structs_are_copied_on_assignment_other
 https://fly.io/blog/soc2-the-screenshots-will-continue-until-security-improves/

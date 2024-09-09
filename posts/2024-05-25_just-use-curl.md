@@ -1,4 +1,4 @@
-# Just use curl (or how to lose 2 days configuring a timeout)
+# Just use curl (or how hard can it be to make HTTP requests?)
 
 Recently we've needed to do a lot of HTTP requests to weird APIs. One
 endpoint in particular is basically the wild west of HTTP - High,
