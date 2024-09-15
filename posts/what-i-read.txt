@@ -1,4 +1,29 @@
 # September 2024
+https://www.youtube.com/watch?v=IcgmSRJHu_8 - ""Making Impossible States Impossible" by Richard Feldman"
+https://lobste.rs/s/ja3oaw/asynchronous_io_next_billion_dollar
+https://groups.google.com/g/golang-nuts/c/mXrkXxNVZmE
+https://www.reddit.com/r/golang/comments/xiu4zg/how_does_go_know_when_a_goroutine_hits_io_and_can/
+https://akshay-kumar.hashnode.dev/go-internals-http-request-multiplexing-in-go-1
+https://en.wikipedia.org/wiki/Xavier_Leroy -- LinuxThreads and OCaml creator!
+https://blog.sentry.io/transaction-id-wraparound-in-postgres/
+https://www.tritondatacenter.com/blog/manta-postmortem-7-27-2015
+https://tidyfirst.substack.com/p/scope-management-101
+https://www.youtube.com/watch?v=0lKjFLYkXTE - "Railsberry Lightning Talk: Delete your code"
+https://omniti.com/seeds/your-code-may-be-elegant.html
+https://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer/
+https://medium.com/@chadfowler/the-best-job-description-for-an-engineer-ever-written-57b42919cc2f
+https://www.recurse.com/manual
+https://steve-yegge.blogspot.com/2007/06/rich-programmer-food.html
+http://hintjens.com/blog:106
+https://signalvnoise.com/posts/2794-how-to-get-good-at-making-money
+https://signalvnoise.com/posts/3124-give-it-five-minutes
+https://registerspill.thorstenball.com/p/joy-and-curiosity-7
+https://www.youtube.com/watch?v=dF_9YcehCZo - "Saving Voyager 1! - Bruce Waggoner at !!Con 2024"
+https://reader.tymoon.eu/article/437
+https://news.ycombinator.com/item?id=41513648 - "SQLite on Rails: The how and why of optimal performance"
+https://www.crunchydata.com/blog/postgres-at-scale-running-multiple-pgbouncers
+https://eoinkelly.info/2023/01/06/rails-and-pgbouncer-notes
+https://notso.boringsql.com/posts/beyond-upserts-with-merge/
 https://mxb.dev/blog/buildless/
 https://en.m.wikipedia.org/wiki/Scheduler_activations
 https://registerspill.thorstenball.com/p/joy-and-curiosity-70

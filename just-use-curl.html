@@ -54,7 +54,7 @@
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>I later found an imperfect but "good enough" solution to this, using HTTP.rb, but it hadn't come to me at this time.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>I later found an imperfect but "good enough" solution to this using HTTPX, but it hadn't come to me at this time. Using the callbacks plugin, check the time elapsed since starting on each redirect and bail out if over the target.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>There seems to be a <a href="https://github.com/httprb/http/issues/773">timeout redesign</a> coming for the next version, which sounds great!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>This is when it hits me that HTTP clients are SUPER non-trivial. You'd think making HTTP requests was easy. Yeah.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Also, pure ruby gems work in async! A curl wrapper can't yield to the event loop since it's off in libcurl - which obviously isn't aware that we're running it in a fiber in an event loop!<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

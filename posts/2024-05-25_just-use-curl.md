@@ -118,8 +118,10 @@ and curl wrappers.
 
 Also, please burn `Timeout::timeout` with fire.
 
-[^1]: I later found an imperfect but "good enough" solution to this,
-    using HTTP.rb, but it hadn't come to me at this time.
+[^1]: I later found an imperfect but "good enough" solution to this
+    using HTTPX, but it hadn't come to me at this time. Using the
+    callbacks plugin, check the time elapsed since starting on each
+    redirect and bail out if over the target.
 
 [^2]: There seems to be a [timeout
     redesign](https://github.com/httprb/http/issues/773) coming for the
