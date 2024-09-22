@@ -1,4 +1,23 @@
 # September 2024
+https://lobste.rs/s/aobazu/is_ai_silver_bullet
+https://charliereese.ca/y-combinator-top-50-software-startups/
+https://keygen.sh/blog/that-one-time-keygen-went-down-for-5-hours-twice/
+https://news.ycombinator.com/item?id=41549649 - "How to succeed in MrBeast production (Leaked PDF)"
+https://registerspill.thorstenball.com/p/joy-and-curiosity-8
+https://jguer.space/posts/the-issue-is-not-only-your-design-doc/
+https://drive.google.com/file/d/1YaG9xpu-WQKBPUi8yQ4HaDYQLUSa7Y3J/view
+https://danluu.com/butler-lampson-1999
+https://danluu.com/yegge-predictions
+https://danluu.com/startup-tradeoffs
+https://danluu.com/wat
+https://yosefk.com/blog/people-can-read-their-managers-mind.html
+https://yosefk.com/blog/evil-tip-avoid-easy-things.html
+http://www.effectiveengineer.com/blog/take-ownership-of-your-goals
+http://www.effectiveengineer.com/blog/what-makes-a-good-engineering-culture
+https://pganalyze.com/blog/5mins-postgres-17-faster-btree-index-scans
+https://blog.appsignal.com/2024/09/18/rubys-hidden-gems-sorbet.html
+https://www.youtube.com/watch?v=FKTxC9pl-WM - "Making Badass Developers - Kathy Sierra (Serious Pony) keynote"
+https://www.youtube.com/watch?v=SxdOUGdseq4 - ""Simple Made Easy" - Rich Hickey (2011)"
 https://www.youtube.com/watch?v=IcgmSRJHu_8 - ""Making Impossible States Impossible" by Richard Feldman"
 https://lobste.rs/s/ja3oaw/asynchronous_io_next_billion_dollar
 https://groups.google.com/g/golang-nuts/c/mXrkXxNVZmE
