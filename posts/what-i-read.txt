@@ -1,4 +1,47 @@
+# October 2024
+https://lobste.rs/s/ylcar9/6_years_with_gleam
+https://richardesigns.co.uk/articles/tales-from-a-startup/michael-siebels-advice-default-to-action-has-been-trans-formative
+https://www.da.vidbuchanan.co.uk/blog/dram-emfi.html
+https://blog.appsignal.com/2024/10/07/whats-new-in-ruby-on-rails-8.html
+https://news.ycombinator.com/item?id=41748664 - "Whence '\n'?"
+https://0pointer.net/blog/projects/systemd.html?utm_source=substack&utm_medium=email
+https://martinheinz.dev/blog/105 - "You Don't Need a Dedicated Cache Service - PostgreSQL as a Cache"
+https://lobste.rs/s/996uq0/gilded_rose_refactoring_kata_ruby_as_if_it
+https://llogiq.github.io/2016/09/27/count.html
+https://www.sigbus.info/how-i-wrote-a-self-hosting-c-compiler-in-40-days
+https://www.sigbus.info/worse-is-better
+https://news.ycombinator.com/item?id=41752436 - "What is the history of the use of "foo" and "bar" in source code examples? (2012)"
+https://www.linusakesson.net/programming/kernighans-lever/index.php
+https://www.youtube.com/watch?v=7VSVfQcaxFY - "How 1 Software Engineer Outperforms 138 - Lichess Case Study"
+https://registerspill.thorstenball.com/p/joy-and-curiosity-9
+https://buttondown.com/jaffray/archive/benchmarks-that-arent-your-friends/
+https://buttondown.com/jaffray/archive/measuring-throughput/
+https://buttondown.com/jaffray/archive/the-closed-loop-benchmark-trap/
+https://ardentperf.com/happiness-hints/
+https://ardentperf.com/2024/03/03/postgres-indexes-partitioning-and-lwlocklockmanager-scalability/
+https://gitlab.com/gitlab-com/gl-infra/scalability/-/issues/2301
+https://pganalyze.com/blog/5mins-postgres-LWLock-lock-manager-contention
+https://www.kylehailey.com/post/postgres-partition-conversion-minimal-downtime
+https://www.youtube.com/watch?v=uRuLgar5XZw - "AI tools for software engineers, but without the hype – with Simon Willison (Co-Creator of Django)"
+https://www.pixelstech.net/article/1727412048-Why-TCP-needs-3-handshakes
+https://buttondown.com/jaffray/archive/the-two-machines/
+https://justinjaffray.com/why-do-databases-require-client-side-retries/
+https://justine.lol/mutex/
+https://www.usenix.org/system/files/login-logout_1305_mickens.pdf
+https://github.blog/news-insights/the-library/downtime-last-saturday/
+https://news.ycombinator.com/item?id=11065933 - "Is Redlock Safe? Reply to Redlock Analysis"
+https://en.wikipedia.org/wiki/Test_and_test-and-set
+https://en.wikipedia.org/wiki/Test-and-set
+http://antirez.com/news/101
+https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html
+https://registerspill.thorstenball.com/p/glad-i-did-it-in-go
+https://www.youtube.com/watch?v=LcJKxPXYudE - "Microservices are Technical Debt"
+
 # September 2024
+https://news.ycombinator.com/item?id=19105733 - "Reflecting on My Failure to Build a Billion-Dollar Company"
+https://registerspill.thorstenball.com/p/skin-shedding-code
+https://www.youtube.com/watch?v=Ch9R4ZxvtG0 - "Oxide and Friends 9/16/2024 -- Reflecting on Founder Mode"
+https://www.youtube.com/watch?v=Td_PGkfIdIQ - "Gabe Newell: On Productivity, Economics, Political Institutions, and the Future of Corporations"
 https://lobste.rs/s/aobazu/is_ai_silver_bullet
 https://charliereese.ca/y-combinator-top-50-software-startups/
 https://keygen.sh/blog/that-one-time-keygen-went-down-for-5-hours-twice/
