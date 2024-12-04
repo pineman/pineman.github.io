@@ -5,3 +5,4 @@ erb index.html.erb > index.html
 #if [[ "$OSTYPE" != "linux-gnu"* ]]; then exit 0; fi
 #xhost + &>/dev/null
 npx electron-pdf -b true $(pwd)/index.html $(pwd)/cv.pdf
+node first_page.js cv.pdf
