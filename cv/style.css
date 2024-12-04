@@ -157,9 +157,9 @@ gig-info {
 gig-info i {
   color: grey;
 }
-gig-info i .fix {
+.fa-map-marker-alt {
+  padding-left: 2px;
   margin-right: 3px;
-  margin-left: 2px;
 }
 gig-description {
   display: block;
