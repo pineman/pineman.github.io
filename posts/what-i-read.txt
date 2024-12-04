@@ -1,4 +1,142 @@
+# December 2024
+https://simonwillison.net/2024/Nov/27/storing-times-for-human-events/
+https://medium.com/@aditimishra_541/why-is-redis-so-fast-despite-being-single-threaded-dc06ba33fc75
+https://htmx.org/essays/codin-dirty/
+https://fabiensanglard.net/quakeSource/quakeSourceNetWork.php
+https://www.ben-evans.com/presentations
+https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough
+https://www.experimental-history.com/p/underrated-ways-to-change-the-world
+https://sunilpai.dev/posts/durable-objects-are-computers/
+
+# November 2024
+https://andymasley.substack.com/p/strategies-for-learning
+https://www.davidreis.me/2024/what-happens-when-you-make-a-move-in-lichess
+https://jeremymorrell.dev/blog/a-practitioners-guide-to-wide-events
+https://nostr.com/
+https://newsletter.squishy.computer/p/natures-many-attempts-to-evolve-a
+https://news.ycombinator.com/item?id=42270378 - "How much memory do you need in 2024 to run 1M concurrent tasks?"
+https://paulgraham.com/wealth.html
+https://www.youtube.com/watch?v=XQS9SECCp1I - Using Erlang upgrade a drone while in-flight
+https://sirupsen.com/
+https://zachholman.com/posts/double-shipping
+https://jmduke.com/posts/post/produce-value/
+https://jmduke.com/posts/post/what-is-shipping/
+https://x.com/hnasr/status/1859366187534254274 - Differences between postgres and mysql
+https://planetscale.com/blog/btrees-and-database-indexes
+https://kirshatrov.com/posts/btree-as-api
+https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-7/
+https://gist.github.com/nateberkopec/03cdbe26578fe1d1add2db7f4867ec38 - Ruby on Rails latency chart
+https://www.geekytidbits.com/postgres-distinct-on
+https://peterullrich.com/saga-pattern-in-elixir
+https://news.ycombinator.com/item?id=42165057 - "Good software development habits"
+https://www.midwesternish.com/blog/the-three-mindsets
+https://registerspill.thorstenball.com/p/joy-and-curiosity-16
+https://news.ycombinator.com/item?id=42174204 - "Launch HN: Regatta Storage (YC F24) – Turn S3 into a local-like, POSIX cloud FS"
+https://egoless.engineering/
+https://www.thenile.dev/blog/distributed-ddl
+https://www.youngmoney.co/p/you-only-have-to-get-rich-once
+https://www.youtube.com/watch?v=r-TLSBdHe1A - ""Performance Matters" by Emery Berger" - incredible
+https://www.youtube.com/watch?v=8bZh5LMaSmE - "RailsConf 2014 - All the Little Things by Sandi Metz"
+https://www.youtube.com/watch?v=9LfmrkyP81M - "RailsConf 2014 - Keynote: Writing Software by David Heinemeier Hansson"
+https://jvns.ca/blog/2024/11/18/how-to-import-a-javascript-library/
+https://inside.java/2021/05/10/networking-io-with-virtual-threads/
+https://openjdk.org/jeps/453
+https://lucumr.pocoo.org/2024/11/18/threads-beat-async-await/
+https://lucumr.pocoo.org/2020/1/1/async-pressure/
+https://aworkinglibrary.com/writing/accountability-sinks
+https://tenderlovemaking.com/2024/09/29/eliminating-intermediate-array-allocations/
+https://jonleighton.name/2011/initialize_clone-initialize_dup-and-initialize_copy-in-ruby/
+https://cln.co/
+https://news.ycombinator.com/item?id=42004756 - "Programming languages that blew my mind (2023)"
+https://www.youtube.com/watch?v=Pg72m3CjuK4 - "Everything We Teach at YCombinator in 10 Minutes"
+https://dontbuildsaas.com/
+https://daniloleal.co/my-world/thinking/the-surprising-complexity-of-simple-features
+https://news.ycombinator.com/item?id=42101729 - "Algorithms we develop software by"
+https://news.ycombinator.com/item?id=41284409 - "Algorithms we develop software by"
+https://challahscript.com/what_i_wish_someone_told_me_about_postgres
+https://wiki.postgresql.org/wiki/Don%27t_Do_This
+https://lobste.rs/s/1k66tl/typed_env_vars_for_valid_environments
+https://reprog.wordpress.com/2010/03/06/programming-books-part-2-the-elements-of-programming-style/
+https://newsletter.ozwrites.com/p/november-ramble
+https://pushtoprod.substack.com/p/netflix-terrifying-concurrency-bug
+https://registerspill.thorstenball.com/p/joy-and-curiosity-15
+https://ludic.mataroa.blog/blog/reflecting-on-years-of-runescape/#fnref:5
+https://ludic.mataroa.blog/blog/the-complex-problem-of-lying-for-jobs/
+https://ludic.mataroa.blog/blog/on-burnout-mental-health-and-not-being-okay
+https://www.campsite.com/blog/how-we-made-a-ruby-method-200x-faster
+https://elixirforum.com/t/connection-pool-simple-description-of-how-it-works/37489/10
+https://github.com/rails/rails/issues/42271#issuecomment-2105459165 - fiber connection pool
+https://sdr-podcast.com/episodes/target-triples/
+https://www.crunchydata.com/blog/a-change-to-relresultinfo-a-near-miss-with-postgres-17-1
+https://www.crunchydata.com/blog/rise-of-the-anti-join
+https://news.ycombinator.com/item?id=42111031 - "How I ship projects at big tech companies"
+https://www.doxsey.net/blog/go-and-assembly/
+https://www.youtube.com/watch?v=olxoNDBp6Rg
+https://morizbuesing.com/blog/greppability-code-metric/
+https://justine.lol/lex/
+https://trojansource.codes/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-13
+https://graphics.stanford.edu/~seander/bithacks.html
+https://registerspill.thorstenball.com/p/joy-and-curiosity-13?utm_source=post-email-title&publication_id=1543843&post_id=151060257&utm_campaign=email-post-title&isFreemail=true&r=1mnftp&triedRedirect=true&utm_medium=email
+https://blog.depthsofrepair.com/p/do-hard-things-carefully
+https://daniel.lawrence.lu/blog/y2023m12d15/
+https://news.ycombinator.com/item?id=42036303 - "Do you need Redis? PostgreSQL does queuing, locking, and pub/sub (2021)"
+https://blog.samaltman.com/the-days-are-long-but-the-decades-are-short
+https://newsletter.pragmaticengineer.com/p/building-the-threads-app
+https://www.hailelagi.com/notes/how-do-databases-count/#fnref:3
+https://blog.stalkr.net/2015/04/golang-data-races-to-break-memory-safety.html?m=1
+https://hanamirb.org/blog/2024/11/05/hanami-220/
+https://blog.appsignal.com/2024/10/30/optimize-database-performance-in-ruby-on-rails-and-activerecord.html
+https://swizec.com/blog/a-fast-mutex-lamport-lock-with-javascript-promises/
+https://swizec.com/blog/why-software-only-moves-forward/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-14
+
 # October 2024
+https://www.quora.com/How-did-Stripe-come-up-with-its-name
+https://gregbrockman.com/
+https://news.ycombinator.com/item?id=41879072 - "Code that helped end Apartheid"
+https://blog.jgc.org/2024/09/cracking-old-zip-file-to-help-open.html?m=1
+https://www.shayon.dev/post/2024/303/using-ctid-based-pagination-for-data-cleanups-in-postgresql/
+https://www.brendangregg.com/blog//2024-10-29/ai-flame-graphs.html
+https://railsatscale.com/2024-10-23-next-generation-oob-gc/
+https://xeiaso.net/shitposts/no-way-to-prevent-this/CVE-2024-9632/
+https://notes.eatonphil.com/2024-09-23-be-someone-who-does-things.html
+https://danluu.com/ballmer/
+https://x.com/apartovi/status/1449856639331340289
+https://www.hytradboi.com/2025/
+https://alifeengineered.substack.com/p/mid-level-to-staff-engineer-in-two
+https://registerspill.thorstenball.com/p/in-conversation-david-albert
+https://dropbox.tech/infrastructure/robinhood-in-house-load-balancing-service
+https://news.ycombinator.com/item?id=42023089 - "My Time Working at Stripe"
+https://www.ribbonfarm.com/2009/10/07/the-gervais-principle-or-the-office-according-to-the-office/
+https://ludic.mataroa.blog/blog/quitting-my-job-for-the-way-of-pain/
+https://ludic.mataroa.blog/blog/get-me-out-of-data-hell/
+https://ludic.mataroa.blog/blog/i-will-fucking-piledrive-you-if-you-mention-ai-again/
+https://agile2.net/
+https://simonwillison.net/2020/Jul/30/fun-binary-data-and-sqlite/
+https://www.sqlite.org/fasterthanfs.html
+https://newsletter.pragmaticengineer.com/p/hiring-from-big-tech
+https://tristanrhodes.com/blog/Adventures-in-Algorithmic-Trading-on-the-Runescape-Grand-Exchange
+https://dnlserrano.dev//2024/10/20/when-machines-could-see-you.html
+https://registerspill.thorstenball.com/p/from-1s-to-4ms
+https://registerspill.thorstenball.com/p/rust-prism
+https://why-upgrade.depesz.com/show?from=16.4&to=17
+https://registerspill.thorstenball.com/p/how-i-use-git
+https://groups.google.com/g/golang-nuts/c/MdYlJbW4SAo/m/TrAEoCjAkMwJ
+https://apenwarr.ca/log/20230605
+https://www.youtube.com/watch?v=rbu7Zu5X1zI - "How I animate 3Blue1Brown | A Manim demo with Ben Sparks"
+https://docs.google.com/document/d/1dpKjHGzzmpGe2-34x6fb3fhtEBW25OCwL9UvVEOwrPc/edit?tab=t.0&utm_source=substack&utm_medium=email#heading=h.ceto79q9te33
+https://www.youtube.com/watch?v=aFOGlNL39xs - "Brian Chesky - Founder Mode & The Art of Hiring"
+https://speakerdeck.com/palkan/kaigi-on-rails-2024-rails-way-or-the-highway?slide=94
+https://www.thenile.dev/blog/transaction-isolation-postgres
+https://www.andrescn.me/article/2024/10/22/impostor-syndrome.html
+https://news.ycombinator.com/item?id=41757940 - "Optimizing Postgres table layout for maximum efficiency"
+https://brooker.co.za/blog/2022/08/11/backoff.html
+https://news.ycombinator.com/item?id=41813304 - "Working from home is powering productivity"
+https://entropicthoughts.com/practices-of-reliable-software-design
+https://news.ycombinator.com/item?id=41755805 - "Good Retry, Bad Retry"
+https://grayolson.com/blog/posts/nurturing-the-soul-of-a-computer-engineer/ <3 <3 <3
+https://registerspill.thorstenball.com/p/use-data-that-looks-like-data
 https://lobste.rs/s/ylcar9/6_years_with_gleam
 https://richardesigns.co.uk/articles/tales-from-a-startup/michael-siebels-advice-default-to-action-has-been-trans-formative
 https://www.da.vidbuchanan.co.uk/blog/dram-emfi.html

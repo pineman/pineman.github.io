@@ -31,14 +31,14 @@
       <li><i class="fas fa-globe"></i><a target="_blank" href="https://pineman.github.io">Website</a></li>
     </ul>
     <hr />
-    <h3>Technologies</h3>
-      Python, Java, C, C++, JavaScript, Bash, Git, PostgreSQL, Linux, Docker, K8s, GCloud, Gitlab CI
+    <h3>Projects</h3>
+    <a target="_blank" href="https://pineman.github.io/fpt/">gameboy emulator</a>, <a target="_blank" href="https://su.fly.dev">sudoku</a>, <a target="_blank" href="https://abra.fly.dev">abra</a>, <a target="_blank" href="https://github.com/pineman/LEDmatrix">LED Matrix</a>, <a target="_blank" href="https://github.com/pineman/code">playground</a>, <a target="_blank" href="https://github.com/pineman/pineman.github.io">website</a>
     <hr />
     <h3>Interests</h3>
-      Distributed Systems, Reliability
+      High Load, Performance Optimization, Distributed Systems, Reliability
     <hr />
-    <h3>Projects</h3>
-      <a target="_blank" href="https://abra.fly.dev">abra</a>, <a target="_blank" href="https://github.com/pineman/LEDmatrix">LED Matrix</a>, <a target="_blank" href="https://github.com/pineman/code">playground</a>, <a target="_blank" href="https://github.com/pineman/pineman.github.io">website</a>
+    <h3>Technologies</h3>
+      Ruby, Rails, Python, Java, C, C++, JavaScript, TypeScript, React; PostgreSQL, ElasticSearch, Kafka, Linux, Bash, Docker, K8s, GCloud, Gitlab CI, Git
   </side-wrap>
   <version>
     <a target="_blank" href="https://pineman.github.io/cv">HTML version</a> | <a target="_blank" href="https://pineman.github.io/cv/cv.pdf">PDF version</a> | rev: <%= `git rev-parse --short HEAD` %>
@@ -67,19 +67,31 @@
   <h2 id="experience">Experience</h2>
   <gig>
     <gig-header>
+      <gig-img><img src="assets/am.png"></gig-img>
+      <gig-info>
+        <h4><i class="fas fa-briefcase"></i>Software Engineer</h4>
+        <h4><i class="fas fa-map-marker-alt fix"></i><a target="_blank" href="https://amplemarket.com">Amplemarket</a></h4>
+        <h4><i class="fas fa-clock"></i>Mar '23 to present</h4>
+      </gig-info>
+    </gig-header>
+    <gig-description>
+      <p><b>Tech:</b> Ruby on Rails, Sidekiq, TypeScript, React; PostgreSQL (&amp; TimescaleDB), ElasticSearch, Kafka</p>
+      <p></p>
+    </gig-description>
+  </gig>
+  <hr />
+  <gig>
+    <gig-header>
       <gig-img><img src="assets/cf.png"></gig-img>
       <gig-info>
         <h4><i class="fas fa-briefcase"></i>Software Engineer</h4>
         <h4><i class="fas fa-map-marker-alt fix"></i><a target="_blank" href="https://www.celfocus.com/home/index.php/offer/products/celfocus-one-net-mobile-office">Celfocus - Unified Communications - One Net</a></h4>
-        <h4><i class="fas fa-clock"></i>Aug. '19 to present</h4>
+        <h4><i class="fas fa-clock"></i>Aug. '19 to Feb '23</h4>
       </gig-info>
     </gig-header>
     <gig-description>
-      <p><b>Tech:</b> Java (JBoss, Spring, Hibernate), React, PostgreSQL, ActiveMQ</p>
-      <p><b>Infra:</b> Docker, Bash, Gitlab CI (K8s on GCloud), Helm, Terraform</p>
-      <p><a href='https://www.celfocus.com/home/index.php/offer/products/celfocus-one-net-mobile-office'>One Net</a> is Celfocus's enterprise voice solution, with 5 international deployments. The Call Handling Server (CHS) speaks both SS7 and SIP, in 185k SLOC of C++, has an in-memory DB and strict SLAs. It's provisioned via a web Portal, written in React and Java. It provides a JSON REST API and integrates with many external systems.</p>
-      <p>I started as a CHS dev and promptly shifted to Portal backend (rarely frontend), as I switched to a cross-functional agile team. I was fortunate enough to learn from the project's founding seniors, and emerged in a sort-of generalist Systems overview role later.</p>
-      <p>Currently, I do backend feature work, while being the main dev responsible for dev infra (CI w/ many test types), tooling and glue. I try to keep everyone productive and handle the rarer architectural issues. I spearheaded refactorings, migrations with external teams, new features, updates, new conventions across 4 teams, CI/CD for a new project, failover in production, and even onboarding. But most of all, at Celfocus I learned responsiblity, commitment and TDD.</p>
+      <p><b>Tech:</b> Java (JBoss, Spring, Hibernate), React, PostgreSQL, ActiveMQ; Docker, Bash, Gitlab CI (K8s on GCloud), Helm, Terraform</p>
+      <p><a href='https://www.celfocus.com/home/index.php/offer/products/celfocus-one-net-mobile-office'>One Net</a> is Celfocus's enterprise voice solution, with 5 international deployments. The Call Handling Server (CHS) is a 185k SLOC C++ backend with an in-memory DB (no ORM). It speaks telco protocols (SS7 and SIP) and so has strict SLAs. Its database is provisioned via a web app written in React and Java. It provides a JSON REST API and integrates with many external systems. I started as a CHS dev and later shifted to the web app's backend (rarely frontend). I spearheaded new features, refactorings, migrations with external teams, updates, new conventions across 4 teams, CI/CD for a new project, failover in production, new architecture needs and even onboarding.</p>
     </gig-description>
   </gig>
   <hr />
@@ -108,7 +120,7 @@
       </gig-info>
     </gig-header>
     <gig-description>
-      <p>In Formula Student teams build, test and race a formula style car. I programmed PIC μCs and reduced the dev loop to one keypress. Worked on a GUI (C++/Qt) &amp; ported it to windows. I dearly miss the passion and dedication of the team.</p>
+      <p>In Formula Student teams build, test and race a formula style car. I programmed PIC μCs and reduced the dev loop to one keypress. Worked on a GUI (C++/Qt) &amp; ported it to windows. I loved the passion and dedication of the team.</p>
     </gig-description>
   </gig>
   <hr />
