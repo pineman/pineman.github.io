@@ -1,4 +1,9 @@
 # December 2024
+https://www.youtube.com/watch?v=uZ8DcbhojOw - "Keynote: Advent of Code, Behind the Scenes - Eric Wastl"
+https://discuss.rubyonrails.org/t/why-is-rails-boot-so-slow-on-macos/74021/42
+https://lobste.rs/s/btagmw/maliciously_crafted_github_branch_name
+https://jpcamara.com/2024/12/01/speeding-up-ruby.html
+https://eregon.me/blog/2022/01/06/benchmarking-cruby-mjit-yjit-jruby-truffleruby.html
 https://simonwillison.net/2024/Nov/27/storing-times-for-human-events/
 https://medium.com/@aditimishra_541/why-is-redis-so-fast-despite-being-single-threaded-dc06ba33fc75
 https://htmx.org/essays/codin-dirty/
