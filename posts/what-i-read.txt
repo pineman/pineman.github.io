@@ -1,4 +1,79 @@
+# January 2025
+https://blog.pragmaticengineer.com/the-product-minded-engineer/
+https://annievella.com/posts/dear-software-engineer/
+https://writing.nikunjk.com/p/do-hard-things
+https://lukaspetersson.com/blog/2025/bitter-vertical/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-23
+https://web.archive.org/web/20240823050616/https://www.cursor.com/blog/instant-apply
+https://softwaredoug.com/blog/2024/12/14/throwaway-prs-not-design-docs
+https://web.archive.org/web/20250114182608/https://beza1e1.tuxen.de/lore/index.html -- "Software Folklore. Sometimes bugs have symptoms beyond belief. This is a collection of such stories from around the web." awesome
+https://en.wikipedia.org/wiki/Simulated_annealing
+https://www.ee.torontomu.ca/~elf/hack/recovery.html
+https://www.theerlangelist.com/article/spawn_or_not
+https://ananthakumaran.in/2025/01/04/erlang-vm-tuning.html
+https://www.latent.space/p/o1-skill-issue
+https://newsletter.posthog.com/p/product-management-is-broken-engineers
+https://registerspill.thorstenball.com/p/joy-and-curiosity-22
+https://registerspill.thorstenball.com/p/joy-and-curiosity-21
+https://nicolay.fyi/posts/personal/2024-in-review/
+https://lucumr.pocoo.org/2024/12/26/reflecting-on-life/
+https://lucumr.pocoo.org/2023/2/9/everybody-is-complex/
+https://www.jmeiners.com/lc3-vm/
+https://ckarchive.com/b/xmuph6hrqdp04hrnppvnqc2le6lllbn - "What would it mean to be done for the day?"
+https://newsletter.pragmaticengineer.com/p/how-ai-will-change-software-engineering
+https://crawshaw.io/blog/programming-with-llms
+https://zverok.space/blog/2025-01-06-changelog-2025.html
+https://blog.jgc.org/2010/06/facebooks-dkim-rsa-key-should-be.html
+https://registerspill.thorstenball.com/p/oh-to-turn-off-your-mind?utm_source=substack&utm_medium=email
+https://www.seangoedecke.com/weak-engineers
+https://www.seangoedecke.com/what-makes-strong-engineers-strong/
+https://www.seangoedecke.com/my-engineering-values
+https://review.firstround.com/the-30-best-pieces-of-company-building-advice-we-heard-in-2024
+https://review.firstround.com/make-an-org-chart-you-want-to-ship-advice-from-linear-on-how-heirloom-tomatoes-should-inspire-team-design/
+https://map.simonsarris.com/p/the-most-precious-resource-is-agency?utm_source=substack&utm_medium=email
+https://www.readtrung.com/p/jerry-seinfeld-ichiro-suzuki-and
+https://newsletter.posthog.com/p/talk-to-users
+https://newsletter.posthog.com/p/non-obvious-behaviors-that-will-kill
+https://newsletter.posthog.com/p/how-we-choose-technologies
+https://newsletter.posthog.com/p/how-to-think-like-a-growth-engineer
+https://posthog.com/blog/what-is-a-product-engineer
+https://posthog.com/founders/cracked-manifesto
+https://newsletter.posthog.com/p/the-deadline-doom-loop
+https://www.youtube.com/watch?v=5ZjhNTM8XU8 - "Transactions: myths, surprises and opportunities" by Martin Kleppmann"
+https://elixirforum.com/t/dont-fight-the-monolith-by-peter-ullrich-elixirconf-eu-2023/61445
+https://www.youtube.com/watch?v=liTgGiTuhJE - "ClickHouse at CommonRoom - Kirill Sapchuk"
+https://www.spakhm.com/wantnow - To predict behavior you must observe people confront a tradeoff.
+https://www.spakhm.com/updates-howto
+https://www.youtube.com/watch?v=vtIzMaLkCaM - "LEADERSHIP LAB: The Craft of Writing Effectively"
+https://grantslatton.com/how-to-software
+https://backchannel.org/blog/autonomous-software
+https://www.anthropic.com/research/building-effective-agents
+https://blog.samaltman.com/reflections
+https://www.theatlantic.com/business/archive/2016/04/too-many-elite-american-men-are-obsessed-with-work/479940/
+https://byroot.github.io/ruby/json/2024/12/29/optimizing-ruby-json-part-4.html
+https://habr-com.translate.goog/ru/companies/yandex/articles/442762/?_x_tr_sl=ru&_x_tr_tl=en&_x_tr_hl=en
+https://stripe.com/blog/secret-life-of-dns
+https://dansvetlov.me/puma-internals/
+https://news.ycombinator.com/item?id=13736674 - "Epoll is fundamentally broken"
+
 # December 2024
+https://blog.sequinstream.com/keyset-cursors-not-offsets-for-postgres-pagination/
+https://jimmyhmiller.github.io/advent-of-papers/2024/dec-6-intuition
+https://playfulprogramming.com/posts/modern-js-bundleless
+https://www.reddit.com/r/WeAreTheMusicMakers/comments/4wzj8m/stop_trying_to_write_your_masterpiece
+https://charity.wtf/2024/10/11/how-hard-should-your-employer-work-to-retain-you/
+https://charity.wtf/2020/09/14/useful-things-to-know-about-engineering-levels/
+https://goncalo.mendescabrita.com/blog/cross-table-lock/
+https://sbaziotis.com/compilers/common-misconceptions-about-compilers.html
+https://www.youtube.com/watch?v=b1e4t2k2KJY
+https://www.youtube.com/watch?v=RFmajOeUKnE
+https://duarteocarmo.com/blog/rag-tricks-from-the-trenches
+https://www.zenrows.com/blog/what-is-tls-fingerprint#what-is
+https://byroot.github.io/ruby/json/2024/12/18/optimizing-ruby-json-part-2.html
+https://byroot.github.io/ruby/json/2024/12/15/optimizing-ruby-json-part-1.html
+https://registerspill.thorstenball.com/p/surely-not-all-codes-worth-it
+https://roaringbitmap.org/about/
+https://dba.stackexchange.com/questions/281846/possible-for-two-simple-updates-on-the-same-table-to-deadlock/298482#298482
 https://www.youtube.com/watch?v=uZ8DcbhojOw - "Keynote: Advent of Code, Behind the Scenes - Eric Wastl"
 https://discuss.rubyonrails.org/t/why-is-rails-boot-so-slow-on-macos/74021/42
 https://lobste.rs/s/btagmw/maliciously_crafted_github_branch_name
