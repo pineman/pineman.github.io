@@ -1,4 +1,27 @@
 # January 2025
+https://public-inbox.org/git/alpine.DEB.1.00.0807222100150.8986@racer/?ref=blog.gitbutler.com
+https://blog.gitbutler.com/why-is-git-autocorrect-too-fast-for-formula-one-drivers/
+https://kellysutton.com/2024/01/15/moving-on-from-react.html
+https://railsatscale.com/2025-01-10-yjit-3-4-even-faster-and-more-memory-efficient/
+https://blog.sbensu.com/posts/incentives-as-selection-effects/
+https://news.ycombinator.com/item?id=42707238 - "Nobody cares"
+https://notes.billmill.org/blog/2024/03/How_I_use_git_worktrees.html
+https://www.oftwominds.com/blogjun24/negativity6-24.html
+https://wyounas.github.io/concurrency/2025/01/13/when-a-simple-concurrent-program-goes-against-all-intuition/
+https://blog.rongarret.info/2009/12/xooglers-rises-from-ashes.html
+https://blog.rongarret.info/2025/01/i-am-not-failure-lessons-learned-from.html
+https://lobste.rs/s/mioxtn/vs_code_extension_let_llms_interactively
+https://byroot.github.io/ruby/performance/2025/01/23/the-mythical-io-bound-rails-app.html
+https://byroot.github.io/ruby/performance/2025/01/23/io-instrumentation.html
+https://ertu.dev/posts/i-made-an-online-shooter-game-in-lisp/
+https://news.ycombinator.com/item?id=42784699 - "The FizzBuzz that did not get me the job"
+https://typecraft.dev/newsletters/2025-01-08/lessons-learned-over-a-career
+https://ssno.cc/posts/reversing-tac-1-4-2025
+https://outsidetext.substack.com/p/anomalous-tokens-in-deepseek-v3-and
+https://en.m.wikipedia.org/wiki/Baumol_effect
+https://byroot.github.io/ruby/performance/2025/01/25/why-does-everyone-hate-fork.html
+https://use-the-index-luke.com/sql/where-clause/obfuscation/smart-logic
+https://news.ycombinator.com/item?id=42778151 - "You probably don't need query builders"
 https://stratechery.com/2025/deepseek-faq/
 https://registerspill.thorstenball.com/p/how-might-ai-change-programming
 https://byroot.github.io/ruby/performance/2025/01/29/so-you-want-to-remove-the-gvl.html#fnref:1
