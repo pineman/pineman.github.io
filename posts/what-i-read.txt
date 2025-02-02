@@ -1,4 +1,22 @@
 # January 2025
+https://stratechery.com/2025/deepseek-faq/
+https://registerspill.thorstenball.com/p/how-might-ai-change-programming
+https://byroot.github.io/ruby/performance/2025/01/29/so-you-want-to-remove-the-gvl.html#fnref:1
+https://www.cockroachlabs.com/blog/living-without-atomic-clocks/
+https://news.ycombinator.com/item?id=42813049 - "Every System is a Log: Avoiding coordination in distributed applications (restate.dev)"
+https://www.benkuhn.net/overconfidence/
+https://www.benkuhn.net/vc-emh/
+https://www.paulgraham.com/relres.html
+https://www.benkuhn.net/blub/
+https://rachelbythebay.com/w/2020/10/14/lag/ -hmm, 40 milliseconds sounds like the timeout for Nagle’s algorithm, try setting TCP_NODELAY
+https://nelhagedebugsshit.tumblr.com/
+https://blog.nelhage.com/post/computers-can-be-understood
+https://slatestarcodex.com/2014/03/24/should-you-reverse-any-advice-you-hear/
+https://gocardless.com/blog/zero-downtime-postgres-migrations-the-hard-parts/
+https://applied-llms.org
+https://registerspill.thorstenball.com/p/judging-code
+https://surfingcomplexity.blog/2024/12/21/the-canva-outage-another-tale-of-saturation-and-resilience/
+https://netflixtechblog.com/java-21-virtual-threads-dude-wheres-my-lock-3052540e231d
 https://blog.pragmaticengineer.com/the-product-minded-engineer/
 https://annievella.com/posts/dear-software-engineer/
 https://writing.nikunjk.com/p/do-hard-things
@@ -1000,7 +1018,7 @@ https://world.hey.com/dhh/acting-your-wage-will-atrophy-your-abilities-1ca261c4
 
 # October 2023
 https://www.youtube.com/watch?v=um5bC20NTQ0 "P99 CONF 2023 | Corporate Open Source Anti-Patterns: A Decade Later by Bryan Cantrill, Oxide"
-https://railsatscale.com/2023-10-24-memoization-pattern-and-object-shapes/
+https://railsatscale.com/2023-10-24-memoization-pattern-and-object-shapes/ - ||= slow
 https://marcellerusu.com/using_prolog_as_the_ast.html
 https://souffle-lang.github.io/docs.html
 https://pnewman.org/engineering_mgmt_checklist.txt
@@ -1281,7 +1299,6 @@ https://blog.peterzhu.ca/ruby-range-bsearch/
 http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html
 https://web.archive.org/web/20111107031226/http://blog.brianbeck.com/post/10967024222/node-js-cures-cancer
 http://widgetsandshit.com/teddziuba/2011/10/node-js-is-cancer.html -- re-reading old drama
-https://blog.peterzhu.ca/ruby-range-bsearch/
 https://medium.com/@leo_hetsch/ruby-modules-include-vs-prepend-vs-extend-f09837a5b073
 https://www.destroyallsoftware.com/talks/boundaries
 https://data-room-software.org/erlangonxen/

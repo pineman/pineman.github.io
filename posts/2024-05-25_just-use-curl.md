@@ -5,11 +5,11 @@ endpoint in particular is basically the wild west of HTTP - High,
 unpredictable latency and redirects a lot: often absolutely, from HTTPS
 to HTTP and even to non-resolving URLs.
 
-I started this endeavour with good ole
+I started this endeavour with good ol'
 [HTTP.rb](https://github.com/httprb/http), as one does, blissfully
 unaware of this long tail of responses. I configured a 15s timeout for
 this endpoint call to deal with its unpredictability. And things were
-going great! HTTP.rb does The Right Thing 99% of the time regarding
+going great! HTTP.rb does the Right Thing 99% of the time regarding
 following redirects and other errors, so I went on my merry way.
 
 ... Until I started tracking my requests more closely and noticed some
@@ -21,6 +21,8 @@ take 10s, wrecking my performance SLO - which, while relatively lax, is
 certainly not to exceed around 30s, and very hopefully below that. I
 needed a way to set a global timeout for ALL redirects in this call to
 `HTTP.get` [^1].
+
+## Timeout woes
 
 So. What to do? The obvious and, of course, naive solution, is to just
 stick a `Timeout::timeout` around the request and be done with it. I
@@ -38,7 +40,7 @@ thread (if not using Fibers), just to sleep in it for the duration of
 the timeout. If the block of code runs before the timeout is elapsed,
 the thread is killed, and so it doesn't wake up. If it does wake up,
 however, it uses `Thread#raise` to raise an error in the calling thread
-at any point, arbritarily, which is SUPER dangerous! There's no
+at any point, arbitrarily, which is SUPER dangerous! There's no
 guarantee as to when exactly the sleeping thread will run or when the
 calling thread will receive the signal, so all manner of standard race
 problems apply.
@@ -53,13 +55,15 @@ what I did - I stuck `Timeout::timeout` in there and moved on.
 ... Until I started getting errors I hadn't before. And the stacktrace
 makes no sense - the line where the error was raised couldn't possibly
 even raise that error. I had a rescue around all the HTTP calls I was
-doing, so how wasn't it rescued there?!... Oh. God. Wait. It's
+making, so how wasn't it rescued there?!... Oh. God. Wait. It's
 `Timeout::timeout`, isn't it?...
 
 It was. I suspect it was doubly-bad as HTTP.rb itself uses
 `Timeout::timeout` for its timeouts [^2]. I was triggering this
 condition fairly often, in just hundreds of requests, on my machine -
 there's no way we can ship it like this.
+
+## Alternatives
 
 Time to look for alternatives, I guess... I'll try not to get into
 hideous technical detail, for both your sake and mine. I checked, and it
@@ -73,8 +77,9 @@ is a non-issue (or even just raising an error like `Task.with_timeout`
 does). But I had lots of trouble trying to port all the behavior I was
 used to in HTTP.rb, with redirections, ssl options, headers, all that.
 The API wasn't as ergonomic as I'd hoped [^3]. I tried using it with the
-[Faraday adapter](), but I found out that I couldn't use Faraday for
-entirely different, project-specific, reasons.
+[Faraday adapter](https://github.com/socketry/async-http-faraday), but I
+found out that I couldn't use Faraday for entirely different,
+project-specific, reasons.
 
 Next I checked out [httpx](https://github.com/HoneyryderChuck/httpx) on
 a recommendation. It uses `IO.select` and even ships with its own
@@ -88,11 +93,11 @@ worst case scenario it could take `2*timeout`, but it's good enough!
 
 Except... Now the responses from the endpoints are different. httpx has
 different semantics on what headers to send and what to do on redirects.
-Admitedly, this is probably hard mode for http clients (yes the
+Admittedly, this is probably hard mode for http clients (yes the
 endpoints I'm hitting are really that weird). Forget about timeouts if I
 don't have semantic correctness.
 
-This is when I went mad and starting clicking desperately on all http
+This is when I went mad and started clicking desperately on all http
 clients I could find. [httpclient](https://github.com/nahi/httpclient)
 uses `Timeout::timeout` as well... And
 [httparty](https://github.com/jnunemaker/httparty) calls Net::HTTP...
@@ -104,6 +109,8 @@ redirects (`--max-time` through the `curl` cli). I tried it out and it's
 pretty simple, easy to use and does the right thing (of course, it's
 `curl`)! So this seems to be the endgame, the ultimate solution for my
 usecase today, at least from my testing so far.
+
+## All roads lead to curl
 
 So, is the conclusion that we should all just use cURL? Really?! A C
 project started almost 30 years ago?!
@@ -117,6 +124,12 @@ which not randomly segfaulting [^4]. But we'll see how it goes for me
 and curl wrappers.
 
 Also, please burn `Timeout::timeout` with fire.
+
+**UPDATE**: I wound up using ruby-async's
+[`.with_timeout`](https://socketry.github.io/async/guides/asynchronous-tasks/index.html#timeouts)
+in production plus HTTP.rb. Since async timers run [in the event
+loop](https://github.com/socketry/async/blob/9851cb945ae49a85375d120219000fe7db457307/lib/async/scheduler.rb#L391),
+it has proper semantics (like `IO.select`)!
 
 [^1]: I later found an imperfect but "good enough" solution to this
     using HTTPX, but it hadn't come to me at this time. Using the

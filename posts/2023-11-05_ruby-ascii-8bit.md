@@ -2,10 +2,9 @@
 
 We've hit a couple of bugs during a recent feature launch. This
 feature's 1.0 is an email - so no takesies backsies, you better get it
-right the first time. Unfortunately, this was not the case. We did hit a
-couple of bugs (curse you [string
-types](https://wiki.c2.com/?StringlyTyped). Maybe don't store booleans
-in CSVs? Maybe don't read data off CSVs. But I digress).
+right the first time. Unfortunately, this was not the case (curse you
+[string types](https://wiki.c2.com/?StringlyTyped). Maybe don't store
+booleans in CSVs? Maybe don't use CSVs as persistence. But I digress).
 
 We initially shrugged off one of them during the first batch of emails,
 but it came back around for the second batch. Luckily it only affected
@@ -228,7 +227,7 @@ Wait. "canonical bytes representation"? Does that just mean binary?
 Oh... That makes sense, I guess. Google doesn't make any assumptions
 about encoding (as I mistakenly thought, because what the hell does
 `ACSII-8BIT` mean), so it just says it's binary. It just happens that
-'binary' has to have a whacky name in ruby, of course. Why. Why must it
+'binary' has to have a wacky name in ruby, of course. Why. Why must it
 be called `ASCII-8BIT`?! What do you mean, how does that even make
 sense?!?!? ASCII is only 7 bits!!... A quick grep on ruby's source code
 confirms that `ASCII-8BIT` is an alias for `BINARY`.

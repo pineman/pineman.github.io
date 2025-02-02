@@ -84,7 +84,7 @@ makes sense to run in a forked process...
 
 So, after careful deliberation, I decide to open a [bug in
 ruby](https://bugs.ruby-lang.org/issues/19624)! Amazingly, it gets a
-reply in just 3 hours on a sunday! Looks like Nobuyoshi Nakada indeed
+reply in just 3 hours on a Sunday! Looks like Nobuyoshi Nakada indeed
 considered it a bug in MRI, and even implemented a pretty smart test
 case. Truly a testament to async open source as the great software
 development model of the world, as an old friend reminded me, after I
@@ -96,7 +96,7 @@ I'll declare this as "not my fault" as I explicitly asked if the code
 was incorrect 😅
 
 All in all, a pretty cool win for me, even if I couldn't actually fix
-the (microcospic!) bug myself, and it took a whole weekend! Hopefully
+the (microscopic!) bug myself, and it took a whole weekend! Hopefully
 this kicks off a series of open source contributions for me :)
 
 [^1]: My mind skipped over backticks completely, as would become
