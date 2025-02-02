@@ -43,10 +43,10 @@ class Post
 end
 
 def build_posts
-  `rm -f ../posts/html/*; rm -f ../*.html`
-  Dir["../posts/*.md"].map { |md|
+  `rm -f posts/html/*; rm -f *.html`
+  Dir["posts/*.md"].map { |md|
     `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
-    html = "../posts/html/#{File.basename(md, ".*")}.html"
+    html = "posts/html/#{File.basename(md, ".*")}.html"
     `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o #{html}`
     date, url = File.basename(html).split("_")
     html = File.read(html)
@@ -68,6 +68,7 @@ def build_rss(posts)
       maker.items.new_item do |item|
         item.title = post.title
         item.link = "https://pineman.github.io/#{post.url}"
+        item.published = post.date.iso8601
         item.updated = post.date.iso8601
         item.description = post.html_descr
       end
@@ -78,8 +79,8 @@ end
 
 posts = build_posts
 posts.each { |post|
-  write_html("../#{post.url}", "post.html.erb", binding)
+  write_html("#{post.url}", "post.html.erb", binding)
 }
-write_html("../index.html", "index.html.erb", binding)
-File.write("../atom.xml", build_rss(posts))
-write_html("../what-i-read.html", "what-i-read.html.erb", binding)
+write_html("index.html", "index.html.erb", binding)
+File.write("atom.xml", build_rss(posts))
+write_html("what-i-read.html", "what-i-read.html.erb", binding)
