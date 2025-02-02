@@ -75,6 +75,9 @@ code:not(pre code) {
 .footnote-back {
   margin-left: 0.3em;
 }
+article p:has(> img) {
+  text-align: center;
+}
 
 /* Global */
 :root {

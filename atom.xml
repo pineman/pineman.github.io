@@ -8,7 +8,7 @@
   <link href="https://pineman.github.io/atom.xml"
     rel="self"/>
   <title>João Pinheiro</title>
-  <updated>2024-05-25T00:00:00+00:00</updated>
+  <updated>2025-02-01T00:00:00+00:00</updated>
   <entry>
     <id>https://pineman.github.io/aoc3.html</id>
     <link href="https://pineman.github.io/aoc3.html"/>
@@ -52,5 +52,14 @@
     <updated>2024-05-25T00:00:00+00:00</updated>
     <dc:date>2024-05-25T00:00:00+00:00</dc:date>
   </entry>
-  <dc:date>2024-05-25T00:00:00+00:00</dc:date>
+  <entry>
+    <id>https://pineman.github.io/k8s-dns.html</id>
+    <link href="https://pineman.github.io/k8s-dns.html"/>
+    <summary type="html">&lt;p&gt;Our Kubernetes cluster&#39;s DNS recently experienced partial degradation. We noticed it via DNS resolution errors in Sentry mostly when calling internal services.&lt;/p&gt;
+&lt;p&gt;This incident took a bit to root cause - not that it was particular thorny in retrospect, per se, but it involved diving into guts of things one doesn&#39;t normally care much about. While this isn&#39;t the only interesting incident that happened this year &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;, I rather enjoyed the investigation; and since it&#39;s not every day I get to drive an incident (thankfully!), I thought I&#39;d log the experience, company postmortem aside.&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
+    <title>It&#39;s always DNS (LLM edition)</title>
+    <updated>2025-02-01T00:00:00+00:00</updated>
+    <dc:date>2025-02-01T00:00:00+00:00</dc:date>
+  </entry>
+  <dc:date>2025-02-01T00:00:00+00:00</dc:date>
 </feed>
