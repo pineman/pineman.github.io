@@ -42,16 +42,13 @@ class Post
   end
 end
 
-def build_posts
-  `rm -f posts/html/*; rm -f *.html`
-  Dir["posts/*.md"].map { |md|
-    `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
-    html = "posts/html/#{File.basename(md, ".*")}.html"
-    `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o #{html}`
-    date, url = File.basename(html).split("_")
-    html = File.read(html)
-    Post.new(date, url, html)
-  }.sort_by!(&:date)
+def build_post(md)
+  `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
+  html = "posts/html/#{File.basename(md, ".*")}.html"
+  `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o #{html}`
+  date, url = File.basename(html).split("_")
+  html = File.read(html)
+  Post.new(date, url, html)
 end
 
 def build_rss(posts)
@@ -77,7 +74,10 @@ def build_rss(posts)
   rss.to_s.gsub!("<summary>", '<summary type="html">')
 end
 
-posts = build_posts
+`rm -f posts/html/*; rm -f *.html`
+posts = Dir["posts/*.md"].map { |md|
+  build_post(md)
+}
 posts.each { |post|
   write_html("#{post.url}", "post.html.erb", binding)
 }
