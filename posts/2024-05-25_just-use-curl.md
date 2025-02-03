@@ -129,7 +129,11 @@ Also, please burn `Timeout::timeout` with fire.
 [`.with_timeout`](https://socketry.github.io/async/guides/asynchronous-tasks/index.html#timeouts)
 in production plus HTTP.rb. Since async timers run [in the event
 loop](https://github.com/socketry/async/blob/9851cb945ae49a85375d120219000fe7db457307/lib/async/scheduler.rb#L391),
-it has proper semantics (like `IO.select`)!
+it has proper semantics (like `IO.select`)! It's got some drawbacks: it
+spins up all the fiber scheduler machinery just to do an HTTP request
+and it also currently loses otel tracing context (at least in our app).
+But other than that, I found it to be a good solution to the timeout
+problem.
 
 [^1]: I later found an imperfect but "good enough" solution to this
     using HTTPX, but it hadn't come to me at this time. Using the

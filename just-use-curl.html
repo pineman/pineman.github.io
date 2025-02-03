@@ -54,7 +54,7 @@
 <p>Yes.</p>
 <p>Tongue-in-cheek. But, in retrospect, it sounds obvious - cURL is venerable and legendary. Lindy's law in effect! Of course though, pure ruby gems have many advantages compared to ffi/native gems, not least of which not randomly segfaulting <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. But we'll see how it goes for me and curl wrappers.</p>
 <p>Also, please burn <code>Timeout::timeout</code> with fire.</p>
-<p><strong>UPDATE</strong>: I wound up using ruby-async's <a href="https://socketry.github.io/async/guides/asynchronous-tasks/index.html#timeouts"><code>.with_timeout</code></a> in production plus HTTP.rb. Since async timers run <a href="https://github.com/socketry/async/blob/9851cb945ae49a85375d120219000fe7db457307/lib/async/scheduler.rb#L391">in the event loop</a>, it has proper semantics (like <code>IO.select</code>)!</p>
+<p><strong>UPDATE</strong>: I wound up using ruby-async's <a href="https://socketry.github.io/async/guides/asynchronous-tasks/index.html#timeouts"><code>.with_timeout</code></a> in production plus HTTP.rb. Since async timers run <a href="https://github.com/socketry/async/blob/9851cb945ae49a85375d120219000fe7db457307/lib/async/scheduler.rb#L391">in the event loop</a>, it has proper semantics (like <code>IO.select</code>)! It's got some drawbacks: it spins up all the fiber scheduler machinery just to do an HTTP request and it also currently loses otel tracing context (at least in our app). But other than that, I found it to be a good solution to the timeout problem.</p>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
