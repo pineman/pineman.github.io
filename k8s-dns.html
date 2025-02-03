@@ -40,7 +40,7 @@
 <p>It was apparent the issue wasn't happening on 100% of DNS requests, so impact was thankfully rather minimal. One critical internal service we call is pgbouncer, but thankfully resolving those hosts rarely failed since that basically only happens at the app's startup. When they did fail, the pod would just restart; and since the problem wasn't on 100% of queries, the app was pretty much up for the whole duration of the incident. Other workloads that call internal services, such as ML services, run on Sidekiq and so will retry on failure, so they were mostly unaffected. Most of the user-observable impact was some failed exports, since those jobs have a low retry count.</p>
 <p>The incident technically started on a Friday at 3pm UTC, but since its impact was so minimal, we chalked it up as a temporary failure at the time and didn't pay much attention to it. It wasn't until Monday that I was tasked with getting to the bottom of it, as sentry errors were very much piling up <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <h2 id="let-the-investigation-begin">Let the investigation begin</h2>
-<p>Our infrastructure engineer was out Friday and Monday, which complicates things a bit, but he actually replied to me during his PTO (thanks Ricardo!). Our initial theory was that DNS was failing due to excessive load, as we had seen that in the past <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Our kube-dns deployment was already scaled beyond a reasonable scale, using kube-dns-autoscaler <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> (we use kube-dns since we're on GKE).</p>
+<p>Our infrastructure engineer was out Friday and Monday, which complicates things a bit, but he actually replied to me during his PTO (thanks Ricardo!): our initial theory was that DNS was failing due to excessive load, as we had seen that in the past <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Our kube-dns deployment was already scaled beyond a reasonable scale, using kube-dns-autoscaler <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> (we use kube-dns since we're on GKE).</p>
 <p>My first thought was to restart kube-dns. Spoiler alert, this didn't solve the problem - I had actually tried it on friday. Although, as we'll see later, it actually had a chance to, for an unexpected reason!</p>
 <p>To reproduce the problem, and actually see it with my own eyes, I simply exec'd into a pod and resolved a host on a loop - this gives a very immediate sense of the scale of the problem:</p>
 <pre class="bash"><code>while :; do time getent hosts pgbouncer-web-ampledash.core; done</code></pre>
@@ -50,7 +50,7 @@ search core.svc.cluster.local svc.cluster.local cluster.local c.ampledash-prod.i
 nameserver 172.18.130.10
 options ndots:1</code></pre>
 <p>Great! But who is <code>172.18.130.10</code>?... Well, it's a Service, a ClusterIP. There's a bunch of kube-dns pods, so this is probably some sort of entrypoint load balancer thingy? Provided by GKE?</p>
-<p>At around this time, my coworker was experimenting with turning off our Kafka consumers to see if the issue really was load related, since they were pretty busy. I kept running the DNS requests loops in multiple pods.</p>
+<p>At around this time, my colleague was experimenting with turning off our Kafka consumers to see if the issue really was load related, since they were pretty busy. I kept running the DNS requests loops in multiple pods.</p>
 <p>At a certain point, the loops stop breaking on a slow request! Rejoice! Was our problem solved?</p>
 <p>For a while it really looked like we had been spared a much deeper investigation into the guts of kube-dns. But alas, the problem came back some minutes later.</p>
 <h2 id="false-start">False start</h2>
@@ -59,7 +59,7 @@ options ndots:1</code></pre>
 <p>In retrospect it was probably a bit too much, but we had no idea where the problem was! Not long after, though, I had a better idea: talk to <em>all</em> the kube-dns pods, and see which ones are failing! This is the cool part. I had been brainstorming with Claude pretty much during the whole investigation - we even only half-joked we should probably try <a href="https://aistudio.google.com/app/live">sharing the screen and talking to Gemini 2</a>, which had just come out.</p>
 <p>But here comes the cool part: talking to all the pods, while seemingly easy when you're not in incident-mode, seemed a bit too cumbersome after multiple hours of incident investigation. But Claude offered up a script that worked with just a minor follow-up. Here it is:</p>
 <pre class="shell"><code>servers=(
-&lt;kube-dns endpoints here&gt;
+&lt;kube-dns ips here&gt;
 )
 
 monitor_server() {
