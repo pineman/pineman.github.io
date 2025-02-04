@@ -1,3 +1,6 @@
+# Februrary 2025
+https://www.elastic.co/blog/understanding-query-then-fetch-vs-dfs-query-then-fetch
+
 # January 2025
 https://public-inbox.org/git/alpine.DEB.1.00.0807222100150.8986@racer/?ref=blog.gitbutler.com
 https://blog.gitbutler.com/why-is-git-autocorrect-too-fast-for-formula-one-drivers/

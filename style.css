@@ -78,6 +78,9 @@ code:not(pre code) {
 article p:has(> img) {
   text-align: center;
 }
+article img {
+  max-width: 100%;
+}
 
 /* Global */
 :root {
