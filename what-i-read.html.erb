@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <%= File.read('partials/head.html') %>
-  <%= File.read('partials/article-head.html') %>
+  <%== File.read('partials/head.html') %>
+  <%== File.read('partials/article-head.html') %>
   <% file = File.new("posts/what-i-read.txt") %>
   <meta property="og:url" content="https://pineman.github.io/what-i-read.html" />
   <meta property="article:published_time" content="<%= file.mtime.iso8601 %>" />

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "rss"
-require "erb"
+require "erubi"
 
 require "bundler/inline"
 gemfile do
@@ -10,8 +10,8 @@ gemfile do
 end
 
 def write_html(html_file, template_file, caller_binding)
-  template = ERB.new(File.read(template_file), trim_mode: ">")
-  html = template.result(caller_binding)
+  template = Erubi::Engine.new(File.read(template_file), escape: true)
+  html = eval(template.src, caller_binding)
   File.write(html_file, html)
 end
 

@@ -1,5 +1,18 @@
 # Februrary 2025
+https://blog.samaltman.com/three-observations
+https://archive.is/bwtHz - "Founders Create Managers"
+https://archive.is/gulCy - "The Senior Shortcut"
+https://www.sergey.fyi/articles/gemini-flash-2
+https://techcrunch.com/2022/08/17/how-venture-capital-works/
+https://www.youtube.com/watch?v=jIZpKpLCOiU - "Rust & Zig Combined • Richard Feldman • GOTO 2023"
+https://gist.github.com/rtfeldman/77fb430ee57b42f5f2ca973a3992532f
+https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
+https://world.hey.com/davidsenra/working-backwards-insights-stories-and-secrets-from-inside-amazon-d81f5559
+https://antirez.com/news/145
+https://registerspill.thorstenball.com/p/joy-and-curiosity-26
+https://news.ycombinator.com/item?id=42962363 - "Good engineers are right, a lot"
 https://www.elastic.co/blog/understanding-query-then-fetch-vs-dfs-query-then-fetch
+https://www.jitbit.com/alexblog/249-now-thats-what-i-call-a-hacker/
 
 # January 2025
 https://public-inbox.org/git/alpine.DEB.1.00.0807222100150.8986@racer/?ref=blog.gitbutler.com

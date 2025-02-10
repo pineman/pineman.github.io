@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <%= File.read('partials/head.html') %>
-  <%= File.read('partials/article-head.html') %>
+  <%== File.read('partials/head.html') %>
+  <%== File.read('partials/article-head.html') %>
   <meta property="og:url" content="https://pineman.github.io/<%= post.url %>" />
   <meta property="article:published_time" content="<%= post.date.iso8601 %>" />
   <meta property="article:modified_time" content="<%= post.date.iso8601 %>" />
@@ -19,7 +19,7 @@
     <h1><%= post.title %></h1>
     <h5><time datetime="<%= post.date.iso8601 %>" pubdate="pubdate"><%= post.date.strftime("%Y-%m-%d") %></time></h5>
   </header>
-<%= post.content %>
+<%== post.content %>
 </article>
 <a href="index.html">&lt; back</a>
 </div>

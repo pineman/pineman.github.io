@@ -9,6 +9,7 @@
 <meta name="keywords" content="technology computer software engineering" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="João Pinheiro" />
+
   <meta property="og:type" content="article" />
 <meta property="article:author" content="https://pineman.github.io" />
 <meta property="article:section" content="blog" />
@@ -16,20 +17,21 @@
 <meta property="article:tag" content="computer" />
 <meta property="article:tag" content="software" />
 <meta property="article:tag" content="engineering" />
+
   <meta property="og:url" content="https://pineman.github.io/ruby-ascii-8bit.html" />
   <meta property="article:published_time" content="2023-11-05T00:00:00+00:00" />
   <meta property="article:modified_time" content="2023-11-05T00:00:00+00:00" />
-  <title>Ruby's ASCII-8BIT, mailers and feature launches</title>
-  <meta property="og:title" content="Ruby's ASCII-8BIT, mailers and feature launches" />
-  <meta name="description" content="We've hit a couple of bugs during a recent feature launch. This feature's 1.0 is an email - so no takesies backsies, you better get it right the first time. ..." />
-  <meta property="og:description" content="We've hit a couple of bugs during a recent feature launch. This feature's 1.0 is an email - so no takesies backsies, you better get it right the first time. ..." />
+  <title>Ruby&#39;s ASCII-8BIT, mailers and feature launches</title>
+  <meta property="og:title" content="Ruby&#39;s ASCII-8BIT, mailers and feature launches" />
+  <meta name="description" content="We&#39;ve hit a couple of bugs during a recent feature launch. This feature&#39;s 1.0 is an email - so no takesies backsies, you better get it right the first time. ..." />
+  <meta property="og:description" content="We&#39;ve hit a couple of bugs during a recent feature launch. This feature&#39;s 1.0 is an email - so no takesies backsies, you better get it right the first time. ..." />
 </head>
 <body>
 <div id="wrap">
 <a href="index.html">&lt; back</a>
 <article>
   <header>
-    <h1>Ruby's ASCII-8BIT, mailers and feature launches</h1>
+    <h1>Ruby&#39;s ASCII-8BIT, mailers and feature launches</h1>
     <h5><time datetime="2023-11-05T00:00:00+00:00" pubdate="pubdate">2023-11-05</time></h5>
   </header>
 
@@ -106,6 +108,7 @@ end</code></pre>
 <p>No one's complaining on the issue tracker... I find a reference on some <a href="https://github.com/googleapis/google-cloud-ruby/pull/1564">random thread about pub/sub</a>. Wait. "canonical bytes representation"? Does that just mean binary? Oh... That makes sense, I guess. Google doesn't make any assumptions about encoding (as I mistakenly thought, because what the hell does <code>ACSII-8BIT</code> mean), so it just says it's binary. It just happens that 'binary' has to have a wacky name in ruby, of course. Why. Why must it be called <code>ASCII-8BIT</code>?! What do you mean, how does that even make sense?!?!? ASCII is only 7 bits!!... A quick grep on ruby's source code confirms that <code>ASCII-8BIT</code> is an alias for <code>BINARY</code>.</p>
 <p>I remind myself of the other times I went to read up on history of a particular historical change in ruby. My head is already hurting. I do not wish to jump into this rabbit hole after one and a half hours of fighting encoding errors. Not now. Maybe not ever.</p>
 <p>I like computers.</p>
+
 </article>
 <a href="index.html">&lt; back</a>
 </div>
