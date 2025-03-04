@@ -1,4 +1,74 @@
+# March 2025
+https://github.com/johnousterhout/aposd-vs-clean-code/blob/main/README.md
+https://thume.ca/2023/01/02/one-machine-twitter/
+https://blog.cloudflare.com/the-sad-state-of-linux-socket-balancing
+https://byroot.github.io/ruby/performance/2025/03/04/the-pitchfork-story.html
+https://byroot.github.io/ruby/performance/2025/02/09/guard-rails-are-not-code-smells.html
+https://web.archive.org/web/20220602012549/https://shopify.engineering/ruby-execution-models
+https://danieldelaney.net/chat/
+https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/xor/#footnote-inverse
+https://www.lightspeedmagazine.com/fiction/exhalation/
+https://varun.ch/posts/videowall
+https://registerspill.thorstenball.com/p/joy-and-curiosity-29
+https://maryrosecook.substack.com/p/become-an-ai-augmented-engineer
+https://collabfund.com/blog/pure-independence/
+https://dostoevskysblog.substack.com/p/meditations-for-phone-addicts
+https://registerspill.thorstenball.com/p/joy-and-curiosity-28
+https://blog.regehr.org/archives/1578
+https://develop.sentry.dev/getting-started/philosophy/#embrace-the-duct-tape
+https://lucumr.pocoo.org/2025/2/20/ugly-code/
+https://www.teamten.com/lawrence/writings/every_line_is_a_potential_bug.html
+https://web.archive.org/web/20250210033440/https://andysblog.uk/why-blog-if-nobody-reads-it/
+https://thecreativeindependent.com/guides/how-to-feel-like-you-have-enough/
+https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/
+https://serce.me/posts/2025-02-07-the-llm-curve-of-impact-on-software-engineers
+https://daniel.haxx.se/blog/2025/02/18/changing-every-line-three-times/
+https://muratbuffalo.blogspot.com/2025/02/what-makes-entrepreneurs-entrepreneurial.html
+https://news.ycombinator.com/item?id=43127577 - "Why does target="_blank" have an underscore in front? (2024) (kyrylo.org)"
+https://benjaminwootton.com/insights/clickhouse-peerdb-cdc/
+https://vine.dev/docs/features/inverse
+https://eieio.games/blog/running-pong-in-240-browser-tabs/
+
 # Februrary 2025
+https://turbopuffer.com/blog/native-filtering
+https://www.nature.com/articles/436150a
+https://krebsonsecurity.com/2025/01/mastercard-dns-error-went-unnoticed-for-years/
+https://chriskiehl.com/article/thoughts-after-10-years
+https://simonwillison.net/2024/Dec/22/link-blog/
+https://news.ycombinator.com/item?id=42938409 - "How I use LLMs as a staff engineer (seangoedecke.com)"
+https://sacckey.dev/posts/implementing-a-game-boy-emulator-in-ruby/
+https://planetscale.com/blog/the-slotted-counter-pattern
+https://bugs.ruby-lang.org/issues/19842 - M:N ruby 
+https://news.ycombinator.com/item?id=42916203 - "Ruby “Thread Contention” Is Simply GVL Queuing (island94.org)" - Locks, async IO... everything is just interacting queues.
+https://blog.danielh.cc/blog/puzzle
+https://blog.danielh.cc/blog/leetcode
+https://thume.ca/2013/04/10/the-best-programming-videogame/
+https://news.ycombinator.com/item?id=42950976 - "Are LLMs able to notice the “gorilla in the data”? (chiraaggohel.com)"
+https://en.m.wikipedia.org/wiki/Simpson%27s_paradox
+https://en.m.wikipedia.org/wiki/Datasaurus_dozen
+https://en.m.wikipedia.org/wiki/Anscombe's_quartet
+https://surfingcomplexity.blog/2025/02/01/youre-missing-your-near-misses/ - love this kind of operational organization systematic thinking alas
+https://redmonk.com/sogrady/2024/09/12/language-rankings-6-24/
+https://gist.github.com/peterc/214aab5c6d783563acbc2a9425e5e866 rails CONVENTIONS.md
+https://dasl.cc/2025/01/01/debugging-our-new-linux-kernel/
+https://news.ycombinator.com/item?id=43045151
+https://mewtru.com/flappyfavi
+https://news.ycombinator.com/item?id=43030388 - "Tiny JITs for a Faster FFI (railsatscale.com)"
+https://news.ycombinator.com/item?id=43062546 - "Watt The Fox? (43z.one)"
+https://langdev.stackexchange.com/questions/4325/how-do-modern-compilers-choose-which-variables-to-put-in-registers
+https://garry.net/posts/dead-games
+https://byroot.github.io/ruby/performance/2025/02/24/http2-past-the-load-balancer.html#fnref:1
+https://byroot.github.io/ruby/performance/2025/02/27/whats-the-deal-with-ractors.html
+https://newsletter.pragmaticengineer.com/p/software-engineering-job-openings
+https://www.ubicloud.com/blog/debugging-hetzner-uncovering-failures-with-powerstat-sensors-and-dmidecode
+https://jolynch.github.io/posts/use_fast_data_algorithms/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-27
+https://dubroy.com/blog/make-it-happen/
+https://dubroy.com/blog/five-coding-hats/
+https://www.uber.com/en-PT/blog/query-gpt/
+https://www.markrabkin.com/the-resilience-of-alien-chess/
+https://ghuntley.com/stdlib/
+https://www.rkg.blog/ai-or-die.php
 https://blog.samaltman.com/three-observations
 https://archive.is/bwtHz - "Founders Create Managers"
 https://archive.is/gulCy - "The Senior Shortcut"
@@ -13,8 +83,20 @@ https://registerspill.thorstenball.com/p/joy-and-curiosity-26
 https://news.ycombinator.com/item?id=42962363 - "Good engineers are right, a lot"
 https://www.elastic.co/blog/understanding-query-then-fetch-vs-dfs-query-then-fetch
 https://www.jitbit.com/alexblog/249-now-thats-what-i-call-a-hacker/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-25
+
 
 # January 2025
+https://www.latacora.com/blog/2019/07/16/the-pgp-problem/
+https://sockpuppet.org/blog/2014/04/30/you-dont-want-xts/
+https://soatok.blog/2021/01/20/please-stop-encrypting-with-rsa-directly/
+https://www.chrbutler.com/digital-reality-digital-shock
+https://blog.nelhage.com/post/personal-software-with-claude/
+https://news.ycombinator.com/item?id=42845169 - "Better Know a Ruby Thing: Singleton Classes"
+https://newsletter.systemdesign.one/p/how-does-bluesky-work
+https://lobste.rs/s/wfmynv/how_we_share_secrets_at_fully_remote
+https://news.ycombinator.com/item?id=42291417 - "RAII and the Rust/Linux Drama"
+https://news.ycombinator.com/item?id=42874605 - "Hard Mode Rust (2022)"
 https://public-inbox.org/git/alpine.DEB.1.00.0807222100150.8986@racer/?ref=blog.gitbutler.com
 https://blog.gitbutler.com/why-is-git-autocorrect-too-fast-for-formula-one-drivers/
 https://kellysutton.com/2024/01/15/moving-on-from-react.html
