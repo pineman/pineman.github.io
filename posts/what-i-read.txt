@@ -1,4 +1,74 @@
 # March 2025
+https://www.paulgraham.com/schlep.html
+https://registerspill.thorstenball.com/p/two-types-of-software-engineers
+https://www.anthropic.com/engineering/claude-think-tool
+https://boz.com/articles/get-it-done -- ah, the cto of meta
+https://boz.com/articles/disagree
+https://thorstenball.com/blog/2020/09/15/the-context-in-which-we-build-software/
+https://jasonzweig.com/saving-investors-from-themselves-2/
+https://andrewchen.substack.com/p/predictionsthoughts-on-vibe-coding
+https://lethain.com/career-advice-2025/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-32?utm_source=post-email-title&publication_id=1543843&post_id=159610543&utm_campaign=email-post-title&isFreemail=true&r=1mnftp&triedRedirect=true&utm_medium=email
+https://www.crunchydata.com/developers/playground/lateral-join
+https://wiki.postgresql.org/wiki/Don't_Do_This
+https://news.ycombinator.com/item?id=43403321 -- Don't Be Afraid of Types (lmika.org)
+https://ankitmaloo.com/bitter-lesson
+https://www.tinybird.co/blog-posts/using-bloom-filter-text-indexes-in-clickhouse
+https://ezyang.github.io/ai-blindspots/
+https://charlesnagy.info/it/postgresql/group-by-limit-per-group-in-postgresql -- finally: limiting order by in a group by. see https://www.postgresql.org/docs/current/indexes-ordering.html, useful for index (category_id, popularity desc) https://claude.ai/share/058c6f52-9fa3-4ea4-8d75-8ff260713ddd
+https://www.builder.io/blog/cursor-tips
+https://simonwillison.net/2025/Mar/11/using-llms-for-code
+https://github.com/microsoft/typescript-go/discussions/411#discussioncomment-12469481
+https://www.builder.io/blog/cursor-tips
+https://www.bennorthrop.com/Essays/2021/always-do-extra.php
+https://whoisnnamdi.com/never-enough-developers/
+https://zackoverflow.dev/writing/i-spent-181-minutes-waiting-for-the-zig-compiler-this-week
+https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/
+https://nav.al/build-a-team-that-ships
+https://maryrosecook.com/blog/post/explore-expand-exploit
+https://news.ycombinator.com/item?id=43340662 - "I use Cursor daily - here's how I avoid the garbage parts (nickcraux.com)"
+https://www.rtp.pt/play/p14482/e826316/timex-uma-revolucao-por-contar
+https://interfacecraft.online/posts/blog/2025/how-i-automated-my-computer-life-with-macos-folder-actions/
+https://fosdem.org/2025/schedule/event/fosdem-2025-4852-how-browsers-really-load-web-pages/
+https://ploum.net/2024-03-18-lost-focus.html
+https://www.youtube.com/watch?v=IroPQ150F6c - Andrew Kelley Practical Data Oriented Design (DoD)
+https://aider.chat/docs/recordings/
+https://www.youtube.com/watch?v=bxOqXLL06Sg - Oaken: Fresh take on Fixtures and Seeds - Julián Pinzón Eslava
+https://cedardb.com/blog/optimistic_btrees/
+https://en.wikipedia.org/wiki/Seqlock
+https://lobste.rs/s/t2bmsy/fsync_after_open_is_elaborate_no_op https://www.redpanda.com/blog/why-fsync-is-needed-for-data-safety-in-kafka-or-non-byzantine-protocols
+https://news.ycombinator.com/item?id=43365894 - writing to different fields in the same jsonb column in the same row in parallel loses data? https://news.ycombinator.com/item?id=39865835
+https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c
+https://www.bomberbot.com/tech/expertly-updating-objects-in-postgresql-jsonb-arrays-a-full-stack-developers-guide/
+https://railsatscale.com/2025-03-14-ruby-debugging-tips-and-recommendations-2025/
+https://blog.arkency.com/is-your-rails-application-special/
+https://www.youtube.com/watch?v=Wo2m3jaJixU - "Scaling the Linear Sync Engine"
+https://news.ycombinator.com/item?id=43364668 - You Can Make Postgres Scale (pgdog.dev)
+https://leandromoreira.com/2019/08/02/linux-ffmpeg-source-internals-a-good-software-design/
+https://gist.github.com/chitchcock/1281611 - "Stevey's Google Platforms Rant"
+https://blog.aurynn.com/2015/12/16-contempt-culture#ref-1UUU
+https://steveklabnik.com/writing/choosing-languages/
+https://seeinglogic.com/posts/visual-readability-patterns/
+https://alifeengineered.substack.com/p/the-7-behaviors-that-separate-juniors
+https://bjessbrown.com/using-active-record-merge-and-or
+https://news.ycombinator.com/item?id=43307809 - "I've been using Claude Code for a couple of days (twitter.com/steve_yegge)"
+https://news.ycombinator.com/item?id=43317592 - "Performance of the Python 3.14 tail-call interpreter (nelhage.com)"
+https://lemire.me/blog/2025/03/01/how-fast-can-you-open-1000-files
+https://www.founderstribune.org/p/if-your-product-is-great-it-doesn-t-need-to-be-good-by-paul-buchheit
+https://www.geoffreylitt.com/2025/03/03/the-nightmare-bicycle.html
+https://newsletter.pathlesspath.com/p/40-thoughts-on-turning-40-287
+https://social.ayjay.org/2025/02/17/a-nice-little-inside-joke.html
+https://www.robinsloan.com/lab/is-it-okay
+https://fabiensanglard.net/fastdoom/index.html
+https://2ality.com/2025/02/what-is-typescript.html
+https://www.eecs.tufts.edu/~aloupis/comp150/projects/SuccinctTreesinPractice.pdf
+https://stackoverflow.com/questions/72580828/what-is-a-succinct-rank-data-structure-how-does-it-work
+https://news.ycombinator.com/item?id=43282995 - "Succinct data structures (startifact.com)"
+https://news.ycombinator.com/item?id=43285725 - "Ask HN: How did the internet discover my subdomain?"
+https://world.hey.com/joaoqalves/is-this-hackernews-material-how-to-write-and-distribute-great-content-fe9bb11c
+https://world.hey.com/joaoqalves/365-days-as-head-of-engineering-9045d660
+https://world.hey.com/joaoqalves/the-manager-elevator-0f4bf40e
+https://boomerprompts.com/
 https://github.com/johnousterhout/aposd-vs-clean-code/blob/main/README.md
 https://thume.ca/2023/01/02/one-machine-twitter/
 https://blog.cloudflare.com/the-sad-state-of-linux-socket-balancing
@@ -38,7 +108,7 @@ https://simonwillison.net/2024/Dec/22/link-blog/
 https://news.ycombinator.com/item?id=42938409 - "How I use LLMs as a staff engineer (seangoedecke.com)"
 https://sacckey.dev/posts/implementing-a-game-boy-emulator-in-ruby/
 https://planetscale.com/blog/the-slotted-counter-pattern
-https://bugs.ruby-lang.org/issues/19842 - M:N ruby 
+https://bugs.ruby-lang.org/issues/19842 - M:N ruby
 https://news.ycombinator.com/item?id=42916203 - "Ruby “Thread Contention” Is Simply GVL Queuing (island94.org)" - Locks, async IO... everything is just interacting queues.
 https://blog.danielh.cc/blog/puzzle
 https://blog.danielh.cc/blog/leetcode
@@ -84,7 +154,6 @@ https://news.ycombinator.com/item?id=42962363 - "Good engineers are right, a lot
 https://www.elastic.co/blog/understanding-query-then-fetch-vs-dfs-query-then-fetch
 https://www.jitbit.com/alexblog/249-now-thats-what-i-call-a-hacker/
 https://registerspill.thorstenball.com/p/joy-and-curiosity-25
-
 
 # January 2025
 https://www.latacora.com/blog/2019/07/16/the-pgp-problem/
@@ -254,7 +323,7 @@ https://news.ycombinator.com/item?id=42174204 - "Launch HN: Regatta Storage (YC 
 https://egoless.engineering/
 https://www.thenile.dev/blog/distributed-ddl
 https://www.youngmoney.co/p/you-only-have-to-get-rich-once
-https://www.youtube.com/watch?v=r-TLSBdHe1A - ""Performance Matters" by Emery Berger" - incredible
+https://www.youtube.com/watch?v=r-TLSBdHe1A - ""Performance Matters" by Emery Berger" - incredible. O3 vs O2 optimizations. binary size. how to actually take performance measurements.
 https://www.youtube.com/watch?v=8bZh5LMaSmE - "RailsConf 2014 - All the Little Things by Sandi Metz"
 https://www.youtube.com/watch?v=9LfmrkyP81M - "RailsConf 2014 - Keynote: Writing Software by David Heinemeier Hansson"
 https://jvns.ca/blog/2024/11/18/how-to-import-a-javascript-library/
