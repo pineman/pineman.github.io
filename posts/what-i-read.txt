@@ -1,4 +1,34 @@
 # March 2025
+https://v8.dev/blog/leaving-the-sea-of-nodes
+http://catb.org/~esr/writings/unix-koans/index.html
+http://www.canonical.org/~kragen/tao-of-programming.html
+https://yosefk.com/blog/engineers-vs-managers-economics-vs-business.html
+https://iliabylich.github.io/ruby-ractors-and-lock-free-data-structures/intro.html
+https://github.com/medialab/xan/blob/master/docs/LOVE_LETTER.md
+https://www.clientserver.dev/p/war-story-the-hardest-bug-i-ever
+https://www.clientserver.dev/p/meta-bets-on-lower-developer-compensation
+https://www.clientserver.dev/p/how-i-fixed-my-skill-issue-with-cursor
+https://www.clientserver.dev/p/write-better-comments-by-removing
+https://refactoringenglish.com/chapters/rules-for-software-tutorials/
+https://refactoringenglish.com/tools/hn-popularity
+https://refactoringenglish.com/chapters/write-blog-posts-developers-read/
+https://phys.org/news/2025-03-bias-social-tinny-video-conferences.html
+https://bsky.app/profile/thorstenball.com/post/3ll7vqy7mec26
+https://hamel.dev/blog/posts/field-guide
+https://alexdanco.com/2025/03/27/scarcity-and-abundance-in-2025
+https://jacobian.org/2025/mar/13/beware-advice-from-old-heads
+https://news.ycombinator.com/item?id=43543241 - Show HN: Nue – Apps lighter than a React button (nuejs.org)
+https://blog.julik.nl/2025/03/a-tiny-undo-stack
+https://registerspill.thorstenball.com/p/joy-and-curiosity-33
+https://posthog.com/newsletter/communication-mistakes
+https://www.highagency.com/
+https://news.ycombinator.com/item?id=43451285 - Ruby, Ractors, and lock-free data structures (iliabylich.github.io) - aren't ractors supposed to be actors? why go to all this trouble to share stuff? because we're afraid copying will be slow?
+https://brightonruby.com/2024/ractors-are-rubys-goroutines/
+https://brooker.co.za/blog/2025/03/25/two-queues.html - One or Two? How Many Queues?
+https://news.ycombinator.com/item?id=43451285 - Ruby, Ractors, and lock-free data structures (iliabylich.github.io) - aren't ractors supposed to be actors? why not init cpu count ractors, make each ractor listen on different ports, load balance them externally, and make each ractor open a new db connection on init? sort of like how nodejs applications are clustered
+https://www.computerenhance.com/p/an-interview-with-zen-chief-architect
+https://wiki.c2.com/?EverythingIsa
+https://www.lianeon.org/p/does-material-progress-matter
 https://www.paulgraham.com/schlep.html
 https://registerspill.thorstenball.com/p/two-types-of-software-engineers
 https://www.anthropic.com/engineering/claude-think-tool
