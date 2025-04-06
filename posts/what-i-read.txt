@@ -1,4 +1,28 @@
+# April 2025
+https://github.com/bensheldon/good_job/discussions/831#discussioncomment-7139886
+https://github.com/bensheldon/good_job/issues/65
+https://open.substack.com/pub/thorstenball/p/joy-and-curiosity-34
+https://goperf.dev
+https://www.sergey.fyi/articles/reliability-vs-capability
+https://medium.com/@chadfowler/the-curse-of-a-name-how-to-kill-a-good-idea-5414c0cc748d
+https://theengineeringmanager.substack.com/p/llms-an-operators-view
+https://manuel.kiessling.net/2025/03/31/how-seasoned-developers-can-achieve-great-results-with-ai-coding-agents
+https://theaiunderwriter.substack.com/p/an-image-of-an-archeologist-adventurer
+https://terminal.click/posts/2025/04/the-wizard-and-his-shell
+https://justinjackson.ca/words.html
+https://byroot.github.io/performance/2025/03/21/database-protocols.html
+https://commoncog.com/goodharts-law-not-useful/
+https://en.wikipedia.org/wiki/Mike_Alder#Newton's_flaming_laser_sword
+https://en.wikipedia.org/wiki/McNamara_fallacy
+https://sourcegraph.com/blog/revenge-of-the-junior-developer
+https://nolanlawson.com/2025/04/02/ai-ambivalence/
+https://island94.org/2020/07/introducing-goodjob-1-0
+https://island94.org/2025/01/ruby-thread-contention-simply-gvl-queuing
+https://mensfeld.pl/2022/01/reduce-your-method-calls-by-99-9-by-replacing-threadpass-with-queuepop/
+
 # March 2025
+https://hardcoresoftware.learningbyshipping.com/p/229-tech-goes-hardcore-again
+https://www.businessinsider.com/tech-industry-amazon-microsoft-meta-google-companies-intensity-hardcore-2025-3
 https://v8.dev/blog/leaving-the-sea-of-nodes
 http://catb.org/~esr/writings/unix-koans/index.html
 http://www.canonical.org/~kragen/tao-of-programming.html
@@ -837,6 +861,7 @@ https://www.youtube.com/watch?v=8VWIPgXdwrQ - "SINFO 23 - Tiago Paiva (Talkdesk)
 https://blog.wesleyac.com/posts/consider-sqlite
 https://kerkour.com/sqlite-for-servers
 https://mailchi.mp/railsspeed/how-many-ruby-processes-per-cpu-is-ideal?e=0ab8ee608c
+https://ivoanjo.me/blog/2023/07/23/understanding-the-ruby-global-vm-lock-by-observing-it/
 https://www.youtube.com/watch?v=rI4XlFvMNEw - "[EN] Understanding the Ruby Global VM Lock by observing it / Ivo Anjo @KnuX" - rewatch
 https://newsletter.pragmaticengineer.com/p/bluesky
 https://shopify.engineering/horizontally-scaling-the-rails-backend-of-shop-app-with-vitess
