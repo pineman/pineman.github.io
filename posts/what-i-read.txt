@@ -1,4 +1,25 @@
 # April 2025
+https://lemire.me/blog/2025/04/11/how-can-really-smart-people-appear-totally-incompetent
+https://planetscale.com/blog/faster-interpreters-in-go-catching-up-with-cpp
+https://michaelfeathers.typepad.com/michael_feathers_blog/2011/05/the-carrying-cost-of-code-taking-lean-seriously.html
+https://jpfennell.com/posts/enum-type-size
+https://spakhm.substack.com/p/how-to-get-promoted
+https://news.ycombinator.com/item?id=43603646 - Knowing where your engineer salary comes from (seangoedecke.com)
+https://www.phillipcarter.dev/posts/llms-computers
+https://nedbatchelder.com/blog/201711/toxic_experts.html
+https://www.astralcodexten.com/p/the-colors-of-her-coat
+https://stevana.github.io/erlangs_not_about_lightweight_processes_and_message_passing.html#how-behaviours-can-be-implemented
+https://0x1.pt/2025/04/06/the-insanity-of-being-a-software-engineer/
+https://worksonmymachine.substack.com/p/introducing-monkeyspaw-a-prompt-driven
+https://ohadravid.github.io/posts/2025-04-08-btrees-and-mental-models
+https://ai-2027.com
+https://stevana.github.io/erlangs_not_about_lightweight_processes_and_message_passing.html
+https://blog.vectorchord.ai/postgresql-full-text-search-fast-when-done-right-debunking-the-slow-myth
+https://news.ycombinator.com/item?id=43629307 - The best programmers I know (endler.dev)
+https://www.postgresql.org/docs/current/using-explain.html
+https://ai-2027.com/
+https://medium.com/tinder/how-we-improved-our-performance-using-elasticsearch-plugins-part-2-b051da2ee85b
+https://luis-sena.medium.com/improve-elasticsearch-filtering-performance-10x-using-this-plugin-8c6485516c1a
 https://github.com/bensheldon/good_job/discussions/831#discussioncomment-7139886
 https://github.com/bensheldon/good_job/issues/65
 https://open.substack.com/pub/thorstenball/p/joy-and-curiosity-34
@@ -286,13 +307,13 @@ https://newsletter.pragmaticengineer.com/p/how-ai-will-change-software-engineeri
 https://crawshaw.io/blog/programming-with-llms
 https://zverok.space/blog/2025-01-06-changelog-2025.html
 https://blog.jgc.org/2010/06/facebooks-dkim-rsa-key-should-be.html
-https://registerspill.thorstenball.com/p/oh-to-turn-off-your-mind?utm_source=substack&utm_medium=email
+https://registerspill.thorstenball.com/p/oh-to-turn-off-your-mind
 https://www.seangoedecke.com/weak-engineers
 https://www.seangoedecke.com/what-makes-strong-engineers-strong/
 https://www.seangoedecke.com/my-engineering-values
 https://review.firstround.com/the-30-best-pieces-of-company-building-advice-we-heard-in-2024
 https://review.firstround.com/make-an-org-chart-you-want-to-ship-advice-from-linear-on-how-heirloom-tomatoes-should-inspire-team-design/
-https://map.simonsarris.com/p/the-most-precious-resource-is-agency?utm_source=substack&utm_medium=email
+https://map.simonsarris.com/p/the-most-precious-resource-is-agency
 https://www.readtrung.com/p/jerry-seinfeld-ichiro-suzuki-and
 https://newsletter.posthog.com/p/talk-to-users
 https://newsletter.posthog.com/p/non-obvious-behaviors-that-will-kill
@@ -467,7 +488,7 @@ https://registerspill.thorstenball.com/p/how-i-use-git
 https://groups.google.com/g/golang-nuts/c/MdYlJbW4SAo/m/TrAEoCjAkMwJ
 https://apenwarr.ca/log/20230605
 https://www.youtube.com/watch?v=rbu7Zu5X1zI - "How I animate 3Blue1Brown | A Manim demo with Ben Sparks"
-https://docs.google.com/document/d/1dpKjHGzzmpGe2-34x6fb3fhtEBW25OCwL9UvVEOwrPc/edit?tab=t.0&utm_source=substack&utm_medium=email#heading=h.ceto79q9te33
+https://docs.google.com/document/d/1dpKjHGzzmpGe2-34x6fb3fhtEBW25OCwL9UvVEOwrPc/edit?tab=t.0#heading=h.ceto79q9te33
 https://www.youtube.com/watch?v=aFOGlNL39xs - "Brian Chesky - Founder Mode & The Art of Hiring"
 https://speakerdeck.com/palkan/kaigi-on-rails-2024-rails-way-or-the-highway?slide=94
 https://www.thenile.dev/blog/transaction-isolation-postgres
@@ -484,7 +505,7 @@ https://richardesigns.co.uk/articles/tales-from-a-startup/michael-siebels-advice
 https://www.da.vidbuchanan.co.uk/blog/dram-emfi.html
 https://blog.appsignal.com/2024/10/07/whats-new-in-ruby-on-rails-8.html
 https://news.ycombinator.com/item?id=41748664 - "Whence '\n'?"
-https://0pointer.net/blog/projects/systemd.html?utm_source=substack&utm_medium=email
+https://0pointer.net/blog/projects/systemd.html
 https://martinheinz.dev/blog/105 - "You Don't Need a Dedicated Cache Service - PostgreSQL as a Cache"
 https://lobste.rs/s/996uq0/gilded_rose_refactoring_kata_ruby_as_if_it
 https://llogiq.github.io/2016/09/27/count.html
@@ -524,7 +545,7 @@ https://www.youtube.com/watch?v=Ch9R4ZxvtG0 - "Oxide and Friends 9/16/2024 -- Re
 https://www.youtube.com/watch?v=Td_PGkfIdIQ - "Gabe Newell: On Productivity, Economics, Political Institutions, and the Future of Corporations"
 https://lobste.rs/s/aobazu/is_ai_silver_bullet
 https://charliereese.ca/y-combinator-top-50-software-startups/
-https://keygen.sh/blog/that-one-time-keygen-went-down-for-5-hours-twice/
+https://keygen.sh/blog/that-one-time-keygen-went-down-for-5-hours-twice/ - sidekiq unique jobs causing outage
 https://news.ycombinator.com/item?id=41549649 - "How to succeed in MrBeast production (Leaked PDF)"
 https://registerspill.thorstenball.com/p/joy-and-curiosity-8
 https://jguer.space/posts/the-issue-is-not-only-your-design-doc/
@@ -703,7 +724,7 @@ https://aws.amazon.com/blogs/database/understanding-statistics-in-postgresql/ - 
 https://steveklabnik.com/writing/should-you-learn-c-to-learn-how-the-computer-works
 https://www.radicalsimpli.city/
 https://retrocomputing.stackexchange.com/questions/5341/how-did-people-use-ed/5343#5343
-https://newsletter.pragmaticengineer.com/p/what-is-old-is-new-again?utm_source=substack&utm_medium=email
+https://newsletter.pragmaticengineer.com/p/what-is-old-is-new-again
 https://www.mikeperham.com/2024/07/03/iteration-and-sidekiq-7.3.0/
 https://daedtech.com/how-to-keep-your-best-programmers/
 https://randsinrepose.com/archives/bored-people-quit/
@@ -746,7 +767,7 @@ https://en.m.wikipedia.org/wiki/Real_Programmers_Don't_Use_Pascal
 https://www.honeycomb.io/blog/anything-but-tech-debt
 https://en.m.wikipedia.org/wiki/Pauli_effect
 https://charap.co/reading-group-chardonnay-fast-and-general-datacenter-transactions-for-on-disk-databases/
-https://newsletter.pragmaticengineer.com/p/oxide-part-2?utm_source=substack&utm_medium=email
+https://newsletter.pragmaticengineer.com/p/oxide-part-2
 https://medium.com/@johnpcutler/by-default-ship-nothing-a5d651422aa3
 https://island94.org/2023/08/appropriately-using-rubys-thread-handle_interrupt
 https://www.crunchydata.com/blog/time-partitioning-and-custom-time-intervals-in-postgres-with-pg_partman

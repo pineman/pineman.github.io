@@ -133,8 +133,8 @@ a {
 }
 @media (prefers-color-scheme: dark) {
   body {
-    background: #242424;
-    color: #fafafa;
+    background: #1d1e20;
+    color: #dadadb;
   }
   svg {
     fill: white;
