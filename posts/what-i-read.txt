@@ -1,4 +1,43 @@
+# May 2025
+
 # April 2025
+https://research.swtch.com/diffcover
+https://oxide.computer/blog/oxides-compensation-model-how-is-it-going
+https://filiph.github.io/unsure/
+https://serpapi.com/blog/faster-regular-expression-engines-in-ruby/
+https://island94.org/2024/09/secret-to-rails-database-connection-pool-size
+https://cekrem.github.io/posts/coding-as-craft-going-back-to-the-old-gym/
+https://blog.mattstuchlik.com/2025/04/23/low-overhead-ruby-tracing.html
+https://boz.com/articles/be-kind
+https://registerspill.thorstenball.com/p/joy-and-curiosity-37
+https://koomen.dev/essays/horseless-carriages
+https://mcyoung.xyz/2025/04/21/go-arenas
+https://news.ycombinator.com/item?id=43763688 - ClickHouse gets lazier and faster: Introducing lazy materialization (clickhouse.com)
+https://cookieplmonster.github.io/2025/04/23/gta-san-andreas-win11-24h2-bug/#
+https://motherduck.com/blog/introducing-instant-sql/
+https://ampcode.com/how-to-build-an-agent
+https://www.joshwcomeau.com/blog/the-post-developer-era/
+https://cookbook.openai.com/examples/gpt4-1_prompting_guide
+https://justinjaffray.com/query-engines-push-vs.-pull/
+https://it-notes.dragas.net/2024/12/28/i-almost-died-for-a-full-sentry-database/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-36
+https://news.ycombinator.com/item?id=43677122 - Fibonacci Hashing: The Optimization That the World Forgot (probablydance.com)
+https://waspdev.com/articles/2025-04-06/features-that-every-js-developer-must-know-in-2025
+https://blog.rpanachi.com/after-25-years-writing-software-here-are-a-few-more-things-ive-learned-so-far-part2
+https://www.seangoedecke.com/wicked-features/#fnref-1
+https://en.wikipedia.org/wiki/Comparative_advantage
+https://meaningness.com/sad-light-lumens
+https://www.benkuhn.net/lux/
+https://www.benkuhn.net/weekly
+https://www.benkuhn.net/impact
+https://www.benkuhn.net/thinkrealhard
+https://www.benkuhn.net/conviction
+https://trainingmag.com/change-top-down-leadership-with-i-intend-to/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-37-f50
+https://news.ycombinator.com/item?id=43783403 - transactional
+https://www.youtube.com/watch?v=zo6yZisg7N0 - The promise of Rust (fasterthanlime)
+https://www.pgmustard.com/docs/explain
+https://ampcode.com/how-to-build-an-agent
 https://lemire.me/blog/2025/04/11/how-can-really-smart-people-appear-totally-incompetent
 https://planetscale.com/blog/faster-interpreters-in-go-catching-up-with-cpp
 https://michaelfeathers.typepad.com/michael_feathers_blog/2011/05/the-carrying-cost-of-code-taking-lean-seriously.html
