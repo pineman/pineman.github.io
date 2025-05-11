@@ -2,62 +2,65 @@
 #index-header {
   display: grid;
   grid-template-columns: 35% 65%;
+
   #index-header-img {
     display: flex;
     justify-content: center;
     align-items: center;
+
     img {
       border-radius: 50%;
       max-width: 100%;
       height: auto;
     }
   }
+
   #index-header-text {
     line-height: 1.7;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     h1 {
       margin: 0;
       text-align: center;
       font-weight: normal;
     }
+
     span {
       display: block;
       text-align: center;
       margin-top: -0.5rem;
     }
+
     ul {
       list-style-type: none;
     }
-    i {
-      padding-right: 0.5rem;
-    }
   }
 }
+
+i {
+  padding-right: 0.5rem;
+}
+
 .index-post-time {
   min-width: 5.7rem;
   display: inline-block;
 }
+
 .img-link {
   border-bottom: none;
 }
+
 .img-link:hover {
   border-bottom: none;
-}
-svg {
-  fill: black;
-  vertical-align: text-bottom;
-  width: 1em;
-}
-.home-icon {
-  margin-right: 0.2em;
 }
 
 /* Posts */
 pre {
   overflow: auto;
 }
+
 code {
   border-radius: 0.25em;
   border: 0.25px #4e585d solid;
@@ -65,22 +68,27 @@ code {
   background: var(--oceanic-bg);
   font-size: 16px;
 }
+
 pre code {
   /* Early apply of hljs styles to avoid FOUC */
   display: block;
   overflow-x: auto;
   padding: 1em;
 }
+
 /* Inlines */
 code:not(pre code) {
   padding: 0.2em;
 }
+
 .footnote-back {
   margin-left: 0.3em;
 }
+
 article p:has(> img) {
   text-align: center;
 }
+
 article img {
   max-width: 100%;
 }
@@ -90,9 +98,11 @@ article img {
   --oceanic-bg: #1b2b34;
   --oceanic-fg: #c0c5ce;
 }
+
 * {
   box-sizing: border-box;
 }
+
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
@@ -100,22 +110,27 @@ html {
   line-height: 1.6;
   overflow-wrap: break-word;
 }
+
 body {
   margin: 1rem;
   display: flex;
   justify-content: center;
 }
+
 a {
   color: inherit;
   text-decoration-color: grey;
+
   &:hover {
     text-decoration-color: var(--oceanic-fg);
   }
 }
+
 #wrap {
   max-width: 41rem;
   width: 100%;
 }
+
 /*
   Formula: fontsize * (#wrap max-width + 2*body margin)
   This works because wrap max-width and body margin is set in rem.
@@ -126,20 +141,20 @@ a {
   #index-header {
     grid-template-columns: initial;
     margin-bottom: 0;
+
     img {
       margin: auto auto 0.7rem;
     }
+
     ul {
       padding: 0;
     }
   }
 }
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #1d1e20;
     color: #dadadb;
-  }
-  svg {
-    fill: white;
   }
 }
