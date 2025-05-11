@@ -10,6 +10,28 @@
   <meta property="og:title" content="<%= post.title %>" />
   <meta name="description" content="<%= post.text_descr %>" />
   <meta property="og:description" content="<%= post.text_descr %>" />
+  <style>
+    .heading-link {
+      opacity: 0;
+      padding-left: 0.5em;
+      color: inherit;
+      text-decoration: none;
+    }
+    h1:hover .heading-link,
+    h2:hover .heading-link,
+    h3:hover .heading-link,
+    h4:hover .heading-link,
+    h5:hover .heading-link,
+    h6:hover .heading-link {
+      opacity: 1;
+    }
+    .heading-link .icon-container {
+      font-size: 0.8em;
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
 <div id="wrap">
@@ -27,4 +49,10 @@
 <link rel="stylesheet" href="assets/oceanicnext.min.css">
 <script src="assets/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script>
+  function copyHeadingLink(link) {
+    const url = window.location.href.split('#')[0] + link.getAttribute('href');
+    navigator.clipboard.writeText(url);
+  }
+</script>
 </html>

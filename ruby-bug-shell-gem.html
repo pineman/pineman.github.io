@@ -26,6 +26,28 @@
   <meta property="og:title" content="I found a (microscopic) ruby bug and it got fixed in 3 hours" />
   <meta name="description" content="I&#39;m using highlight.js for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that..." />
   <meta property="og:description" content="I&#39;m using highlight.js for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that..." />
+  <style>
+    .heading-link {
+      opacity: 0;
+      padding-left: 0.5em;
+      color: inherit;
+      text-decoration: none;
+    }
+    h1:hover .heading-link,
+    h2:hover .heading-link,
+    h3:hover .heading-link,
+    h4:hover .heading-link,
+    h5:hover .heading-link,
+    h6:hover .heading-link {
+      opacity: 1;
+    }
+    .heading-link .icon-container {
+      font-size: 0.8em;
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
 <div id="wrap">
@@ -92,4 +114,10 @@ end</code></pre>
 <link rel="stylesheet" href="assets/oceanicnext.min.css">
 <script src="assets/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script>
+  function copyHeadingLink(link) {
+    const url = window.location.href.split('#')[0] + link.getAttribute('href');
+    navigator.clipboard.writeText(url);
+  }
+</script>
 </html>

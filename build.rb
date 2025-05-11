@@ -33,6 +33,23 @@ class Post
     html = Nokogiri::HTML.fragment(html)
     @title = html.at("h1").text
     html.at("h1").remove
+
+    # Add IDs to headings and copy link
+    html.css('h1, h2, h3, h4, h5, h6').each do |heading|
+      id = heading.text.downcase.gsub(/[^a-z0-9]+/, '-').gsub(/^-|-$/, '')
+      heading['id'] = id
+      copy_link = Nokogiri::XML::Node.new('a', html)
+      copy_link['href'] = "##{id}"
+      copy_link['class'] = 'heading-link'
+      copy_link['title'] = 'Copy link to heading'
+      copy_link['onclick'] = "copyHeadingLink(this);"
+      icon = Nokogiri::XML::Node.new('span', html)
+      icon['class'] = 'icon-container'
+      icon.inner_html = '<i class="fa-solid fa-link"></i>'
+      copy_link.add_child(icon)
+      heading.add_child(copy_link)
+    end
+
     @content = html.to_s
     # descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
     descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m] || ""

@@ -59,7 +59,6 @@
 </header>
 <article>
   <p>Hi! My name is João Pinheiro (aka pineman), I'm from Lisbon, Portugal and I like computers. I started programming when I was <span title="<%= Helpers.years_ago("2014-02-01") %> years ago">16</span> with Python and I've loved software ever since. Currently at <a href="https://www.amplemarket.com/">amplemarket</a>!</p>
-  <h2 style="margin: 0.5em 0;"><a href="what-i-read.html"><div class="icon-container"><i class="fa-solid fa-link"></i></div>Links</a></h2>
   <h2 style="margin: 0.5em 0;"><a href="atom.xml"><div class="icon-container"><i class="fa-solid fa-square-rss"></i></div>Blog</a></h2>
   <ul>
     <% posts.sort_by(&:date).reverse.each do |post| %>
@@ -69,6 +68,7 @@
       </li>
     <% end %>
   </ul>
+  <h2 style="margin: 0.5em 0;"><a href="what-i-read.html"><div class="icon-container"><i class="fa-solid fa-link"></i></div>Links</a></h2>
   <a href="https://www.eff.org/" class="img-link"><img src="https://www.eff.org/files/eff-join2_0.png" alt="Join EFF!" width="128px" height="128px"></a>
   <a href="https://www.fsf.org/" class="img-link"><img src="https://static.fsf.org/nosvn/associate/crm/3217362.png" alt="Join the FSF!" width="180px" height="45px"></a>
 </article>
