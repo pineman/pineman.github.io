@@ -101,3 +101,4 @@ posts.each { |post|
 write_html("index.html", "index.html.erb", binding)
 File.write("atom.xml", build_rss(posts))
 write_html("what-i-read.html", "what-i-read.html.erb", binding)
+write_html("projects.html", "projects.html.erb", binding)
