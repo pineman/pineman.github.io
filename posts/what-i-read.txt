@@ -1,4 +1,5 @@
 # May 2025
+https://notado.app/feeds/jado/software-development
 https://web.archive.org/web/20250408054630/https://flak.tedunangst.com/post/branchless-development
 https://mandymusings.com/posts/why-arent-you-doing-better
 https://news.ycombinator.com/item?id=42279172 - If not React, then what? (infrequently.org)

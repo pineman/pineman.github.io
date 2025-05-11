@@ -50,6 +50,9 @@ svg {
   vertical-align: text-bottom;
   width: 1em;
 }
+.home-icon {
+  margin-right: 0.2em;
+}
 
 /* Posts */
 pre {

@@ -3,3 +3,5 @@
 node_modules
 .idea
 posts/html
+
+**/.claude/settings.local.json
