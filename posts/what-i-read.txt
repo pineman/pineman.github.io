@@ -1,4 +1,24 @@
 # May 2025
+https://diogomr.com/posts/making-impossible-states-impossible/
+https://www.seangoedecke.com/in-these-troubled-times/#fnref-2
+https://www.seangoedecke.com/good-times-are-over
+https://www.seangoedecke.com/practical-ai-techniques/
+https://www.seangoedecke.com/beyond-prompting/
+https://sketch.dev/blog/agent-loop
+https://news.ycombinator.com/item?id=44071418 - OpenAI: Scaling PostgreSQL to the Next Level (pixelstech.net)
+https://www.marginalia.nu/log/a_120_morning_routine_2030/
+https://railsatscale.com/2025-05-21-fast-allocations-in-ruby-3-5/
+https://clayshentrup.medium.com/avoid-each-with-object-generally-89e3b2800b38
+https://basta.substack.com/p/no-sacred-masterpieces#footnote-anchor-7-137054018
+https://engineering.usemotion.com/migrating-to-postgres-3c93dff9c65d
+https://tkdodo.eu/blog/ref-callbacks-react-19-and-the-compiler
+https://tkdodo.eu/blog/avoiding-use-effect-with-callback-refs
+https://queue.acm.org/detail.cfm?id=1039523 - A Conversation with Alan Kay
+https://www.youtube.com/watch?v=wLb9g_8r-mE - A conversation with Jony Ive
+https://bernsteinbear.com/blog/pl-writing
+https://news.ycombinator.com/item?id=43951885 - I learned Snobol and then wrote a toy Forth (ratfactor.com) - absolutely baited by these types of headlines
+https://collapseos.org/civ.html - really... noteworthy project
+https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems
 https://notado.app/feeds/jado/software-development
 https://web.archive.org/web/20250408054630/https://flak.tedunangst.com/post/branchless-development
 https://mandymusings.com/posts/why-arent-you-doing-better
