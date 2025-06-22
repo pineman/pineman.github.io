@@ -1,4 +1,95 @@
+# June 2025
+https://www.enterprisedb.com/blog/postgresql-logical-and-physical-replication-comparison-and-advantages-distributed-pgd
+https://news.ycombinator.com/item?id=44303011
+https://algarch.com/blog/the-openai-mafia-why-ex-openai-is-the-new-golden-resume-line
+https://clickhouse.com/blog/scaling-observability-beyond-100pb-wide-events-replacing-otel
+https://www.cybertec-postgresql.com/en/select-for-update-considered-harmful-postgresql/
+https://charity.wtf/2025/06/08/on-how-long-it-takes-to-know-if-a-job-is-right-for-you-or-not/
+https://lobste.rs/s/ac19tp/2048_with_only_64_bits_state
+https://wangjunfei.com/2025/06/18/Rewriting-Kafka-in-Rust-Async-Insights-and-Lessons-Learned
+https://macwright.com/2020/10/28/if-not-spas.html
+https://en.wikipedia.org/wiki/One-instruction_set_computer
+https://github.com/pgr0ss/pgledger
+https://lobste.rs/s/uqniaz/double_entry_ledgers_missing_primitive
+https://lobste.rs/s/dx84oc/why_claude_code_feels_like_magic
+https://claudelog.com/
+https://brooker.co.za/blog/2025/05/20/icpe.html
+https://conduition.io/coding/ticketmaster/
+https://blog.singleton.io/posts/2025-06-14-coding-agents-cross-a-chasm/
+https://lobste.rs/s/lied71/fastest_way_detect_vowel_string
+https://explaining.software/archive/the-sudoku-affair/
+https://rjp.io/blog/2025-06-07-reflections-on-sudoku
+https://ferd.ca/the-gap-through-which-we-praise-the-machine.html
+https://tylercipriani.com/blog/2022/11/19/git-notes-gits-coolest-most-unloved-feature/#fnref1
+https://www.cybertec-postgresql.com/en/transaction-anomalies-with-select-for-update/
+https://brandur.org/fragments/testing-request-cancellation
+https://dev.to/devteam/evolving-our-infrastructure-why-we-moved-from-heroku-postgres-to-neon-1928
+https://news.ycombinator.com/item?id=39449500 - The Fil-C Manifesto: Garbage In, Memory Safety Out (github.com/pizlonator)
+https://www.luu.io/posts/2025-database-pendulum
+https://www.luu.io/posts/2025-performing-next-level
+http://0x80.pl/notesen/2016-11-28-simd-strfind.html
+https://linear.app/blog/building-our-way
+https://tinyclouds.org/underestimating-ai
+https://www.seangoedecke.com/the-first-big-ai-disaster
+https://news.ycombinator.com/item?id=44264958 - Jemalloc Postmortem (jasone.github.io)
+https://lucumr.pocoo.org/2025/6/12/agentic-coding/
+https://wso2.com/blog/research/scalability-modeling-using-universal-scalability-law/
+https://news.ycombinator.com/item?id=35906604 - Ask HN: It's 2023, how do you choose between MySQL and Postgres?
+https://news.ycombinator.com/item?id=41838537 - postgres vs mysql
+https://crawshaw.io/blog/programming-with-agents
+https://medium.com/@josef.machytka/postgresql-jsonb-operator-classes-of-gin-indexes-and-their-usage-0bf399073a4c
+https://mattrighetti.com/2025/06/04/too-many-files-open
+https://registerspill.thorstenball.com/p/joy-and-curiosity-42
+https://qz.com/tech-layoffs-tax-code-trump-section-174-microsoft-meta-1851783502
+http://www.aaronsw.com/weblog/hatethenews
+https://1517.substack.com/p/why-bell-labs-worked
+https://rjp.io/blog/2025-05-31-stepping-back
+https://usefulfictions.substack.com/p/crossing-the-cringe-minefield
+https://www.orioledb.com/blog/orioledb-bridged-indexes
+https://lobste.rs/s/n2lvmy/ai_changes_everything
+https://lobste.rs/s/uwp2hd/what_s_your_go_message_queue_2025
+https://apenwarr.ca/log/20170814
+https://dev.to/mongodb/jsonb-detoasting-read-amplification-4ikj
+https://fly.io/blog/youre-all-nuts/
+https://steipete.me/posts/2025/claude-code-is-my-computer#user-content-fn-1
+https://lobste.rs/s/n2lvmy/ai_changes_everything
+https://news.ycombinator.com/item?id=44175356 - Mapping latitude and longitude to country, state, or city (austinhenley.com)
+https://lamplightdev.com/blog/2024/01/10/streaming-html-out-of-order-without-javascript/
+https://stefan-gloor.ch/yomani-hack
+https://www.seangoedecke.com/inference-batching-and-deepseek/
+https://web.archive.org/web/20250121073718/https://rachelbythebay.com/w/2013/06/05/duck/
+https://simonwillison.net/2025/May/25/claude-4-system-prompt
+https://maggieappleton.com/now-2025-05/
+https://substack.com/@itssophieschoice/note/c-115766170
+https://ckarchive.com/b/zlughnhk8772ma7qrr9qehwzgng00f6 - Navigating by aliveness
+https://antinote.io/
+https://www.galois.com/articles/what-works-and-doesnt-selling-formal-methods
+https://registerspill.thorstenball.com/p/joy-and-curiosity-41
+https://antirez.com/news/153
+https://byroot.github.io/ruby/performance/2025/05/24/unlocking-ractors-class-variables.html
+https://tanelpoder.com/posts/using-pg-test-fsync-for-testing-low-latency-writes/
+https://github.com/almottier/rivertui
+https://github.com/antirez/kilo
+
 # May 2025
+https://www.folklore.org/Joining_Apple_Computer.html
+https://danq.me/2020/11/11/blink-and-marquee/
+https://tuple.app/
+https://tumbleforth.hardcoded.net/ - DuskOS, Collapse OS
+https://radanskoric.com/articles/coding-agent-in-ruby
+https://graphthinking.blogspot.com/2025/05/leverage-and-sanction-between-coworkers.html
+https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate
+https://www.notion.com/blog/sharding-postgres-at-notion
+https://www.notion.com/blog/data-model-behind-notion
+https://news.ycombinator.com/item?id=34350749 - What if writing tests was a joyful experience? (janestreet.com)
+https://www.enterprisedb.com/blog/postgresql-anti-patterns-read-modify-write-cycles
+https://mattweidner.com/2025/05/21/text-without-crdts.html
+https://news.ycombinator.com/item?id=44020107 - Inigo Quilez: computer graphics, mathematics, shaders, fractals, demoscene (iquilezles.org)
+https://news.ycombinator.com/item?id=44071610 - Writing A Job Runner (In Elixir) (Again) (10 years later) (github.com/notactuallytreyanastasio)
+https://railsatscale.com/2025-05-21-fast-allocations-in-ruby-3-5/
+https://github.com/notactuallytreyanastasio/genstage_tutorial_2025/blob/main/README.md
+https://pgdog.dev/blog/hacking-postgres-wire-protocol
+https://heitorpb.github.io/bla/timeout/
 https://world.hey.com/joaoqalves/disasters-i-ve-seen-in-a-microservices-world-a9137a51
 https://world.hey.com/joaoqalves/on-hiring-qa-engineers-75dfa472
 https://world.hey.com/joaoqalves/five-opinions-i-ve-kept-let-go-and-picked-up-as-a-software-builder-and-leader-5ab3b919
@@ -1078,7 +1169,7 @@ https://news.ycombinator.com/item?id=39574240 - "Interlisp-D and MIT CADR Lisp M
 https://dreamsongs.com/WorseIsBetter.html
 https://dreamsongs.com/RiseOfWorseIsBetter.html
 https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
-https://www.crunchydata.com/blog/tags-aand-postgres-arrays-a-purrfect-combination
+https://www.crunchydata.com/blog/tags-aand-postgres-arrays-a-purrfect-combination - postgres categories tags
 https://www.postgresql.org/message-id/12553.1135634231@sss.pgh.pa.us
 https://www.youtube.com/watch?v=f84n5oFoZBc "Hammock Driven Development - Rich Hickey"
 https://lobste.rs/s/hru0ib/how_lose_control_your_shell
