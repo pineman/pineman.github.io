@@ -1,4 +1,43 @@
+# July 2025
+https://registerspill.thorstenball.com/p/joy-and-curiosity-44
+https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code
+https://news.ycombinator.com/item?id=44473888 - Speeding up PostgreSQL dump/restore snapshots (xata.io)
+https://web.archive.org/web/20250615032937/https://0x80.pl/notesen/2016-11-28-simd-strfind.html#algorithm-2
+https://www.youtube.com/watch?v=un3Lu3AKkto - How to show 10 million of something - Christopher Ehrlich
+https://newsletter.pragmaticengineer.com/p/software-engineering-with-llms-in-2025
+https://news.ycombinator.com/item?id=44425880 - That XOR Trick (2020) (florian.github.io)
+https://trufflesecurity.com/blog/guest-post-how-i-scanned-all-of-github-s-oops-commits-for-leaked-secrets
+https://ordep.dev/posts/writing-code-was-never-the-bottleneck
+https://andyatkinson.com/constraint-driven-optimized-responsive-efficient-core-db-design
+https://planetscale.com/blog/planetscale-for-postgres
+https://jdiaz97.github.io/greenblog/posts/flutter_to_egui/
+https://www.justinweiss.com/articles/how-to-preload-rails-scopes/
+https://ericwbailey.website/published/you-must-listen-to-rfc-2119/
+
 # June 2025
+https://paulgraham.com/charisma.html
+https://www.cs.virginia.edu/~robins/YouAndYourResearch.html
+https://brooker.co.za/blog/2025/06/20/career.html
+https://longform.asmartbear.com/chaos-at-start/
+https://longform.asmartbear.com/perseverance/
+https://en.wikipedia.org/wiki/Damocles
+https://crawshaw.io/blog/programming-with-agents
+https://thorstenball.com/blog/2012/09/02/software-covers-and-programming-licks/
+https://blog.jsbarretto.com/post/software-is-joy
+https://en.wikipedia.org/wiki/Threaded_code
+https://muforth.dev/threaded-code/
+https://rjp.io/blog/2025-06-17-unreasonable-effectiveness-of-fuzzing
+https://justin.searls.co/posts/why-agents-are-bad-pair-programmers/
+https://collabfund.com/blog/very-bad-advice/
+https://www.experimental-history.com/p/face-it-youre-a-crazy-person#_
+https://www.experimental-history.com/p/how-to-feel-bad-and-be-wrong#_
+https://www.experimental-history.com/p/theres-a-place-for-everyone?utm_source=publication-search#_
+https://steipete.me/posts/2025/vibetunnel-turn-any-browser-into-your-mac-terminal
+https://marginalrevolution.com/marginalrevolution/2025/06/more-from-youtuber-any-austin.html
+https://jihad.house/notes/startup-slop/
+https://neal.fun/internet-artifacts/first-mp3/
+https://www.cloudquery.io/blog/why-and-how-we-built-our-own-full-text-search-engine-with-clickhouse
+https://en.wikipedia.org/wiki/Hierarchical_navigable_small_world
 https://www.enterprisedb.com/blog/postgresql-logical-and-physical-replication-comparison-and-advantages-distributed-pgd
 https://news.ycombinator.com/item?id=44303011
 https://algarch.com/blog/the-openai-mafia-why-ex-openai-is-the-new-golden-resume-line
