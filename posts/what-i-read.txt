@@ -1,4 +1,30 @@
 # July 2025
+https://registerspill.thorstenball.com/p/joy-and-curiosity-45
+https://github.com/merlinmann/wisdom/blob/master/wisdom.md
+https://www.architect.co/posts/how-fast-is-it-really
+https://www.engineersneedart.com/blog/almostfired/almostfired.html
+https://engineersneedart.com/blog/interview/interview.html
+https://blog.tjll.net/the-systemd-revolution-has-been-a-success
+https://folklore.org/Monkey_Lives.html
+https://graydon2.dreamwidth.org/1597.html
+https://matklad.github.io/2025/07/07/inverse-triangle-inequality.html
+https://www.tigerdata.com/learn/how-to-reduce-bloat-in-large-postgresql-tables
+https://www.robkhenderson.com/p/the-perils-of-imitating-high-status
+https://news.ycombinator.com/item?id=44444686 - The Moat of Low Status (usefulfictions.substack.com)
+https://news.ycombinator.com/item?id=44482194 - Async Queue – One of my favorite programming interview questions (davidgomes.com)
+https://www.morling.dev/blog/mastering-postgres-replication-slots/
+https://charity.wtf/2025/07/09/thoughts-on-motivation-and-my-40-year-career/
+https://www.robinlinacre.com/address_matching/
+https://lucassifoni.info/blog/leveraging-hot-code-loading-for-fun-and-profit/
+https://news.ycombinator.com/item?id=39315833 - Postgres as queue (leontrolski.github.io)
+https://leontrolski.github.io/cmd-click-manifesto.html
+https://paolino.me/async-ruby-is-the-future/
+https://www.recall.ai/blog/postgres-listen-notify-does-not-scale
+https://web.archive.org/web/20250618135521/https://martinfowler.com/articles/expert-generalist.html
+https://www.flightcontrol.dev/blog/ultimate-guide-to-multi-tenant-saas-data-modeling
+https://apenwarr.ca/log/20250711
+https://davidgomes.com/async-queue-interview-ai/
+https://lethain.com/skew-the-frontend-engineer-s-misery
 https://registerspill.thorstenball.com/p/joy-and-curiosity-44
 https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code
 https://news.ycombinator.com/item?id=44473888 - Speeding up PostgreSQL dump/restore snapshots (xata.io)
@@ -31,7 +57,7 @@ https://justin.searls.co/posts/why-agents-are-bad-pair-programmers/
 https://collabfund.com/blog/very-bad-advice/
 https://www.experimental-history.com/p/face-it-youre-a-crazy-person#_
 https://www.experimental-history.com/p/how-to-feel-bad-and-be-wrong#_
-https://www.experimental-history.com/p/theres-a-place-for-everyone?utm_source=publication-search#_
+https://www.experimental-history.com/p/theres-a-place-for-everyone
 https://steipete.me/posts/2025/vibetunnel-turn-any-browser-into-your-mac-terminal
 https://marginalrevolution.com/marginalrevolution/2025/06/more-from-youtuber-any-austin.html
 https://jihad.house/notes/startup-slop/
@@ -287,7 +313,7 @@ https://thorstenball.com/blog/2020/09/15/the-context-in-which-we-build-software/
 https://jasonzweig.com/saving-investors-from-themselves-2/
 https://andrewchen.substack.com/p/predictionsthoughts-on-vibe-coding
 https://lethain.com/career-advice-2025/
-https://registerspill.thorstenball.com/p/joy-and-curiosity-32?utm_source=post-email-title&publication_id=1543843&post_id=159610543&utm_campaign=email-post-title&isFreemail=true&r=1mnftp&triedRedirect=true&utm_medium=email
+https://registerspill.thorstenball.com/p/joy-and-curiosity-32
 https://www.crunchydata.com/developers/playground/lateral-join
 https://wiki.postgresql.org/wiki/Don't_Do_This
 https://news.ycombinator.com/item?id=43403321 -- Don't Be Afraid of Types (lmika.org)
@@ -644,7 +670,6 @@ https://justine.lol/lex/
 https://trojansource.codes/
 https://registerspill.thorstenball.com/p/joy-and-curiosity-13
 https://graphics.stanford.edu/~seander/bithacks.html
-https://registerspill.thorstenball.com/p/joy-and-curiosity-13?utm_source=post-email-title&publication_id=1543843&post_id=151060257&utm_campaign=email-post-title&isFreemail=true&r=1mnftp&triedRedirect=true&utm_medium=email
 https://blog.depthsofrepair.com/p/do-hard-things-carefully
 https://daniel.lawrence.lu/blog/y2023m12d15/
 https://news.ycombinator.com/item?id=42036303 - "Do you need Redis? PostgreSQL does queuing, locking, and pub/sub (2021)"
@@ -818,7 +843,7 @@ https://modecollapse.substack.com/p/game-development-is-not-a-lottery
 https://go.news.fly.io/deliveries/dgSN7QkDAKDCFZ_CFQGRm5Fteg8cZV_2FMOjZP8=
 https://daniel.haxx.se/blog/2024/08/14/slow-tcp-connect-on-windows/
 https://saagarjha.com/blog/2020/05/10/why-we-at-famous-company-switched-to-hyped-technology/
-https://tailscale.com/blog/heart-of-dark-mode?utm_source=twitter&utm_medium=owned-social&utm_campaign=devrel-social
+https://tailscale.com/blog/heart-of-dark-mode
 https://news.ycombinator.com/item?id=41395413
 https://matklad.github.io/2023/01/26/rusts-ugly-syntax.html
 https://nav.al/skill-business
@@ -1046,7 +1071,7 @@ https://gist.github.com/tagomoris/4392f1091f658294bd4d473d8ff631cb
 https://speakerdeck.com/tagomoris/namespace-what-and-why
 https://www.smily.com/engineering/rds-database-migration-series---facing-the-giant-how-we-migrated-11-tb-database
 https://phoenixframework.org/blog/phoenix-liveview-1.0-released
-https://pganalyze.com/blog/5mins-postgres-planner-order-by-limit?utm_content=292009059&utm_medium=social&utm_source=twitter&hss_channel=tw-1952665526
+https://pganalyze.com/blog/5mins-postgres-planner-order-by-limit
 https://www.folklore.org/Negative_2000_Lines_Of_Code.html
 https://blog.pragmaticengineer.com/software-engineering-salaries-in-the-netherlands-and-europe/
 https://marshallbrain.com/manna1
@@ -1135,7 +1160,7 @@ https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most - reread
 https://engineering.fb.com/2016/08/31/core-infra/myrocks-a-space-and-write-optimized-mysql-database/
 https://github.com/postgres/postgres/blob/master/src/backend/access/heap/README.HOT - heap only in the sense that they are tuples which dont have indexes, only the standard tuple storage (heap).
 https://gwern.net/nootropic/nootropics
-https://pganalyze.com/blog/5mins-postgres-figma-dbproxy-sharding-postgres?utm_medium=email&_hsmi=301803043&utm_content=301806330&utm_source=hs_email
+https://pganalyze.com/blog/5mins-postgres-figma-dbproxy-sharding-postgres
 https://kenkantzer.com/lessons-after-a-half-billion-gpt-tokens/
 https://lobste.rs/s/zag1bo/on_tech_debt_my_rust_library_is_now_cdo
 https://rbranson.medium.com/10-things-i-hate-about-postgresql-20dbab8c2791
@@ -1607,7 +1632,7 @@ https://news.ycombinator.com/item?id=37244503 "Print(“lol”) doubled the spee
 https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826fc4
 https://news.ycombinator.com/item?id=37272362 "Earning the privilege to work on unoriginal problems"
 https://news.ycombinator.com/item?id=37114457 "Thoughts on Elixir, Phoenix and LiveView after 18 months of commercial use"
-https://blog.jetbrains.com/dotnet/2023/07/27/introducing-predictive-debugging-a-game-changing-look-into-the-future/?utm_source=marketo&utm_medium=email&utm_campaign=community_newsletter_2023_08&utm_content=newsletter
+https://blog.jetbrains.com/dotnet/2023/07/27/introducing-predictive-debugging-a-game-changing-look-into-the-future
 https://betterprogramming.pub/load-balancing-the-intuition-behind-the-power-of-two-random-choices-6de2e139ac2f
 https://en.wikipedia.org/wiki/Priority_inversion
 https://www.youtube.com/watch?v=oKg1hTOQXoY "Alan Kay at OOPSLA 1997 - The computer revolution hasnt happened yet"
@@ -1655,7 +1680,6 @@ https://apenwarr.ca/log/?m=202306
 https://usefathom.com/blog/worlds-fastest-analytics
 https://usefathom.com/blog/does-laravel-scale
 https://usefathom.com/blog/migrating-our-database
-https://cohost.org/tef/post/1764930-how-not-to-write-a
 http://paulgraham.com/greatwork.html
 
 # June 2023
@@ -1693,7 +1717,7 @@ https://shopify.engineering/ruby-execution-models
 https://appfolio-engineering.squarespace.com/appfolio-engineering/2017/1/31/the-benchmark-and-the-rails
 https://www.speedshop.co/2017/10/12/appserver.html
 https://www.speedshop.co/2020/05/11/the-ruby-gvl-and-scaling.html
-https://hauleth.dev/post/beam-process-memory-usage/?utm_medium=email&utm_source=elixir-radar
+https://hauleth.dev/post/beam-process-memory-usage
 https://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html
 https://www.youtube.com/watch?v=B1J2RMorJXM "Light Years Ahead | The 1969 Apollo Guidance Computer"
 https://www.youtube.com/watch?v=5rb0vvJ7NCY "going fast is about doing less" -- really good!
