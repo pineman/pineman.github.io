@@ -1,4 +1,13 @@
 # July 2025
+https://sirupsen.com/napkin/problem-15
+https://calv.info/openai-reflections
+https://engineering.fb.com/2013/06/25/core-infra/tao-the-power-of-the-graph/
+https://tigerbeetle.com/blog/2022-11-23-a-friendly-abstraction-over-iouring-and-kqueue/
+https://rockorager.dev/log/lsr-ls-but-with-io-uring/
+https://xbow.com/blog/alloy-agents/
+https://www.hillelwayne.com/post/sudoku/
+https://github.com/norvig/pytudes/blob/58326a0d84330c7801fb78e98c34d745c96e26eb/ipynb/SudokuJava.ipynb - I should probably implement naked pairs
+https://www.miakoring.de/blog/sudoku
 https://registerspill.thorstenball.com/p/joy-and-curiosity-45
 https://github.com/merlinmann/wisdom/blob/master/wisdom.md
 https://www.architect.co/posts/how-fast-is-it-really
