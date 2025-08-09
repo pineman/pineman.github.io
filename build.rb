@@ -102,6 +102,7 @@ def build_rss(posts)
   rss.to_s.gsub!("<summary>", '<summary type="html">')
 end
 
+# props to https://github.com/ordepdev/ordepdev.github.io/blob/1bee021898a6c2dd06a803c5d739bd753dbe700a/scripts/generate-social-images.js#L26
 def gen_img(post)
   width = 1200
   height = 630
@@ -110,7 +111,7 @@ def gen_img(post)
   <style>
     .container {
       background: #1d1e20;
-      font-family: monospace;
+      font-family: Menlo, monospace; /* I'll always have a mac right? */
       color: #dadadb;
       display: flex;
       flex-direction: column;
@@ -128,14 +129,14 @@ def gen_img(post)
       margin: 0;
       font-size: 60px;
     }
-    h3 {
+    p {
       font-size: 40px;
     }
   </style>
   <foreignObject x="0" y="0" width="#{width}" height="#{height}">
     <div xmlns="http://www.w3.org/1999/xhtml" class="container">
       <h1>#{post.title}</h1>
-      <h3>#{post.text_descr}</h3>
+      <p>#{post.text_descr}</p>
       <div class="footer">
         <span>#{post.date.strftime("%Y-%m-%d")}</span>
         <span>pineman.github.io</span>
@@ -143,15 +144,18 @@ def gen_img(post)
     </div>
   </foreignObject>
 </svg>
-SVG
-  File.write("#{post.title_hash}.svg", svg)
-  `#{CHROME_BINARY} --headless --screenshot --window-size=#{width},#{height+400} "file://$(pwd)/#{post.title_hash}.svg" &>/dev/null`
-  `mv screenshot.png #{post.title_hash}.png`
-  `rm -f #{post.title_hash}.svg`
-  `docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye #{post.title_hash}.png -crop x630+0+0 #{post.title_hash}.png`
+  SVG
+  th = post.title_hash
+  File.write("#{th}.svg", svg)
+  system <<~SCRIPT
+    #{CHROME_BINARY} --headless --screenshot --window-size=#{width},#{height+400} "file://$(pwd)/#{th}.svg" &>/dev/null
+    docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye screenshot.png -quality 80 -crop x630+0+0 #{th}.webp
+    rm -f #{th}.svg screenshot.png
+    mkdir -p assets/link_previews
+    mv #{th}.webp assets/link_previews/#{th}.webp
+  SCRIPT
 end
 
-`rm -f posts/html/*; rm -f *.html`
 posts = Dir["posts/*.md"].map { |md|
   build_post(md)
 }
