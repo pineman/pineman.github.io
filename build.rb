@@ -2,12 +2,15 @@
 
 require "rss"
 require "erubi"
+require "digest"
 
 require "bundler/inline"
 gemfile do
   source "https://rubygems.org"
   gem "nokogiri", "1.16.2"
 end
+
+CHROME_BINARY = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"'
 
 def write_html(html_file, template_file, caller_binding)
   template = Erubi::Engine.new(File.read(template_file), escape: true)
@@ -26,13 +29,15 @@ module Helpers
 end
 
 class Post
-  attr_reader :url, :title, :content, :date, :html_descr, :text_descr
+  attr_reader :url, :title, :title_hash, :content, :date, :html_descr, :text_descr
+
   def initialize(date, url, html)
     @url = url
     @date = DateTime.parse(date)
     html = Nokogiri::HTML.fragment(html)
     @title = html.at("h1").text
     html.at("h1").remove
+    @title_hash = Digest::MD5.hexdigest(@title)
 
     # Add IDs to headings and copy link
     html.css('h1, h2, h3, h4, h5, h6').each do |heading|
@@ -97,12 +102,62 @@ def build_rss(posts)
   rss.to_s.gsub!("<summary>", '<summary type="html">')
 end
 
+def gen_img(post)
+  width = 1200
+  height = 630
+  svg = <<-SVG
+<svg width="#{width}" height="#{height}" viewBox="0 0 #{width} #{height}" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .container {
+      background: #1d1e20;
+      font-family: monospace;
+      color: #dadadb;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 50px;
+      box-sizing: border-box;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: auto;
+      font-size: 30px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 60px;
+    }
+    h3 {
+      font-size: 40px;
+    }
+  </style>
+  <foreignObject x="0" y="0" width="#{width}" height="#{height}">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container">
+      <h1>#{post.title}</h1>
+      <h3>#{post.text_descr}</h3>
+      <div class="footer">
+        <span>#{post.date.strftime("%Y-%m-%d")}</span>
+        <span>pineman.github.io</span>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
+SVG
+  File.write("#{post.title_hash}.svg", svg)
+  `#{CHROME_BINARY} --headless --screenshot --window-size=#{width},#{height+400} "file://$(pwd)/#{post.title_hash}.svg" &>/dev/null`
+  `mv screenshot.png #{post.title_hash}.png`
+  `rm -f #{post.title_hash}.svg`
+  `docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye #{post.title_hash}.png -crop x630+0+0 #{post.title_hash}.png`
+end
+
 `rm -f posts/html/*; rm -f *.html`
 posts = Dir["posts/*.md"].map { |md|
   build_post(md)
 }
 posts.each { |post|
   write_html("#{post.url}", "post.html.erb", binding)
+  gen_img(post)
 }
 write_html("index.html", "index.html.erb", binding)
 File.write("atom.xml", build_rss(posts))
