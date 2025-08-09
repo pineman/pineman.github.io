@@ -147,10 +147,10 @@ def gen_img(post)
   File.write("#{th}.svg", svg)
   system <<~SCRIPT
     #{CHROME_BINARY} --headless --screenshot --window-size=#{width},#{height+400} "file://$(pwd)/#{th}.svg" &>/dev/null
-    docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye screenshot.png -quality 80 -crop x630+0+0 #{th}.webp
+    docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye screenshot.png -quality 80 -crop x630+0+0 #{th}.png
     rm -f #{th}.svg screenshot.png
     mkdir -p assets/link_previews
-    mv #{th}.webp assets/link_previews/#{th}.webp
+    mv #{th}.png assets/link_previews/
   SCRIPT
 end
 
