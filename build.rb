@@ -124,6 +124,7 @@ def gen_img(post)
       justify-content: space-between;
       margin-top: auto;
       font-size: 30px;
+      align-self: flex-end;
     }
     h1 {
       margin: 0;
@@ -138,8 +139,7 @@ def gen_img(post)
       <h1>#{post.title}</h1>
       <p>#{post.text_descr}</p>
       <div class="footer">
-        <span>#{post.date.strftime("%Y-%m-%d")}</span>
-        <span>pineman.github.io</span>
+        <span>pineman #{post.date.strftime("%Y-%m-%d")}</span>
       </div>
     </div>
   </foreignObject>
