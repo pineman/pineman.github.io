@@ -51,11 +51,16 @@ class Post
     end
 
     @content = html.to_s
-    # descr = h.search('./p[1] | ./p[1]/following-sibling::node()[count(preceding-sibling::p) = 1]').to_s
-    descr = @content[/<p>.*?<\/p>.*?<p>.*?<\/p>/m] || ""
-    @html_descr = descr + "<p>...</p>"
-    @text_descr = Nokogiri::HTML.fragment(descr).text
-    @text_descr = "#{@text_descr[...157]}..." if @text_descr.length > 160
+    text = Nokogiri::HTML.fragment(@content).text
+    words = text.split(/\s+/)
+    truncated = ""
+    words.each do |word|
+      test_string = truncated.empty? ? word : "#{truncated} #{word}"
+      break if test_string.length > 160
+      truncated = test_string
+    end
+    suffix = truncated.end_with?('.') ? ' ...' : '...' if truncated.length < text.length
+    @text_descr = "#{truncated}#{suffix}"
   end
 end
 
@@ -74,17 +79,18 @@ def build_rss(posts)
       link.href = "https://pineman.github.io/atom.xml"
       link.rel = "self"
     end
-    maker.channel.author = "João Pinheiro"
-    maker.channel.title = "João Pinheiro"
+    maker.channel.author = "pineman"
+    maker.channel.title = "pineman"
     maker.channel.about = "https://pineman.github.io/"
     maker.channel.updated = posts.last.date.iso8601
+    maker.image.url = "https://pineman.github.io/assets/me.webp"
     posts.each do |post|
       maker.items.new_item do |item|
         item.title = post.title
         item.link = "https://pineman.github.io/#{post.url}"
         item.published = post.date.iso8601
         item.updated = post.date.iso8601
-        item.description = post.html_descr
+        item.description = post.content
       end
     end
   end

@@ -2,18 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom"
   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <author>
-    <name>João Pinheiro</name>
+    <name>pineman</name>
   </author>
   <id>https://pineman.github.io/</id>
   <link href="https://pineman.github.io/atom.xml"
     rel="self"/>
-  <title>João Pinheiro</title>
+  <logo>https://pineman.github.io/assets/me.webp</logo>
+  <title>pineman</title>
   <updated>2025-02-01T00:00:00+00:00</updated>
   <entry>
     <id>https://pineman.github.io/aoc3.html</id>
     <link href="https://pineman.github.io/aoc3.html"/>
     <published>2022-12-03T00:00:00+00:00</published>
-    <summary type="html">&lt;p&gt;Ok hi! One of my first projects ever was a &lt;a href=&quot;https://github.com/pineman/code/tree/main/old_proj/pineblog&quot;&gt;blog written in python flask&lt;/a&gt; (please don&#39;t look at it, it was 2015). Even though I shut it down a couple of months after having it up on my server (a VPS at the time), my admiration for blogging didn&#39;t stop and, of course, I read a bazillion blog posts since then. But now, here we are, finally! My own tech blog, v2.0. Just some flat hand-made HTML files to start this time, maybe some templating soon, then we&#39;ll see. I&#39;m also deliberately putting only a medium amount of effort on this writing, at best, otherwise I&#39;ll end up not writing anything. Trying to keep it real simple, so my brain thinks it&#39;s easy and does it. I&#39;ll take this opportunity to share some of my favorite blogs, from people I admire (this excludes of course eng. blogs from companies like netflix, dropbox, twitter, cloudflare, ...):&lt;/p&gt;
+    <summary type="html">
+&lt;p&gt;Ok hi! One of my first projects ever was a &lt;a href=&quot;https://github.com/pineman/code/tree/main/old_proj/pineblog&quot;&gt;blog written in python flask&lt;/a&gt; (please don&#39;t look at it, it was 2015). Even though I shut it down a couple of months after having it up on my server (a VPS at the time), my admiration for blogging didn&#39;t stop and, of course, I read a bazillion blog posts since then. But now, here we are, finally! My own tech blog, v2.0. Just some flat hand-made HTML files to start this time, maybe some templating soon, then we&#39;ll see. I&#39;m also deliberately putting only a medium amount of effort on this writing, at best, otherwise I&#39;ll end up not writing anything. Trying to keep it real simple, so my brain thinks it&#39;s easy and does it. I&#39;ll take this opportunity to share some of my favorite blogs, from people I admire (this excludes of course eng. blogs from companies like netflix, dropbox, twitter, cloudflare, ...):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://jvns.ca/&quot;&gt;https://jvns.ca/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://rachelbythebay.com/w/&quot;&gt;https://rachelbythebay.com/w/&lt;/a&gt;&lt;/li&gt;
@@ -21,7 +23,68 @@
 &lt;li&gt;&lt;a href=&quot;https://martin.kleppmann.com/archive.html&quot;&gt;https://martin.kleppmann.com/archive.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://dtrace.org/blogs/bmc/&quot;&gt;http://dtrace.org/blogs/bmc/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;But onwards to today&#39;s topic!&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
+&lt;p&gt;But onwards to today&#39;s topic!&lt;/p&gt;
+&lt;p&gt;So this year I&#39;m yet again trying to follow through on Advent of Code, instead of... forgetting about it on day two, as with the past &lt;em&gt;whatever&lt;/em&gt; years. As I read &lt;a href=&quot;https://adventofcode.com/2022/day/3&quot;&gt;day three&#39;s statement&lt;/a&gt;, I immediately thought of the &quot;obvious&quot; O(n^2) solution: for each item in the first compartment, check if it&#39;s in the second compartment - on the first hit, sum its priority and break (this description is almost executable python of course, but I&#39;m solving this year entirely in Go for now).&lt;/p&gt;
+&lt;p&gt;So here&#39;s the problem, and why I&#39;m writing this: I promptly decided not to implement this solution, without a second more of consideration. My intuition always steers away from O(n^2), as it&#39;s usually the fastest (slowest?) way to fail an interview problem. So I wanted to be smarter. And, for some reason, my intution also thinks sets are really smart (probably from solving leetcode in python, plus hash tables are amazing). So, a-ha, idea: build a set for each compartment, and intersect them. Building a set should be O(n), intersecting them should be linear as well &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;, and voilà! Linear time without &quot;ugly&quot; for loops (... in python, which I guess is my brain&#39;s default language). So I eagerly went along, and implemented my set-based solution (in Go, which doesn&#39;t have sets in the stdlib, which I just found out). Turns out that in part two, I had to implement a three-way set intersection, which I solved by refactoring my intersection function to be more generic and chaining calls to it. Annoying, but I did it.&lt;/p&gt;
+&lt;p&gt;I suspect by now everyone sees the problem with this reasoning, that of course I didn&#39;t at the time. &lt;strong&gt;The big-oh justification I just wrote is all wrong!&lt;/strong&gt; Maybe not in a theoretical sense, but in a practical sense (but probably in a theoretical sense as well): this problem is so simple, its volume of data so small and well crafted, that just the map overhead is overwhelming! Or, at least, cpu time complexity is not the whole story, because I didn&#39;t even think about memory access! Or yet some other reason I clearly missed! Because here&#39;s the proof: using a bigger input &lt;a href=&quot;#fn2&quot; class=&quot;footnote-ref&quot; id=&quot;fnref2&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;, and using &lt;code&gt;go test -bench&lt;/code&gt;, my set solution takes 5.42 seconds to solve part two (not counting reading the input file and turning it into an array of string), while the &#39;naive&#39;, &#39;dumb&#39;, more procedural solution runs in 139ms (more on this solution later). That&#39;s a ~39x speedup (!!). And that&#39;s pretty slow: I saw some rust and C++ going at just ~10ms for part two, another order of magnitude faster. So, I took this opportunity to profile my Go code. Find all my (bad) code &lt;a href=&quot;https://github.com/pineman/AoC2022/blob/main/2022/day3/three.go#L48&quot;&gt;on github&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;profiling-for-fun&quot;&gt;Profiling for fun&lt;a href=&quot;#profiling-for-fun&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;These are the resources I followed: &lt;a href=&quot;https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/&quot;&gt;https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/&lt;/a&gt; and &lt;a href=&quot;https://go.dev/blog/pprof&quot;&gt;https://go.dev/blog/pprof&lt;/a&gt; (in fact, the first half of this latter link describes exactly the problem I had: using a map when an array is sufficient). Of course, my code today is contrived and basically holds no mystery. But nonetheless, all I had to do was run &lt;code&gt;go test -bench&lt;/code&gt; with the &lt;code&gt;-cpuprofile&lt;/code&gt; and &lt;code&gt;-memprofile&lt;/code&gt; flags, as I already had benchmark functions in my test file. This produces output files that &lt;code&gt;go tool pprof&lt;/code&gt; can read and then generate output in text, or even png or pdf. Here&#39;s the cpu time breakdown, generated with &lt;code&gt;go tool pprof -top -cum cpu.out&lt;/code&gt;, for part two only (truncated):&lt;/p&gt;
+&lt;pre class=&quot;plaintext&quot;&gt;&lt;code&gt;     flat  flat%   sum%        cum   cum%
+        0     0%     0%      5.50s 84.23%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy_set
+        0     0%     0%      5.50s 84.23%  testing.(*B).run1.func1
+        0     0%     0%      5.50s 84.23%  testing.(*B).runN
+    0.03s  0.46%  0.46%      5.38s 82.39%  github.com/pineman/code/chall/aoc2022/go/day3.partTwo_set
+    0.30s  4.59%  5.05%      3.83s 58.65%  github.com/pineman/code/chall/aoc2022/go/day3.itemMap (inline)
+    1.54s 23.58% 28.64%      3.67s 56.20%  runtime.mapassign_fast32
+    0.07s  1.07% 29.71%      1.37s 20.98%  github.com/pineman/code/chall/aoc2022/go/day3.intersectMap (inline)
+        0     0% 29.71%      1.09s 16.69%  runtime.systemstack&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;From the cumulative column, it looks like &lt;code&gt;itemMap&lt;/code&gt; and &lt;code&gt;intersectMap&lt;/code&gt; were on the stack 59% and 21% of the time, respectively, to the shock of no one. Just building maps and iterating through them away, heating my house. Imagine all the hashing and pointer chasing... Well, here&#39;s the memory profile:&lt;/p&gt;
+&lt;pre class=&quot;plaintext&quot;&gt;&lt;code&gt;     flat  flat%   sum%        cum   cum%
+        0     0%     0%  2395.03MB 99.69%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy_set
+        0     0%     0%  2395.03MB 99.69%  testing.(*B).run1.func1
+        0     0%     0%  2395.03MB 99.69%  testing.(*B).runN
+        0     0%     0%  2144.65MB 89.27%  github.com/pineman/code/chall/aoc2022/go/day3.partTwo_set
+1986.64MB 82.69% 82.69%  1986.64MB 82.69%  github.com/pineman/code/chall/aoc2022/go/day3.itemMap (inline)
+        0     0% 82.69%   250.38MB 10.42%  github.com/pineman/code/chall/aoc2022/go.GetBigBoyInput
+ 100.66MB  4.19% 86.88%   250.38MB 10.42%  github.com/pineman/code/chall/aoc2022/go.getInput
+ 112.01MB  4.66% 91.55%   112.01MB  4.66%  github.com/pineman/code/chall/aoc2022/go/day3.intersectMap (inline)
+ 100.66MB  4.19% 95.74%   100.66MB  4.19%  os.ReadFile
+        0     0% 95.74%    49.07MB  2.04%  strings.Split (inline)
+  49.07MB  2.04% 97.78%    49.07MB  2.04%  strings.genSplit
+     46MB  1.91% 99.69%       46MB  1.91%  github.com/pineman/code/chall/aoc2022/go/day3.getFirstKey (inline)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Is that... 2GB &lt;strong&gt;just&lt;/strong&gt; in maps? Is this right?... Oh god... The input file is 100MB, as noted by &lt;code&gt;getInput&lt;/code&gt;! I think I&#39;ve had quite enough of this embarrassment. For comparison, heres the cpu and mem profiles of the &#39;procedural&#39; version:&lt;/p&gt;
+&lt;pre class=&quot;plaintext&quot;&gt;&lt;code&gt;     flat  flat%   sum%        cum   cum%
+        0     0%     0%      3.18s 93.26%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy
+        0     0%     0%      3.18s 93.26%  testing.(*B).runN
+    0.60s 17.60% 17.60%      2.92s 85.63%  github.com/pineman/code/chall/aoc2022/go/day3.partTwo
+        0     0% 17.60%      2.87s 84.16%  testing.(*B).launch
+    0.16s  4.69% 22.29%      2.30s 67.45%  strings.ContainsRune (inline)
+    0.39s 11.44% 33.72%      2.14s 62.76%  strings.IndexRune
+    0.12s  3.52% 37.24%      1.80s 52.79%  strings.IndexByte (inline)
+    1.54s 45.16% 82.40%      1.54s 45.16%  indexbytebody&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;plaintext&quot;&gt;&lt;code&gt;     flat  flat%   sum%        cum   cum%
+        0     0%     0%   250.88MB 97.64%  testing.(*B).run1.func1
+        0     0%     0%   250.88MB 97.64%  testing.(*B).runN
+        0     0%     0%   250.38MB 97.44%  github.com/pineman/code/chall/aoc2022/go.GetBigBoyInput
+ 100.66MB 39.17% 39.17%   250.38MB 97.44%  github.com/pineman/code/chall/aoc2022/go.getInput
+        0     0% 39.17%   250.38MB 97.44%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy
+ 100.66MB 39.17% 78.34%   101.16MB 39.37%  os.ReadFile
+        0     0% 78.34%    49.07MB 19.10%  strings.Split (inline)
+  49.07MB 19.10% 97.44%    49.07MB 19.10%  strings.genSplit&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nothing much to say here. 70% of time comparing characters, which is the core of what we want to do, anyway, and not much extra memory consumption compared to the input file size. For extra fun, here&#39;s the svg files &lt;code&gt;pprof&lt;/code&gt; can generate, for the slow version: &lt;a href=&quot;assets/profile001.svg&quot;&gt;cpu&lt;/a&gt;, &lt;a href=&quot;assets/profile002.svg&quot;&gt;mem&lt;/a&gt;; and for the fast version: &lt;a href=&quot;assets/profile003.svg&quot;&gt;cpu&lt;/a&gt;, &lt;a href=&quot;assets/profile004.svg&quot;&gt;mem&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;a href=&quot;#conclusion&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast&quot;&gt;&quot;Make it work. Make it right. Make it fast.&quot;&lt;/a&gt; - I know this! Normally I&#39;d like to think I do this (or, at least, when &#39;making it work&#39; doesn&#39;t involve a huge amount of tech debt I guess). Also: measure before you optimize! Performance assumptions are sometimes hard to make out of intuition. Also also: &lt;a href=&quot;https://wiki.c2.com/?PrematureOptimization&quot;&gt;something something premature optimization&lt;/a&gt; (I love computer science quotes). &lt;strong&gt;SO WHY DIDN&#39;T I DO THIS FROM THE START?&lt;/strong&gt; Why did I chase &quot;full generality&quot; just for the sake of it? I have no answers for you, dear reader. It might even be an unconfortable answer for me. I&#39;m half blaming it on &lt;a href=&quot;https://en.wikipedia.org/wiki/Priming_(psychology)&quot;&gt;mental priming&lt;/a&gt;, and the fact that I&#39;m using AoC2022 to learn Go (after &quot;learning Go&quot; twice in the last three years) - so it makes sense to implement more things, in more generality, to learn more about the language; and indeed I did that for day one and two, even though I couldn&#39;t resist the temptation of writing a &lt;a href=&quot;https://github.com/pineman/aoc/blob/main/2022/day1/python/one_oneliner.py&quot;&gt;one liner in python for day one&lt;/a&gt;. Still, it hurts a little... But that&#39;s not all.&lt;/p&gt;
+&lt;p&gt;When I finish solving a day, I go and browse other people&#39;s solutions to compare to mine. I open an image with maybe 30 lines of code. As I read it, I realize: hey, this is exactly the same as my solution, but taking out all the set logic! It&#39;s even well commented. Instead of building a set for each compartment and then intersecting them, just directly check if each item of the first is in the second and third. &quot;Right, I thought of this solution. It even looks exactly the same as mine, bar two lines of code&quot;, I said to myself, half proudly still. &quot;It&#39;s gotta be slower&quot;. So I implement it. And it&#39;s faster. 39x faster. And this is the real kick in the teeth: &lt;strong&gt;the solution I was looking at was written by &lt;a href=&quot;https://openai.com/blog/chatgpt/&quot;&gt;ChatGPT&lt;/a&gt;&lt;/strong&gt;. At first I didn&#39;t know how to feel. Some thirty minutes in, and I find my solution is stupid and completely obliterated by an AI that took just 2 seconds to do it... Welp, after &lt;a href=&quot;https://news.ycombinator.com/item?id=33847479&quot;&gt;reading up more on ChatGPT&lt;/a&gt;, I&#39;m convinced it won&#39;t put me out of a job just yet, or even next year. But in the next 10, 20 years?... I&#39;m much more anxious.&lt;/p&gt;
+&lt;section id=&quot;footnotes&quot; class=&quot;footnotes footnotes-end-of-document&quot; role=&quot;doc-endnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn1&quot;&gt;&lt;p&gt;Assuming lookup is O(1)... approximately. Of course, it&#39;s more like amortized cost - in a terrible hash table (or just a terrible day or input) buckets are arrays, and using a terrible hash function all items end up in the same bucket, so the cost starts to look a lot more like O(n) due to linear searches, and intersection goes more like O(n^2) (maybe O(nlog n) using un-sorted trees). I bet all of this is wrong though.&lt;a href=&quot;#fnref1&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn2&quot;&gt;&lt;p&gt;People on... the internet... usually craft these so-called &#39;big boy&#39; inputs. &lt;a href=&quot;https://github.com/pineman/AoC2022/blob/main/2022/input/3/bigboy.7z&quot;&gt;Here&#39;s the one I used&lt;/a&gt;.&lt;a href=&quot;#fnref2&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</summary>
     <title>AoC 2022: day 3, profiling Go, existential crisis</title>
     <updated>2022-12-03T00:00:00+00:00</updated>
     <dc:date>2022-12-03T00:00:00+00:00</dc:date>
@@ -30,8 +93,56 @@
     <id>https://pineman.github.io/ruby-bug-shell-gem.html</id>
     <link href="https://pineman.github.io/ruby-bug-shell-gem.html"/>
     <published>2023-05-07T00:00:00+00:00</published>
-    <summary type="html">&lt;p&gt;I&#39;m using &lt;a href=&quot;https://highlightjs.org/&quot;&gt;highlight.js&lt;/a&gt; for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that reads stdin, highlights the html using the library, and prints to stdout (not only is it more unixy, I already have too many temp files being created). So to call it from ruby, I found the &lt;a href=&quot;https://github.com/ruby/shell&quot;&gt;shell gem&lt;/a&gt;. &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; It used to be in the stdlib and the DSL syntax is super cool, with me being a rubyist now and all.&lt;/p&gt;
-&lt;p&gt;Anyway, I tried it and it seemed to work. However, since I was prototyping, I put the &lt;code&gt;require&lt;/code&gt; statement right next to its usage, in a loop. When I tried hoisting it outside, where &lt;code&gt;require&lt;/code&gt; normally goes, the script started raising an error:&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
+    <summary type="html">
+&lt;p&gt;I&#39;m using &lt;a href=&quot;https://highlightjs.org/&quot;&gt;highlight.js&lt;/a&gt; for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that reads stdin, highlights the html using the library, and prints to stdout (not only is it more unixy, I already have too many temp files being created). So to call it from ruby, I found the &lt;a href=&quot;https://github.com/ruby/shell&quot;&gt;shell gem&lt;/a&gt;. &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; It used to be in the stdlib and the DSL syntax is super cool, with me being a rubyist now and all.&lt;/p&gt;
+&lt;p&gt;Anyway, I tried it and it seemed to work. However, since I was prototyping, I put the &lt;code&gt;require&lt;/code&gt; statement right next to its usage, in a loop. When I tried hoisting it outside, where &lt;code&gt;require&lt;/code&gt; normally goes, the script started raising an error:&lt;/p&gt;
+&lt;pre class=&quot;plaintext&quot;&gt;&lt;code&gt;.../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:261:in `close&#39;: uninitialized stream (IOError)
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:261:in `block (4 levels) in sfork&#39;
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:259:in `each_object&#39;
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:259:in `block (3 levels) in sfork&#39;
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:251:in `fork&#39;
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:251:in `block (2 levels) in sfork&#39;
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:64:in `synchronize&#39;
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:64:in `block_output_synchronize&#39;
+    from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:243:in `block in sfork&#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That is... strange? I try and look for usages of this gem on &lt;a href=&quot;https://sourcegraph.com/search&quot;&gt;sourcegraph&lt;/a&gt;, but my code seems okay. So I look into the gem&#39;s code. It essentially forks and then closes all IO objects except stdin/out/err, and it&#39;s failing to close some of them. I attempt to debug the script, but it fails due to the IO objects closing and the debugger losing connection! &lt;a href=&quot;#fn2&quot; class=&quot;footnote-ref&quot; id=&quot;fnref2&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I play with the gem&#39;s code, writing debug output to a file directly, resulting in a list of the IO objects the gem&#39;s trying to close, marking the one that fails. I don&#39;t know where the failing object comes from though, as I only have an hex address, so I come with the idea of monkey-patching &lt;code&gt;IO#initialize&lt;/code&gt; &lt;a href=&quot;#fn3&quot; class=&quot;footnote-ref&quot; id=&quot;fnref3&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; to try and match up the IO objects. This doesn&#39;t help, as the IO object that fails to &lt;code&gt;close&lt;/code&gt; doesn&#39;t show up in my debug log. I then try essentially the same idea using &lt;code&gt;rbtrace&lt;/code&gt; with &lt;code&gt;rbtrace -p $(pgrep ruby) -m &#39;IO#initialize(self, __source__)&#39;&lt;/code&gt;. Still, no avail.&lt;/p&gt;
+&lt;p&gt;I then try various ruby versions, since the shell gem is a bit outdated or infrequently updated. Aha! It starts failing on 3.1.0, but succeeds on 3.0.6. Maybe the gem just hasn&#39;t been updated to work on ruby 3.1.0. I look through the release notes looking for nuances regarding IO objects or fork behavior, but nothing. Could this be a ruby bug...?&lt;/p&gt;
+&lt;p&gt;I get an idea: I&#39;ll compile ruby with debug symbols, hoping that I can inspect the IO object that fails. This turns out to be slightly tricky and the binary I build is missing many things (probably missing lots of configure flags), so I use ruby-build and its env vars. This works - I can debug ruby (using &lt;code&gt;lldb&lt;/code&gt;), create a breakpoint in &lt;code&gt;io.c&lt;/code&gt;, where &lt;code&gt;close&lt;/code&gt; is implemented, and inspect the object at the address I got earlier. I print some bytes off the pointer, and the only interesting thing I see is the string &lt;code&gt;pandoc&lt;/code&gt;, which I am running using the backticks method to convert markdown to html. This gives me a clue that the IO object is coming from the backticks method somehow &lt;a href=&quot;#fn4&quot; class=&quot;footnote-ref&quot; id=&quot;fnref4&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;, somewhere, but I want to be completely sure.&lt;/p&gt;
+&lt;p&gt;I realize I&#39;m in a nice VM environment - it ought to be instrumentable and introspectable, right? So I use &lt;code&gt;ObjectSpace.dump_all(output: io)&lt;/code&gt; to dump all objects, and cross-ref with address of the failed IO object from my debug log. I get something like this:&lt;/p&gt;
+&lt;pre class=&quot;plaintext&quot;&gt;&lt;code&gt;{&quot;address&quot;:&quot;0x101315888&quot;, &quot;type&quot;:&quot;FILE&quot;, &quot;class&quot;:&quot;0x10109ea50&quot;, &quot;file&quot;:&quot;./build.rb&quot;, &quot;line&quot;:14, &quot;method&quot;:&quot;`&quot;, &quot;generation&quot;:16, &quot;memsize&quot;:40}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And line 14 is exactly where I call &lt;code&gt;pandoc&lt;/code&gt; using backticks. &lt;code&gt;0x10109ea50&lt;/code&gt; is the &lt;code&gt;IO&lt;/code&gt; class object.&lt;/p&gt;
+&lt;p&gt;Eventually I create a minimal reproduction case calling backticks and the 4 lines of code from the gem. I find that inserting &lt;code&gt;GC.start&lt;/code&gt; just before calling the loop makes it succeed! Could this really be a bug in ruby? &lt;a href=&quot;https://wiki.c2.com/?CompilerBug&quot;&gt;Do those really exist&lt;/a&gt;? A mere mortal like me couldn&#39;t find one. Nonetheless, I have to do something about it. The shell gem looks a bit inactive, and I&#39;ve extracted the offending code anyway to a nice repro case of only 5 lines. The code makes sense to run in a forked process...&lt;/p&gt;
+&lt;p&gt;So, after careful deliberation, I decide to open a &lt;a href=&quot;https://bugs.ruby-lang.org/issues/19624&quot;&gt;bug in ruby&lt;/a&gt;! Amazingly, it gets a reply in just 3 hours on a Sunday! Looks like Nobuyoshi Nakada indeed considered it a bug in MRI, and even implemented a pretty smart test case. Truly a testament to async open source as the great software development model of the world, as an old friend reminded me, after I kept him waiting for beers as I was typing out the bug report very nervously :)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE 20/09/2023&lt;/strong&gt;: Turns out it wasn&#39;t a bug in ruby after all!... I&#39;ll declare this as &quot;not my fault&quot; as I explicitly asked if the code was incorrect 😅&lt;/p&gt;
+&lt;p&gt;All in all, a pretty cool win for me, even if I couldn&#39;t actually fix the (microscopic!) bug myself, and it took a whole weekend! Hopefully this kicks off a series of open source contributions for me :)&lt;/p&gt;
+&lt;section id=&quot;footnotes&quot; class=&quot;footnotes footnotes-end-of-document&quot; role=&quot;doc-endnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn1&quot;&gt;&lt;p&gt;My mind skipped over backticks completely, as would become fateful, I think because doing &lt;code&gt;echo #{html} | node&lt;/code&gt; sounded stupid to me at first.&lt;a href=&quot;#fnref1&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn2&quot;&gt;&lt;p&gt;In hindsight, I could have skipped closing TCP IO objects, but I digress.&lt;a href=&quot;#fnref2&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn3&quot;&gt;
+&lt;p&gt;Like this:&lt;/p&gt;
+&lt;pre class=&quot;ruby&quot;&gt;&lt;code&gt;class IO
+  old = instance_method(:initialize)
+  define_method(:initialize) { |*args|
+    File.write(&#39;/Users/pineman/debug&#39;, caller.inspect, mode: &#39;a+&#39;)
+    File.write(&#39;/Users/pineman/debug&#39;, &quot;NEW IO: #{self.inspect}&quot;+&quot;\n&quot;, mode: &#39;a+&#39;)
+    old.bind(self).(*args)
+  }
+end&lt;/code&gt;&lt;/pre&gt;
+&lt;a href=&quot;#fnref3&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn4&quot;&gt;
+&lt;p&gt;I found you can override backticks, aka &lt;code&gt;Kernel.`&lt;/code&gt;, with&lt;/p&gt;
+&lt;pre class=&quot;ruby&quot;&gt;&lt;code&gt;def `(cmd)
+  puts cmd
+end&lt;/code&gt;&lt;/pre&gt;
+&lt;a href=&quot;#fnref4&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</summary>
     <title>I found a (microscopic) ruby bug and it got fixed in 3 hours</title>
     <updated>2023-05-07T00:00:00+00:00</updated>
     <dc:date>2023-05-07T00:00:00+00:00</dc:date>
@@ -40,8 +151,84 @@
     <id>https://pineman.github.io/ruby-ascii-8bit.html</id>
     <link href="https://pineman.github.io/ruby-ascii-8bit.html"/>
     <published>2023-11-05T00:00:00+00:00</published>
-    <summary type="html">&lt;p&gt;We&#39;ve hit a couple of bugs during a recent feature launch. This feature&#39;s 1.0 is an email - so no takesies backsies, you better get it right the first time. Unfortunately, this was not the case (curse you &lt;a href=&quot;https://wiki.c2.com/?StringlyTyped&quot;&gt;string types&lt;/a&gt;. Maybe don&#39;t store booleans in CSVs? Maybe don&#39;t use CSVs as persistence. But I digress).&lt;/p&gt;
-&lt;p&gt;We initially shrugged off one of them during the first batch of emails, but it came back around for the second batch. Luckily it only affected our own dog fooding account. This is the error:&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
+    <summary type="html">
+&lt;p&gt;We&#39;ve hit a couple of bugs during a recent feature launch. This feature&#39;s 1.0 is an email - so no takesies backsies, you better get it right the first time. Unfortunately, this was not the case (curse you &lt;a href=&quot;https://wiki.c2.com/?StringlyTyped&quot;&gt;string types&lt;/a&gt;. Maybe don&#39;t store booleans in CSVs? Maybe don&#39;t use CSVs as persistence. But I digress).&lt;/p&gt;
+&lt;p&gt;We initially shrugged off one of them during the first batch of emails, but it came back around for the second batch. Luckily it only affected our own dog fooding account. This is the error:&lt;/p&gt;
+&lt;pre class=&quot;text&quot;&gt;&lt;code&gt;ActionView::Template::Error
+incompatible character encodings: ASCII-8BIT and UTF-8 (ActionView::Template::Error)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, let&#39;s start at the beginning: context, mental priming, emotional control. What&#39;s the first thing that jumps to mind?&lt;/p&gt;
+&lt;p&gt;If your answer is &lt;em&gt;&quot;****ing email doesn&#39;t like utf-8&quot;&lt;/em&gt;, you&#39;re literally me. You can deduce my emotions otherwise - my colleague on call with me certainly did. So I&#39;ll skip ahead and spoil that &lt;code&gt;ASCII-8BIT&lt;/code&gt; doesn&#39;t mean &lt;em&gt;&quot;blahblah ASCII only *hand-wave* email is old&quot;&lt;/em&gt; - in ruby it literally is &lt;a href=&quot;https://idiosyncratic-ruby.com/56-us-ascii-8bit.html#aliases&quot;&gt;an alias&lt;/a&gt; for &lt;code&gt;BINARY&lt;/code&gt;, meaning raw bytes. But I only found that out by the end of the investigation.&lt;/p&gt;
+&lt;p&gt;I guess the &quot;8bit&quot; part gives it away, but I interpreted it as &lt;em&gt;&quot;ASCII, except some random character has the 7th bit set so it&#39;s complaining loudly ohgodwhy&quot;&lt;/em&gt;. Maybe if I had immediately seen &lt;code&gt;BINARY&lt;/code&gt; the investigation could&#39;ve been cut shorter, but it was already pretty short by most accounts. &lt;a href=&quot;https://twitter.com/pineman_/status/1720426537768386659&quot;&gt;What else am I gonna blog about&lt;/a&gt;? Let&#39;s dive in.&lt;/p&gt;
+&lt;h3 id=&quot;investigation&quot;&gt;Investigation&lt;a href=&quot;#investigation&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Like all good things in life, you need the initial idea that comes after the knee jerk reaction. The first good idea is to reproduce the bug, which is pretty easy: just call the mailer inline, using &lt;code&gt;deliver_now&lt;/code&gt;, in the rails console connected to production (how great is that btw? 🤠). That reveals where it blows up:&lt;/p&gt;
+&lt;pre class=&quot;text&quot;&gt;&lt;code&gt;/app/vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8/lib/active_support/core_ext/string/output_safety.rb:197:in `concat&#39;: incompatible character encodings: ASCII-8BIT and UTF-8 (ActionView::Template::Error)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&#39;s cool and all, but this still doesn&#39;t tell me what string exactly, out of the whole html email, is causing it to blow up. At this point my colleague has the (correct) hunch that it&#39;s probably blowing up on emoji in the name of a string identifier we template into the view. Pedantic, boring old me however wants to be 100% sure.&lt;/p&gt;
+&lt;p&gt;This where I notice it fails in this &lt;code&gt;concat&lt;/code&gt; method - so I have the second good idea of monkey patching it. Again, how great is that?! Here my co-worker notes, in a much less enthusiastic tone, that while yes ruby is pretty cool, in another language you probably wouldn&#39;t even have the need to monkey patch this method now because the bug wouldn&#39;t even exist. I silently nod in approval, but move on as what would life be without gnarly bugs? Another digression, another hit of the rubberband on the wrist.&lt;/p&gt;
+&lt;p&gt;I read the method (cmd-p &lt;code&gt;output_safety&lt;/code&gt;, &lt;code&gt;197G&lt;/code&gt;, thanks rubymine) - it uses an &lt;code&gt;ActiveSupport::SafeBuffer&lt;/code&gt; and calls &lt;code&gt;original_concat&lt;/code&gt;. I try to reproduce the bug, having the emoji hunch in mind:&lt;/p&gt;
+&lt;pre class=&quot;text&quot;&gt;&lt;code&gt;ActiveSupport::SafeBuffer.new(&quot;🤣&quot;).safe_concat(&quot;🤣&quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This, of course, doesn&#39;t blow up: string literals are natively utf-8 in ruby, so no encoding mismatches here. Let&#39;s try forcing this mysterious &lt;code&gt;ASCII-8BIT&lt;/code&gt; encoding (which, remember, at this point I didn&#39;t know was an alias for &lt;code&gt;BINARY&lt;/code&gt; and for some reason just didn&#39;t google it):&lt;/p&gt;
+&lt;pre class=&quot;text&quot;&gt;&lt;code&gt;ActiveSupport::SafeBuffer.new(&quot;🤣&quot;).safe_concat(128.chr.force_encoding(&quot;ASCII-8BIT&quot;))
+/app/vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8/lib/active_support/core_ext/string/output_safety.rb:197:in `concat&#39;: incompatible character encodings: UTF-8 and ASCII-8BIT (Encoding::CompatibilityError)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Aha! &lt;code&gt;128.chr&lt;/code&gt; just means &lt;code&gt;0b10000000&lt;/code&gt;, which has the 7bit set. I sort-of note, in the back of my head, that the encodings are backwards here: my repro case says &lt;code&gt;incompatible character encodings: UTF-8 and ASCII-8BIT&lt;/code&gt; while the original error says &lt;code&gt;incompatible character encodings: ASCII-8BIT and UTF-8&lt;/code&gt;. Which means the email template was &lt;code&gt;ASCII-8BIT&lt;/code&gt; at the time of the concatenation with e.g. an emoji. I assumed that mailers&#39; views were encoded as &lt;code&gt;ASCII-8BIT&lt;/code&gt; due to &lt;em&gt;&quot;*hand-wave* email&quot;&lt;/em&gt; (foreshadowing 🫠) and moved on. I want to find out on &lt;em&gt;what string&lt;/em&gt; it&#39;s blowing up on. This is the initial monkey-patch, printing the whole buffer and the small string to be concatenated:&lt;/p&gt;
+&lt;pre class=&quot;ruby&quot;&gt;&lt;code&gt;module ActiveSupport
+  class SafeBuffer &amp;lt; String
+    def safe_concat(value)
+      begin
+        raise SafeConcatError unless html_safe?
+        original_concat(value)
+      rescue =&amp;gt; e
+        puts self
+        p value
+        puts e.backtrace
+        raise e
+      end
+    end
+  end
+end&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This gets me closer - running the mailer again now prints:&lt;/p&gt;
+&lt;pre class=&quot;text&quot;&gt;&lt;code&gt;(irb):312:in `write&#39;: &quot;\xF0&quot; from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
+(irb):310:in `concat&#39;: incompatible character encodings: ASCII-8BIT and UTF-8 (Encoding::CompatibilityError)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So we&#39;ve got a mysterious &lt;code&gt;F0&lt;/code&gt; byte somewhere. It&#39;s coming from the latter parts of the email, which our feature didn&#39;t touch. The buffer and the backtrace didn&#39;t print then though, for some reason, but did when I changed the &lt;code&gt;puts&lt;/code&gt; to just &lt;code&gt;p&lt;/code&gt;. So now I know exactly where it&#39;s blowing up, what the state of the buffer was, and what string was causing this - it contains the emoji 🔀, which in utf-8 starts with &lt;code&gt;0xF0&lt;/code&gt;, or decimal &lt;code&gt;240&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I try concating the offending string with a buffer of one emoji, and it doesn&#39;t crash for the same reason again: ruby string literals are utf-8. We check that the &lt;code&gt;ASCII-8BIT&lt;/code&gt; encoding doesn&#39;t change the byte representation of the emoji, and sure enough it doesn&#39;t. I try to force the buffer to be encoded in &lt;code&gt;ASCII-8BIT&lt;/code&gt;, but fail.&lt;/p&gt;
+&lt;p&gt;This is when we start doubting everything. Paranoia ensues. Are other people an illusion of my mind? Is the name value coming from the DB as &lt;code&gt;ASCII-8BIT&lt;/code&gt;? We were getting it from our read replica... was its encoding different? Sure enough, everything from the DB comes as &lt;code&gt;UTF-8&lt;/code&gt;, our paranoia is unjustified and other people are real.&lt;/p&gt;
+&lt;p&gt;I reproduce the bug using the mailer again. Scrolling... Wait, look!&lt;/p&gt;
+&lt;pre class=&quot;text&quot;&gt;&lt;code&gt;... f06\&quot;&amp;gt; \xF0\x9F\x94\x80Rec ...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Why does the buffer &lt;em&gt;already&lt;/em&gt; contain an &lt;code&gt;F0&lt;/code&gt;? The original buffer already has this emoji?! Shows up as hexa escapes though - I chalk it up to being due to using &lt;code&gt;p&lt;/code&gt; instead of &lt;code&gt;puts&lt;/code&gt;, but clearly the emoji was concated succesfully before we crashed?!? And, perplexingly, this earlier part of the email is the new part that we created for the feature. Why is it breaking further down the line in code we didn&#39;t touch?&lt;/p&gt;
+&lt;h3 id=&quot;dire-straits&quot;&gt;Dire straits&lt;a href=&quot;#dire-straits&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;In dire situations like these, you &lt;strong&gt;desperately&lt;/strong&gt; need the initial idea that comes after the knee jerk reaction.&lt;/p&gt;
+&lt;p&gt;This is where the third great idea comes in: smoke break with the airpods still on. It&#39;s time for some serious pair hypothesis crafting, despite the rain and dark.&lt;/p&gt;
+&lt;p&gt;Clearly the view &lt;em&gt;does&lt;/em&gt; knows how to render emojis all along. What if the buffer starts out as &lt;code&gt;UTF-8&lt;/code&gt;, the first emoji concat works... but then switches to being &lt;code&gt;ASCII-8BIT&lt;/code&gt; at some point, causing the second emoji concat to fail? Let&#39;s go for broke, print the buffer&#39;s &lt;code&gt;.encoding&lt;/code&gt; at each call, and trace exactly when it switches (spewing large amounts of text to my terminal will forever be my superpower. Thanks tmux and vim). This is the final monkey patch:&lt;/p&gt;
+&lt;pre class=&quot;ruby&quot;&gt;&lt;code&gt;module ActiveSupport
+  class SafeBuffer &amp;lt; String
+    def safe_concat(value)
+      p self.encoding
+      p self
+      begin
+        raise SafeConcatError unless html_safe?
+        original_concat(value)
+      rescue =&amp;gt; e
+        p &quot;HIT TROUBLE&quot;
+        p self.encoding
+        p self
+        p value
+        p value.encoding
+        p e.backtrace
+        raise e
+      end
+    end
+  end
+end&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We trigger the mailer again, and sure enough it starts out life as &lt;code&gt;UTF-8&lt;/code&gt;, and we see it grow incrementally. We get to the first emoji concat. The buffer was &lt;code&gt;UTF-8&lt;/code&gt;, but the string itself... is in &lt;code&gt;ASCII-8BIT&lt;/code&gt;? Why...? We&#39;d just seen that the value from the DB is &lt;code&gt;UTF-8&lt;/code&gt;. And sure enough, as soon as this &lt;code&gt;ASCII-8BIT&lt;/code&gt; string is concated with the buffer, it too is tainted to become &lt;code&gt;ASCII-8BIT&lt;/code&gt;! It blows up further ahead when the now &lt;code&gt;ASCII-8BIT&lt;/code&gt; tries to concat the second emoji string, which this time is correctly encoded as &lt;code&gt;UTF-8&lt;/code&gt;!&lt;/p&gt;
+&lt;p&gt;This is when it becomes clear to my colleague that the &quot;tainted&quot; &lt;code&gt;ASCII-8BIT&lt;/code&gt; string is actually coming from a CSV file we built for the new feature. This file is generated on demand but then cached, so subsequent emails download and parse it from Google Cloud Storage (side note: do not make CSV parsing load bearing. But if you do, remember to convert strings to booleans on a boolean column 🫠). This file&#39;s encoding is coming from GCloud as &lt;code&gt;ASCII-8BIT&lt;/code&gt;, so my coworker does a simple &lt;code&gt;.force_encoding(Encoding::UTF8)&lt;/code&gt; on it, which cleanly fixes the bug.&lt;/p&gt;
+&lt;h3 id=&quot;ascii-8bit-why-google-why&quot;&gt;ASCII-8BIT? WHY GOOGLE WHY&lt;a href=&quot;#ascii-8bit-why-google-why&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;I&#39;m not satisfied yet, and now I&#39;m just angry. I go spelunking to find out why files from gcloud storage, using the official ruby sdk, are encoded using this mysterious &lt;code&gt;ASCII-8BIT&lt;/code&gt; encoding. I find &lt;a href=&quot;https://github.com/googleapis/google-cloud-ruby/blob/9b455708c115a6e894e2b32521e5817fddc89b0a/google-cloud-storage/lib/google/cloud/storage/file.rb#L1038&quot;&gt;the code&lt;/a&gt;. I type &quot;thanks google&quot; on my colleague&#39;s PR with the fix &amp;amp; curse some more on our team&#39;s internal chat.&lt;/p&gt;
+&lt;p&gt;No one&#39;s complaining on the issue tracker... I find a reference on some &lt;a href=&quot;https://github.com/googleapis/google-cloud-ruby/pull/1564&quot;&gt;random thread about pub/sub&lt;/a&gt;. Wait. &quot;canonical bytes representation&quot;? Does that just mean binary? Oh... That makes sense, I guess. Google doesn&#39;t make any assumptions about encoding (as I mistakenly thought, because what the hell does &lt;code&gt;ACSII-8BIT&lt;/code&gt; mean), so it just says it&#39;s binary. It just happens that &#39;binary&#39; has to have a wacky name in ruby, of course. Why. Why must it be called &lt;code&gt;ASCII-8BIT&lt;/code&gt;?! What do you mean, how does that even make sense?!?!? ASCII is only 7 bits!!... A quick grep on ruby&#39;s source code confirms that &lt;code&gt;ASCII-8BIT&lt;/code&gt; is an alias for &lt;code&gt;BINARY&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I remind myself of the other times I went to read up on history of a particular historical change in ruby. My head is already hurting. I do not wish to jump into this rabbit hole after one and a half hours of fighting encoding errors. Not now. Maybe not ever.&lt;/p&gt;
+&lt;p&gt;I like computers.&lt;/p&gt;
+</summary>
     <title>Ruby&#39;s ASCII-8BIT, mailers and feature launches</title>
     <updated>2023-11-05T00:00:00+00:00</updated>
     <dc:date>2023-11-05T00:00:00+00:00</dc:date>
@@ -50,8 +237,42 @@
     <id>https://pineman.github.io/just-use-curl.html</id>
     <link href="https://pineman.github.io/just-use-curl.html"/>
     <published>2024-05-25T00:00:00+00:00</published>
-    <summary type="html">&lt;p&gt;Recently we&#39;ve needed to do a lot of HTTP requests to weird APIs. One endpoint in particular is basically the wild west of HTTP - High, unpredictable latency and redirects a lot: often absolutely, from HTTPS to HTTP and even to non-resolving URLs.&lt;/p&gt;
-&lt;p&gt;I started this endeavour with good ol&#39; &lt;a href=&quot;https://github.com/httprb/http&quot;&gt;HTTP.rb&lt;/a&gt;, as one does, blissfully unaware of this long tail of responses. I configured a 15s timeout for this endpoint call to deal with its unpredictability. And things were going great! HTTP.rb does the Right Thing 99% of the time regarding following redirects and other errors, so I went on my merry way.&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
+    <summary type="html">
+&lt;p&gt;Recently we&#39;ve needed to do a lot of HTTP requests to weird APIs. One endpoint in particular is basically the wild west of HTTP - High, unpredictable latency and redirects a lot: often absolutely, from HTTPS to HTTP and even to non-resolving URLs.&lt;/p&gt;
+&lt;p&gt;I started this endeavour with good ol&#39; &lt;a href=&quot;https://github.com/httprb/http&quot;&gt;HTTP.rb&lt;/a&gt;, as one does, blissfully unaware of this long tail of responses. I configured a 15s timeout for this endpoint call to deal with its unpredictability. And things were going great! HTTP.rb does the Right Thing 99% of the time regarding following redirects and other errors, so I went on my merry way.&lt;/p&gt;
+&lt;p&gt;... Until I started tracking my requests more closely and noticed some were taking longer than 15s. Much longer, in fact. Turns out the timeout settings are per-HTTP-request - i.e., a call to &lt;code&gt;HTTP.get&lt;/code&gt; with &lt;code&gt;max_hops: 10&lt;/code&gt; and &lt;code&gt;timeout: 15&lt;/code&gt; can take up to 150s, modulo other shenanigans we&#39;ll get to. This is not okay as each redirect can easily take 10s, wrecking my performance SLO - which, while relatively lax, is certainly not to exceed around 30s, and very hopefully below that. I needed a way to set a global timeout for ALL redirects in this call to &lt;code&gt;HTTP.get&lt;/code&gt; &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;timeout-woes&quot;&gt;Timeout woes&lt;a href=&quot;#timeout-woes&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;So. What to do? The obvious and, of course, naive solution, is to just stick a &lt;code&gt;Timeout::timeout&lt;/code&gt; around the request and be done with it. I really, really didn&#39;t want to do this, as I had already read the (hopefully) famous &lt;a href=&quot;https://web.archive.org/web/20110903054547/http://blog.headius.com/2008/02/ruby-threadraise-threadkill-timeoutrb.html&quot;&gt;article by Charles Nutter&lt;/a&gt; (and the &quot;repost&quot; &lt;a href=&quot;https://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/&quot;&gt;by Mike Perham&lt;/a&gt;) about how fundamentally broken it is. &lt;a href=&quot;https://redgetan.cc/understanding-timeouts-in-cruby/&quot;&gt;This post&lt;/a&gt; is incredible - it goes into the internals of how Timeout works in CRuby.&lt;/p&gt;
+&lt;p&gt;As a quick summary, &lt;code&gt;Timeout::timeout&lt;/code&gt; essentially spins up a whole new thread (if not using Fibers), just to sleep in it for the duration of the timeout. If the block of code runs before the timeout is elapsed, the thread is killed, and so it doesn&#39;t wake up. If it does wake up, however, it uses &lt;code&gt;Thread#raise&lt;/code&gt; to raise an error in the calling thread at any point, arbitrarily, which is SUPER dangerous! There&#39;s no guarantee as to when exactly the sleeping thread will run or when the calling thread will receive the signal, so all manner of standard race problems apply.&lt;/p&gt;
+&lt;p&gt;Speaking with some colleagues we noted the probable Right Way™ to solve this would be to use Fibers and async-http, possibly with Faraday. I, uh, didn&#39;t do that. My logic and testing was already very much on top of HTTP.rb&#39;s behavior, so it&#39;d be a pretty big change. Besides, our project doesn&#39;t use any async stuff yet, so I&#39;d be pioneering this in. Guess what I did - I stuck &lt;code&gt;Timeout::timeout&lt;/code&gt; in there and moved on.&lt;/p&gt;
+&lt;p&gt;... Until I started getting errors I hadn&#39;t before. And the stacktrace makes no sense - the line where the error was raised couldn&#39;t possibly even raise that error. I had a rescue around all the HTTP calls I was making, so how wasn&#39;t it rescued there?!... Oh. God. Wait. It&#39;s &lt;code&gt;Timeout::timeout&lt;/code&gt;, isn&#39;t it?...&lt;/p&gt;
+&lt;p&gt;It was. I suspect it was doubly-bad as HTTP.rb itself uses &lt;code&gt;Timeout::timeout&lt;/code&gt; for its timeouts &lt;a href=&quot;#fn2&quot; class=&quot;footnote-ref&quot; id=&quot;fnref2&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;. I was triggering this condition fairly often, in just hundreds of requests, on my machine - there&#39;s no way we can ship it like this.&lt;/p&gt;
+&lt;h2 id=&quot;alternatives&quot;&gt;Alternatives&lt;a href=&quot;#alternatives&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Time to look for alternatives, I guess... I&#39;ll try not to get into hideous technical detail, for both your sake and mine. I checked, and it seemed to me that the stdlib Net:HTTP also used &lt;code&gt;Timeout::timeout&lt;/code&gt; - albeit less than HTTP.rb (looks like that it&#39;s just for the open timeout), so I skipped it for now.&lt;/p&gt;
+&lt;p&gt;Then I looked at &lt;a href=&quot;https://github.com/socketry/async-http&quot;&gt;async-http&lt;/a&gt;, which was exciting - if everything is nonblocking, cancelling on a timer is a non-issue (or even just raising an error like &lt;code&gt;Task.with_timeout&lt;/code&gt; does). But I had lots of trouble trying to port all the behavior I was used to in HTTP.rb, with redirections, ssl options, headers, all that. The API wasn&#39;t as ergonomic as I&#39;d hoped &lt;a href=&quot;#fn3&quot; class=&quot;footnote-ref&quot; id=&quot;fnref3&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;. I tried using it with the &lt;a href=&quot;https://github.com/socketry/async-http-faraday&quot;&gt;Faraday adapter&lt;/a&gt;, but I found out that I couldn&#39;t use Faraday for entirely different, project-specific, reasons.&lt;/p&gt;
+&lt;p&gt;Next I checked out &lt;a href=&quot;https://github.com/HoneyryderChuck/httpx&quot;&gt;httpx&lt;/a&gt; on a recommendation. It uses &lt;code&gt;IO.select&lt;/code&gt; and even ships with its own non-blocking DNS resolver (curse you &lt;code&gt;getaddrinfo&lt;/code&gt;)! This filled me with hope. The code was easy to read and the API super ergonomic. But, alas, it doesn&#39;t provide a way to set a global timeout across redirects. This is when I had an idea: I&#39;ll hack around this by manually checking the elapsed time since the first request on each redirection, using the &lt;code&gt;on_response_completed&lt;/code&gt; callback. This worked surprisingly well! In the worst case scenario it could take &lt;code&gt;2*timeout&lt;/code&gt;, but it&#39;s good enough!&lt;/p&gt;
+&lt;p&gt;Except... Now the responses from the endpoints are different. httpx has different semantics on what headers to send and what to do on redirects. Admittedly, this is probably hard mode for http clients (yes the endpoints I&#39;m hitting are really that weird). Forget about timeouts if I don&#39;t have semantic correctness.&lt;/p&gt;
+&lt;p&gt;This is when I went mad and started clicking desperately on all http clients I could find. &lt;a href=&quot;https://github.com/nahi/httpclient&quot;&gt;httpclient&lt;/a&gt; uses &lt;code&gt;Timeout::timeout&lt;/code&gt; as well... And &lt;a href=&quot;https://github.com/jnunemaker/httparty&quot;&gt;httparty&lt;/a&gt; calls Net::HTTP... &lt;a href=&quot;https://github.com/excon/excon&quot;&gt;Excon&lt;/a&gt; uses &lt;code&gt;IO.select&lt;/code&gt; - yay!&lt;/p&gt;
+&lt;p&gt;But then I found &lt;a href=&quot;https://github.com/typhoeus/typhoeus&quot;&gt;Typhoeus&lt;/a&gt;, a wrapper around libcurl, which I know has a global timeout including redirects (&lt;code&gt;--max-time&lt;/code&gt; through the &lt;code&gt;curl&lt;/code&gt; cli). I tried it out and it&#39;s pretty simple, easy to use and does the right thing (of course, it&#39;s &lt;code&gt;curl&lt;/code&gt;)! So this seems to be the endgame, the ultimate solution for my usecase today, at least from my testing so far.&lt;/p&gt;
+&lt;h2 id=&quot;all-roads-lead-to-curl&quot;&gt;All roads lead to curl&lt;a href=&quot;#all-roads-lead-to-curl&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;So, is the conclusion that we should all just use cURL? Really?! A C project started almost 30 years ago?!&lt;/p&gt;
+&lt;p&gt;Yes.&lt;/p&gt;
+&lt;p&gt;Tongue-in-cheek. But, in retrospect, it sounds obvious - cURL is venerable and legendary. Lindy&#39;s law in effect! Of course though, pure ruby gems have many advantages compared to ffi/native gems, not least of which not randomly segfaulting &lt;a href=&quot;#fn4&quot; class=&quot;footnote-ref&quot; id=&quot;fnref4&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;. But we&#39;ll see how it goes for me and curl wrappers.&lt;/p&gt;
+&lt;p&gt;Also, please burn &lt;code&gt;Timeout::timeout&lt;/code&gt; with fire.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: I wound up using ruby-async&#39;s &lt;a href=&quot;https://socketry.github.io/async/guides/asynchronous-tasks/index.html#timeouts&quot;&gt;&lt;code&gt;.with_timeout&lt;/code&gt;&lt;/a&gt; in production plus HTTP.rb. Since async timers run &lt;a href=&quot;https://github.com/socketry/async/blob/9851cb945ae49a85375d120219000fe7db457307/lib/async/scheduler.rb#L391&quot;&gt;in the event loop&lt;/a&gt;, it has proper semantics (like &lt;code&gt;IO.select&lt;/code&gt;)! It&#39;s got some drawbacks: it spins up all the fiber scheduler machinery just to do an HTTP request and it also currently loses otel tracing context (at least in our app). But other than that, I found it to be a good solution to the timeout problem.&lt;/p&gt;
+&lt;section id=&quot;footnotes&quot; class=&quot;footnotes footnotes-end-of-document&quot; role=&quot;doc-endnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn1&quot;&gt;&lt;p&gt;I later found an imperfect but &quot;good enough&quot; solution to this using HTTPX, but it hadn&#39;t come to me at this time. Using the callbacks plugin, check the time elapsed since starting on each redirect and bail out if over the target.&lt;a href=&quot;#fnref1&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn2&quot;&gt;&lt;p&gt;There seems to be a &lt;a href=&quot;https://github.com/httprb/http/issues/773&quot;&gt;timeout redesign&lt;/a&gt; coming for the next version, which sounds great!&lt;a href=&quot;#fnref2&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn3&quot;&gt;&lt;p&gt;This is when it hits me that HTTP clients are SUPER non-trivial. You&#39;d think making HTTP requests was easy. Yeah.&lt;a href=&quot;#fnref3&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn4&quot;&gt;&lt;p&gt;Also, pure ruby gems work in async! A curl wrapper can&#39;t yield to the event loop since it&#39;s off in libcurl - which obviously isn&#39;t aware that we&#39;re running it in a fiber in an event loop!&lt;a href=&quot;#fnref4&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</summary>
     <title>Just use curl (or how hard can it be to make HTTP requests?)</title>
     <updated>2024-05-25T00:00:00+00:00</updated>
     <dc:date>2024-05-25T00:00:00+00:00</dc:date>
@@ -60,8 +281,76 @@
     <id>https://pineman.github.io/k8s-dns.html</id>
     <link href="https://pineman.github.io/k8s-dns.html"/>
     <published>2025-02-01T00:00:00+00:00</published>
-    <summary type="html">&lt;p&gt;Our Kubernetes cluster&#39;s DNS recently experienced partial degradation. We noticed it via DNS resolution errors in Sentry mostly when calling internal services.&lt;/p&gt;
-&lt;p&gt;This incident took a bit to root cause - not that it was particular thorny in retrospect, per se, but it involved diving into guts of things one doesn&#39;t normally care much about. While this isn&#39;t the only interesting incident that happened this year &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;, I rather enjoyed the investigation; and since it&#39;s not every day I get to drive an incident (thankfully!), I thought I&#39;d log the experience, company postmortem aside.&lt;/p&gt;&lt;p&gt;...&lt;/p&gt;</summary>
+    <summary type="html">
+&lt;p&gt;Our Kubernetes cluster&#39;s DNS recently experienced partial degradation. We noticed it via DNS resolution errors in Sentry mostly when calling internal services.&lt;/p&gt;
+&lt;p&gt;This incident took a bit to root cause - not that it was particular thorny in retrospect, per se, but it involved diving into guts of things one doesn&#39;t normally care much about. While this isn&#39;t the only interesting incident that happened this year &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;, I rather enjoyed the investigation; and since it&#39;s not every day I get to drive an incident (thankfully!), I thought I&#39;d log the experience, company postmortem aside.&lt;/p&gt;
+&lt;h2 id=&quot;preamble&quot;&gt;Preamble&lt;a href=&quot;#preamble&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;assets/always-dns.jpg&quot; alt=&quot;The DNS Haiku meme. Claude says: &#39;A meme styled like a traditional East Asian scroll or painting, featuring black text reading &#39;It&#39;s not DNS / There&#39;s no way it&#39;s DNS / It was DNS&#39; alongside minimal ink brush illustrations of a flying bird and flowers. The image includes what appears to be Japanese or Chinese characters and a red seal stamp in the corner, mimicking traditional art styles.&#39;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;It was apparent the issue wasn&#39;t happening on 100% of DNS requests, so impact was thankfully rather minimal. One critical internal service we call is pgbouncer, but thankfully resolving those hosts rarely failed since that basically only happens at the app&#39;s startup. When they did fail, the pod would just restart; and since the problem wasn&#39;t on 100% of queries, the app was pretty much up for the whole duration of the incident. Other workloads that call internal services, such as ML services, run on Sidekiq and so will retry on failure - they were also mostly unaffected. Most of the user-observable impact was some failed exports, since those jobs have a low retry count.&lt;/p&gt;
+&lt;p&gt;The incident technically started on a Friday at 3pm UTC, but since its impact was so minimal, we chalked it up as a temporary failure at the time and didn&#39;t pay much attention to it. It wasn&#39;t until Monday that I was tasked with getting to the bottom of it, as sentry errors were very much piling up &lt;a href=&quot;#fn2&quot; class=&quot;footnote-ref&quot; id=&quot;fnref2&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;let-the-investigation-begin&quot;&gt;Let the investigation begin&lt;a href=&quot;#let-the-investigation-begin&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Our infrastructure engineer was out Friday and Monday, which complicates things a bit, but he actually replied to me during his PTO (thanks Ricardo!): our initial theory was that DNS was failing due to excessive load, as we had seen that in the past &lt;a href=&quot;#fn3&quot; class=&quot;footnote-ref&quot; id=&quot;fnref3&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;. Our kube-dns deployment was already scaled beyond a reasonable scale, using kube-dns-autoscaler &lt;a href=&quot;#fn4&quot; class=&quot;footnote-ref&quot; id=&quot;fnref4&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; (we use kube-dns since we&#39;re on GKE).&lt;/p&gt;
+&lt;p&gt;My first thought was to restart kube-dns. Spoiler alert, this didn&#39;t solve the problem - I had actually tried it on friday. Although, as we&#39;ll see later, it actually had a chance to, for an unexpected reason!&lt;/p&gt;
+&lt;p&gt;To reproduce the problem, and actually see it with my own eyes, I simply exec&#39;d into a pod and resolved a host on a loop - this gives a very immediate sense of the scale of the problem:&lt;/p&gt;
+&lt;pre class=&quot;bash&quot;&gt;&lt;code&gt;while :; do time getent hosts pgbouncer-web-ampledash.core; done&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Occasionally, maybe once every 15s, I&#39;d notice a slow request that would eventually time out. So I asked: what DNS server are we using, exactly? Good ol&#39; &lt;code&gt;/etc/resolv.conf&lt;/code&gt; has the answer, naturally:&lt;/p&gt;
+&lt;pre class=&quot;plaintext&quot;&gt;&lt;code&gt;root@ampledash-console-75467d5c8c-n5j9b:/app# cat /etc/resolv.conf
+search core.svc.cluster.local svc.cluster.local cluster.local c.ampledash-prod.internal google.internal
+nameserver 172.18.130.10
+options ndots:1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Great! But who is &lt;code&gt;172.18.130.10&lt;/code&gt;?... Well, it&#39;s a Service, a ClusterIP. There&#39;s a bunch of kube-dns pods, so this is probably some sort of entrypoint load balancer thingy? Provided by GKE?&lt;/p&gt;
+&lt;p&gt;At around this time, my colleague was experimenting with turning off our Kafka consumers to see if the issue really was load related, since they were pretty busy. I kept running the DNS requests loops in multiple pods.&lt;/p&gt;
+&lt;p&gt;At a certain point, the loops stop breaking on a slow request! Rejoice! Was our problem solved?&lt;/p&gt;
+&lt;p&gt;For a while it really looked like we had been spared a much deeper investigation into the guts of kube-dns. But alas, the problem came back some minutes later.&lt;/p&gt;
+&lt;h2 id=&quot;false-start&quot;&gt;False start&lt;a href=&quot;#false-start&quot; class=&quot;heading-link&quot; title=&quot;Copy link to heading&quot; onclick=&quot;copyHeadingLink(this);&quot;&gt;&lt;span class=&quot;icon-container&quot;&gt;&lt;i class=&quot;fa-solid fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;I then had the idea of talking to the kube-dns pods directly, instead of going through &lt;code&gt;172.18.130.10&lt;/code&gt;. Is it possible the problem was this supposed load balancer? Listing the internal ips of the kube-dns pods is easy enough with &lt;code&gt;kubectl -n kube-system get endpoints kube-dns -o jsonpath=&#39;{range .subsets[*].addresses[*]}{.ip}{&quot;\n&quot;}{end}&lt;/code&gt;. So then I ran some loops on those IPs. Surprisingly, they work correctly!&lt;/p&gt;
+&lt;p&gt;This is where we got a bit lost. Why would the main ip be flaky? It&#39;s more likely to be a problem in an individual kube-dns pod, rather than the main ip. I skipped lunch and spent a bunch of time trying to figure out how exactly kube-dns works, and why it could be flaky. Looked into the pods definitions; exec&#39;d into them; found out it runs dnsmasq; talked to it directly; checked the args, environment, config; ...&lt;/p&gt;
+&lt;p&gt;In retrospect it was probably a bit too much, but we had no idea where the problem was! Not long after, though, I had a better idea: talk to &lt;em&gt;all&lt;/em&gt; the kube-dns pods, and see which ones are failing! This is the cool part. I had been brainstorming with Claude pretty much during the whole investigation - we even only half-joked we should probably try &lt;a href=&quot;https://aistudio.google.com/app/live&quot;&gt;sharing the screen and talking to Gemini 2&lt;/a&gt;, which had just come out.&lt;/p&gt;
+&lt;p&gt;But here comes the cool part: talking to all the pods, while seemingly easy when you&#39;re not in incident-mode, seemed a bit too cumbersome after multiple hours of incident investigation. But Claude offered up a script that worked with just a minor follow-up. Here it is:&lt;/p&gt;
+&lt;pre class=&quot;shell&quot;&gt;&lt;code&gt;servers=(
+&amp;lt;kube-dns ips here&amp;gt;
+)
+
+monitor_server() {
+    local server=$1
+    while true; do
+        dig @&quot;$server&quot; pgbouncer-web-ampledash.core.svc.cluster.local | grep &quot;timed out&quot; | xargs -I {} echo &quot;$(date &#39;+%Y-%m-%d %H:%M:%S&#39;) - Server $server - {}&quot;
+    done
+}
+
+# Start monitoring each server in the background
+for server in &quot;${servers[@]}&quot;; do
+    monitor_server &quot;$server&quot; &amp;amp;
+done&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With this script in hand, I quickly noticed that there were only two pods that were consistently timing out! This prompted me to check which node they were running on, just for sanity, which is a simple kubectl command away. And bingo! They&#39;re running on the same node, and they&#39;re the only two pods running on that node!&lt;/p&gt;
+&lt;p&gt;This is why I said earlier that restarting all pods could have solved the issue - node placement could have changed such that no pods were placed in the offending node. I believe that pod node placement, and nodes coming up and down, was also the reason that turning off our Kafka consumers briefly &quot;solved&quot; the issue!&lt;/p&gt;
+&lt;p&gt;From here, we could have investigated &lt;em&gt;why&lt;/em&gt; the kube-dns pods on that node in particular were timing out regularly. But we honestly didn&#39;t bother. We didn&#39;t assign a high probability to the issue happening again, and we had already looked into this for quite a bit! So we decided to just remove the node from the cluster and move on. This was just a simple &lt;code&gt;kubectl cordon&lt;/code&gt; and &lt;code&gt;kubectl drain&lt;/code&gt;. Once that was done, we stopped observing DNS timeouts! 🥳&lt;/p&gt;
+&lt;p&gt;So, for me the main learning is: lean on LLMs heavily to generate quick &#39;n&#39; dirty medium-complexity scripts that allow you to make questions about the system! Normally you&#39;d have to spend a little bit of time getting them right, but LLMs drastically lower the cost of making such questions. One could imagine generating strace commands, eBPF or even dtrace. I admit the final script where we talk to each pod on a separate thread seems pretty trivial in hindsight, but it felt more magical during the incident!&lt;/p&gt;
+&lt;section id=&quot;footnotes&quot; class=&quot;footnotes footnotes-end-of-document&quot; role=&quot;doc-endnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn1&quot;&gt;&lt;p&gt;Soon, autovacuum killer, soon I&#39;ll write something about you...&lt;a href=&quot;#fnref1&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn2&quot;&gt;&lt;p&gt;Our volume of sentry errors also turned out to be a whole saga, which hopefully is solved now. We had to upgrade to the business plan to get access to quota-protecting features such as rate limiting and Delete and discard events. But even then, rate limiting is not perfect since it&#39;s project-wide! To really protect our quota over, say, a weekend, we&#39;d have to set it so low as to make sentry basically useless for normal usage! As I understand it, Sentry doesn&#39;t support rate limiting per-error for &lt;a href=&quot;https://github.com/getsentry/sentry/issues/60453#issuecomment-1841300021&quot;&gt;only slightly understandable reasons&lt;/a&gt;. I ended up having to setup custom per-error rate limiting (where our &quot;unique key&quot; of an error is slightly different from Sentry&#39;s) using the SDK&#39;s &lt;code&gt;before_send&lt;/code&gt; callback and a sidekiq limiter -- but I digress.&lt;a href=&quot;#fnref2&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn3&quot;&gt;&lt;p&gt;Our last DNS outage was a whole thing. Apart from the immediate impact, we rely heavily on DNS in general -- every day, I&#39;m still astonished how much we use DNS at amplemarket! -- we make a bunch of decisions based on DNS records, and even persist them in our database. We crawl a lot of the interwebs - frankly, not enough! So a bunch of things had to be recalculated. Since DNS is &lt;em&gt;still&lt;/em&gt; flaky even when it&#39;s working correctly - it&#39;s the wild west out there - I had centralized our explicit DNS queries (which took some effort!) to a singular class some months ago. This DNS class does automatic retries with different servers. Essentially, we want to make sure that if a record is empty, it&#39;s &lt;strong&gt;really&lt;/strong&gt; empty, from multiple points of view. Thanks to this change, though, all our external DNS queries were completely unaffected! I intentionally made it so that the DNS class doesn&#39;t use our cluster&#39;s internal DNS resolver - both to reduce its load, but also since it&#39;s slower. Maybe this deserves its own post, but for now it&#39;ll live in this footnote!&lt;a href=&quot;#fnref3&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&quot;fn4&quot;&gt;
+&lt;p&gt;I ended up asking Claude to write me a small script to simulate the final number of kube-dns replicas based on the configurations of the autoscaler, which &lt;a href=&quot;https://kubernetes.io/docs/tasks/administer-cluster/dns-horizontal-autoscaling/&quot;&gt;are a bit weird&lt;/a&gt;, and so I couldn&#39;t help but mention them.&lt;/p&gt;
+&lt;pre class=&quot;ruby&quot;&gt;&lt;code&gt;nodes = 20.0
+cores = 152.0
+cores_per_replica = 6.0
+nodes_per_replica = 1.0
+replicas = [
+  (cores.to_f / cores_per_replica).ceil,
+  (nodes.to_f / nodes_per_replica).ceil
+].max
+puts &quot;Number of replicas: #{replicas}&quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;a href=&quot;#fnref4&quot; class=&quot;footnote-back&quot; role=&quot;doc-backlink&quot;&gt;↩︎&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</summary>
     <title>It&#39;s always DNS (LLM edition)</title>
     <updated>2025-02-01T00:00:00+00:00</updated>
     <dc:date>2025-02-01T00:00:00+00:00</dc:date>
