@@ -1,4 +1,34 @@
+# August 2025
+https://blog.happyfellow.dev/computational-tyranny/
+https://radar.com/blog/high-performance-geocoding-in-rust
+https://www.cybertec-postgresql.com/en/what-is-fillfactor-and-how-does-it-affect-postgresql-performance/
+https://pganalyze.com/blog/5mins-postgres-performance-in-vs-any
+https://pganalyze.com/blog/5mins-explain-analyze-buffers-nested-loops
+https://stephango.com/optimism
+https://stephango.com/ramblings
+https://blog.puzzmo.com/posts/2025/07/30/six-weeks-of-claude-code/
+https://michaelnotebook.com/slow/index.html
+https://lucumr.pocoo.org/2025/7/30/things-that-didnt-work/
+
 # July 2025
+https://serce.me/posts/2025-07-17-two-simple-rules-to-fix-code-reviews
+https://dylanbeattie.net/2021/07/01/java-is-criminally-underhyped.html
+https://ssh-j.com/
+https://byteofdev.com/posts/making-postgres-slow/
+https://www.catherinejue.com/fast
+https://users.cs.utah.edu/~elb/folklore/mel-annotated/node1.html now with annotations https://users.cs.utah.edu/~elb/folklore/mel-annotated/node2.html
+https://kristoff.it/blog/asynchrony-is-not-concurrency/
+https://nullderef.com/blog/rust-async-sync/
+https://slatestarcodex.com/2014/07/30/meditations-on-moloch/
+https://news.ycombinator.com/item?id=44546640 - Hacking Coroutines into C (wiomoc.de)
+https://andrewkelley.me/post/jamulator.html
+https://www.open-std.org/JTC1/SC22/WG21/docs/papers/2018/p1364r0.pdf - Fibers under the magnifying glass
+https://www.gibney.org/prompt_coding
+https://blog.bytebytego.com/p/how-cursor-serves-billions-of-ai
+https://postgrespro.com/blog/pgsql/5968005 - Locks in PostgreSQL: 2. Row-level locks
+https://byteofdev.com/posts/making-postgres-slow/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-47
+https://esafev.com/notes/why-i-do-programming/
 https://sirupsen.com/napkin/problem-15
 https://calv.info/openai-reflections
 https://engineering.fb.com/2013/06/25/core-infra/tao-the-power-of-the-graph/
