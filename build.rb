@@ -120,8 +120,6 @@ def gen_img(post)
       box-sizing: border-box;
     }
     .footer {
-      display: flex;
-      justify-content: space-between;
       margin-top: auto;
       font-size: 30px;
       align-self: flex-end;
