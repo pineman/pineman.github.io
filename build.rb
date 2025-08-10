@@ -2,7 +2,6 @@
 
 require "rss"
 require "erubi"
-require "digest"
 
 require "bundler/inline"
 gemfile do
@@ -161,8 +160,6 @@ def gen_img(post)
 end
 
 exit 1 if ARGV.empty?
-
-pp ARGV
 
 ARGV.each do |arg|
   case arg
