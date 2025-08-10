@@ -13,6 +13,7 @@ end
 CHROME_BINARY = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"'
 
 def write_html(html_file, template_file, caller_binding)
+  # TODO: be explicit about the binding, don't use eval
   template = Erubi::Engine.new(File.read(template_file), escape: true)
   html = eval(template.src, caller_binding)
   File.write(html_file, html)
@@ -29,15 +30,21 @@ module Helpers
 end
 
 class Post
-  attr_reader :url, :title, :title_hash, :content, :date, :html_descr, :text_descr
+  attr_reader :filename, :url, :title, :content, :date, :html_descr, :text_descr
 
-  def initialize(date, url, html)
-    @url = url
+  def initialize(path)
+    @md_file = path
+    @filename = File.basename(@md_file, ".md")
+    date, url = @filename.split("_")
+    @url = "#{url}.html"
     @date = DateTime.parse(date)
-    html = Nokogiri::HTML.fragment(html)
+    @html_file = "posts/html/#{@filename}.html"
+  end
+
+  def set_html_attrs!
+    html = Nokogiri::HTML.fragment(File.read(@html_file))
     @title = html.at("h1").text
     html.at("h1").remove
-    @title_hash = Digest::MD5.hexdigest(@title)
 
     # Add IDs to headings and copy link
     html.css('h1, h2, h3, h4, h5, h6').each do |heading|
@@ -67,15 +74,12 @@ class Post
     suffix = truncated.end_with?('.') ? ' ...' : '...' if truncated.length < text.length
     @text_descr = "#{truncated}#{suffix}"
   end
-end
 
-def build_post(md)
-  `pandoc #{md} -f gfm -t gfm -o #{md}` unless ENV["NOFORMAT"]
-  html = "posts/html/#{File.basename(md, ".*")}.html"
-  `pandoc --wrap=none --no-highlight #{md} -f gfm -t html5 -o #{html}`
-  date, url = File.basename(html).split("_")
-  html = File.read(html)
-  Post.new(date, url, html)
+  def build!
+    `pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}` if !ENV["NOFORMAT"]
+    `pandoc --wrap=none --no-highlight #{@md_file} -f gfm -t html5 -o #{@html_file}`
+    set_html_attrs!
+  end
 end
 
 def build_rss(posts)
@@ -143,24 +147,34 @@ def gen_img(post)
   </foreignObject>
 </svg>
   SVG
-  th = post.title_hash
-  File.write("#{th}.svg", svg)
+  t = post.filename
+  File.write("#{t}.svg", svg)
   system <<~SCRIPT
-    #{CHROME_BINARY} --headless --screenshot --window-size=#{width},#{height+400} "file://$(pwd)/#{th}.svg" &>/dev/null
-    docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye screenshot.png -quality 80 -crop x630+0+0 #{th}.png
-    rm -f #{th}.svg screenshot.png
+    #{CHROME_BINARY} --headless --screenshot --window-size=#{width},#{height+400} "file://$(pwd)/#{t}.svg" &>/dev/null
+    docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye screenshot.png -quality 80 -crop x630+0+0 #{t}.png
+    rm -f #{t}.svg screenshot.png
     mkdir -p assets/link_previews
-    mv #{th}.png assets/link_previews/
+    mv #{t}.png assets/link_previews/
   SCRIPT
 end
 
-posts = Dir["posts/*.md"].map { |md|
-  build_post(md)
-}
-posts.each { |post|
-  write_html("#{post.url}", "post.html.erb", binding)
-  gen_img(post)
-}
-write_html("index.html", "index.html.erb", binding)
-File.write("atom.xml", build_rss(posts))
-write_html("what-i-read.html", "what-i-read.html.erb", binding)
+exit 1 if ARGV.empty?
+
+ARGV.each do |arg|
+  case arg
+  when /^posts\/.*\.md$/
+    post = Post.new(arg)
+    post.build!
+    write_html("#{post.url}", "post.html.erb", binding)
+  when /^assets\/link_previews\/.*\.png$/
+    post = Post.new("posts/#{File.basename(arg, ".png")}.md")
+    post.set_html_attrs!
+    gen_img(post)
+  when "index.html"
+    write_html("index.html", "index.html.erb", binding)
+  when "what-i-read.html"
+    write_html("what-i-read.html", "what-i-read.html.erb", binding)
+  when "atom.xml"
+    File.write("atom.xml", build_rss(posts))
+  end
+end
