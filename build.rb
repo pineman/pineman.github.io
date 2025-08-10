@@ -32,12 +32,11 @@ end
 class Post
   attr_reader :filename, :url, :title, :content, :date, :html_descr, :text_descr
 
-  def initialize(path)
-    @md_file = path
+  def initialize(md_file)
+    @md_file = md_file
     @filename = File.basename(@md_file, ".md")
-    date, url = @filename.split("_")
-    @url = "#{url}.html"
-    @date = DateTime.parse(date)
+    @url = "#{@filename}.html"
+    @date = DateTime.parse(@filename.split("_")[0])
     @html_file = "posts/html/#{@filename}.html"
   end
 
@@ -73,12 +72,15 @@ class Post
     end
     suffix = truncated.end_with?('.') ? ' ...' : '...' if truncated.length < text.length
     @text_descr = "#{truncated}#{suffix}"
+
+    self
   end
 
   def build!
     `pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}` if !ENV["NOFORMAT"]
     `pandoc --wrap=none --no-highlight #{@md_file} -f gfm -t html5 -o #{@html_file}`
     set_html_attrs!
+    self
   end
 end
 
@@ -160,21 +162,23 @@ end
 
 exit 1 if ARGV.empty?
 
+pp ARGV
+
 ARGV.each do |arg|
   case arg
-  when /^posts\/.*\.md$/
-    post = Post.new(arg)
-    post.build!
-    write_html("#{post.url}", "post.html.erb", binding)
-  when /^assets\/link_previews\/.*\.png$/
-    post = Post.new("posts/#{File.basename(arg, ".png")}.md")
-    post.set_html_attrs!
-    gen_img(post)
   when "index.html"
+    posts = Dir["posts/*.md"].map { Post.new(it).set_html_attrs! }
     write_html("index.html", "index.html.erb", binding)
   when "what-i-read.html"
     write_html("what-i-read.html", "what-i-read.html.erb", binding)
   when "atom.xml"
+    posts = Dir["posts/*.md"].map { Post.new(it).set_html_attrs! }
     File.write("atom.xml", build_rss(posts))
+  when /.*html$/
+    post = Post.new("posts/#{File.basename(arg, ".html")}.md").build!
+    write_html("#{post.url}", "post.html.erb", binding)
+  when /^assets\/link_previews\/.*\.png$/
+    post = Post.new("posts/#{File.basename(arg, ".png")}.md").set_html_attrs!
+    gen_img(post)
   end
 end

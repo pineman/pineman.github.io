@@ -2,6 +2,6 @@
 ._*
 node_modules
 .idea
-posts/html
-
 **/.claude/settings.local.json
+
+posts/html
