@@ -1,7 +1,6 @@
 # Variables
 POSTS_MD := $(wildcard posts/*.md)
 POSTS_HTML := $(POSTS_MD:posts/%.md=%.html)
-POSTS_INTERMEDIATE := $(POSTS_MD:posts/%.md=posts/html/%.html)
 LINK_PREVIEWS := $(POSTS_MD:posts/%.md=assets/link_previews/%.png)
 BUILD := Makefile build.rb
 
@@ -25,7 +24,7 @@ atom.xml: $(POSTS_HTML) $(BUILD)
 %.html: post.html.erb posts/%.md partials/head.html partials/pinecone.html partials/article-head.html $(BUILD)
 	./build.rb $@
 
-assets/link_previews/%.png: posts/html/%.html $(BUILD)
+assets/link_previews/%.png: %.html $(BUILD)
 	./build.rb $@
 
 .PHONY: clean
