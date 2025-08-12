@@ -12,6 +12,7 @@ end
 CHROME_BINARY = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"'
 
 def write_html(html_file, template_file, caller_binding)
+  # TODO: be explicit about the binding, don't use eval
   template = Erubi::Engine.new(File.read(template_file), escape: true)
   html = eval(template.src, caller_binding)
   File.write(html_file, html)
@@ -104,6 +105,7 @@ def build_rss(posts)
   rss.to_s.gsub!("<summary>", '<summary type="html">')
 end
 
+# props to https://github.com/ordepdev/ordepdev.github.io/blob/1bee021898a6c2dd06a803c5d739bd753dbe700a/scripts/generate-social-images.js#L26
 def gen_img(post)
   width = 1200
   height = 630
@@ -112,7 +114,7 @@ def gen_img(post)
   <style>
     .container {
       background: #1d1e20;
-      font-family: Menlo, monospace;
+      font-family: Menlo, monospace; /* I'll always have a mac right? */
       color: #dadadb;
       display: flex;
       flex-direction: column;
@@ -156,7 +158,6 @@ def gen_img(post)
 end
 
 require "rake/clean"
-require "fileutils"
 
 module Rake
   module DSL
