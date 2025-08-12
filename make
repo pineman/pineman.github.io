@@ -3,20 +3,20 @@
 echo "file://$(pwd)/index.html"
 
 build() {
-  make
+  rake
 }
 
 watch() {
   export NOFORMAT=
-  ls posts/*.md *.erb build.rb | \
+  ls posts/*.md *.erb Rakefile | \
     entr -s 'echo "Detected change in: $0"; \
       case "$0" in \
         *.md) \
           basename=$(basename "$0" .md); \
-          ./build.rb "$basename.html" \
+          rake "$basename.html" \
           ;; \
         *) \
-          make \
+          rake \
           ;; \
       esac' | \
     ts '[%Y-%m-%d %H:%M:%S]'
