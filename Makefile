@@ -4,11 +4,9 @@ POSTS_HTML := $(POSTS_MD:posts/%.md=%.html)
 LINK_PREVIEWS := $(POSTS_MD:posts/%.md=assets/link_previews/%.png)
 BUILD := Makefile build.rb
 
-# Main templates and partials
 TEMPLATES := index.html.erb post.html.erb what-i-read.html.erb
 PARTIALS := partials/head.html partials/article-head.html partials/pinecone.html
 
-# Default target
 .PHONY: all
 all: $(POSTS_HTML) index.html what-i-read.html atom.xml $(LINK_PREVIEWS)
 
