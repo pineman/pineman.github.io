@@ -1,4 +1,5 @@
 # August 2025
+https://github.com/jbranchaud/til/blob/master/ruby/execute-several-commands-with-backtick-heredoc.md - this guy has LOTS of TILs
 https://www.al3rez.com/todo-txt-journey
 https://registerspill.thorstenball.com/p/joy-and-curiosity-49
 https://sive.rs/n

@@ -158,6 +158,35 @@ end
 require "rake/clean"
 require "fileutils"
 
+module Rake
+  module DSL
+    alias_method :original_file, :file
+    alias_method :original_rule, :rule
+
+    def file(*args, &block)
+      if block_given?
+        original_file(*args) do |t|
+          puts "Building #{t.name}"
+          block.call(t)
+        end
+      else
+        original_file(*args)
+      end
+    end
+
+    def rule(*args, &block)
+      if block_given?
+        original_rule(*args) do |t|
+          puts "Building #{t.name}"
+          block.call(t)
+        end
+      else
+        original_rule(*args)
+      end
+    end
+  end
+end
+
 POSTS_MD = FileList['posts/*.md']
 POSTS_HTML = POSTS_MD.pathmap('%n.html')
 LINK_PREVIEWS = POSTS_MD.pathmap('assets/link_previews/%n.png')
@@ -172,30 +201,25 @@ multitask :default => [:all]
 multitask :all => [*POSTS_HTML, 'index.html', 'what-i-read.html', 'atom.xml', *LINK_PREVIEWS]
 
 file 'index.html' => ['index.html.erb', *POSTS_HTML, *PARTIALS] do |t|
-  puts "Building #{t.name}"
   posts = POSTS_MD.map { |md| Post.new(md).set_html_attrs! }
   write_html(t.name, 'index.html.erb', binding)
 end
 
 file 'what-i-read.html' => ['what-i-read.html.erb', 'posts/what-i-read.txt', *PARTIALS] do |t|
-  puts "Building #{t.name}"
   write_html(t.name, 'what-i-read.html.erb', binding)
 end
 
 file 'atom.xml' => [*POSTS_HTML] do |t|
-  puts "Building #{t.name}"
   posts = POSTS_MD.map { |md| Post.new(md).set_html_attrs! }
   File.write(t.name, build_rss(posts))
 end
 
 rule %r{^posts/html/.*\.html$} => ->(f){ f.pathmap('posts/%n.md') } do |t|
-  puts "Building #{t.name}"
   Post.new(t.source).build_intermediate_html!
 end
 
 POSTS_HTML.each do |post_html|
   file post_html => ["posts/html/#{post_html}", "post.html.erb", *PARTIALS] do |t|
-    puts "Building #{t.name}"
     md_file = "posts/#{File.basename(t.name, '.html')}.md"
     post = Post.new(md_file).set_html_attrs!
     write_html(t.name, "post.html.erb", binding)
@@ -203,7 +227,6 @@ POSTS_HTML.each do |post_html|
 end
 
 rule %r{^assets/link_previews/.*\.png$} => ->(f) { "posts/html/#{File.basename(f, '.png')}.html" } do |t|
-  puts "Building #{t.name}"
   md_file = "posts/#{File.basename(t.source, '.html')}.md"
   post = Post.new(md_file).set_html_attrs!
   gen_img(post)
