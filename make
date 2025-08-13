@@ -12,8 +12,7 @@ watch() {
     entr -s 'echo "Detected change in: $0"; \
       case "$0" in \
         *.md) \
-          basename=$(basename "$0" .md); \
-          rake "$basename.html" \
+          rake "$(basename "$0" .md).html" \
           ;; \
         *) \
           rake \

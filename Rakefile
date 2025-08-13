@@ -11,13 +11,6 @@ end
 
 CHROME_BINARY = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"'
 
-def write_html(html_file, template_file, caller_binding)
-  # TODO: be explicit about the binding, don't use eval
-  template = Erubi::Engine.new(File.read(template_file), escape: true)
-  html = eval(template.src, caller_binding)
-  File.write(html_file, html)
-end
-
 module Helpers
   def self.years_ago(date)
     date = Date.parse(date)
@@ -26,6 +19,13 @@ module Helpers
     y -= 1 if today.month < date.month || today.month == date.month && today.day < date.day
     y
   end
+end
+
+def write_html(html_file, template_file, caller_binding)
+  # TODO: be explicit about the binding, don't use eval
+  template = Erubi::Engine.new(File.read(template_file), escape: true)
+  html = eval(template.src, caller_binding)
+  File.write(html_file, html)
 end
 
 class Post

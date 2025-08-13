@@ -1,4 +1,6 @@
 # August 2025
+https://www.crunchydata.com/blog/indexing-jsonb-in-postgres
+https://www.youtube.com/watch?v=f30PceqQWko - Don't Forget To Flush by Andrew Kelley
 https://github.com/jbranchaud/til/blob/master/ruby/execute-several-commands-with-backtick-heredoc.md - this guy has LOTS of TILs
 https://www.al3rez.com/todo-txt-journey
 https://registerspill.thorstenball.com/p/joy-and-curiosity-49
