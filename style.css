@@ -119,6 +119,8 @@ summary {
   margin: 0.5em 0;
   font-size: 1.5em;
   font-weight: bold;
+  width: fit-content;
+  cursor: pointer;
 }
 /*
   Formula: fontsize * (#wrap max-width + 2*body margin)
