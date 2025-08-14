@@ -1,58 +1,39 @@
-/* Index */
-#index-header {
-  display: grid;
-  grid-template-columns: 35% 65%;
+/* TODO: use css preprocessor/just include files? */
+/* Global */
+:root {
+  --oceanic-bg: #1b2b34;
+  --oceanic-fg: #c0c5ce;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 18px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+body {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+#wrap {
+  max-width: 41rem;
+  width: 100%;
+}
+a {
+  color: inherit;
+  text-decoration-color: grey;
 
-  #index-header-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      border-radius: 50%;
-      max-width: 100%;
-      height: auto;
-    }
-  }
-
-  #index-header-text {
-    line-height: 1.7;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: fit-content;
-  }
-
-  #index-header-text-text {
-    padding-left: 1.5em;
-    width: fit-content;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    h1 {
-      margin: 0;
-      font-weight: normal;
-      width: fit-content;
-    }
-    span {
-      margin-top: -0.5rem;
-      align-self: center;
-    }
-  }
-
-  #index-header-text-links {
-      margin: 0;
-      padding: 0;
-      padding-left: 1.5em;
-      list-style-type: none;
-    }
+  &:hover {
+    text-decoration-color: var(--oceanic-fg);
   }
 }
-
 i {
   padding-right: 0.5rem;
 }
-
 .icon-container {
   display: inline-block;
   width: 0.8em;
@@ -60,7 +41,6 @@ i {
   vertical-align: middle;
   margin-right: 0.4em;
 }
-
 .icon-container i {
   font-size: 1em;
   width: 100%;
@@ -70,95 +50,76 @@ i {
   justify-content: center;
   padding-right: 0;
 }
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1d1e20;
+    color: #dadadb;
+  }
+}
 
+/* Index */
+#index-header {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  #index-header-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      border-radius: 50%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  #index-header-text {
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    #index-header-text-text {
+      padding-left: 1.5em;
+      width: fit-content;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        margin: 0;
+        font-weight: normal;
+        width: fit-content;
+      }
+      span {
+        margin-top: -0.5rem;
+        align-self: center;
+      }
+    }
+    #index-header-text-links {
+      margin: 0;
+      margin-top: 0.2em;
+      padding: 0;
+      padding-left: 1.5em;
+      list-style-type: none;
+    }
+  }
+}
+h2 {
+  margin: 0.5em 0;
+}
 .index-post-time {
   min-width: 5.7rem;
   display: inline-block;
 }
-
 .img-link {
   border-bottom: none;
 }
-
 .img-link:hover {
   border-bottom: none;
 }
-
-/* Posts */
-pre {
-  overflow: auto;
+summary {
+  margin: 0.5em 0;
+  font-size: 1.5em;
+  font-weight: bold;
 }
-
-code {
-  border-radius: 0.25em;
-  border: 0.25px #4e585d solid;
-  color: var(--oceanic-fg);
-  background: var(--oceanic-bg);
-  font-size: 16px;
-}
-
-pre code {
-  /* Early apply of hljs styles to avoid FOUC */
-  display: block;
-  overflow-x: auto;
-  padding: 1em;
-}
-
-/* Inlines */
-code:not(pre code) {
-  padding: 0.2em;
-}
-
-.footnote-back {
-  margin-left: 0.3em;
-}
-
-article p:has(> img) {
-  text-align: center;
-}
-
-article img {
-  max-width: 100%;
-}
-
-/* Global */
-:root {
-  --oceanic-bg: #1b2b34;
-  --oceanic-fg: #c0c5ce;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 18px;
-  line-height: 1.6;
-  overflow-wrap: break-word;
-}
-
-body {
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-a {
-  color: inherit;
-  text-decoration-color: grey;
-
-  &:hover {
-    text-decoration-color: var(--oceanic-fg);
-  }
-}
-
-#wrap {
-  max-width: 41rem;
-  width: 100%;
-}
-
 /*
   Formula: fontsize * (#wrap max-width + 2*body margin)
   This works because wrap max-width and body margin is set in rem.
@@ -169,27 +130,68 @@ a {
   #index-header {
     grid-template-columns: initial;
     margin-bottom: 0;
-
     img {
       margin: auto auto 0.7rem;
     }
-
     #index-header-text {
       width: auto;
       #index-header-text-text {
         padding-left: 0;
       }
     }
-
     ul {
       padding: 0;
     }
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #1d1e20;
-    color: #dadadb;
-  }
+/* Posts */
+.heading-link {
+  opacity: 0;
+  padding-left: 0.5em;
+  color: inherit;
+  text-decoration: none;
+}
+h1:hover .heading-link,
+h2:hover .heading-link,
+h3:hover .heading-link,
+h4:hover .heading-link,
+h5:hover .heading-link,
+h6:hover .heading-link {
+  opacity: 1;
+}
+.heading-link .icon-container {
+  font-size: 0.8em;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+pre {
+  overflow: auto;
+}
+code {
+  border-radius: 0.25em;
+  border: 0.25px #4e585d solid;
+  color: var(--oceanic-fg);
+  background: var(--oceanic-bg);
+  font-size: 16px;
+}
+pre code {
+  /* Early apply of hljs styles to avoid FOUC */
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+code:not(pre code) {
+  /* Inlines */
+  padding: 0.2em;
+}
+.footnote-back {
+  margin-left: 0.3em;
+}
+article p:has(> img) {
+  text-align: center;
+}
+article img {
+  max-width: 100%;
 }
