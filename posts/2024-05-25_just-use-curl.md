@@ -20,7 +20,7 @@ shenanigans we'll get to. This is not okay as each redirect can easily
 take 10s, wrecking my performance SLO - which, while relatively lax, is
 certainly not to exceed around 30s, and very hopefully below that. I
 needed a way to set a global timeout for ALL redirects in this call to
-`HTTP.get` [^1].
+`HTTP.get` [^globaltimeout].
 
 ## Timeout woes
 
@@ -59,7 +59,7 @@ making, so how wasn't it rescued there?!... Oh. God. Wait. It's
 `Timeout::timeout`, isn't it?...
 
 It was. I suspect it was doubly-bad as HTTP.rb itself uses
-`Timeout::timeout` for its timeouts [^2]. I was triggering this
+`Timeout::timeout` for its timeouts [^httprbtimeout]. I was triggering this
 condition fairly often, in just hundreds of requests, on my machine -
 there's no way we can ship it like this.
 
@@ -69,14 +69,14 @@ Time to look for alternatives, I guess... I'll try not to get into
 hideous technical detail, for both your sake and mine. I checked, and it
 seemed to me that the stdlib Net:HTTP also used `Timeout::timeout` -
 albeit less than HTTP.rb (looks like that it's just for the open
-timeout), so I skipped it for now.
+timeout [^nethttptimeout]), so I skipped it for now.
 
 Then I looked at [async-http](https://github.com/socketry/async-http),
 which was exciting - if everything is nonblocking, cancelling on a timer
 is a non-issue (or even just raising an error like `Task.with_timeout`
 does). But I had lots of trouble trying to port all the behavior I was
 used to in HTTP.rb, with redirections, ssl options, headers, all that.
-The API wasn't as ergonomic as I'd hoped [^3]. I tried using it with the
+The API wasn't as ergonomic as I'd hoped [^asynchttp]. I tried using it with the
 [Faraday adapter](https://github.com/socketry/async-http-faraday), but I
 found out that I couldn't use Faraday for entirely different,
 project-specific, reasons.
@@ -120,7 +120,7 @@ Yes.
 Tongue-in-cheek. But, in retrospect, it sounds obvious - cURL is
 venerable and legendary. Lindy's law in effect! Of course though, pure
 ruby gems have many advantages compared to ffi/native gems, not least of
-which not randomly segfaulting [^4]. But we'll see how it goes for me
+which not randomly segfaulting [^pureruby]. But we'll see how it goes for me
 and curl wrappers.
 
 Also, please burn `Timeout::timeout` with fire.
@@ -135,18 +135,20 @@ and it also currently loses otel tracing context (at least in our app).
 But other than that, I found it to be a good solution to the timeout
 problem.
 
-[^1]: I later found an imperfect but "good enough" solution to this
+[^globaltimeout]: I later found an imperfect but "good enough" solution to this
     using HTTPX, but it hadn't come to me at this time. Using the
     callbacks plugin, check the time elapsed since starting on each
     redirect and bail out if over the target.
 
-[^2]: There seems to be a [timeout
+[^httprbtimeout]: There seems to be a [timeout
     redesign](https://github.com/httprb/http/issues/773) coming for the
     next version, which sounds great!
 
-[^3]: This is when it hits me that HTTP clients are SUPER non-trivial.
+[^asynchttp]: This is when it hits me that HTTP clients are SUPER non-trivial.
     You'd think making HTTP requests was easy. Yeah.
 
-[^4]: Also, pure ruby gems work in async! A curl wrapper can't yield to
+[^pureruby]: Also, pure ruby gems work in async! A curl wrapper can't yield to
     the event loop since it's off in libcurl - which obviously isn't
     aware that we're running it in a fiber in an event loop!
+
+[^nethttptimeout]: It uses `BufferedIO` for the [remaining timeouts](https://github.com/ruby/net-http/blob/70059463d97f9a62415dd4df654285d366cfae10/lib/net/http.rb#L1742), which [uses](https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/lib/net/protocol.rb#L229) `.wait_readable` (or `wait_writeable`), which [uses](https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/io.c#L15882) `io_wait_readable`, which [uses](https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/io.c#L9835) `io_wait_event`, which [uses](https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/io.c#L9793) `rb_io_wait`, that when not using the fiber scheduler, ends up [using either](https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/thread.c#L4566) `poll` or `select` in `wait_for_single_fd_blocking_region` [through](https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/thread.c#L4612) `thread_io_wait`. Yay!
