@@ -1,4 +1,12 @@
+# September 2025
+https://www.usenix.org/system/files/conference/hotos15/hotos15-paper-mcsherry.pdf - Scalability! But at what COST?
+https://docs.tigerbeetle.com/coding/reliable-transaction-submission/
+https://docs.tigerbeetle.com/concepts/safety/
+https://docs.tigerbeetle.com/concepts/performance/
+https://www.youtube.com/watch?v=yKgfk8lTQuE - "1000x: The Power of an Interface for Performance by Joran Dirk Greef"
+
 # August 2025
+https://kirshatrov.com/posts/pg-shmem
 https://una.im/5-css-functions/
 https://antirez.com/news/155
 https://www.ag-grid.com/react-data-grid/getting-started/
