@@ -1,4 +1,13 @@
 # September 2025
+https://www.seangoedecke.com/staff-engineer-promotions
+https://www.seangoedecke.com/party-tricks/
+https://www.seangoedecke.com/breaking-rules/
+https://www.seangoedecke.com/seeing-like-a-software-company
+https://www.energycrystals.io/p/the-spanish-grid-was-fine-three-minutes
+https://theonion.com/fuck-everything-were-doing-five-blades-1819584036
+https://h4x0r.org/futex/
+https://blog.codinghorror.com/the-ten-commandments-of-egoless-programming/
+https://www.youtube.com/watch?v=YGLNyHd2w10 - Graph Theory in State-Space
 https://www.usenix.org/system/files/conference/hotos15/hotos15-paper-mcsherry.pdf - Scalability! But at what COST?
 https://docs.tigerbeetle.com/coding/reliable-transaction-submission/
 https://docs.tigerbeetle.com/concepts/safety/
@@ -6,6 +15,69 @@ https://docs.tigerbeetle.com/concepts/performance/
 https://www.youtube.com/watch?v=yKgfk8lTQuE - "1000x: The Power of an Interface for Performance by Joran Dirk Greef"
 
 # August 2025
+https://linear.app/now/quality-wednesdays
+https://www.tokyocowboy.co/articles/doai-eki-japans-creepiest-station
+https://en.wikipedia.org/wiki/Wikipedia:Don%27t_stuff_beans_up_your_nose
+https://about.gitlab.com/blog/migrating-to-puma-on-gitlab/
+https://lobste.rs/s/ik0pjv/left_right_programming
+https://unplannedobsolescence.com/blog/best-hello-world-web-development/
+https://vim.gabornyeki.com
+https://nadia.xyz/shameless
+https://jpcamara.com/2023/03/07/making-tanstack-table.html
+https://dlang.org/spec/function.html#pseudo-member
+https://www.thedriftmag.com/skill-issues/
+https://www.mindflash.org/coding/ai/ai-and-the-bus-factor-of-0-1608
+https://marektoth.com/blog/dom-based-extension-clickjacking
+https://leftoversalad.com/c/015_programmingpeople/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-51
+https://medium.com/@jamesacowling/stepping-stones-not-milestones-e6be0073563f
+https://www.seangoedecke.com/dangerous-advice/
+https://www.seangoedecke.com/programmer-archetypes/
+https://www.seangoedecke.com/predators/
+https://www.seangoedecke.com/the-simplest-thing-that-could-possibly-work/
+https://t3x.org/
+https://fchollet.substack.com/p/how-i-think-about-llm-prompt-engineering
+https://www.robinsloan.com/newsletters/inevitable-technologies/
+https://www.derekthompson.org/p/how-ai-conquered-the-us-economy-a
+https://infosec.exchange/@jann/115022521451508325 - rcu_synchronize in linux being slow
+https://en.m.wikipedia.org/wiki/Planning_fallacy
+https://minifeed.net/blogs/SHriJW - all of sirupsen Simon Eskildsen napkin problems
+https://sirupsen.com/index-merges
+https://github.com/kilimchoi/engineering-blogs
+https://alexsci.com/rss-blogroll-network/blogrolls/ - find blogs
+https://news.ycombinator.com/item?id=44855157 - Show HN: Engineering.fyi – Search across tech engineering blogs in one place (engineering.fyi)
+https://news.ycombinator.com/item?id=44878151 - Show HN: Building a web search engine from scratch with 3B neural embeddings (blog.wilsonl.in)
+https://news.ycombinator.com/item?id=44864185A - Claude Code is all you need (dwyer.co.za)
+https://www.enterprisedb.com/postgres-tutorials/history-improvements-vacuum-postgresql
+https://pganalyze.com/docs/vacuum-advisor/what-is-freezing
+https://spacelift.io/blog/k3s-vs-k8s#what-is-the-difference-between-k3s-and-k8s
+https://www.seangoedecke.com/good-system-design
+https://registerspill.thorstenball.com/p/joy-and-curiosity-50
+https://en.wikipedia.org/wiki/Berkson%27s_paradox
+https://usefulfictions.substack.com/p/50-things-i-know
+https://daniel.haxx.se/blog/2025/08/08/http-is-not-simple/
+https://www.vibechart.net/
+https://www.scattered-thoughts.net/writing/everyones-got-one/
+https://spiess.dev/blog/how-i-use-claude-code
+https://predr.ag/blog/mediocrity-can-be-a-sign-of-excellence/
+https://news.ycombinator.com/item?id=44860847 - Going faster than memcpy (squadrick.dev)
+https://news.ycombinator.com/item?id=44836463 - How we replaced Elasticsearch and MongoDB with Rust and RocksDB (radar.com)
+https://news.ycombinator.com/item?id=44798189 - Things that helped me get out of the AI 10x engineer imposter syndrome (colton.dev)
+https://philipotoole.com/consistency-over-availability-how-rqlite-handles-the-cap-theorem/
+https://distantprovince.by/posts/its-rude-to-show-ai-output-to-people/
+https://github.com/OpenHFT/Chronicle-Queue
+https://blog.habets.se/2025/07/Go-is-still-not-good.html
+https://blog.habets.se/2013/10/Why-Go-is-not-my-favourite-language.html
+https://blog.habets.se/2022/08/Java-a-fractal-of-bad-experiments.html
+https://www.honeycomb.io/blog/its-the-end-of-observability-as-we-know-it-and-i-feel-fine
+https://github.com/digital-fabric/uringmachine
+https://en.wikipedia.org/wiki/Read-copy-update
+https://tanstack.com/table/v8/docs/guide/data
+https://www.jacobelder.com/2025/02/25/habits-and-tools-effective-remote-teams.html - internal twitter, personal rubber duck channels
+https://ergaster.org/til/base64-encoded-json/
+https://deprogrammaticaipsum.com/the-toyota-corolla-of-programming/
+https://kashw1n.com/blog/nodejs-2025/
+https://www.atlasobscura.com/articles/pointing-and-calling-japan-trains
 https://kirshatrov.com/posts/pg-shmem
 https://una.im/5-css-functions/
 https://antirez.com/news/155
