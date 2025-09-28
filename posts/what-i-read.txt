@@ -1,4 +1,39 @@
 # September 2025
+https://dizzy.zone/2025/09/24/Redis-is-fast-Ill-cache-in-Postgres/
+https://meks.quest/blogs/the-theatre-of-pull-requests-and-code-review
+https://www.industrialempathy.com/posts/10x-engineer/
+https://pgroonga.github.io/reference/pgroonga-versus-textsearch-and-pg-trgm.html
+https://www.youtube.com/watch?v=9XiGGc8Xo4g - Did CloudFlare Lie? cloudflare useEffect react query
+https://tkdodo.eu/blog/how-infinite-queries-work
+https://thedailywtf.com/articles/The-Speedup-Loop
+https://press.uchicago.edu/Misc/Chicago/511928.html
+https://clerk.com/blog/2025-09-18-database-incident-postmortem
+https://en.wikipedia.org/wiki/Bus_bunching
+https://news.ycombinator.com/item?id=45254763 - Boring is good (jenson.org)
+https://en.wikipedia.org/wiki/SipHash
+https://harpers.org/archive/1932/10/in-praise-of-idleness/ - by Bertrand Russell
+https://news.ycombinator.com/item?id=45261930 - Generative AI as Seniority-Biased Technological Change (ssrn.com)
+https://www.trustedsec.com/blog/onedrive-to-enum-them-all
+http://conway.rutgers.edu/~ccshan/wiki/blog/posts/WordNumbers1/
+https://news.ycombinator.com/item?id=45222695 - Many hard LeetCode problems are easy constraint problems (buttondown.com/hillelwayne)
+https://therussiansusedapencil.com/post/175863624/the-pencil
+https://www.snopes.com/fact-check/the-write-stuff/
+https://bun.com/blog/behind-the-scenes-of-bun-install
+https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference
+https://blog.apiad.net/p/the-four-fallacies-of-modern-ai
+https://andre.arko.net/2025/09/11/rails-on-sqlite-exciting-new-ways-to-cause-outages/
+https://substack.com/inbox/post/173391778 - Architecture by Fashion, Not Fundamentals - or, use trees in backend code.
+https://ordep.dev/posts/livelocks
+https://www.orioledb.com/docs
+https://benjdd.com/az/
+https://railsatscale.com/2025-09-08-how-ruby-executes-jit-code-the-hidden-mechanics-behind-the-magic/
+https://en.wikipedia.org/wiki/Precision_and_recall
+https://news.ycombinator.com/item?id=24904644 - history of postgres's connection model
+https://news.ycombinator.com/item?id=45130143 - I solved a distributed queue problem after 15 years (dbos.dev)
+https://react.dev/reference/react/memo
+https://chrlschn.dev/blog/2025/01/the-inverted-reactivity-model-of-react/
+https://duarteocarmo.com/blog/common-misconceptions-about-ai
+https://web.archive.org/web/20190308152212/https://mailman.nanog.org/pipermail/nanog/2017-October/092636.html
 https://www.seangoedecke.com/staff-engineer-promotions
 https://www.seangoedecke.com/party-tricks/
 https://www.seangoedecke.com/breaking-rules/
@@ -117,7 +152,6 @@ https://www.open-std.org/JTC1/SC22/WG21/docs/papers/2018/p1364r0.pdf - Fibers un
 https://www.gibney.org/prompt_coding
 https://blog.bytebytego.com/p/how-cursor-serves-billions-of-ai
 https://postgrespro.com/blog/pgsql/5968005 - Locks in PostgreSQL: 2. Row-level locks
-https://byteofdev.com/posts/making-postgres-slow/
 https://registerspill.thorstenball.com/p/joy-and-curiosity-47
 https://esafev.com/notes/why-i-do-programming/
 https://sirupsen.com/napkin/problem-15
@@ -1016,7 +1050,7 @@ https://rfd.shared.oxide.computer/rfd/0053
 https://stackoverflow.com/a/75391120
 https://www.jamesarmes.com/2023/03/bidirectional-replication-postgresql-pglogical.html
 https://aws.amazon.com/blogs/database/postgresql-bi-directional-replication-using-pglogical/
-https://news.ycombinator.com/item?id=41159797 - How to Get or Create in PostgreSQL
+https://news.ycombinator.com/item?id=41159797 - How to Get or Create in PostgreSQL - upsert, merge
 https://lobste.rs/s/hxauaw/y_all_are_sleeping_on_http_3
 https://news.ycombinator.com/item?id=41164885 - Debugging a rustc segfault on Illumos
 https://willj.net/posts/you-should-use-the-rails-logger-block-syntax/

@@ -7,7 +7,6 @@
     FILENAME = "posts/what-i-read.txt"
     content = File.read(FILENAME)
     if content.include?("?utm_source=substack&utm_medium=email")
-      puts "Removing Substack link"
       File.write(FILENAME, content.gsub(/\?utm_source=substack&utm_medium=email/, ""))
     end
     file = File.new(FILENAME)
