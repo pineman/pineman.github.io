@@ -1,4 +1,78 @@
+# October 2025
+https://web.archive.org/web/20250923061508/https://edwardpackard.com/wp-content/uploads/2025/09/Nine-Things-I-Learned-in-Ninety-Years.pdf
+https://blog.bearcats.nl/simple-message-queue/
+https://spinroot.com/gerard/pdf/P10.pdf - The Power of Ten – Rules for Developing Safety Critical Code
+https://www.rfc-editor.org/rfc/rfc1925.html - The Twelve Networking Truths
+https://en.wikipedia.org/wiki/Heisenbug#Related_terms
+https://registerspill.thorstenball.com/p/joy-and-curiosity-57
+https://www.rfleury.com/p/multi-core-by-default
+https://scholar.harvard.edu/files/mickens/files/thenightwatch.pdf
+https://demian.ferrei.ro/snake
+https://tobi.lutke.com/blogs/news/11280301-the-apprentice-programmer
+https://sharif.io/anna-alexei
+https://mitchellh.com/writing/non-trivial-vibing
+https://vkoskiv.com/first-linux-patch/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-56
+https://intuitiveexplanations.com/tech/replit/
+https://chrislakin.blog/p/social-anxiety
+https://en.wikipedia.org/wiki/Behavioral_sink
+https://simonwillison.net/2025/Sep/6/research-goblin/
+https://entropicthoughts.com/you-want-technology-with-warts
+https://refactoringenglish.com/blog/software-essays-that-shaped-me/
+https://www.experimental-history.com/p/thank-you-for-being-annoying
+https://read.engineerscodex.com/p/how-instagram-scaled-to-14-million
+https://news.ycombinator.com/item?id=45163945 - Using Claude Code to modernize a 25-year-old kernel driver (dmitrybrant.com)
+https://www.youtube.com/watch?v=4KvbVq3Eg5w - Composition Is All You Need | Fernando Rojo at React Universe Conf 2025
+https://matklad.github.io/2023/10/06/what-is-an-invariant.html
+https://paulgraham.com/think.html
+https://avi.im/blag/2025/setsum/
+https://www.zenml.io/llmops-database/llms-for-enhanced-search-retrieval-and-query-understanding
+https://tigerbeetle.com/blog/2021-08-30-three-clocks-are-better-than-one/
+https://matklad.github.io/2023/03/26/zig-and-rust.html
+https://speakerdeck.com/ioquatix/building-deploying-and-monitoring-ruby-web-applications-with-falcon-kaigi-on-rails-2025?slide=301
+https://news.ycombinator.com/item?id=45538760 - PSA: Always use a separate domain for user content (statichost.eu)
+https://news.ycombinator.com/item?id=45218111 - Debian 13, Postgres, and the US/* time zones (rachelbythebay.com)
+https://mayberay.bearblog.dev/why-i-only-use-google-sheets/
+https://www.amplifypartners.com/blog-posts/why-tigerbeetle-is-the-most-interesting-database-in-the-world
+
 # September 2025
+https://www.seangoedecke.com/working-for-americans/
+https://www.seangoedecke.com/taste
+https://joel.drapper.me/p/yippee/
+https://bigdata.2minutestreaming.com/p/how-aws-s3-scales-with-tens-of-millions-of-hard-drives
+https://questdb.com/blog/rust-fetch-max-compiler-journey/
+https://slatestarcodex.com/2014/03/24/should-you-reverse-any-advice-you-hear/
+https://news.ycombinator.com/item?id=45152402 - Being good isn't enough (joshs.bearblog.dev)
+https://dynomight.net/liking/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-53
+https://claudelog.com/mechanics/you-are-the-main-thread/
+https://github.com/zakirullin/cognitive-load
+https://www.benning.army.mil/infantry/199th/ocs/content/pdf/Message%20to%20Garcia.pdf
+https://www.sanity.io/blog/first-attempt-will-be-95-garbage
+https://news.ycombinator.com/item?id=45163945
+https://registerspill.thorstenball.com/p/joy-and-curiosity-55
+https://www.paulgraham.com/fundraising.html
+https://leerob.com/beliefs
+https://mitchellh.com/writing/libghostty-is-coming
+https://anniemueller.com/posts/how-i-a-non-developer-read-the-tutorial-you-a-developer-wrote-for-me-a-beginner
+https://docs.google.com/document/d/1Am8bYA1aoXuSGFg7w7NjlHXFZiSAEt_oAVITPYdNRGo/mobilebasic - I ran out of money a year ago, spent the last of my savings on a prostitute in Hong Kong, and became a commie.
+https://neal.fun/not-a-robot
+https://elixirschool.com/en/lessons/intermediate/error_handling
+https://en.wikipedia.org/wiki/Counting_sort
+https://www.sanity.io/blog/first-attempt-will-be-95-garbage
+https://research.swtch.com/glob
+https://www.tumblr.com/accidentallyquadratic
+https://lucumr.pocoo.org/2025/9/29/90-percent/
+https://news.ycombinator.com/item?id=45415332 - Subtleties of SQLite Indexes (emschwartz.me)
+https://www.joelonsoftware.com/2001/03/23/strategy-letter-iv-bloatware-and-the-8020-myth/
+https://www.joelonsoftware.com/2006/12/09/simplicity/
+https://news.ycombinator.com/item?id=45412494 - Tuning async IO in PostgreSQL 18 (vondra.me)
+https://joel.drapper.me/p/yippee/
+https://go.dev/blog/flight-recorder
+https://go.dev/blog/execution-traces-2024
+https://turbopuffer.com/blog/turbopuffer
+https://bigdata.2minutestreaming.com/p/how-aws-s3-scales-with-tens-of-millions-of-hard-drives
+https://nat.org/
 https://dizzy.zone/2025/09/24/Redis-is-fast-Ill-cache-in-Postgres/
 https://meks.quest/blogs/the-theatre-of-pull-requests-and-code-review
 https://www.industrialempathy.com/posts/10x-engineer/
@@ -932,6 +1006,7 @@ https://registerspill.thorstenball.com/p/glad-i-did-it-in-go
 https://www.youtube.com/watch?v=LcJKxPXYudE - "Microservices are Technical Debt"
 
 # September 2024
+https://www.crunchydata.com/blog/prepared-statements-in-transaction-mode-for-pgbouncer
 https://news.ycombinator.com/item?id=19105733 - "Reflecting on My Failure to Build a Billion-Dollar Company"
 https://registerspill.thorstenball.com/p/skin-shedding-code
 https://www.youtube.com/watch?v=Ch9R4ZxvtG0 - "Oxide and Friends 9/16/2024 -- Reflecting on Founder Mode"
@@ -970,7 +1045,7 @@ https://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer/
 https://medium.com/@chadfowler/the-best-job-description-for-an-engineer-ever-written-57b42919cc2f
 https://www.recurse.com/manual
 https://steve-yegge.blogspot.com/2007/06/rich-programmer-food.html
-http://hintjens.com/blog:106
+http://hintjens.com/blog:106 - Why Optimistic Merging Works Better
 https://signalvnoise.com/posts/2794-how-to-get-good-at-making-money
 https://signalvnoise.com/posts/3124-give-it-five-minutes
 https://registerspill.thorstenball.com/p/joy-and-curiosity-7
