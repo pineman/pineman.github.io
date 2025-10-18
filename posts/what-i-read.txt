@@ -1,4 +1,13 @@
 # October 2025
+https://news.ycombinator.com/item?id=45581602 - Talent (felixstocker.com)
+https://news.ycombinator.com/item?id=45619329 - Andrej Karpathy – AGI is still a decade away (dwarkesh.com)
+https://news.ycombinator.com/item?id=45614922 - Migrating from AWS to Hetzner (digitalsociety.coop)
+https://temporal.io/blog/temporal-ruby-crash-proof-fibers
+https://www.youtube.com/watch?v=wLn28DrSF68 - Building a Life - Howard H. Stevenson (2013)
+https://news.ycombinator.com/item?id=45514213 - Scaling request logging with ClickHouse, Kafka, and Vector (geocod.io)
+https://news.ycombinator.com/item?id=45551450 - Rating 26 years of Java changes (neilmadden.blog)
+https://jack-vanlightly.com/blog/2025/10/8/beyond-indexes-how-open-table-formats-optimize-query-performance
+https://www.tigerdata.com/blog/building-columnar-compression-in-a-row-oriented-database
 https://web.archive.org/web/20250923061508/https://edwardpackard.com/wp-content/uploads/2025/09/Nine-Things-I-Learned-in-Ninety-Years.pdf
 https://blog.bearcats.nl/simple-message-queue/
 https://spinroot.com/gerard/pdf/P10.pdf - The Power of Ten – Rules for Developing Safety Critical Code
