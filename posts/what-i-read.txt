@@ -1,4 +1,46 @@
 # October 2025
+https://tawandamunongo.dev/posts/2025/10/ai-work-more
+https://georgesaunders.substack.com/p/a-tough-question-indeed
+https://allvpv.org/turn-off-cursor/
+https://drobinin.com/posts/designing-software-for-things-that-rot/
+https://jacobian.org/2017/nov/1/you-have-two-jobs/
+https://vickiboykis.com/2024/12/16/write-code-with-your-alphabet-radio-on/
+https://vickiboykis.com/2025/10/20/i-want-to-see-the-claw/
+https://www.nan.fyi/database
+https://registerspill.thorstenball.com/p/joy-and-curiosity-59
+https://unplannedobsolescence.com/blog/what-dynamic-typing-is-for/
+https://htmx.org/essays/no-build-step/
+https://en.wikipedia.org/wiki/Paul_Erd%C5%91s
+https://oxide.computer/blog/systems-software-in-the-large
+https://news.ycombinator.com/item?id=45687458 - /dev/null is an ACID compliant database (jyu.dev)
+https://www.seangoedecke.com/good-code-reviews/#fnref-4
+https://www.seangoedecke.com/pure-and-impure-engineering/
+https://news.ycombinator.com/item?id=45633311 - The future of Python web services looks GIL-free (baro.dev) - asgi async: a bit better perf, lower memusage, but crucially no longer need to increase worker count (one event loop per proc, and therefore heavy mem usage) to scale. wsgi sync: kinda same perf, increased memusage but probably fixable? best part is no longer having to tradeoff worker-thread count for cpu-io ratio (like the puma worker-thread count discussion)
+https://planetscale.com/blog/benchmarking-postgres-17-vs-18
+https://news.ycombinator.com/item?id=35342464 - Quicker serverless Postgres connections (neon.tech)
+https://news.ycombinator.com/item?id=37089925 - Supavisor: Scaling Postgres to 1M Connections (supabase.com)
+https://news.ycombinator.com/item?id=45706380 - The Journey Before main() (prasad.me)
+https://brooker.co.za/blog/2025/10/22/uuidv7
+https://news.ycombinator.com/item?id=45678511 - Programming with Less Than Nothing (joshmoody.org)
+https://metaduck.com/decipad-technical-challenges/
+https://news.ycombinator.com/item?id=45639250 - Forth: The programming language that writes itself (ratfactor.com)
+https://www.cybertec-postgresql.com/en/benefits-of-a-descending-index/
+https://steveklabnik.com/writing/i-see-a-future-in-jj/
+https://www.unkey.com/blog/serverless-exit
+https://mazzo.li/posts/stopping-linux-threads.html
+https://cs.stanford.edu/people/karpathy/advice.html
+https://www.tylervigen.com/spurious-correlations
+https://www.youtube.com/watch?v=QdTxhcHcDY0 - Recommendations pipeline = Lusha and Elastic
+https://temporal.io/blog/cargo-smarter-go-to-market-with-temporal
+https://www.lesswrong.com/posts/9ZodFr54FtpLThHZh/experiential-pica
+https://florian.github.io/bloom-filters/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-58
+https://boz.com/articles/self-actualization
+https://www.educationprogress.org/p/schools-should-pursue-excellence
+https://archive.is/3Qxu2 - Why kids need to take more risks: science reveals the benefits of wild, free play
+https://destraynor.com/writing/this-doesnt-bode-well/
+https://www.youtube.com/watch?v=2SEgQiu8XaU - A Cheeky Pint with Intercom Cofounder Des Traynor
+https://destraynor.com/writing/the-purpose-of-a-system-is-what-it-does
 https://news.ycombinator.com/item?id=45581602 - Talent (felixstocker.com)
 https://news.ycombinator.com/item?id=45619329 - Andrej Karpathy – AGI is still a decade away (dwarkesh.com)
 https://news.ycombinator.com/item?id=45614922 - Migrating from AWS to Hetzner (digitalsociety.coop)
