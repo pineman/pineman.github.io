@@ -1,5 +1,9 @@
 # October 2025
-https://tawandamunongo.dev/posts/2025/10/ai-work-more
+https://news.ycombinator.com/item?id=45707658 - The Linux Boot Process: From Power Button to Kernel (0xkato.xyz)
+https://andrewkelley.me/post/zig-new-async-io-text-version.html
+https://www.reddit.com/r/ClaudeCode/comments/1oivs81/claude_code_is_a_beast_tips_from_6_months_of/
+https://fs.blog/great-talks/psychology-human-misjudgment/ - The Psychology of Human Misjudgment, by Charlie Munger
+https://news.ycombinator.com/item?id=45656916 - AI is making us work more (tawandamunongo.dev)
 https://georgesaunders.substack.com/p/a-tough-question-indeed
 https://allvpv.org/turn-off-cursor/
 https://drobinin.com/posts/designing-software-for-things-that-rot/
@@ -41,7 +45,7 @@ https://archive.is/3Qxu2 - Why kids need to take more risks: science reveals the
 https://destraynor.com/writing/this-doesnt-bode-well/
 https://www.youtube.com/watch?v=2SEgQiu8XaU - A Cheeky Pint with Intercom Cofounder Des Traynor
 https://destraynor.com/writing/the-purpose-of-a-system-is-what-it-does
-https://news.ycombinator.com/item?id=45581602 - Talent (felixstocker.com)
+https://news.ycombinator.com/item?id=45608456 - Talent (felixstocker.com)
 https://news.ycombinator.com/item?id=45619329 - Andrej Karpathy – AGI is still a decade away (dwarkesh.com)
 https://news.ycombinator.com/item?id=45614922 - Migrating from AWS to Hetzner (digitalsociety.coop)
 https://temporal.io/blog/temporal-ruby-crash-proof-fibers
@@ -99,8 +103,6 @@ https://registerspill.thorstenball.com/p/joy-and-curiosity-53
 https://claudelog.com/mechanics/you-are-the-main-thread/
 https://github.com/zakirullin/cognitive-load
 https://www.benning.army.mil/infantry/199th/ocs/content/pdf/Message%20to%20Garcia.pdf
-https://www.sanity.io/blog/first-attempt-will-be-95-garbage
-https://news.ycombinator.com/item?id=45163945
 https://registerspill.thorstenball.com/p/joy-and-curiosity-55
 https://www.paulgraham.com/fundraising.html
 https://leerob.com/beliefs
@@ -118,11 +120,9 @@ https://news.ycombinator.com/item?id=45415332 - Subtleties of SQLite Indexes (em
 https://www.joelonsoftware.com/2001/03/23/strategy-letter-iv-bloatware-and-the-8020-myth/
 https://www.joelonsoftware.com/2006/12/09/simplicity/
 https://news.ycombinator.com/item?id=45412494 - Tuning async IO in PostgreSQL 18 (vondra.me)
-https://joel.drapper.me/p/yippee/
 https://go.dev/blog/flight-recorder
 https://go.dev/blog/execution-traces-2024
 https://turbopuffer.com/blog/turbopuffer
-https://bigdata.2minutestreaming.com/p/how-aws-s3-scales-with-tens-of-millions-of-hard-drives
 https://nat.org/
 https://dizzy.zone/2025/09/24/Redis-is-fast-Ill-cache-in-Postgres/
 https://meks.quest/blogs/the-theatre-of-pull-requests-and-code-review
@@ -336,7 +336,6 @@ https://brooker.co.za/blog/2025/06/20/career.html
 https://longform.asmartbear.com/chaos-at-start/
 https://longform.asmartbear.com/perseverance/
 https://en.wikipedia.org/wiki/Damocles
-https://crawshaw.io/blog/programming-with-agents
 https://thorstenball.com/blog/2012/09/02/software-covers-and-programming-licks/
 https://blog.jsbarretto.com/post/software-is-joy
 https://en.wikipedia.org/wiki/Threaded_code
@@ -400,7 +399,6 @@ https://1517.substack.com/p/why-bell-labs-worked
 https://rjp.io/blog/2025-05-31-stepping-back
 https://usefulfictions.substack.com/p/crossing-the-cringe-minefield
 https://www.orioledb.com/blog/orioledb-bridged-indexes
-https://lobste.rs/s/n2lvmy/ai_changes_everything
 https://lobste.rs/s/uwp2hd/what_s_your_go_message_queue_2025
 https://apenwarr.ca/log/20170814
 https://dev.to/mongodb/jsonb-detoasting-read-amplification-4ikj
@@ -440,7 +438,6 @@ https://www.enterprisedb.com/blog/postgresql-anti-patterns-read-modify-write-cyc
 https://mattweidner.com/2025/05/21/text-without-crdts.html
 https://news.ycombinator.com/item?id=44020107 - Inigo Quilez: computer graphics, mathematics, shaders, fractals, demoscene (iquilezles.org)
 https://news.ycombinator.com/item?id=44071610 - Writing A Job Runner (In Elixir) (Again) (10 years later) (github.com/notactuallytreyanastasio)
-https://railsatscale.com/2025-05-21-fast-allocations-in-ruby-3-5/
 https://github.com/notactuallytreyanastasio/genstage_tutorial_2025/blob/main/README.md
 https://pgdog.dev/blog/hacking-postgres-wire-protocol
 https://heitorpb.github.io/bla/timeout/
@@ -495,7 +492,6 @@ https://mcyoung.xyz/2025/04/21/go-arenas
 https://news.ycombinator.com/item?id=43763688 - ClickHouse gets lazier and faster: Introducing lazy materialization (clickhouse.com)
 https://cookieplmonster.github.io/2025/04/23/gta-san-andreas-win11-24h2-bug/#
 https://motherduck.com/blog/introducing-instant-sql/
-https://ampcode.com/how-to-build-an-agent
 https://www.joshwcomeau.com/blog/the-post-developer-era/
 https://cookbook.openai.com/examples/gpt4-1_prompting_guide
 https://justinjaffray.com/query-engines-push-vs.-pull/
@@ -586,10 +582,9 @@ https://blog.julik.nl/2025/03/a-tiny-undo-stack
 https://registerspill.thorstenball.com/p/joy-and-curiosity-33
 https://posthog.com/newsletter/communication-mistakes
 https://www.highagency.com/
-https://news.ycombinator.com/item?id=43451285 - Ruby, Ractors, and lock-free data structures (iliabylich.github.io) - aren't ractors supposed to be actors? why go to all this trouble to share stuff? because we're afraid copying will be slow?
 https://brightonruby.com/2024/ractors-are-rubys-goroutines/
 https://brooker.co.za/blog/2025/03/25/two-queues.html - One or Two? How Many Queues?
-https://news.ycombinator.com/item?id=43451285 - Ruby, Ractors, and lock-free data structures (iliabylich.github.io) - aren't ractors supposed to be actors? why not init cpu count ractors, make each ractor listen on different ports, load balance them externally, and make each ractor open a new db connection on init? sort of like how nodejs applications are clustered
+https://news.ycombinator.com/item?id=43451285 - Ruby, Ractors, and lock-free data structures (iliabylich.github.io) - aren't ractors supposed to be actors? why go to all this trouble to share stuff? because we're afraid copying will be slow? why not init cpu count ractors, make each ractor listen on different ports, load balance them externally, and make each ractor open a new db connection on init? sort of like how nodejs applications are clustered
 https://www.computerenhance.com/p/an-interview-with-zen-chief-architect
 https://wiki.c2.com/?EverythingIsa
 https://www.lianeon.org/p/does-material-progress-matter
@@ -610,7 +605,6 @@ https://ankitmaloo.com/bitter-lesson
 https://www.tinybird.co/blog-posts/using-bloom-filter-text-indexes-in-clickhouse
 https://ezyang.github.io/ai-blindspots/
 https://charlesnagy.info/it/postgresql/group-by-limit-per-group-in-postgresql -- finally: limiting order by in a group by. see https://www.postgresql.org/docs/current/indexes-ordering.html, useful for index (category_id, popularity desc) https://claude.ai/share/058c6f52-9fa3-4ea4-8d75-8ff260713ddd
-https://www.builder.io/blog/cursor-tips
 https://simonwillison.net/2025/Mar/11/using-llms-for-code
 https://github.com/microsoft/typescript-go/discussions/411#discussioncomment-12469481
 https://www.builder.io/blog/cursor-tips
@@ -1271,14 +1265,12 @@ https://news.ycombinator.com/item?id=890558
 https://news.ycombinator.com/item?id=40835274 - "Weekend projects: getting silly with C"
 https://news.ycombinator.com/item?id=40829607 - "A bunch of programming advice I'd give to myself 15 years ago"
 https://qntm.org/assist
-https://blog.regehr.org/archives/1393
 https://schneems.com/2017/08/01/is-webrick-webscale/
 https://blog.archive.org/2024/06/01/the-backrooms-of-the-internet-archive/
 https://brandur.org/fragments/sqlc-2024
 https://scoutapm.com/blog/how-to-make-text-searches-in-postgresql-faster-with-trigram-similarity
 https://alexklibisz.com/2022/02/18/optimizing-postgres-trigram-search
 https://news.ycombinator.com/item?id=40714544 - "What happens to latency if service time is cut in half (2022)"
-https://lobste.rs/s/o51y4t/why_people_are_angry_over_go_1_23_iterators
 https://news.ycombinator.com/item?id=40737511 - "The Pre-Scheme Restoration"
 https://offlinemark.com/an-obscure-quirk-of-proc
 https://lobste.rs/s/zfdwiu/ruby_great_language_for_shell_scripts https://news.ycombinator.com/item?id=40763640
@@ -1324,7 +1316,6 @@ https://world.hey.com/jorge/aging-programmer-d448bdec
 https://world.hey.com/jorge/don-t-block-yourself-a-remote-worker-super-power-7322c679
 https://www.aha.io/engineering/articles/debugging-ruby-the-hard-way
 https://changelog.com/podcast/592 - "From Sun to Oxide, with Bryan Cantrill"
-https://evilmartians.com/chronicles/viewcomponent-in-the-wild-building-modern-rails-frontends
 https://evilmartians.com/chronicles/gemfile-of-dreams-libraries-we-use-to-build-rails-apps
 https://brandur.org/two-phase-render
 https://www.mikeperham.com/how-sidekiq-works
@@ -1503,7 +1494,6 @@ https://rxdb.info/articles/websockets-sse-polling-webrtc-webtransport.html
 https://whoisryosuke.com/blog/2023/getting-started-with-egui-in-rust
 https://news.ycombinator.com/item?id=39731195 - https://registerspill.thorstenball.com/p/a-few-words-on-testing
 https://www.figma.com/blog/how-figma-scaled-to-multiple-databases
-https://www.figma.com/blog/how-figmas-databases-team-lived-to-tell-the-scale/
 https://notes.eatonphil.com/2024-03-15-zig-rust-and-other-languages.html
 https://alexandrehtrb.github.io/posts/2024/03/http2-and-http3-explained/
 https://www.youtube.com/watch?v=8aGhZQkoFbQ - "What the heck is the event loop anyway? | Philip Roberts | JSConf EU"
@@ -1896,7 +1886,6 @@ https://github.com/sidekiq/sidekiq/wiki/Really-Complex-Workflows-with-Batches
 https://www.youtube.com/watch?v=BE5C2ydN0y0 "[EN] Determining Ruby Process Counts: Theory and Practice / Nate Berkopec @nateberkopec"
 https://web.archive.org/web/20141231201113/http://blog.serverfault.com/2011/06/27/per-second-measurements-dont-cut-it
 https://web.archive.org/web/20141018061959/http://www.snookles.com/slf-blog/2012/01/05/tcp-incast-what-is-it/
-http://www.randomhacks.net.s3-website-us-east-1.amazonaws.com/2005/12/03/why-ruby-is-an-acceptable-lisp/
 http://www.paulgraham.com/icad.html
 https://mailchi.mp/railsspeed/scaling-is-queue-management?e=0ab8ee608c
 https://ferd.ca/queues-don-t-fix-overload.html
