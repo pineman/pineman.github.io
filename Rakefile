@@ -159,6 +159,7 @@ end
 
 require "rake/clean"
 
+# Monkey patches to add "Building ..." log lines
 module Rake
   module DSL
     alias_method :original_file, :file
