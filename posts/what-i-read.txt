@@ -1,3 +1,30 @@
+# November 2025
+https://www.ee.torontomu.ca/~elf/hack/recovery.html
+https://notes.mtb.xyz/p/your-data-model-is-your-destiny
+https://zachholman.com/posts/money-off-the-table
+https://0github.com/
+https://www.codusoperandi.com/posts/increasing-your-luck-surface-area
+https://www.gatesnotes.com/three-tough-truths-about-climate
+https://boz.com/articles/you-are-how-you-act
+https://yewjin.substack.com/p/note-to-my-slightly-older-self
+https://www.interconnects.ai/p/burning-out
+https://www.fast.ai/posts/2025-10-30-build-to-last.html
+https://world.hey.com/joaoqalves/karpathy-is-wrong-write-that-post-build-that-slide-deck-9d1a6893
+https://seated.ro/blog/tinkering-a-lost-art
+https://registerspill.thorstenball.com/p/joy-and-curiosity-60
+https://news.ycombinator.com/item?id=45785858A - Visopsys: OS maintained by a single developer since 1997 (visopsys.org)
+https://news.ycombinator.com/item?id=45778984A - The profitable startup (linear.app)
+https://news.ycombinator.com/item?id=45718213 - clickhouse-local being super fast
+https://news.ycombinator.com/item?id=45747018 - Kafka is Fast – I'll use Postgres (topicpartition.io) - im not sure I agree at all
+https://redis.io/docs/latest/develop/data-types/streams - redis streams as an alternative queue or log
+https://copyconstruct.medium.com/testing-in-production-the-safe-way-18ca102d0ef1
+https://world.hey.com/joaoqalves/disasters-i-ve-seen-in-a-microservices-world-a9137a51
+https://postgres.ai/blog/20251014-postgres-marathon-2-008
+https://en.wikipedia.org/wiki/Haversine_formula
+https://postgis.net/workshops/postgis-intro/geography.html - idealista map region selection
+https://www.linusakesson.net/programming/pipelogic/index.php
+https://www.cybertec-postgresql.com/en/benefits-of-a-descending-index/
+
 # October 2025
 https://news.ycombinator.com/item?id=45707658 - The Linux Boot Process: From Power Button to Kernel (0xkato.xyz)
 https://andrewkelley.me/post/zig-new-async-io-text-version.html
