@@ -1,4 +1,100 @@
+# December 2025
+https://github.com/msanft/CVE-2025-55182
+https://boge.lu/cost-centers-vs-profit-center/
+https://alearningaday.blog/2025/11/28/all-it-takes-is-for-one-to-work-out-2/
+https://lalitm.com/software-engineering-outside-the-spotlight
+https://www.seangoedecke.com/the-spotlight/
+https://www.seangoedecke.com/not-your-codebase
+https://www.seangoedecke.com/in-these-troubled-times
+https://tim.blog/2012/11/11/the-value-of-aggression-ode-to-dan-gable/
+https://xania.org/202512/01-xor-eax-eax
+https://news.ycombinator.com/item?id=46014987 - sit and wait for llm/agent improvements
+https://news.ycombinator.com/item?id=45992316 - Building a Durable Execution Engine with SQLite (morling.dev)
+https://news.ycombinator.com/item?id=46023460 - Racket v9.0 (racket-lang.org)
+https://news.ycombinator.com/item?id=44099006 - Hacker News now runs on top of Common Lisp (lisp-journey.gitlab.io)
+https://www.ben-evans.com/presentations
+https://www.morling.dev/blog/on-idempotency-keys/
+https://spectrum.ieee.org/it-management-software-failures
+https://www.raycast.com/blog/no-code-reviews-by-default
+https://registerspill.thorstenball.com/p/the-hum-of-the-machine
+https://benanderson.work/blog/technical-deflation/
+https://registerspill.thorstenball.com/p/joy-and-curiosity-64
+https://www.postgresql.org/docs/current/using-explain.html
+https://www.cybertec-postgresql.com/en/super-fast-aggregations-in-postgresql-19/
+https://davidbessis.substack.com/p/twins-reared-apart-do-not-exist#_
+https://eieio.games/blog/two-heads-arent-better-than-one/
+https://buttondown.com/hillelwayne/archive/when-would-you-ever-want-bubblesort/
+https://news.ycombinator.com/item?id=46221404 - Intermittent hypoxia increases blood flow and benefits executive function (wiley.com)
+https://en.wikipedia.org/wiki/Hash_array_mapped_trie
+https://boringsql.com/posts/vacuum-is-lie/
+https://open.substack.com/pub/thorstenball/p/joy-and-curiosity-66
+https://www.prefect.io/blog/rebuilding-our-website-for-the-agent-era
+https://leerob.com/agents
+https://jon.recoil.org/blog/2025/12/an-svg-is-all-you-need.html
+https://www.shopify.com/editions/winter2026 - wow
+https://turbopuffer.com/blog/fts-v2-maxscore
+https://www.strangeloopcanon.com/p/seeing-like-an-agent
+https://danielmiessler.com/blog/real-problem-job-market
+https://danielmiessler.com/blog/the-real-bubble-is-human-labor
+https://news.ycombinator.com/item?id=46178347 - Using LLMs at Oxide (oxide.computer)
+https://karpathy.bearblog.dev/auto-grade-hn/
+https://abdulhamidhassan.com/post/802459222214410240/how-to-be-exceptional-at-anything
+https://obie.medium.com/what-happens-when-the-coding-becomes-the-least-interesting-part-of-the-work-ab10c213c660
+https://www.reddit.com/r/RedditEng/comments/1mbqto6/modernizing_reddits_comment_backend_infrastructure/
+https://www.infoq.com/articles/wonders-of-postgres-logical-decoding-messages/ - outbox, logs, audit in postgres cdc
+https://www.thegnar.com/blog/history-tracking-with-postgres
+https://boringsql.com/posts/beyond-start-end-columns/ - real good, range types, exclude constraints on ranges, automatic auditing through ranges
+https://en.wikipedia.org/wiki/Hash_tree_(persistent_data_structure)
+https://en.wikipedia.org/wiki/Hash_array_mapped_trie
+https://news.ycombinator.com/item?id=46197930 - The highest quality codebase (gricha.dev)
+https://archive.nytimes.com/economix.blogs.nytimes.com/2008/10/23/greenspans-mea-culpa/
+https://lucumr.pocoo.org/2025/10/21/eu-resigation/
+https://lucumr.pocoo.org/2025/12/9/fixing-europe/
+https://nixiesearch.substack.com/p/nixiesearch-running-lucene-over-s3
+https://www.cybertec-postgresql.com/en/super-fast-aggregations-in-postgresql-19/
+
 # November 2025
+https://news.ycombinator.com/item?id=42485505 - Reads Causing Writes in Postgres (jesipow.com)
+https://buttondown.com/jaffray/archive/data-independence/
+https://news.ycombinator.com/item?id=45985306 - I built a faster Notion in Rust (imedadel.com)
+https://news.ycombinator.com/item?id=42288956 - Kubernetes on Hetzner: cutting my infra bill by 75% (bilbof.com)
+https://news.ycombinator.com/item?id=9040551
+https://lkml.org/lkml/2000/9/6/65
+https://www.tritondatacenter.com/blog/the-power-of-a-pronoun
+https://web.stanford.edu/class/e145/2007_fall/materials/noyce.html
+https://byroot.github.io/ruby/performance/2025/10/28/string-literals.html
+https://postgres.ai/blog/20251110-postgres-marathon-2-013-why-keep-your-index-set-lean
+https://postgres.ai/blog/20251008-postgres-marathon-2-004
+https://www.datadoghq.com/blog/ruby-performance-optimization/
+https://aws.amazon.com/blogs/architecture/shuffle-sharding-massive-and-magical-fault-isolation/
+https://blog.arkency.com/activerecord-repository/
+https://news.ycombinator.com/item?id=46005111 - We should all be using dependency cooldowns (yossarian.net)
+https://registerspill.thorstenball.com/p/joy-and-curiosity-62
+https://andymasley.substack.com/p/the-ai-water-issue-is-fake
+https://davegriffith.substack.com/p/software-development-in-the-time
+https://near.blog/personality-basins
+https://how-did-i-get-here.net
+https://en.wikipedia.org/wiki/Service_recovery_paradox
+https://ianthehenry.com/posts/my-kind-of-repl/
+https://blog.janestreet.com/the-joy-of-expect-tests/
+https://brooker.co.za/blog/2025/11/20/what-now.html
+https://notes.cwyark.me/200-notes/operating-system/rss-pss-and-uss/
+https://ieftimov.com/posts/variable-hoisting-ruby/
+https://blog.cloudflare.com/18-november-2025-outage/
+https://ordep.dev/posts/trust-is-everything
+https://www.depesz.com/2025/11/03/do-you-really-need-tsvector-column/
+https://newsletter.posthog.com/p/from-0-to-40m-arr-inside-the-tech - bolt.new, webcontainer
+https://registerspill.thorstenball.com/p/joy-and-curiosity-61
+https://alfy.blog/2025/10/31/your-url-is-your-state.html
+https://fly.io/blog/everyone-write-an-agent/
+https://jsteuernagel.de/posts/a-prison-of-my-own-making/
+https://maryrosecook.com/blog/post/pressure-to-change
+https://notpeerreviewed.com/blog/battlesnake/
+https://news.ycombinator.com/item?id=45792555 - Friendly attributes pattern in Ruby (brunosutic.com)
+https://zachholman.com/posts/money-off-the-table
+https://notes.mtb.xyz/p/your-data-model-is-your-destiny
+https://www.tigerdata.com/blog/how-we-made-distinct-queries-up-to-8000x-faster-on-postgresql
+https://www.postgresql.org/message-id/CAMkU%3D1wK5t80RxVSLYEz-4e%2BwnHL0Tkn6DJWsgL19dnnvgv%3DFw%40mail.gmail.com - distinct limit 
 https://www.ee.torontomu.ca/~elf/hack/recovery.html
 https://notes.mtb.xyz/p/your-data-model-is-your-destiny
 https://zachholman.com/posts/money-off-the-table
