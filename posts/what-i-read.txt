@@ -1,4 +1,30 @@
 # December 2025
+https://news.ycombinator.com/item?id=34179426 - Golang disables Nagle's Algorithm by default (withinboredom.info)
+https://news.ycombinator.com/item?id=46359120 - It's Always TCP_NODELAY (brooker.co.za)
+https://davidbessis.substack.com/p/twins-reared-apart-do-not-exist#_
+https://nithinbekal.com/posts/ruby-4-0/
+https://lwn.net/Articles/104185/ - Re: [PATCH] oom_pardon, aka don't kill my xlock
+https://news.ycombinator.com/item?id=46300411 - Vm.overcommit_memory=2 is the right setting for servers (ariadne.space)
+https://news.ycombinator.com/item?id=46330726 - LLM Year in Review (karpathy.bearblog.dev)
+https://emschwartz.me/short-circuiting-correlated-subqueries-in-sqlite/
+https://news.ycombinator.com/item?id=46328274 - Performance Hints (abseil.io)
+https://kibty.town/blog/mintlify/
+https://www.reuters.com/world/china/how-china-built-its-manhattan-project-rival-west-ai-chips-2025-12-17/
+https://world.hey.com/jason/idea-protectionism-01ef4f59
+https://signalvnoise.com/posts/3124-give-it-five-minutes
+https://antirez.com/news/157
+https://jsomers.net/blog/speed-matters
+https://blog.jakobschwichtenberg.com/p/slowness-is-a-virtue - ... for research
+https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html
+https://www.begaydocrime.com/
+https://medium.com/@tomwhitwell/52-things-i-learned-in-2025-edeca7e3fdd8
+https://ngrok.com/blog/prompt-caching/
+https://ampcode.com/by-an-agent-for-an-agent
+https://registerspill.thorstenball.com/p/joy-and-curiosity-67
+https://news.ycombinator.com/item?id=46336947 - Go ahead, self-host Postgres (pierce.dev)
+https://news.ycombinator.com/item?id=46317098 - We pwned X, Vercel, Cursor, and Discord through a supply-chain attack (gist.github.com)
+https://news.ycombinator.com/item?id=46305321 - Inside PostHog: SSRF, ClickHouse SQL Escape and Default Postgres Creds to RCE (mdisec.com)
+https://nithinbekal.com/posts/ruby-4-0/
 https://github.com/msanft/CVE-2025-55182
 https://boge.lu/cost-centers-vs-profit-center/
 https://alearningaday.blog/2025/11/28/all-it-takes-is-for-one-to-work-out-2/
