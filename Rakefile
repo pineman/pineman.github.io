@@ -22,14 +22,13 @@ module Helpers
 end
 
 def write_html(html_file, template_file, caller_binding)
-  # TODO: be explicit about the binding, don't use eval
   template = Erubi::Engine.new(File.read(template_file), escape: true)
   html = eval(template.src, caller_binding)
   File.write(html_file, html)
 end
 
 class Post
-  attr_reader :filename, :url, :title, :content, :date, :text_descr
+  attr_reader :filename, :url, :title, :html, :date, :text_descr
 
   def initialize(md_file)
     @md_file = md_file
@@ -37,6 +36,14 @@ class Post
     @url = "#{@filename}.html"
     @date = DateTime.parse(@filename.split("_")[0])
     @html_file = "posts/html/#{@filename}.html"
+
+    if File.exist?(@html_file)
+      html = Nokogiri::HTML.fragment(File.read(@html_file))
+      @title = html.at("h1").text
+      html.at("h1").remove
+      @html = html.to_s
+      @text_descr = truncate_text
+    end
   end
 
   def build_intermediate_html!
@@ -44,13 +51,10 @@ class Post
     `pandoc --wrap=none --no-highlight #{@md_file} -f gfm -t html5 -o #{@html_file}`
   end
 
-  def set_html_attrs!
-    html = Nokogiri::HTML.fragment(File.read(@html_file))
-    @title = html.at("h1").text
-    html.at("h1").remove
+  private
 
-    @content = html.to_s
-    text = Nokogiri::HTML.fragment(@content).text
+  def truncate_text
+    text = Nokogiri::HTML.fragment(@html).text
     words = text.split(/\s+/)
     truncated = ""
     words.each do |word|
@@ -59,8 +63,7 @@ class Post
       truncated = test_string
     end
     suffix = truncated.end_with?('.') ? ' ...' : '...' if truncated.length < text.length
-    @text_descr = "#{truncated}#{suffix}"
-    self
+    "#{truncated}#{suffix}"
   end
 end
 
@@ -82,7 +85,7 @@ def build_rss(posts)
         item.link = "https://pineman.github.io/#{post.url}"
         item.published = post.date.iso8601
         item.updated = post.date.iso8601
-        item.description = post.content
+        item.description = post.html
       end
     end
   end
@@ -152,7 +155,7 @@ multitask :default => [:all]
 multitask :all => [*POSTS_HTML, 'index.html', 'what-i-read.html', 'atom.xml', *LINK_PREVIEWS]
 
 file 'index.html' => ['index.html.erb', *POSTS_HTML, *PARTIALS] do |t|
-  posts = POSTS_MD.map { |md| Post.new(md).set_html_attrs! }
+  posts = POSTS_MD.map { |md| Post.new(md) }
   write_html(t.name, 'index.html.erb', binding)
 end
 
@@ -161,7 +164,7 @@ file 'what-i-read.html' => ['what-i-read.html.erb', 'posts/what-i-read.txt', *PA
 end
 
 file 'atom.xml' => [*POSTS_HTML] do |t|
-  posts = POSTS_MD.map { |md| Post.new(md).set_html_attrs! }
+  posts = POSTS_MD.map { |md| Post.new(md) }
   File.write(t.name, build_rss(posts))
 end
 
@@ -172,13 +175,13 @@ end
 POSTS_HTML.each do |post_html|
   file post_html => ["posts/html/#{post_html}", "post.html.erb", *PARTIALS] do |t|
     md_file = "posts/#{File.basename(t.name, '.html')}.md"
-    post = Post.new(md_file).set_html_attrs!
+    post = Post.new(md_file)
     write_html(t.name, "post.html.erb", binding)
   end
 end
 
 rule %r{^assets/link_previews/.*\.png$} => [->(f) { "posts/html/#{File.basename(f, '.png')}.html" }, 'partials/link-preview.svg.erb'] do |t|
   md_file = "posts/#{File.basename(t.source, '.html')}.md"
-  post = Post.new(md_file).set_html_attrs!
+  post = Post.new(md_file)
   gen_img(post)
 end

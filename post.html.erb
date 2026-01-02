@@ -30,7 +30,7 @@
     <h1><%= post.title %></h1>
     <h5><time datetime="<%= post.date.iso8601 %>" pubdate="pubdate"><%= post.date.strftime("%Y-%m-%d") %></time></h5>
   </header>
-<%== post.content %>
+<%== post.html %>
 </article>
 <a href="index.html">&lt; back</a>
 </div>
