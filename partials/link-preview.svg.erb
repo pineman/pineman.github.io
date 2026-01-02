@@ -1,0 +1,36 @@
+<svg width="<%= width %>" height="<%= height %>" viewBox="0 0 <%= width %> <%= height %>" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .container {
+      background: #1d1e20;
+      font-family: Menlo, monospace; /* I'll always have a mac right? */
+      color: #dadadb;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 50px;
+      box-sizing: border-box;
+    }
+    .footer {
+      margin-top: auto;
+      font-size: 30px;
+      align-self: flex-end;
+    }
+    h1 {
+      margin: 0;
+      font-size: 60px;
+    }
+    p {
+      font-size: 40px;
+    }
+  </style>
+  <foreignObject x="0" y="0" width="<%= width %>" height="<%= height %>">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container">
+      <h1><%= post.title %></h1>
+      <p><%= post.text_descr %></p>
+      <div class="footer">
+        <span>pineman <%= post.date.strftime("%Y-%m-%d") %></span>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
+

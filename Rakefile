@@ -109,43 +109,8 @@ end
 def gen_img(post)
   width = 1200
   height = 630
-  svg = <<-SVG
-<svg width="#{width}" height="#{height}" viewBox="0 0 #{width} #{height}" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .container {
-      background: #1d1e20;
-      font-family: Menlo, monospace; /* I'll always have a mac right? */
-      color: #dadadb;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      padding: 50px;
-      box-sizing: border-box;
-    }
-    .footer {
-      margin-top: auto;
-      font-size: 30px;
-      align-self: flex-end;
-    }
-    h1 {
-      margin: 0;
-      font-size: 60px;
-    }
-    p {
-      font-size: 40px;
-    }
-  </style>
-  <foreignObject x="0" y="0" width="#{width}" height="#{height}">
-    <div xmlns="http://www.w3.org/1999/xhtml" class="container">
-      <h1>#{post.title}</h1>
-      <p>#{post.text_descr}</p>
-      <div class="footer">
-        <span>pineman #{post.date.strftime("%Y-%m-%d")}</span>
-      </div>
-    </div>
-  </foreignObject>
-</svg>
-  SVG
+  template = Erubi::Engine.new(File.read('partials/link-preview.svg.erb'), escape: true)
+  svg = eval(template.src, binding)
   t = post.filename
   File.write("#{t}.svg", svg)
   <<~`SCRIPT`
@@ -195,9 +160,9 @@ LINK_PREVIEWS = POSTS_MD.pathmap('assets/link_previews/%n.png')
 INTERMEDIATE_HTML = POSTS_MD.pathmap('posts/html/%n.html')
 
 TEMPLATES = FileList['index.html.erb', 'post.html.erb', 'what-i-read.html.erb']
-PARTIALS = FileList['partials/head.html', 'partials/article-head.html', 'partials/pinecone.html']
+PARTIALS = FileList['partials/head.html', 'partials/article-head.html', 'partials/pinecone.html', 'partials/link-preview.svg.erb']
 
-CLEAN.include(POSTS_HTML, LINK_PREVIEWS, INTERMEDIATE_HTML, 'index.html', 'what-i-read.html', 'atom.xml', '*.svg', 'screenshot.png')
+CLEAN.include(POSTS_HTML, LINK_PREVIEWS, INTERMEDIATE_HTML, 'index.html', 'what-i-read.html', 'atom.xml', '*.svg', 'screenshot-*.png')
 
 multitask :default => [:all]
 multitask :all => [*POSTS_HTML, 'index.html', 'what-i-read.html', 'atom.xml', *LINK_PREVIEWS]
@@ -228,7 +193,7 @@ POSTS_HTML.each do |post_html|
   end
 end
 
-rule %r{^assets/link_previews/.*\.png$} => ->(f) { "posts/html/#{File.basename(f, '.png')}.html" } do |t|
+rule %r{^assets/link_previews/.*\.png$} => [->(f) { "posts/html/#{File.basename(f, '.png')}.html" }, 'partials/link-preview.svg.erb'] do |t|
   md_file = "posts/#{File.basename(t.source, '.html')}.md"
   post = Post.new(md_file).set_html_attrs!
   gen_img(post)
