@@ -54,8 +54,7 @@ incompatible character encodings: ASCII-8BIT and UTF-8 (ActionView::Template::Er
 <p>So, let's start at the beginning: context, mental priming, emotional control. What's the first thing that jumps to mind?</p>
 <p>If your answer is <em>"****ing email doesn't like utf-8"</em>, you're literally me. You can deduce my emotions otherwise - my colleague on call with me certainly did. So I'll skip ahead and spoil that <code>ASCII-8BIT</code> doesn't mean <em>"blahblah ASCII only *hand-wave* email is old"</em> - in ruby it literally is <a href="https://idiosyncratic-ruby.com/56-us-ascii-8bit.html#aliases">an alias</a> for <code>BINARY</code>, meaning raw bytes. But I only found that out by the end of the investigation.</p>
 <p>I guess the "8bit" part gives it away, but I interpreted it as <em>"ASCII, except some random character has the 7th bit set so it's complaining loudly ohgodwhy"</em>. Maybe if I had immediately seen <code>BINARY</code> the investigation could've been cut shorter, but it was already pretty short by most accounts. <a href="https://twitter.com/pineman_/status/1720426537768386659">What else am I gonna blog about</a>? Let's dive in.</p>
-<h3 id="investigation">Investigation<a href="#investigation" class="heading-link" title="Copy link to heading" onclick="copyHeadingLink(this);"><span class="icon-container"><i class="fa-solid fa-link"></i></span></a>
-</h3>
+<h3 id="investigation">Investigation</h3>
 <p>Like all good things in life, you need the initial idea that comes after the knee jerk reaction. The first good idea is to reproduce the bug, which is pretty easy: just call the mailer inline, using <code>deliver_now</code>, in the rails console connected to production (how great is that btw? 🤠). That reveals where it blows up:</p>
 <pre class="text"><code>/app/vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8/lib/active_support/core_ext/string/output_safety.rb:197:in `concat': incompatible character encodings: ASCII-8BIT and UTF-8 (ActionView::Template::Error)</code></pre>
 <p>That's cool and all, but this still doesn't tell me what string exactly, out of the whole html email, is causing it to blow up. At this point my colleague has the (correct) hunch that it's probably blowing up on emoji in the name of a string identifier we template into the view. Pedantic, boring old me however wants to be 100% sure.</p>
@@ -90,8 +89,7 @@ end</code></pre>
 <p>I reproduce the bug using the mailer again. Scrolling... Wait, look!</p>
 <pre class="text"><code>... f06\"&gt; \xF0\x9F\x94\x80Rec ...</code></pre>
 <p>Why does the buffer <em>already</em> contain an <code>F0</code>? The original buffer already has this emoji?! Shows up as hexa escapes though - I chalk it up to being due to using <code>p</code> instead of <code>puts</code>, but clearly the emoji was concated succesfully before we crashed?!? And, perplexingly, this earlier part of the email is the new part that we created for the feature. Why is it breaking further down the line in code we didn't touch?</p>
-<h3 id="dire-straits">Dire straits<a href="#dire-straits" class="heading-link" title="Copy link to heading" onclick="copyHeadingLink(this);"><span class="icon-container"><i class="fa-solid fa-link"></i></span></a>
-</h3>
+<h3 id="dire-straits">Dire straits</h3>
 <p>In dire situations like these, you <strong>desperately</strong> need the initial idea that comes after the knee jerk reaction.</p>
 <p>This is where the third great idea comes in: smoke break with the airpods still on. It's time for some serious pair hypothesis crafting, despite the rain and dark.</p>
 <p>Clearly the view <em>does</em> knows how to render emojis all along. What if the buffer starts out as <code>UTF-8</code>, the first emoji concat works... but then switches to being <code>ASCII-8BIT</code> at some point, causing the second emoji concat to fail? Let's go for broke, print the buffer's <code>.encoding</code> at each call, and trace exactly when it switches (spewing large amounts of text to my terminal will forever be my superpower. Thanks tmux and vim). This is the final monkey patch:</p>
@@ -117,8 +115,7 @@ end</code></pre>
 end</code></pre>
 <p>We trigger the mailer again, and sure enough it starts out life as <code>UTF-8</code>, and we see it grow incrementally. We get to the first emoji concat. The buffer was <code>UTF-8</code>, but the string itself... is in <code>ASCII-8BIT</code>? Why...? We'd just seen that the value from the DB is <code>UTF-8</code>. And sure enough, as soon as this <code>ASCII-8BIT</code> string is concated with the buffer, it too is tainted to become <code>ASCII-8BIT</code>! It blows up further ahead when the now <code>ASCII-8BIT</code> tries to concat the second emoji string, which this time is correctly encoded as <code>UTF-8</code>!</p>
 <p>This is when it becomes clear to my colleague that the "tainted" <code>ASCII-8BIT</code> string is actually coming from a CSV file we built for the new feature. This file is generated on demand but then cached, so subsequent emails download and parse it from Google Cloud Storage (side note: do not make CSV parsing load bearing. But if you do, remember to convert strings to booleans on a boolean column 🫠). This file's encoding is coming from GCloud as <code>ASCII-8BIT</code>, so my coworker does a simple <code>.force_encoding(Encoding::UTF8)</code> on it, which cleanly fixes the bug.</p>
-<h3 id="ascii-8bit-why-google-why">ASCII-8BIT? WHY GOOGLE WHY<a href="#ascii-8bit-why-google-why" class="heading-link" title="Copy link to heading" onclick="copyHeadingLink(this);"><span class="icon-container"><i class="fa-solid fa-link"></i></span></a>
-</h3>
+<h3 id="ascii-8bit-why-google-why">ASCII-8BIT? WHY GOOGLE WHY</h3>
 <p>I'm not satisfied yet, and now I'm just angry. I go spelunking to find out why files from gcloud storage, using the official ruby sdk, are encoded using this mysterious <code>ASCII-8BIT</code> encoding. I find <a href="https://github.com/googleapis/google-cloud-ruby/blob/9b455708c115a6e894e2b32521e5817fddc89b0a/google-cloud-storage/lib/google/cloud/storage/file.rb#L1038">the code</a>. I type "thanks google" on my colleague's PR with the fix &amp; curse some more on our team's internal chat.</p>
 <p>No one's complaining on the issue tracker... I find a reference on some <a href="https://github.com/googleapis/google-cloud-ruby/pull/1564">random thread about pub/sub</a>. Wait. "canonical bytes representation"? Does that just mean binary? Oh... That makes sense, I guess. Google doesn't make any assumptions about encoding (as I mistakenly thought, because what the hell does <code>ACSII-8BIT</code> mean), so it just says it's binary. It just happens that 'binary' has to have a wacky name in ruby, of course. Why. Why must it be called <code>ASCII-8BIT</code>?! What do you mean, how does that even make sense?!?!? ASCII is only 7 bits!!... A quick grep on ruby's source code confirms that <code>ASCII-8BIT</code> is an alias for <code>BINARY</code>.</p>
 <p>I remind myself of the other times I went to read up on history of a particular historical change in ruby. My head is already hurting. I do not wish to jump into this rabbit hole after one and a half hours of fighting encoding errors. Not now. Maybe not ever.</p>
@@ -132,9 +129,24 @@ end</code></pre>
 <script src="assets/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <script>
-  function copyHeadingLink(link) {
-    const url = window.location.href.split('#')[0] + link.getAttribute('href');
-    navigator.clipboard.writeText(url);
-  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('article h1, article h2, article h3, article h4, article h5, article h6').forEach(function(heading) {
+      const copyLink = document.createElement('a');
+      copyLink.href = '#' + heading.id;
+      copyLink.className = 'heading-link';
+      copyLink.title = 'Copy link to heading';
+      copyLink.onclick = function() {
+        const url = window.location.href.split('#')[0] + this.getAttribute('href');
+        navigator.clipboard.writeText(url);
+      };
+
+      const iconContainer = document.createElement('span');
+      iconContainer.className = 'icon-container';
+      iconContainer.innerHTML = '<i class="fa-solid fa-link"></i>';
+
+      copyLink.appendChild(iconContainer);
+      heading.appendChild(copyLink);
+    });
+  });
 </script>
 </html>

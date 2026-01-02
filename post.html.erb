@@ -39,9 +39,24 @@
 <script src="assets/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <script>
-  function copyHeadingLink(link) {
-    const url = window.location.href.split('#')[0] + link.getAttribute('href');
-    navigator.clipboard.writeText(url);
-  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('article h1, article h2, article h3, article h4, article h5, article h6').forEach(function(heading) {
+      const copyLink = document.createElement('a');
+      copyLink.href = '#' + heading.id;
+      copyLink.className = 'heading-link';
+      copyLink.title = 'Copy link to heading';
+      copyLink.onclick = function() {
+        const url = window.location.href.split('#')[0] + this.getAttribute('href');
+        navigator.clipboard.writeText(url);
+      };
+
+      const iconContainer = document.createElement('span');
+      iconContainer.className = 'icon-container';
+      iconContainer.innerHTML = '<i class="fa-solid fa-link"></i>';
+
+      copyLink.appendChild(iconContainer);
+      heading.appendChild(copyLink);
+    });
+  });
 </script>
 </html>
