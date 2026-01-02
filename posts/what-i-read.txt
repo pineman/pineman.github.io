@@ -1,4 +1,15 @@
+# January 2026
+https://www.youtube.com/watch?v=8mumTeuiZ6o - "Cat and Mouse: Challenges in Adversarial Web Scraping - Tyler Young | ElixirConf US 2025"
+https://news.ycombinator.com/item?id=46454413 - 2025 Letter (danwang.co)
+https://news.ycombinator.com/item?id=46448527 - Love your customers (dtrace.org)
+https://jpcamara.com/2025/12/30/when-good-threads-go-bad.html
+https://news.ycombinator.com/item?id=46458302 - Can Bundler be as fast as uv? (tenderlovemaking.com)
+
 # December 2025
+https://www.youtube.com/watch?v=sjuCiIdMe_4 - "Dave Thomas, Start writing Ruby (stop using classes). San Francisco Ruby Conference 2025."
+https://miguelcarranza.es/cto-year-8
+https://kirshatrov.com/posts/codebase-migrations-with-llms
+https://jvns.ca/blog/2015/11/21/why-you-should-understand-a-little-about-tcp
 https://news.ycombinator.com/item?id=34179426 - Golang disables Nagle's Algorithm by default (withinboredom.info)
 https://news.ycombinator.com/item?id=46359120 - It's Always TCP_NODELAY (brooker.co.za)
 https://davidbessis.substack.com/p/twins-reared-apart-do-not-exist#_
