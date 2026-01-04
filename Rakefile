@@ -48,7 +48,7 @@ class Post
 
   def build_intermediate_html!
     `pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}` if !ENV["NOFORMAT"]
-    `pandoc --wrap=none --no-highlight #{@md_file} -f gfm -t html5 -o #{@html_file}`
+    `pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}`
   end
 
   private
