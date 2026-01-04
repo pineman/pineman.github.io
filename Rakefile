@@ -141,7 +141,7 @@ module Rake
   end
 end
 
-POSTS_MD = FileList['posts/*.md']
+POSTS_MD = FileList['posts/2*.md']
 POSTS_HTML = POSTS_MD.pathmap('%n.html')
 LINK_PREVIEWS = POSTS_MD.pathmap('assets/link_previews/%n.png')
 INTERMEDIATE_HTML = POSTS_MD.pathmap('posts/html/%n.html')
@@ -159,7 +159,7 @@ file 'index.html' => ['index.html.erb', *POSTS_HTML, *PARTIALS] do |t|
   write_html(t.name, 'index.html.erb', binding)
 end
 
-file 'what-i-read.html' => ['what-i-read.html.erb', 'posts/what-i-read.txt', *PARTIALS] do |t|
+file 'what-i-read.html' => ['what-i-read.html.erb', 'posts/what-i-read.md', *PARTIALS] do |t|
   write_html(t.name, 'what-i-read.html.erb', binding)
 end
 

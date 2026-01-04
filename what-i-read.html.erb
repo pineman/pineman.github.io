@@ -3,8 +3,9 @@
 <head>
   <%== File.read('partials/head.html') %>
   <%== File.read('partials/article-head.html') %>
+  <link rel="alternate" type="text/markdown" href="posts/what-i-read.md">
   <%
-    FILENAME = "posts/what-i-read.txt"
+    FILENAME = "posts/what-i-read.md"
     content = File.read(FILENAME)
     if content.include?("?utm_source=substack&utm_medium=email")
       File.write(FILENAME, content.gsub(/\?utm_source=substack&utm_medium=email/, ""))
@@ -33,13 +34,13 @@
   <% if l.match?(/^# /) %>
     <h4><%= l[2..] %></h4>
     <ul>
-  <% elsif l.match?(/^https?:\/\//) %>
-    <% url, descr = l.split(" ", 2) %>
+  <% elsif l.match?(/^* https?:\/\//) %>
+    <% url, descr = l[2..].split(" ", 2) %>
     <li><a href="<%= url %>"><%= url %></a> <%= descr %></li>
   <% elsif l.empty? %>
     </ul>
   <% else %>
-    <li><%= l %></li>
+    <li><%= l[2..] %></li>
   <% end %>
 <% end %>
 </article>
