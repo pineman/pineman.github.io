@@ -1,4 +1,5 @@
 # January 2026
+* https://news.ycombinator.com/item?id=46482642 - The Riven Diffs – Seeing Riven (1997) Differently (glthr.com)
 * https://archive.is/nLNPp - Why Is the American Diet So Deadly? A scientist tried to discredit the theory that ultra-processed foods are killing us. Instead, he overturned his own understanding of obesity.
 * https://archive.is/umpyR - Does It Help to Know History?
 * https://samuelalbanie.substack.com/p/reflections-on-2025
