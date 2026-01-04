@@ -1,0 +1,1 @@
+- reflections on ruby async in prod => .stop .wait, sentry
