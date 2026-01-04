@@ -1,4 +1,26 @@
 # January 2026
+https://archive.is/nLNPp - Why Is the American Diet So Deadly? A scientist tried to discredit the theory that ultra-processed foods are killing us. Instead, he overturned his own understanding of obesity.
+https://archive.is/umpyR - Does It Help to Know History?
+https://samuelalbanie.substack.com/p/reflections-on-2025
+https://steipete.me/posts/2025/shipping-at-inference-speed
+https://x.com/ivanhzhao/status/2003192654545539400
+https://lethain.com/agents-coordinators/
+https://andreasfragner.com/writing/three-ways-to-solve-problems
+https://www.snellman.net/blog/archive/2016-12-13-ring-buffers/
+https://www.theocharis.dev/blog/kidnapped-by-deutsche-bahn
+https://gist.github.com/richhickey/ea94e3741ff0a4e3af55b9fe6287887f
+https://blog.fogus.me/2025/12/23/the-best-things-and-stuff-of-2025.html
+https://chadnauseam.com/coding/random/calculator-app
+https://x.com/pauldix/status/2006423514446749965
+https://tidyfirst.substack.com/p/party-of-one-for-code-review
+https://x.com/levie/status/2004654686629163154/
+https://chrisloy.dev/post/2025/12/30/the-rise-of-industrial-software
+https://registerspill.thorstenball.com/p/joy-and-curiosity-68
+https://en.wikipedia.org/wiki/Carrington_Event
+https://github.com/simdutf/simdutf - simdutf: Text processing at billions of characters per second
+https://news.ycombinator.com/item?id=46463644 - 10 years of personal finances in plain text files (sgoel.dev)
+https://martin.kleppmann.com/2011/03/07/accounting-for-computer-scientists.html
+https://news.ycombinator.com/item?id=46408510 - C –> Java != Java –> LLM (observationalhazard.com)
 https://www.youtube.com/watch?v=8mumTeuiZ6o - "Cat and Mouse: Challenges in Adversarial Web Scraping - Tyler Young | ElixirConf US 2025"
 https://news.ycombinator.com/item?id=46454413 - 2025 Letter (danwang.co)
 https://news.ycombinator.com/item?id=46448527 - Love your customers (dtrace.org)
@@ -6,6 +28,14 @@ https://jpcamara.com/2025/12/30/when-good-threads-go-bad.html
 https://news.ycombinator.com/item?id=46458302 - Can Bundler be as fast as uv? (tenderlovemaking.com)
 
 # December 2025
+https://en.wikipedia.org/wiki/HyperLogLog
+https://en.wikipedia.org/wiki/Approximate_counting_algorithm
+https://redis.io/docs/latest/develop/reference/eviction/
+https://news.ycombinator.com/item?id=46436889 - FediMeteo: A €4 FreeBSD VPS Became a Global Weather Service (dragas.net)
+https://www.seangoedecke.com/weak-engineers
+https://www.seangoedecke.com/bad-code-at-big-companies
+https://www.seangoedecke.com/a-little-bit-cynical
+https://maurycyz.com/misc/raw_photo/
 https://www.youtube.com/watch?v=sjuCiIdMe_4 - "Dave Thomas, Start writing Ruby (stop using classes). San Francisco Ruby Conference 2025."
 https://miguelcarranza.es/cto-year-8
 https://kirshatrov.com/posts/codebase-migrations-with-llms
