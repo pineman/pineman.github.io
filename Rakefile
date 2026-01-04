@@ -96,7 +96,7 @@ end
 def gen_img(post)
   width = 1200
   height = 630
-  template = Erubi::Engine.new(File.read('partials/link-preview.svg.erb'), escape: true)
+  template = Erubi::Engine.new(File.read('templates/partials/link-preview.svg.erb'), escape: true)
   svg = eval(template.src, binding)
   t = post.filename
   File.write("#{t}.svg", svg)
@@ -146,17 +146,17 @@ POSTS_HTML = POSTS_MD.pathmap('%n.html')
 LINK_PREVIEWS = POSTS_MD.pathmap('assets/link_previews/%n.png')
 INTERMEDIATE_HTML = POSTS_MD.pathmap('posts/html/%n.html')
 
-TEMPLATES = FileList['index.html.erb', 'post.html.erb', 'what-i-read.html.erb']
-PARTIALS = FileList['partials/head.html', 'partials/article-head.html', 'partials/pinecone.html', 'partials/link-preview.svg.erb']
+TEMPLATES = FileList['templates/*.erb']
+PARTIALS = FileList['templates/partials/*']
 
 CLEAN.include(POSTS_HTML, LINK_PREVIEWS, INTERMEDIATE_HTML, 'index.html', 'index.md', 'what-i-read.html', 'atom.xml', '*.svg', 'screenshot-*.png')
 
 multitask :default => [:all]
 multitask :all => [*POSTS_HTML, 'index.html', 'index.md', 'what-i-read.html', 'atom.xml', *LINK_PREVIEWS]
 
-file 'index.html' => ['index.html.erb', *POSTS_HTML, *PARTIALS] do |t|
+file 'index.html' => ['templates/index.html.erb', *POSTS_HTML, *PARTIALS] do |t|
   posts = POSTS_MD.map { |md| Post.new(md) }
-  write_html(t.name, 'index.html.erb', binding)
+  write_html(t.name, 'templates/index.html.erb', binding)
 end
 
 file 'index.md' => 'index.html' do |t|
@@ -168,8 +168,8 @@ file 'index.md' => 'index.html' do |t|
   File.delete('tmp.html')
 end
 
-file 'what-i-read.html' => ['what-i-read.html.erb', 'posts/what-i-read.md', *PARTIALS] do |t|
-  write_html(t.name, 'what-i-read.html.erb', binding)
+file 'what-i-read.html' => ['templates/what-i-read.html.erb', 'posts/what-i-read.md', *PARTIALS] do |t|
+  write_html(t.name, 'templates/what-i-read.html.erb', binding)
 end
 
 file 'atom.xml' => [*POSTS_HTML] do |t|
@@ -182,14 +182,14 @@ rule %r{^posts/html/.*\.html$} => ->(f){ f.pathmap('posts/%n.md') } do |t|
 end
 
 POSTS_HTML.each do |post_html|
-  file post_html => ["posts/html/#{post_html}", "post.html.erb", *PARTIALS] do |t|
+  file post_html => ["posts/html/#{post_html}", "templates/post.html.erb", *PARTIALS] do |t|
     md_file = "posts/#{File.basename(t.name, '.html')}.md"
     post = Post.new(md_file)
-    write_html(t.name, "post.html.erb", binding)
+    write_html(t.name, "templates/post.html.erb", binding)
   end
 end
 
-rule %r{^assets/link_previews/.*\.png$} => [->(f) { "posts/html/#{File.basename(f, '.png')}.html" }, 'partials/link-preview.svg.erb'] do |t|
+rule %r{^assets/link_previews/.*\.png$} => [->(f) { "posts/html/#{File.basename(f, '.png')}.html" }, 'templates/partials/link-preview.svg.erb'] do |t|
   md_file = "posts/#{File.basename(t.source, '.html')}.md"
   post = Post.new(md_file)
   gen_img(post)

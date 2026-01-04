@@ -8,7 +8,7 @@ build() {
 
 watch() {
   export NOFORMAT=
-  ls posts/*.md *.erb Rakefile | \
+  ls posts/*.md templates/*.erb Rakefile | \
     entr -s 'echo "Detected change in: $0"; \
       case "$0" in \
         *.md) \
