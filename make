@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
-echo "file://$(pwd)/index.html"
 
 build() {
   rake
+  echo "file://$(pwd)/index.html"
 }
 
 watch() {
+  echo "file://$(pwd)/index.html"
   export NOFORMAT=
-  ls posts/*.md templates/*.erb Rakefile | \
+  ls posts/*.md templates/* Rakefile | \
     entr -s 'echo "Detected change in: $0"; \
       case "$0" in \
         *.md) \
@@ -19,6 +20,10 @@ watch() {
           ;; \
       esac' | \
     ts '[%Y-%m-%d %H:%M:%S]'
+}
+
+serve() {
+  ruby -run -e httpd
 }
 
 eval "${@:-build}"
