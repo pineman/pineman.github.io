@@ -115,13 +115,6 @@ h2 {
 .img-link:hover {
   border-bottom: none;
 }
-summary {
-  margin: 0.5em 0;
-  font-size: 1.5em;
-  font-weight: bold;
-  width: fit-content;
-  cursor: pointer;
-}
 /*
   Formula: fontsize * (#wrap max-width + 2*body margin)
   This works because wrap max-width and body margin is set in rem.
