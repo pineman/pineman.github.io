@@ -21,6 +21,15 @@ module Helpers
   end
 end
 
+def index_to_md(index_html_filename, index_md_filename)
+  html = File.read(index_html_filename).gsub(/<div class="icon-container".*?>.*?<\/div>/m, '')
+  html = html.gsub(/href="(\d{4}-\d{2}-\d{2}_.*?)\.html"/, 'href="posts/\1.md"')
+  html = html.gsub('href="what-i-read.html"', 'href="posts/what-i-read.md"')
+  File.write('tmp.html', html)
+  system("pandoc --wrap=none tmp.html -f html -t gfm-raw_html -o #{index_md_filename}")
+  File.delete('tmp.html')
+end
+
 def write_html(html_file, template_file, caller_binding)
   template = Erubi::Engine.new(File.read(template_file), escape: true)
   html = eval(template.src, caller_binding)
@@ -46,9 +55,9 @@ class Post
     end
   end
 
-  def build_intermediate_html!
-    `pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}` if !ENV["NOFORMAT"]
-    `pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}`
+  def self.build_intermediate_html(md_file)
+    `pandoc #{md_file} -f gfm -t gfm -o #{md_file}` if !ENV["NOFORMAT"]
+    `pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}`
   end
 
   private
@@ -96,7 +105,7 @@ end
 def gen_img(post)
   width = 1200
   height = 630
-  template = Erubi::Engine.new(File.read('templates/partials/link-preview.svg.erb'), escape: true)
+  template = Erubi::Engine.new(File.read(TEMPLATE_LINK_PREVIEW), escape: true)
   svg = eval(template.src, binding)
   t = post.filename
   File.write("#{t}.svg", svg)
@@ -141,56 +150,56 @@ module Rake
   end
 end
 
+TEMPLATE_INDEX = 'templates/index.html.erb'
+TEMPLATE_POST = 'templates/post.html.erb'
+TEMPLATE_WHAT_I_READ = 'templates/what-i-read.html.erb'
+TEMPLATE_HEAD = 'templates/head.html'
+TEMPLATE_ARTICLE_HEAD = 'templates/article-head.html'
+TEMPLATE_PINECONE = 'templates/pinecone.html'
+TEMPLATE_LINK_PREVIEW = 'templates/link-preview.svg.erb'
+
 POSTS_MD = FileList['posts/2*.md']
 POSTS_HTML = POSTS_MD.pathmap('%n.html')
 LINK_PREVIEWS = POSTS_MD.pathmap('assets/link_previews/%n.png')
-INTERMEDIATE_HTML = POSTS_MD.pathmap('posts/html/%n.html')
 
 TEMPLATES = FileList['templates/*.erb']
-PARTIALS = FileList['templates/partials/*']
 
-CLEAN.include(POSTS_HTML, LINK_PREVIEWS, INTERMEDIATE_HTML, 'index.html', 'index.md', 'what-i-read.html', 'atom.xml', '*.svg', 'screenshot-*.png')
+CLEAN.include('index.html', 'index.md', 'what-i-read.html', POSTS_HTML, LINK_PREVIEWS, 'atom.xml')
 
 multitask :default => [:all]
-multitask :all => [*POSTS_HTML, 'index.html', 'index.md', 'what-i-read.html', 'atom.xml', *LINK_PREVIEWS]
+multitask :all => ['index.html', 'index.md', 'what-i-read.html', *POSTS_HTML, *LINK_PREVIEWS, 'atom.xml']
 
-file 'index.html' => ['templates/index.html.erb', *POSTS_HTML, *PARTIALS] do |t|
+file 'index.html' => [TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE] do |t|
   posts = POSTS_MD.map { |md| Post.new(md) }
-  write_html(t.name, 'templates/index.html.erb', binding)
+  write_html(t.name, TEMPLATE_INDEX, binding)
 end
 
 file 'index.md' => 'index.html' do |t|
-  html = File.read(t.source).gsub(/<div class="icon-container".*?>.*?<\/div>/m, '')
-  html = html.gsub(/href="(\d{4}-\d{2}-\d{2}_.*?)\.html"/, 'href="posts/\1.md"')
-  html = html.gsub('href="what-i-read.html"', 'href="posts/what-i-read.md"')
-  File.write('tmp.html', html)
-  system("pandoc --wrap=none tmp.html -f html -t gfm-raw_html -o #{t.name}")
-  File.delete('tmp.html')
+  index_to_md(t.source, t.name)
 end
 
-file 'what-i-read.html' => ['templates/what-i-read.html.erb', 'posts/what-i-read.md', *PARTIALS] do |t|
-  write_html(t.name, 'templates/what-i-read.html.erb', binding)
+file 'what-i-read.html' => [TEMPLATE_WHAT_I_READ, 'posts/what-i-read.md', TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+  write_html(t.name, TEMPLATE_WHAT_I_READ, binding)
+end
+
+POSTS_HTML.each do |post_html|
+  file post_html => ["posts/html/#{post_html}", TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+    post = Post.new("posts/#{File.basename(t.name, '.html')}.md")
+    write_html(t.name, TEMPLATE_POST, binding)
+  end
+end
+
+rule %r{^posts/html/.*\.html$} => ->(f){ f.pathmap('posts/%n.md') } do |t|
+  Post.build_intermediate_html!(t.source)
+end
+
+rule %r{^assets/link_previews/.*\.png$} => [->(f) { "posts/html/#{File.basename(f, '.png')}.html" }, TEMPLATE_LINK_PREVIEW] do |t|
+  md_file = "posts/#{File.basename(t.source, '.html')}.md"
+  post = Post.new(md_file)
+  gen_img(post)
 end
 
 file 'atom.xml' => [*POSTS_HTML] do |t|
   posts = POSTS_MD.map { |md| Post.new(md) }
   File.write(t.name, build_rss(posts))
-end
-
-rule %r{^posts/html/.*\.html$} => ->(f){ f.pathmap('posts/%n.md') } do |t|
-  Post.new(t.source).build_intermediate_html!
-end
-
-POSTS_HTML.each do |post_html|
-  file post_html => ["posts/html/#{post_html}", "templates/post.html.erb", *PARTIALS] do |t|
-    md_file = "posts/#{File.basename(t.name, '.html')}.md"
-    post = Post.new(md_file)
-    write_html(t.name, "templates/post.html.erb", binding)
-  end
-end
-
-rule %r{^assets/link_previews/.*\.png$} => [->(f) { "posts/html/#{File.basename(f, '.png')}.html" }, 'templates/partials/link-preview.svg.erb'] do |t|
-  md_file = "posts/#{File.basename(t.source, '.html')}.md"
-  post = Post.new(md_file)
-  gen_img(post)
 end
