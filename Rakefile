@@ -19,9 +19,14 @@ module Helpers
   end
 end
 
+def render_erb(template_file, caller_binding)
+  bufvar = "@_buf_#{Random.rand(1_000_000)}"
+  template = Erubi::Engine.new(File.read(template_file), escape: true, bufvar: bufvar)
+  eval(template.src, caller_binding)
+end
+
 def write_html(html_file, template_file, caller_binding)
-  template = Erubi::Engine.new(File.read(template_file), escape: true)
-  html = eval(template.src, caller_binding)
+  html = render_erb(template_file, caller_binding)
   File.write(html_file, html)
 end
 
@@ -33,6 +38,7 @@ def index_to_md(index_html_filename, index_md_filename)
 end
 
 CHROME_BINARY = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"'
+SITE_ROOT = "https://pineman.github.io"
 
 class Post
   attr_reader :filename, :url, :title, :html, :date, :text_descr
@@ -80,18 +86,18 @@ class Post
     posts = posts.sort_by(&:date)
     rss = RSS::Maker.make("atom") do |maker|
       maker.channel.links.new_link do |link|
-        link.href = "https://pineman.github.io/atom.xml"
+        link.href = "#{SITE_ROOT}/atom.xml"
         link.rel = "self"
       end
       maker.channel.author = "pineman"
       maker.channel.title = "pineman"
-      maker.channel.about = "https://pineman.github.io/"
+      maker.channel.about = "#{SITE_ROOT}/"
       maker.channel.updated = posts.last.date.iso8601
-      maker.image.url = "https://pineman.github.io/assets/me.webp"
+      maker.image.url = "#{SITE_ROOT}/assets/me.webp"
       posts.each do |post|
         maker.items.new_item do |item|
           item.title = post.title
-          item.link = "https://pineman.github.io/#{post.url}"
+          item.link = "#{SITE_ROOT}/#{post.url}"
           item.published = post.date.iso8601
           item.updated = post.date.iso8601
           item.description = post.html
@@ -152,7 +158,7 @@ TEMPLATE_INDEX = 'templates/index.html.erb'
 TEMPLATE_POST = 'templates/post.html.erb'
 TEMPLATE_WHAT_I_READ = 'templates/what-i-read.html.erb'
 TEMPLATE_HEAD = 'templates/head.html'
-TEMPLATE_ARTICLE_HEAD = 'templates/article-head.html'
+TEMPLATE_ARTICLE_HEAD = 'templates/article-head.html.erb'
 TEMPLATE_PINECONE = 'templates/pinecone.html'
 TEMPLATE_LINK_PREVIEW = 'templates/link-preview.svg.erb'
 

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <%== File.read('templates/head.html') %>
-  <%== File.read('templates/article-head.html') %>
+  <%== render_erb('templates/article-head.html.erb', binding) %>
   <link rel="alternate" type="text/markdown" href="posts/what-i-read.md">
   <%
     FILENAME = "posts/what-i-read.md"
@@ -12,7 +12,7 @@
     end
     file = File.new(FILENAME)
   %>
-  <meta property="og:url" content="https://pineman.github.io/what-i-read.html" />
+  <meta property="og:url" content="<%= SITE_ROOT %>/what-i-read.html" />
   <meta property="article:published_time" content="<%= file.mtime.iso8601 %>" />
   <meta property="article:modified_time" content="<%= file.mtime.iso8601 %>" />
   <title>What I read</title>
