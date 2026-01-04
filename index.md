@@ -20,7 +20,7 @@ Hi! My name is João Pinheiro (aka pineman), I'm from Lisbon, Portugal and I lik
 - 2023-05-07 [I found a (microscopic) ruby bug and it got fixed in 3 hours](posts/2023-05-07_ruby-bug-shell-gem.md)
 - 2022-12-03 [AoC 2022: day 3, profiling Go, existential crisis](posts/2022-12-03_aoc3.md)
 
-## [Links](posts/what-i-read.md)
+## [Links](posts/links.md)
 
 ## Projects
 

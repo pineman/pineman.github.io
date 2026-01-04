@@ -33,7 +33,7 @@ end
 def index_to_md(index_html_filename, index_md_filename)
   html = File.read(index_html_filename).gsub(/<div class="icon-container".*?>.*?<\/div>/m, '')
   html = html.gsub(/href="(\d{4}-\d{2}-\d{2}_.*?)\.html"/, 'href="posts/\1.md"')
-  html = html.gsub('href="what-i-read.html"', 'href="posts/what-i-read.md"')
+  html = html.gsub('href="links.html"', 'href="posts/links.md"')
   IO.popen(["pandoc", "--wrap=none", "-f", "html", "-t", "gfm-raw_html", "-o", index_md_filename], "w") { |p| p.write(html) }
 end
 
@@ -156,7 +156,7 @@ end
 
 TEMPLATE_INDEX = 'templates/index.html.erb'
 TEMPLATE_POST = 'templates/post.html.erb'
-TEMPLATE_WHAT_I_READ = 'templates/what-i-read.html.erb'
+TEMPLATE_LINKS = 'templates/links.html.erb'
 TEMPLATE_HEAD = 'templates/head.html'
 TEMPLATE_ARTICLE_HEAD = 'templates/article-head.html.erb'
 TEMPLATE_PINECONE = 'templates/pinecone.html'
@@ -168,10 +168,10 @@ LINK_PREVIEWS = POSTS_MD.pathmap('assets/link_previews/%n.png')
 
 TEMPLATES = FileList['templates/*.erb']
 
-CLEAN.include('index.html', 'index.md', 'what-i-read.html', POSTS_HTML, LINK_PREVIEWS, 'atom.xml')
+CLEAN.include('index.html', 'index.md', 'links.html', POSTS_HTML, LINK_PREVIEWS, 'atom.xml')
 
 multitask :default => [:all]
-multitask :all => ['index.html', 'index.md', 'what-i-read.html', *POSTS_HTML, *LINK_PREVIEWS, 'atom.xml']
+multitask :all => ['index.html', 'index.md', 'links.html', *POSTS_HTML, *LINK_PREVIEWS, 'atom.xml']
 
 file 'index.html' => [TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE] do |t|
   posts = POSTS_MD.map { |md| Post.new(md) }
@@ -182,8 +182,8 @@ file 'index.md' => 'index.html' do |t|
   index_to_md(t.source, t.name)
 end
 
-file 'what-i-read.html' => [TEMPLATE_WHAT_I_READ, 'posts/what-i-read.md', TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-  write_html(t.name, TEMPLATE_WHAT_I_READ, binding)
+file 'links.html' => [TEMPLATE_LINKS, 'posts/links.md', TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+  write_html(t.name, TEMPLATE_LINKS, binding)
 end
 
 POSTS_HTML.each do |post_html|
