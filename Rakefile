@@ -149,14 +149,23 @@ INTERMEDIATE_HTML = POSTS_MD.pathmap('posts/html/%n.html')
 TEMPLATES = FileList['index.html.erb', 'post.html.erb', 'what-i-read.html.erb']
 PARTIALS = FileList['partials/head.html', 'partials/article-head.html', 'partials/pinecone.html', 'partials/link-preview.svg.erb']
 
-CLEAN.include(POSTS_HTML, LINK_PREVIEWS, INTERMEDIATE_HTML, 'index.html', 'what-i-read.html', 'atom.xml', '*.svg', 'screenshot-*.png')
+CLEAN.include(POSTS_HTML, LINK_PREVIEWS, INTERMEDIATE_HTML, 'index.html', 'index.md', 'what-i-read.html', 'atom.xml', '*.svg', 'screenshot-*.png')
 
 multitask :default => [:all]
-multitask :all => [*POSTS_HTML, 'index.html', 'what-i-read.html', 'atom.xml', *LINK_PREVIEWS]
+multitask :all => [*POSTS_HTML, 'index.html', 'index.md', 'what-i-read.html', 'atom.xml', *LINK_PREVIEWS]
 
 file 'index.html' => ['index.html.erb', *POSTS_HTML, *PARTIALS] do |t|
   posts = POSTS_MD.map { |md| Post.new(md) }
   write_html(t.name, 'index.html.erb', binding)
+end
+
+file 'index.md' => 'index.html' do |t|
+  html = File.read(t.source).gsub(/<div class="icon-container".*?>.*?<\/div>/m, '')
+  html = html.gsub(/href="(\d{4}-\d{2}-\d{2}_.*?)\.html"/, 'href="posts/\1.md"')
+  html = html.gsub('href="what-i-read.html"', 'href="posts/what-i-read.md"')
+  File.write('tmp.html', html)
+  system("pandoc --wrap=none tmp.html -f html -t gfm-raw_html -o #{t.name}")
+  File.delete('tmp.html')
 end
 
 file 'what-i-read.html' => ['what-i-read.html.erb', 'posts/what-i-read.md', *PARTIALS] do |t|
