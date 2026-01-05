@@ -145,7 +145,7 @@ class Post
     File.write("#{t}.svg", svg)
     sh(<<~SCRIPT, verbose: false)
       #{CHROME_BINARY} --headless --screenshot="screenshot-#{t}.png" --window-size=#{width},#{height + 400} "file://$(pwd)/#{t}.svg" &>/dev/null
-      docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye screenshot-#{t}.png -quality 80 -crop x630+0+0 #{t}.png
+      docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye screenshot-#{t}.png -quality 80 -crop x630+0+0 -strip #{t}.png
       rm -f #{t}.svg screenshot-#{t}.png
       mkdir -p #{LINK_PREVIEWS_DIR}
       mv #{t}.png #{LINK_PREVIEWS_DIR}/
