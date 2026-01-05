@@ -94,7 +94,7 @@ def index_to_md(index_html_filename, index_md_filename)
   tmp_file = "#{index_md_filename}.tmp.html"
   File.write(tmp_file, html)
   begin
-    sh("pandoc --wrap=none -f html -t gfm-raw_html -o #{index_md_filename} #{tmp_file}", verbose: false)
+    sh("pandoc --wrap=none -f html -t gfm-raw_html -o #{index_md_filename} #{tmp_file}")
   ensure
     rm tmp_file
   end
@@ -122,8 +122,8 @@ class Post
   end
 
   def build_intermediate_html!
-    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}", verbose: false) if !ENV["NOFORMAT"]
-    sh("pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}", verbose: false)
+    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}") if !ENV["NOFORMAT"]
+    sh("pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}")
   end
 
   # props to https://github.com/ordepdev/ordepdev.github.io/blob/1bee021898a6c2dd06a803c5d739bd753dbe700a/scripts/generate-social-images.js#L26
@@ -134,7 +134,7 @@ class Post
     svg = render_erb(TEMPLATE_LINK_PREVIEW, binding)
     t = @filename
     File.write("#{t}.svg", svg)
-    sh(<<~SCRIPT, verbose: false)
+    sh(<<~SCRIPT)
       #{CHROME_BINARY} --headless --screenshot="screenshot-#{t}.png" --window-size=#{width},#{height + 400} "file://$(pwd)/#{t}.svg" &>/dev/null
       docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye screenshot-#{t}.png -quality 80 -crop x630+0+0 #{t}.png
       rm -f #{t}.svg screenshot-#{t}.png

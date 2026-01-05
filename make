@@ -2,7 +2,7 @@
 
 
 build() {
-  rake
+  rake -s
   echo "file://$(pwd)/index.html"
 }
 
