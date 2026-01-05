@@ -59,19 +59,18 @@ class Post
     end
   end
 
-  def self.build_intermediate_html(md_file)
-    `pandoc #{md_file} -f gfm -t gfm -o #{md_file}` if !ENV["NOFORMAT"]
-    `pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}`
+  def build_intermediate_html!
+    `pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}` if !ENV["NOFORMAT"]
+    `pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}`
   end
 
   # props to https://github.com/ordepdev/ordepdev.github.io/blob/1bee021898a6c2dd06a803c5d739bd753dbe700a/scripts/generate-social-images.js#L26
-  def self.gen_img!(md_file)
+  def gen_img!
     width = 1200
     height = 630
-    template = Erubi::Engine.new(File.read(TEMPLATE_LINK_PREVIEW), escape: true)
-    post = Post.new(md_file)
-    svg = eval(template.src, binding)
-    t = post.filename
+    post = self
+    svg = render_erb(TEMPLATE_LINK_PREVIEW, binding)
+    t = @filename
     File.write("#{t}.svg", svg)
     <<~`SCRIPT`
       #{CHROME_BINARY} --headless --screenshot="screenshot-#{t}.png" --window-size=#{width},#{height+400} "file://$(pwd)/#{t}.svg" &>/dev/null
@@ -164,11 +163,12 @@ TEMPLATE_LINK_PREVIEW = 'templates/link-preview.svg.erb'
 
 POSTS_MD = FileList['posts/2*.md']
 POSTS_HTML = POSTS_MD.pathmap('%n.html')
+POSTS_INTERMEDIATE_HTML = POSTS_MD.pathmap('posts/html/%n.html')
 LINK_PREVIEWS = POSTS_MD.pathmap('assets/link_previews/%n.png')
 
 TEMPLATES = FileList['templates/*.erb']
 
-CLEAN.include('index.html', 'index.md', 'links.html', POSTS_HTML, LINK_PREVIEWS, 'atom.xml')
+CLEAN.include('index.html', 'index.md', 'links.html', POSTS_HTML, POSTS_INTERMEDIATE_HTML, LINK_PREVIEWS, 'atom.xml')
 
 multitask :default => [:all]
 multitask :all => ['index.html', 'index.md', 'links.html', *POSTS_HTML, *LINK_PREVIEWS, 'atom.xml']
@@ -194,11 +194,11 @@ POSTS_HTML.each do |post_html|
 end
 
 rule %r{^posts/html/.*\.html$} => ->(f){ f.pathmap('posts/%n.md') } do |t|
-  Post.build_intermediate_html!(t.source)
+  Post.new(t.source).build_intermediate_html!
 end
 
 rule %r{^assets/link_previews/.*\.png$} => [->(f) { "posts/html/#{File.basename(f, '.png')}.html" }, TEMPLATE_LINK_PREVIEW] do |t|
-  Post.gen_img!("posts/#{File.basename(t.source, '.html')}.md")
+  Post.new("posts/#{File.basename(t.source, '.html')}.md").gen_img!
 end
 
 file 'atom.xml' => [*POSTS_HTML] do |t|
