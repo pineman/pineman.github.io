@@ -14,6 +14,15 @@ require "rake/clean"
 CHROME_BINARY = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"'
 SITE_ROOT = "https://pineman.github.io"
 
+INDEX_HTML = "index.html"
+INDEX_MD = "index.md"
+LINKS_HTML = "links.html"
+POSTS_DIR = "posts"
+POSTS_HTML_DIR = "#{POSTS_DIR}/html"
+LINKS_MD = "#{POSTS_DIR}/links.md"
+ATOM_XML = "atom.xml"
+LINK_PREVIEWS_DIR = "assets/link_previews"
+
 TEMPLATES_DIR = "templates"
 TEMPLATE_INDEX = "#{TEMPLATES_DIR}/index.html.erb"
 TEMPLATE_POST = "#{TEMPLATES_DIR}/post.html.erb"
@@ -23,45 +32,45 @@ TEMPLATE_ARTICLE_HEAD = "#{TEMPLATES_DIR}/article-head.html.erb"
 TEMPLATE_PINECONE = "#{TEMPLATES_DIR}/pinecone.html"
 TEMPLATE_LINK_PREVIEW = "#{TEMPLATES_DIR}/link-preview.svg.erb"
 
-POSTS_MD = FileList["posts/2*.md"]
+POSTS_MD = FileList["#{POSTS_DIR}/2*.md"]
 POSTS_HTML = POSTS_MD.pathmap("%n.html")
-POSTS_INTERMEDIATE_HTML = POSTS_MD.pathmap("posts/html/%n.html")
-LINK_PREVIEWS = POSTS_MD.pathmap("assets/link_previews/%n.png")
+POSTS_INTERMEDIATE_HTML = POSTS_MD.pathmap("#{POSTS_HTML_DIR}/%n.html")
+LINK_PREVIEWS = POSTS_MD.pathmap("#{LINK_PREVIEWS_DIR}/%n.png")
 
-CLEAN.include("index.html", "index.md", "links.html", POSTS_HTML, POSTS_INTERMEDIATE_HTML, LINK_PREVIEWS, "atom.xml")
+CLEAN.include(INDEX_HTML, INDEX_MD, LINKS_HTML, POSTS_HTML, POSTS_INTERMEDIATE_HTML, LINK_PREVIEWS, ATOM_XML)
 
 multitask default: [:all]
-multitask all: ["index.html", "index.md", "links.html", *POSTS_HTML, *LINK_PREVIEWS, "atom.xml"]
+multitask all: [INDEX_HTML, INDEX_MD, LINKS_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML]
 
-file "index.html" => [TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE] do |t|
+file INDEX_HTML => [TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE] do |t|
   posts = POSTS_MD.map { |md| Post.new(md) }
   write_html(t.name, TEMPLATE_INDEX, binding)
 end
 
-file "index.md" => "index.html" do |t|
+file INDEX_MD => INDEX_HTML do |t|
   index_to_md(t.source, t.name)
 end
 
-file "links.html" => [TEMPLATE_LINKS, "posts/links.md", TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+file LINKS_HTML => [TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
   write_html(t.name, TEMPLATE_LINKS, binding)
 end
 
+rule %r{^#{POSTS_HTML_DIR}/.*\.html$} => ->(f) { f.pathmap("#{POSTS_DIR}/%n.md") } do |t|
+  Post.new(t.source).build_intermediate_html!
+end
+
 POSTS_HTML.each do |post_html|
-  file post_html => ["posts/html/#{post_html}", TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-    post = Post.new("posts/#{File.basename(t.name, ".html")}.md")
+  file post_html => ["#{POSTS_HTML_DIR}/#{post_html}", TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+    post = Post.new("#{POSTS_DIR}/#{File.basename(t.name, ".html")}.md")
     write_html(t.name, TEMPLATE_POST, binding)
   end
 end
 
-rule %r{^posts/html/.*\.html$} => ->(f) { f.pathmap("posts/%n.md") } do |t|
-  Post.new(t.source).build_intermediate_html!
+rule %r{^#{LINK_PREVIEWS_DIR}/.*\.png$} => [->(f) { "#{POSTS_HTML_DIR}/#{File.basename(f, ".png")}.html" }, TEMPLATE_LINK_PREVIEW] do |t|
+  Post.new("#{POSTS_DIR}/#{File.basename(t.source, ".html")}.md").gen_img!
 end
 
-rule %r{^assets/link_previews/.*\.png$} => [->(f) { "posts/html/#{File.basename(f, ".png")}.html" }, TEMPLATE_LINK_PREVIEW] do |t|
-  Post.new("posts/#{File.basename(t.source, ".html")}.md").gen_img!
-end
-
-file "atom.xml" => [*POSTS_HTML] do |t|
+file ATOM_XML => [*POSTS_HTML] do |t|
   posts = POSTS_MD.map { |md| Post.new(md) }
   File.write(t.name, Post.build_rss(posts))
 end
@@ -89,14 +98,14 @@ end
 
 def index_to_md(index_html_filename, index_md_filename)
   html = File.read(index_html_filename).gsub(/<div class="icon-container".*?>.*?<\/div>/m, "")
-  html = html.gsub(/href="(\d{4}-\d{2}-\d{2}_.*?)\.html"/, 'href="posts/\1.md"')
-  html = html.gsub('href="links.html"', 'href="posts/links.md"')
+  html = html.gsub(/href="(\d{4}-\d{2}-\d{2}_.*?)\.html"/, "href=\"#{POSTS_DIR}/\\1.md\"")
+  html = html.gsub("href=\"#{LINKS_HTML}\"", "href=\"#{LINKS_MD}\"")
   tmp_file = "#{index_md_filename}.tmp.html"
   File.write(tmp_file, html)
   begin
-    sh("pandoc --wrap=none -f html -t gfm-raw_html -o #{index_md_filename} #{tmp_file}")
+    sh("pandoc --wrap=none -f html -t gfm-raw_html -o #{index_md_filename} #{tmp_file}", verbose: false)
   ensure
-    rm tmp_file
+    rm(tmp_file, verbose: false)
   end
 end
 
@@ -110,7 +119,7 @@ class Post
     @filename = File.basename(@md_file, ".md")
     @url = "#{@filename}.html"
     @date = DateTime.parse(@filename.split("_")[0])
-    @html_file = "posts/html/#{@filename}.html"
+    @html_file = "#{POSTS_HTML_DIR}/#{@filename}.html"
 
     if File.exist?(@html_file)
       html = Nokogiri::HTML.fragment(File.read(@html_file))
@@ -122,8 +131,8 @@ class Post
   end
 
   def build_intermediate_html!
-    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}") if !ENV["NOFORMAT"]
-    sh("pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}")
+    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}", verbose: false) if !ENV["NOFORMAT"]
+    sh("pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}", verbose: false)
   end
 
   # props to https://github.com/ordepdev/ordepdev.github.io/blob/1bee021898a6c2dd06a803c5d739bd753dbe700a/scripts/generate-social-images.js#L26
@@ -134,12 +143,12 @@ class Post
     svg = render_erb(TEMPLATE_LINK_PREVIEW, binding)
     t = @filename
     File.write("#{t}.svg", svg)
-    sh(<<~SCRIPT)
+    sh(<<~SCRIPT, verbose: false)
       #{CHROME_BINARY} --headless --screenshot="screenshot-#{t}.png" --window-size=#{width},#{height + 400} "file://$(pwd)/#{t}.svg" &>/dev/null
       docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye screenshot-#{t}.png -quality 80 -crop x630+0+0 #{t}.png
       rm -f #{t}.svg screenshot-#{t}.png
-      mkdir -p assets/link_previews
-      mv #{t}.png assets/link_previews/
+      mkdir -p #{LINK_PREVIEWS_DIR}
+      mv #{t}.png #{LINK_PREVIEWS_DIR}/
     SCRIPT
   end
 
@@ -147,7 +156,7 @@ class Post
     posts = posts.sort_by(&:date)
     rss = RSS::Maker.make("atom") do |maker|
       maker.channel.links.new_link do |link|
-        link.href = "#{SITE_ROOT}/atom.xml"
+        link.href = "#{SITE_ROOT}/#{ATOM_XML}"
         link.rel = "self"
       end
       maker.channel.author = "pineman"
