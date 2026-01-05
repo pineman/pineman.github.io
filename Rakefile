@@ -9,6 +9,63 @@ gemfile do
   gem "nokogiri", "1.16.2"
 end
 
+require "rake/clean"
+
+CHROME_BINARY = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"'
+SITE_ROOT = "https://pineman.github.io"
+
+TEMPLATES_DIR = "templates"
+TEMPLATE_INDEX = "#{TEMPLATES_DIR}/index.html.erb"
+TEMPLATE_POST = "#{TEMPLATES_DIR}/post.html.erb"
+TEMPLATE_LINKS = "#{TEMPLATES_DIR}/links.html.erb"
+TEMPLATE_HEAD = "#{TEMPLATES_DIR}/head.html"
+TEMPLATE_ARTICLE_HEAD = "#{TEMPLATES_DIR}/article-head.html.erb"
+TEMPLATE_PINECONE = "#{TEMPLATES_DIR}/pinecone.html"
+TEMPLATE_LINK_PREVIEW = "#{TEMPLATES_DIR}/link-preview.svg.erb"
+
+POSTS_MD = FileList["posts/2*.md"]
+POSTS_HTML = POSTS_MD.pathmap("%n.html")
+POSTS_INTERMEDIATE_HTML = POSTS_MD.pathmap("posts/html/%n.html")
+LINK_PREVIEWS = POSTS_MD.pathmap("assets/link_previews/%n.png")
+
+CLEAN.include("index.html", "index.md", "links.html", POSTS_HTML, POSTS_INTERMEDIATE_HTML, LINK_PREVIEWS, "atom.xml")
+
+multitask default: [:all]
+multitask all: ["index.html", "index.md", "links.html", *POSTS_HTML, *LINK_PREVIEWS, "atom.xml"]
+
+file "index.html" => [TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE] do |t|
+  posts = POSTS_MD.map { |md| Post.new(md) }
+  write_html(t.name, TEMPLATE_INDEX, binding)
+end
+
+file "index.md" => "index.html" do |t|
+  index_to_md(t.source, t.name)
+end
+
+file "links.html" => [TEMPLATE_LINKS, "posts/links.md", TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+  write_html(t.name, TEMPLATE_LINKS, binding)
+end
+
+POSTS_HTML.each do |post_html|
+  file post_html => ["posts/html/#{post_html}", TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+    post = Post.new("posts/#{File.basename(t.name, ".html")}.md")
+    write_html(t.name, TEMPLATE_POST, binding)
+  end
+end
+
+rule %r{^posts/html/.*\.html$} => ->(f) { f.pathmap("posts/%n.md") } do |t|
+  Post.new(t.source).build_intermediate_html!
+end
+
+rule %r{^assets/link_previews/.*\.png$} => [->(f) { "posts/html/#{File.basename(f, ".png")}.html" }, TEMPLATE_LINK_PREVIEW] do |t|
+  Post.new("posts/#{File.basename(t.source, ".html")}.md").gen_img!
+end
+
+file "atom.xml" => [*POSTS_HTML] do |t|
+  posts = POSTS_MD.map { |md| Post.new(md) }
+  File.write(t.name, Post.build_rss(posts))
+end
+
 module Helpers
   def self.years_ago(date)
     date = Date.parse(date)
@@ -31,16 +88,21 @@ def write_html(html_file, template_file, caller_binding)
 end
 
 def index_to_md(index_html_filename, index_md_filename)
-  html = File.read(index_html_filename).gsub(/<div class="icon-container".*?>.*?<\/div>/m, '')
+  html = File.read(index_html_filename).gsub(/<div class="icon-container".*?>.*?<\/div>/m, "")
   html = html.gsub(/href="(\d{4}-\d{2}-\d{2}_.*?)\.html"/, 'href="posts/\1.md"')
   html = html.gsub('href="links.html"', 'href="posts/links.md"')
-  IO.popen(["pandoc", "--wrap=none", "-f", "html", "-t", "gfm-raw_html", "-o", index_md_filename], "w") { |p| p.write(html) }
+  tmp_file = "#{index_md_filename}.tmp.html"
+  File.write(tmp_file, html)
+  begin
+    sh("pandoc --wrap=none -f html -t gfm-raw_html -o #{index_md_filename} #{tmp_file}", verbose: false)
+  ensure
+    rm tmp_file
+  end
 end
 
-CHROME_BINARY = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"'
-SITE_ROOT = "https://pineman.github.io"
-
 class Post
+  include FileUtils
+
   attr_reader :filename, :url, :title, :html, :date, :text_descr
 
   def initialize(md_file)
@@ -60,8 +122,8 @@ class Post
   end
 
   def build_intermediate_html!
-    `pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}` if !ENV["NOFORMAT"]
-    `pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}`
+    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}", verbose: false) if !ENV["NOFORMAT"]
+    sh("pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}", verbose: false)
   end
 
   # props to https://github.com/ordepdev/ordepdev.github.io/blob/1bee021898a6c2dd06a803c5d739bd753dbe700a/scripts/generate-social-images.js#L26
@@ -72,8 +134,8 @@ class Post
     svg = render_erb(TEMPLATE_LINK_PREVIEW, binding)
     t = @filename
     File.write("#{t}.svg", svg)
-    <<~`SCRIPT`
-      #{CHROME_BINARY} --headless --screenshot="screenshot-#{t}.png" --window-size=#{width},#{height+400} "file://$(pwd)/#{t}.svg" &>/dev/null
+    sh(<<~SCRIPT, verbose: false)
+      #{CHROME_BINARY} --headless --screenshot="screenshot-#{t}.png" --window-size=#{width},#{height + 400} "file://$(pwd)/#{t}.svg" &>/dev/null
       docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye screenshot-#{t}.png -quality 80 -crop x630+0+0 #{t}.png
       rm -f #{t}.svg screenshot-#{t}.png
       mkdir -p assets/link_previews
@@ -117,91 +179,7 @@ class Post
       break if test_string.length > 160
       truncated = test_string
     end
-    suffix = truncated.end_with?('.') ? ' ...' : '...' if truncated.length < text.length
+    suffix = truncated.end_with?(".") ? " ..." : "..." if truncated.length < text.length
     "#{truncated}#{suffix}"
   end
-end
-
-require "rake/clean"
-
-module Rake
-  module DSL
-    alias_method :original_file, :file
-    alias_method :original_rule, :rule
-
-    def file(*args, &block)
-      if block_given?
-        original_file(*args) do |t|
-          puts "Building #{t.name}"
-          block.call(t)
-        end
-      else
-        original_file(*args)
-      end
-    end
-
-    def rule(*args, &block)
-      if block_given?
-        original_rule(*args) do |t|
-          puts "Building #{t.name}"
-          block.call(t)
-        end
-      else
-        original_rule(*args)
-      end
-    end
-  end
-end
-
-TEMPLATE_INDEX = 'templates/index.html.erb'
-TEMPLATE_POST = 'templates/post.html.erb'
-TEMPLATE_LINKS = 'templates/links.html.erb'
-TEMPLATE_HEAD = 'templates/head.html'
-TEMPLATE_ARTICLE_HEAD = 'templates/article-head.html.erb'
-TEMPLATE_PINECONE = 'templates/pinecone.html'
-TEMPLATE_LINK_PREVIEW = 'templates/link-preview.svg.erb'
-
-POSTS_MD = FileList['posts/2*.md']
-POSTS_HTML = POSTS_MD.pathmap('%n.html')
-POSTS_INTERMEDIATE_HTML = POSTS_MD.pathmap('posts/html/%n.html')
-LINK_PREVIEWS = POSTS_MD.pathmap('assets/link_previews/%n.png')
-
-TEMPLATES = FileList['templates/*.erb']
-
-CLEAN.include('index.html', 'index.md', 'links.html', POSTS_HTML, POSTS_INTERMEDIATE_HTML, LINK_PREVIEWS, 'atom.xml')
-
-multitask :default => [:all]
-multitask :all => ['index.html', 'index.md', 'links.html', *POSTS_HTML, *LINK_PREVIEWS, 'atom.xml']
-
-file 'index.html' => [TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE] do |t|
-  posts = POSTS_MD.map { |md| Post.new(md) }
-  write_html(t.name, TEMPLATE_INDEX, binding)
-end
-
-file 'index.md' => 'index.html' do |t|
-  index_to_md(t.source, t.name)
-end
-
-file 'links.html' => [TEMPLATE_LINKS, 'posts/links.md', TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-  write_html(t.name, TEMPLATE_LINKS, binding)
-end
-
-POSTS_HTML.each do |post_html|
-  file post_html => ["posts/html/#{post_html}", TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-    post = Post.new("posts/#{File.basename(t.name, '.html')}.md")
-    write_html(t.name, TEMPLATE_POST, binding)
-  end
-end
-
-rule %r{^posts/html/.*\.html$} => ->(f){ f.pathmap('posts/%n.md') } do |t|
-  Post.new(t.source).build_intermediate_html!
-end
-
-rule %r{^assets/link_previews/.*\.png$} => [->(f) { "posts/html/#{File.basename(f, '.png')}.html" }, TEMPLATE_LINK_PREVIEW] do |t|
-  Post.new("posts/#{File.basename(t.source, '.html')}.md").gen_img!
-end
-
-file 'atom.xml' => [*POSTS_HTML] do |t|
-  posts = POSTS_MD.map { |md| Post.new(md) }
-  File.write(t.name, Post.build_rss(posts))
 end
