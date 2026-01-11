@@ -1,4 +1,7 @@
 # January 2026
+* https://turbopuffer.com/blog/bm25-latency-musings
+* https://ghuntley.com/dothings/
+* https://news.ycombinator.com/item?id=46466027 - Try to take my position: The best promotion advice I ever got (grahamyooll.com)
 * https://news.ycombinator.com/item?id=46482642 - The Riven Diffs – Seeing Riven (1997) Differently (glthr.com)
 * https://archive.is/nLNPp - Why Is the American Diet So Deadly? A scientist tried to discredit the theory that ultra-processed foods are killing us. Instead, he overturned his own understanding of obesity.
 * https://archive.is/umpyR - Does It Help to Know History?
