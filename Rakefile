@@ -52,6 +52,13 @@ file INDEX_MD => INDEX_HTML do |t|
 end
 
 file LINKS_HTML => [TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+  # Preprocess links.md to ensure lines starting with 'http' have "* " prefix
+  lines = File.readlines(LINKS_MD)
+  modified_lines = lines.map do |line|
+    line.start_with?("http") && !line.start_with?("* ") ? "* #{line}" : line
+  end
+  File.write(LINKS_MD, modified_lines.join)
+
   write_html(t.name, TEMPLATE_LINKS, binding)
 end
 

@@ -1,4 +1,6 @@
 # January 2026
+* https://news.ycombinator.com/item?id=46614037 - I’m leaving Redis for SolidQueue (simplethread.com)
+* https://lobste.rs/s/zkvvo9/hidden_cost_postgresql_arrays
 * https://turbopuffer.com/blog/bm25-latency-musings
 * https://ghuntley.com/dothings/
 * https://news.ycombinator.com/item?id=46466027 - Try to take my position: The best promotion advice I ever got (grahamyooll.com)
