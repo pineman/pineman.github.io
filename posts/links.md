@@ -1,4 +1,11 @@
 # January 2026
+* https://newsletter.posthog.com/p/tech-lead-failure-modes
+* https://www.youtube.com/watch?v=K3ivDkMEclg - "Faster vector search with Turbopuffer CEO, Simon Eskildsen"
+* https://www.youtube.com/watch?v=Kn_P9nG0zsA - "The history of servers, the cloud, and what’s next – with Oxide"
+* https://yogthos.net/posts/2026-01-16-lattice-mcp.html
+* https://www.linkedin.com/posts/bryan-cantrill-b6a1_recently-the-the-new-stack-had-a-piece-excerpting-activity-7415137978307543040-MpaJ - excellent post. in fact, didn't patio11 move to Japan for basically the same reasons - sold that software's future was in japan because they were growing so much?
+* https://ghuntley.com/ralph/
+* https://antirez.com/news/158 - Don't fall into the anti-AI hype
 * https://news.ycombinator.com/item?id=46614037 - I’m leaving Redis for SolidQueue (simplethread.com)
 * https://lobste.rs/s/zkvvo9/hidden_cost_postgresql_arrays
 * https://turbopuffer.com/blog/bm25-latency-musings
@@ -213,7 +220,7 @@
 * https://en.wikipedia.org/wiki/Paul_Erd%C5%91s
 * https://oxide.computer/blog/systems-software-in-the-large
 * https://news.ycombinator.com/item?id=45687458 - /dev/null is an ACID compliant database (jyu.dev)
-* https://www.seangoedecke.com/good-code-reviews/#fnref-4
+* https://www.seangoedecke.com/good-code-reviews
 * https://www.seangoedecke.com/pure-and-impure-engineering/
 * https://news.ycombinator.com/item?id=45633311 - The future of Python web services looks GIL-free (baro.dev) - asgi async: a bit better perf, lower memusage, but crucially no longer need to increase worker count (one event loop per proc, and therefore heavy mem usage) to scale. wsgi sync: kinda same perf, increased memusage but probably fixable? best part is no longer having to tradeoff worker-thread count for cpu-io ratio (like the puma worker-thread count discussion)
 * https://planetscale.com/blog/benchmarking-postgres-17-vs-18
@@ -569,7 +576,7 @@
 * https://explaining.software/archive/the-sudoku-affair/
 * https://rjp.io/blog/2025-06-07-reflections-on-sudoku
 * https://ferd.ca/the-gap-through-which-we-praise-the-machine.html
-* https://tylercipriani.com/blog/2022/11/19/git-notes-gits-coolest-most-unloved-feature/#fnref1
+* https://tylercipriani.com/blog/2022/11/19/git-notes-gits-coolest-most-unloved-feature
 * https://www.cybertec-postgresql.com/en/transaction-anomalies-with-select-for-update/
 * https://brandur.org/fragments/testing-request-cancellation
 * https://dev.to/devteam/evolving-our-infrastructure-why-we-moved-from-heroku-postgres-to-neon-1928
@@ -641,7 +648,7 @@
 * https://world.hey.com/joaoqalves/on-hiring-qa-engineers-75dfa472
 * https://world.hey.com/joaoqalves/five-opinions-i-ve-kept-let-go-and-picked-up-as-a-software-builder-and-leader-5ab3b919
 * https://diogomr.com/posts/making-impossible-states-impossible/
-* https://www.seangoedecke.com/in-these-troubled-times/#fnref-2
+* https://www.seangoedecke.com/in-these-troubled-times
 * https://www.seangoedecke.com/good-times-are-over
 * https://www.seangoedecke.com/practical-ai-techniques/
 * https://www.seangoedecke.com/beyond-prompting/
@@ -696,7 +703,7 @@
 * https://news.ycombinator.com/item?id=43677122 - Fibonacci Hashing: The Optimization That the World Forgot (probablydance.com)
 * https://waspdev.com/articles/2025-04-06/features-that-every-js-developer-must-know-in-2025
 * https://blog.rpanachi.com/after-25-years-writing-software-here-are-a-few-more-things-ive-learned-so-far-part2
-* https://www.seangoedecke.com/wicked-features/#fnref-1
+* https://www.seangoedecke.com/wicked-features
 * https://en.wikipedia.org/wiki/Comparative_advantage
 * https://meaningness.com/sad-light-lumens
 * https://www.benkuhn.net/lux/
@@ -911,7 +918,7 @@
 * https://news.ycombinator.com/item?id=43062546 - Watt The Fox? (43z.one)
 * https://langdev.stackexchange.com/questions/4325/how-do-modern-compilers-choose-which-variables-to-put-in-registers
 * https://garry.net/posts/dead-games
-* https://byroot.github.io/ruby/performance/2025/02/24/http2-past-the-load-balancer.html#fnref:1
+* https://byroot.github.io/ruby/performance/2025/02/24/http2-past-the-load-balancer.html
 * https://byroot.github.io/ruby/performance/2025/02/27/whats-the-deal-with-ractors.html
 * https://newsletter.pragmaticengineer.com/p/software-engineering-job-openings
 * https://www.ubicloud.com/blog/debugging-hetzner-uncovering-failures-with-powerstat-sensors-and-dmidecode
@@ -975,7 +982,7 @@
 * https://news.ycombinator.com/item?id=42778151 - You probably don't need query builders (mattrighetti.com)
 * https://stratechery.com/2025/deepseek-faq/
 * https://registerspill.thorstenball.com/p/how-might-ai-change-programming
-* https://byroot.github.io/ruby/performance/2025/01/29/so-you-want-to-remove-the-gvl.html#fnref:1
+* https://byroot.github.io/ruby/performance/2025/01/29/so-you-want-to-remove-the-gvl.html
 * https://www.cockroachlabs.com/blog/living-without-atomic-clocks/
 * https://news.ycombinator.com/item?id=42813049 - Every System is a Log: Avoiding coordination in distributed applications (restate.dev)
 * https://www.benkuhn.net/overconfidence/
@@ -1132,7 +1139,7 @@
 * https://newsletter.ozwrites.com/p/november-ramble
 * https://pushtoprod.substack.com/p/netflix-terrifying-concurrency-bug
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-15
-* https://ludic.mataroa.blog/blog/reflecting-on-years-of-runescape/#fnref:5
+* https://ludic.mataroa.blog/blog/reflecting-on-years-of-runescape
 * https://ludic.mataroa.blog/blog/the-complex-problem-of-lying-for-jobs/
 * https://ludic.mataroa.blog/blog/on-burnout-mental-health-and-not-being-okay
 * https://www.campsite.com/blog/how-we-made-a-ruby-method-200x-faster
@@ -1154,7 +1161,7 @@
 * https://news.ycombinator.com/item?id=42036303 - Do you need Redis? PostgreSQL does queuing, locking, and pub/sub (2021) (atomicobject.com)
 * https://blog.samaltman.com/the-days-are-long-but-the-decades-are-short
 * https://newsletter.pragmaticengineer.com/p/building-the-threads-app
-* https://www.hailelagi.com/notes/how-do-databases-count/#fnref:3
+* https://www.hailelagi.com/notes/how-do-databases-count
 * https://blog.stalkr.net/2015/04/golang-data-races-to-break-memory-safety.html?m=1
 * https://hanamirb.org/blog/2024/11/05/hanami-220/
 * https://blog.appsignal.com/2024/10/30/optimize-database-performance-in-ruby-on-rails-and-activerecord.html
