@@ -65,7 +65,7 @@ file LINKS_HTML => [TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HE
   modified_lines = lines.map do |line|
     line.start_with?("http") && !line.start_with?("* ") ? "* #{line}" : line
   end
-  File.write(LINKS_MD, modified_lines.join)
+  File.write(LINKS_MD, modified_lines.join) if modified_lines != lines
 
   write_html(t.name, TEMPLATE_LINKS, binding)
 end
@@ -80,8 +80,8 @@ rule %r{^#{NOTES_HTML_DIR}/.*\.html$} => ->(f) { f.pathmap("#{NOTES_DIR}/%n.md")
 end
 
 NOTE_HTML.each do |note_html|
-  file note_html => ["#{NOTES_HTML_DIR}/#{File.basename(note_html)}", TEMPLATE_NOTE, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-    note = Note.new("#{NOTES_DIR}/#{File.basename(t.name, ".html")}.md")
+  file note_html => [note_html.pathmap("#{NOTES_HTML_DIR}/%f"), TEMPLATE_NOTE, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+    note = Note.new(t.name.pathmap("#{NOTES_DIR}/%n.md"))
     write_html(t.name, TEMPLATE_NOTE, binding)
   end
 end
@@ -91,14 +91,14 @@ rule %r{^#{POSTS_HTML_DIR}/.*\.html$} => ->(f) { f.pathmap("#{POSTS_DIR}/%n.md")
 end
 
 POSTS_HTML.each do |post_html|
-  file post_html => ["#{POSTS_HTML_DIR}/#{File.basename(post_html)}", TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-    post = Post.new("#{POSTS_DIR}/#{File.basename(t.name, ".html")}.md")
+  file post_html => [post_html.pathmap("#{POSTS_HTML_DIR}/%f"), TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+    post = Post.new(t.name.pathmap("#{POSTS_DIR}/%n.md"))
     write_html(t.name, TEMPLATE_POST, binding)
   end
 end
 
-rule %r{^#{LINK_PREVIEWS_DIR}/.*\.png$} => [->(f) { "#{POSTS_HTML_DIR}/#{File.basename(f, ".png")}.html" }, TEMPLATE_LINK_PREVIEW] do |t|
-  Post.new("#{POSTS_DIR}/#{File.basename(t.source, ".html")}.md").gen_img!
+rule %r{^#{LINK_PREVIEWS_DIR}/.*\.png$} => [->(f) { f.pathmap("#{POSTS_HTML_DIR}/%n.html") }, TEMPLATE_LINK_PREVIEW] do |t|
+  Post.new(t.source.pathmap("#{POSTS_DIR}/%n.md")).gen_img!
 end
 
 file ATOM_XML => [*POSTS_HTML] do |t|
