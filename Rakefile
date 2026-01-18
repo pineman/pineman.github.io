@@ -22,7 +22,7 @@ NOTES_DIR = "notes"
 NOTES_HTML_DIR = "#{NOTES_DIR}/html"
 POSTS_DIR = "posts"
 POSTS_HTML_DIR = "#{POSTS_DIR}/html"
-LINKS_MD = "#{POSTS_DIR}/links.md"
+LINKS_MD = "links.md"
 ATOM_XML = "atom.xml"
 LINK_PREVIEWS_DIR = "assets/link_previews"
 
