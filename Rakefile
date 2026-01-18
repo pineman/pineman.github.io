@@ -17,6 +17,9 @@ SITE_ROOT = "https://pineman.github.io"
 INDEX_HTML = "index.html"
 INDEX_MD = "index.md"
 LINKS_HTML = "links.html"
+NOTES_HTML = "notes.html"
+NOTES_DIR = "notes"
+NOTES_HTML_DIR = "#{NOTES_DIR}/html"
 POSTS_DIR = "posts"
 POSTS_HTML_DIR = "#{POSTS_DIR}/html"
 LINKS_MD = "#{POSTS_DIR}/links.md"
@@ -27,20 +30,26 @@ TEMPLATES_DIR = "templates"
 TEMPLATE_INDEX = "#{TEMPLATES_DIR}/index.html.erb"
 TEMPLATE_POST = "#{TEMPLATES_DIR}/post.html.erb"
 TEMPLATE_LINKS = "#{TEMPLATES_DIR}/links.html.erb"
-TEMPLATE_HEAD = "#{TEMPLATES_DIR}/head.html"
+TEMPLATE_NOTES = "#{TEMPLATES_DIR}/notes.html.erb"
+TEMPLATE_NOTE = "#{TEMPLATES_DIR}/note.html.erb"
+TEMPLATE_HEAD = "#{TEMPLATES_DIR}/head.html.erb"
 TEMPLATE_ARTICLE_HEAD = "#{TEMPLATES_DIR}/article-head.html.erb"
 TEMPLATE_PINECONE = "#{TEMPLATES_DIR}/pinecone.html"
 TEMPLATE_LINK_PREVIEW = "#{TEMPLATES_DIR}/link-preview.svg.erb"
 
 POSTS_MD = FileList["#{POSTS_DIR}/2*.md"]
-POSTS_HTML = POSTS_MD.pathmap("%n.html")
+POSTS_HTML = POSTS_MD.pathmap("#{POSTS_DIR}/%n.html")
 POSTS_INTERMEDIATE_HTML = POSTS_MD.pathmap("#{POSTS_HTML_DIR}/%n.html")
 LINK_PREVIEWS = POSTS_MD.pathmap("#{LINK_PREVIEWS_DIR}/%n.png")
 
-CLEAN.include(INDEX_HTML, INDEX_MD, LINKS_HTML, POSTS_HTML, POSTS_INTERMEDIATE_HTML, LINK_PREVIEWS, ATOM_XML)
+NOTES_MD = FileList["#{NOTES_DIR}/*.md"]
+NOTE_HTML = NOTES_MD.pathmap("#{NOTES_DIR}/%n.html")
+NOTES_INTERMEDIATE_HTML = NOTES_MD.pathmap("#{NOTES_HTML_DIR}/%n.html")
+
+CLEAN.include(INDEX_HTML, INDEX_MD, LINKS_HTML, NOTES_HTML, NOTE_HTML, NOTES_INTERMEDIATE_HTML, POSTS_HTML, POSTS_INTERMEDIATE_HTML, LINK_PREVIEWS, ATOM_XML)
 
 multitask default: [:all]
-multitask all: [INDEX_HTML, INDEX_MD, LINKS_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML]
+multitask all: [INDEX_HTML, INDEX_MD, LINKS_HTML, NOTES_HTML, *NOTE_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML]
 
 file INDEX_HTML => [TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE] do |t|
   posts = POSTS_MD.map { |md| Post.new(md) }
@@ -61,12 +70,28 @@ file LINKS_HTML => [TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HE
   write_html(t.name, TEMPLATE_LINKS, binding)
 end
 
+file NOTES_HTML => [TEMPLATE_NOTES, *NOTE_HTML, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+  notes = NOTES_MD.map { |md| Note.new(md) }
+  write_html(t.name, TEMPLATE_NOTES, binding)
+end
+
+rule %r{^#{NOTES_HTML_DIR}/.*\.html$} => ->(f) { f.pathmap("#{NOTES_DIR}/%n.md") } do |t|
+  Note.new(t.source).build_intermediate_html!
+end
+
+NOTE_HTML.each do |note_html|
+  file note_html => ["#{NOTES_HTML_DIR}/#{File.basename(note_html)}", TEMPLATE_NOTE, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+    note = Note.new("#{NOTES_DIR}/#{File.basename(t.name, ".html")}.md")
+    write_html(t.name, TEMPLATE_NOTE, binding)
+  end
+end
+
 rule %r{^#{POSTS_HTML_DIR}/.*\.html$} => ->(f) { f.pathmap("#{POSTS_DIR}/%n.md") } do |t|
   Post.new(t.source).build_intermediate_html!
 end
 
 POSTS_HTML.each do |post_html|
-  file post_html => ["#{POSTS_HTML_DIR}/#{post_html}", TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+  file post_html => ["#{POSTS_HTML_DIR}/#{File.basename(post_html)}", TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
     post = Post.new("#{POSTS_DIR}/#{File.basename(t.name, ".html")}.md")
     write_html(t.name, TEMPLATE_POST, binding)
   end
@@ -104,7 +129,7 @@ end
 
 def index_to_md(index_html_filename, index_md_filename)
   html = File.read(index_html_filename).gsub(/<div class="icon-container".*?>.*?<\/div>/m, "")
-  html = html.gsub(/href="(\d{4}-\d{2}-\d{2}_.*?)\.html"/, "href=\"#{POSTS_DIR}/\\1.md\"")
+  html = html.gsub(/href="#{POSTS_DIR}\/(\d{4}-\d{2}-\d{2}_.*?)\.html"/, "href=\"#{POSTS_DIR}/\\1.md\"")
   html = html.gsub("href=\"#{LINKS_HTML}\"", "href=\"#{LINKS_MD}\"")
   tmp_file = "#{index_md_filename}.tmp.html"
   File.write(tmp_file, html)
@@ -115,10 +140,19 @@ def index_to_md(index_html_filename, index_md_filename)
   end
 end
 
-class Post
+class BasePost
   include FileUtils
 
-  attr_reader :filename, :url, :title, :html, :date, :text_descr
+  attr_reader :url, :html
+
+  def build_intermediate_html!
+    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}", verbose: false) if !ENV["NOFORMAT"]
+    sh("pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}", verbose: false)
+  end
+end
+
+class Post < BasePost
+  attr_reader :filename, :title, :date, :text_descr
 
   def initialize(md_file)
     @md_file = md_file
@@ -134,11 +168,6 @@ class Post
       @html = html.to_s
       @text_descr = truncate_text(@html)
     end
-  end
-
-  def build_intermediate_html!
-    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}", verbose: false) if !ENV["NOFORMAT"]
-    sh("pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}", verbose: false)
   end
 
   # props to https://github.com/ordepdev/ordepdev.github.io/blob/1bee021898a6c2dd06a803c5d739bd753dbe700a/scripts/generate-social-images.js#L26
@@ -198,3 +227,19 @@ class Post
     "#{truncated}#{suffix}"
   end
 end
+
+class Note < BasePost
+  attr_reader :name
+
+  def initialize(md_file)
+    @md_file = md_file
+    @name = File.basename(md_file, ".md")
+    @url = "#{NOTES_DIR}/#{@name}.html"
+    @html_file = "#{NOTES_HTML_DIR}/#{@name}.html"
+
+    if File.exist?(@html_file)
+      @html = File.read(@html_file)
+    end
+  end
+end
+

@@ -1,9 +1,10 @@
+<% root = "../" %>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <%== File.read('templates/head.html') %>
+  <%== render_erb('templates/head.html.erb', binding) %>
   <%== render_erb('templates/article-head.html.erb', binding) %>
-  <link rel="alternate" type="text/markdown" href="posts/<%= post.filename %>.md">
+  <link rel="alternate" type="text/markdown" href="<%= post.filename %>.md">
   <meta property="og:url" content="<%= SITE_ROOT %>/<%= post.url %>" />
   <meta property="article:published_time" content="<%= post.date.iso8601 %>" />
   <meta property="article:modified_time" content="<%= post.date.iso8601 %>" />
@@ -25,7 +26,7 @@
 </head>
 <body>
 <div id="wrap">
-<a href="index.html">&lt; back</a>
+<a href="<%= root %>index.html">&lt; back</a>
 <article>
   <header>
     <h1><%= post.title %></h1>
@@ -33,11 +34,11 @@
   </header>
 <%== post.html %>
 </article>
-<a href="index.html">&lt; back</a>
+<a href="<%= root %>index.html">&lt; back</a>
 </div>
 </body>
-<link rel="stylesheet" href="assets/oceanicnext.min.css">
-<script src="assets/highlight.min.js"></script>
+<link rel="stylesheet" href="<%= root %>assets/oceanicnext.min.css">
+<script src="<%= root %>assets/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {

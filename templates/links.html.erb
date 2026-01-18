@@ -1,7 +1,8 @@
+<% root = "" %>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <%== File.read('templates/head.html') %>
+  <%== render_erb('templates/head.html.erb', binding) %>
   <%== render_erb('templates/article-head.html.erb', binding) %>
   <link rel="alternate" type="text/markdown" href="posts/links.md">
   <%

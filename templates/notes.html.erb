@@ -1,0 +1,27 @@
+<% root = "" %>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <%== render_erb('templates/head.html.erb', binding) %>
+  <%== render_erb('templates/article-head.html.erb', binding) %>
+  <meta property="og:url" content="<%= SITE_ROOT %>/notes.html" />
+  <title>Notes</title>
+  <meta property="og:title" content="Notes" />
+  <meta name="description" content="Notes" />
+  <meta property="og:description" content="Notes" />
+</head>
+<body>
+<div id="wrap">
+<a href="index.html">&lt; back</a>
+<article>
+  <h1>Notes</h1>
+  <ul>
+<% notes.each do |note| %>
+    <li><a href="<%= note.url %>"><%= note.name %></a></li>
+<% end %>
+  </ul>
+</article>
+<a href="index.html">&lt; back</a>
+</div>
+</body>
+</html>

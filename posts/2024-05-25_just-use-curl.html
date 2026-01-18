@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../templates/style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="João Pinheiro" />
+<meta name="keywords" content="technology computer software engineering" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="João Pinheiro" />
+<script src="https://kit.fontawesome.com/84407ba8ee.js" crossorigin="anonymous"></script>
+
+  <meta property="og:type" content="article" />
+<meta property="article:author" content="https://pineman.github.io" />
+<meta property="article:section" content="blog" />
+<meta property="article:tag" content="technology" />
+<meta property="article:tag" content="computer" />
+<meta property="article:tag" content="software" />
+<meta property="article:tag" content="engineering" />
+
+  <link rel="alternate" type="text/markdown" href="2024-05-25_just-use-curl.md">
+  <meta property="og:url" content="https://pineman.github.io/2024-05-25_just-use-curl.html" />
+  <meta property="article:published_time" content="2024-05-25T00:00:00+00:00" />
+  <meta property="article:modified_time" content="2024-05-25T00:00:00+00:00" />
+  <title>Just use curl (or how hard can it be to make HTTP requests?)</title>
+  <meta property="og:title" content="Just use curl (or how hard can it be to make HTTP requests?)" />
+  <meta name="description" content="Recently we&#39;ve needed to do a lot of HTTP requests to weird APIs. One endpoint in particular is basically the wild west of HTTP - High, unpredictable latency..." />
+  <meta property="og:description" content="Recently we&#39;ve needed to do a lot of HTTP requests to weird APIs. One endpoint in particular is basically the wild west of HTTP - High, unpredictable latency..." />
+  <meta property="og:image" content="https://pineman.github.io/assets/link_previews/2024-05-25_just-use-curl.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Just use curl (or how hard can it be to make HTTP requests?)" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@pineman_">
+  <meta name="twitter:creator" content="@pineman_">
+  <meta name="twitter:title" content="Just use curl (or how hard can it be to make HTTP requests?)">
+  <meta name="twitter:description" content="Recently we&#39;ve needed to do a lot of HTTP requests to weird APIs. One endpoint in particular is basically the wild west of HTTP - High, unpredictable latency...">
+  <meta name="twitter:image" content="https://pineman.github.io/assets/link_previews/2024-05-25_just-use-curl.png">
+  <meta name="twitter:image:alt" content="Just use curl (or how hard can it be to make HTTP requests?)">
+</head>
+<body>
+<div id="wrap">
+<a href="../index.html">&lt; back</a>
+<article>
+  <header>
+    <h1>Just use curl (or how hard can it be to make HTTP requests?)</h1>
+    <h5><time datetime="2024-05-25T00:00:00+00:00" pubdate="pubdate">2024-05-25</time></h5>
+  </header>
+
+<p>Recently we've needed to do a lot of HTTP requests to weird APIs. One endpoint in particular is basically the wild west of HTTP - High, unpredictable latency and redirects a lot: often absolutely, from HTTPS to HTTP and even to non-resolving URLs.</p>
+<p>I started this endeavour with good ol' <a href="https://github.com/httprb/http">HTTP.rb</a>, as one does, blissfully unaware of this long tail of responses. I configured a 15s timeout for this endpoint call to deal with its unpredictability. And things were going great! HTTP.rb does the Right Thing 99% of the time regarding following redirects and other errors, so I went on my merry way.</p>
+<p>... Until I started tracking my requests more closely and noticed some were taking longer than 15s. Much longer, in fact. Turns out the timeout settings are per-HTTP-request - i.e., a call to <code>HTTP.get</code> with <code>max_hops: 10</code> and <code>timeout: 15</code> can take up to 150s, modulo other shenanigans we'll get to. This is not okay as each redirect can easily take 10s, wrecking my performance SLO - which, while relatively lax, is certainly not to exceed around 30s, and very hopefully below that. I needed a way to set a global timeout for ALL redirects in this call to <code>HTTP.get</code> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<h2 id="timeout-woes">Timeout woes</h2>
+<p>So. What to do? The obvious and, of course, naive solution, is to just stick a <code>Timeout::timeout</code> around the request and be done with it. I really, really didn't want to do this, as I had already read the (hopefully) famous <a href="https://web.archive.org/web/20110903054547/http://blog.headius.com/2008/02/ruby-threadraise-threadkill-timeoutrb.html">article by Charles Nutter</a> (and the "repost" <a href="https://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/">by Mike Perham</a>) about how fundamentally broken it is. <a href="https://redgetan.cc/understanding-timeouts-in-cruby/">This post</a> is incredible - it goes into the internals of how Timeout works in CRuby.</p>
+<p>As a quick summary, <code>Timeout::timeout</code> essentially spins up a whole new thread (if not using Fibers), just to sleep in it for the duration of the timeout. If the block of code runs before the timeout is elapsed, the thread is killed, and so it doesn't wake up. If it does wake up, however, it uses <code>Thread#raise</code> to raise an error in the calling thread at any point, arbitrarily, which is SUPER dangerous! There's no guarantee as to when exactly the sleeping thread will run or when the calling thread will receive the signal, so all manner of standard race problems apply.</p>
+<p>Speaking with some colleagues we noted the probable Right Way™ to solve this would be to use Fibers and async-http, possibly with Faraday. I, uh, didn't do that. My logic and testing was already very much on top of HTTP.rb's behavior, so it'd be a pretty big change. Besides, our project doesn't use any async stuff yet, so I'd be pioneering this in. Guess what I did - I stuck <code>Timeout::timeout</code> in there and moved on.</p>
+<p>... Until I started getting errors I hadn't before. And the stacktrace makes no sense - the line where the error was raised couldn't possibly even raise that error. I had a rescue around all the HTTP calls I was making, so how wasn't it rescued there?!... Oh. God. Wait. It's <code>Timeout::timeout</code>, isn't it?...</p>
+<p>It was. I suspect it was doubly-bad as HTTP.rb itself uses <code>Timeout::timeout</code> for its timeouts <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. I was triggering this condition fairly often, in just hundreds of requests, on my machine - there's no way we can ship it like this.</p>
+<h2 id="alternatives">Alternatives</h2>
+<p>Time to look for alternatives, I guess... I'll try not to get into hideous technical detail, for both your sake and mine. I checked, and it seemed to me that the stdlib Net:HTTP also used <code>Timeout::timeout</code> - albeit less than HTTP.rb (looks like that it's just for the open timeout <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>), so I skipped it for now.</p>
+<p>Then I looked at <a href="https://github.com/socketry/async-http">async-http</a>, which was exciting - if everything is nonblocking, cancelling on a timer is a non-issue (or even just raising an error like <code>Task.with_timeout</code> does). But I had lots of trouble trying to port all the behavior I was used to in HTTP.rb, with redirections, ssl options, headers, all that. The API wasn't as ergonomic as I'd hoped <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. I tried using it with the <a href="https://github.com/socketry/async-http-faraday">Faraday adapter</a>, but I found out that I couldn't use Faraday for entirely different, project-specific, reasons.</p>
+<p>Next I checked out <a href="https://github.com/HoneyryderChuck/httpx">httpx</a> on a recommendation. It uses <code>IO.select</code> and even ships with its own non-blocking DNS resolver (curse you <code>getaddrinfo</code>)! This filled me with hope. The code was easy to read and the API super ergonomic. But, alas, it doesn't provide a way to set a global timeout across redirects. This is when I had an idea: I'll hack around this by manually checking the elapsed time since the first request on each redirection, using the <code>on_response_completed</code> callback. This worked surprisingly well! In the worst case scenario it could take <code>2*timeout</code>, but it's good enough!</p>
+<p>Except... Now the responses from the endpoints are different. httpx has different semantics on what headers to send and what to do on redirects. Admittedly, this is probably hard mode for http clients (yes the endpoints I'm hitting are really that weird). Forget about timeouts if I don't have semantic correctness.</p>
+<p>This is when I went mad and started clicking desperately on all http clients I could find. <a href="https://github.com/nahi/httpclient">httpclient</a> uses <code>Timeout::timeout</code> as well... And <a href="https://github.com/jnunemaker/httparty">httparty</a> calls Net::HTTP... <a href="https://github.com/excon/excon">Excon</a> uses <code>IO.select</code> - yay!</p>
+<p>But then I found <a href="https://github.com/typhoeus/typhoeus">Typhoeus</a>, a wrapper around libcurl, which I know has a global timeout including redirects (<code>--max-time</code> through the <code>curl</code> cli). I tried it out and it's pretty simple, easy to use and does the right thing (of course, it's <code>curl</code>)! So this seems to be the endgame, the ultimate solution for my usecase today, at least from my testing so far.</p>
+<h2 id="all-roads-lead-to-curl">All roads lead to curl</h2>
+<p>So, is the conclusion that we should all just use cURL? Really?! A C project started almost 30 years ago?!</p>
+<p>Yes.</p>
+<p>Tongue-in-cheek. But, in retrospect, it sounds obvious - cURL is venerable and legendary. Lindy's law in effect! Of course though, pure ruby gems have many advantages compared to ffi/native gems, not least of which not randomly segfaulting <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. But we'll see how it goes for me and curl wrappers.</p>
+<p>Also, please burn <code>Timeout::timeout</code> with fire.</p>
+<p><strong>UPDATE</strong>: I wound up using ruby-async's <a href="https://socketry.github.io/async/guides/asynchronous-tasks/index.html#timeouts"><code>.with_timeout</code></a> in production plus HTTP.rb. Since async timers run <a href="https://github.com/socketry/async/blob/9851cb945ae49a85375d120219000fe7db457307/lib/async/scheduler.rb#L391">in the event loop</a>, it has proper semantics (like <code>IO.select</code>)! It's got some drawbacks: it spins up all the fiber scheduler machinery just to do an HTTP request and it also currently loses otel tracing context (at least in our app). But other than that, I found it to be a good solution to the timeout problem.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>I later found an imperfect but "good enough" solution to this using HTTPX, but it hadn't come to me at this time. Using the callbacks plugin, check the time elapsed since starting on each redirect and bail out if over the target.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>There seems to be a <a href="https://github.com/httprb/http/issues/773">timeout redesign</a> coming for the next version, which sounds great!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>It uses <code>BufferedIO</code> for the <a href="https://github.com/ruby/net-http/blob/70059463d97f9a62415dd4df654285d366cfae10/lib/net/http.rb#L1742">remaining timeouts</a>, which <a href="https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/lib/net/protocol.rb#L229">uses</a> <code>.wait_readable</code> (or <code>wait_writeable</code>), which <a href="https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/io.c#L15882">uses</a> <code>io_wait_readable</code>, which <a href="https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/io.c#L9835">uses</a> <code>io_wait_event</code>, which <a href="https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/io.c#L9793">uses</a> <code>rb_io_wait</code>, that when not using the fiber scheduler, ends up <a href="https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/thread.c#L4566">using either</a> <code>poll</code> or <code>select</code> in <code>wait_for_single_fd_blocking_region</code> <a href="https://github.com/ruby/ruby/blob/c30d900547a65c7996a3f868aa17d2a842734071/thread.c#L4612">through</a> <code>thread_io_wait</code>. Yay!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This is when it hits me that HTTP clients are SUPER non-trivial. You'd think making HTTP requests was easy. Yeah.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Also, pure ruby gems work in async! A curl wrapper can't yield to the event loop since it's off in libcurl - which obviously isn't aware that we're running it in a fiber in an event loop!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</article>
+<a href="../index.html">&lt; back</a>
+</div>
+</body>
+<link rel="stylesheet" href="../assets/oceanicnext.min.css">
+<script src="../assets/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('article h1, article h2, article h3, article h4, article h5, article h6').forEach(function(heading) {
+      const copyLink = document.createElement('a');
+      copyLink.href = '#' + heading.id;
+      copyLink.className = 'heading-link';
+      copyLink.title = 'Copy link to heading';
+      copyLink.onclick = function() {
+        const url = window.location.href.split('#')[0] + this.getAttribute('href');
+        navigator.clipboard.writeText(url);
+      };
+
+      const iconContainer = document.createElement('span');
+      iconContainer.className = 'icon-container';
+      iconContainer.innerHTML = '<i class="fa-solid fa-link"></i>';
+
+      copyLink.appendChild(iconContainer);
+      heading.appendChild(copyLink);
+    });
+  });
+</script>
+</html>
