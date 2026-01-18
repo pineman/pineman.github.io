@@ -1,4 +1,4 @@
-<% root = "../" %>
+<% @root = "../" %>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -26,7 +26,7 @@
 </head>
 <body>
 <div id="wrap">
-<a href="<%= root %>index.html">&lt; back</a>
+<a href="<%= site_link("index.html") %>">&lt; back</a>
 <article>
   <header>
     <h1><%= post.title %></h1>
@@ -34,11 +34,11 @@
   </header>
 <%== post.html %>
 </article>
-<a href="<%= root %>index.html">&lt; back</a>
+<a href="<%= site_link("index.html") %>">&lt; back</a>
 </div>
 </body>
-<link rel="stylesheet" href="<%= root %>assets/oceanicnext.min.css">
-<script src="<%= root %>assets/highlight.min.js"></script>
+<link rel="stylesheet" href="<%= site_link("assets/oceanicnext.min.css") %>">
+<script src="<%= site_link("assets/highlight.min.js") %>"></script>
 <script>hljs.highlightAll();</script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {

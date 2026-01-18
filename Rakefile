@@ -116,6 +116,10 @@ module Helpers
   end
 end
 
+def site_link(path)
+  "#{@root}#{path}"
+end
+
 def render_erb(template_file, caller_binding)
   bufvar = "@_buf_#{Random.rand(1_000_000)}"
   template = Erubi::Engine.new(File.read(template_file), escape: true, bufvar: bufvar)

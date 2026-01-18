@@ -1,4 +1,4 @@
-<% root = "../" %>
+<% @root = "../" %>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -10,12 +10,12 @@
 </head>
 <body>
 <div id="wrap">
-<a href="<%= root %>notes.html">&lt; back</a>
+<a href="<%= site_link("notes.html") %>">&lt; back</a>
 <article>
   <h1><%= note.name %></h1>
   <%== note.html %>
 </article>
-<a href="<%= root %>notes.html">&lt; back</a>
+<a href="<%= site_link("notes.html") %>">&lt; back</a>
 </div>
 </body>
 </html>
