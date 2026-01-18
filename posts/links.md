@@ -1,4 +1,35 @@
 # January 2026
+* https://builders.ramp.com/post/why-we-built-our-background-agent
+* https://docs.paradedb.com/documentation/performance-tuning/joins
+* https://www.benkuhn.net/blub
+* https://www.geoffreylitt.com/2025/10/24/code-like-a-surgeon
+* https://www.jwz.org/doc/cadt.html
+* https://apenwarr.ca/log/20201227 - system design. provide value *now*. chicken egg problem. incrementalism. galls law: A complex system that works is invariably found to have evolved from a simple system that worked. intel/apple chart reminds me of capability increases being ~linear but then adoption being a step function once a threshold is reached. the last part reminds of replit's sluggish growth and then its massive explosion.
+* https://www.simplermachines.com/career-advice-for-engineers-who-arent-supposed-to-exist/
+* https://brianguthrie.com/p/the-move-faster-manifesto/
+* https://fly.io/blog/docker-without-docker/
+* https://fly.io/blog/design-and-implementation/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-70-d85
+* https://registerspill.thorstenball.com/p/oh-to-turn-off-your-mind
+* https://registerspill.thorstenball.com/p/from-any-spot-on-the-field
+* https://newsletter.pragmaticengineer.com/p/when-ai-writes-almost-all-code-what
+* https://archive.ph/RZxIM - Willpower Doesn’t Work. This Does.
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-69
+* https://kk.org/thetechnium/how-will-the-miracle-happen-today/
+* https://longform.asmartbear.com/focus/
+* https://tonsky.me/blog/tahoe-icons/
+* https://news.ycombinator.com/item?id=46482345 - Total monthly number of StackOverflow questions over time (data.stackexchange.com)
+* https://github.com/LRitzdorf/TheJeffDeanFacts
+* https://news.ycombinator.com/item?id=46557825 - Code and Let Live (fly.io)
+* https://fly.io/blog/carving-the-scheduler-out-of-our-orchestrator/
+* https://news.ycombinator.com/item?id=46609630 - A 40-line fix eliminated a 400x performance gap (questdb.com)
+* https://brooker.co.za/blog/2021/05/24/metastable.html
+* https://vondra.me/posts/dont-give-postgres-too-much-memory/
+* https://alexharri.com/blog/ascii-rendering
+* https://lucumr.pocoo.org/2026/1/14/minijinja-go-port/
+* https://thmsmlr.com/working-hard-and-promotions
+* https://karpathy.bearblog.dev/the-append-and-review-note/
+* https://rushter.com/blog/clickhouse-strings/
 * https://newsletter.posthog.com/p/tech-lead-failure-modes
 * https://www.youtube.com/watch?v=K3ivDkMEclg - "Faster vector search with Turbopuffer CEO, Simon Eskildsen"
 * https://www.youtube.com/watch?v=Kn_P9nG0zsA - "The history of servers, the cloud, and what’s next – with Oxide"
@@ -989,7 +1020,7 @@
 * https://www.benkuhn.net/vc-emh/
 * https://www.paulgraham.com/relres.html
 * https://www.benkuhn.net/blub/
-* https://rachelbythebay.com/w/2020/10/14/lag/ -hmm, 40 milliseconds sounds like the timeout for Nagle’s algorithm, try setting TCP_NODELAY
+* https://rachelbythebay.com/w/2020/10/14/lag/ - hmm, 40 milliseconds sounds like the timeout for Nagle’s algorithm, try setting TCP_NODELAY
 * https://nelhagedebugsshit.tumblr.com/
 * https://blog.nelhage.com/post/computers-can-be-understood
 * https://slatestarcodex.com/2014/03/24/should-you-reverse-any-advice-you-hear/
