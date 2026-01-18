@@ -1,5 +1,3 @@
-# laws
-
 - Moore's law
 - Amdahl's law
 - Conway's law
