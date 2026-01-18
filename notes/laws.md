@@ -1,0 +1,39 @@
+# laws
+
+- Moore's law
+- Amdahl's law
+- Conway's law
+- Occam's Razor
+- Hanlon's Razor
+- 80/20 (Pareto principle)
+- Dunning-Kruger Effect
+- NIH syndrome
+- Second system syndrome
+- Murphy's law
+- Postel's law (Robustness principle)
+- Linus's law
+- Brook's law
+- Eagleson's law
+- Peter Principle
+- Hofstadter's law
+- The 90-90 Rule
+- Parkinson's law
+- Sayre's law - Parkinson's law of triviality (AKA Bikeshedding)
+- Kerchkhoff's principle
+- Knuth's optimization principle
+- Rule of Least Power: Use the least powerful solution/programming
+  language possible.
+- Dilbert principle
+- Chesterton's fence
+- Sturgeon's law
+- Reed's law
+- Goodhart's law
+- Lindy's law
+- Zawinski's law
+- Greenspun's tenth rule
+- Hyrum's law
+- Price's law
+- law of demeter
+- Gall's law
+- Wirth's law
+- Norvig's law
