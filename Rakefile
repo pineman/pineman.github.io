@@ -144,19 +144,13 @@ def index_to_md(index_html_filename, index_md_filename)
   end
 end
 
-class BasePost
-  include FileUtils
-
-  attr_reader :url, :html
-
-  def build_intermediate_html!
-    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}", verbose: false) if !ENV["NOFORMAT"]
-    sh("pandoc --wrap=none --syntax-highlighting=none #{@md_file} -f gfm -t html5 -o #{@html_file}", verbose: false)
-  end
+def md_to_html(md_file, html_file)
+  sh("pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}", verbose: false)
 end
 
-class Post < BasePost
-  attr_reader :filename, :title, :date, :text_descr
+class Post
+  include FileUtils
+  attr_reader :url, :html, :filename, :title, :date, :text_descr
 
   def initialize(md_file)
     @md_file = md_file
@@ -216,6 +210,11 @@ class Post < BasePost
     rss.to_s.gsub!("<summary>", '<summary type="html">')
   end
 
+  def build_intermediate_html!
+    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}", verbose: false) if !ENV["NOFORMAT"]
+    md_to_html(@md_file, @html_file)
+  end
+
   private
 
   def truncate_text(html)
@@ -232,8 +231,9 @@ class Post < BasePost
   end
 end
 
-class Note < BasePost
-  attr_reader :name
+class Note
+  include FileUtils
+  attr_reader :url, :html, :name, :filename, :title, :date, :text_descr
 
   def initialize(md_file)
     @md_file = md_file
@@ -244,6 +244,10 @@ class Note < BasePost
     if File.exist?(@html_file)
       @html = File.read(@html_file)
     end
+  end
+
+  def build_intermediate_html!
+    md_to_html(@md_file, @html_file)
   end
 end
 
