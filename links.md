@@ -1,4 +1,7 @@
 # January 2026
+* https://lethain.com/everyinc-compound-engineering/
+* https://paulmakeswebsites.com/writing/shadcn-radio-button/
+* https://notes.eatonphil.com/2026-01-19-llms-and-your-career.html
 * https://ryanbigg.com/2025/04/cursor-based-querying
 * https://builders.ramp.com/post/why-we-built-our-background-agent
 * https://docs.paradedb.com/documentation/performance-tuning/joins
