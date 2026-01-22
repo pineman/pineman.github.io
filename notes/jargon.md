@@ -1,6 +1,6 @@
 http://www.catb.org/jargon/html/go01.html
 
-## New
+## My additions
  - solved problem
  - unreasonable effectiveness
  - root of all evil

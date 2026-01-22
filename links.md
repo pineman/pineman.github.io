@@ -1,4 +1,19 @@
 # January 2026
+* https://www.morling.dev/blog/kip-932-queues-for-kafka/
+* https://www.gov.uk/guidance/government-design-principles
+* https://www.gov.uk/service-manual/technology/using-progressive-enhancement
+* https://zanlib.dev/blog/reliable-signals-of-honest-intent/
+* https://www.crunchydata.com/blog/postgres-serials-should-be-bigint-and-how-to-migrate
+* https://hakibenita.com/postgresql-unconventional-optimizations
+* https://fs.blog/writing-to-think/
+* https://lemire.me/blog/2025/12/05/why-speed-matters/
+* https://ntietz.com/blog/that-boolean-should-probably-be-something-else
+* https://rachelbythebay.com/w/2026/01/20/walk/
+* https://en.wikipedia.org/wiki/Irrational_exuberance
+* https://news.ycombinator.com/item?id=46700594 - Anthropic's original take home assignment open sourced (github.com/anthropics)
+* https://vlad.website/how-binary-dependencies-work/
+* https://themackabu.dev/blog/js-in-one-month
+* https://devnull-as-a-service.com/home/ - oldie but goodie
 * https://lethain.com/everyinc-compound-engineering/
 * https://paulmakeswebsites.com/writing/shadcn-radio-button/
 * https://notes.eatonphil.com/2026-01-19-llms-and-your-career.html

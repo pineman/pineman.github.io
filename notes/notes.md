@@ -133,6 +133,7 @@ this is useful to bypass proxy objects and stuff
 * `with_lock` reloads the model object!!!!!
 * reloads inside callbacks make `changes` (before_* callbacks) and `previous_changes` (after_* callbacks) disappear!! which will cause the next defined callbacks to not run if they're using changes or previous_changes for conditional!
 * do not define two callbacks with the same method name. use a -> { lambda }. https://code.jjb.cc/you-can-t-declare-after_-_commit-or-after_commit-callbacks-for-the-same-method-more-than-once
+* keyset pagination: instead of using the offset of limit... offset, we basically give the offset in the WHERE, so psql can jump straight to it using a BTree index.
 * gem for postgresql cursors: https://github.com/afair/postgresql_cursor
 
 ## RSpec
@@ -260,7 +261,6 @@ kibana dev tools console. explain
 * match query on a text field is not like a wildcard. e.g. match "mymatch" does not match "anothermymatchtest", as the analyzer, tokenizer, stemming, etc. runs. 
   
 profile: include `"profile": true` in query
-search profiler in kibana: https://kibana.usce1.prod.amplemarket.com/app/dev_tools#/searchprofiler
 more results: include `"size": 1000` in query
 
 * Searchkick.client.cat.indices.split("\n")
@@ -334,3 +334,16 @@ data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
 ```
 * Maximum poll interval (300000ms) exceeded by 255ms error: https://github.com/karafka/karafka/wiki/Pro-Long-Running-Jobs
 
+## Misc
+* search sentry by lots of tags: `user.email:a@a.com`, `jid:sadhfoqshr`, ... - useful if you want a stack trace of an error you found in logs
+* base: T1, new: T2. speedup %: T1/T2-1. if negative, its a slowdown.
+* DNS: MX record resolution will follow CNAME, as will A records, automatically.
+* slack: shift+esc to mark all as read
+* `pip install csvkit; mise reshim; csvcut -c 2 file.csv`
+* Typhoeus::Config.verbose = true
+* pretty print html: `puts Nokogiri::XML(html_string, &:noblanks).to_xml(indent: 2)`
+
+## Agents
+### Claude
+ - `\` followed by enter for newline
+ - Ctrl-g to edit in $EDITOR

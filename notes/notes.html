@@ -171,6 +171,7 @@ JSON.parse(j)</code></pre>
 <li><code>with_lock</code> reloads the model object!!!!!</li>
 <li>reloads inside callbacks make <code>changes</code> (before_* callbacks) and <code>previous_changes</code> (after_* callbacks) disappear!! which will cause the next defined callbacks to not run if they're using changes or previous_changes for conditional!</li>
 <li>do not define two callbacks with the same method name. use a -&gt; { lambda }. <a href="https://code.jjb.cc/you-can-t-declare-after_-_commit-or-after_commit-callbacks-for-the-same-method-more-than-once">https://code.jjb.cc/you-can-t-declare-after_-_commit-or-after_commit-callbacks-for-the-same-method-more-than-once</a></li>
+<li>keyset pagination: instead of using the offset of limit... offset, we basically give the offset in the WHERE, so psql can jump straight to it using a BTree index.</li>
 <li>gem for postgresql cursors: <a href="https://github.com/afair/postgresql_cursor">https://github.com/afair/postgresql_cursor</a></li>
 </ul>
 <h2 id="rspec">RSpec</h2>
@@ -339,7 +340,7 @@ or Person.searchkick_index.retrieve(Person.new(id: person_id))</code></pre>
 <li><p>can also pass <code>explain: true</code> or <code>debug: true</code> to searchkick methods like <code>Person.search(..., debug: true)</code> - tho it seems <code>explain: true</code> also fails generally and probably needs just one doc?</p></li>
 <li><p>match query on a text field is not like a wildcard. e.g. match "mymatch" does not match "anothermymatchtest", as the analyzer, tokenizer, stemming, etc. runs.</p></li>
 </ul>
-<p>profile: include <code>"profile": true</code> in query search profiler in kibana: <a href="https://kibana.usce1.prod.amplemarket.com/app/dev_tools#/searchprofiler">https://kibana.usce1.prod.amplemarket.com/app/dev_tools#/searchprofiler</a> more results: include <code>"size": 1000</code> in query</p>
+<p>profile: include <code>"profile": true</code> in query more results: include <code>"size": 1000</code> in query</p>
 <ul>
 <li><p>Searchkick.client.cat.indices.split("\n")</p></li>
 <li><p>refresh interval: <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/near-real-time.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/near-real-time.html</a></p></li>
@@ -406,6 +407,22 @@ AVRO = AvroTurf::Messaging.new(
 data = [AVRO.decode(Base64.decode64(&#39;string from kafka-ui&#39;))]</code></pre>
 <ul>
 <li>Maximum poll interval (300000ms) exceeded by 255ms error: <a href="https://github.com/karafka/karafka/wiki/Pro-Long-Running-Jobs">https://github.com/karafka/karafka/wiki/Pro-Long-Running-Jobs</a></li>
+</ul>
+<h2 id="misc">Misc</h2>
+<ul>
+<li>search sentry by lots of tags: <code>user.email:a@a.com</code>, <code>jid:sadhfoqshr</code>, ... - useful if you want a stack trace of an error you found in logs</li>
+<li>base: T1, new: T2. speedup %: T1/T2-1. if negative, its a slowdown.</li>
+<li>DNS: MX record resolution will follow CNAME, as will A records, automatically.</li>
+<li>slack: shift+esc to mark all as read</li>
+<li><code>pip install csvkit; mise reshim; csvcut -c 2 file.csv</code></li>
+<li>Typhoeus::Config.verbose = true</li>
+<li>pretty print html: <code>puts Nokogiri::XML(html_string, &amp;:noblanks).to_xml(indent: 2)</code></li>
+</ul>
+<h2 id="agents">Agents</h2>
+<h3 id="claude">Claude</h3>
+<ul>
+<li><code>\</code> followed by enter for newline</li>
+<li>Ctrl-g to edit in $EDITOR</li>
 </ul>
 
 </article>
