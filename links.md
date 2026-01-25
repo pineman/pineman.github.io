@@ -1,4 +1,27 @@
 # January 2026
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-71
+* https://brooker.co.za/blog/2025/12/15/database-for-ssd.html
+* https://news.ycombinator.com/item?id=46690402 - I'm addicted to being useful (seangoedecke.com)
+* https://alexwennerberg.com/blog/2025-11-28-engineering.html
+* https://www.goodreads.com/quotes/82472-what-s-great-about-this-country-is-america-started-the-tradition
+* https://www.experimental-history.com/p/text-is-king
+* https://adventures.nodeland.dev/archive/the-human-in-the-loop/
+* https://newsletter.semianalysis.com/p/from-tokens-to-burgers-a-water-footprint
+* https://marcgg.com/blog/2024/11/20/standup/
+* https://lawrenceztang.substack.com/p/i-left-faang-for-a-startup-and-regretted
+* https://blog.exe.dev/ssh-host-header
+* https://outofcontextsite.wordpress.com/2017/03/11/slow/ - nils bohr
+* https://fermatslibrary.com/s/on-being-smart
+* https://charitydotwtf.substack.com/p/bring-back-ops-pride#
+* https://www.artur-rodrigues.com/tech/2023/03/21/kafka-head-of-line-blocking.html
+* https://lobste.rs/s/f1cmlk/faster_restart_windows_95_when_you_hold
+* https://blog.cloudflare.com/cname-a-record-order-dns-standards/
+* https://blog.silennai.com/claude-code
+* https://vercel.com/blog/introducing-react-best-practices
+* https://cannoneyed.com/projects/isometric-nyc
+* https://lucumr.pocoo.org/2026/1/18/agent-psychosis/
+* https://maggieappleton.com/gastown/
+* https://news.ycombinator.com/item?id=46725300 - Scaling PostgreSQL to power 800M ChatGPT users (openai.com)
 * https://www.morling.dev/blog/kip-932-queues-for-kafka/
 * https://www.gov.uk/guidance/government-design-principles
 * https://www.gov.uk/service-manual/technology/using-progressive-enhancement

@@ -35,3 +35,4 @@
 - Gall's law
 - Wirth's law
 - Norvig's law
+- Metcalfe's law
