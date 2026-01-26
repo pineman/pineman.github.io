@@ -155,7 +155,7 @@ class Post
   def initialize(md_file)
     @md_file = md_file
     @filename = File.basename(@md_file, ".md")
-    @url = "#{@filename}.html"
+    @url = "#{POSTS_DIR}/#{@filename}.html"
     @date = DateTime.parse(@filename.split("_")[0])
     @html_file = "#{POSTS_HTML_DIR}/#{@filename}.html"
 

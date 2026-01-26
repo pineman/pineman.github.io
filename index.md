@@ -14,11 +14,11 @@ Hi! My name is João Pinheiro (aka pineman), I'm from Lisbon, Portugal and I lik
 
 ## [Blog](atom.xml)
 
-- 2025-02-01 [It's always DNS (LLM edition)](2025-02-01_k8s-dns.html)
-- 2024-05-25 [Just use curl (or how hard can it be to make HTTP requests?)](2024-05-25_just-use-curl.html)
-- 2023-11-05 [Ruby's ASCII-8BIT, mailers and feature launches](2023-11-05_ruby-ascii-8bit.html)
-- 2023-05-07 [I found a (microscopic) ruby bug and it got fixed in 3 hours](2023-05-07_ruby-bug-shell-gem.html)
-- 2022-12-03 [AoC 2022: day 3, profiling Go, existential crisis](2022-12-03_aoc3.html)
+- 2025-02-01 [It's always DNS (LLM edition)](posts/2025-02-01_k8s-dns.md)
+- 2024-05-25 [Just use curl (or how hard can it be to make HTTP requests?)](posts/2024-05-25_just-use-curl.md)
+- 2023-11-05 [Ruby's ASCII-8BIT, mailers and feature launches](posts/2023-11-05_ruby-ascii-8bit.md)
+- 2023-05-07 [I found a (microscopic) ruby bug and it got fixed in 3 hours](posts/2023-05-07_ruby-bug-shell-gem.md)
+- 2022-12-03 [AoC 2022: day 3, profiling Go, existential crisis](posts/2022-12-03_aoc3.md)
 
 ## [Links](links.md)
 

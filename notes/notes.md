@@ -342,6 +342,7 @@ data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
 * `pip install csvkit; mise reshim; csvcut -c 2 file.csv`
 * Typhoeus::Config.verbose = true
 * pretty print html: `puts Nokogiri::XML(html_string, &:noblanks).to_xml(indent: 2)`
+* remember the `timeout` shell command
 
 ## Agents
 ### Claude

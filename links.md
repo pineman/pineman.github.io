@@ -1,4 +1,18 @@
 # January 2026
+* https://paulgraham.com/ineq.html
+* https://paulgraham.com/re.html
+* https://www.seangoedecke.com/knowing-how-to-drive-the-car/
+* https://lethain.com/should-include-eng-in-eng-leadership/
+* https://lethain.com/curiosity-first-step-problem-solving/
+* https://lethain.com/pressure-without-a-plan/
+* https://tech.instacart.com/how-instacart-built-a-modern-search-infrastructure-on-postgres-c528fa601d54
+* https://eieio.games/blog/ssh-sends-100-packets-per-keystroke/ - :heart:
+* https://www.zachleat.com/web/react-criticism/
+* https://joshcollinsworth.com/blog/antiquated-react
+* https://www.seangoedecke.com/confidence/
+* https://www.seangoedecke.com/taking-a-position
+* https://lobste.rs/s/dspppf/how_i_estimate_work_as_staff_software - more seangoedecke.com
+* https://thecodelesscode.com/case/215?topic=documentation
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-71
 * https://brooker.co.za/blog/2025/12/15/database-for-ssd.html
 * https://news.ycombinator.com/item?id=46690402 - I'm addicted to being useful (seangoedecke.com)

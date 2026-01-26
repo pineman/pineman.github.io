@@ -11,8 +11,8 @@
   <title>pineman</title>
   <updated>2025-02-01T00:00:00+00:00</updated>
   <entry>
-    <id>https://pineman.github.io/2022-12-03_aoc3.html</id>
-    <link href="https://pineman.github.io/2022-12-03_aoc3.html"/>
+    <id>https://pineman.github.io/posts/2022-12-03_aoc3.html</id>
+    <link href="https://pineman.github.io/posts/2022-12-03_aoc3.html"/>
     <published>2022-12-03T00:00:00+00:00</published>
     <summary type="html">
 &lt;p&gt;Ok hi! One of my first projects ever was a &lt;a href=&quot;https://github.com/pineman/code/tree/main/old_proj/pineblog&quot;&gt;blog written in python flask&lt;/a&gt; (please don&#39;t look at it, it was 2015). Even though I shut it down a couple of months after having it up on my server (a VPS at the time), my admiration for blogging didn&#39;t stop and, of course, I read a bazillion blog posts since then. But now, here we are, finally! My own tech blog, v2.0. Just some flat hand-made HTML files to start this time, maybe some templating soon, then we&#39;ll see. I&#39;m also deliberately putting only a medium amount of effort on this writing, at best, otherwise I&#39;ll end up not writing anything. Trying to keep it real simple, so my brain thinks it&#39;s easy and does it. I&#39;ll take this opportunity to share some of my favorite blogs, from people I admire (this excludes of course eng. blogs from companies like netflix, dropbox, twitter, cloudflare, ...):&lt;/p&gt;
@@ -88,8 +88,8 @@
     <dc:date>2022-12-03T00:00:00+00:00</dc:date>
   </entry>
   <entry>
-    <id>https://pineman.github.io/2023-05-07_ruby-bug-shell-gem.html</id>
-    <link href="https://pineman.github.io/2023-05-07_ruby-bug-shell-gem.html"/>
+    <id>https://pineman.github.io/posts/2023-05-07_ruby-bug-shell-gem.html</id>
+    <link href="https://pineman.github.io/posts/2023-05-07_ruby-bug-shell-gem.html"/>
     <published>2023-05-07T00:00:00+00:00</published>
     <summary type="html">
 &lt;p&gt;I&#39;m using &lt;a href=&quot;https://highlightjs.org/&quot;&gt;highlight.js&lt;/a&gt; for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that reads stdin, highlights the html using the library, and prints to stdout (not only is it more unixy, I already have too many temp files being created). So to call it from ruby, I found the &lt;a href=&quot;https://github.com/ruby/shell&quot;&gt;shell gem&lt;/a&gt;. &lt;a href=&quot;#fn1&quot; class=&quot;footnote-ref&quot; id=&quot;fnref1&quot; role=&quot;doc-noteref&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; It used to be in the stdlib and the DSL syntax is super cool, with me being a rubyist now and all.&lt;/p&gt;
@@ -146,8 +146,8 @@ end&lt;/code&gt;&lt;/pre&gt;
     <dc:date>2023-05-07T00:00:00+00:00</dc:date>
   </entry>
   <entry>
-    <id>https://pineman.github.io/2023-11-05_ruby-ascii-8bit.html</id>
-    <link href="https://pineman.github.io/2023-11-05_ruby-ascii-8bit.html"/>
+    <id>https://pineman.github.io/posts/2023-11-05_ruby-ascii-8bit.html</id>
+    <link href="https://pineman.github.io/posts/2023-11-05_ruby-ascii-8bit.html"/>
     <published>2023-11-05T00:00:00+00:00</published>
     <summary type="html">
 &lt;p&gt;We&#39;ve hit a couple of bugs during a recent feature launch. This feature&#39;s 1.0 is an email - so no takesies backsies, you better get it right the first time. Unfortunately, this was not the case (curse you &lt;a href=&quot;https://wiki.c2.com/?StringlyTyped&quot;&gt;string types&lt;/a&gt;. Maybe don&#39;t store booleans in CSVs? Maybe don&#39;t use CSVs as persistence. But I digress).&lt;/p&gt;
@@ -229,8 +229,8 @@ end&lt;/code&gt;&lt;/pre&gt;
     <dc:date>2023-11-05T00:00:00+00:00</dc:date>
   </entry>
   <entry>
-    <id>https://pineman.github.io/2024-05-25_just-use-curl.html</id>
-    <link href="https://pineman.github.io/2024-05-25_just-use-curl.html"/>
+    <id>https://pineman.github.io/posts/2024-05-25_just-use-curl.html</id>
+    <link href="https://pineman.github.io/posts/2024-05-25_just-use-curl.html"/>
     <published>2024-05-25T00:00:00+00:00</published>
     <summary type="html">
 &lt;p&gt;Recently we&#39;ve needed to do a lot of HTTP requests to weird APIs. One endpoint in particular is basically the wild west of HTTP - High, unpredictable latency and redirects a lot: often absolutely, from HTTPS to HTTP and even to non-resolving URLs.&lt;/p&gt;
@@ -271,8 +271,8 @@ end&lt;/code&gt;&lt;/pre&gt;
     <dc:date>2024-05-25T00:00:00+00:00</dc:date>
   </entry>
   <entry>
-    <id>https://pineman.github.io/2025-02-01_k8s-dns.html</id>
-    <link href="https://pineman.github.io/2025-02-01_k8s-dns.html"/>
+    <id>https://pineman.github.io/posts/2025-02-01_k8s-dns.html</id>
+    <link href="https://pineman.github.io/posts/2025-02-01_k8s-dns.html"/>
     <published>2025-02-01T00:00:00+00:00</published>
     <summary type="html">
 &lt;p&gt;Our Kubernetes cluster&#39;s DNS recently experienced partial degradation. We noticed it via DNS resolution errors in Sentry mostly when calling internal services.&lt;/p&gt;
