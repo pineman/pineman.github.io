@@ -1,4 +1,10 @@
 # January 2026
+* https://www.starrocks.io/blog/inside-starrocks-why-joins-are-faster-than-youd-expect
+* https://crookedtimber.org/2023/05/06/the-cult-of-the-founders/
+* https://infrequently.org/2024/11/if-not-react-then-what
+* https://boringsql.com/posts/introduction-to-buffers/
+* https://ploum.net/2026-01-22-why-no-european-google.html
+* https://ploum.net/the-european-joke/index.html
 * https://paulgraham.com/ineq.html
 * https://paulgraham.com/re.html
 * https://www.seangoedecke.com/knowing-how-to-drive-the-car/
