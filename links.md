@@ -1,4 +1,13 @@
 # January 2026
+* https://www.marginalia.nu/log/a_129_finding_audience/
+* https://planetscale.com/blog/securing-webhooks
+* https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/doc/development/secure_coding_guidelines/ruby.md#server-side-request-forgery-ssrf
+* https://greg.molnar.io/blog/server-side-request-forgery/
+* https://metronome.com/blog/root-cause-analysis-postgresql-multixact-member-exhaustion-incidents-may-2025
+* https://binaryigor.com/mysql-vs-postgresql-performance.html
+* https://brooker.co.za/blog/2012/01/17/two-random.html
+* https://news.ycombinator.com/item?id=35588797 - Load Balancing (samwho.dev)
+* https://infrequently.org/2023/02/the-market-for-lemons/
 * https://www.starrocks.io/blog/inside-starrocks-why-joins-are-faster-than-youd-expect
 * https://crookedtimber.org/2023/05/06/the-cult-of-the-founders/
 * https://infrequently.org/2024/11/if-not-react-then-what
@@ -132,6 +141,7 @@
 * https://news.ycombinator.com/item?id=46448527 - Love your customers (dtrace.org)
 * https://jpcamara.com/2025/12/30/when-good-threads-go-bad.html
 * https://news.ycombinator.com/item?id=46458302 - Can Bundler be as fast as uv? (tenderlovemaking.com)
+* https://www.rubyevents.org/talks/start-writing-ruby-stop-using-classes
 
 # December 2025
 * https://en.wikipedia.org/wiki/HyperLogLog

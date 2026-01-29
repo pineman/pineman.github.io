@@ -135,6 +135,7 @@ this is useful to bypass proxy objects and stuff
 * do not define two callbacks with the same method name. use a -> { lambda }. https://code.jjb.cc/you-can-t-declare-after_-_commit-or-after_commit-callbacks-for-the-same-method-more-than-once
 * keyset pagination: instead of using the offset of limit... offset, we basically give the offset in the WHERE, so psql can jump straight to it using a BTree index.
 * gem for postgresql cursors: https://github.com/afair/postgresql_cursor
+* `retry` seems like a good idea but it's an infinite loop waiting to happen. always bound it with retries
 
 ## RSpec
 * run one test only: `rspec ./spec/controllers/groups_controller_spec.rb:42`
@@ -219,6 +220,8 @@ tables are processed with adaptive delays to prevent heavy IO and replication la
 
 
 * max_standby_streaming_delay: It doesn't matter if we see the replica lag chart go to +30m. What matters is if the chart never goes to 0 in 30 consecutive minutes. It might not be a single slow query but many consecutive  slow ones that never allow the replica to catch up on the WAL.
+* autovacuum tweaks: `WITH (autovacuum_analyze_scale_factor='0.01', autovacuum_analyze_threshold='1000', autovacuum_vacuum_scale_factor='0.01', autovacuum_vacuum_threshold='1000');`, autovacuum_vacuum_cost_delay, maintenance_work_mem
+* multiXact space exhaustion (not just ids!) https://metronome.com/blog/root-cause-analysis-postgresql-multixact-member-exhaustion-incidents-may-2025 - is this untrackable on cloud sql, excepting logs?
 
 ## Analytics, CDC
 https://github.com/sequinstream/sequin
