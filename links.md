@@ -1,4 +1,6 @@
 # January 2026
+* https://simonwillison.net/2026/Jan/30/moltbook/
+* https://www.anthropic.com/research/AI-assistance-coding-skills
 * https://www.marginalia.nu/log/a_129_finding_audience/
 * https://planetscale.com/blog/securing-webhooks
 * https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/doc/development/secure_coding_guidelines/ruby.md#server-side-request-forgery-ssrf
