@@ -64,7 +64,16 @@ LEGACY_REDIRECTS = %w[
 ]
 TEMPLATE_REDIRECT = "#{TEMPLATES_DIR}/redirect.html.erb"
 
-CLEAN.include(BUILD_DIR, TMP_DIR)
+# Only clean generated files, not static assets in docs/
+CLEAN.include(
+  TMP_DIR,
+  "#{BUILD_DIR}/*.html",
+  "#{BUILD_DIR}/*.md",
+  "#{BUILD_DIR}/*.xml",
+  "#{BUILD_DIR}/style.css",
+  "#{BUILD_POSTS_DIR}",
+  "#{BUILD_NOTES_DIR}"
+)
 
 multitask default: [:all]
 multitask all: [INDEX_HTML, INDEX_MD, LINKS_HTML, NOTES_HTML, NOTES_INDEX_MD, *NOTE_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML, :copy_assets, :generate_redirects, :copy_markdown_sources]
@@ -135,11 +144,8 @@ file ATOM_XML => [BUILD_DIR, *POSTS_HTML] do |t|
 end
 
 task copy_assets: [BUILD_DIR, BUILD_POSTS_DIR] do
-  cp_r "assets/.", "#{BUILD_DIR}/assets/", preserve: true
   cp "templates/style.css", "#{BUILD_DIR}/style.css"
-  cp "assets/favicon.ico", "#{BUILD_DIR}/favicon.ico"
-  cp_r "youwashock", "#{BUILD_DIR}/youwashock"
-  cp_r "posts/assets", "#{BUILD_POSTS_DIR}/assets"
+  cp_r "posts/assets/.", "#{BUILD_POSTS_DIR}/assets/"
 end
 
 task generate_redirects: [BUILD_DIR] do
