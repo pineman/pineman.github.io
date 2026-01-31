@@ -1,8 +1,5 @@
 .DS_Store
 ._*
-node_modules
-.idea
 **/.claude/settings.local.json
 
-posts/html
-notes/html
+.tmp/

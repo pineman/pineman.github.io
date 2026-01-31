@@ -3,27 +3,19 @@
 
 build() {
   rake
-  echo "file://$(pwd)/index.html"
+  echo "file://$(pwd)/docs/index.html"
 }
 
 watch() {
-  echo "file://$(pwd)/index.html"
+  echo "file://$(pwd)/docs/index.html"
   export NOFORMAT=
-  ls posts/*.md templates/* Rakefile | \
-    entr -s 'echo "Detected change in: $0"; \
-      case "$0" in \
-        *.md) \
-          rake "$(basename "$0" .md).html" \
-          ;; \
-        *) \
-          rake \
-          ;; \
-      esac' | \
+  ls posts/*.md notes/*.md templates/* Rakefile | \
+    entr -s 'echo "Detected change in: $0"; rake' | \
     ts '[%Y-%m-%d %H:%M:%S]'
 }
 
 serve() {
-  ruby -run -e httpd
+  ruby -run -e httpd docs/
 }
 
 eval "${@:-build}"

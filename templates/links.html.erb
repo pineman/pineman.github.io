@@ -4,7 +4,7 @@
 <head>
   <%== render_erb('templates/head.html.erb', binding) %>
   <%== render_erb('templates/article-head.html.erb', binding) %>
-  <link rel="alternate" type="text/markdown" href="<%= site_link(LINKS_MD) %>">
+  <link rel="alternate" type="text/markdown" href="<%= site_link("links.md") %>">
   <%
     content = File.read(LINKS_MD)
     if content.include?("?utm_source=substack&utm_medium=email")

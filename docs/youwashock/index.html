@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YOU は SHOCK</title>
+    <link rel="icon" type="image/gif" href="atatatatatatatatatatatatata.gif" />
+    <style>
+      body {
+        margin: 0;
+        background-color: black;
+        overflow-y: hidden; /* Weird scrollbar, <body> is "taller" than <video> */
+      }
+      video {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+    <script>
+      window.addEventListener("click", function () {
+        document.querySelector("video").play();
+        document.querySelector("audio").play();
+        window.removeEventListener("click", this);
+      });
+    </script>
+  </head>
+  <body>
+    <video autoplay loop>
+      <source src="youwashock.webm" type="video/webm" />
+    </video>
+    <audio autoplay loop>
+      <source src="youwashock.ogg" type="audio/ogg" />
+    </audio>
+  </body>
+</html>

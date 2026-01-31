@@ -1,8 +1,13 @@
 #!/bin/bash
 set -euxo pipefail
 
-erb index.html.erb > index.html
-#if [[ "$OSTYPE" != "linux-gnu"* ]]; then exit 0; fi
-#xhost + &>/dev/null
-npx electron-pdf -b true $(pwd)/index.html $(pwd)/cv.pdf
-node first_page.js cv.pdf
+BUILD_DIR="../docs/cv"
+mkdir -p "$BUILD_DIR"
+
+erb index.html.erb > "$BUILD_DIR/index.html"
+npx electron-pdf -b true "$(pwd)/$BUILD_DIR/index.html" "$(pwd)/$BUILD_DIR/cv.pdf"
+node first_page.js "$BUILD_DIR/cv.pdf"
+
+# Copy assets
+cp -r assets "$BUILD_DIR/"
+cp style.css "$BUILD_DIR/"

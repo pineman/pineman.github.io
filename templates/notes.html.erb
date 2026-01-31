@@ -4,6 +4,7 @@
 <head>
   <%== render_erb('templates/head.html.erb', binding) %>
   <%== render_erb('templates/article-head.html.erb', binding) %>
+  <link rel="alternate" type="text/markdown" href="<%= site_link("notes.md") %>">
   <meta property="og:url" content="<%= SITE_ROOT %>/notes.html" />
   <title>Notes</title>
   <meta property="og:title" content="Notes" />

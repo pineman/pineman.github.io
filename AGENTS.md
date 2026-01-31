@@ -38,16 +38,16 @@ This is a static site generator for a personal homepage, built with Ruby Rake an
 
 ### Content Structure
 
-- **Blog posts**: `posts/YYYY-MM-DD_slug.md` → compiled to `posts/slug.html` and root `slug.html`
-- **Notes**: `notes/*.md` → compiled to `notes/*.html`
-- **Links**: `links.md` → `links.html`
-- **Index**: Generated from `templates/index.html.erb`
+- **Blog posts**: `posts/YYYY-MM-DD_slug.md` → compiled to `build/posts/slug.html`
+- **Notes**: `notes/*.md` → compiled to `build/notes/*.html`
+- **Links**: `links.md` → `build/links.html`
+- **Index**: Generated from `templates/index.html.erb` → `build/index.html`
 
 ### Build Pipeline
 
 The Rakefile orchestrates the build:
-1. Markdown files are converted to intermediate HTML via pandoc (`posts/html/`, `notes/html/`)
-2. Intermediate HTML is wrapped with ERB templates to produce final HTML
+1. Markdown files are converted to intermediate HTML via pandoc (stored in `.tmp/`)
+2. Intermediate HTML is wrapped with ERB templates to produce final HTML in `build/`
 3. Posts also generate link preview images (requires Chrome and Docker/imagemagick)
 4. An Atom feed (`atom.xml`) is generated from blog posts
 
@@ -63,3 +63,29 @@ The Rakefile orchestrates the build:
 - Ruby with `rake`, `erubi`, `nokogiri` gems (nokogiri is inline-installed via bundler)
 - `pandoc` for markdown conversion
 - For link previews: Chrome binary and Docker with imagemagick
+
+## Build Output Directory
+
+All build output goes to `build/` in the repository root (gitignored). This enables serving from a dedicated directory for GitHub Pages via GitHub Actions.
+
+### Output Structure
+
+- `build/index.html`, `build/links.html`, `build/notes.html`, `build/atom.xml`
+- `build/posts/*.html` and `build/posts/*.md` (compiled posts + source markdown)
+- `build/notes/*.html` and `build/notes/*.md` (compiled notes + source markdown)
+- `build/assets/` (static assets including link preview images)
+- `build/templates/style.css`
+- `build/cv/` (CV HTML and PDF, built separately via `cd cv && ./make`)
+
+### Backwards Compatibility
+
+Redirect HTML files in `assets/redirects/` are copied to `build/` root so old post URLs continue to work:
+- `2022-12-03_aoc3.html` → redirects to `posts/2022-12-03_aoc3.html`
+- `2023-05-07_ruby-bug-shell-gem.html` → redirects to `posts/2023-05-07_ruby-bug-shell-gem.html`
+- `2023-11-05_ruby-ascii-8bit.html` → redirects to `posts/2023-11-05_ruby-ascii-8bit.html`
+- `2024-05-25_just-use-curl.html` → redirects to `posts/2024-05-25_just-use-curl.html`
+- `2025-02-01_k8s-dns.html` → redirects to `posts/2025-02-01_k8s-dns.html`
+
+### Serving Markdown Files
+
+Source markdown files (`posts/*.md`, `notes/*.md`, `links.md`) and generated `index.md` are copied to `build/` so they can be served directly alongside the generated HTML.
