@@ -1,4 +1,51 @@
+# February 2026
+* https://boringsql.com/posts/explain-buffers/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-73
+* https://notepad-plus-plus.org/news/hijacked-incident-info-update/
+* https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/
+* https://domenic.me/jsdom-claude-code/
+* https://nolanlawson.com/2026/02/07/we-mourn-our-craft/
+* https://jmoiron.net/blog/wirths-revenge/
+* https://longform.asmartbear.com/code-is-your-enemy/
+* https://cdixon.org/2013/03/02/what-the-smartest-people-do-on-the-weekend-is-what-everyone-else-will-do-during-the-week-in-ten-years
+* https://rhodesmill.org/brandon/2009/commands-with-comma/
+* https://allenpike.com/2026/a-broken-heart/
+* https://mitchellh.com/writing/my-ai-adoption-journey
+* https://julian.digital/2025/03/27/the-case-against-conversational-interfaces
+* https://ampcode.com/notes/feedback-loopable
+* https://www.depesz.com/2012/06/07/123-vs-depesz-what-is-faster/
+* https://www.depesz.com/2020/02/19/why-im-not-fan-of-uuid-datatype
+* https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c
+* https://www.brendangregg.com/blog//2026-02-07/why-i-joined-openai.html
+* https://www.seangoedecke.com/getting-the-main-thing-right
+* https://www.jernesto.com/articles/thinking_hard
+* https://rachelbythebay.com/w/2026/02/03/badnas/
+* https://brooker.co.za/blog/2026/02/07/you-are-here.html
+* https://crawshaw.io/blog/eight-more-months-of-agents
+* https://www.writesoftwarewell.com/how-to-read-rails-codebase/
+
 # January 2026
+* https://kylejwarren.com/loginwave/
+* https://blog.xoria.org/terminal-colors/
+* https://thorstenball.com/benchmarking-process-startup-time/
+* https://modulovalue.com/blog/syscall-overhead-tar-gz-io-performance/
+* https://www.softwaredesign.ing/blog/doing-the-thing-is-doing-the-thing
+* https://www.theguardian.com/lifeandstyle/2026/jan/03/secret-being-happy-2026-simpler-than-you-think
+* https://www.jampa.dev/p/lessons-learned-after-10-years-as?hide_intro_popup=true
+* https://dubroy.com/blog/look-for-whats-true
+* https://tailscale.com/blog/aperture-private-alpha
+* https://news.ycombinator.com/item?id=46766961
+* https://nolanlawson.com/2026/01/24/ai-tribalism/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-72
+* https://antirez.com/news/159
+* https://www.seangoedecke.com/how-does-ai-impact-skill-formation
+* https://cloud.google.com/blog/topics/threat-intelligence/disrupting-largest-residential-proxy-network
+* https://infrequently.org/2024/11/if-not-react-then-what/
+* https://mileswoodroffe.com/articles/rails-rate-limiting
+* https://boringsql.com/posts/introduction-to-buffers/
+* https://www.nateberkopec.com/blog/37signals-is-not-smarter-than-you/
+* https://bcantrill.dtrace.org/2019/02/10/reflecting-on-the-soul-of-a-new-machine/
+* https://fly.io/blog/tokenized-tokens/ - http proxy attach secrets 
 * https://simonwillison.net/2026/Jan/30/moltbook/
 * https://www.anthropic.com/research/AI-assistance-coding-skills
 * https://www.marginalia.nu/log/a_129_finding_audience/

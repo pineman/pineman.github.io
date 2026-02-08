@@ -136,6 +136,8 @@ this is useful to bypass proxy objects and stuff
 * keyset pagination: instead of using the offset of limit... offset, we basically give the offset in the WHERE, so psql can jump straight to it using a BTree index.
 * gem for postgresql cursors: https://github.com/afair/postgresql_cursor
 * `retry` seems like a good idea but it's an infinite loop waiting to happen. always bound it with retries
+* preload associations for already loaded models: `ActiveRecord::Associations::Preloader.new(records:, associations: [:assoc_1, assoc_2: [:nested_assoc]).call`
+
 
 ## RSpec
 * run one test only: `rspec ./spec/controllers/groups_controller_spec.rb:42`
