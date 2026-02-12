@@ -1,4 +1,13 @@
 # February 2026
+* https://lobste.rs/s/itj50a/make_invalid_states_unrepresentable
+* https://www.seangoedecke.com/invalid-states
+* https://antithesis.com/resources/reliability_glossary/
+* https://grantslatton.com/every-man-a-microservice
+* https://xdg.me/hacking-the-job-interview/
+* https://www.seangoedecke.com/screwing-up - the optimal amount of mistakes at work is not zero
+* https://go.dev/blog/go1.26
+* https://www.cybertec-postgresql.com/en/monitoring-query-plans-with-pgwatch-and-pg_stat_plans/
+* https://brooker.co.za/blog/2026/02/07/you-are-here.html
 * https://boringsql.com/posts/explain-buffers/
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-73
 * https://notepad-plus-plus.org/news/hijacked-incident-info-update/
@@ -20,7 +29,6 @@
 * https://www.seangoedecke.com/getting-the-main-thing-right
 * https://www.jernesto.com/articles/thinking_hard
 * https://rachelbythebay.com/w/2026/02/03/badnas/
-* https://brooker.co.za/blog/2026/02/07/you-are-here.html
 * https://crawshaw.io/blog/eight-more-months-of-agents
 * https://www.writesoftwarewell.com/how-to-read-rails-codebase/
 

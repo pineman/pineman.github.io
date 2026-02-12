@@ -36,3 +36,4 @@
 - Wirth's law
 - Norvig's law
 - Metcalfe's law
+- Liddle’s Law (David Liddle, Xerox PARC): "A company big enough to have a research lab is too big to know what to do with the research results"

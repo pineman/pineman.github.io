@@ -20,6 +20,9 @@ Sidekiq::ScheduledSet.new.to_a.map(&:klass).tally.sort_by{_2}
 Sidekiq::RetrySet.new.to_a.map(&:klass).tally.sort_by{_2}
 Sidekiq::BatchSet.new.to_a
 
+# Reschedule jobs
+Sidekiq::ScheduledSet.new.to_a.each { it.reschedule if it.klass == "someclass" }
+
 # List of jobs for batch
 Sidekiq::Batch.new('batch_id').jids
 
@@ -224,6 +227,7 @@ tables are processed with adaptive delays to prevent heavy IO and replication la
 * max_standby_streaming_delay: It doesn't matter if we see the replica lag chart go to +30m. What matters is if the chart never goes to 0 in 30 consecutive minutes. It might not be a single slow query but many consecutive  slow ones that never allow the replica to catch up on the WAL.
 * autovacuum tweaks: `WITH (autovacuum_analyze_scale_factor='0.01', autovacuum_analyze_threshold='1000', autovacuum_vacuum_scale_factor='0.01', autovacuum_vacuum_threshold='1000');`, autovacuum_vacuum_cost_delay, maintenance_work_mem
 * multiXact space exhaustion (not just ids!) https://metronome.com/blog/root-cause-analysis-postgresql-multixact-member-exhaustion-incidents-may-2025 - is this untrackable on cloud sql, excepting logs?
+* https://pglocks.org/ and https://leontrolski.github.io/pglockpy.html
 
 ## Analytics, CDC
 https://github.com/sequinstream/sequin
@@ -346,7 +350,7 @@ data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
 * slack: shift+esc to mark all as read
 * `pip install csvkit; mise reshim; csvcut -c 2 file.csv`
 * Typhoeus::Config.verbose = true
-* pretty print html: `puts Nokogiri::XML(html_string, &:noblanks).to_xml(indent: 2)`
+* pretty print html: `def m(node); html_str = node.inner_html; puts Nokogiri::XML(html_str, &:noblanks).to_xml(indent: 2); end`
 * remember the `timeout` shell command
 
 ## Agents
