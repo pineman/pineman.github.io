@@ -1,4 +1,9 @@
 # February 2026
+https://lucumr.pocoo.org/2026/2/13/the-final-bottleneck/
+* https://o16g.com/
+* https://news.ycombinator.com/item?id=47006513 - I'm not worried about AI job loss (davidoks.blog)
+* https://www.dbreunig.com/2026/01/08/a-software-library-with-no-code.html
+* https://simonwillison.net/2026/Feb/7/software-factory/ - this is the sort of thing we'll look back to in a decade
 * https://lobste.rs/s/itj50a/make_invalid_states_unrepresentable
 * https://www.seangoedecke.com/invalid-states
 * https://antithesis.com/resources/reliability_glossary/
@@ -42,7 +47,7 @@
 * https://www.jampa.dev/p/lessons-learned-after-10-years-as?hide_intro_popup=true
 * https://dubroy.com/blog/look-for-whats-true
 * https://tailscale.com/blog/aperture-private-alpha
-* https://news.ycombinator.com/item?id=46766961
+* https://news.ycombinator.com/item?id=46766961 - There is an AI code review bubble (greptile.com)
 * https://nolanlawson.com/2026/01/24/ai-tribalism/
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-72
 * https://antirez.com/news/159

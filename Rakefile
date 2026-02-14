@@ -9,6 +9,9 @@ gemfile do
   gem "nokogiri", "1.16.2"
 end
 
+require "net/http"
+require "json"
+require "uri"
 require "rake/clean"
 
 Rake::FileUtilsExt.verbose(false)
@@ -100,7 +103,23 @@ end
 file LINKS_HTML => [BUILD_DIR, TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
   lines = File.readlines(LINKS_MD)
   modified_lines = lines.map do |line|
-    line.start_with?("http") && !line.start_with?("* ") ? "* #{line}" : line
+    line = "* #{line}" if line.start_with?("http") && !line.start_with?("* ")
+
+    # Auto-fetch HN title for bare HN links (no description after the URL)
+    if line =~ /^\* (https:\/\/news\.ycombinator\.com\/item\?id=(\d+))\s*$/
+      hn_url, hn_id = $1, $2
+      begin
+        data = JSON.parse(Net::HTTP.get(URI("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json")))
+        if data && data["title"]
+          domain = data["url"] ? URI.parse(data["url"]).host.sub(/^www\./, "") : nil
+          suffix = domain ? " (#{domain})" : ""
+          line = "* #{hn_url} - #{data["title"]}#{suffix}\n"
+        end
+      rescue
+      end
+    end
+
+    line
   end
   File.write(LINKS_MD, modified_lines.join) if modified_lines != lines
 
