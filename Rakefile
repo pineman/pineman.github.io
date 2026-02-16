@@ -49,7 +49,7 @@ TEMPLATE_ARTICLE_HEAD = "#{TEMPLATES_DIR}/article-head.html.erb"
 TEMPLATE_PINECONE = "#{TEMPLATES_DIR}/pinecone.html"
 TEMPLATE_LINK_PREVIEW = "#{TEMPLATES_DIR}/link-preview.svg.erb"
 
-POSTS_MD = FileList["#{POSTS_DIR}/2*.md"]
+POSTS_MD = FileList["#{POSTS_DIR}/*.md"]
 POSTS_HTML = POSTS_MD.pathmap("#{BUILD_POSTS_DIR}/%n.html")
 POSTS_INTERMEDIATE_HTML = POSTS_MD.pathmap("#{POSTS_HTML_DIR}/%n.html")
 LINK_PREVIEWS = POSTS_MD.pathmap("#{LINK_PREVIEWS_DIR}/%n.png")
@@ -101,28 +101,7 @@ file NOTES_INDEX_MD => [BUILD_DIR, NOTES_HTML] do |t|
 end
 
 file LINKS_HTML => [BUILD_DIR, TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-  lines = File.readlines(LINKS_MD)
-  modified_lines = lines.map do |line|
-    line = "* #{line}" if line.start_with?("http") && !line.start_with?("* ")
-
-    # Auto-fetch HN title for bare HN links (no description after the URL)
-    if line =~ /^\* (https:\/\/news\.ycombinator\.com\/item\?id=(\d+))\s*$/
-      hn_url, hn_id = $1, $2
-      begin
-        data = JSON.parse(Net::HTTP.get(URI("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json")))
-        if data && data["title"]
-          domain = data["url"] ? URI.parse(data["url"]).host.sub(/^www\./, "") : nil
-          suffix = domain ? " (#{domain})" : ""
-          line = "* #{hn_url} - #{data["title"]}#{suffix}\n"
-        end
-      rescue
-      end
-    end
-
-    line
-  end
-  File.write(LINKS_MD, modified_lines.join) if modified_lines != lines
-
+  process_links!
   write_html(t.name, TEMPLATE_LINKS, binding)
 end
 
@@ -198,6 +177,30 @@ def render_erb(template_file, caller_binding)
   bufvar = "@_buf_#{Random.rand(1_000_000)}"
   template = Erubi::Engine.new(File.read(template_file), escape: true, bufvar: bufvar)
   eval(template.src, caller_binding)
+end
+
+def process_links!
+  lines = File.readlines(LINKS_MD)
+  modified_lines = lines.map do |line|
+    line = "* #{line}" if line.start_with?("http") && !line.start_with?("* ")
+
+    # Auto-fetch HN title for bare HN links (no description after the URL)
+    if line =~ /^\* (https:\/\/news\.ycombinator\.com\/item\?id=(\d+))\s*$/
+      hn_url, hn_id = $1, $2
+      begin
+        data = JSON.parse(Net::HTTP.get(URI("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json")))
+        if data && data["title"]
+          domain = data["url"] ? URI.parse(data["url"]).host.sub(/^www\./, "") : nil
+          suffix = domain ? " (#{domain})" : ""
+          line = "* #{hn_url} - #{data["title"]}#{suffix}\n"
+        end
+      rescue
+      end
+    end
+
+    line
+  end
+  File.write(LINKS_MD, modified_lines.join) if modified_lines != lines
 end
 
 def write_html(html_file, template_file, caller_binding)
