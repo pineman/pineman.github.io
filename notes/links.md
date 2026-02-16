@@ -1,4 +1,19 @@
 # February 2026
+* https://factory.strongdm.ai/
+* https://susam.net/twenty-five-years-of-computing.html
+* https://paulgraham.com/taste.html
+* https://www.seangoedecke.com/fast-llm-inference
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-74
+* https://webkit.org/blog/16547/better-typography-with-text-wrap-pretty/
+* https://susam.net/twenty-five-years-of-computing.html
+* https://matklad.github.io/2026/02/11/programming-aphorisms.html
+* https://modern-css.com/
+* https://planetscale.com/blog/btrees-and-database-indexes
+* https://fly.io/blog/litestream-writable-vfs/
+* https://turbopuffer.com/blog/object-storage-queue
+* https://lucumr.pocoo.org/2020/1/1/async-pressure/
+* https://www.pgmustard.com/blog/read-efficiency-issues-in-postgres-queries
+* https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163
 * https://lucumr.pocoo.org/2026/2/13/the-final-bottleneck/
 * https://o16g.com/
 * https://news.ycombinator.com/item?id=47006513 - I'm not worried about AI job loss (davidoks.blog)
