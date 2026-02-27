@@ -1,6 +1,31 @@
 # February 2026
+* https://vondra.me/posts/the-real-cost-of-random-io/
+* https://lyra.horse/x86css/
+* https://rachelbythebay.com/w/2026/02/23/readers/
+* https://www.seangoedecke.com/insider-amnesia/
+* https://www.depesz.com/2026/02/21/per-worker-and-global-io-bandwidth-in-explain-plans/
+* https://davidgomes.com/phabricator-code-review/
+* https://davidgomes.com/cursor-debug-mode/
+* https://en.wikipedia.org/wiki/QUIC
+* https://en.wikipedia.org/wiki/Happy_Eyeballs
+* https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol
+* http://hintjens.com/blog:16
+* https://www.experimental-history.com/p/why-arent-smart-people-happier
+* https://harpers.org/archive/2026/03/childs-play-sam-kriss-ai-startup-roy-lee/
+* https://matduggan.com/i-sold-out-for-200-a-month-and-all-i-got-was-this-perfectly-generated-terraform/
+* https://leaflet.pub/p/did:plc:3vdrgzr2zybocs45yfhcr6ur/3mfd2oxx5v22b - what is oauth?
+* https://blog.kinglycrow.com/no-skill-no-taste/
+* https://www.readtrung.com/p/how-does-docusign-have-7000-employees
+* https://www.ben-evans.com/benedictevans/2026/2/19/how-will-openai-compete-nkg2x
+* https://openai.com/index/harness-engineering/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-75
+* https://words.filippo.io/dependabot/
+* https://inputlag.science/
+* https://boringsql.com/posts/inside-the-8kb-page/
+* https://buttondown.com/hillelwayne/archive/stream-of-consciousness-driven-development/
+* https://www.seangoedecke.com/generate-skills-afterwards/
+* https://brandur.org/nanoglyphs/048-llms
 * https://factory.strongdm.ai/
-* https://susam.net/twenty-five-years-of-computing.html
 * https://paulgraham.com/taste.html
 * https://www.seangoedecke.com/fast-llm-inference
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-74

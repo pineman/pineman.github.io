@@ -1,5 +1,6 @@
 # Notes
 
+- [find_domains](notes/find_domains.md)
 - [ideas](notes/ideas.md)
 - [jargon](notes/jargon.md)
 - [laws](notes/laws.md)

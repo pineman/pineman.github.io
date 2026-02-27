@@ -21,7 +21,7 @@ Sidekiq::RetrySet.new.to_a.map(&:klass).tally.sort_by{_2}
 Sidekiq::BatchSet.new.to_a
 
 # Reschedule jobs
-Sidekiq::ScheduledSet.new.to_a.each { it.reschedule if it.klass == "someclass" }
+Sidekiq::ScheduledSet.new.to_a.each { it.reschedule(Time.current) if it.klass == "someclass" }
 
 # List of jobs for batch
 Sidekiq::Batch.new('batch_id').jids
