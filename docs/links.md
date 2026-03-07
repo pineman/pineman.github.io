@@ -1,4 +1,18 @@
 # February 2026
+* https://vickiboykis.com/2026/02/21/querying-3-billion-vectors/
+* https://buttondown.com/jaffray/archive/simulating-queueing/
+* https://hakibenita.com/postgres-row-lock-with-join
+* https://turbopuffer.com/blog/zero-cost
+* https://terriblesoftware.org/2026/03/03/nobody-gets-promoted-for-simplicity/
+* https://brandur.org/postgres-queues
+* https://riverqueue.com/blog/river-on-rails
+* https://riverqueue.com/blog/ruby-queue-history#backgroundrb-the-og
+* https://dashbit.co/blog/type-systems-are-leaky-abstractions-map-take
+* https://www.cybertec-postgresql.com/en/insert-on-conflict-do-select-a-new-feature-in-postgresql-v19/
+* https://jdx.dev/posts/2026-03-02-10-mise-features/
+* https://andycroll.com/ruby/to-param-seo-friendly-urls/
+* https://www.seangoedecke.com/side-bets
+* https://www.seangoedecke.com/giving-llms-a-personality
 * https://vondra.me/posts/the-real-cost-of-random-io/
 * https://lyra.horse/x86css/
 * https://rachelbythebay.com/w/2026/02/23/readers/

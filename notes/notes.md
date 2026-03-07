@@ -140,7 +140,7 @@ this is useful to bypass proxy objects and stuff
 * gem for postgresql cursors: https://github.com/afair/postgresql_cursor
 * `retry` seems like a good idea but it's an infinite loop waiting to happen. always bound it with retries
 * preload associations for already loaded models: `ActiveRecord::Associations::Preloader.new(records:, associations: [:assoc_1, assoc_2: [:nested_assoc]).call`
-
+* https://github.com/maquina-app/rails-upgrade-skill
 
 ## RSpec
 * run one test only: `rspec ./spec/controllers/groups_controller_spec.rb:42`
@@ -228,6 +228,7 @@ tables are processed with adaptive delays to prevent heavy IO and replication la
 * autovacuum tweaks: `WITH (autovacuum_analyze_scale_factor='0.01', autovacuum_analyze_threshold='1000', autovacuum_vacuum_scale_factor='0.01', autovacuum_vacuum_threshold='1000');`, autovacuum_vacuum_cost_delay, maintenance_work_mem
 * multiXact space exhaustion (not just ids!) https://metronome.com/blog/root-cause-analysis-postgresql-multixact-member-exhaustion-incidents-may-2025 - is this untrackable on cloud sql, excepting logs?
 * https://pglocks.org/ and https://leontrolski.github.io/pglockpy.html
+* `select for update` vs `select for no key update` https://goncalo.mendescabrita.com/blog/cross-table-lock/: a KEY is from the perspective of the locked table: "am I changing the columns that make this row a target for other tables' references?" - so the targets of other table's FK constraints
 
 ## Analytics, CDC
 https://github.com/sequinstream/sequin
@@ -295,6 +296,25 @@ PUT /people_staging/_mapping
         }
     }
 }
+```
+
+* Sample of docs:
+```
+Person.search(
+  body: {
+    size: 1000,
+    _source: false,
+    query: {
+      function_score: {
+        query: { match_all: {} },
+        random_score: {
+          seed: rand(1000000)
+        }
+      }
+    }
+  },
+  load: false
+).response.dig("hits", "hits").map { |hit| hit["_id"] }
 ```
 
 ## React / frontend

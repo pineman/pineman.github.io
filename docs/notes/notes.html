@@ -178,6 +178,7 @@ JSON.parse(j)</code></pre>
 <li>gem for postgresql cursors: <a href="https://github.com/afair/postgresql_cursor">https://github.com/afair/postgresql_cursor</a></li>
 <li><code>retry</code> seems like a good idea but it's an infinite loop waiting to happen. always bound it with retries</li>
 <li>preload associations for already loaded models: <code>ActiveRecord::Associations::Preloader.new(records:, associations: [:assoc_1, assoc_2: [:nested_assoc]).call</code></li>
+<li><a href="https://github.com/maquina-app/rails-upgrade-skill">https://github.com/maquina-app/rails-upgrade-skill</a></li>
 </ul>
 <h2 id="rspec">RSpec</h2>
 <ul>
@@ -317,6 +318,7 @@ ORDER BY url, timestamp DESC</code></pre>
 <li>autovacuum tweaks: <code>WITH (autovacuum_analyze_scale_factor='0.01', autovacuum_analyze_threshold='1000', autovacuum_vacuum_scale_factor='0.01', autovacuum_vacuum_threshold='1000');</code>, autovacuum_vacuum_cost_delay, maintenance_work_mem</li>
 <li>multiXact space exhaustion (not just ids!) <a href="https://metronome.com/blog/root-cause-analysis-postgresql-multixact-member-exhaustion-incidents-may-2025">https://metronome.com/blog/root-cause-analysis-postgresql-multixact-member-exhaustion-incidents-may-2025</a> - is this untrackable on cloud sql, excepting logs?</li>
 <li><a href="https://pglocks.org/">https://pglocks.org/</a> and <a href="https://leontrolski.github.io/pglockpy.html">https://leontrolski.github.io/pglockpy.html</a></li>
+<li><code>select for update</code> vs <code>select for no key update</code> <a href="https://goncalo.mendescabrita.com/blog/cross-table-lock/">https://goncalo.mendescabrita.com/blog/cross-table-lock/</a>: a KEY is from the perspective of the locked table: "am I changing the columns that make this row a target for other tables' references?" - so the targets of other table's FK constraints</li>
 </ul>
 <h2 id="analytics-cdc">Analytics, CDC</h2>
 <p><a href="https://github.com/sequinstream/sequin">https://github.com/sequinstream/sequin</a> debezium ok but you need kafka what's the best solution to move data from your oltp postgresql into... everywhere else? an olap db, ETL, snowflake?</p>
@@ -368,6 +370,24 @@ or Person.searchkick_index.retrieve(Person.new(id: person_id))</code></pre>
         }
     }
 }</code></pre>
+<ul>
+<li>Sample of docs:</li>
+</ul>
+<pre><code>Person.search(
+  body: {
+    size: 1000,
+    _source: false,
+    query: {
+      function_score: {
+        query: { match_all: {} },
+        random_score: {
+          seed: rand(1000000)
+        }
+      }
+    }
+  },
+  load: false
+).response.dig(&quot;hits&quot;, &quot;hits&quot;).map { |hit| hit[&quot;_id&quot;] }</code></pre>
 <h2 id="react--frontend">React / frontend</h2>
 <ul>
 <li>react-query is good</li>
@@ -420,7 +440,10 @@ data = [AVRO.decode(Base64.decode64(&#39;string from kafka-ui&#39;))]</code></pr
 <ul>
 <li>search sentry by lots of tags: <code>user.email:a@a.com</code>, <code>jid:sadhfoqshr</code>, ... - useful if you want a stack trace of an error you found in logs</li>
 <li>base: T1, new: T2. speedup %: T1/T2-1. if negative, its a slowdown.</li>
-<li>DNS: MX record resolution will follow CNAME, as will A records, automatically.</li>
+<li>DNS records resolution automatically follows CNAMEs (MX, A, ...)</li>
+<li>Remove duplicates, prefer paths after the // as originals: <code>rmlint -T duplicates --see-symlinks --partial-hidden -c sh:handler=remove --hardlinked --no-crossdev --max-depth 512 /home/pineman/Pictures/unorganized // /home/pineman/Pictures/screenies /home/pineman/Pictures/phone</code></li>
+<li>Show what rsync will REALLY do: <code>rsync -n -c --itemize-changes computer/ /Volumes/Backup/b2/computer/ G -v '^\.'</code></li>
+<li>Binary sections like .text, .bss, etc. are an ELF thing and not "universal".</li>
 <li>slack: shift+esc to mark all as read</li>
 <li><code>pip install csvkit; mise reshim; csvcut -c 2 file.csv</code></li>
 <li>Typhoeus::Config.verbose = true</li>
