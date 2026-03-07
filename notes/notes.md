@@ -346,7 +346,10 @@ data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
 ## Misc
 * search sentry by lots of tags: `user.email:a@a.com`, `jid:sadhfoqshr`, ... - useful if you want a stack trace of an error you found in logs
 * base: T1, new: T2. speedup %: T1/T2-1. if negative, its a slowdown.
-* DNS: MX record resolution will follow CNAME, as will A records, automatically.
+* DNS records resolution automatically follows CNAMEs (MX, A, ...)
+* Remove duplicates, prefer paths after the // as originals: `rmlint -T duplicates --see-symlinks --partial-hidden -c sh:handler=remove --hardlinked --no-crossdev --max-depth 512 /home/pineman/Pictures/unorganized // /home/pineman/Pictures/screenies /home/pineman/Pictures/phone`
+* Show what rsync will REALLY do: `rsync -n -c --itemize-changes computer/ /Volumes/Backup/b2/computer/ G -v '^\.'`
+* Binary sections like .text, .bss, etc. are an ELF thing and not "universal".
 * slack: shift+esc to mark all as read
 * `pip install csvkit; mise reshim; csvcut -c 2 file.csv`
 * Typhoeus::Config.verbose = true
