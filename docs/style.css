@@ -109,6 +109,9 @@ h2 {
   min-width: 5.7rem;
   display: inline-block;
 }
+summary h2 {
+  cursor: pointer;
+}
 .img-link {
   border-bottom: none;
 }
