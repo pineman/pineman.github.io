@@ -1,4 +1,34 @@
-# February 2026
+# March 2026
+* https://buttondown.com/hillelwayne/archive/llms-are-bad-at-vibing-specifications/
+* https://nav.al/ai
+* https://jvns.ca/blog/2022/02/23/getaddrinfo-is-kind-of-weird/
+* https://cursor.com/blog/cursorbench
+* https://mydbanotebook.org/posts/work_mem-its-a-trap/ - pg_log_backend_memory_contexts
+* https://planetscale.com/blog/scaling-postgres-connections-with-pgbouncer
+* https://www.crunchydata.com/blog/prepared-statements-in-transaction-mode-for-pgbouncer
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-78
+* https://www.dbreunig.com/2026/02/21/why-is-claude-an-electron-app.html
+* https://bloomberg.github.io/js-blog/post/temporal/
+* https://tropes.fyi/tropes-md
+* https://sharif.io/looking-stupid
+* https://www.helenmin.com/blog/software-is-becoming-more-honest
+* https://tonsky.me/blog/fall-of-native/
+* https://kevinkelly.substack.com/p/six-selfish-reasons-to-have-kids
+* https://background-agents.com/
+* https://www.bitquabit.com/post/one-which-i-call-out-hacker-news/
+* https://blog.codinghorror.com/code-its-trivial/
+* https://matthogg.fyi/a-unified-theory-of-ego-empathy-and-humility-at-work/
+* https://danluu.com/sounds-easy
+* https://www.seangoedecke.com/nobody-knows-how-software-products-work
+* https://www.seangoedecke.com/big-tech-needs-big-egos
+* https://lemire.me/blog/2026/03/08/prefix-sums-at-tens-of-gigabytes-per-second-with-arm-neon/
+* https://shaneborden.com/2026/03/13/more-obscure-things-that-make-it-go-vacuum-in-postgresql/
+* https://simonwillison.net/2026/Mar/13/liquid/
+* https://blog.alexewerlof.com/p/owasp-top-10-ai-llm-agents
+* https://andycroll.com/ruby/with-options-group-shared-config/
+* https://railsatscale.com/2026-03-09-faster-bundler/
+* https://www.mikeperham.com/2026/03/10/sidekiq-in-the-terminal/
+* https://duarteocarmo.com/blog/portuguese-variety-identification-the-bitter-lesson
 * https://vickiboykis.com/2026/02/21/querying-3-billion-vectors/
 * https://buttondown.com/jaffray/archive/simulating-queueing/
 * https://hakibenita.com/postgres-row-lock-with-join
@@ -13,6 +43,7 @@
 * https://andycroll.com/ruby/to-param-seo-friendly-urls/
 * https://www.seangoedecke.com/side-bets
 * https://www.seangoedecke.com/giving-llms-a-personality
+# February 2026
 * https://vondra.me/posts/the-real-cost-of-random-io/
 * https://lyra.horse/x86css/
 * https://rachelbythebay.com/w/2026/02/23/readers/

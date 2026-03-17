@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="João Pinheiro" />
+<meta name="keywords" content="technology computer software engineering" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="João Pinheiro" />
+<script src="https://kit.fontawesome.com/84407ba8ee.js" crossorigin="anonymous"></script>
+
+  <meta property="og:type" content="article" />
+<meta property="article:author" content="https://pineman.github.io" />
+<meta property="article:section" content="blog" />
+<meta property="article:tag" content="technology" />
+<meta property="article:tag" content="computer" />
+<meta property="article:tag" content="software" />
+<meta property="article:tag" content="engineering" />
+
+  <meta property="og:url" content="https://pineman.github.io/notes/things_you_need.html" />
+  <title>things_you_need</title>
+  <meta property="og:title" content="things_you_need" />
+</head>
+<body>
+<div id="wrap">
+<a href="../notes.html">&lt; back</a>
+<article>
+  <h1>things_you_need</h1>
+  <p>inspired by <a href="https://goncalo.mendescabrita.com/notes/things-you-should-definitely-do-in-a-greenfield-application/">https://goncalo.mendescabrita.com/notes/things-you-should-definitely-do-in-a-greenfield-application/</a></p>
+<ul>
+<li>dns caching on your cluster's nodes; maybe in your app</li>
+<li>compression on your load balancer</li>
+<li>handle ssrf (see <a href="https://github.com/arkadiyt/ssrf_filter">https://github.com/arkadiyt/ssrf_filter</a>)</li>
+<li>postgres-lock-logger</li>
+<li>alerts on sidekiq poison pill</li>
+<li>pganalyze is sweet</li>
+<li>querytags in all queries</li>
+<li>low statement_timeout, idle_in_transaction_session_timeout, lock_timeout, transaction_timeout, idle_session_timeout</li>
+<li>you'll need a connection pooler eventually</li>
+<li>maybe autovacuum killer?</li>
+<li>something to reindex old indexes</li>
+<li>maybe sometimes a good ole pg_squeeze</li>
+<li>solid_cache as a scratchpad on your DB is very useful</li>
+<li>queues and workers based on job latency SLA. HPA on that same metric.</li>
+<li>you'll eventually need transactional push with bulk support (sorry sidekiq)</li>
+<li>sentry is cool but if you're not self hosting it needs to be heavily limited</li>
+<li>logs/traces/metrics are all useful, so is having redis, kafka, debezium, dagster, different analytics DB, ...</li>
+</ul>
+
+</article>
+<a href="../notes.html">&lt; back</a>
+</div>
+</body>
+</html>

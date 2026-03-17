@@ -229,6 +229,30 @@ tables are processed with adaptive delays to prevent heavy IO and replication la
 * multiXact space exhaustion (not just ids!) https://metronome.com/blog/root-cause-analysis-postgresql-multixact-member-exhaustion-incidents-may-2025 - is this untrackable on cloud sql, excepting logs?
 * https://pglocks.org/ and https://leontrolski.github.io/pglockpy.html
 * `select for update` vs `select for no key update` https://goncalo.mendescabrita.com/blog/cross-table-lock/: a KEY is from the perspective of the locked table: "am I changing the columns that make this row a target for other tables' references?" - so the targets of other table's FK constraints
+* index predicates need to match the query exactly, even things like `where column is true` vs `where column = true`
+* check visibility map for e.g. index only scans causing heap fetches:
+```
+WITH not_visible_pages AS (
+    SELECT blkno::bigint
+    FROM pg_visibility('orders')
+    WHERE NOT all_visible
+  ),
+  account_rows AS (
+    SELECT (ctid::text::point)[0]::bigint AS page
+    FROM orders
+    WHERE customer_id = '12345'
+  )
+  SELECT
+    page,
+    count(*) AS rows_on_page,
+    sum(count(*)) OVER () AS total_not_visible,
+    (SELECT count(*) FROM account_rows) AS total_rows
+  FROM account_rows
+  WHERE page IN (SELECT blkno FROM not_visible_pages)
+  GROUP BY page
+  ORDER BY count(*) DESC;
+```
+* JOIN LATERAL and forcing nested loops: A regular `INNER JOIN (subquery)` is a "derived table" — PostgreSQL evaluates it _in isolation_, so it can't reference the table in FROM. LATERAL explicitly grants the subquery access to columns from preceding FROM items. That's the whole point of the keyword, and it's also why PostgreSQL is forced into a nested loop — the subquery depends on each outer row.
 
 ## Analytics, CDC
 https://github.com/sequinstream/sequin
@@ -375,8 +399,10 @@ data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
 * Typhoeus::Config.verbose = true
 * pretty print html: `def m(node); html_str = node.inner_html; puts Nokogiri::XML(html_str, &:noblanks).to_xml(indent: 2); end`
 * remember the `timeout` shell command
+* node.js: Node stays alive while there are still referenced async handles or requests in the event loop; common examples are timers (`setTimeout`, `setInterval`, `setImmediate`), streams/sockets (`process.stdin` - this includes `rl.on('line')` obviously -  TCP sockets, HTTP connections), servers (`http.createServer().listen`, `net.createServer().listen`), file watchers (`fs.watch`), and workers/child processes (`new Worker`, `spawn`)
 
 ## Agents
 ### Claude
  - `\` followed by enter for newline
  - Ctrl-g to edit in $EDITOR
+ - Tip: Use /btw to ask a quick side question without interrupting Claude's current work
