@@ -352,6 +352,7 @@ Person.search(
 
 ## Chrome extension
  - chrome.runtime.onMessage.addListener https://developer.chrome.com/docs/extensions/develop/concepts/messaging#responses
+ - https://github.com/GoogleChromeLabs/extension-update-testing-tool
 
 ## Honeycomb
 * honeycomb real actual count without compensating for sampling: insert /usage/ before /result/ in a query url

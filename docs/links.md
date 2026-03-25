@@ -1,4 +1,5 @@
 # March 2026
+* https://mariozechner.at/posts/2026-03-25-thoughts-on-slowing-the-fuck-down/
 * https://cacrawford.org/posts/the-steve-ballmer-problem/
 * https://blog.jgc.org/2024/09/steve-ballmers-binary-search-interview.html
 * https://bowaggoner.com/blahg/2024/09-06-adversarial-binary-search/
