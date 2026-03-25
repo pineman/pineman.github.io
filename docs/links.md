@@ -1,5 +1,17 @@
 # March 2026
-https://buttondown.com/hillelwayne/archive/llms-are-bad-at-vibing-specifications/
+* https://cacrawford.org/posts/the-steve-ballmer-problem/
+* https://blog.jgc.org/2024/09/steve-ballmers-binary-search-interview.html
+* https://bowaggoner.com/blahg/2024/09-06-adversarial-binary-search/
+* https://etodd.io/2015/09/28/one-weird-trick-better-code/
+* https://etodd.io/2017/03/29/thirteen-years-of-bad-game-code/
+* https://etodd.io/2026/03/22/magic-link-pitfalls/
+* https://signalsandthreads.com/why-testing-is-hard-and-how-to-fix-it/
+* https://www.datadoghq.com/blog/engineering/debugging-postgres-performance/
+* https://paulgraham.com/kids.html
+* https://jepsen.io/analyses/mariadb-galera-cluster-12.1.2
+* https://www.depesz.com/2026/03/17/waiting-for-postgresql-19-add-non-text-output-formats-to-pg_dumpall/
+* https://momjian.us/main/blogs/pgblog/2026.html#March_16_2026
+* https://buttondown.com/hillelwayne/archive/llms-are-bad-at-vibing-specifications/
 * https://nav.al/ai
 * https://jvns.ca/blog/2022/02/23/getaddrinfo-is-kind-of-weird/
 * https://cursor.com/blog/cursorbench
