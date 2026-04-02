@@ -126,3 +126,6 @@
 
 ## [Bram's law](https://web.archive.org/web/20160310082818/http://www.advogato.org/person/Bram/diary.html?start=68)
 "The easier a piece of software is to write, the worse it's implemented in practice."
+
+## [Proebsting's law](https://proebsting.cs.arizona.edu/law.html)
+"Compiler advances double computing power every 18 years."

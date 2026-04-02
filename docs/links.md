@@ -1,4 +1,61 @@
 # March 2026
+https://boringsql.com/posts/portable-stats/
+* https://chunkofcoal.com/posts/simd-csv
+* https://postgres.ai/blog/20260311-not-exists-vs-exists-partial-index
+* https://www.youtube.com/watch?v=1sd26pWhfmg - "Nicholas Carlini - Black-hat LLMs | [un]prompted 2026"
+* https://gekkio.fi/blog/2021/power-consumption-of-game-boy-flash-cartridges/
+* https://iev.ee/blog/the-quadratic-problem-nobody-fixed/
+* https://en.wikipedia.org/wiki/Suffix_array
+* https://cursor.com/blog/fast-regex-search
+* https://neon.com/blog/ctrl-c-in-psql-gives-me-the-heebie-jeebies
+* https://arenamag.com/silicon
+* https://lucumr.pocoo.org/2026/3/20/some-things-just-take-time/
+* https://tigerfs.io/
+* https://www.reuters.com/investigates/special-report/global-art-banksy/
+* https://emilkowal.ski/skill
+* https://thatshubham.com/blog/news-audit
+* https://ma.tt/2026/03/gone-almost-phishin/
+* https://www.generalintelligencecompany.com/writing/agent-native-engineering
+* https://colossus.com/article/we-have-learned-nothing-startup-pundits/?utm_source=newsletter
+* https://www.ribbonfarm.com/2017/11/09/ceos-dont-steer/
+* https://www.theguardian.com/technology/2026/feb/25/tech-legend-stewart-brand-on-musk-bezos-and-his-extraordinary-life-we-dont-need-to-passively-accept-our-fate
+* https://craigmod.com/roden/112/
+* https://blog.colinbreck.com/adapting-to-ai-reflections-on-productivity/#fnref12
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-79?utm_source=post-email-title&publication_id=1543843&post_id=191657628&utm_campaign=email-post-title&isFreemail=true&r=1mnftp&triedRedirect=true&utm_medium=email
+* https://43081j.com/2026/03/three-pillars-of-javascript-bloat#fnref:2
+* https://www.depesz.com/2026/03/19/waiting-for-postgresql-19-introduce-the-repack-command/
+* https://lemire.me/blog/2026/03/18/how-many-branches-can-your-cpu-predict/
+* https://haskellforall.com/2026/03/a-sufficiently-detailed-spec-is-code
+* https://news.ycombinator.com/item?id=47402640 - Meta’s renewed commitment to jemalloc (engineering.fb.com)
+* https://jakelazaroff.com/words/an-interactive-intro-to-crdts/
+* https://www.raycast.com/blog/introducing-glaze
+* https://vliw-challenge.fly.dev/
+* https://proebsting.cs.arizona.edu/law.html
+* https://www.paulgraham.com/brandage.html
+* https://www.forbes.com/sites/annatong/2026/03/05/cursor-goes-to-war-for-ai-coding-dominance/
+* https://www.experimental-history.com/p/the-one-science-reform-we-can-all#_
+* https://webdirections.org/blog/the-structure-of-engineering-revolutions/
+* https://www.iankduncan.com/engineering/2026-02-05-github-actions-killing-your-team/
+* https://nonstructured.com/zen-of-ai-coding/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-77
+* https://planetscale.com/blog/video-conferencing-with-postgres
+* https://growingswe.com/blog/quadtrees
+* https://brooker.co.za/blog/2026/02/25/sfq.html
+* https://www.datadoghq.com/blog/engineering/agent-go-binaries/
+* https://snake.eieio.games/
+* https://eieio.games/blog/secure-massively-multiplayer-snake/
+* https://www.seangoedecke.com/ai-personality-space/
+* https://www.seangoedecke.com/continuous-learning/
+* https://andrewkchan.dev/posts/systems.html
+* https://andrewkchan.dev/posts/crawler.html
+* https://www.lesswrong.com/posts/8m6AM5qtPMjgTkEeD/my-journey-to-the-microwave-alternate-timeline
+* https://mensfeld.pl/2026/02/waterdrop-fd-polling-50-percent-faster/
+* https://rage-rb.dev/
+* https://carlkolon.com/2026/02/27/engineering-747-coding-agents/
+* https://margaretstorey.com/blog/2026/02/09/cognitive-debt/
+* https://surfingcomplexity.blog/2026/02/08/nobody-knows-how-the-whole-system-works/
+* https://paulgraham.com/startuplessons.html
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-76?utm_source=post-email-title&publication_id=1543843&post_id=189361377&utm_campaign=email-post-title&isFreemail=true&r=1mnftp&triedRedirect=true&utm_medium=email
 * https://mariozechner.at/posts/2026-03-25-thoughts-on-slowing-the-fuck-down/
 * https://cacrawford.org/posts/the-steve-ballmer-problem/
 * https://blog.jgc.org/2024/09/steve-ballmers-binary-search-interview.html
@@ -56,6 +113,7 @@
 * https://andycroll.com/ruby/to-param-seo-friendly-urls/
 * https://www.seangoedecke.com/side-bets
 * https://www.seangoedecke.com/giving-llms-a-personality
+
 # February 2026
 * https://vondra.me/posts/the-real-cost-of-random-io/
 * https://lyra.horse/x86css/
@@ -153,7 +211,6 @@
 * https://cloud.google.com/blog/topics/threat-intelligence/disrupting-largest-residential-proxy-network
 * https://infrequently.org/2024/11/if-not-react-then-what/
 * https://mileswoodroffe.com/articles/rails-rate-limiting
-* https://boringsql.com/posts/introduction-to-buffers/
 * https://www.nateberkopec.com/blog/37signals-is-not-smarter-than-you/
 * https://bcantrill.dtrace.org/2019/02/10/reflecting-on-the-soul-of-a-new-machine/
 * https://fly.io/blog/tokenized-tokens/ - http proxy attach secrets 
@@ -318,8 +375,6 @@
 * https://jvns.ca/blog/2015/11/21/why-you-should-understand-a-little-about-tcp
 * https://news.ycombinator.com/item?id=34179426 - Golang disables Nagle's Algorithm by default (withinboredom.info)
 * https://news.ycombinator.com/item?id=46359120 - It's Always TCP_NODELAY (brooker.co.za)
-* https://davidbessis.substack.com/p/twins-reared-apart-do-not-exist#_
-* https://nithinbekal.com/posts/ruby-4-0/
 * https://lwn.net/Articles/104185/ - Re: [PATCH] oom_pardon, aka don't kill my xlock
 * https://news.ycombinator.com/item?id=46300411 - Vm.overcommit_memory=2 is the right setting for servers (ariadne.space)
 * https://news.ycombinator.com/item?id=46330726 - LLM Year in Review (karpathy.bearblog.dev)
@@ -363,12 +418,10 @@
 * https://benanderson.work/blog/technical-deflation/
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-64
 * https://www.postgresql.org/docs/current/using-explain.html
-* https://www.cybertec-postgresql.com/en/super-fast-aggregations-in-postgresql-19/
 * https://davidbessis.substack.com/p/twins-reared-apart-do-not-exist#_
 * https://eieio.games/blog/two-heads-arent-better-than-one/
 * https://buttondown.com/hillelwayne/archive/when-would-you-ever-want-bubblesort/
 * https://news.ycombinator.com/item?id=46221404 - Intermittent hypoxia increases blood flow and benefits executive function (wiley.com)
-* https://en.wikipedia.org/wiki/Hash_array_mapped_trie
 * https://boringsql.com/posts/vacuum-is-lie/
 * https://open.substack.com/pub/thorstenball/p/joy-and-curiosity-66
 * https://www.prefect.io/blog/rebuilding-our-website-for-the-agent-era
@@ -434,8 +487,6 @@
 * https://maryrosecook.com/blog/post/pressure-to-change
 * https://notpeerreviewed.com/blog/battlesnake/
 * https://news.ycombinator.com/item?id=45792555 - Friendly attributes pattern in Ruby (brunosutic.com)
-* https://zachholman.com/posts/money-off-the-table
-* https://notes.mtb.xyz/p/your-data-model-is-your-destiny
 * https://www.tigerdata.com/blog/how-we-made-distinct-queries-up-to-8000x-faster-on-postgresql
 * https://www.postgresql.org/message-id/CAMkU%3D1wK5t80RxVSLYEz-4e%2BwnHL0Tkn6DJWsgL19dnnvgv%3DFw%40mail.gmail.com - distinct limit 
 * https://www.ee.torontomu.ca/~elf/hack/recovery.html
@@ -462,7 +513,6 @@
 * https://en.wikipedia.org/wiki/Haversine_formula
 * https://postgis.net/workshops/postgis-intro/geography.html - idealista map region selection
 * https://www.linusakesson.net/programming/pipelogic/index.php
-* https://www.cybertec-postgresql.com/en/benefits-of-a-descending-index/
 
 # October 2025
 * https://news.ycombinator.com/item?id=45707658 - The Linux Boot Process: From Power Button to Kernel (0xkato.xyz)

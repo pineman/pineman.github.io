@@ -6,7 +6,7 @@ from datetime import datetime
 months = []
 counts = []
 
-with open("links.md") as f:
+with open("../notes/links.md") as f:
     current_count = 0
     current_month = None
     for line in f:

@@ -7,5 +7,6 @@
 - [notes](notes/notes.md)
 - [quotes](notes/quotes.md)
 - [save_llm_threads](notes/save_llm_threads.md)
+- [scraping](notes/scraping.md)
 - [things_you_need](notes/things_you_need.md)
 - [thoughts](notes/thoughts.md)
