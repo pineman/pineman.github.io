@@ -100,8 +100,8 @@
 ## [Price's law](https://en.wikipedia.org/wiki/Price%27s_law)
 "The square root of the number of people in a domain does 50 percent of the work."
 
-## [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter)
-"Only talk to your immediate friends."
+## [Law of Demeter / Principle of least knowledge](https://en.wikipedia.org/wiki/Law_of_Demeter)
+"Each unit should have only limited knowledge about other units: only units "closely" related to the current unit. Each unit should only talk to its friends; don't talk to strangers. Only talk to your immediate friends."
 
 ## [Gall's law](https://en.wikipedia.org/wiki/John_Gall_(author)#Gall%27s_law)
 "A complex system that works is invariably found to have evolved from a simple system that worked."

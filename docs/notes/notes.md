@@ -2,7 +2,7 @@
 * desperate sidekiq info for job
 https://github.com/sidekiq/sidekiq/wiki/Pro-API/4b723ee5eed2e7a6d0599e0be8ea7a61525cfb7f
 ```
-jid='a9289474f9f530885403c1d5'
+jid='a5f9c821485ba4c7d2da148f'
 Sidekiq::JobSet.find_job(jid)
 
 Sidekiq::Queue.new.delete_by_class(MyWorker)
@@ -62,6 +62,7 @@ Sidekiq::Workers.new.filter { |process_id, thread_id, work| work.queue == "defau
 * disable transactional push: https://github.com/amplemarket/ampledash/pull/25648/files (due to lib/utilities/sidekiq_transactional_client.rb)
 * > If an individual job is rescheduled by the limiter more than 20 times (approximately one day with the default linear backoff), the OverLimit will be re-raised as if it were a job failure and the job retried as usual.
 Use `max_limiter_retries` key in `sidekiq_options` to configure this to be more than 20.
+* poison pill: SuperFetch moves jobs to private per process queues in redis. The, periodically, a single random worker process will run the orphan check code (`cleanup_the_dead`). If a job is recovered three times in a 72h span, it will be classified as a poison pill and moved to the dead code. That same random worker process will emit the 'Killed poison pill' log (default, configurable msg).
 
 ## Ruby/rails
 * `bin/rails db:setup == bin/rails db:create db:schema:load db:seed`
@@ -401,6 +402,7 @@ data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
 * pretty print html: `def m(node); html_str = node.inner_html; puts Nokogiri::XML(html_str, &:noblanks).to_xml(indent: 2); end`
 * remember the `timeout` shell command
 * node.js: Node stays alive while there are still referenced async handles or requests in the event loop; common examples are timers (`setTimeout`, `setInterval`, `setImmediate`), streams/sockets (`process.stdin` - this includes `rl.on('line')` obviously -  TCP sockets, HTTP connections), servers (`http.createServer().listen`, `net.createServer().listen`), file watchers (`fs.watch`), and workers/child processes (`new Worker`, `spawn`)
+* csv: pip install csvkit; csvcut -c "platform" domains_export.csv
 
 ## Agents
 ### Claude

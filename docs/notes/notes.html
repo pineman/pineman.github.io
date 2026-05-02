@@ -32,7 +32,7 @@
 <ul>
 <li>desperate sidekiq info for job <a href="https://github.com/sidekiq/sidekiq/wiki/Pro-API/4b723ee5eed2e7a6d0599e0be8ea7a61525cfb7f">https://github.com/sidekiq/sidekiq/wiki/Pro-API/4b723ee5eed2e7a6d0599e0be8ea7a61525cfb7f</a></li>
 </ul>
-<pre><code>jid=&#39;a9289474f9f530885403c1d5&#39;
+<pre><code>jid=&#39;a5f9c821485ba4c7d2da148f&#39;
 Sidekiq::JobSet.find_job(jid)
 
 Sidekiq::Queue.new.delete_by_class(MyWorker)
@@ -93,6 +93,7 @@ end; nil</code></pre>
 <li><blockquote>
 <p>If an individual job is rescheduled by the limiter more than 20 times (approximately one day with the default linear backoff), the OverLimit will be re-raised as if it were a job failure and the job retried as usual. Use <code>max_limiter_retries</code> key in <code>sidekiq_options</code> to configure this to be more than 20.</p>
 </blockquote></li>
+<li>poison pill: SuperFetch moves jobs to private per process queues in redis. The, periodically, a single random worker process will run the orphan check code (<code>cleanup_the_dead</code>). If a job is recovered three times in a 72h span, it will be classified as a poison pill and moved to the dead code. That same random worker process will emit the 'Killed poison pill' log (default, configurable msg).</li>
 </ul>
 <h2 id="rubyrails">Ruby/rails</h2>
 <ul>
@@ -475,6 +476,7 @@ data = [AVRO.decode(Base64.decode64(&#39;string from kafka-ui&#39;))]</code></pr
 <li>pretty print html: <code>def m(node); html_str = node.inner_html; puts Nokogiri::XML(html_str, &amp;:noblanks).to_xml(indent: 2); end</code></li>
 <li>remember the <code>timeout</code> shell command</li>
 <li>node.js: Node stays alive while there are still referenced async handles or requests in the event loop; common examples are timers (<code>setTimeout</code>, <code>setInterval</code>, <code>setImmediate</code>), streams/sockets (<code>process.stdin</code> - this includes <code>rl.on('line')</code> obviously - TCP sockets, HTTP connections), servers (<code>http.createServer().listen</code>, <code>net.createServer().listen</code>), file watchers (<code>fs.watch</code>), and workers/child processes (<code>new Worker</code>, <code>spawn</code>)</li>
+<li>csv: pip install csvkit; csvcut -c "platform" domains_export.csv</li>
 </ul>
 <h2 id="agents">Agents</h2>
 <h3 id="claude">Claude</h3>

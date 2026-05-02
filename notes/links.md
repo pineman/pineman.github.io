@@ -1,4 +1,78 @@
+# April 2026
+* https://www.cybertec-postgresql.com/en/monitor-autovacuum-my-queries/
+* https://brooker.co.za/blog/2026/04/30/be-right.html
+* https://news.ycombinator.com/item?id=47966625 - Does Postgres Scale? (dbos.dev)
+* https://www.dbos.dev/blog/benchmarking-workflow-execution-scalability-on-postgres
+* https://www.agwa.name/blog/post/fastcgi_is_the_better_protocol_for_reverse_proxies
+* https://paulgraham.com/earnest.html
+* https://www.redpanda.com/guides/kafka-architecture-kafka-consumer-group
+* https://samhenri.gold/blog/20260418-claude-design/
+* https://blog.healthchecks.io/2026/04/healthchecks-io-now-uses-self-hosted-object-storage/
+* https://thmsmlr.com/cheap-infra
+* https://ideas.fin.ai/p/2x-nine-months-later
+* https://bcantrill.dtrace.org/2026/04/12/the-peril-of-laziness-lost/
+* https://thedailywtf.com/articles/The_Complicator_0x27_s_Gloves
+* https://blog.samaltman.com/2279512
+* https://news.ycombinator.com/item?id=47694515
+* https://github.com/jtolio/gls
+* https://www.allthingsdistributed.com/2026/04/s3-files-and-the-changing-face-of-s3.html
+* https://lalitm.com/post/building-syntaqlite-ai/
+* https://lucumr.pocoo.org/2026/4/4/absurd-in-production/
+* https://ultrathink.art/blog/sqlite-in-production-lessons
+* https://unsung.aresluna.org/linears-clever-internal-redesign-ui/
+* https://blog.castle.io/detecting-forged-browser-fingerprints-for-bot-detection-lessons-from-linkedin/
+* https://www.depesz.com/2026/03/22/waiting-for-postgresql-19-add-pg_plan_advice-contrib-module/
+* https://boringsql.com/posts/regresql-extension/
+* https://hillelwayne.com/post/hoc
+* https://buttondown.com/hillelwayne/archive/choose-boring-technology-and-innovative-practices/
+* https://www.seangoedecke.com/simple-work-gets-rewarded
+* https://brooker.co.za/blog/2026/03/25/ic-junior.html
+* https://build.betterup.com/the-unexpected-db-connection-pool-leak-in-our-rails-app/
+* https://opentelemetry.io/blog/2026/profiles-alpha/
+* https://www.hillelwayne.com/post/are-we-really-engineers/
+* https://theconsensus.dev/p/2026/03/20/every-query-gets-a-receipt.html
+* https://www.bytebase.com/blog/postgres-19-features-im-excited-about/
+* https://www.reco.ai/blog/we-rewrote-jsonata-with-ai
+* https://boringsql.com/posts/hot-updates/
+* https://cra.mr/finding-vulnerabilities-with-warden
+* https://theconsensus.dev/p/2026/04/16/who-even-uses-jemalloc-anyway.html
+* https://speakerdeck.com/cyberdemn/rediscovering-pgq
+* https://emro.cat/blog/how-i-broke-the-anti-bot-behind-nike-kick-and-twitch/
+* https://crawshaw.io/blog/building-a-cloud
+* https://super-memory.com/articles/sleep.htm#Summary_2
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-82
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-81
+* https://www.seangoedecke.com/software-engineering-may-no-longer-be-a-lifetime-career/
+* https://www.seangoedecke.com/many-anti-ai-arguments-are-conservative
+* https://lemire.me/blog/2026/04/27/you-can-beat-the-binary-search/
+* https://news.ycombinator.com/item?id=47885012 - Dear friend, you have built a Kubernetes (2024) (macchaffee.com)
+* https://andyatkinson.com/postgresql-rds-scaling-aws-christmas-day-peak
+* https://boringsql.com/posts/postgresql-mvcc-byte-by-byte/
+* https://byroot.github.io/ruby/performance/2026/04/18/faster-paths.html
+* https://avi.im/blag/2026/etilqs/
+* https://github.com/NikolayS/pgque - very interesting
+* https://mydbanotebook.org/posts/postgres-performance-regression-are-we-there-yet/
+* https://web.archive.org/web/20070207102333/http://blogs.sun.com/bonwick/date/20040925 - 128-bit storage: are you high?
+* https://www.rudderstack.com/blog/scaling-postgres-queue/
+* https://planetscale.com/blog/keeping-a-postgres-queue-healthy
+* https://benhoyt.com/writings/indecisive-ai-agent/
+* https://bcantrill.dtrace.org/2026/04/12/the-peril-of-laziness-lost/
+* https://stripe.dev/blog/selective-test-execution-at-stripe-fast-ci-for-a-50m-line-ruby-monorepo
+* https://tech.instacart.com/our-early-journey-to-transform-instacarts-discovery-recommendations-with-llms-cf4591a8602b
+* https://mitchellh.com/writing/building-block-economy#user-content-fnref-3
+
 # March 2026
+* https://boringsql.com/posts/postgresql-statistics/ - if stats are wrong, can: Either run ANALYZE, consider tuning the statistics target for a specific column, or creating extended statistics if multiple columns are involved.
+* https://buttondown.com/jaffray/archive/simulating-queueing-2/
+* https://buttondown.com/jaffray/archive/adventures-in-probability/
+* https://greg.molnar.io/blog/you-are-probably-validating-passwords-wrong/
+* https://xata.io/blog/postgres-data-warehouse
+* https://brooker.co.za/blog/2026/03/20/ic-leadership.html
+* https://brooker.co.za/blog/2020/10/19/big-changes.html
+* https://blog.nelhage.com/post/concurrent-error-handling
+* https://lucumr.pocoo.org/2026/4/4/absurd-in-production/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-80
+* https://corecursive.com/the-aging-programmer/
 * https://boringsql.com/posts/portable-stats/
 * https://chunkofcoal.com/posts/simd-csv
 * https://postgres.ai/blog/20260311-not-exists-vs-exists-partial-index
@@ -16,7 +90,7 @@
 * https://thatshubham.com/blog/news-audit
 * https://ma.tt/2026/03/gone-almost-phishin/
 * https://www.generalintelligencecompany.com/writing/agent-native-engineering
-* https://colossus.com/article/we-have-learned-nothing-startup-pundits/?utm_source=newsletter
+* https://colossus.com/article/we-have-learned-nothing-startup-pundits
 * https://www.ribbonfarm.com/2017/11/09/ceos-dont-steer/
 * https://www.theguardian.com/technology/2026/feb/25/tech-legend-stewart-brand-on-musk-bezos-and-his-extraordinary-life-we-dont-need-to-passively-accept-our-fate
 * https://craigmod.com/roden/112/
@@ -450,6 +524,7 @@
 * https://www.cybertec-postgresql.com/en/super-fast-aggregations-in-postgresql-19/
 
 # November 2025
+* https://newsletter.posthog.com/p/collaboration-sucks
 * https://news.ycombinator.com/item?id=42485505 - Reads Causing Writes in Postgres (jesipow.com)
 * https://buttondown.com/jaffray/archive/data-independence/
 * https://news.ycombinator.com/item?id=45985306 - I built a faster Notion in Rust (imedadel.com)
