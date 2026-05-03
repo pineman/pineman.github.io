@@ -1,4 +1,9 @@
 # April 2026
+* https://www.seangoedecke.com/large-established-codebases/
+* https://www.seangoedecke.com/staff-engineer-archetypes
+* https://www.seangoedecke.com/shareholder-value
+* uttps://ryanbigg.com/2025/04/cursor-based-querying
+* https://blog.sequinstream.com/postgres-sequences-can-commit-out-of-order/
 * https://www.cybertec-postgresql.com/en/monitor-autovacuum-my-queries/
 * https://brooker.co.za/blog/2026/04/30/be-right.html
 * https://news.ycombinator.com/item?id=47966625 - Does Postgres Scale? (dbos.dev)

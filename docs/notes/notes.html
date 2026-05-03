@@ -176,7 +176,7 @@ JSON.parse(j)</code></pre>
 <li>reloads inside callbacks make <code>changes</code> (before_* callbacks) and <code>previous_changes</code> (after_* callbacks) disappear!! which will cause the next defined callbacks to not run if they're using changes or previous_changes for conditional!</li>
 <li>do not define two callbacks with the same method name. use a -&gt; { lambda }. <a href="https://code.jjb.cc/you-can-t-declare-after_-_commit-or-after_commit-callbacks-for-the-same-method-more-than-once">https://code.jjb.cc/you-can-t-declare-after_-_commit-or-after_commit-callbacks-for-the-same-method-more-than-once</a></li>
 <li>keyset pagination: instead of using the offset of limit... offset, we basically give the offset in the WHERE, so psql can jump straight to it using a BTree index.</li>
-<li>gem for postgresql cursors: <a href="https://github.com/afair/postgresql_cursor">https://github.com/afair/postgresql_cursor</a></li>
+<li>gem for postgresql cursors: <a href="https://github.com/afair/postgresql_cursor">https://github.com/afair/postgresql_cursor</a> - stream large result sets without using something like find_each/find_in_batches</li>
 <li><code>retry</code> seems like a good idea but it's an infinite loop waiting to happen. always bound it with retries</li>
 <li>preload associations for already loaded models: <code>ActiveRecord::Associations::Preloader.new(records:, associations: [:assoc_1, assoc_2: [:nested_assoc]).call</code></li>
 <li><a href="https://github.com/maquina-app/rails-upgrade-skill">https://github.com/maquina-app/rails-upgrade-skill</a></li>

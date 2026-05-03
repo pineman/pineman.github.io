@@ -138,7 +138,7 @@ this is useful to bypass proxy objects and stuff
 * reloads inside callbacks make `changes` (before_* callbacks) and `previous_changes` (after_* callbacks) disappear!! which will cause the next defined callbacks to not run if they're using changes or previous_changes for conditional!
 * do not define two callbacks with the same method name. use a -> { lambda }. https://code.jjb.cc/you-can-t-declare-after_-_commit-or-after_commit-callbacks-for-the-same-method-more-than-once
 * keyset pagination: instead of using the offset of limit... offset, we basically give the offset in the WHERE, so psql can jump straight to it using a BTree index.
-* gem for postgresql cursors: https://github.com/afair/postgresql_cursor
+* gem for postgresql cursors: https://github.com/afair/postgresql_cursor - stream large result sets without using something like find_each/find_in_batches
 * `retry` seems like a good idea but it's an infinite loop waiting to happen. always bound it with retries
 * preload associations for already loaded models: `ActiveRecord::Associations::Preloader.new(records:, associations: [:assoc_1, assoc_2: [:nested_assoc]).call`
 * https://github.com/maquina-app/rails-upgrade-skill
