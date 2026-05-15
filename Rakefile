@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 
-require "rss"
-require "erubi"
-
 require "bundler/inline"
 gemfile do
   source "https://rubygems.org"
   gem "nokogiri", "1.16.2"
+  gem "erubi", "1.13.1"
+  gem "rss", "0.3.2"
 end
 
+require "rss"
 require "net/http"
 require "json"
 require "uri"

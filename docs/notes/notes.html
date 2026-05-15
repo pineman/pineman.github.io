@@ -91,7 +91,7 @@ end; nil</code></pre>
 <li>queue latency means: the age in seconds of the oldest job currently in the queue</li>
 <li>disable transactional push: <a href="https://github.com/amplemarket/ampledash/pull/25648/files">https://github.com/amplemarket/ampledash/pull/25648/files</a> (due to lib/utilities/sidekiq_transactional_client.rb)</li>
 <li><blockquote>
-<p>If an individual job is rescheduled by the limiter more than 20 times (approximately one day with the default linear backoff), the OverLimit will be re-raised as if it were a job failure and the job retried as usual. Use <code>max_limiter_retries</code> key in <code>sidekiq_options</code> to configure this to be more than 20.</p>
+<p>If an individual job is rescheduled by the limiter more than 20 times (approximately one day with the default linear backoff), OverLimit will be re-raised as if it were a job failure and the job retried as usual. Use <code>max_limiter_retries</code> key in <code>sidekiq_options</code> to configure this to be more than 20.</p>
 </blockquote></li>
 <li>poison pill: SuperFetch moves jobs to private per process queues in redis. The, periodically, a single random worker process will run the orphan check code (<code>cleanup_the_dead</code>). If a job is recovered three times in a 72h span, it will be classified as a poison pill and moved to the dead code. That same random worker process will emit the 'Killed poison pill' log (default, configurable msg).</li>
 </ul>
@@ -461,6 +461,9 @@ AVRO = AvroTurf::Messaging.new(
 data = [AVRO.decode(Base64.decode64(&#39;string from kafka-ui&#39;))]</code></pre>
 <ul>
 <li>Maximum poll interval (300000ms) exceeded by 255ms error: <a href="https://github.com/karafka/karafka/wiki/Pro-Long-Running-Jobs">https://github.com/karafka/karafka/wiki/Pro-Long-Running-Jobs</a></li>
+<li>move messages from one topic to another (no care for partitions): <code>kcat -b "$KAFKA_BROKERS" -C -t ampledash.collectedcontactrefreshdomain -o beginning -e -q -f '%s\n' | kcat -b "$KAFKA_BROKERS" -P -t ampledash.collectedcontactrefreshdomain.v2</code></li>
+<li>find message errors with Explorer on dead messages topics</li>
+<li>enhance_dlq_message store error message and class in headers</li>
 </ul>
 <h2 id="misc">Misc</h2>
 <ul>
@@ -477,6 +480,7 @@ data = [AVRO.decode(Base64.decode64(&#39;string from kafka-ui&#39;))]</code></pr
 <li>remember the <code>timeout</code> shell command</li>
 <li>node.js: Node stays alive while there are still referenced async handles or requests in the event loop; common examples are timers (<code>setTimeout</code>, <code>setInterval</code>, <code>setImmediate</code>), streams/sockets (<code>process.stdin</code> - this includes <code>rl.on('line')</code> obviously - TCP sockets, HTTP connections), servers (<code>http.createServer().listen</code>, <code>net.createServer().listen</code>), file watchers (<code>fs.watch</code>), and workers/child processes (<code>new Worker</code>, <code>spawn</code>)</li>
 <li>csv: pip install csvkit; csvcut -c "platform" domains_export.csv</li>
+<li>can create an index for the namespaces in solid_cache - you get a namespaced persistent kv in psql you can query whenever</li>
 </ul>
 <h2 id="agents">Agents</h2>
 <h3 id="claude">Claude</h3>
@@ -484,6 +488,11 @@ data = [AVRO.decode(Base64.decode64(&#39;string from kafka-ui&#39;))]</code></pr
 <li><code>\</code> followed by enter for newline</li>
 <li>Ctrl-g to edit in $EDITOR</li>
 <li>Tip: Use /btw to ask a quick side question without interrupting Claude's current work</li>
+</ul>
+<h2 id="starrocks">StarRocks</h2>
+<ul>
+<li><a href="https://github.com/StarRocks/starrocks-debug-skills">https://github.com/StarRocks/starrocks-debug-skills</a> (<a href="https://medium.com/towards-data-engineering/we-open-sourced-an-ai-skill-for-debugging-production-database-incidents-48b091e5f4ff">https://medium.com/towards-data-engineering/we-open-sourced-an-ai-skill-for-debugging-production-database-incidents-48b091e5f4ff</a>)</li>
+<li><a href="https://fresha.github.io/northstar/">https://fresha.github.io/northstar/</a></li>
 </ul>
 
 </article>

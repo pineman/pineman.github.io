@@ -1,3 +1,22 @@
+# May 2026
+* https://lobste.rs/s/wehmq6/sql_incorrect_by_construction
+* https://spacetimedb.com/blog/benchmarking
+* https://thanosapollo.org/posts/bzr-saga/
+* https://www.forbes.com/sites/kevinready/2012/08/23/paying-it-forward-silicon-valleys-open-secret-to-success/
+* https://www.seangoedecke.com/the-left-wing-case-for-ai
+* https://x.com/patio11/status/1162561822248992768 - patio11 dangerous professional
+* https://zackoverflow.dev/writing/rust-is-the-best-language-for-coding-agents/
+* https://zackoverflow.dev/writing/zig-vs-rust-in-2026/
+* https://news.ycombinator.com/item?id=48064789 - "Lakebase architecture delivers faster Postgres writes (databricks.com)"
+* https://news.ycombinator.com/item?id=48082676 - "Replacing a 3 GB SQLite db with a 10 MB FST (finite state transducer) binary (andrew-quinn.me)", https://lobste.rs/s/xb2edj/replacing_3_gb_sqlite_database_with_10_mb, https://burntsushi.net/transducers/
+* https://medium.com/fever-engineering/why-concurrent-updates-and-inserts-can-severely-impact-postgresql-performance-73b14bad5ee10
+* https://www.david-smith.org/blog/2026/04/29/maps-on-watchos/
+* https://www.jefftk.com/p/ai-is-breaking-two-vulnerability-cultures
+* https://andrewsiegler.substack.com/p/alloways-antidote-to-baumols-cost
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-85
+* https://x.com/tobi/status/2053121182044451017
+* https://crawshaw.io/blog/agent-principal-agent
+
 # April 2026
 * https://www.seangoedecke.com/large-established-codebases/
 * https://www.seangoedecke.com/staff-engineer-archetypes

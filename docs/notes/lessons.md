@@ -1,0 +1,3 @@
+ - postgres tables for logging where you write a row after you've done something is a great honkin idea and I love them. log ALL the things. log http response bodies/statuses/durations. 
+ - a generic persistent kv in postgres is also super useful (eg solid_cache)
+ - even though you can't log *all* the entities you're operating on, maybe you can log *the number* - eg how many domains did this query return at this time? how many rows did I cache in this cache job?

@@ -60,7 +60,7 @@ Sidekiq::Workers.new.filter { |process_id, thread_id, work| work.queue == "defau
 * job_id is preserved through retries
 * queue latency means: the age in seconds of the oldest job currently in the queue
 * disable transactional push: https://github.com/amplemarket/ampledash/pull/25648/files (due to lib/utilities/sidekiq_transactional_client.rb)
-* > If an individual job is rescheduled by the limiter more than 20 times (approximately one day with the default linear backoff), the OverLimit will be re-raised as if it were a job failure and the job retried as usual.
+* > If an individual job is rescheduled by the limiter more than 20 times (approximately one day with the default linear backoff), OverLimit will be re-raised as if it were a job failure and the job retried as usual.
 Use `max_limiter_retries` key in `sidekiq_options` to configure this to be more than 20.
 * poison pill: SuperFetch moves jobs to private per process queues in redis. The, periodically, a single random worker process will run the orphan check code (`cleanup_the_dead`). If a job is recovered three times in a 72h span, it will be classified as a poison pill and moved to the dead code. That same random worker process will emit the 'Killed poison pill' log (default, configurable msg).
 
@@ -388,6 +388,9 @@ AVRO = AvroTurf::Messaging.new(
 data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
 ```
 * Maximum poll interval (300000ms) exceeded by 255ms error: https://github.com/karafka/karafka/wiki/Pro-Long-Running-Jobs
+* move messages from one topic to another (no care for partitions): `kcat -b "$KAFKA_BROKERS" -C -t ampledash.collectedcontactrefreshdomain -o beginning -e -q -f '%s\n' | kcat -b "$KAFKA_BROKERS" -P -t ampledash.collectedcontactrefreshdomain.v2`
+* find message errors with Explorer on dead messages topics
+* enhance_dlq_message store error message and class in headers
 
 ## Misc
 * search sentry by lots of tags: `user.email:a@a.com`, `jid:sadhfoqshr`, ... - useful if you want a stack trace of an error you found in logs
@@ -403,9 +406,14 @@ data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
 * remember the `timeout` shell command
 * node.js: Node stays alive while there are still referenced async handles or requests in the event loop; common examples are timers (`setTimeout`, `setInterval`, `setImmediate`), streams/sockets (`process.stdin` - this includes `rl.on('line')` obviously -  TCP sockets, HTTP connections), servers (`http.createServer().listen`, `net.createServer().listen`), file watchers (`fs.watch`), and workers/child processes (`new Worker`, `spawn`)
 * csv: pip install csvkit; csvcut -c "platform" domains_export.csv
+* can create an index for the namespaces in solid_cache - you get a namespaced persistent kv in psql you can query whenever
 
 ## Agents
 ### Claude
  - `\` followed by enter for newline
  - Ctrl-g to edit in $EDITOR
  - Tip: Use /btw to ask a quick side question without interrupting Claude's current work
+
+## StarRocks
+ - https://github.com/StarRocks/starrocks-debug-skills (https://medium.com/towards-data-engineering/we-open-sourced-an-ai-skill-for-debugging-production-database-incidents-48b091e5f4ff)
+ - https://fresha.github.io/northstar/
