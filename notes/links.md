@@ -1,4 +1,67 @@
 # May 2026
+* https://miren.dev/blog/agile-in-the-age-of-ai
+* https://andyatkinson.com/how-aura-frames-scales-for-peak-load-ruby-on-rails#post-split-references-method
+* https://x.com/nicbarkeragain/status/2049286845402644966?s=20
+* https://kevinkelly.substack.com/p/our-uncertain-uncertainties
+* https://www.alexselimov.com/posts/men_who_stare_at_walls/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-84
+* https://stripe.dev/blog/formatting-an-entire-25-million-line-codebase-overnight-the-rubyfmt-story
+* https://sockpuppet.org/blog/2015/01/15/against-dnssec/
+* https://sockpuppet.org/stuff/dnssec-qa.html
+* https://news.ycombinator.com/item?id=4695350#up_4695587
+* https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/
+* https://lemire.me/blog/2026/05/06/checking-multiplication-overflow/
+* https://paolino.me/ruby-concurrency-what-actually-happens/
+* https://statsandsociety.substack.com/p/fully-explaining-the-italian-south/comments?utm_source=post&utm_medium=web&triedRedirect=true
+* https://www.seangoedecke.com/notes-on-incidents
+* https://zackoverflow.dev/writing/zig-vs-rust-in-2026
+* https://mitchellh.com/writing/simdutf-no-libcxx
+* https://news.ycombinator.com/item?id=48153379 - I believe there are entire companies right now under AI psychosis (twitter.com)
+* https://www.seangoedecke.com/steering-vectors/
+* https://thebuild.com/blog/2026/05/08/a-field-guide-to-alternative-storage-engines-for-postgresql/
+* https://analytics.fixelsmith.com/posts/sql-fraud-patterns/
+* https://planetscale.com/blog/database-egress
+* https://news.ycombinator.com/item?id=48180204 - 1024000^2 Blocks, 2B2T Minecraft Server World Download Project, and Discoveries (github.com)
+* https://m.youtube.com/watch?v=VVJldn_MmMY&pp=0gcJCVMCo7VqN5tD&ra=m
+* https://www.figma.com/blog/pgkeeper-building-the-bouncer-we-needed-for-postgres/
+* https://fermatslibrary.com/s/who-s-got-the-monkey
+* https://charlesleifer.com/blog/redis-and-the-cost-of-ambition/
+* https://antirez.com/news/164 - Redis array type: short story of a long development
+* https://shopify.engineering/scaling-inventory-reservations
+* https://github.blog/engineering/architecture-optimization/from-latency-to-instant-modernizing-github-issues-navigation-performance/
+* https://dariusforoux.com/i-spent-my-whole-career-building-passive-income-heres-what-i-got-wrong/
+* https://george.mand.is/2026/05/my-favorite-bugs-invalid-surrogate-pairs/
+* https://newsletter.deenamousa.com/p/we-dont-know-why-malawi-is-poor
+* https://buttondown.com/nelhage/archive/notes-on-some-postgresql-implementation-details/ - good details on multixact
+* https://blog.danlew.net/2026/05/21/what-the-fuck-are-passkeys-and-why-are-they-everywhere-now/
+* https://brooker.co.za/blog/2026/05/18/whats-easy-whats-hard.html
+* https://caio.ca/blog/why-ruby-still-feels-like-home
+* https://www.nateberkopec.com/blog/thoughts-on-llms-in-2026/
+* https://futureboy.us/blog/twofifty.html - food Engineer Eats Efficiently (for $2.50 a Day)
+* https://paulgraham.com/addiction.html
+* http://hintjens.com/ - should read more of this
+* https://www.cybertec-postgresql.com/en/reasons-why-vacuum-wont-remove-dead-rows/
+* https://multigres.com/blog/pooling-without-choosing-a-mode
+* https://www.seangoedecke.com/prompts-are-technical-debt-too/
+* https://www.seangoedecke.com/the-o3-geoguessr-prompt-did-not-work/
+* https://news.ycombinator.com/item?id=48195009 - I’ve built a virtual museum with nearly every operating system you can think of (virtualosmuseum.org)
+* https://richyen.com/postgres/2026/05/18/multixact_wraparound.html
+* https://news.ycombinator.com/item?id=48188183 - The last six months in LLMs in five minutes (simonwillison.net)
+* https://news.ycombinator.com/item?id=48179021 - AI eats the world (Spring 26) [pdf] (static1.squarespace.com) Benedict Evans
+* https://www.youtube.com/watch?v=V8DGdPkBBxg - A Jane Street Software Engineering Mock Interview with Grace and Nolen
+* https://en.wikipedia.org/wiki/Wason_selection_task#Policing_social_rules
+* https://brokenbrowser.com/blog/2026-05-09-prerender-stealth-csp-bypass/
+* https://www.seangoedecke.com/how-i-use-llms-in-2026
+* https://www.seangoedecke.com/the-just-say-no-engineer-was-a-zirp-phenomenon
+* https://matklad.github.io/2026/05/18/always-be-blaming.html
+* https://mislav.net/2014/02/hidden-documentation/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-86
+* https://sockpuppet.org/blog/2026/05/12/emacsification/
+* https://deepmind.google/blog/ai-pointer/
+* https://sive.rs/4d
+* https://lemire.me/blog/2025/12/04/we-see-something-that-works-and-then-we-understand-it/
+* https://registerspill.thorstenball.com/p/the-most-powerful-law-in-software
+* https://ferd.ca/complexity-has-to-live-somewhere.html
 * https://lobste.rs/s/wehmq6/sql_incorrect_by_construction
 * https://spacetimedb.com/blog/benchmarking
 * https://thanosapollo.org/posts/bzr-saga/
@@ -83,7 +146,7 @@
 * https://bcantrill.dtrace.org/2026/04/12/the-peril-of-laziness-lost/
 * https://stripe.dev/blog/selective-test-execution-at-stripe-fast-ci-for-a-50m-line-ruby-monorepo
 * https://tech.instacart.com/our-early-journey-to-transform-instacarts-discovery-recommendations-with-llms-cf4591a8602b
-* https://mitchellh.com/writing/building-block-economy#user-content-fnref-3
+* https://mitchellh.com/writing/building-block-economy
 
 # March 2026
 * https://boringsql.com/posts/postgresql-statistics/ - if stats are wrong, can: Either run ANALYZE, consider tuning the statistics target for a specific column, or creating extended statistics if multiple columns are involved.
@@ -118,9 +181,9 @@
 * https://www.ribbonfarm.com/2017/11/09/ceos-dont-steer/
 * https://www.theguardian.com/technology/2026/feb/25/tech-legend-stewart-brand-on-musk-bezos-and-his-extraordinary-life-we-dont-need-to-passively-accept-our-fate
 * https://craigmod.com/roden/112/
-* https://blog.colinbreck.com/adapting-to-ai-reflections-on-productivity/#fnref12
+* https://blog.colinbreck.com/adapting-to-ai-reflections-on-productivity
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-79?utm_source=post-email-title&publication_id=1543843&post_id=191657628&utm_campaign=email-post-title&isFreemail=true&r=1mnftp&triedRedirect=true&utm_medium=email
-* https://43081j.com/2026/03/three-pillars-of-javascript-bloat#fnref:2
+* https://43081j.com/2026/03/three-pillars-of-javascript-bloat
 * https://www.depesz.com/2026/03/19/waiting-for-postgresql-19-introduce-the-repack-command/
 * https://lemire.me/blog/2026/03/18/how-many-branches-can-your-cpu-predict/
 * https://haskellforall.com/2026/03/a-sufficiently-detailed-spec-is-code
@@ -223,7 +286,7 @@
 * https://en.wikipedia.org/wiki/QUIC
 * https://en.wikipedia.org/wiki/Happy_Eyeballs
 * https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol
-* http://hintjens.com/blog:16
+* http://hintjens.com/blog:16 - A Tale of Two Bridges
 * https://www.experimental-history.com/p/why-arent-smart-people-happier
 * https://harpers.org/archive/2026/03/childs-play-sam-kriss-ai-startup-roy-lee/
 * https://matduggan.com/i-sold-out-for-200-a-month-and-all-i-got-was-this-perfectly-generated-terraform/
@@ -1661,7 +1724,7 @@
 * https://en.wikipedia.org/wiki/Test_and_test-and-set
 * https://en.wikipedia.org/wiki/Test-and-set
 * http://antirez.com/news/101
-* https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html
+* https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html - redislock, redlock
 * https://registerspill.thorstenball.com/p/glad-i-did-it-in-go
 * https://www.youtube.com/watch?v=LcJKxPXYudE - "Microservices are Technical Debt"
 

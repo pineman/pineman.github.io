@@ -77,7 +77,7 @@
 "Do not remove a fence until you know why it was put up in the first place."
 
 ## [Sturgeon's law](https://en.wikipedia.org/wiki/Sturgeon%27s_law)
-"Ninety percent of everything is crud."
+"Ninety percent of everything is crap."
 
 ## [Reed's law](https://en.wikipedia.org/wiki/Reed%27s_law)
 "The utility of large networks, particularly social networks, can scale exponentially with the size of the network."
