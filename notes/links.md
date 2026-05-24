@@ -1,4 +1,5 @@
 # May 2026
+* https://news.ycombinator.com/item?id=48170799 - The occasional ECONNRESET (movq.de)
 * https://miren.dev/blog/agile-in-the-age-of-ai
 * https://andyatkinson.com/how-aura-frames-scales-for-peak-load-ruby-on-rails#post-split-references-method
 * https://x.com/nicbarkeragain/status/2049286845402644966?s=20
