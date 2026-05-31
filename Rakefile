@@ -6,12 +6,15 @@ gemfile do
   gem "nokogiri", "1.16.2"
   gem "erubi", "1.13.1"
   gem "rss", "0.3.2"
+  gem "http", "6.0.3"
+  gem "retriable", "4.1.1"
 end
 
 require "rss"
-require "net/http"
+require "cgi"
+require "http"
 require "json"
-require "uri"
+require "retriable"
 require "rake/clean"
 
 Rake::FileUtilsExt.verbose(false)
@@ -153,7 +156,7 @@ task generate_redirects: [BUILD_DIR] do
   end
 end
 
-task copy_markdown_sources: [BUILD_POSTS_DIR, BUILD_NOTES_DIR] do
+task copy_markdown_sources: [BUILD_POSTS_DIR, BUILD_NOTES_DIR, LINKS_HTML] do
   POSTS_MD.each { |f| cp f, "#{BUILD_POSTS_DIR}/#{File.basename(f)}" }
   NOTES_MD.each { |f| cp f, "#{BUILD_NOTES_DIR}/#{File.basename(f)}" }
   cp LINKS_MD, "#{BUILD_DIR}/links.md"
@@ -184,23 +187,40 @@ def process_links!
   modified_lines = lines.map do |line|
     line = "* #{line}" if line.start_with?("http") && !line.start_with?("* ")
 
-    # Auto-fetch HN title for bare HN links (no description after the URL)
+    # Auto-fetch titles for bare links (no description after the URL)
     if line =~ /^\* (https:\/\/news\.ycombinator\.com\/item\?id=(\d+))\s*$/
       hn_url, hn_id = $1, $2
-      begin
-        data = JSON.parse(Net::HTTP.get(URI("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json")))
-        if data && data["title"]
-          domain = data["url"] ? URI.parse(data["url"]).host.sub(/^www\./, "") : nil
-          suffix = domain ? " (#{domain})" : ""
-          line = "* #{hn_url} - #{data["title"]}#{suffix}\n"
-        end
-      rescue
+      data = JSON.parse(http_get("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json"))
+      if data && data["title"]
+        domain = data["url"] ? HTTP::URI.parse(data["url"]).host.sub(/^www\./, "") : nil
+        suffix = domain ? " (#{domain})" : ""
+        line = "* #{hn_url} - #{data["title"]}#{suffix}\n"
+      end
+    end
+
+    if line =~ %r{^\* (https?://(?:youtu\.be/\S+|(?:www\.|m\.)?youtube\.com/watch\?\S*\bv=\S+))\s*$}
+      youtube_url = $1
+      if title = fetch_youtube_title(youtube_url)
+        line = "* #{youtube_url} - #{title}\n"
       end
     end
 
     line
   end
   File.write(LINKS_MD, modified_lines.join) if modified_lines != lines
+end
+
+def fetch_youtube_title(url)
+  html = http_get(url, headers: { "User-Agent" => "Mozilla/5.0" })
+  title = html[/<title[^>]*>(.*?)<\/title>/im, 1]
+  title = CGI.unescapeHTML(title.to_s).gsub(/\s+/, " ").strip.sub(/\s+-\s+YouTube\z/, "")
+  title unless title.empty?
+end
+
+def http_get(url, headers: {})
+  Retriable.retriable do
+    HTTP.follow(max_hops: 5).headers(headers).get(url).to_s
+  end
 end
 
 def write_html(html_file, template_file, caller_binding)
@@ -335,4 +355,3 @@ class Note
     md_to_html(@md_file, @html_file)
   end
 end
-

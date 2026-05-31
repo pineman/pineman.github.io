@@ -409,6 +409,8 @@ data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
 * can create an index for the namespaces in solid_cache - you get a namespaced persistent kv in psql you can query whenever
 
 ## Agents
+ - current setup: work codex, github copilot through opencode, free cursor-cli
+
 ### Claude
  - `\` followed by enter for newline
  - Ctrl-g to edit in $EDITOR

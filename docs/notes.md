@@ -1,5 +1,6 @@
 # Notes
 
+- [english_idioms](notes/english_idioms.md)
 - [find_domains](notes/find_domains.md)
 - [ideas](notes/ideas.md)
 - [jargon](notes/jargon.md)

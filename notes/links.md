@@ -1,4 +1,20 @@
 # May 2026
+* https://www.youtube.com/watch?v=v0JjG0Qfwi8 - Bryan Cantrill: Andreessen’s Folly - The False Dichotomy of Software and Hardware
+* https://www.cantrill-archive.com/
+* https://www.destroyallsoftware.com/talks/ideology
+* https://dev.to/shinyakato_/5-postgresql-locking-behaviors-that-trip-people-up-4k7n
+* https://buttondown.com/hillelwayne/archive/knowing-about-things-is-cheaper-than-knowing/
+* https://rachelbythebay.com/w/2026/05/28/nines/
+* https://zackoverflow.dev/writing/why-does-tsgo-use-so-much-memory/
+* https://thebuild.com/blog/repack-concurrently-pgsqueeze-gets-a-promotion/
+* https://www.morling.dev/blog/postgres-replication-slots-confirmed-flush-lsn-vs-restart-lsn/
+* https://wesolows.dtrace.org/2014/12/29/golang-is-trash/
+* https://ahl.dtrace.org/2016/08/02/i-love-go-i-hate-go/
+* https://bcantrill.dtrace.org/2026/05/25/a-portentous-reunion/
+* https://jsx.lol/
+* https://buttondown.com/jaffray/archive/three-binary-tricks/
+* https://boringsql.com/posts/postgresql-toast/
+* https://blog.cloudflare.com/the-day-my-ping-took-countermeasures/
 * https://news.ycombinator.com/item?id=48170799 - The occasional ECONNRESET (movq.de)
 * https://miren.dev/blog/agile-in-the-age-of-ai
 * https://andyatkinson.com/how-aura-frames-scales-for-peak-load-ruby-on-rails#post-split-references-method
@@ -23,7 +39,7 @@
 * https://analytics.fixelsmith.com/posts/sql-fraud-patterns/
 * https://planetscale.com/blog/database-egress
 * https://news.ycombinator.com/item?id=48180204 - 1024000^2 Blocks, 2B2T Minecraft Server World Download Project, and Discoveries (github.com)
-* https://m.youtube.com/watch?v=VVJldn_MmMY&pp=0gcJCVMCo7VqN5tD&ra=m
+* https://m.youtube.com/watch?v=VVJldn_MmMY&pp=0gcJCVMCo7VqN5tD&ra=m - Hackers Testifying at the United States Senate, May 19, 1998 (L0pht Heavy Industries)
 * https://www.figma.com/blog/pgkeeper-building-the-bouncer-we-needed-for-postgres/
 * https://fermatslibrary.com/s/who-s-got-the-monkey
 * https://charlesleifer.com/blog/redis-and-the-cost-of-ambition/
@@ -1540,8 +1556,8 @@
 * https://charity.wtf/2020/09/14/useful-things-to-know-about-engineering-levels/
 * https://goncalo.mendescabrita.com/blog/cross-table-lock/
 * https://sbaziotis.com/compilers/common-misconceptions-about-compilers.html
-* https://www.youtube.com/watch?v=b1e4t2k2KJY
-* https://www.youtube.com/watch?v=RFmajOeUKnE
+* https://www.youtube.com/watch?v=b1e4t2k2KJY - How to Build an Exchange
+* https://www.youtube.com/watch?v=RFmajOeUKnE - How would you design a database on Object Storage?
 * https://duarteocarmo.com/blog/rag-tricks-from-the-trenches
 * https://www.zenrows.com/blog/what-is-tls-fingerprint#what-is
 * https://byroot.github.io/ruby/json/2024/12/18/optimizing-ruby-json-part-2.html
@@ -1626,7 +1642,7 @@
 * https://www.crunchydata.com/blog/rise-of-the-anti-join
 * https://news.ycombinator.com/item?id=42111031 - How I ship projects at big tech companies (seangoedecke.com)
 * https://www.doxsey.net/blog/go-and-assembly/
-* https://www.youtube.com/watch?v=olxoNDBp6Rg
+* https://www.youtube.com/watch?v=olxoNDBp6Rg - Eileen Uchitelle - The Myth of the Modular Monolith - Rails World 2024
 * https://morizbuesing.com/blog/greppability-code-metric/
 * https://justine.lol/lex/
 * https://trojansource.codes/
@@ -1761,7 +1777,7 @@
 * https://akshay-kumar.hashnode.dev/go-internals-http-request-multiplexing-in-go-1
 * https://en.wikipedia.org/wiki/Xavier_Leroy -- LinuxThreads and OCaml creator!
 * https://blog.sentry.io/transaction-id-wraparound-in-postgres/
-* https://www.tritondatacenter.com/blog/manta-postmortem-7-27-2015
+* https://web.archive.org/web/20160304041014/https://www.joyent.com/blog/manta-postmortem-7-27-2015
 * https://tidyfirst.substack.com/p/scope-management-101
 * https://www.youtube.com/watch?v=0lKjFLYkXTE - "Railsberry Lightning Talk: Delete your code"
 * https://omniti.com/seeds/your-code-may-be-elegant.html
@@ -2294,7 +2310,7 @@
 * https://groups.google.com/g/net.unix-wizards/c/G0zSjVAD4N8/m/gdXIB0Lxf8IJ
 * https://norvig.com/21-days.html
 * https://news.ycombinator.com/item?id=39048317 - We migrated our PostgreSQL database with 11 seconds downtime (gds.blog.gov.uk)
-* https://www.youtube.com/watch?v=qKQLZ9WsEQs
+* https://www.youtube.com/watch?v=qKQLZ9WsEQs - E14 - The One Where We Geek Out on Observability with Charity Majors
 * https://www.ycombinator.com/library/6S-on-starting-and-scaling-dropbox-yc-w07
 * https://en.wikipedia.org/wiki/Slowly_changing_dimension
 * https://reclaim-the-stack.com/docs/kubernetes-platform/introduction
@@ -2896,4 +2912,3 @@
 * https://www.youtube.com/watch?v=CZ3wIuvmHeM "Mastering Chaos - A Netflix Guide to Microservices"
 * https://blog.miris.design/not-a-programmer
 * http://www.paulgraham.com/avg.html
-
