@@ -1,4 +1,11 @@
 # June 2026
+* https://www.starrocks.io/blog/best-practices-for-starrocks-compaction-in-shared-data-architectures/index.html
+* https://docs.starrocks.io/docs/table_design/table_types/primary_key_table/
+* https://docs.starrocks.io/docs/table_design/
+* https://www.seangoedecke.com/you-cant-design-software-you-dont-work-on
+* https://www.seangoedecke.com/being-right-a-lot
+* https://www.seangoedecke.com/cynicism/
+* https://www.seangoedecke.com/how-to-influence-politics
 * https://www.seangoedecke.com/working-with-product-managers
 * https://planetscale.com/blog/the-only-scalable-delete
 * https://www.pgedge.com/blog/looking-forward-to-postgres-19-query-hints

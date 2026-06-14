@@ -14,6 +14,10 @@ watch() {
     ts '[%Y-%m-%d %H:%M:%S]'
 }
 
+clean() {
+  rake clean
+}
+
 serve() {
   ruby -run -e httpd docs/
 }
