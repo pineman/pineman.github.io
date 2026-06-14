@@ -1,4 +1,38 @@
+# June 2026
+https://www.seangoedecke.com/how-to-influence-politics
+* https://www.seangoedecke.com/working-with-product-managers
+* https://planetscale.com/blog/the-only-scalable-delete
+* https://www.pgedge.com/blog/looking-forward-to-postgres-19-query-hints
+* https://thebuild.com/blog/how-the-other-half-plans/
+* https://thebuild.com/blog/how-the-other-half-counts/
+* https://news.ycombinator.com/item?id=27147482 - Fly’s Prometheus Metrics (fly.io)
+* https://www.seangoedecke.com/impressing-people
+* https://www.seangoedecke.com/thinking-clearly
+* https://www.seangoedecke.com/doing-nothing-at-work
+* https://blog.includesecurity.com/2026/06/the-smart-tv-in-your-livingroom-is-a-node-in-the-aiscraping-economy/
+* https://justinjackson.ca/hard-thing
+* https://htmx.org/essays/code-is-cheap/
+* https://medium.com/@tridge60/rsync-and-outrage-d9849599e5a0
+* https://en.wikipedia.org/wiki/Andrew_Tridgel
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-89
+* https://charity.wtf/2026/06/02/ai-enthusiasts-are-in-a-race-against-time-ai-skeptics-are-in-a-race-against-entropy-xpost
+* https://www.lesswrong.com/posts/yCWPkLi8wJvewPbEp/the-noncentral-fallacy-the-worst-argument-in-the-world
+* https://www.seangoedecke.com/anti-ai-nostalgia
+* https://rachelbythebay.com/w/2026/06/03/maint/
+* https://seg6.space/posts/concurrent-registration/
+* https://stormatics.tech/blogs/the-night-our-tables-wouldnt-stop-growing
+
 # May 2026
+* https://open.substack.com/pub/thorstenball/p/building-software-is-learning
+* https://apenwarr.ca/log/20260532
+* https://www.ben-evans.com/benedictevans/2026/5/24/ai-job-exposure
+* https://brandur.org/minimum-viable-unit
+* https://wasnotwas.com/writing/minisql-activerecord-and-ruby-4-a-small-benchmark-with-a-pulse/
+* https://www.seangoedecke.com/build-agents-not-pipelines
+* https://dubroy.com/blog/fast-is-better-than-slow
+* https://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle
+* https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly
+* https://simonwillison.net/2026/May/27/product-market-fit/
 * https://www.youtube.com/watch?v=v0JjG0Qfwi8 - Bryan Cantrill: Andreessen’s Folly - The False Dichotomy of Software and Hardware
 * https://www.cantrill-archive.com/
 * https://www.destroyallsoftware.com/talks/ideology

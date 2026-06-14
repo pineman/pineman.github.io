@@ -12,3 +12,5 @@ https://emro.cat/blog/how-i-broke-the-anti-bot-behind-nike-kick-and-twitch/
 
 https://scrapewithruno.com/
 https://news.ycombinator.com/item?id=48143617 - Find vendors used by any company (sub-processors.com)
+
+https://geocar.sdf1.org/browser-verification.html

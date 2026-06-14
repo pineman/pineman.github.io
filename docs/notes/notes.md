@@ -254,6 +254,7 @@ WITH not_visible_pages AS (
   ORDER BY count(*) DESC;
 ```
 * JOIN LATERAL and forcing nested loops: A regular `INNER JOIN (subquery)` is a "derived table" — PostgreSQL evaluates it _in isolation_, so it can't reference the table in FROM. LATERAL explicitly grants the subquery access to columns from preceding FROM items. That's the whole point of the keyword, and it's also why PostgreSQL is forced into a nested loop — the subquery depends on each outer row.
+* care with select for update under repeatable read: repeatable read forces a snapshot at txn begin. even if you later take a lock, that same snapshot persists.
 
 ## Analytics, CDC
 https://github.com/sequinstream/sequin
@@ -341,6 +342,8 @@ Person.search(
   load: false
 ).response.dig("hits", "hits").map { |hit| hit["_id"] }
 ```
+
+* percolate: this indexes *queries*: the documents are queries themselves. then, you can query the percolate index with *normal documents* - and these documents don't have to be on elastic!
 
 ## React / frontend
 * react-query is good

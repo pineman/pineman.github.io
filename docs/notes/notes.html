@@ -344,6 +344,7 @@ ORDER BY url, timestamp DESC</code></pre>
   ORDER BY count(*) DESC;</code></pre>
 <ul>
 <li>JOIN LATERAL and forcing nested loops: A regular <code>INNER JOIN (subquery)</code> is a "derived table" — PostgreSQL evaluates it <em>in isolation</em>, so it can't reference the table in FROM. LATERAL explicitly grants the subquery access to columns from preceding FROM items. That's the whole point of the keyword, and it's also why PostgreSQL is forced into a nested loop — the subquery depends on each outer row.</li>
+<li>care with select for update under repeatable read: repeatable read forces a snapshot at txn begin. even if you later take a lock, that same snapshot persists.</li>
 </ul>
 <h2 id="analytics-cdc">Analytics, CDC</h2>
 <p><a href="https://github.com/sequinstream/sequin">https://github.com/sequinstream/sequin</a> debezium ok but you need kafka what's the best solution to move data from your oltp postgresql into... everywhere else? an olap db, ETL, snowflake?</p>
@@ -413,6 +414,9 @@ or Person.searchkick_index.retrieve(Person.new(id: person_id))</code></pre>
   },
   load: false
 ).response.dig(&quot;hits&quot;, &quot;hits&quot;).map { |hit| hit[&quot;_id&quot;] }</code></pre>
+<ul>
+<li>percolate: this indexes <em>queries</em>: the documents are queries themselves. then, you can query the percolate index with <em>normal documents</em> - and these documents don't have to be on elastic!</li>
+</ul>
 <h2 id="react--frontend">React / frontend</h2>
 <ul>
 <li>react-query is good</li>
