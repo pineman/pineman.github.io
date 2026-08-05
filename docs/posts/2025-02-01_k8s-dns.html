@@ -60,7 +60,7 @@
 <p>To reproduce the problem, and actually see it with my own eyes, I simply exec'd into a pod and resolved a host on a loop - this gives a very immediate sense of the scale of the problem:</p>
 <pre class="bash"><code>while :; do time getent hosts pgbouncer-web-ampledash.core; done</code></pre>
 <p>Occasionally, maybe once every 15s, I'd notice a slow request that would eventually time out. So I asked: what DNS server are we using, exactly? Good ol' <code>/etc/resolv.conf</code> has the answer, naturally:</p>
-<pre class="plaintext"><code>root@ampledash-console-75467d5c8c-n5j9b:/app# cat /etc/resolv.conf
+<pre><code>root@ampledash-console-75467d5c8c-n5j9b:/app# cat /etc/resolv.conf
 search core.svc.cluster.local svc.cluster.local cluster.local c.ampledash-prod.internal google.internal
 nameserver 172.18.130.10
 options ndots:1</code></pre>
@@ -73,7 +73,7 @@ options ndots:1</code></pre>
 <p>This is where we got a bit lost. Why would the main ip be flaky? It's more likely to be a problem in an individual kube-dns pod, rather than the main ip. I skipped lunch and spent a bunch of time trying to figure out how exactly kube-dns works, and why it could be flaky. Looked into the pods definitions; exec'd into them; found out it runs dnsmasq; talked to it directly; checked the args, environment, config; ...</p>
 <p>In retrospect it was probably a bit too much, but we had no idea where the problem was! Not long after, though, I had a better idea: talk to <em>all</em> the kube-dns pods, and see which ones are failing! This is the cool part. I had been brainstorming with Claude pretty much during the whole investigation - we even only half-joked we should probably try <a href="https://aistudio.google.com/app/live">sharing the screen and talking to Gemini 2</a>, which had just come out.</p>
 <p>But here comes the cool part: talking to all the pods, while seemingly easy when you're not in incident-mode, seemed a bit too cumbersome after multiple hours of incident investigation. But Claude offered up a script that worked with just a minor follow-up. Here it is:</p>
-<pre class="shell"><code>servers=(
+<pre class="bash"><code>servers=(
 &lt;kube-dns ips here&gt;
 )
 

@@ -14,3 +14,8 @@ https://scrapewithruno.com/
 https://news.ycombinator.com/item?id=48143617 - Find vendors used by any company (sub-processors.com)
 
 https://geocar.sdf1.org/browser-verification.html
+
+lightpanda - lighter browser
+https://lightpanda.io/blog/posts/introducing-lightpanda-agent-and-pandascript
+
+https://hypersolutions.co/

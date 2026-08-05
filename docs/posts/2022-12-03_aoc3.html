@@ -62,7 +62,7 @@
 <p>I suspect by now everyone sees the problem with this reasoning, that of course I didn't at the time. <strong>The big-oh justification I just wrote is all wrong!</strong> Maybe not in a theoretical sense, but in a practical sense (but probably in a theoretical sense as well): this problem is so simple, its volume of data so small and well crafted, that just the map overhead is overwhelming! Or, at least, cpu time complexity is not the whole story, because I didn't even think about memory access! Or yet some other reason I clearly missed! Because here's the proof: using a bigger input <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, and using <code>go test -bench</code>, my set solution takes 5.42 seconds to solve part two (not counting reading the input file and turning it into an array of string), while the 'naive', 'dumb', more procedural solution runs in 139ms (more on this solution later). That's a ~39x speedup (!!). And that's pretty slow: I saw some rust and C++ going at just ~10ms for part two, another order of magnitude faster. So, I took this opportunity to profile my Go code. Find all my (bad) code <a href="https://github.com/pineman/AoC2022/blob/main/2022/day3/three.go#L48">on github</a>.</p>
 <h3 id="profiling-for-fun">Profiling for fun</h3>
 <p>These are the resources I followed: <a href="https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/">https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/</a> and <a href="https://go.dev/blog/pprof">https://go.dev/blog/pprof</a> (in fact, the first half of this latter link describes exactly the problem I had: using a map when an array is sufficient). Of course, my code today is contrived and basically holds no mystery. But nonetheless, all I had to do was run <code>go test -bench</code> with the <code>-cpuprofile</code> and <code>-memprofile</code> flags, as I already had benchmark functions in my test file. This produces output files that <code>go tool pprof</code> can read and then generate output in text, or even png or pdf. Here's the cpu time breakdown, generated with <code>go tool pprof -top -cum cpu.out</code>, for part two only (truncated):</p>
-<pre class="plaintext"><code>     flat  flat%   sum%        cum   cum%
+<pre><code>     flat  flat%   sum%        cum   cum%
         0     0%     0%      5.50s 84.23%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy_set
         0     0%     0%      5.50s 84.23%  testing.(*B).run1.func1
         0     0%     0%      5.50s 84.23%  testing.(*B).runN
@@ -72,7 +72,7 @@
     0.07s  1.07% 29.71%      1.37s 20.98%  github.com/pineman/code/chall/aoc2022/go/day3.intersectMap (inline)
         0     0% 29.71%      1.09s 16.69%  runtime.systemstack</code></pre>
 <p>From the cumulative column, it looks like <code>itemMap</code> and <code>intersectMap</code> were on the stack 59% and 21% of the time, respectively, to the shock of no one. Just building maps and iterating through them away, heating my house. Imagine all the hashing and pointer chasing... Well, here's the memory profile:</p>
-<pre class="plaintext"><code>     flat  flat%   sum%        cum   cum%
+<pre><code>     flat  flat%   sum%        cum   cum%
         0     0%     0%  2395.03MB 99.69%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy_set
         0     0%     0%  2395.03MB 99.69%  testing.(*B).run1.func1
         0     0%     0%  2395.03MB 99.69%  testing.(*B).runN
@@ -86,7 +86,7 @@
   49.07MB  2.04% 97.78%    49.07MB  2.04%  strings.genSplit
      46MB  1.91% 99.69%       46MB  1.91%  github.com/pineman/code/chall/aoc2022/go/day3.getFirstKey (inline)</code></pre>
 <p>Is that... 2GB <strong>just</strong> in maps? Is this right?... Oh god... The input file is 100MB, as noted by <code>getInput</code>! I think I've had quite enough of this embarrassment. For comparison, heres the cpu and mem profiles of the 'procedural' version:</p>
-<pre class="plaintext"><code>     flat  flat%   sum%        cum   cum%
+<pre><code>     flat  flat%   sum%        cum   cum%
         0     0%     0%      3.18s 93.26%  github.com/pineman/code/chall/aoc2022/go/day3.Benchmark_partTwoBigBoy
         0     0%     0%      3.18s 93.26%  testing.(*B).runN
     0.60s 17.60% 17.60%      2.92s 85.63%  github.com/pineman/code/chall/aoc2022/go/day3.partTwo
@@ -94,8 +94,9 @@
     0.16s  4.69% 22.29%      2.30s 67.45%  strings.ContainsRune (inline)
     0.39s 11.44% 33.72%      2.14s 62.76%  strings.IndexRune
     0.12s  3.52% 37.24%      1.80s 52.79%  strings.IndexByte (inline)
-    1.54s 45.16% 82.40%      1.54s 45.16%  indexbytebody</code></pre>
-<pre class="plaintext"><code>     flat  flat%   sum%        cum   cum%
+    1.54s 45.16% 82.40%      1.54s 45.16%  indexbytebody
+
+     flat  flat%   sum%        cum   cum%
         0     0%     0%   250.88MB 97.64%  testing.(*B).run1.func1
         0     0%     0%   250.88MB 97.64%  testing.(*B).runN
         0     0%     0%   250.38MB 97.44%  github.com/pineman/code/chall/aoc2022/go.GetBigBoyInput

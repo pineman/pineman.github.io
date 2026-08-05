@@ -1,4 +1,84 @@
+# August 2026
+* https://john.fun/elevators
+* https://www.ben-evans.com/benedictevans/2026/7/9/ways-to-think-about-token-pricing
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-93
+* https://paolino.me/solid-queue-doesnt-need-a-thread-per-job/
+* https://www.seangoedecke.com/giving-and-taking-credit
+
+# July 2026
+* https://2swap.github.io/WeakC4/explanation/
+* https://www.seangoedecke.com/you-dont-have-to-be-smart-if-you-think-clearly/
+* https://web.archive.org/web/20210619103527/https://www.gamasutra.com/view/feature/132500/dirty_coding_tricks.php?page=4
+* https://news.ycombinator.com/item?id=48738985 - I ported Kubernetes to the browser (ngrok.com)
+* https://brandur.org/job-drain
+* https://linuxblog.io/the-two-generals-problem/
+* https://news.ycombinator.com/item?id=48765639 - Postgres transactions are a distributed systems superpower (dbos.dev)
+* https://www.seangoedecke.com/impro
+* https://www.seangoedecke.com/overtraining-as-the-path-to-human-like-ai
+* https://www.seangoedecke.com/where-the-money-comes-from
+* https://www.seangoedecke.com/in-defense-of-not-understanding-your-codebase
+* https://theconsensus.dev/p/2026/05/18/serving-files-three-ways.html
+* https://yagni.club/
+* https://antirez.com/news/171
+* https://matklad.github.io/2025/12/30/memory-safety-is.html
+* https://digitalmars.com/articles/C-biggest-mistake.html
+* https://matklad.github.io/2026/07/20/memory-safety-hardest-problem.html
+* https://rakyll.org/zero-sum-games/
+* https://dark.ronacher.eu/2026/7/21/never-enough/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-92
+* https://blog.colinbreck.com/when-impressive-performance-gains-do-not-matter
+* https://end-of-determinism.vercel.app/article
+* https://numinous.productions/ttft/#why-not-more-work
+* https://mazesofmenace.ai/
+* https://davidbau.com/archives/2026/07/16/hunting_zombies.html#more
+* https://world.hey.com/dhh/three-sacred-cows-that-must-die-so-europe-can-live-1afb203d
+* https://dark.ronacher.eu/2026/7/17/live-by-deporting/
+* https://human-in-the-loop.bearblog.dev/llms-are-eroding-my-software-engineering-career-and-i-dont-know-what-to-do/
+* https://tenderlovemaking.com/2026/07/15/detecting-full-table-scans-with-sqlite/
+* https://antirez.com/news/169
+* https://en.wikipedia.org/wiki/Benford%27s_law
+* https://news.ycombinator.com/item?id=48896672 - The bread paradox: why convenience always wins, and why SaaS isn't doomed (joanwestenberg.com)
+* https://wangcong.org/2026-06-30-why-i-stopped-arguing-with-people.html
+* https://blog.cloudflare.com/meerkat-introduction/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-91
+* https://x.com/theisaacmed/status/2074550497961468141?s=46
+* https://thinkingmachines.ai/blog/the-future-worth-building-is-human/
+* https://weli.dev/blog/half-baked-product/
+* https://ianreppel.org/how-successful-companies-go-blind/
+* https://ianreppel.org/ironclad/
+* https://ianreppel.org/the-emperors-new-xerox/
+* https://blog.mikebowler.ca/2026/07/03/co2-and-decision-making/
+* https://daringfireball.net/2026/07/claudes_criminally_bad_mac_app_is_an_inside_job
+* https://andrewkelley.me/post/my-thoughts-bun-rust-rewrite.html
+* https://bun.com/blog/bun-in-rust
+* https://registerspill.thorstenball.com/p/ownership
+* https://danluu.com/ai-coding
+* https://boringsql.com/posts/same-rows-different-sum/
+* https://www.cybertec-postgresql.com/en/too-many-tables-are-bad
+* https://news.ycombinator.com/item?id=48768374 - FBI Seizes NetNut Proxy Platform, Popa Botnet (krebsonsecurity.com)
+* https://www.scylladb.com/2026/06/30/trie-index-3x-more-throughput/
+* https://www.seangoedecke.com/saying-the-obvious-thing
+* https://www.seangoedecke.com/ai-inference-is-obviously-profitable
+* https://www.augusteo.com/blog/how-pgbouncer-works/
+* https://newsletter.pragmaticengineer.com/p/state-of-the-job-market-2026
+* https://www.datadoghq.com/blog/engineering/postgresql-ha-kubernetes/#making-failover-safe-by-design
+* https://intertwingly.net/blog/2026/06/19/Spinel-on-Rails.html
+* https://vondra.me/posts/some-more-thoughts-on-random-page-cost/
+* https://hackernewstrends.com/?q=openai&q=anthropic
+* https://news.ycombinator.com/item?id=48664814 - Anthropic says Alibaba illicitly extracted Claude AI model capabilities (reuters.com)
+
 # June 2026
+* https://blog.cloudflare.com/sockmap-tcp-splicing-of-the-future/
+* https://signalvnoise.com/archives2/dont_scar_on_the_first_cut
+* https://lethain.com/revised-rules-of-engineering-leadership/
+* https://www.snowflake.com/en/blog/engineering/postgresql-19-features-beta/
+* https://brooker.co.za/blog/2026/06/19/waiting.html
+* https://brooker.co.za/blog/2020/08/06/erlang.html
+* https://lightpanda.io/blog/posts/introducing-lightpanda-agent-and-pandascript
+* https://planetscale.com/blog/the-feedback-loops-behind-kubernetes
+* https://www.morling.dev/blog/mastering-postgres-replication-slots/
+* https://www.richardosgood.com/posts/banned-book-library/
+* https://news.ycombinator.com/item?id=48546428 - What job interviews taught me about Kubernetes (notnotp.com)
 * https://www.starrocks.io/blog/best-practices-for-starrocks-compaction-in-shared-data-architectures/index.html
 * https://docs.starrocks.io/docs/table_design/table_types/primary_key_table/
 * https://docs.starrocks.io/docs/table_design/
@@ -57,7 +137,7 @@
 * https://blog.cloudflare.com/the-day-my-ping-took-countermeasures/
 * https://news.ycombinator.com/item?id=48170799 - The occasional ECONNRESET (movq.de)
 * https://miren.dev/blog/agile-in-the-age-of-ai
-* https://andyatkinson.com/how-aura-frames-scales-for-peak-load-ruby-on-rails#post-split-references-method
+* https://andyatkinson.com/how-aura-frames-scales-for-peak-load-ruby-on-rails
 * https://x.com/nicbarkeragain/status/2049286845402644966?s=20
 * https://kevinkelly.substack.com/p/our-uncertain-uncertainties
 * https://www.alexselimov.com/posts/men_who_stare_at_walls/
@@ -658,6 +738,7 @@
 * https://www.infoq.com/articles/wonders-of-postgres-logical-decoding-messages/ - outbox, logs, audit in postgres cdc
 * https://www.thegnar.com/blog/history-tracking-with-postgres
 * https://boringsql.com/posts/beyond-start-end-columns/ - real good, range types, exclude constraints on ranges, automatic auditing through ranges
+* https://en.wikipedia.org/wiki/Persistent_data_structure
 * https://en.wikipedia.org/wiki/Hash_tree_(persistent_data_structure)
 * https://en.wikipedia.org/wiki/Hash_array_mapped_trie
 * https://news.ycombinator.com/item?id=46197930 - The highest quality codebase (gricha.dev)

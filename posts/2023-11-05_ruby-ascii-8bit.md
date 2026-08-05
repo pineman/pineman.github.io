@@ -10,7 +10,7 @@ We initially shrugged off one of them during the first batch of emails,
 but it came back around for the second batch. Luckily it only affected
 our own dog fooding account. This is the error:
 
-``` text
+```
 ActionView::Template::Error
 incompatible character encodings: ASCII-8BIT and UTF-8 (ActionView::Template::Error)
 ```
@@ -43,7 +43,7 @@ which is pretty easy: just call the mailer inline, using `deliver_now`,
 in the rails console connected to production (how great is that btw?
 🤠). That reveals where it blows up:
 
-``` text
+```
 /app/vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8/lib/active_support/core_ext/string/output_safety.rb:197:in `concat': incompatible character encodings: ASCII-8BIT and UTF-8 (ActionView::Template::Error)
 ```
 
@@ -66,7 +66,7 @@ I read the method (cmd-p `output_safety`, `197G`, thanks rubymine) - it
 uses an `ActiveSupport::SafeBuffer` and calls `original_concat`. I try
 to reproduce the bug, having the emoji hunch in mind:
 
-``` text
+```
 ActiveSupport::SafeBuffer.new("🤣").safe_concat("🤣")
 ```
 
@@ -75,7 +75,7 @@ ruby, so no encoding mismatches here. Let's try forcing this mysterious
 `ASCII-8BIT` encoding (which, remember, at this point I didn't know was
 an alias for `BINARY` and for some reason just didn't google it):
 
-``` text
+```
 ActiveSupport::SafeBuffer.new("🤣").safe_concat(128.chr.force_encoding("ASCII-8BIT"))
 /app/vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8/lib/active_support/core_ext/string/output_safety.rb:197:in `concat': incompatible character encodings: UTF-8 and ASCII-8BIT (Encoding::CompatibilityError)
 ```
@@ -113,7 +113,7 @@ end
 
 This gets me closer - running the mailer again now prints:
 
-``` text
+```
 (irb):312:in `write': "\xF0" from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
 (irb):310:in `concat': incompatible character encodings: ASCII-8BIT and UTF-8 (Encoding::CompatibilityError)
 ```
@@ -140,7 +140,7 @@ encoding different? Sure enough, everything from the DB comes as
 
 I reproduce the bug using the mailer again. Scrolling... Wait, look!
 
-``` text
+```
 ... f06\"> \xF0\x9F\x94\x80Rec ...
 ```
 

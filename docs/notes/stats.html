@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="João Pinheiro" />
+<meta name="keywords" content="technology computer software engineering" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="João Pinheiro" />
+<script src="https://kit.fontawesome.com/84407ba8ee.js" crossorigin="anonymous"></script>
+
+  <meta property="og:type" content="article" />
+<meta property="article:author" content="https://pineman.github.io" />
+<meta property="article:section" content="blog" />
+<meta property="article:tag" content="technology" />
+<meta property="article:tag" content="computer" />
+<meta property="article:tag" content="software" />
+<meta property="article:tag" content="engineering" />
+
+  <meta property="og:url" content="https://pineman.github.io/notes/stats.html" />
+  <title>stats</title>
+  <meta property="og:title" content="stats" />
+</head>
+<body>
+<div id="wrap">
+<a href="../notes.html">&lt; back</a>
+<article>
+  <h1>stats</h1>
+  <ul>
+<li>Univariate statistics: analyzing one predictor at a time.</li>
+<li>Multivariate statistics: analyzing several variables together.</li>
+<li>Correlation and regression: measuring relationships and controlling for other variables.</li>
+</ul>
+<p>False positives and false negatives belong more specifically to classification evaluation or diagnostic testing. They come from a confusion matrix:</p>
+<pre><code>                     Actually positive      Actually negative</code></pre>
+<p>━━━━━━━━━━━━━━━━━━━━ ━━━━━━━━━━━━━━━━━━━━━ ━━━━━━━━━━━━━━━━━━━━━ Predicted positive True positive (TP) False positive (FP) ──────────────────── ───────────────────── ───────────────────── Predicted negative False negative (FN) True negative (TN)</p>
+<p>Common divisions you may be remembering:</p>
+<ul>
+<li><p>Accuracy = (TP + TN) / all cases How often was the prediction correct overall?</p></li>
+<li><p>Precision = TP / (TP + FP) Of the positive predictions, how many were right?</p></li>
+<li><p>Recall / sensitivity / true-positive rate = TP / (TP + FN) Of the actual positives, how many did we find?</p></li>
+<li><p>Specificity = TN / (TN + FP) Of the actual negatives, how many did we reject correctly?</p></li>
+<li><p>False-positive rate = FP / (FP + TN)</p></li>
+<li><p>False-negative rate = FN / (FN + TP)</p></li>
+<li><p>Precision asks: “Of the queries we flagged as expensive, how many really were?”</p></li>
+<li><p>Recall/hit rate asks: “Of all truly expensive queries, how many did we flag?”</p></li>
+</ul>
+
+</article>
+<a href="../notes.html">&lt; back</a>
+</div>
+</body>
+</html>

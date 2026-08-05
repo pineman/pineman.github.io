@@ -142,6 +142,9 @@ this is useful to bypass proxy objects and stuff
 * `retry` seems like a good idea but it's an infinite loop waiting to happen. always bound it with retries
 * preload associations for already loaded models: `ActiveRecord::Associations::Preloader.new(records:, associations: [:assoc_1, assoc_2: [:nested_assoc]).call`
 * https://github.com/maquina-app/rails-upgrade-skill
+* thread dumps:
+ - puma: `kill -PWR <pid>`
+ - sidekiq, karafka: `kill -TTIN <pid>`
 
 ## RSpec
 * run one test only: `rspec ./spec/controllers/groups_controller_spec.rb:42`
@@ -255,11 +258,59 @@ WITH not_visible_pages AS (
 ```
 * JOIN LATERAL and forcing nested loops: A regular `INNER JOIN (subquery)` is a "derived table" — PostgreSQL evaluates it _in isolation_, so it can't reference the table in FROM. LATERAL explicitly grants the subquery access to columns from preceding FROM items. That's the whole point of the keyword, and it's also why PostgreSQL is forced into a nested loop — the subquery depends on each outer row.
 * care with select for update under repeatable read: repeatable read forces a snapshot at txn begin. even if you later take a lock, that same snapshot persists.
+* Postgres EXPLAIN BUFFERS counts buffer hits per loop, not distinct pages; nested loops/SubPlans can make shared hit look massively inflated. See: https://pganalyze.com/blog/5mins-explain-analyze-buffers-nested-loops. eg
+```
+  Buffers: shared hit=6,286,343 read=76,851
+  SubPlan loops: 485,119
+```
+* correlated subquery trap: if outer table is huge and inner table is sparse, don't ask the sparse table a question once per outer row.
+bad shape:
+```sql
+SELECT jsonb_build_object(
+  '_3', (
+    SELECT max(recently_contacted_emails.contacted_date)
+    FROM recently_contacted_emails
+    WHERE lead_list_entries.email = recently_contacted_emails.email AND ...
+  )
+)
+FROM lead_list_entries
+WHERE lead_list_entries.lead_list_id = :lead_list_id
+```
+
+this scales like "for every lead list entry, probe recent contacts", even though most entries won't have one.
+better shape: start from the sparse side, reduce it, then join it back:
+
+```sql
+WITH recent_contacts AS MATERIALIZED (
+  SELECT recently_contacted_emails.email,
+         max(recently_contacted_emails.contacted_date) AS contacted_date
+  FROM recently_contacted_emails
+  WHERE EXISTS (
+      SELECT 1
+      FROM lead_list_entries AS lle_exists
+      WHERE lle_exists.email = recently_contacted_emails.email AND ...
+    ) AND ...
+  GROUP BY recently_contacted_emails.email
+)
+SELECT jsonb_build_object(
+  '_3', recent_contacts.contacted_date
+)
+FROM lead_list_entries AS lle
+LEFT JOIN recent_contacts ON recent_contacts.email = lle.email
+WHERE lle.lead_list_id = :lead_list_id
+```
+rule of thumb: if B is sparse enrichment data for A, precompute relevant B and left join it. don't run a correlated lookup on all rows of A.
+
 
 ## Analytics, CDC
-https://github.com/sequinstream/sequin
-debezium ok but you need kafka
 what's the best solution to move data from your oltp postgresql into... everywhere else? an olap db, ETL, snowflake?
+* https://github.com/sequinstream/sequin
+* debezium ok but you need kafka
+* fast copy tables: use parallel queries by ctid ranges, get max first. good on stable snapshots if you have a replication slot first and apply CDC after the initial copy. you can advance WAL by CDCing with eg kafka connect (+ debezium)
+
+https://github.com/erezsh/reladiff
+
+* debug cdc: use https://postgresqlco.nf/doc/en/param/debug_logical_replication_streaming/ param to disable buffering
 
 ## Elastic
 Fetch a document (get_doc)
@@ -353,6 +404,8 @@ Person.search(
 * Remeber functional components are just functions. On re-renders, everything defined inside the component is re-defined again, including functions. `useCallback` persists functions across re-renders - useful for e.g. debouncing using debounce from lodash which saves state inside it
 * typescript: `typeof`, `ReturnType`, `Pick<>`, `<TData extends object>({keys}: AnotherType<TData>) => {`, see https://github.com/amplemarket/ampledash/pull/8341
 * jest tests fail on unmocked requests: `apiDashboardMock.onAny().reply(() => { throw new Error('unhandled request')});`
+### CSS
+* `:target` selector targets the hash anchor in urls like example.com/page#message-123.
 
 ## Chrome extension
  - chrome.runtime.onMessage.addListener https://developer.chrome.com/docs/extensions/develop/concepts/messaging#responses
@@ -422,3 +475,19 @@ data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
 ## StarRocks
  - https://github.com/StarRocks/starrocks-debug-skills (https://medium.com/towards-data-engineering/we-open-sourced-an-ai-skill-for-debugging-production-database-incidents-48b091e5f4ff)
  - https://fresha.github.io/northstar/
+
+### pager
+pager cut -c 1-1000
+SHOW PROCESSLIST\G
+nopager
+
+### profiling
+SET enable_query_cache = false;
+SET query_cache_entry_max_bytes = 0;
+SET query_cache_entry_max_rows = 0;
+SET use_page_cache = false;
+SET skip_page_cache = true;
+SET skip_local_disk_cache = true;
+SET enable_profile = true;
+<query>
+SELECT get_query_profile(last_query_id());

@@ -1,5 +1,6 @@
 # Notes
 
+- [distsys](notes/distsys.md)
 - [english_idioms](notes/english_idioms.md)
 - [find_domains](notes/find_domains.md)
 - [ideas](notes/ideas.md)
@@ -10,5 +11,6 @@
 - [quotes](notes/quotes.md)
 - [save_llm_threads](notes/save_llm_threads.md)
 - [scraping](notes/scraping.md)
+- [stats](notes/stats.md)
 - [things_you_need](notes/things_you_need.md)
 - [thoughts](notes/thoughts.md)

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="João Pinheiro" />
+<meta name="keywords" content="technology computer software engineering" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="João Pinheiro" />
+<script src="https://kit.fontawesome.com/84407ba8ee.js" crossorigin="anonymous"></script>
+
+  <meta property="og:type" content="article" />
+<meta property="article:author" content="https://pineman.github.io" />
+<meta property="article:section" content="blog" />
+<meta property="article:tag" content="technology" />
+<meta property="article:tag" content="computer" />
+<meta property="article:tag" content="software" />
+<meta property="article:tag" content="engineering" />
+
+  <meta property="og:url" content="https://pineman.github.io/notes/distsys.html" />
+  <title>distsys</title>
+  <meta property="og:title" content="distsys" />
+</head>
+<body>
+<div id="wrap">
+<a href="../notes.html">&lt; back</a>
+<article>
+  <h1>distsys</h1>
+  <p><a href="https://news.ycombinator.com/item?id=48765639">https://news.ycombinator.com/item?id=48765639</a> "if you have a db and a message queue, how do you get your update to alter both or neither (i.e. transactionally)" stricly speaking, as worded, it hints towards 'exactly once' semantics, which you can't get in distributed systems - so the answer is no (note: you can use XA/2PC I guess if supported). but obviously, a more productive answer is "what are you trying to do?". in most cases, "at most once" (booking airplanes (i think) =&gt; sagas) or "at least once" (pumps =&gt; email reveals) semantics are good enough.</p>
+<blockquote>
+<p>Outbox's power is that it turns an atomicity problem into an idempotency problem. You atomically write to the outbox, then you have an idempotent "workflow" that processes events from the outbox. This turns "at most once" semantics (where an event could be dropped entirely) to "at least once" semantics (where the event processing could run multiple times). For many systems, that's a big improvement.</p>
+</blockquote>
+
+</article>
+<a href="../notes.html">&lt; back</a>
+</div>
+</body>
+</html>
