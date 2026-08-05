@@ -192,9 +192,8 @@ def process_links!
       hn_url, hn_id = $1, $2
       data = JSON.parse(http_get("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json"))
       if data && data["title"]
-        domain = data["url"] ? HTTP::URI.parse(data["url"]).host.sub(/^www\./, "") : nil
-        suffix = domain ? " (#{domain})" : ""
-        line = "* #{hn_url} - #{data["title"]}#{suffix}\n"
+        backing_link = data["url"] ? " (#{data["url"]})" : ""
+        line = "* #{hn_url}#{backing_link} - #{data["title"]}\n"
       end
     end
 
