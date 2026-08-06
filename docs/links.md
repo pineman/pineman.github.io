@@ -1,4 +1,6 @@
 # August 2026
+* https://byroot.github.io/ruby/performance/2026/08/05/shrinking-ruby-hashes.html
+* https://news.ycombinator.com/item?id=49184216 (https://weli.dev/blog/the-valley-of-webhooks/) - The Valley of Webhooks
 * https://john.fun/elevators
 * https://www.ben-evans.com/benedictevans/2026/7/9/ways-to-think-about-token-pricing
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-93
@@ -8,11 +10,11 @@
 # July 2026
 * https://2swap.github.io/WeakC4/explanation/
 * https://www.seangoedecke.com/you-dont-have-to-be-smart-if-you-think-clearly/
-* https://web.archive.org/web/20210619103527/https://www.gamasutra.com/view/feature/132500/dirty_coding_tricks.php?page=4
-* https://news.ycombinator.com/item?id=48738985 - I ported Kubernetes to the browser (ngrok.com)
+* https://web.archive.org/web/20210619103527/https://www.gamasutra.com/view/feature/132500/dirty_coding_tricks.php?page=4 (https://www.gamasutra.com/view/feature/132500/dirty_coding_tricks.php)
+* https://news.ycombinator.com/item?id=48738985 (https://ngrok.com/blog/i-ported-kubernetes-to-the-browser) - I ported Kubernetes to the browser
 * https://brandur.org/job-drain
 * https://linuxblog.io/the-two-generals-problem/
-* https://news.ycombinator.com/item?id=48765639 - Postgres transactions are a distributed systems superpower (dbos.dev)
+* https://news.ycombinator.com/item?id=48765639 (https://www.dbos.dev/blog/co-locating-workflow-state-with-your-data) - Postgres transactions are a distributed systems superpower
 * https://www.seangoedecke.com/impro
 * https://www.seangoedecke.com/overtraining-as-the-path-to-human-like-ai
 * https://www.seangoedecke.com/where-the-money-comes-from
@@ -37,7 +39,7 @@
 * https://tenderlovemaking.com/2026/07/15/detecting-full-table-scans-with-sqlite/
 * https://antirez.com/news/169
 * https://en.wikipedia.org/wiki/Benford%27s_law
-* https://news.ycombinator.com/item?id=48896672 - The bread paradox: why convenience always wins, and why SaaS isn't doomed (joanwestenberg.com)
+* https://news.ycombinator.com/item?id=48896672 (https://www.joanwestenberg.com/p/the-bread-paradox-why-convenience) - The bread paradox: why convenience always wins, and why SaaS isn't doomed
 * https://wangcong.org/2026-06-30-why-i-stopped-arguing-with-people.html
 * https://blog.cloudflare.com/meerkat-introduction/
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-91
@@ -55,7 +57,7 @@
 * https://danluu.com/ai-coding
 * https://boringsql.com/posts/same-rows-different-sum/
 * https://www.cybertec-postgresql.com/en/too-many-tables-are-bad
-* https://news.ycombinator.com/item?id=48768374 - FBI Seizes NetNut Proxy Platform, Popa Botnet (krebsonsecurity.com)
+* https://news.ycombinator.com/item?id=48768374 (https://krebsonsecurity.com/2026/07/fbi-seizes-netnut-proxy-platform-popa-botnet/) - FBI Seizes NetNut Proxy Platform, Popa Botnet
 * https://www.scylladb.com/2026/06/30/trie-index-3x-more-throughput/
 * https://www.seangoedecke.com/saying-the-obvious-thing
 * https://www.seangoedecke.com/ai-inference-is-obviously-profitable
@@ -65,7 +67,7 @@
 * https://intertwingly.net/blog/2026/06/19/Spinel-on-Rails.html
 * https://vondra.me/posts/some-more-thoughts-on-random-page-cost/
 * https://hackernewstrends.com/?q=openai&q=anthropic
-* https://news.ycombinator.com/item?id=48664814 - Anthropic says Alibaba illicitly extracted Claude AI model capabilities (reuters.com)
+* https://news.ycombinator.com/item?id=48664814 (https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/) - Anthropic says Alibaba illicitly extracted Claude AI model capabilities
 
 # June 2026
 * https://blog.cloudflare.com/sockmap-tcp-splicing-of-the-future/
@@ -78,7 +80,7 @@
 * https://planetscale.com/blog/the-feedback-loops-behind-kubernetes
 * https://www.morling.dev/blog/mastering-postgres-replication-slots/
 * https://www.richardosgood.com/posts/banned-book-library/
-* https://news.ycombinator.com/item?id=48546428 - What job interviews taught me about Kubernetes (notnotp.com)
+* https://news.ycombinator.com/item?id=48546428 (https://notnotp.com/notes/what-job-interviews-taught-me-about-kubernetes/) - What job interviews taught me about Kubernetes
 * https://www.starrocks.io/blog/best-practices-for-starrocks-compaction-in-shared-data-architectures/index.html
 * https://docs.starrocks.io/docs/table_design/table_types/primary_key_table/
 * https://docs.starrocks.io/docs/table_design/
@@ -91,7 +93,7 @@
 * https://www.pgedge.com/blog/looking-forward-to-postgres-19-query-hints
 * https://thebuild.com/blog/how-the-other-half-plans/
 * https://thebuild.com/blog/how-the-other-half-counts/
-* https://news.ycombinator.com/item?id=27147482 - Fly’s Prometheus Metrics (fly.io)
+* https://news.ycombinator.com/item?id=27147482 (https://fly.io/blog/measuring-fly/) - Fly’s Prometheus Metrics
 * https://www.seangoedecke.com/impressing-people
 * https://www.seangoedecke.com/thinking-clearly
 * https://www.seangoedecke.com/doing-nothing-at-work
@@ -135,7 +137,7 @@
 * https://buttondown.com/jaffray/archive/three-binary-tricks/
 * https://boringsql.com/posts/postgresql-toast/
 * https://blog.cloudflare.com/the-day-my-ping-took-countermeasures/
-* https://news.ycombinator.com/item?id=48170799 - The occasional ECONNRESET (movq.de)
+* https://news.ycombinator.com/item?id=48170799 (https://movq.de/blog/postings/2026-05-05/1/POSTING-en.html) - The occasional ECONNRESET
 * https://miren.dev/blog/agile-in-the-age-of-ai
 * https://andyatkinson.com/how-aura-frames-scales-for-peak-load-ruby-on-rails
 * https://x.com/nicbarkeragain/status/2049286845402644966?s=20
@@ -145,7 +147,7 @@
 * https://stripe.dev/blog/formatting-an-entire-25-million-line-codebase-overnight-the-rubyfmt-story
 * https://sockpuppet.org/blog/2015/01/15/against-dnssec/
 * https://sockpuppet.org/stuff/dnssec-qa.html
-* https://news.ycombinator.com/item?id=4695350#up_4695587
+* https://news.ycombinator.com/item?id=4695350#up_4695587 (https://crypto.stanford.edu/~dabo/pubs/abstracts/ssl-client-bugs.html)
 * https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/
 * https://lemire.me/blog/2026/05/06/checking-multiplication-overflow/
 * https://paolino.me/ruby-concurrency-what-actually-happens/
@@ -153,12 +155,12 @@
 * https://www.seangoedecke.com/notes-on-incidents
 * https://zackoverflow.dev/writing/zig-vs-rust-in-2026
 * https://mitchellh.com/writing/simdutf-no-libcxx
-* https://news.ycombinator.com/item?id=48153379 - I believe there are entire companies right now under AI psychosis (twitter.com)
+* https://news.ycombinator.com/item?id=48153379 (https://twitter.com/mitchellh/status/2055380239711457578) - I believe there are entire companies right now under AI psychosis
 * https://www.seangoedecke.com/steering-vectors/
 * https://thebuild.com/blog/2026/05/08/a-field-guide-to-alternative-storage-engines-for-postgresql/
 * https://analytics.fixelsmith.com/posts/sql-fraud-patterns/
 * https://planetscale.com/blog/database-egress
-* https://news.ycombinator.com/item?id=48180204 - 1024000^2 Blocks, 2B2T Minecraft Server World Download Project, and Discoveries (github.com)
+* https://news.ycombinator.com/item?id=48180204 (https://github.com/2b2tplace/1m_release) - 1024000^2 Blocks, 2B2T Minecraft Server World Download Project, and Discoveries
 * https://m.youtube.com/watch?v=VVJldn_MmMY&pp=0gcJCVMCo7VqN5tD&ra=m - Hackers Testifying at the United States Senate, May 19, 1998 (L0pht Heavy Industries)
 * https://www.figma.com/blog/pgkeeper-building-the-bouncer-we-needed-for-postgres/
 * https://fermatslibrary.com/s/who-s-got-the-monkey
@@ -181,10 +183,10 @@
 * https://multigres.com/blog/pooling-without-choosing-a-mode
 * https://www.seangoedecke.com/prompts-are-technical-debt-too/
 * https://www.seangoedecke.com/the-o3-geoguessr-prompt-did-not-work/
-* https://news.ycombinator.com/item?id=48195009 - I’ve built a virtual museum with nearly every operating system you can think of (virtualosmuseum.org)
+* https://news.ycombinator.com/item?id=48195009 (https://virtualosmuseum.org/) - I’ve built a virtual museum with nearly every operating system you can think of
 * https://richyen.com/postgres/2026/05/18/multixact_wraparound.html
-* https://news.ycombinator.com/item?id=48188183 - The last six months in LLMs in five minutes (simonwillison.net)
-* https://news.ycombinator.com/item?id=48179021 - AI eats the world (Spring 26) [pdf] (static1.squarespace.com) Benedict Evans
+* https://news.ycombinator.com/item?id=48188183 (https://simonwillison.net/2026/May/19/5-minute-llms/) - The last six months in LLMs in five minutes
+* https://news.ycombinator.com/item?id=48179021 (https://static1.squarespace.com/static/50363cf324ac8e905e7df861/t/6a0af5d0484fbf5fe9a7743e/1779103184855/2026-Spring-AI.pdf) - AI eats the world (Spring 26) [pdf] Benedict Evans
 * https://www.youtube.com/watch?v=V8DGdPkBBxg - A Jane Street Software Engineering Mock Interview with Grace and Nolen
 * https://en.wikipedia.org/wiki/Wason_selection_task#Policing_social_rules
 * https://brokenbrowser.com/blog/2026-05-09-prerender-stealth-csp-bypass/
@@ -199,7 +201,7 @@
 * https://lemire.me/blog/2025/12/04/we-see-something-that-works-and-then-we-understand-it/
 * https://registerspill.thorstenball.com/p/the-most-powerful-law-in-software
 * https://ferd.ca/complexity-has-to-live-somewhere.html
-* https://lobste.rs/s/wehmq6/sql_incorrect_by_construction
+* https://lobste.rs/s/wehmq6/sql_incorrect_by_construction (https://chreke.com/posts/sql-incorrect-by-construction)
 * https://spacetimedb.com/blog/benchmarking
 * https://thanosapollo.org/posts/bzr-saga/
 * https://www.forbes.com/sites/kevinready/2012/08/23/paying-it-forward-silicon-valleys-open-secret-to-success/
@@ -207,8 +209,8 @@
 * https://x.com/patio11/status/1162561822248992768 - patio11 dangerous professional
 * https://zackoverflow.dev/writing/rust-is-the-best-language-for-coding-agents/
 * https://zackoverflow.dev/writing/zig-vs-rust-in-2026/
-* https://news.ycombinator.com/item?id=48064789 - "Lakebase architecture delivers faster Postgres writes (databricks.com)"
-* https://news.ycombinator.com/item?id=48082676 - "Replacing a 3 GB SQLite db with a 10 MB FST (finite state transducer) binary (andrew-quinn.me)", https://lobste.rs/s/xb2edj/replacing_3_gb_sqlite_database_with_10_mb, https://burntsushi.net/transducers/
+* https://news.ycombinator.com/item?id=48064789 (https://www.databricks.com/blog/how-lakebase-architecture-delivers-5x-faster-postgres-writes) - "Lakebase architecture delivers faster Postgres writes"
+* https://news.ycombinator.com/item?id=48082676 (https://til.andrew-quinn.me/posts/replacing-a-3-gb-sqlite-database-with-a-7-mb-fst-finite-state-trandsucer-binary/) - "Replacing a 3 GB SQLite db with a 10 MB FST (finite state transducer) binary", https://lobste.rs/s/xb2edj/replacing_3_gb_sqlite_database_with_10_mb, https://burntsushi.net/transducers/
 * https://medium.com/fever-engineering/why-concurrent-updates-and-inserts-can-severely-impact-postgresql-performance-73b14bad5ee10
 * https://www.david-smith.org/blog/2026/04/29/maps-on-watchos/
 * https://www.jefftk.com/p/ai-is-breaking-two-vulnerability-cultures
@@ -225,7 +227,7 @@
 * https://blog.sequinstream.com/postgres-sequences-can-commit-out-of-order/
 * https://www.cybertec-postgresql.com/en/monitor-autovacuum-my-queries/
 * https://brooker.co.za/blog/2026/04/30/be-right.html
-* https://news.ycombinator.com/item?id=47966625 - Does Postgres Scale? (dbos.dev)
+* https://news.ycombinator.com/item?id=47966625 (https://www.dbos.dev/blog/benchmarking-workflow-execution-scalability-on-postgres) - Does Postgres Scale?
 * https://www.dbos.dev/blog/benchmarking-workflow-execution-scalability-on-postgres
 * https://www.agwa.name/blog/post/fastcgi_is_the_better_protocol_for_reverse_proxies
 * https://paulgraham.com/earnest.html
@@ -269,14 +271,14 @@
 * https://www.seangoedecke.com/software-engineering-may-no-longer-be-a-lifetime-career/
 * https://www.seangoedecke.com/many-anti-ai-arguments-are-conservative
 * https://lemire.me/blog/2026/04/27/you-can-beat-the-binary-search/
-* https://news.ycombinator.com/item?id=47885012 - Dear friend, you have built a Kubernetes (2024) (macchaffee.com)
+* https://news.ycombinator.com/item?id=47885012 (https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/) - Dear friend, you have built a Kubernetes (2024)
 * https://andyatkinson.com/postgresql-rds-scaling-aws-christmas-day-peak
 * https://boringsql.com/posts/postgresql-mvcc-byte-by-byte/
 * https://byroot.github.io/ruby/performance/2026/04/18/faster-paths.html
 * https://avi.im/blag/2026/etilqs/
 * https://github.com/NikolayS/pgque - very interesting
 * https://mydbanotebook.org/posts/postgres-performance-regression-are-we-there-yet/
-* https://web.archive.org/web/20070207102333/http://blogs.sun.com/bonwick/date/20040925 - 128-bit storage: are you high?
+* https://web.archive.org/web/20070207102333/http://blogs.sun.com/bonwick/date/20040925 (http://blogs.sun.com/bonwick/date/20040925) - 128-bit storage: are you high?
 * https://www.rudderstack.com/blog/scaling-postgres-queue/
 * https://planetscale.com/blog/keeping-a-postgres-queue-healthy
 * https://benhoyt.com/writings/indecisive-ai-agent/
@@ -324,7 +326,7 @@
 * https://www.depesz.com/2026/03/19/waiting-for-postgresql-19-introduce-the-repack-command/
 * https://lemire.me/blog/2026/03/18/how-many-branches-can-your-cpu-predict/
 * https://haskellforall.com/2026/03/a-sufficiently-detailed-spec-is-code
-* https://news.ycombinator.com/item?id=47402640 - Meta’s renewed commitment to jemalloc (engineering.fb.com)
+* https://news.ycombinator.com/item?id=47402640 (https://engineering.fb.com/2026/03/02/data-infrastructure/investing-in-infrastructure-metas-renewed-commitment-to-jemalloc/) - Meta’s renewed commitment to jemalloc
 * https://jakelazaroff.com/words/an-interactive-intro-to-crdts/
 * https://www.raycast.com/blog/introducing-glaze
 * https://vliw-challenge.fly.dev/
@@ -455,10 +457,10 @@
 * https://steve-yegge.medium.com/the-ai-vampire-eda6e4f07163
 * https://lucumr.pocoo.org/2026/2/13/the-final-bottleneck/
 * https://o16g.com/
-* https://news.ycombinator.com/item?id=47006513 - I'm not worried about AI job loss (davidoks.blog)
+* https://news.ycombinator.com/item?id=47006513 (https://davidoks.blog/p/why-im-not-worried-about-ai-job-loss) - I'm not worried about AI job loss
 * https://www.dbreunig.com/2026/01/08/a-software-library-with-no-code.html
 * https://simonwillison.net/2026/Feb/7/software-factory/ - this is the sort of thing we'll look back to in a decade
-* https://lobste.rs/s/itj50a/make_invalid_states_unrepresentable
+* https://lobste.rs/s/itj50a/make_invalid_states_unrepresentable (https://www.seangoedecke.com/invalid-states/)
 * https://www.seangoedecke.com/invalid-states
 * https://antithesis.com/resources/reliability_glossary/
 * https://grantslatton.com/every-man-a-microservice
@@ -501,7 +503,7 @@
 * https://www.jampa.dev/p/lessons-learned-after-10-years-as?hide_intro_popup=true
 * https://dubroy.com/blog/look-for-whats-true
 * https://tailscale.com/blog/aperture-private-alpha
-* https://news.ycombinator.com/item?id=46766961 - There is an AI code review bubble (greptile.com)
+* https://news.ycombinator.com/item?id=46766961 (https://www.greptile.com/blog/ai-code-review-bubble) - There is an AI code review bubble
 * https://nolanlawson.com/2026/01/24/ai-tribalism/
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-72
 * https://antirez.com/news/159
@@ -521,7 +523,7 @@
 * https://metronome.com/blog/root-cause-analysis-postgresql-multixact-member-exhaustion-incidents-may-2025
 * https://binaryigor.com/mysql-vs-postgresql-performance.html
 * https://brooker.co.za/blog/2012/01/17/two-random.html
-* https://news.ycombinator.com/item?id=35588797 - Load Balancing (samwho.dev)
+* https://news.ycombinator.com/item?id=35588797 (https://samwho.dev/load-balancing/) - Load Balancing
 * https://infrequently.org/2023/02/the-market-for-lemons/
 * https://www.starrocks.io/blog/inside-starrocks-why-joins-are-faster-than-youd-expect
 * https://crookedtimber.org/2023/05/06/the-cult-of-the-founders/
@@ -541,11 +543,11 @@
 * https://joshcollinsworth.com/blog/antiquated-react
 * https://www.seangoedecke.com/confidence/
 * https://www.seangoedecke.com/taking-a-position
-* https://lobste.rs/s/dspppf/how_i_estimate_work_as_staff_software - more seangoedecke.com
+* https://lobste.rs/s/dspppf/how_i_estimate_work_as_staff_software (https://www.seangoedecke.com/how-i-estimate-work/) - more seangoedecke.com
 * https://thecodelesscode.com/case/215?topic=documentation
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-71
 * https://brooker.co.za/blog/2025/12/15/database-for-ssd.html
-* https://news.ycombinator.com/item?id=46690402 - I'm addicted to being useful (seangoedecke.com)
+* https://news.ycombinator.com/item?id=46690402 (https://www.seangoedecke.com/addicted-to-being-useful/) - I'm addicted to being useful
 * https://alexwennerberg.com/blog/2025-11-28-engineering.html
 * https://www.goodreads.com/quotes/82472-what-s-great-about-this-country-is-america-started-the-tradition
 * https://www.experimental-history.com/p/text-is-king
@@ -558,14 +560,14 @@
 * https://fermatslibrary.com/s/on-being-smart
 * https://charitydotwtf.substack.com/p/bring-back-ops-pride#
 * https://www.artur-rodrigues.com/tech/2023/03/21/kafka-head-of-line-blocking.html
-* https://lobste.rs/s/f1cmlk/faster_restart_windows_95_when_you_hold
+* https://lobste.rs/s/f1cmlk/faster_restart_windows_95_when_you_hold (https://devblogs.microsoft.com/oldnewthing/20260119-06/?p=111995)
 * https://blog.cloudflare.com/cname-a-record-order-dns-standards/
 * https://blog.silennai.com/claude-code
 * https://vercel.com/blog/introducing-react-best-practices
 * https://cannoneyed.com/projects/isometric-nyc
 * https://lucumr.pocoo.org/2026/1/18/agent-psychosis/
 * https://maggieappleton.com/gastown/
-* https://news.ycombinator.com/item?id=46725300 - Scaling PostgreSQL to power 800M ChatGPT users (openai.com)
+* https://news.ycombinator.com/item?id=46725300 (https://openai.com/index/scaling-postgresql/) - Scaling PostgreSQL to power 800M ChatGPT users
 * https://www.morling.dev/blog/kip-932-queues-for-kafka/
 * https://www.gov.uk/guidance/government-design-principles
 * https://www.gov.uk/service-manual/technology/using-progressive-enhancement
@@ -577,7 +579,7 @@
 * https://ntietz.com/blog/that-boolean-should-probably-be-something-else
 * https://rachelbythebay.com/w/2026/01/20/walk/
 * https://en.wikipedia.org/wiki/Irrational_exuberance
-* https://news.ycombinator.com/item?id=46700594 - Anthropic's original take home assignment open sourced (github.com/anthropics)
+* https://news.ycombinator.com/item?id=46700594 (https://github.com/anthropics/original_performance_takehome) - Anthropic's original take home assignment open sourced (github.com/anthropics)
 * https://vlad.website/how-binary-dependencies-work/
 * https://themackabu.dev/blog/js-in-one-month
 * https://devnull-as-a-service.com/home/ - oldie but goodie
@@ -604,11 +606,11 @@
 * https://kk.org/thetechnium/how-will-the-miracle-happen-today/
 * https://longform.asmartbear.com/focus/
 * https://tonsky.me/blog/tahoe-icons/
-* https://news.ycombinator.com/item?id=46482345 - Total monthly number of StackOverflow questions over time (data.stackexchange.com)
+* https://news.ycombinator.com/item?id=46482345 (https://data.stackexchange.com/stackoverflow/query/1926661#graph) - Total monthly number of StackOverflow questions over time
 * https://github.com/LRitzdorf/TheJeffDeanFacts
-* https://news.ycombinator.com/item?id=46557825 - Code and Let Live (fly.io)
+* https://news.ycombinator.com/item?id=46557825 (https://fly.io/blog/code-and-let-live/) - Code and Let Live
 * https://fly.io/blog/carving-the-scheduler-out-of-our-orchestrator/
-* https://news.ycombinator.com/item?id=46609630 - A 40-line fix eliminated a 400x performance gap (questdb.com)
+* https://news.ycombinator.com/item?id=46609630 (https://questdb.com/blog/jvm-current-thread-user-time/) - A 40-line fix eliminated a 400x performance gap
 * https://brooker.co.za/blog/2021/05/24/metastable.html
 * https://vondra.me/posts/dont-give-postgres-too-much-memory/
 * https://alexharri.com/blog/ascii-rendering
@@ -623,12 +625,12 @@
 * https://www.linkedin.com/posts/bryan-cantrill-b6a1_recently-the-the-new-stack-had-a-piece-excerpting-activity-7415137978307543040-MpaJ - excellent post. in fact, didn't patio11 move to Japan for basically the same reasons - sold that software's future was in japan because they were growing so much?
 * https://ghuntley.com/ralph/
 * https://antirez.com/news/158 - Don't fall into the anti-AI hype
-* https://news.ycombinator.com/item?id=46614037 - I’m leaving Redis for SolidQueue (simplethread.com)
-* https://lobste.rs/s/zkvvo9/hidden_cost_postgresql_arrays
+* https://news.ycombinator.com/item?id=46614037 (https://www.simplethread.com/redis-solidqueue/) - I’m leaving Redis for SolidQueue
+* https://lobste.rs/s/zkvvo9/hidden_cost_postgresql_arrays (https://boringsql.com/posts/good-bad-arrays/)
 * https://turbopuffer.com/blog/bm25-latency-musings
 * https://ghuntley.com/dothings/
-* https://news.ycombinator.com/item?id=46466027 - Try to take my position: The best promotion advice I ever got (grahamyooll.com)
-* https://news.ycombinator.com/item?id=46482642 - The Riven Diffs – Seeing Riven (1997) Differently (glthr.com)
+* https://news.ycombinator.com/item?id=46466027 (https://andrew.grahamyooll.com/blog/Try-to-Take-My-Position/) - Try to take my position: The best promotion advice I ever got
+* https://news.ycombinator.com/item?id=46482642 (https://glthr.com/the-riven-diffs-1) - The Riven Diffs – Seeing Riven (1997) Differently
 * https://archive.is/nLNPp - Why Is the American Diet So Deadly? A scientist tried to discredit the theory that ultra-processed foods are killing us. Instead, he overturned his own understanding of obesity.
 * https://archive.is/umpyR - Does It Help to Know History?
 * https://samuelalbanie.substack.com/p/reflections-on-2025
@@ -648,21 +650,21 @@
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-68
 * https://en.wikipedia.org/wiki/Carrington_Event
 * https://github.com/simdutf/simdutf - simdutf: Text processing at billions of characters per second
-* https://news.ycombinator.com/item?id=46463644 - 10 years of personal finances in plain text files (sgoel.dev)
+* https://news.ycombinator.com/item?id=46463644 (https://sgoel.dev/posts/10-years-of-personal-finances-in-plain-text-files/) - 10 years of personal finances in plain text files
 * https://martin.kleppmann.com/2011/03/07/accounting-for-computer-scientists.html
-* https://news.ycombinator.com/item?id=46408510 - C –> Java != Java –> LLM (observationalhazard.com)
+* https://news.ycombinator.com/item?id=46408510 (http://www.observationalhazard.com/2025/12/c-java-java-llm.html) - C –> Java != Java –> LLM
 * https://www.youtube.com/watch?v=8mumTeuiZ6o - "Cat and Mouse: Challenges in Adversarial Web Scraping - Tyler Young | ElixirConf US 2025"
-* https://news.ycombinator.com/item?id=46454413 - 2025 Letter (danwang.co)
-* https://news.ycombinator.com/item?id=46448527 - Love your customers (dtrace.org)
+* https://news.ycombinator.com/item?id=46454413 (https://danwang.co/2025-letter/) - 2025 Letter
+* https://news.ycombinator.com/item?id=46448527 (https://bcantrill.dtrace.org/2025/12/31/love-your-customers/) - Love your customers
 * https://jpcamara.com/2025/12/30/when-good-threads-go-bad.html
-* https://news.ycombinator.com/item?id=46458302 - Can Bundler be as fast as uv? (tenderlovemaking.com)
+* https://news.ycombinator.com/item?id=46458302 (https://tenderlovemaking.com/2025/12/29/can-bundler-be-as-fast-as-uv/) - Can Bundler be as fast as uv?
 * https://www.rubyevents.org/talks/start-writing-ruby-stop-using-classes
 
 # December 2025
 * https://en.wikipedia.org/wiki/HyperLogLog
 * https://en.wikipedia.org/wiki/Approximate_counting_algorithm
 * https://redis.io/docs/latest/develop/reference/eviction/
-* https://news.ycombinator.com/item?id=46436889 - FediMeteo: A €4 FreeBSD VPS Became a Global Weather Service (dragas.net)
+* https://news.ycombinator.com/item?id=46436889 (https://it-notes.dragas.net/2025/02/26/fedimeteo-how-a-tiny-freebsd-vps-became-a-global-weather-service-for-thousands/) - FediMeteo: A €4 FreeBSD VPS Became a Global Weather Service
 * https://www.seangoedecke.com/weak-engineers
 * https://www.seangoedecke.com/bad-code-at-big-companies
 * https://www.seangoedecke.com/a-little-bit-cynical
@@ -671,13 +673,13 @@
 * https://miguelcarranza.es/cto-year-8
 * https://kirshatrov.com/posts/codebase-migrations-with-llms
 * https://jvns.ca/blog/2015/11/21/why-you-should-understand-a-little-about-tcp
-* https://news.ycombinator.com/item?id=34179426 - Golang disables Nagle's Algorithm by default (withinboredom.info)
-* https://news.ycombinator.com/item?id=46359120 - It's Always TCP_NODELAY (brooker.co.za)
+* https://news.ycombinator.com/item?id=34179426 (https://withinboredom.info/blog/2022/12/29/golang-is-evil-on-shitty-networks/) - Golang disables Nagle's Algorithm by default
+* https://news.ycombinator.com/item?id=46359120 (https://brooker.co.za/blog/2024/05/09/nagle.html) - It's Always TCP_NODELAY
 * https://lwn.net/Articles/104185/ - Re: [PATCH] oom_pardon, aka don't kill my xlock
-* https://news.ycombinator.com/item?id=46300411 - Vm.overcommit_memory=2 is the right setting for servers (ariadne.space)
-* https://news.ycombinator.com/item?id=46330726 - LLM Year in Review (karpathy.bearblog.dev)
+* https://news.ycombinator.com/item?id=46300411 (https://ariadne.space/2025/12/16/vmovercommitmemory-is-always-the-right.html) - Vm.overcommit_memory=2 is the right setting for servers
+* https://news.ycombinator.com/item?id=46330726 (https://karpathy.bearblog.dev/year-in-review-2025/) - LLM Year in Review
 * https://emschwartz.me/short-circuiting-correlated-subqueries-in-sqlite/
-* https://news.ycombinator.com/item?id=46328274 - Performance Hints (abseil.io)
+* https://news.ycombinator.com/item?id=46328274 (https://abseil.io/fast/hints.html) - Performance Hints
 * https://kibty.town/blog/mintlify/
 * https://www.reuters.com/world/china/how-china-built-its-manhattan-project-rival-west-ai-chips-2025-12-17/
 * https://world.hey.com/jason/idea-protectionism-01ef4f59
@@ -691,9 +693,9 @@
 * https://ngrok.com/blog/prompt-caching/
 * https://ampcode.com/by-an-agent-for-an-agent
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-67
-* https://news.ycombinator.com/item?id=46336947 - Go ahead, self-host Postgres (pierce.dev)
-* https://news.ycombinator.com/item?id=46317098 - We pwned X, Vercel, Cursor, and Discord through a supply-chain attack (gist.github.com)
-* https://news.ycombinator.com/item?id=46305321 - Inside PostHog: SSRF, ClickHouse SQL Escape and Default Postgres Creds to RCE (mdisec.com)
+* https://news.ycombinator.com/item?id=46336947 (https://pierce.dev/notes/go-ahead-self-host-postgres#user-content-fn-1) - Go ahead, self-host Postgres
+* https://news.ycombinator.com/item?id=46317098 (https://gist.github.com/hackermondev/5e2cdc32849405fff6b46957747a2d28) - We pwned X, Vercel, Cursor, and Discord through a supply-chain attack
+* https://news.ycombinator.com/item?id=46305321 (https://mdisec.com/inside-posthog-how-ssrf-a-clickhouse-sql-escaping-0day-and-default-postgresql-credentials-formed-an-rce-chain-zdi-25-099-zdi-25-097-zdi-25-096/) - Inside PostHog: SSRF, ClickHouse SQL Escape and Default Postgres Creds to RCE
 * https://nithinbekal.com/posts/ruby-4-0/
 * https://github.com/msanft/CVE-2025-55182
 * https://boge.lu/cost-centers-vs-profit-center/
@@ -705,9 +707,9 @@
 * https://tim.blog/2012/11/11/the-value-of-aggression-ode-to-dan-gable/
 * https://xania.org/202512/01-xor-eax-eax
 * https://news.ycombinator.com/item?id=46014987 - sit and wait for llm/agent improvements
-* https://news.ycombinator.com/item?id=45992316 - Building a Durable Execution Engine with SQLite (morling.dev)
-* https://news.ycombinator.com/item?id=46023460 - Racket v9.0 (racket-lang.org)
-* https://news.ycombinator.com/item?id=44099006 - Hacker News now runs on top of Common Lisp (lisp-journey.gitlab.io)
+* https://news.ycombinator.com/item?id=45992316 (https://www.morling.dev/blog/building-durable-execution-engine-with-sqlite/) - Building a Durable Execution Engine with SQLite
+* https://news.ycombinator.com/item?id=46023460 (https://blog.racket-lang.org/2025/11/racket-v9-0.html) - Racket v9.0
+* https://news.ycombinator.com/item?id=44099006 (https://lisp-journey.gitlab.io/blog/hacker-news-now-runs-on-top-of-common-lisp/) - Hacker News now runs on top of Common Lisp
 * https://www.ben-evans.com/presentations
 * https://www.morling.dev/blog/on-idempotency-keys/
 * https://spectrum.ieee.org/it-management-software-failures
@@ -719,7 +721,7 @@
 * https://davidbessis.substack.com/p/twins-reared-apart-do-not-exist#_
 * https://eieio.games/blog/two-heads-arent-better-than-one/
 * https://buttondown.com/hillelwayne/archive/when-would-you-ever-want-bubblesort/
-* https://news.ycombinator.com/item?id=46221404 - Intermittent hypoxia increases blood flow and benefits executive function (wiley.com)
+* https://news.ycombinator.com/item?id=46221404 (https://onlinelibrary.wiley.com/doi/10.1111/psyp.70161) - Intermittent hypoxia increases blood flow and benefits executive function
 * https://boringsql.com/posts/vacuum-is-lie/
 * https://open.substack.com/pub/thorstenball/p/joy-and-curiosity-66
 * https://www.prefect.io/blog/rebuilding-our-website-for-the-agent-era
@@ -730,7 +732,7 @@
 * https://www.strangeloopcanon.com/p/seeing-like-an-agent
 * https://danielmiessler.com/blog/real-problem-job-market
 * https://danielmiessler.com/blog/the-real-bubble-is-human-labor
-* https://news.ycombinator.com/item?id=46178347 - Using LLMs at Oxide (oxide.computer)
+* https://news.ycombinator.com/item?id=46178347 (https://rfd.shared.oxide.computer/rfd/0576) - Using LLMs at Oxide
 * https://karpathy.bearblog.dev/auto-grade-hn/
 * https://abdulhamidhassan.com/post/802459222214410240/how-to-be-exceptional-at-anything
 * https://obie.medium.com/what-happens-when-the-coding-becomes-the-least-interesting-part-of-the-work-ab10c213c660
@@ -741,7 +743,7 @@
 * https://en.wikipedia.org/wiki/Persistent_data_structure
 * https://en.wikipedia.org/wiki/Hash_tree_(persistent_data_structure)
 * https://en.wikipedia.org/wiki/Hash_array_mapped_trie
-* https://news.ycombinator.com/item?id=46197930 - The highest quality codebase (gricha.dev)
+* https://news.ycombinator.com/item?id=46197930 (https://gricha.dev/blog/the-highest-quality-codebase) - The highest quality codebase
 * https://archive.nytimes.com/economix.blogs.nytimes.com/2008/10/23/greenspans-mea-culpa/
 * https://lucumr.pocoo.org/2025/10/21/eu-resigation/
 * https://lucumr.pocoo.org/2025/12/9/fixing-europe/
@@ -750,10 +752,10 @@
 
 # November 2025
 * https://newsletter.posthog.com/p/collaboration-sucks
-* https://news.ycombinator.com/item?id=42485505 - Reads Causing Writes in Postgres (jesipow.com)
+* https://news.ycombinator.com/item?id=42485505 (https://jesipow.com/blog/postgres-reads-cause-writes/) - Reads Causing Writes in Postgres
 * https://buttondown.com/jaffray/archive/data-independence/
-* https://news.ycombinator.com/item?id=45985306 - I built a faster Notion in Rust (imedadel.com)
-* https://news.ycombinator.com/item?id=42288956 - Kubernetes on Hetzner: cutting my infra bill by 75% (bilbof.com)
+* https://news.ycombinator.com/item?id=45985306 (https://imedadel.com/outcrop/) - I built a faster Notion in Rust
+* https://news.ycombinator.com/item?id=42288956 (https://bilbof.com/posts/kubernetes-on-hetzner) - Kubernetes on Hetzner: cutting my infra bill by 75%
 * https://news.ycombinator.com/item?id=9040551
 * https://lkml.org/lkml/2000/9/6/65
 * https://www.tritondatacenter.com/blog/the-power-of-a-pronoun
@@ -764,7 +766,7 @@
 * https://www.datadoghq.com/blog/ruby-performance-optimization/
 * https://aws.amazon.com/blogs/architecture/shuffle-sharding-massive-and-magical-fault-isolation/
 * https://blog.arkency.com/activerecord-repository/
-* https://news.ycombinator.com/item?id=46005111 - We should all be using dependency cooldowns (yossarian.net)
+* https://news.ycombinator.com/item?id=46005111 (https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns) - We should all be using dependency cooldowns
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-62
 * https://andymasley.substack.com/p/the-ai-water-issue-is-fake
 * https://davegriffith.substack.com/p/software-development-in-the-time
@@ -786,7 +788,7 @@
 * https://jsteuernagel.de/posts/a-prison-of-my-own-making/
 * https://maryrosecook.com/blog/post/pressure-to-change
 * https://notpeerreviewed.com/blog/battlesnake/
-* https://news.ycombinator.com/item?id=45792555 - Friendly attributes pattern in Ruby (brunosutic.com)
+* https://news.ycombinator.com/item?id=45792555 (https://brunosutic.com/blog/ruby-friendly-attributes-pattern) - Friendly attributes pattern in Ruby
 * https://www.tigerdata.com/blog/how-we-made-distinct-queries-up-to-8000x-faster-on-postgresql
 * https://www.postgresql.org/message-id/CAMkU%3D1wK5t80RxVSLYEz-4e%2BwnHL0Tkn6DJWsgL19dnnvgv%3DFw%40mail.gmail.com - distinct limit 
 * https://www.ee.torontomu.ca/~elf/hack/recovery.html
@@ -802,10 +804,10 @@
 * https://world.hey.com/joaoqalves/karpathy-is-wrong-write-that-post-build-that-slide-deck-9d1a6893
 * https://seated.ro/blog/tinkering-a-lost-art
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-60
-* https://news.ycombinator.com/item?id=45785858A - Visopsys: OS maintained by a single developer since 1997 (visopsys.org)
-* https://news.ycombinator.com/item?id=45778984A - The profitable startup (linear.app)
+* https://news.ycombinator.com/item?id=45785858A - Visopsys: OS maintained by a single developer since 1997
+* https://news.ycombinator.com/item?id=45778984A - The profitable startup
 * https://news.ycombinator.com/item?id=45718213 - clickhouse-local being super fast
-* https://news.ycombinator.com/item?id=45747018 - Kafka is Fast – I'll use Postgres (topicpartition.io) - im not sure I agree at all
+* https://news.ycombinator.com/item?id=45747018 (https://topicpartition.io/blog/postgres-pubsub-queue-benchmarks) - Kafka is Fast – I'll use Postgres - im not sure I agree at all
 * https://redis.io/docs/latest/develop/data-types/streams - redis streams as an alternative queue or log
 * https://copyconstruct.medium.com/testing-in-production-the-safe-way-18ca102d0ef1
 * https://world.hey.com/joaoqalves/disasters-i-ve-seen-in-a-microservices-world-a9137a51
@@ -815,11 +817,11 @@
 * https://www.linusakesson.net/programming/pipelogic/index.php
 
 # October 2025
-* https://news.ycombinator.com/item?id=45707658 - The Linux Boot Process: From Power Button to Kernel (0xkato.xyz)
+* https://news.ycombinator.com/item?id=45707658 (https://www.0xkato.xyz/linux-boot/) - The Linux Boot Process: From Power Button to Kernel
 * https://andrewkelley.me/post/zig-new-async-io-text-version.html
 * https://www.reddit.com/r/ClaudeCode/comments/1oivs81/claude_code_is_a_beast_tips_from_6_months_of/
 * https://fs.blog/great-talks/psychology-human-misjudgment/ - The Psychology of Human Misjudgment, by Charlie Munger
-* https://news.ycombinator.com/item?id=45656916 - AI is making us work more (tawandamunongo.dev)
+* https://news.ycombinator.com/item?id=45656916 (https://tawandamunongo.dev/posts/2025/10/ai-work-more) - AI is making us work more
 * https://georgesaunders.substack.com/p/a-tough-question-indeed
 * https://allvpv.org/turn-off-cursor/
 * https://drobinin.com/posts/designing-software-for-things-that-rot/
@@ -832,18 +834,18 @@
 * https://htmx.org/essays/no-build-step/
 * https://en.wikipedia.org/wiki/Paul_Erd%C5%91s
 * https://oxide.computer/blog/systems-software-in-the-large
-* https://news.ycombinator.com/item?id=45687458 - /dev/null is an ACID compliant database (jyu.dev)
+* https://news.ycombinator.com/item?id=45687458 (https://jyu.dev/blog/why-dev-null-is-an-acid-compliant-database/) - /dev/null is an ACID compliant database
 * https://www.seangoedecke.com/good-code-reviews
 * https://www.seangoedecke.com/pure-and-impure-engineering/
-* https://news.ycombinator.com/item?id=45633311 - The future of Python web services looks GIL-free (baro.dev) - asgi async: a bit better perf, lower memusage, but crucially no longer need to increase worker count (one event loop per proc, and therefore heavy mem usage) to scale. wsgi sync: kinda same perf, increased memusage but probably fixable? best part is no longer having to tradeoff worker-thread count for cpu-io ratio (like the puma worker-thread count discussion)
+* https://news.ycombinator.com/item?id=45633311 (https://blog.baro.dev/p/the-future-of-python-web-services-looks-gil-free) - The future of Python web services looks GIL-free - asgi async: a bit better perf, lower memusage, but crucially no longer need to increase worker count (one event loop per proc, and therefore heavy mem usage) to scale. wsgi sync: kinda same perf, increased memusage but probably fixable? best part is no longer having to tradeoff worker-thread count for cpu-io ratio (like the puma worker-thread count discussion)
 * https://planetscale.com/blog/benchmarking-postgres-17-vs-18
-* https://news.ycombinator.com/item?id=35342464 - Quicker serverless Postgres connections (neon.tech)
-* https://news.ycombinator.com/item?id=37089925 - Supavisor: Scaling Postgres to 1M Connections (supabase.com)
-* https://news.ycombinator.com/item?id=45706380 - The Journey Before main() (prasad.me)
+* https://news.ycombinator.com/item?id=35342464 (https://neon.tech/blog/quicker-serverless-postgres) - Quicker serverless Postgres connections
+* https://news.ycombinator.com/item?id=37089925 (https://supabase.com/blog/supavisor-1-million) - Supavisor: Scaling Postgres to 1M Connections
+* https://news.ycombinator.com/item?id=45706380 (https://amit.prasad.me/blog/before-main) - The Journey Before main()
 * https://brooker.co.za/blog/2025/10/22/uuidv7
-* https://news.ycombinator.com/item?id=45678511 - Programming with Less Than Nothing (joshmoody.org)
+* https://news.ycombinator.com/item?id=45678511 (https://joshmoody.org/blog/programming-with-less-than-nothing/) - Programming with Less Than Nothing
 * https://metaduck.com/decipad-technical-challenges/
-* https://news.ycombinator.com/item?id=45639250 - Forth: The programming language that writes itself (ratfactor.com)
+* https://news.ycombinator.com/item?id=45639250 (https://ratfactor.com/forth/the_programming_language_that_writes_itself.html) - Forth: The programming language that writes itself
 * https://www.cybertec-postgresql.com/en/benefits-of-a-descending-index/
 * https://steveklabnik.com/writing/i-see-a-future-in-jj/
 * https://www.unkey.com/blog/serverless-exit
@@ -861,16 +863,16 @@
 * https://destraynor.com/writing/this-doesnt-bode-well/
 * https://www.youtube.com/watch?v=2SEgQiu8XaU - A Cheeky Pint with Intercom Cofounder Des Traynor
 * https://destraynor.com/writing/the-purpose-of-a-system-is-what-it-does
-* https://news.ycombinator.com/item?id=45608456 - Talent (felixstocker.com)
-* https://news.ycombinator.com/item?id=45619329 - Andrej Karpathy – AGI is still a decade away (dwarkesh.com)
-* https://news.ycombinator.com/item?id=45614922 - Migrating from AWS to Hetzner (digitalsociety.coop)
+* https://news.ycombinator.com/item?id=45608456 (https://www.felixstocker.com/blog/talent) - Talent
+* https://news.ycombinator.com/item?id=45619329 (https://www.dwarkesh.com/p/andrej-karpathy) - Andrej Karpathy – AGI is still a decade away
+* https://news.ycombinator.com/item?id=45614922 (https://digitalsociety.coop/posts/migrating-to-hetzner-cloud/) - Migrating from AWS to Hetzner
 * https://temporal.io/blog/temporal-ruby-crash-proof-fibers
 * https://www.youtube.com/watch?v=wLn28DrSF68 - Building a Life - Howard H. Stevenson (2013)
-* https://news.ycombinator.com/item?id=45514213 - Scaling request logging with ClickHouse, Kafka, and Vector (geocod.io)
-* https://news.ycombinator.com/item?id=45551450 - Rating 26 years of Java changes (neilmadden.blog)
+* https://news.ycombinator.com/item?id=45514213 (https://www.geocod.io/code-and-coordinates/2025-10-02-from-millions-to-billions/) - Scaling request logging with ClickHouse, Kafka, and Vector
+* https://news.ycombinator.com/item?id=45551450 (https://neilmadden.blog/2025/09/12/rating-26-years-of-java-changes/) - Rating 26 years of Java changes
 * https://jack-vanlightly.com/blog/2025/10/8/beyond-indexes-how-open-table-formats-optimize-query-performance
 * https://www.tigerdata.com/blog/building-columnar-compression-in-a-row-oriented-database
-* https://web.archive.org/web/20250923061508/https://edwardpackard.com/wp-content/uploads/2025/09/Nine-Things-I-Learned-in-Ninety-Years.pdf
+* https://web.archive.org/web/20250923061508/https://edwardpackard.com/wp-content/uploads/2025/09/Nine-Things-I-Learned-in-Ninety-Years.pdf (https://edwardpackard.com/wp-content/uploads/2025/09/Nine-Things-I-Learned-in-Ninety-Years.pdf)
 * https://blog.bearcats.nl/simple-message-queue/
 * https://spinroot.com/gerard/pdf/P10.pdf - The Power of Ten – Rules for Developing Safety Critical Code
 * https://www.rfc-editor.org/rfc/rfc1925.html - The Twelve Networking Truths
@@ -892,7 +894,7 @@
 * https://refactoringenglish.com/blog/software-essays-that-shaped-me/
 * https://www.experimental-history.com/p/thank-you-for-being-annoying
 * https://read.engineerscodex.com/p/how-instagram-scaled-to-14-million
-* https://news.ycombinator.com/item?id=45163945 - Using Claude Code to modernize a 25-year-old kernel driver (dmitrybrant.com)
+* https://news.ycombinator.com/item?id=45163945 - Using Claude Code to modernize a 25-year-old kernel driver
 * https://www.youtube.com/watch?v=4KvbVq3Eg5w - Composition Is All You Need | Fernando Rojo at React Universe Conf 2025
 * https://matklad.github.io/2023/10/06/what-is-an-invariant.html
 * https://paulgraham.com/think.html
@@ -901,8 +903,8 @@
 * https://tigerbeetle.com/blog/2021-08-30-three-clocks-are-better-than-one/
 * https://matklad.github.io/2023/03/26/zig-and-rust.html
 * https://speakerdeck.com/ioquatix/building-deploying-and-monitoring-ruby-web-applications-with-falcon-kaigi-on-rails-2025?slide=301
-* https://news.ycombinator.com/item?id=45538760 - PSA: Always use a separate domain for user content (statichost.eu)
-* https://news.ycombinator.com/item?id=45218111 - Debian 13, Postgres, and the US/* time zones (rachelbythebay.com)
+* https://news.ycombinator.com/item?id=45538760 (https://www.statichost.eu/blog/google-safe-browsing/) - PSA: Always use a separate domain for user content
+* https://news.ycombinator.com/item?id=45218111 (https://rachelbythebay.com/w/2025/09/11/debtz/) - Debian 13, Postgres, and the US/* time zones
 * https://mayberay.bearblog.dev/why-i-only-use-google-sheets/
 * https://www.amplifypartners.com/blog-posts/why-tigerbeetle-is-the-most-interesting-database-in-the-world
 
@@ -913,7 +915,7 @@
 * https://bigdata.2minutestreaming.com/p/how-aws-s3-scales-with-tens-of-millions-of-hard-drives
 * https://questdb.com/blog/rust-fetch-max-compiler-journey/
 * https://slatestarcodex.com/2014/03/24/should-you-reverse-any-advice-you-hear/
-* https://news.ycombinator.com/item?id=45152402 - Being good isn't enough (joshs.bearblog.dev)
+* https://news.ycombinator.com/item?id=45152402 (https://joshs.bearblog.dev/being-good-isnt-enough/) - Being good isn't enough
 * https://dynomight.net/liking/
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-53
 * https://claudelog.com/mechanics/you-are-the-main-thread/
@@ -932,10 +934,10 @@
 * https://research.swtch.com/glob
 * https://www.tumblr.com/accidentallyquadratic
 * https://lucumr.pocoo.org/2025/9/29/90-percent/
-* https://news.ycombinator.com/item?id=45415332 - Subtleties of SQLite Indexes (emschwartz.me)
+* https://news.ycombinator.com/item?id=45415332 (https://emschwartz.me/subtleties-of-sqlite-indexes/) - Subtleties of SQLite Indexes
 * https://www.joelonsoftware.com/2001/03/23/strategy-letter-iv-bloatware-and-the-8020-myth/
 * https://www.joelonsoftware.com/2006/12/09/simplicity/
-* https://news.ycombinator.com/item?id=45412494 - Tuning async IO in PostgreSQL 18 (vondra.me)
+* https://news.ycombinator.com/item?id=45412494 (https://vondra.me/posts/tuning-aio-in-postgresql-18/) - Tuning async IO in PostgreSQL 18
 * https://go.dev/blog/flight-recorder
 * https://go.dev/blog/execution-traces-2024
 * https://turbopuffer.com/blog/turbopuffer
@@ -950,13 +952,13 @@
 * https://press.uchicago.edu/Misc/Chicago/511928.html
 * https://clerk.com/blog/2025-09-18-database-incident-postmortem
 * https://en.wikipedia.org/wiki/Bus_bunching
-* https://news.ycombinator.com/item?id=45254763 - Boring is good (jenson.org)
+* https://news.ycombinator.com/item?id=45254763 (https://jenson.org/boring/) - Boring is good
 * https://en.wikipedia.org/wiki/SipHash
 * https://harpers.org/archive/1932/10/in-praise-of-idleness/ - by Bertrand Russell
-* https://news.ycombinator.com/item?id=45261930 - Generative AI as Seniority-Biased Technological Change (ssrn.com)
+* https://news.ycombinator.com/item?id=45261930 (https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5425555) - Generative AI as Seniority-Biased Technological Change
 * https://www.trustedsec.com/blog/onedrive-to-enum-them-all
 * http://conway.rutgers.edu/~ccshan/wiki/blog/posts/WordNumbers1/
-* https://news.ycombinator.com/item?id=45222695 - Many hard LeetCode problems are easy constraint problems (buttondown.com/hillelwayne)
+* https://news.ycombinator.com/item?id=45222695 (https://buttondown.com/hillelwayne/archive/many-hard-leetcode-problems-are-easy-constraint/) - Many hard LeetCode problems are easy constraint problems (buttondown.com/hillelwayne)
 * https://therussiansusedapencil.com/post/175863624/the-pencil
 * https://www.snopes.com/fact-check/the-write-stuff/
 * https://bun.com/blog/behind-the-scenes-of-bun-install
@@ -970,11 +972,11 @@
 * https://railsatscale.com/2025-09-08-how-ruby-executes-jit-code-the-hidden-mechanics-behind-the-magic/
 * https://en.wikipedia.org/wiki/Precision_and_recall
 * https://news.ycombinator.com/item?id=24904644 - history of postgres's connection model
-* https://news.ycombinator.com/item?id=45130143 - I solved a distributed queue problem after 15 years (dbos.dev)
+* https://news.ycombinator.com/item?id=45130143 (https://www.dbos.dev/blog/durable-queues) - I solved a distributed queue problem after 15 years
 * https://react.dev/reference/react/memo
 * https://chrlschn.dev/blog/2025/01/the-inverted-reactivity-model-of-react/
 * https://duarteocarmo.com/blog/common-misconceptions-about-ai
-* https://web.archive.org/web/20190308152212/https://mailman.nanog.org/pipermail/nanog/2017-October/092636.html
+* https://web.archive.org/web/20190308152212/https://mailman.nanog.org/pipermail/nanog/2017-October/092636.html (https://mailman.nanog.org/pipermail/nanog/2017-October/092636.html)
 * https://www.seangoedecke.com/staff-engineer-promotions
 * https://www.seangoedecke.com/party-tricks/
 * https://www.seangoedecke.com/breaking-rules/
@@ -995,7 +997,7 @@
 * https://www.tokyocowboy.co/articles/doai-eki-japans-creepiest-station
 * https://en.wikipedia.org/wiki/Wikipedia:Don%27t_stuff_beans_up_your_nose
 * https://about.gitlab.com/blog/migrating-to-puma-on-gitlab/
-* https://lobste.rs/s/ik0pjv/left_right_programming
+* https://lobste.rs/s/ik0pjv/left_right_programming (https://graic.net/p/left-to-right-programming)
 * https://unplannedobsolescence.com/blog/best-hello-world-web-development/
 * https://vim.gabornyeki.com
 * https://nadia.xyz/shameless
@@ -1021,9 +1023,9 @@
 * https://sirupsen.com/index-merges
 * https://github.com/kilimchoi/engineering-blogs
 * https://alexsci.com/rss-blogroll-network/blogrolls/ - find blogs
-* https://news.ycombinator.com/item?id=44855157 - Show HN: Engineering.fyi – Search across tech engineering blogs in one place (engineering.fyi)
-* https://news.ycombinator.com/item?id=44878151 - Show HN: Building a web search engine from scratch with 3B neural embeddings (blog.wilsonl.in)
-* https://news.ycombinator.com/item?id=44864185A - Claude Code is all you need (dwyer.co.za)
+* https://news.ycombinator.com/item?id=44855157 (https://engineering.fyi/) - Show HN: Engineering.fyi – Search across tech engineering blogs in one place
+* https://news.ycombinator.com/item?id=44878151 (https://blog.wilsonl.in/search-engine/) - Show HN: Building a web search engine from scratch with 3B neural embeddings
+* https://news.ycombinator.com/item?id=44864185A - Claude Code is all you need
 * https://www.enterprisedb.com/postgres-tutorials/history-improvements-vacuum-postgresql
 * https://pganalyze.com/docs/vacuum-advisor/what-is-freezing
 * https://spacelift.io/blog/k3s-vs-k8s#what-is-the-difference-between-k3s-and-k8s
@@ -1036,9 +1038,9 @@
 * https://www.scattered-thoughts.net/writing/everyones-got-one/
 * https://spiess.dev/blog/how-i-use-claude-code
 * https://predr.ag/blog/mediocrity-can-be-a-sign-of-excellence/
-* https://news.ycombinator.com/item?id=44860847 - Going faster than memcpy (squadrick.dev)
-* https://news.ycombinator.com/item?id=44836463 - How we replaced Elasticsearch and MongoDB with Rust and RocksDB (radar.com)
-* https://news.ycombinator.com/item?id=44798189 - Things that helped me get out of the AI 10x engineer imposter syndrome (colton.dev)
+* https://news.ycombinator.com/item?id=44860847 (https://squadrick.dev/journal/going-faster-than-memcpy) - Going faster than memcpy
+* https://news.ycombinator.com/item?id=44836463 (https://radar.com/blog/high-performance-geocoding-in-rust) - How we replaced Elasticsearch and MongoDB with Rust and RocksDB
+* https://news.ycombinator.com/item?id=44798189 (https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/) - Things that helped me get out of the AI 10x engineer imposter syndrome
 * https://philipotoole.com/consistency-over-availability-how-rqlite-handles-the-cap-theorem/
 * https://distantprovince.by/posts/its-rude-to-show-ai-output-to-people/
 * https://github.com/OpenHFT/Chronicle-Queue
@@ -1087,7 +1089,7 @@
 * https://kristoff.it/blog/asynchrony-is-not-concurrency/
 * https://nullderef.com/blog/rust-async-sync/
 * https://slatestarcodex.com/2014/07/30/meditations-on-moloch/
-* https://news.ycombinator.com/item?id=44546640 - Hacking Coroutines into C (wiomoc.de)
+* https://news.ycombinator.com/item?id=44546640 (https://wiomoc.de/misc/posts/hacking_coroutines_into_c.html) - Hacking Coroutines into C
 * https://andrewkelley.me/post/jamulator.html
 * https://www.open-std.org/JTC1/SC22/WG21/docs/papers/2018/p1364r0.pdf - Fibers under the magnifying glass
 * https://www.gibney.org/prompt_coding
@@ -1115,28 +1117,28 @@
 * https://matklad.github.io/2025/07/07/inverse-triangle-inequality.html
 * https://www.tigerdata.com/learn/how-to-reduce-bloat-in-large-postgresql-tables
 * https://www.robkhenderson.com/p/the-perils-of-imitating-high-status
-* https://news.ycombinator.com/item?id=44444686 - The Moat of Low Status (usefulfictions.substack.com)
-* https://news.ycombinator.com/item?id=44482194 - Async Queue – One of my favorite programming interview questions (davidgomes.com)
+* https://news.ycombinator.com/item?id=44444686 (https://usefulfictions.substack.com/p/learn-to-love-the-moat-of-low-status) - The Moat of Low Status
+* https://news.ycombinator.com/item?id=44482194 (https://davidgomes.com/async-queue-interview-ai/) - Async Queue – One of my favorite programming interview questions
 * https://www.morling.dev/blog/mastering-postgres-replication-slots/
 * https://charity.wtf/2025/07/09/thoughts-on-motivation-and-my-40-year-career/
 * https://www.robinlinacre.com/address_matching/
 * https://lucassifoni.info/blog/leveraging-hot-code-loading-for-fun-and-profit/
-* https://news.ycombinator.com/item?id=39315833 - Postgres as queue (leontrolski.github.io)
+* https://news.ycombinator.com/item?id=39315833 (https://leontrolski.github.io/postgres-as-queue.html) - Postgres as queue
 * https://leontrolski.github.io/cmd-click-manifesto.html
 * https://paolino.me/async-ruby-is-the-future/
 * https://www.recall.ai/blog/postgres-listen-notify-does-not-scale
-* https://web.archive.org/web/20250618135521/https://martinfowler.com/articles/expert-generalist.html
+* https://web.archive.org/web/20250618135521/https://martinfowler.com/articles/expert-generalist.html (https://martinfowler.com/articles/expert-generalist.html)
 * https://www.flightcontrol.dev/blog/ultimate-guide-to-multi-tenant-saas-data-modeling
 * https://apenwarr.ca/log/20250711
 * https://davidgomes.com/async-queue-interview-ai/
 * https://lethain.com/skew-the-frontend-engineer-s-misery
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-44
 * https://www.indragie.com/blog/i-shipped-a-macos-app-built-entirely-by-claude-code
-* https://news.ycombinator.com/item?id=44473888 - Speeding up PostgreSQL dump/restore snapshots (xata.io)
-* https://web.archive.org/web/20250615032937/https://0x80.pl/notesen/2016-11-28-simd-strfind.html#algorithm-2
+* https://news.ycombinator.com/item?id=44473888 (https://xata.io/blog/behind-the-scenes-speeding-up-pgstream-snapshots-for-postgresql) - Speeding up PostgreSQL dump/restore snapshots
+* https://web.archive.org/web/20250615032937/https://0x80.pl/notesen/2016-11-28-simd-strfind.html#algorithm-2 (https://0x80.pl/notesen/2016-11-28-simd-strfind.html)
 * https://www.youtube.com/watch?v=un3Lu3AKkto - How to show 10 million of something - Christopher Ehrlich
 * https://newsletter.pragmaticengineer.com/p/software-engineering-with-llms-in-2025
-* https://news.ycombinator.com/item?id=44425880 - That XOR Trick (2020) (florian.github.io)
+* https://news.ycombinator.com/item?id=44425880 (https://florian.github.io//xor-trick/) - That XOR Trick (2020)
 * https://trufflesecurity.com/blog/guest-post-how-i-scanned-all-of-github-s-oops-commits-for-leaked-secrets
 * https://ordep.dev/posts/writing-code-was-never-the-bottleneck
 * https://andyatkinson.com/constraint-driven-optimized-responsive-efficient-core-db-design
@@ -1169,23 +1171,23 @@
 * https://www.cloudquery.io/blog/why-and-how-we-built-our-own-full-text-search-engine-with-clickhouse
 * https://en.wikipedia.org/wiki/Hierarchical_navigable_small_world
 * https://www.enterprisedb.com/blog/postgresql-logical-and-physical-replication-comparison-and-advantages-distributed-pgd
-* https://news.ycombinator.com/item?id=44303011 - Reworking Memory Management in CRuby [pdf] (peterzhu.ca)
+* https://news.ycombinator.com/item?id=44303011 (https://blog.peterzhu.ca/assets/ismm_2025.pdf) - Reworking Memory Management in CRuby [pdf]
 * https://algarch.com/blog/the-openai-mafia-why-ex-openai-is-the-new-golden-resume-line
 * https://clickhouse.com/blog/scaling-observability-beyond-100pb-wide-events-replacing-otel
 * https://www.cybertec-postgresql.com/en/select-for-update-considered-harmful-postgresql/
 * https://charity.wtf/2025/06/08/on-how-long-it-takes-to-know-if-a-job-is-right-for-you-or-not/
-* https://lobste.rs/s/ac19tp/2048_with_only_64_bits_state
+* https://lobste.rs/s/ac19tp/2048_with_only_64_bits_state (https://github.com/izabera/bitwise-challenge-2048)
 * https://wangjunfei.com/2025/06/18/Rewriting-Kafka-in-Rust-Async-Insights-and-Lessons-Learned
 * https://macwright.com/2020/10/28/if-not-spas.html
 * https://en.wikipedia.org/wiki/One-instruction_set_computer
 * https://github.com/pgr0ss/pgledger
-* https://lobste.rs/s/uqniaz/double_entry_ledgers_missing_primitive
-* https://lobste.rs/s/dx84oc/why_claude_code_feels_like_magic
+* https://lobste.rs/s/uqniaz/double_entry_ledgers_missing_primitive (https://www.pgrs.net/2025/06/17/double-entry-ledgers-missing-primitive-in-modern-software/)
+* https://lobste.rs/s/dx84oc/why_claude_code_feels_like_magic (https://omarabid.com/claude-magic)
 * https://claudelog.com/
 * https://brooker.co.za/blog/2025/05/20/icpe.html
 * https://conduition.io/coding/ticketmaster/
 * https://blog.singleton.io/posts/2025-06-14-coding-agents-cross-a-chasm/
-* https://lobste.rs/s/lied71/fastest_way_detect_vowel_string
+* https://lobste.rs/s/lied71/fastest_way_detect_vowel_string (https://austinhenley.com/blog/vowels.html)
 * https://explaining.software/archive/the-sudoku-affair/
 * https://rjp.io/blog/2025-06-07-reflections-on-sudoku
 * https://ferd.ca/the-gap-through-which-we-praise-the-machine.html
@@ -1193,14 +1195,14 @@
 * https://www.cybertec-postgresql.com/en/transaction-anomalies-with-select-for-update/
 * https://brandur.org/fragments/testing-request-cancellation
 * https://dev.to/devteam/evolving-our-infrastructure-why-we-moved-from-heroku-postgres-to-neon-1928
-* https://news.ycombinator.com/item?id=39449500 - The Fil-C Manifesto: Garbage In, Memory Safety Out (github.com/pizlonator)
+* https://news.ycombinator.com/item?id=39449500 (https://github.com/pizlonator/llvm-project-deluge/blob/deluge/Manifesto.md) - The Fil-C Manifesto: Garbage In, Memory Safety Out (github.com/pizlonator)
 * https://www.luu.io/posts/2025-database-pendulum
 * https://www.luu.io/posts/2025-performing-next-level
 * http://0x80.pl/notesen/2016-11-28-simd-strfind.html
 * https://linear.app/blog/building-our-way
 * https://tinyclouds.org/underestimating-ai
 * https://www.seangoedecke.com/the-first-big-ai-disaster
-* https://news.ycombinator.com/item?id=44264958 - Jemalloc Postmortem (jasone.github.io)
+* https://news.ycombinator.com/item?id=44264958 (https://jasone.github.io/2025/06/12/jemalloc-postmortem/) - Jemalloc Postmortem
 * https://lucumr.pocoo.org/2025/6/12/agentic-coding/
 * https://wso2.com/blog/research/scalability-modeling-using-universal-scalability-law/
 * https://news.ycombinator.com/item?id=35906604 - Ask HN: It's 2023, how do you choose between MySQL and Postgres?
@@ -1215,17 +1217,17 @@
 * https://rjp.io/blog/2025-05-31-stepping-back
 * https://usefulfictions.substack.com/p/crossing-the-cringe-minefield
 * https://www.orioledb.com/blog/orioledb-bridged-indexes
-* https://lobste.rs/s/uwp2hd/what_s_your_go_message_queue_2025
+* https://lobste.rs/s/uwp2hd/what_s_your_go_message_queue_2025 ()
 * https://apenwarr.ca/log/20170814
 * https://dev.to/mongodb/jsonb-detoasting-read-amplification-4ikj
 * https://fly.io/blog/youre-all-nuts/
 * https://steipete.me/posts/2025/claude-code-is-my-computer#user-content-fn-1
-* https://lobste.rs/s/n2lvmy/ai_changes_everything
-* https://news.ycombinator.com/item?id=44175356 - Mapping latitude and longitude to country, state, or city (austinhenley.com)
+* https://lobste.rs/s/n2lvmy/ai_changes_everything (https://lucumr.pocoo.org/2025/6/4/changes/)
+* https://news.ycombinator.com/item?id=44175356 (https://austinhenley.com/blog/coord2state.html) - Mapping latitude and longitude to country, state, or city
 * https://lamplightdev.com/blog/2024/01/10/streaming-html-out-of-order-without-javascript/
 * https://stefan-gloor.ch/yomani-hack
 * https://www.seangoedecke.com/inference-batching-and-deepseek/
-* https://web.archive.org/web/20250121073718/https://rachelbythebay.com/w/2013/06/05/duck/
+* https://web.archive.org/web/20250121073718/https://rachelbythebay.com/w/2013/06/05/duck/ (https://rachelbythebay.com/w/2013/06/05/duck/)
 * https://simonwillison.net/2025/May/25/claude-4-system-prompt
 * https://maggieappleton.com/now-2025-05/
 * https://substack.com/@itssophieschoice/note/c-115766170
@@ -1249,11 +1251,11 @@
 * https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate
 * https://www.notion.com/blog/sharding-postgres-at-notion
 * https://www.notion.com/blog/data-model-behind-notion
-* https://news.ycombinator.com/item?id=34350749 - What if writing tests was a joyful experience? (janestreet.com)
+* https://news.ycombinator.com/item?id=34350749 (https://blog.janestreet.com/the-joy-of-expect-tests/) - What if writing tests was a joyful experience?
 * https://www.enterprisedb.com/blog/postgresql-anti-patterns-read-modify-write-cycles
 * https://mattweidner.com/2025/05/21/text-without-crdts.html
-* https://news.ycombinator.com/item?id=44020107 - Inigo Quilez: computer graphics, mathematics, shaders, fractals, demoscene (iquilezles.org)
-* https://news.ycombinator.com/item?id=44071610 - Writing A Job Runner (In Elixir) (Again) (10 years later) (github.com/notactuallytreyanastasio)
+* https://news.ycombinator.com/item?id=44020107 (https://iquilezles.org/articles/) - Inigo Quilez: computer graphics, mathematics, shaders, fractals, demoscene
+* https://news.ycombinator.com/item?id=44071610 (https://github.com/notactuallytreyanastasio/genstage_tutorial_2025/blob/main/README.md) - Writing A Job Runner (In Elixir) (Again) (10 years later) (github.com/notactuallytreyanastasio)
 * https://github.com/notactuallytreyanastasio/genstage_tutorial_2025/blob/main/README.md
 * https://pgdog.dev/blog/hacking-postgres-wire-protocol
 * https://heitorpb.github.io/bla/timeout/
@@ -1266,7 +1268,7 @@
 * https://www.seangoedecke.com/practical-ai-techniques/
 * https://www.seangoedecke.com/beyond-prompting/
 * https://sketch.dev/blog/agent-loop
-* https://news.ycombinator.com/item?id=44071418 - OpenAI: Scaling PostgreSQL to the Next Level (pixelstech.net)
+* https://news.ycombinator.com/item?id=44071418 (https://www.pixelstech.net/article/1747708863-openai%3a-scaling-postgresql-to-the-next-level) - OpenAI: Scaling PostgreSQL to the Next Level
 * https://www.marginalia.nu/log/a_120_morning_routine_2030/
 * https://railsatscale.com/2025-05-21-fast-allocations-in-ruby-3-5/
 * https://clayshentrup.medium.com/avoid-each-with-object-generally-89e3b2800b38
@@ -1277,19 +1279,19 @@
 * https://queue.acm.org/detail.cfm?id=1039523 - A Conversation with Alan Kay
 * https://www.youtube.com/watch?v=wLb9g_8r-mE - A conversation with Jony Ive
 * https://bernsteinbear.com/blog/pl-writing
-* https://news.ycombinator.com/item?id=43951885 - I learned Snobol and then wrote a toy Forth (ratfactor.com) - absolutely baited by these types of headlines
+* https://news.ycombinator.com/item?id=43951885 (https://ratfactor.com/snobol/) - I learned Snobol and then wrote a toy Forth - absolutely baited by these types of headlines
 * https://collapseos.org/civ.html - really... noteworthy project
 * https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems
 * https://notado.app/feeds/jado/software-development
-* https://web.archive.org/web/20250408054630/https://flak.tedunangst.com/post/branchless-development
+* https://web.archive.org/web/20250408054630/https://flak.tedunangst.com/post/branchless-development (https://flak.tedunangst.com/post/branchless-development)
 * https://mandymusings.com/posts/why-arent-you-doing-better
-* https://news.ycombinator.com/item?id=42279172 - If not React, then what? (infrequently.org)
+* https://news.ycombinator.com/item?id=42279172 (https://infrequently.org/2024/11/if-not-react-then-what/) - If not React, then what?
 * https://buttondown.com/hillelwayne/archive/write-the-most-clever-code-you-possibly-can
 * https://ghiculescu.substack.com/p/nobody-codes-here-anymore
 * https://cirw.in/blog/garbage-collection
 * https://moxie.org/2024/09/23/a-good-engineer.html
 * https://alifeengineered.substack.com/p/visibility-without-bragging-a-practical
-* https://lobste.rs/s/1t0gpl/curse_knowing_how_fixing_everything
+* https://lobste.rs/s/1t0gpl/curse_knowing_how_fixing_everything (https://notashelf.dev/posts/curse-of-knowing)
 * https://www.seangoedecke.com/getting-things-done
 * https://registerspill.thorstenball.com/p/theres-beauty-in-ai
 
@@ -1305,7 +1307,7 @@
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-37
 * https://koomen.dev/essays/horseless-carriages
 * https://mcyoung.xyz/2025/04/21/go-arenas
-* https://news.ycombinator.com/item?id=43763688 - ClickHouse gets lazier and faster: Introducing lazy materialization (clickhouse.com)
+* https://news.ycombinator.com/item?id=43763688 (https://clickhouse.com/blog/clickhouse-gets-lazier-and-faster-introducing-lazy-materialization) - ClickHouse gets lazier and faster: Introducing lazy materialization
 * https://cookieplmonster.github.io/2025/04/23/gta-san-andreas-win11-24h2-bug/#
 * https://motherduck.com/blog/introducing-instant-sql/
 * https://www.joshwcomeau.com/blog/the-post-developer-era/
@@ -1313,7 +1315,7 @@
 * https://justinjaffray.com/query-engines-push-vs.-pull/
 * https://it-notes.dragas.net/2024/12/28/i-almost-died-for-a-full-sentry-database/
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-36
-* https://news.ycombinator.com/item?id=43677122 - Fibonacci Hashing: The Optimization That the World Forgot (probablydance.com)
+* https://news.ycombinator.com/item?id=43677122 (https://probablydance.com/2018/06/16/fibonacci-hashing-the-optimization-that-the-world-forgot-or-a-better-alternative-to-integer-modulo/) - Fibonacci Hashing: The Optimization That the World Forgot
 * https://waspdev.com/articles/2025-04-06/features-that-every-js-developer-must-know-in-2025
 * https://blog.rpanachi.com/after-25-years-writing-software-here-are-a-few-more-things-ive-learned-so-far-part2
 * https://www.seangoedecke.com/wicked-features
@@ -1335,7 +1337,7 @@
 * https://michaelfeathers.typepad.com/michael_feathers_blog/2011/05/the-carrying-cost-of-code-taking-lean-seriously.html
 * https://jpfennell.com/posts/enum-type-size
 * https://spakhm.substack.com/p/how-to-get-promoted
-* https://news.ycombinator.com/item?id=43603646 - Knowing where your engineer salary comes from (seangoedecke.com)
+* https://news.ycombinator.com/item?id=43603646 (https://www.seangoedecke.com/where-the-money-comes-from/) - Knowing where your engineer salary comes from
 * https://www.phillipcarter.dev/posts/llms-computers
 * https://nedbatchelder.com/blog/201711/toxic_experts.html
 * https://www.astralcodexten.com/p/the-colors-of-her-coat
@@ -1346,7 +1348,7 @@
 * https://ai-2027.com
 * https://stevana.github.io/erlangs_not_about_lightweight_processes_and_message_passing.html
 * https://blog.vectorchord.ai/postgresql-full-text-search-fast-when-done-right-debunking-the-slow-myth
-* https://news.ycombinator.com/item?id=43629307 - The best programmers I know (endler.dev)
+* https://news.ycombinator.com/item?id=43629307 (https://endler.dev/2025/best-programmers/) - The best programmers I know
 * https://www.postgresql.org/docs/current/using-explain.html
 * https://ai-2027.com/
 * https://medium.com/tinder/how-we-improved-our-performance-using-elasticsearch-plugins-part-2-b051da2ee85b
@@ -1393,14 +1395,14 @@
 * https://hamel.dev/blog/posts/field-guide
 * https://alexdanco.com/2025/03/27/scarcity-and-abundance-in-2025
 * https://jacobian.org/2025/mar/13/beware-advice-from-old-heads
-* https://news.ycombinator.com/item?id=43543241 - Show HN: Nue – Apps lighter than a React button (nuejs.org)
+* https://news.ycombinator.com/item?id=43543241 (https://nuejs.org/blog/large-scale-apps/) - Show HN: Nue – Apps lighter than a React button
 * https://blog.julik.nl/2025/03/a-tiny-undo-stack
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-33
 * https://posthog.com/newsletter/communication-mistakes
 * https://www.highagency.com/
 * https://brightonruby.com/2024/ractors-are-rubys-goroutines/
 * https://brooker.co.za/blog/2025/03/25/two-queues.html - One or Two? How Many Queues?
-* https://news.ycombinator.com/item?id=43451285 - Ruby, Ractors, and lock-free data structures (iliabylich.github.io) - aren't ractors supposed to be actors? why go to all this trouble to share stuff? because we're afraid copying will be slow? why not init cpu count ractors, make each ractor listen on different ports, load balance them externally, and make each ractor open a new db connection on init? sort of like how nodejs applications are clustered
+* https://news.ycombinator.com/item?id=43451285 (https://iliabylich.github.io/ruby-ractors-and-lock-free-data-structures/) - Ruby, Ractors, and lock-free data structures - aren't ractors supposed to be actors? why go to all this trouble to share stuff? because we're afraid copying will be slow? why not init cpu count ractors, make each ractor listen on different ports, load balance them externally, and make each ractor open a new db connection on init? sort of like how nodejs applications are clustered
 * https://www.computerenhance.com/p/an-interview-with-zen-chief-architect
 * https://wiki.c2.com/?EverythingIsa
 * https://www.lianeon.org/p/does-material-progress-matter
@@ -1416,7 +1418,7 @@
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-32
 * https://www.crunchydata.com/developers/playground/lateral-join
 * https://wiki.postgresql.org/wiki/Don't_Do_This
-* https://news.ycombinator.com/item?id=43403321 - Don't Be Afraid of Types (lmika.org)
+* https://news.ycombinator.com/item?id=43403321 (https://lmika.org/2025/03/18/dont-be-afraid-of-types.html) - Don't Be Afraid of Types
 * https://ankitmaloo.com/bitter-lesson
 * https://www.tinybird.co/blog-posts/using-bloom-filter-text-indexes-in-clickhouse
 * https://ezyang.github.io/ai-blindspots/
@@ -1430,7 +1432,7 @@
 * https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/
 * https://nav.al/build-a-team-that-ships
 * https://maryrosecook.com/blog/post/explore-expand-exploit
-* https://news.ycombinator.com/item?id=43340662 - I use Cursor daily - here's how I avoid the garbage parts (nickcraux.com)
+* https://news.ycombinator.com/item?id=43340662 (https://www.nickcraux.com/blog/cursor-tips) - I use Cursor daily - here's how I avoid the garbage parts
 * https://www.rtp.pt/play/p14482/e826316/timex-uma-revolucao-por-contar
 * https://interfacecraft.online/posts/blog/2025/how-i-automated-my-computer-life-with-macos-folder-actions/
 * https://fosdem.org/2025/schedule/event/fosdem-2025-4852-how-browsers-really-load-web-pages/
@@ -1440,14 +1442,14 @@
 * https://www.youtube.com/watch?v=bxOqXLL06Sg - Oaken: Fresh take on Fixtures and Seeds - Julián Pinzón Eslava
 * https://cedardb.com/blog/optimistic_btrees/
 * https://en.wikipedia.org/wiki/Seqlock
-* https://lobste.rs/s/t2bmsy/fsync_after_open_is_elaborate_no_op https://www.redpanda.com/blog/why-fsync-is-needed-for-data-safety-in-kafka-or-non-byzantine-protocols
+* https://lobste.rs/s/t2bmsy/fsync_after_open_is_elaborate_no_op (https://despairlabs.com/blog/posts/2025-03-13-fsync-after-open-is-an-elaborate-no-op/) https://www.redpanda.com/blog/why-fsync-is-needed-for-data-safety-in-kafka-or-non-byzantine-protocols
 * https://news.ycombinator.com/item?id=43365894 - writing to different fields in the same jsonb column in the same row in parallel loses data? https://news.ycombinator.com/item?id=39865835
 * https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c
 * https://www.bomberbot.com/tech/expertly-updating-objects-in-postgresql-jsonb-arrays-a-full-stack-developers-guide/
 * https://railsatscale.com/2025-03-14-ruby-debugging-tips-and-recommendations-2025/
 * https://blog.arkency.com/is-your-rails-application-special/
 * https://www.youtube.com/watch?v=Wo2m3jaJixU - "Scaling the Linear Sync Engine"
-* https://news.ycombinator.com/item?id=43364668 - Making Postgres scale (pgdog.dev)
+* https://news.ycombinator.com/item?id=43364668 (https://pgdog.dev/blog/you-can-make-postgres-scale) - Making Postgres scale
 * https://leandromoreira.com/2019/08/02/linux-ffmpeg-source-internals-a-good-software-design/
 * https://gist.github.com/chitchcock/1281611 - "Stevey's Google Platforms Rant"
 * https://blog.aurynn.com/2015/12/16-contempt-culture#ref-1UUU
@@ -1455,8 +1457,8 @@
 * https://seeinglogic.com/posts/visual-readability-patterns/
 * https://alifeengineered.substack.com/p/the-7-behaviors-that-separate-juniors
 * https://bjessbrown.com/using-active-record-merge-and-or
-* https://news.ycombinator.com/item?id=43307809 - I've been using Claude Code for a couple of days (twitter.com/steve_yegge)
-* https://news.ycombinator.com/item?id=43317592 - Performance of the Python 3.14 tail-call interpreter (nelhage.com)
+* https://news.ycombinator.com/item?id=43307809 (https://twitter.com/Steve_Yegge/status/1898674257808515242) - I've been using Claude Code for a couple of days (twitter.com/steve_yegge)
+* https://news.ycombinator.com/item?id=43317592 (https://blog.nelhage.com/post/cpython-tail-call/) - Performance of the Python 3.14 tail-call interpreter
 * https://lemire.me/blog/2025/03/01/how-fast-can-you-open-1000-files
 * https://www.founderstribune.org/p/if-your-product-is-great-it-doesn-t-need-to-be-good-by-paul-buchheit
 * https://www.geoffreylitt.com/2025/03/03/the-nightmare-bicycle.html
@@ -1467,7 +1469,7 @@
 * https://2ality.com/2025/02/what-is-typescript.html
 * https://www.eecs.tufts.edu/~aloupis/comp150/projects/SuccinctTreesinPractice.pdf
 * https://stackoverflow.com/questions/72580828/what-is-a-succinct-rank-data-structure-how-does-it-work
-* https://news.ycombinator.com/item?id=43282995 - Succinct data structures (startifact.com)
+* https://news.ycombinator.com/item?id=43282995 (https://blog.startifact.com/posts/succinct/) - Succinct data structures
 * https://news.ycombinator.com/item?id=43285725 - Ask HN: How did the internet discover my subdomain?
 * https://world.hey.com/joaoqalves/is-this-hackernews-material-how-to-write-and-distribute-great-content-fe9bb11c
 * https://world.hey.com/joaoqalves/365-days-as-head-of-engineering-9045d660
@@ -1478,7 +1480,7 @@
 * https://blog.cloudflare.com/the-sad-state-of-linux-socket-balancing
 * https://byroot.github.io/ruby/performance/2025/03/04/the-pitchfork-story.html
 * https://byroot.github.io/ruby/performance/2025/02/09/guard-rails-are-not-code-smells.html
-* https://web.archive.org/web/20220602012549/https://shopify.engineering/ruby-execution-models
+* https://web.archive.org/web/20220602012549/https://shopify.engineering/ruby-execution-models (https://shopify.engineering/ruby-execution-models)
 * https://danieldelaney.net/chat/
 * https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/xor/#footnote-inverse
 * https://www.lightspeedmagazine.com/fiction/exhalation/
@@ -1492,13 +1494,13 @@
 * https://develop.sentry.dev/getting-started/philosophy/#embrace-the-duct-tape
 * https://lucumr.pocoo.org/2025/2/20/ugly-code/
 * https://www.teamten.com/lawrence/writings/every_line_is_a_potential_bug.html
-* https://web.archive.org/web/20250210033440/https://andysblog.uk/why-blog-if-nobody-reads-it/
+* https://web.archive.org/web/20250210033440/https://andysblog.uk/why-blog-if-nobody-reads-it/ (https://andysblog.uk/why-blog-if-nobody-reads-it/)
 * https://thecreativeindependent.com/guides/how-to-feel-like-you-have-enough/
 * https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/
 * https://serce.me/posts/2025-02-07-the-llm-curve-of-impact-on-software-engineers
 * https://daniel.haxx.se/blog/2025/02/18/changing-every-line-three-times/
 * https://muratbuffalo.blogspot.com/2025/02/what-makes-entrepreneurs-entrepreneurial.html
-* https://news.ycombinator.com/item?id=43127577 - Why does target="_blank" have an underscore in front? (2024) (kyrylo.org)
+* https://news.ycombinator.com/item?id=43127577 (https://kyrylo.org/html/2024/10/25/why-does-target-blank-have-an-underscore-in-front.html) - Why does target="_blank" have an underscore in front? (2024)
 * https://benjaminwootton.com/insights/clickhouse-peerdb-cdc/
 * https://vine.dev/docs/features/inverse
 * https://eieio.games/blog/running-pong-in-240-browser-tabs/
@@ -1509,15 +1511,15 @@
 * https://krebsonsecurity.com/2025/01/mastercard-dns-error-went-unnoticed-for-years/
 * https://chriskiehl.com/article/thoughts-after-10-years
 * https://simonwillison.net/2024/Dec/22/link-blog/
-* https://news.ycombinator.com/item?id=42938409 - How I use LLMs as a staff engineer (seangoedecke.com)
+* https://news.ycombinator.com/item?id=42938409 (https://www.seangoedecke.com/how-i-use-llms/) - How I use LLMs as a staff engineer
 * https://sacckey.dev/posts/implementing-a-game-boy-emulator-in-ruby/
 * https://planetscale.com/blog/the-slotted-counter-pattern
 * https://bugs.ruby-lang.org/issues/19842 - M:N ruby
-* https://news.ycombinator.com/item?id=42916203 - Ruby “Thread Contention” Is Simply GVL Queuing (island94.org) - Locks, async IO... everything is just interacting queues.
+* https://news.ycombinator.com/item?id=42916203 (https://island94.org/2025/01/ruby-thread-contention-simply-gvl-queuing) - Ruby “Thread Contention” Is Simply GVL Queuing - Locks, async IO... everything is just interacting queues.
 * https://blog.danielh.cc/blog/puzzle
 * https://blog.danielh.cc/blog/leetcode
 * https://thume.ca/2013/04/10/the-best-programming-videogame/
-* https://news.ycombinator.com/item?id=42950976 - Are LLMs able to notice the “gorilla in the data”? (chiraaggohel.com)
+* https://news.ycombinator.com/item?id=42950976 (https://chiraaggohel.com/posts/llms-eda/) - Are LLMs able to notice the “gorilla in the data”?
 * https://en.m.wikipedia.org/wiki/Simpson%27s_paradox
 * https://en.m.wikipedia.org/wiki/Datasaurus_dozen
 * https://en.m.wikipedia.org/wiki/Anscombe's_quartet
@@ -1525,10 +1527,10 @@
 * https://redmonk.com/sogrady/2024/09/12/language-rankings-6-24/
 * https://gist.github.com/peterc/214aab5c6d783563acbc2a9425e5e866 rails CONVENTIONS.md
 * https://dasl.cc/2025/01/01/debugging-our-new-linux-kernel/
-* https://news.ycombinator.com/item?id=43045151 - Exposing concurrency bugs with a custom scheduler (lwn.net)
+* https://news.ycombinator.com/item?id=43045151 (https://lwn.net/Articles/1007689/) - Exposing concurrency bugs with a custom scheduler
 * https://mewtru.com/flappyfavi
-* https://news.ycombinator.com/item?id=43030388 - Tiny JITs for a Faster FFI (railsatscale.com)
-* https://news.ycombinator.com/item?id=43062546 - Watt The Fox? (43z.one)
+* https://news.ycombinator.com/item?id=43030388 (https://railsatscale.com/2025-02-12-tiny-jits-for-a-faster-ffi/) - Tiny JITs for a Faster FFI
+* https://news.ycombinator.com/item?id=43062546 (https://h.43z.one/blog/2025-02-12/) - Watt The Fox?
 * https://langdev.stackexchange.com/questions/4325/how-do-modern-compilers-choose-which-variables-to-put-in-registers
 * https://garry.net/posts/dead-games
 * https://byroot.github.io/ruby/performance/2025/02/24/http2-past-the-load-balancer.html
@@ -1554,7 +1556,7 @@
 * https://world.hey.com/davidsenra/working-backwards-insights-stories-and-secrets-from-inside-amazon-d81f5559
 * https://antirez.com/news/145
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-26
-* https://news.ycombinator.com/item?id=42962363 - Good engineers are right, a lot (seangoedecke.com)
+* https://news.ycombinator.com/item?id=42962363 (https://www.seangoedecke.com/being-right-a-lot/) - Good engineers are right, a lot
 * https://www.elastic.co/blog/understanding-query-then-fetch-vs-dfs-query-then-fetch
 * https://www.jitbit.com/alexblog/249-now-thats-what-i-call-a-hacker/
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-25
@@ -1565,39 +1567,39 @@
 * https://soatok.blog/2021/01/20/please-stop-encrypting-with-rsa-directly/
 * https://www.chrbutler.com/digital-reality-digital-shock
 * https://blog.nelhage.com/post/personal-software-with-claude/
-* https://news.ycombinator.com/item?id=42845169 - Better Know a Ruby Thing: Singleton Classes (noelrappin.com)
+* https://news.ycombinator.com/item?id=42845169 (https://noelrappin.com/blog/2025/01/better-know-a-ruby-thing-singleton-classes/) - Better Know a Ruby Thing: Singleton Classes
 * https://newsletter.systemdesign.one/p/how-does-bluesky-work
-* https://lobste.rs/s/wfmynv/how_we_share_secrets_at_fully_remote
-* https://news.ycombinator.com/item?id=42291417 - RAII and the Rust/Linux Drama (kristoff.it)
-* https://news.ycombinator.com/item?id=42874605 - Hard Mode Rust (2022) (matklad.github.io)
+* https://lobste.rs/s/wfmynv/how_we_share_secrets_at_fully_remote (https://mill.plainopen.com/how-we-share-secrets-at-a-fully-remote-startup.html)
+* https://news.ycombinator.com/item?id=42291417 (https://kristoff.it/blog/raii-rust-linux/) - RAII and the Rust/Linux Drama
+* https://news.ycombinator.com/item?id=42874605 (https://matklad.github.io/2022/10/06/hard-mode-rust.html) - Hard Mode Rust (2022)
 * https://public-inbox.org/git/alpine.DEB.1.00.0807222100150.8986@racer/?ref=blog.gitbutler.com
 * https://blog.gitbutler.com/why-is-git-autocorrect-too-fast-for-formula-one-drivers/
 * https://kellysutton.com/2024/01/15/moving-on-from-react.html
 * https://railsatscale.com/2025-01-10-yjit-3-4-even-faster-and-more-memory-efficient/
 * https://blog.sbensu.com/posts/incentives-as-selection-effects/
-* https://news.ycombinator.com/item?id=42707238 - Nobody cares (grantslatton.com)
+* https://news.ycombinator.com/item?id=42707238 (https://grantslatton.com/nobody-cares) - Nobody cares
 * https://notes.billmill.org/blog/2024/03/How_I_use_git_worktrees.html
 * https://www.oftwominds.com/blogjun24/negativity6-24.html
 * https://wyounas.github.io/concurrency/2025/01/13/when-a-simple-concurrent-program-goes-against-all-intuition/
 * https://blog.rongarret.info/2009/12/xooglers-rises-from-ashes.html
 * https://blog.rongarret.info/2025/01/i-am-not-failure-lessons-learned-from.html
-* https://lobste.rs/s/mioxtn/vs_code_extension_let_llms_interactively
+* https://lobste.rs/s/mioxtn/vs_code_extension_let_llms_interactively (https://github.com/jasonjmcghee/claude-debugs-for-you)
 * https://byroot.github.io/ruby/performance/2025/01/23/the-mythical-io-bound-rails-app.html
 * https://byroot.github.io/ruby/performance/2025/01/23/io-instrumentation.html
 * https://ertu.dev/posts/i-made-an-online-shooter-game-in-lisp/
-* https://news.ycombinator.com/item?id=42784699 - The FizzBuzz that did not get me the job (kranga.notion.site)
+* https://news.ycombinator.com/item?id=42784699 (https://kranga.notion.site/The-fizzbuzz-that-did-not-get-me-the-job-180e7c22ef3b80c3a386f7f8de720ac7) - The FizzBuzz that did not get me the job
 * https://typecraft.dev/newsletters/2025-01-08/lessons-learned-over-a-career
 * https://ssno.cc/posts/reversing-tac-1-4-2025
 * https://outsidetext.substack.com/p/anomalous-tokens-in-deepseek-v3-and
 * https://en.m.wikipedia.org/wiki/Baumol_effect
 * https://byroot.github.io/ruby/performance/2025/01/25/why-does-everyone-hate-fork.html
 * https://use-the-index-luke.com/sql/where-clause/obfuscation/smart-logic
-* https://news.ycombinator.com/item?id=42778151 - You probably don't need query builders (mattrighetti.com)
+* https://news.ycombinator.com/item?id=42778151 (https://mattrighetti.com/2025/01/20/you-dont-need-sql-builders) - You probably don't need query builders
 * https://stratechery.com/2025/deepseek-faq/
 * https://registerspill.thorstenball.com/p/how-might-ai-change-programming
 * https://byroot.github.io/ruby/performance/2025/01/29/so-you-want-to-remove-the-gvl.html
 * https://www.cockroachlabs.com/blog/living-without-atomic-clocks/
-* https://news.ycombinator.com/item?id=42813049 - Every System is a Log: Avoiding coordination in distributed applications (restate.dev)
+* https://news.ycombinator.com/item?id=42813049 (https://restate.dev/blog/every-system-is-a-log-avoiding-coordination-in-distributed-applications/) - Every System is a Log: Avoiding coordination in distributed applications
 * https://www.benkuhn.net/overconfidence/
 * https://www.benkuhn.net/vc-emh/
 * https://www.paulgraham.com/relres.html
@@ -1616,9 +1618,9 @@
 * https://writing.nikunjk.com/p/do-hard-things
 * https://lukaspetersson.com/blog/2025/bitter-vertical/
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-23
-* https://web.archive.org/web/20240823050616/https://www.cursor.com/blog/instant-apply
+* https://web.archive.org/web/20240823050616/https://www.cursor.com/blog/instant-apply (https://www.cursor.com/blog/instant-apply)
 * https://softwaredoug.com/blog/2024/12/14/throwaway-prs-not-design-docs
-* https://web.archive.org/web/20250114182608/https://beza1e1.tuxen.de/lore/index.html -- "Software Folklore. Sometimes bugs have symptoms beyond belief. This is a collection of such stories from around the web." awesome
+* https://web.archive.org/web/20250114182608/https://beza1e1.tuxen.de/lore/index.html (https://beza1e1.tuxen.de/lore/index.html) -- "Software Folklore. Sometimes bugs have symptoms beyond belief. This is a collection of such stories from around the web." awesome
 * https://en.wikipedia.org/wiki/Simulated_annealing
 * https://www.ee.torontomu.ca/~elf/hack/recovery.html
 * https://www.theerlangelist.com/article/spawn_or_not
@@ -1666,7 +1668,7 @@
 * https://habr-com.translate.goog/ru/companies/yandex/articles/442762/?_x_tr_sl=ru&_x_tr_tl=en&_x_tr_hl=en
 * https://stripe.com/blog/secret-life-of-dns
 * https://dansvetlov.me/puma-internals/
-* https://news.ycombinator.com/item?id=13736674 - Epoll is fundamentally broken (popcount.org)
+* https://news.ycombinator.com/item?id=13736674 (https://idea.popcount.org/2017-02-20-epoll-is-fundamentally-broken-12/) - Epoll is fundamentally broken
 
 # December 2024
 * https://blog.sequinstream.com/keyset-cursors-not-offsets-for-postgres-pagination/
@@ -1688,7 +1690,7 @@
 * https://dba.stackexchange.com/questions/281846/possible-for-two-simple-updates-on-the-same-table-to-deadlock/298482#298482
 * https://www.youtube.com/watch?v=uZ8DcbhojOw - "Keynote: Advent of Code, Behind the Scenes - Eric Wastl"
 * https://discuss.rubyonrails.org/t/why-is-rails-boot-so-slow-on-macos/74021/42
-* https://lobste.rs/s/btagmw/maliciously_crafted_github_branch_name
+* https://lobste.rs/s/btagmw/maliciously_crafted_github_branch_name (https://github.com/ultralytics/ultralytics/issues/18027)
 * https://jpcamara.com/2024/12/01/speeding-up-ruby.html
 * https://eregon.me/blog/2022/01/06/benchmarking-cruby-mjit-yjit-jruby-truffleruby.html
 * https://simonwillison.net/2024/Nov/27/storing-times-for-human-events/
@@ -1706,7 +1708,7 @@
 * https://jeremymorrell.dev/blog/a-practitioners-guide-to-wide-events
 * https://nostr.com/
 * https://newsletter.squishy.computer/p/natures-many-attempts-to-evolve-a
-* https://news.ycombinator.com/item?id=42270378 - How much memory do you need in 2024 to run 1M concurrent tasks? (hez2010.github.io)
+* https://news.ycombinator.com/item?id=42270378 (https://hez2010.github.io/async-runtimes-benchmarks-2024/) - How much memory do you need in 2024 to run 1M concurrent tasks?
 * https://paulgraham.com/wealth.html
 * https://www.youtube.com/watch?v=XQS9SECCp1I - Using Erlang upgrade a drone while in-flight
 * https://sirupsen.com/
@@ -1720,7 +1722,7 @@
 * https://gist.github.com/nateberkopec/03cdbe26578fe1d1add2db7f4867ec38 - Ruby on Rails latency chart
 * https://www.geekytidbits.com/postgres-distinct-on
 * https://peterullrich.com/saga-pattern-in-elixir
-* https://news.ycombinator.com/item?id=42165057 - Good Software Development Habits (zarar.dev)
+* https://news.ycombinator.com/item?id=42165057 (https://zarar.dev/good-software-development-habits/) - Good Software Development Habits
 * https://www.midwesternish.com/blog/the-three-mindsets
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-16
 * https://news.ycombinator.com/item?id=42174204 - Launch HN: Regatta Storage (YC F24) – Turn S3 into a local-like, POSIX cloud FS
@@ -1739,15 +1741,15 @@
 * https://tenderlovemaking.com/2024/09/29/eliminating-intermediate-array-allocations/
 * https://jonleighton.name/2011/initialize_clone-initialize_dup-and-initialize_copy-in-ruby/
 * https://cln.co/
-* https://news.ycombinator.com/item?id=42004756 - Programming languages that blew my mind (2023) (yoric.github.io)
+* https://news.ycombinator.com/item?id=42004756 (https://yoric.github.io/post/programming-languages-that-blew-my-mind/) - Programming languages that blew my mind (2023)
 * https://www.youtube.com/watch?v=Pg72m3CjuK4 - "Everything We Teach at YCombinator in 10 Minutes"
 * https://dontbuildsaas.com/
 * https://daniloleal.co/my-world/thinking/the-surprising-complexity-of-simple-features
-* https://news.ycombinator.com/item?id=42101729 - Algorithms We Develop Software By (grantslatton.com)
-* https://news.ycombinator.com/item?id=41284409 - Algorithms we develop software by (grantslatton.com)
+* https://news.ycombinator.com/item?id=42101729 (https://grantslatton.com/software-pathfinding#algorithms-we-develop-software-by) - Algorithms We Develop Software By
+* https://news.ycombinator.com/item?id=41284409 (https://grantslatton.com/software-pathfinding) - Algorithms we develop software by
 * https://challahscript.com/what_i_wish_someone_told_me_about_postgres
 * https://wiki.postgresql.org/wiki/Don%27t_Do_This
-* https://lobste.rs/s/1k66tl/typed_env_vars_for_valid_environments
+* https://lobste.rs/s/1k66tl/typed_env_vars_for_valid_environments (https://runme.dev/blog/typed-env-vars)
 * https://reprog.wordpress.com/2010/03/06/programming-books-part-2-the-elements-of-programming-style/
 * https://newsletter.ozwrites.com/p/november-ramble
 * https://pushtoprod.substack.com/p/netflix-terrifying-concurrency-bug
@@ -1761,7 +1763,7 @@
 * https://sdr-podcast.com/episodes/target-triples/
 * https://www.crunchydata.com/blog/a-change-to-relresultinfo-a-near-miss-with-postgres-17-1
 * https://www.crunchydata.com/blog/rise-of-the-anti-join
-* https://news.ycombinator.com/item?id=42111031 - How I ship projects at big tech companies (seangoedecke.com)
+* https://news.ycombinator.com/item?id=42111031 (https://www.seangoedecke.com/how-to-ship/) - How I ship projects at big tech companies
 * https://www.doxsey.net/blog/go-and-assembly/
 * https://www.youtube.com/watch?v=olxoNDBp6Rg - Eileen Uchitelle - The Myth of the Modular Monolith - Rails World 2024
 * https://morizbuesing.com/blog/greppability-code-metric/
@@ -1771,7 +1773,7 @@
 * https://graphics.stanford.edu/~seander/bithacks.html
 * https://blog.depthsofrepair.com/p/do-hard-things-carefully
 * https://daniel.lawrence.lu/blog/y2023m12d15/
-* https://news.ycombinator.com/item?id=42036303 - Do you need Redis? PostgreSQL does queuing, locking, and pub/sub (2021) (atomicobject.com)
+* https://news.ycombinator.com/item?id=42036303 (https://spin.atomicobject.com/redis-postgresql/) - Do you need Redis? PostgreSQL does queuing, locking, and pub/sub (2021)
 * https://blog.samaltman.com/the-days-are-long-but-the-decades-are-short
 * https://newsletter.pragmaticengineer.com/p/building-the-threads-app
 * https://www.hailelagi.com/notes/how-do-databases-count
@@ -1785,7 +1787,7 @@
 # October 2024
 * https://www.quora.com/How-did-Stripe-come-up-with-its-name
 * https://gregbrockman.com/
-* https://news.ycombinator.com/item?id=41879072 - Code that helped end Apartheid (wired.com)
+* https://news.ycombinator.com/item?id=41879072 (https://www.wired.com/story/plaintext-you-can-now-see-the-code-that-ended-apartheid/) - Code that helped end Apartheid
 * https://blog.jgc.org/2024/09/cracking-old-zip-file-to-help-open.html?m=1
 * https://www.shayon.dev/post/2024/303/using-ctid-based-pagination-for-data-cleanups-in-postgresql/
 * https://www.brendangregg.com/blog//2024-10-29/ai-flame-graphs.html
@@ -1798,7 +1800,7 @@
 * https://alifeengineered.substack.com/p/mid-level-to-staff-engineer-in-two
 * https://registerspill.thorstenball.com/p/in-conversation-david-albert
 * https://dropbox.tech/infrastructure/robinhood-in-house-load-balancing-service
-* https://news.ycombinator.com/item?id=42023089 - My Time Working at Stripe (jondlm.github.io)
+* https://news.ycombinator.com/item?id=42023089 (https://jondlm.github.io/website/blog/leaving_stripe/) - My Time Working at Stripe
 * https://www.ribbonfarm.com/2009/10/07/the-gervais-principle-or-the-office-according-to-the-office/
 * https://ludic.mataroa.blog/blog/quitting-my-job-for-the-way-of-pain/
 * https://ludic.mataroa.blog/blog/get-me-out-of-data-hell/
@@ -1821,25 +1823,25 @@
 * https://speakerdeck.com/palkan/kaigi-on-rails-2024-rails-way-or-the-highway?slide=94
 * https://www.thenile.dev/blog/transaction-isolation-postgres
 * https://www.andrescn.me/article/2024/10/22/impostor-syndrome.html
-* https://news.ycombinator.com/item?id=41757940 - Optimizing Postgres table layout for maximum efficiency (ena.to)
+* https://news.ycombinator.com/item?id=41757940 (https://r.ena.to/blog/optimizing-postgres-table-layout-for-maximum-efficiency/) - Optimizing Postgres table layout for maximum efficiency
 * https://brooker.co.za/blog/2022/08/11/backoff.html
-* https://news.ycombinator.com/item?id=41813304 - Working from home is powering productivity (imf.org)
+* https://news.ycombinator.com/item?id=41813304 (https://www.imf.org/en/Publications/fandd/issues/2024/09/working-from-home-is-powering-productivity-bloom) - Working from home is powering productivity
 * https://entropicthoughts.com/practices-of-reliable-software-design
-* https://news.ycombinator.com/item?id=41755805 - Good Retry, Bad Retry (medium.com/yandex)
+* https://news.ycombinator.com/item?id=41755805 (https://medium.com/yandex/good-retry-bad-retry-an-incident-story-648072d3cee6) - Good Retry, Bad Retry (medium.com/yandex)
 * https://grayolson.com/blog/posts/nurturing-the-soul-of-a-computer-engineer/ <3 <3 <3
 * https://registerspill.thorstenball.com/p/use-data-that-looks-like-data
-* https://lobste.rs/s/ylcar9/6_years_with_gleam
+* https://lobste.rs/s/ylcar9/6_years_with_gleam (https://crowdhailer.me/2024-10-04/6-years-with-gleam/)
 * https://richardesigns.co.uk/articles/tales-from-a-startup/michael-siebels-advice-default-to-action-has-been-trans-formative
 * https://www.da.vidbuchanan.co.uk/blog/dram-emfi.html
 * https://blog.appsignal.com/2024/10/07/whats-new-in-ruby-on-rails-8.html
-* https://news.ycombinator.com/item?id=41748664 - Whence '\n'? (rodarmor.com)
+* https://news.ycombinator.com/item?id=41748664 (https://rodarmor.com/blog/whence-newline/) - Whence '\n'?
 * https://0pointer.net/blog/projects/systemd.html
 * https://martinheinz.dev/blog/105 - "You Don't Need a Dedicated Cache Service - PostgreSQL as a Cache"
-* https://lobste.rs/s/996uq0/gilded_rose_refactoring_kata_ruby_as_if_it
+* https://lobste.rs/s/996uq0/gilded_rose_refactoring_kata_ruby_as_if_it (https://zverok.space/blog/2024-09-19-gilded_rose.html)
 * https://llogiq.github.io/2016/09/27/count.html
 * https://www.sigbus.info/how-i-wrote-a-self-hosting-c-compiler-in-40-days
 * https://www.sigbus.info/worse-is-better
-* https://news.ycombinator.com/item?id=41752436 - What is the history of the use of "foo" and "bar" in source code examples? (2012) (softwareengineering.stackexchange.com)
+* https://news.ycombinator.com/item?id=41752436 (https://softwareengineering.stackexchange.com/questions/69788/what-is-the-history-of-the-use-of-foo-and-bar-in-source-code-examples) - What is the history of the use of "foo" and "bar" in source code examples? (2012)
 * https://www.linusakesson.net/programming/kernighans-lever/index.php
 * https://www.youtube.com/watch?v=7VSVfQcaxFY - "How 1 Software Engineer Outperforms 138 - Lichess Case Study"
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-9
@@ -1858,7 +1860,7 @@
 * https://justine.lol/mutex/
 * https://www.usenix.org/system/files/login-logout_1305_mickens.pdf
 * https://github.blog/news-insights/the-library/downtime-last-saturday/
-* https://news.ycombinator.com/item?id=11065933 - Is Redlock Safe? Reply to Redlock Analysis (antirez.com)
+* https://news.ycombinator.com/item?id=11065933 (http://antirez.com/news/101) - Is Redlock Safe? Reply to Redlock Analysis
 * https://en.wikipedia.org/wiki/Test_and_test-and-set
 * https://en.wikipedia.org/wiki/Test-and-set
 * http://antirez.com/news/101
@@ -1868,14 +1870,14 @@
 
 # September 2024
 * https://www.crunchydata.com/blog/prepared-statements-in-transaction-mode-for-pgbouncer
-* https://news.ycombinator.com/item?id=19105733 - Reflecting on My Failure to Build a Billion-Dollar Company (medium.com/shl)
+* https://news.ycombinator.com/item?id=19105733 (https://medium.com/@shl/reflecting-on-my-failure-to-build-a-billion-dollar-company-b0c31d7db0e7) - Reflecting on My Failure to Build a Billion-Dollar Company (medium.com/shl)
 * https://registerspill.thorstenball.com/p/skin-shedding-code
 * https://www.youtube.com/watch?v=Ch9R4ZxvtG0 - "Oxide and Friends 9/16/2024 -- Reflecting on Founder Mode"
 * https://www.youtube.com/watch?v=Td_PGkfIdIQ - "Gabe Newell: On Productivity, Economics, Political Institutions, and the Future of Corporations"
-* https://lobste.rs/s/aobazu/is_ai_silver_bullet
+* https://lobste.rs/s/aobazu/is_ai_silver_bullet (https://ian-cooper.writeas.com/is-ai-a-silver-bullet)
 * https://charliereese.ca/y-combinator-top-50-software-startups/
 * https://keygen.sh/blog/that-one-time-keygen-went-down-for-5-hours-twice/ - sidekiq unique jobs causing outage
-* https://news.ycombinator.com/item?id=41549649 - How to succeed in MrBeast production (Leaked PDF) (simonwillison.net)
+* https://news.ycombinator.com/item?id=41549649 (https://simonwillison.net/2024/Sep/15/how-to-succeed-in-mrbeast-production/) - How to succeed in MrBeast production (Leaked PDF)
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-8
 * https://jguer.space/posts/the-issue-is-not-only-your-design-doc/
 * https://drive.google.com/file/d/1YaG9xpu-WQKBPUi8yQ4HaDYQLUSa7Y3J/view
@@ -1892,13 +1894,13 @@
 * https://www.youtube.com/watch?v=FKTxC9pl-WM - "Making Badass Developers - Kathy Sierra (Serious Pony) keynote"
 * https://www.youtube.com/watch?v=SxdOUGdseq4 - ""Simple Made Easy" - Rich Hickey (2011)"
 * https://www.youtube.com/watch?v=IcgmSRJHu_8 - ""Making Impossible States Impossible" by Richard Feldman"
-* https://lobste.rs/s/ja3oaw/asynchronous_io_next_billion_dollar
+* https://lobste.rs/s/ja3oaw/asynchronous_io_next_billion_dollar (https://yorickpeterse.com/articles/asynchronous-io-the-next-billion-dollar-mistake/)
 * https://groups.google.com/g/golang-nuts/c/mXrkXxNVZmE
 * https://www.reddit.com/r/golang/comments/xiu4zg/how_does_go_know_when_a_goroutine_hits_io_and_can/
 * https://akshay-kumar.hashnode.dev/go-internals-http-request-multiplexing-in-go-1
 * https://en.wikipedia.org/wiki/Xavier_Leroy -- LinuxThreads and OCaml creator!
 * https://blog.sentry.io/transaction-id-wraparound-in-postgres/
-* https://web.archive.org/web/20160304041014/https://www.joyent.com/blog/manta-postmortem-7-27-2015
+* https://web.archive.org/web/20160304041014/https://www.joyent.com/blog/manta-postmortem-7-27-2015 (https://www.joyent.com/blog/manta-postmortem-7-27-2015)
 * https://tidyfirst.substack.com/p/scope-management-101
 * https://www.youtube.com/watch?v=0lKjFLYkXTE - "Railsberry Lightning Talk: Delete your code"
 * https://omniti.com/seeds/your-code-may-be-elegant.html
@@ -1912,7 +1914,7 @@
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-7
 * https://www.youtube.com/watch?v=dF_9YcehCZo - "Saving Voyager 1! - Bruce Waggoner at !!Con 2024"
 * https://reader.tymoon.eu/article/437
-* https://news.ycombinator.com/item?id=41513648 - SQLite on Rails: The how and why of optimal performance (fractaledmind.github.io)
+* https://news.ycombinator.com/item?id=41513648 (https://fractaledmind.github.io/2024/04/15/sqlite-on-rails-the-how-and-why-of-optimal-performance/) - SQLite on Rails: The how and why of optimal performance
 * https://www.crunchydata.com/blog/postgres-at-scale-running-multiple-pgbouncers
 * https://eoinkelly.info/2023/01/06/rails-and-pgbouncer-notes
 * https://notso.boringsql.com/posts/beyond-upserts-with-merge/
@@ -1944,7 +1946,7 @@
 * https://daniel.haxx.se/blog/2024/08/14/slow-tcp-connect-on-windows/
 * https://saagarjha.com/blog/2020/05/10/why-we-at-famous-company-switched-to-hyped-technology/
 * https://tailscale.com/blog/heart-of-dark-mode
-* https://news.ycombinator.com/item?id=41395413 - The secret inside One Million Checkboxes (eieio.games)
+* https://news.ycombinator.com/item?id=41395413 (https://eieio.games/essays/the-secret-in-one-million-checkboxes/) - The secret inside One Million Checkboxes
 * https://matklad.github.io/2023/01/26/rusts-ugly-syntax.html
 * https://nav.al/skill-business
 * https://nav.al/work-hard
@@ -1953,20 +1955,20 @@
 * https://www.startuplessonslearned.com/2009/01/sharding-for-startups.html#comment-form
 * https://notes.eatonphil.com/2023-10-01-intercepting-and-modifying-linux-system-calls-with-ptrace.html
 * https://www.elastic.co/guide/en/elasticsearch/reference/8.15/query-dsl-percolate-query.html
-* https://lobste.rs/s/gd1pre/sql_has_problems_we_can_fix_them_pipe
-* https://lobste.rs/s/fspevs/queueing_shell_game
+* https://lobste.rs/s/gd1pre/sql_has_problems_we_can_fix_them_pipe (https://storage.googleapis.com/gweb-research2023-media/pubtools/1004848.pdf)
+* https://lobste.rs/s/fspevs/queueing_shell_game (https://blog.danslimmon.com/2024/08/21/the-queueing-shell-game/)
 * https://blog.danslimmon.com/2016/08/26/the-most-important-thing-to-understand-about-queues/
-* https://lobste.rs/s/rmba3f/zig_emulators
+* https://lobste.rs/s/rmba3f/zig_emulators (https://floooh.github.io/2024/08/24/zig-and-emulators.html)
 * https://dev.jimgrey.net/2024/07/03/lessons-learned-in-35-years-of-making-software/
 * https://www.youtube.com/watch?v=_94Ja45AVzU - "Lazygit creator interviews DHH (Rails creator)"
 * https://www.maragu.dev/blog/go-is-my-hammer-and-everything-is-a-nail
-* https://lobste.rs/s/yko6ox/go_structs_are_copied_on_assignment_other
+* https://lobste.rs/s/yko6ox/go_structs_are_copied_on_assignment_other (https://jvns.ca/blog/2024/08/06/go-structs-copied-on-assignment/)
 * https://fly.io/blog/soc2-the-screenshots-will-continue-until-security-improves/
 * https://outerproduct.net/2021-02-13_att-asm.html
 * https://www.shayon.dev/post/2024/225/stop-relying-on-if-not-exists-for-concurrent-index-creation-in-postgresql/
 * https://steveklabnik.com/writing/against-names/
 * https://railsatscale.com/2024-07-18-mastering-ruby-code-navigation-major-enhancements-in-ruby-lsp-2024/
-* https://lobste.rs/s/hcjxaa/just_use_postgres
+* https://lobste.rs/s/hcjxaa/just_use_postgres (https://mccue.dev/pages/8-16-24-just-use-postgres)
 * https://www.allthingsdistributed.com/2024/08/continuous-reinvention-a-brief-history-of-block-storage-at-aws.html
 * https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/code-review-antipatterns/
 * https://www.earth.li/~noodles/blog/2024/08/aoc-thoughts.html
@@ -1977,7 +1979,7 @@
 * https://blog.kerollmops.com/meilisearch-is-too-slow
 * https://www.putsdebug.com/posts/uncovering-weaknesses
 * https://spinscale.de/posts/2021-09-15-understanding-elasticsearch-percolate-query.html
-* https://lobste.rs/s/uhtjdz/rust_vs_zig_reality_somewhat_friendly
+* https://lobste.rs/s/uhtjdz/rust_vs_zig_reality_somewhat_friendly (https://thenewstack.io/rust-vs-zig-in-reality-a-somewhat-friendly-debate/)
 * https://blog.allegro.tech/2021/10/how-to-ruin-elasticsearch-performance-part-ii.html
 * https://blog.allegro.tech/2021/09/how-to-ruin-elasticsearch-performance-part-i.html
 * https://riverqueue.com/blog/launching-workflows-and-river-pro
@@ -1986,34 +1988,34 @@
 * https://stackoverflow.com/a/75391120
 * https://www.jamesarmes.com/2023/03/bidirectional-replication-postgresql-pglogical.html
 * https://aws.amazon.com/blogs/database/postgresql-bi-directional-replication-using-pglogical/
-* https://news.ycombinator.com/item?id=41159797 - How to Get or Create in PostgreSQL (hakibenita.com) - upsert, merge
-* https://lobste.rs/s/hxauaw/y_all_are_sleeping_on_http_3
-* https://news.ycombinator.com/item?id=41164885 - Debugging a rustc segfault on Illumos (sunshowers.io)
+* https://news.ycombinator.com/item?id=41159797 (https://hakibenita.com/postgresql-get-or-create) - How to Get or Create in PostgreSQL - upsert, merge
+* https://lobste.rs/s/hxauaw/y_all_are_sleeping_on_http_3 (https://kmcd.dev/posts/yall-are-sleeping-on-http3/)
+* https://news.ycombinator.com/item?id=41164885 (https://sunshowers.io/posts/rustc-segfault-illumos/) - Debugging a rustc segfault on Illumos
 * https://willj.net/posts/you-should-use-the-rails-logger-block-syntax/
 * https://brooker.co.za/blog/2014/07/04/iostat-pct.html
 * https://brooker.co.za/blog/2021/04/19/latency.html
 * https://brooker.co.za/blog/2017/12/28/mean.html
 
 # July 2024
-* https://news.ycombinator.com/item?id=41146239 - "We ran out of columns" (jimmyhmiller.github.io)
+* https://news.ycombinator.com/item?id=41146239 (https://jimmyhmiller.github.io/ugliest-beautiful-codebase) - "We ran out of columns"
 * https://news.ycombinator.com/item?id=41147191 - categories or tagging in postgres
-* https://lobste.rs/s/aotvqu/functional_programming_languages
+* https://lobste.rs/s/aotvqu/functional_programming_languages (https://cohost.org/prophet/post/7083950-functional-programming)
 * https://prophetlabs.de/posts/classTries.html
-* https://lobste.rs/s/awdn3y/http_0_9_from_scratch
+* https://lobste.rs/s/awdn3y/http_0_9_from_scratch (https://kmcd.dev/posts/http0.9-from-scratch/)
 * https://justine.lol/sectorlisp2/
 * https://registerspill.thorstenball.com/p/things-you-can-to-with-codebases
 * https://news.ycombinator.com/item?id=41108068 - 1 man saas playbook
 * https://news.ycombinator.com/item?id=41111324 - advice
 * https://news.ycombinator.com/item?id=41147787
 * https://eli.thegreenplace.net/2024/notes-on-taylor-and-maclaurin-series
-* https://lobste.rs/s/z0vpdn/go_reasonable_good_language
-* https://web.archive.org/web/20230607033544/https://old.reddit.com/r/rails/comments/6jz7tq/source_code_lobsters_a_hacker_news_clone_built/
+* https://lobste.rs/s/z0vpdn/go_reasonable_good_language (https://kokada.capivaras.dev/blog/go-a-reasonable-good-language/)
+* https://web.archive.org/web/20230607033544/https://old.reddit.com/r/rails/comments/6jz7tq/source_code_lobsters_a_hacker_news_clone_built/ (https://old.reddit.com/r/rails/comments/6jz7tq/source_code_lobsters_a_hacker_news_clone_built/)
 * https://blog.sequinstream.com/build-your-own-sqs-or-kafka-with-postgres/
 * https://steveklabnik.com/writing
 * https://go.dev/blog/go1.13-errors
-* https://lobste.rs/s/7rtvnp/async_rust_challenges_iroh
+* https://lobste.rs/s/7rtvnp/async_rust_challenges_iroh (https://iroh.computer/blog/async-rust-challenges-in-iroh)
 * https://bitfieldconsulting.com/posts/iterators
-* https://lobste.rs/s/uxbvru/translating_all_c_rust_tractor
+* https://lobste.rs/s/uxbvru/translating_all_c_rust_tractor (https://www.darpa.mil/program/translating-all-c-to-rust)
 * https://engineering.gusto.com/how-we-made-gusto-page-loads-40-faster-245cea3d090e
 * https://stackoverflow.blog/2024/06/10/generative-ai-is-not-going-to-build-your-engineering-team-for-you/
 * https://eieio.games/essays/scaling-one-million-checkboxes/
@@ -2022,23 +2024,23 @@
 * https://www.cl.cam.ac.uk/~mr10/BCPL.html
 * https://filtra.io/rust-meilisearch-jul-24
 * https://nee.lv/2021/02/28/How-I-cut-GTA-Online-loading-times-by-70/
-* https://lobste.rs/s/bjx13v/strlcpy_how_cpus_can_defy_common_sense
-* https://lobste.rs/s/ttr8op/lobsters_interview_with_david_chisnall#c_k16zu8
-* https://lobste.rs/s/7bv1yb/two_threads_one_core_how_simultaneous
+* https://lobste.rs/s/bjx13v/strlcpy_how_cpus_can_defy_common_sense (https://nrk.neocities.org/articles/cpu-vs-common-sense)
+* https://lobste.rs/s/ttr8op/lobsters_interview_with_david_chisnall#c_k16zu8 ()
+* https://lobste.rs/s/7bv1yb/two_threads_one_core_how_simultaneous (https://blog.codingconfessions.com/p/simultaneous-multithreading)
 * https://brooker.co.za/blog/2024/05/09/nagle.html
 * https://brooker.co.za/blog/2024/07/25/cap-again.html
-* https://lobste.rs/s/bo0yqm/cap_theorem_is_irrelevant_for_cloud
+* https://lobste.rs/s/bo0yqm/cap_theorem_is_irrelevant_for_cloud (https://brooker.co.za/blog/2024/07/25/cap-again.html)
 * https://blog.acolyer.org/2019/03/06/keeping-calm-when-distributed-consistency-is-easy/
 * https://en.wikipedia.org/wiki/PACELC_theorem
-* https://lobste.rs/s/avxnht/wruby_single_file_minimal_site_generator
-* https://lobste.rs/s/rvqez7/how_i_use_git_worktrees
-* https://news.ycombinator.com/item?id=41068719 - Show HN: Haystack – an IDE for exploring and editing code on an infinite canvas (haystackeditor.com) - been wanting do to something like this for a while now!
+* https://lobste.rs/s/avxnht/wruby_single_file_minimal_site_generator (https://wruby.btxx.org/)
+* https://lobste.rs/s/rvqez7/how_i_use_git_worktrees (https://matklad.github.io/2024/07/25/git-worktrees.html)
+* https://news.ycombinator.com/item?id=41068719 (https://haystackeditor.com/) - Show HN: Haystack – an IDE for exploring and editing code on an infinite canvas - been wanting do to something like this for a while now!
 * https://xata.io/blog/postgres-major-version-upgrades
-* https://news.ycombinator.com/item?id=41062072 - Generating sudokus for fun and no profit (tn1ck.com)
+* https://news.ycombinator.com/item?id=41062072 (https://tn1ck.com/blog/how-to-generate-sudokus) - Generating sudokus for fun and no profit
 * https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html
-* https://news.ycombinator.com/item?id=41033579 - No More Blue Fridays (brendangregg.com)
-* https://lobste.rs/s/40a2yb/git_spice_manage_stacked_git_branches
-* https://lobste.rs/s/cdkkp6/software_engineers_are_not_should_not_be
+* https://news.ycombinator.com/item?id=41033579 (https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html) - No More Blue Fridays
+* https://lobste.rs/s/40a2yb/git_spice_manage_stacked_git_branches (https://abhinav.github.io/git-spice/)
+* https://lobste.rs/s/cdkkp6/software_engineers_are_not_should_not_be (https://www.haskellforall.com/2024/07/software-engineers-are-not-and-should.html)
 * https://mazzo.li/posts/fast-pipes.html
 * https://dirtypipe.cm4all.com/ - yes, the guy who wrote mpd is absolute machine
 * https://fly.io/blog/docker-without-docker/
@@ -2046,9 +2048,9 @@
 * https://pointersgonewild.com/2024/04/20/the-alternative-implementation-problem/ (https://x.com/Love2Code/status/1781724317765484786)
 * https://media.defcon.org/DEF%20CON%2031/DEF%20CON%2031%20presentations/byt3bl33d3r%20-%20SpamChannel%20Spoofing%20Emails%20From%202%20Million%20Domains%20and%20Virtually%20Becoming%20Satan.pdf
 * https://itsallaboutthebit.com/arc-mutex/
-* https://news.ycombinator.com/item?id=40940241 - Beating the L1 cache with value speculation (2021) (mazzo.li)
+* https://news.ycombinator.com/item?id=40940241 (https://mazzo.li/posts/value-speculation.html) - Beating the L1 cache with value speculation (2021)
 * https://blog.pragmaticengineer.com/project-management-at-big-tech/
-* https://lobste.rs/s/x0j0iv/just_use_postgres_for_everything
+* https://lobste.rs/s/x0j0iv/just_use_postgres_for_everything (https://www.amazingcto.com/postgres-for-everything/)
 * https://aws.amazon.com/blogs/database/understanding-statistics-in-postgresql/ - extended statistics sound very handy
 * https://steveklabnik.com/writing/should-you-learn-c-to-learn-how-the-computer-works
 * https://www.radicalsimpli.city/
@@ -2058,15 +2060,15 @@
 * https://daedtech.com/how-to-keep-your-best-programmers/
 * https://randsinrepose.com/archives/bored-people-quit/
 * https://thedailywtf.com/articles/Up-or-Out-Solving-the-IT-Turnover-Crisis
-* https://lobste.rs/s/foi6sk/software_crisis
-* https://lobste.rs/s/vbivyq/synchronous_core_asynchronous_shell
+* https://lobste.rs/s/foi6sk/software_crisis (https://wryl.tech/log/2024/the-software-crisis.html)
+* https://lobste.rs/s/vbivyq/synchronous_core_asynchronous_shell (https://blog.sulami.xyz/posts/sync-core-async-shell/)
 * https://sourcegraph.com/blog/the-death-of-the-junior-developer
 * https://www.youtube.com/watch?v=CTUMNtKQLl8 - "I ported THOUSANDS of apps to Windows 95"
 * https://www.youtube.com/watch?v=EaHs2tmiU9U - "Introspection Gaps | Rachel Stephens | Monktoberfest 2022"
 * https://www.youtube.com/watch?app=desktop&v=IcN7yFTS8j - "Peter Zhu - Rails and the Ruby Garbage Collector: How to Speed Up Your Rails App - Rails World 2023"
-* https://lobste.rs/s/n4inn0/quality_productivity_are_not - excellent points made in the article
+* https://lobste.rs/s/n4inn0/quality_productivity_are_not (https://www.haskellforall.com/2024/07/quality-and-productivity-are-not.html) - excellent points made in the article
 * https://evanhahn.com/programming-beliefs-as-of-july-2024/
-* https://news.ycombinator.com/item?id=40843778 - RegreSSHion: RCE in OpenSSH's server, on glibc-based Linux systems (qualys.com)
+* https://news.ycombinator.com/item?id=40843778 (https://www.qualys.com/2024/07/01/cve-2024-6387/regresshion.txt) - RegreSSHion: RCE in OpenSSH's server, on glibc-based Linux systems
 * https://github.com/tigerbeetle/tigerbeetle/blob/main/docs/TIGER_STYLE.md
 * https://notes.eatonphil.com/2024-07-01-a-write-ahead-log-is-not-a-universal-part-of-durability.html
 
@@ -2078,18 +2080,18 @@
 * https://jonathan-frere.com/posts/why-test/
 * https://strangestloop.io/essays/things-that-arent-doing-the-thing
 * https://news.ycombinator.com/item?id=890558
-* https://news.ycombinator.com/item?id=40835274 - Weekend projects: getting silly with C (lcamtuf.substack.com)
-* https://news.ycombinator.com/item?id=40829607 - A bunch of programming advice I'd give to myself 15 years ago (mbuffett.com)
+* https://news.ycombinator.com/item?id=40835274 (https://lcamtuf.substack.com/p/weekend-projects-getting-silly-with) - Weekend projects: getting silly with C
+* https://news.ycombinator.com/item?id=40829607 (https://mbuffett.com/posts/programming-advice-younger-self/) - A bunch of programming advice I'd give to myself 15 years ago
 * https://qntm.org/assist
 * https://schneems.com/2017/08/01/is-webrick-webscale/
 * https://blog.archive.org/2024/06/01/the-backrooms-of-the-internet-archive/
 * https://brandur.org/fragments/sqlc-2024
 * https://scoutapm.com/blog/how-to-make-text-searches-in-postgresql-faster-with-trigram-similarity
 * https://alexklibisz.com/2022/02/18/optimizing-postgres-trigram-search
-* https://news.ycombinator.com/item?id=40714544 - What happens to latency if service time is cut in half (2022) (pveentjer.github.io)
-* https://news.ycombinator.com/item?id=40737511 - The Pre-Scheme Restoration (prescheme.org)
+* https://news.ycombinator.com/item?id=40714544 (https://pveentjer.github.io/misc/2022/04/18/service-time-cut-in-half.html) - What happens to latency if service time is cut in half (2022)
+* https://news.ycombinator.com/item?id=40737511 (https://prescheme.org/posts/announcing-the-pre-scheme-restoration.html) - The Pre-Scheme Restoration
 * https://offlinemark.com/an-obscure-quirk-of-proc
-* https://lobste.rs/s/zfdwiu/ruby_great_language_for_shell_scripts https://news.ycombinator.com/item?id=40763640
+* https://lobste.rs/s/zfdwiu/ruby_great_language_for_shell_scripts (https://lucasoshiro.github.io/posts-en/2024-06-17-ruby-shellscript/) https://news.ycombinator.com/item?id=40763640
 * https://en.m.wikipedia.org/wiki/Real_Programmers_Don't_Use_Pascal
 * https://www.honeycomb.io/blog/anything-but-tech-debt
 * https://en.m.wikipedia.org/wiki/Pauli_effect
@@ -2102,20 +2104,20 @@
 * https://danluu.com/essential-complexity
 * https://www.scattered-thoughts.net/writing/select-wat-from-sql/
 * https://v2thegreat.com/2024/06/19/lessons-learned-from-scaling-to-multi-terabyte-datasets/
-* https://lobste.rs/s/o51y4t/why_people_are_angry_over_go_1_23_iterators
-* https://news.ycombinator.com/item?id=40711661 - A Note on Essential Complexity (olano.dev)
+* https://lobste.rs/s/o51y4t/why_people_are_angry_over_go_1_23_iterators (https://www.gingerbill.org/article/2024/06/17/go-iterator-design/)
+* https://news.ycombinator.com/item?id=40711661 (https://olano.dev/blog/a-note-on-essential-complexity) - A Note on Essential Complexity
 * https://newsletter.pragmaticengineer.com/p/lessons-from-bootstrapped-companies
 * https://www.reddit.com/r/ruby/comments/qj4s94/async_ruby/ - https://brunosutic.com/blog/async-ruby
 * https://www.youtube.com/watch?v=e_9ziFKcEhw 1BRC
-* https://news.ycombinator.com/item?id=40695001 - Hello world in C inline assembly (2018) (jameshfisher.com)
-* https://news.ycombinator.com/item?id=40699684 - MicroMac, a Macintosh for under £5 (axio.ms)
+* https://news.ycombinator.com/item?id=40695001 (https://jameshfisher.com/2018/02/20/c-inline-assembly-hello-world/) - Hello world in C inline assembly (2018)
+* https://news.ycombinator.com/item?id=40699684 (https://axio.ms/projects/2024/06/16/MicroMac.html) - MicroMac, a Macintosh for under £5
 * https://folklore.org/Round_Rects_Are_Everywhere.html
-* https://news.ycombinator.com/item?id=40702146 - I learned Haskell in just 15 years (duckrabbit.tech)
+* https://news.ycombinator.com/item?id=40702146 (https://duckrabbit.tech/articles/learning-haskell.html) - I learned Haskell in just 15 years
 * https://www.youtube.com/watch?v=inRB6ull5WQ - ""The Life & Death of htmx" by Alexander Petros at Big Sky Dev Con 2024"
 * https://codeblog.jonskeet.uk/2019/03/27/storing-utc-is-not-a-silver-bullet - is it an instant in time or is it a date (in a timezone)?
-* https://news.ycombinator.com/item?id=40681862 - I am not yet ready to switch to Zig from Rust (medium.com/penberg)
+* https://news.ycombinator.com/item?id=40681862 (https://medium.com/@penberg/why-i-am-not-yet-ready-to-switch-to-zig-from-rust-3660e02f0060) - I am not yet ready to switch to Zig from Rust (medium.com/penberg)
 * https://fly.io/blog/globally-distributed-postgres
-* https://news.ycombinator.com/item?id=40660761 - The GJK Algorithm: A weird and beautiful way to do a simple thing (computerwebsite.net)
+* https://news.ycombinator.com/item?id=40660761 (https://computerwebsite.net/writing/gjk) - The GJK Algorithm: A weird and beautiful way to do a simple thing
 * https://jpcamara.com/2024/06/04/your-ruby-programs.html
 * https://brandur.org/sqlc
 * https://github.com/aitva/sqlc-exp
@@ -2139,17 +2141,17 @@
 * https://redgetan.cc/understanding-timeouts-in-cruby
 * https://judoscale.com/blog/planning-sidekiq-queues
 * https://www.kalzumeus.com/2011/07/08/business-psychology/
-* https://news.ycombinator.com/item?id=40544283 - Arthur Whitney releases an open-source subset of K with MIT license (shakti.com)
+* https://news.ycombinator.com/item?id=40544283 (https://shakti.com/k) - Arthur Whitney releases an open-source subset of K with MIT license
 
 # May 2024
 * https://stevenharman.net/so-we-have-a-memory-leak
 * https://registerspill.thorstenball.com/p/be-findable
-* https://news.ycombinator.com/item?id=40529556 - A week with Elixir (2013) (joearms.github.io)
+* https://news.ycombinator.com/item?id=40529556 (https://joearms.github.io/published/2013-05-31-a-week-with-elixir.html) - A week with Elixir (2013)
 * https://github.com/readme/guides/finish-your-projects
 * https://www.meticulous.ai/
-* https://news.ycombinator.com/item?id=40467297 - Writing a Unix clone in about a month (drewdevault.com)
+* https://news.ycombinator.com/item?id=40467297 (https://drewdevault.com/2024/05/24/2024-05-24-Bunnix.html) - Writing a Unix clone in about a month
 * https://tcm.computerhistory.org/ - must visit The Computer Museum one day :)
-* https://news.ycombinator.com/item?id=40419856 - Enlightenmentware (mmapped.blog)
+* https://news.ycombinator.com/item?id=40419856 (https://mmapped.blog/posts/28-enlightenmentware.html) - Enlightenmentware
 * https://tembo.io/blog/pg-timeseries
 * https://smudge.ai/blog/ratelimit-algorithms
 * https://yarchive.net/comp/index.html - Usenet archive
@@ -2157,10 +2159,10 @@
 * https://evilmartians.com/chronicles/viewcomponent-in-the-wild-building-modern-rails-frontends
 * https://viewcomponent.org/guide/getting-started.html
 * https://yehudakatz.com/2009/10/04/emulating-smalltalks-conditionals-in-ruby/
-* https://lobste.rs/s/sdxsa9/do_i_not_like_ruby_anymore
-* https://news.ycombinator.com/item?id=40509572 - Three Laws of Software Complexity (maheshba.bitbucket.io)
+* https://lobste.rs/s/sdxsa9/do_i_not_like_ruby_anymore (https://sgt.hootr.club/molten-matter/maybe-i-like-python-now/)
+* https://news.ycombinator.com/item?id=40509572 (https://maheshba.bitbucket.io/blog/2024/05/08/2024-ThreeLaws.html) - Three Laws of Software Complexity
 * https://mathetake.github.io/posts/runtime-code-generation-in-go-part-1
-* https://news.ycombinator.com/item?id=37778069 - Database Performance at Scale – A free book (scylladb.com)
+* https://news.ycombinator.com/item?id=37778069 (https://www.scylladb.com/2023/10/02/introducing-database-performance-at-scale-a-free-open-source-book/) - Database Performance at Scale – A free book
 * https://cedardb.com/blog/ode_to_postgres/
 * https://camhashemi.com/posts/building-through-uncertainty/
 * https://newsletter.techworld-with-milan.com/p/inside-shopifys-modular-monolith
@@ -2174,7 +2176,7 @@
 * https://marshallbrain.com/manna1
 * https://davidgomes.com/2023-portuguese-startup-law/
 * https://registerspill.thorstenball.com/p/exploring-the-c4-compiler
-* https://news.ycombinator.com/item?id=40372296 - Making a Postgres query 1k times faster (mattermost.com)
+* https://news.ycombinator.com/item?id=40372296 (https://mattermost.com/blog/making-a-postgres-query-1000-times-faster/) - Making a Postgres query 1k times faster
 * https://erkin.party/blog/200715/evolution/
 * https://gist.github.com/richhickey/1563cddea1002958f96e7ba9519972d9
 * https://cra.mr/youre-not-a-ceo
@@ -2188,14 +2190,14 @@
 * https://postgres.ai/blog/20220525-common-db-schema-change-mistakes
 * https://postgres.ai/blog/20210923-zero-downtime-postgres-schema-migrations-lock-timeout-and-retries
 * https://pragtob.wordpress.com/2024/05/01/10-elixir-gotchas/
-* https://news.ycombinator.com/item?id=40213400 - Dear Europe, please wake up (klinger.io)
+* https://news.ycombinator.com/item?id=40213400 (https://klinger.io/posts/eu-acc) - Dear Europe, please wake up
 * https://dotat.at/@/2019-04-04-a-curious-perl-quine.html
 * https://rhaas.blogspot.com/2024/05/hacking-on-postgresql-is-really-hard.html?m=1
 * https://blog.funcall.org//lisp%20psychoacoustics/2024/05/01/worlds-loudest-lisp-program/
 * https://oldmoe.blog/2024/04/30/backup-strategies-for-sqlite-in-production/
 * https://pbs.twimg.com/media/GMH1AZmbgAAEt5F?format=jpg&name=4096x4096
 * https://vorakl.com/articles/sq3r/
-* https://news.ycombinator.com/item?id=40206752 - Why SQLite Uses Bytecode (sqlite.org)
+* https://news.ycombinator.com/item?id=40206752 (https://sqlite.org/draft/whybytecode.html) - Why SQLite Uses Bytecode
 * https://lesenechal.fr/en/linux/unwinding-the-stack-the-hard-way
 * http://sevangelatos.com/john-carmack-on/
 * https://www.youtube.com/watch?v=pzm6I4liJlg - "Charles Nutter - Bringing Ruby to the JVM: Making the Impossible Possible // Carolina Code Conf 2023"
@@ -2215,13 +2217,13 @@
 * https://shopify.engineering/a-pods-architecture-to-allow-shopify-to-scale
 * https://bedrockdb.com/
 * https://use.expensify.com/blog/scaling-sqlite-to-4m-qps-on-a-single-server
-* https://news.ycombinator.com/item?id=32680957 - One million queries per second with MySQL (planetscale.com)
+* https://news.ycombinator.com/item?id=32680957 (https://planetscale.com/blog/one-million-queries-per-second-with-mysql) - One million queries per second with MySQL
 * https://blog.appsignal.com/2024/04/23/deep-diving-into-the-erlang-scheduler.html
-* https://news.ycombinator.com/item?id=40111184 - Ruby vs. Python comes down to the for loop (2021) (softwaredoug.com)
+* https://news.ycombinator.com/item?id=40111184 (https://softwaredoug.com/blog/2021/11/12/ruby-vs-python-for-loop.html) - Ruby vs. Python comes down to the for loop (2021)
 * https://24.sapo.pt/atualidade/artigos/jorge-buescu-os-novos-programas-de-matematica-representam-um-retrocesso-de-30-anos
 * https://discuss.rubyonrails.org/t/truffleruby-vs-mri-performance-comparison/81281
 * https://www.johnhawthorn.com/2024/ruby-might-be-faster-than-you-think/
-* https://news.ycombinator.com/item?id=40172033 - Leaving Rust gamedev after 3 years (loglog.games)
+* https://news.ycombinator.com/item?id=40172033 (https://loglog.games/blog/leaving-rust-gamedev/) - Leaving Rust gamedev after 3 years
 * https://www.youtube.com/watch?v=72y2EC5fkcE - "Tomorrow Corporation Tech Demo"
 * https://www.henrikkarlsson.xyz/p/search-query
 * https://www.youtube.com/watch?v=19ae5Mq2lJE - "Why is PS3 emulation so fast: RPCS3 optimizations explained" - im all about that GF2P8AFFINEQB
@@ -2229,18 +2231,18 @@
 * https://mattklein123.dev/2024/04/17/1000x-the-telemetry/
 * https://mattklein123.dev/2024/04/10/do-you-need-to-store-that-telemetry/
 * https://mattklein123.dev/2024/04/03/observability-cost-crisis/
-* https://web.archive.org/web/20161108030709/http://www.solarisinternals.com/wiki/index.php/DTrace_Topics_Overhead,
+* https://web.archive.org/web/20161108030709/http://www.solarisinternals.com/wiki/index.php/DTrace_Topics_Overhead (http://www.solarisinternals.com/wiki/index.php/DTrace_Topics_Overhead),
 * https://www.cs.dartmouth.edu/~sergey/cs108/2009/dtrace-internals-x86.pdf
 * https://oxide.computer/podcasts/oxide-and-friends/1843393
 * https://research.swtch.com/xz-script
 * https://research.swtch.com/xz-timeline
 * https://medium.com/@grubbycoder/porting-8-bit-sonic-2-to-the-ti-84-ce-7ec99f9981c9
-* https://news.ycombinator.com/item?id=40103407 - Programming Is Mostly Thinking (2014) (agileotter.blogspot.com)
+* https://news.ycombinator.com/item?id=40103407 (http://agileotter.blogspot.com/2014/09/programming-is-mostly-thinking.html) - Programming Is Mostly Thinking (2014)
 * https://en.wikipedia.org/wiki/Rule_110
 * https://news.ycombinator.com/item?id=25882695 - "But how, exactly, do databases use mmap?"
 * https://www.theintrinsicperspective.com/p/why-we-stopped-making-einsteins
 * https://kaveland.no/careful-with-that-lock-eugene.html - sort of like our autovacuum prevention
-* https://news.ycombinator.com/item?id=39980345 - The simple beauty of XOR floating point compression (clemenswinter.com)
+* https://news.ycombinator.com/item?id=39980345 (https://clemenswinter.com/2024/04/07/the-simple-beauty-of-xor-floating-point-compression/) - The simple beauty of XOR floating point compression
 * https://mailman.nanog.org/pipermail/nanog/2024-April/225407.html
 * https://www.amazingcto.com/postgres-for-everything/
 * https://swtch.com/~rsc/regexp/regexp4.html
@@ -2259,17 +2261,17 @@
 * https://gwern.net/nootropic/nootropics
 * https://pganalyze.com/blog/5mins-postgres-figma-dbproxy-sharding-postgres
 * https://kenkantzer.com/lessons-after-a-half-billion-gpt-tokens/
-* https://lobste.rs/s/zag1bo/on_tech_debt_my_rust_library_is_now_cdo
+* https://lobste.rs/s/zag1bo/on_tech_debt_my_rust_library_is_now_cdo (https://lucumr.pocoo.org/2024/3/26/rust-cdo/)
 * https://rbranson.medium.com/10-things-i-hate-about-postgresql-20dbab8c2791
-* https://web.archive.org/web/20240113173753/https://www.orioledata.com/blog/no-more-vacuum-in-postgresql
+* https://web.archive.org/web/20240113173753/https://www.orioledata.com/blog/no-more-vacuum-in-postgresql (https://www.orioledata.com/blog/no-more-vacuum-in-postgresql)
 * https://gwern.net/note/faster
-* https://news.ycombinator.com/item?id=30462695 - OrioleDB – solving some PostgreSQL wicked problems (github.com/orioledb)
+* https://news.ycombinator.com/item?id=30462695 (https://github.com/orioledb/orioledb) - OrioleDB – solving some PostgreSQL wicked problems (github.com/orioledb)
 * https://www.coinbase.com/en-pt/blog/a-follow-up-to-coinbase-being-a-mission-focused-company
 * https://www.uber.com/en-PT/blog/mezzanine-codebase-data-migration/
 * https://registerspill.thorstenball.com/p/the-basics
-* https://news.ycombinator.com/item?id=39844439 - Finding memory leaks in Postgres C code (enterprisedb.com)
-* https://news.ycombinator.com/item?id=39836852 - Why Elixir (2014) (theerlangelist.com)
-* https://web.archive.org/web/20231203114625/http://kernelnewbies.org/FAQ/LinkedLists
+* https://news.ycombinator.com/item?id=39844439 (https://www.enterprisedb.com/blog/finding-memory-leaks-postgres-c-code) - Finding memory leaks in Postgres C code
+* https://news.ycombinator.com/item?id=39836852 (https://www.theerlangelist.com/article/why_elixir) - Why Elixir (2014)
+* https://web.archive.org/web/20231203114625/http://kernelnewbies.org/FAQ/LinkedLists (http://kernelnewbies.org/FAQ/LinkedLists)
 * https://developers.redhat.com/articles/2024/04/03/improvements-static-analysis-gcc-14-compiler#solving_the_halting_problem_
 * https://govleaders.org/rickover.htm
 * https://www.pypy.org/posts/2024/03/fixing-bug-incremental-gc.html
@@ -2277,9 +2279,9 @@
 * https://pganalyze.com/blog/5mins-postgres-17-faster-vacuum-adaptive-radix-trees
 * https://www.experimental-history.com/p/so-you-wanna-de-bog-yourself
 * https://www.stilldrinking.org/programming-sucks
-* https://lobste.rs/s/agywrp/irc_client_your_motherboard
+* https://lobste.rs/s/agywrp/irc_client_your_motherboard (https://axleos.com/an-irc-client-in-your-motherboard/)
 * https://www.uber.com/en-PT/blog/postgres-to-mysql-migration/ - followup: schemaless; "It results in fewer context switches. Data accessed via the InnoDB buffer pool doesn’t require any user/kernel context switches. The worst case behavior is the occurrence of a TLB miss, which is relatively cheap and can be minimized by using huge pages.";
-* https://news.ycombinator.com/item?id=39916144 - LiveView Is Best with Svelte (sequin.io)
+* https://news.ycombinator.com/item?id=39916144 (https://blog.sequin.io/liveview-is-best-with-svelte/) - LiveView Is Best with Svelte
 * https://jobs.netflix.com/culture
 * https://www.coinbase.com/blog/coinbase-is-a-mission-focused-company
 * https://world.hey.com/dhh/you-re-not-guaranteed-a-spot-on-the-team-95080248
@@ -2287,13 +2289,13 @@
 # March 2024
 * https://www.mattkeeter.com/blog/2024-03-25-packing/
 * https://oxide.computer/blog/engineering-culture
-* https://news.ycombinator.com/item?id=39706968 - How Figma's databases team lived to tell the scale (figma.com)
+* https://news.ycombinator.com/item?id=39706968 (https://www.figma.com/blog/how-figmas-databases-team-lived-to-tell-the-scale/) - How Figma's databases team lived to tell the scale
 * https://www.crunchydata.com/blog/when-did-postgres-become-cool
 * https://www.crunchydata.com/blog/high-compression-metrics-storage-with-postgres-hyperloglog
 * https://renegadeotter.com/2023/11/12/your-database-skills-are-not-good-to-have.html
 * https://cliffle.com/blog/who-killed-the-network-switch/
-* https://lobste.rs/s/hl5gkk/why_choose_async_await_over_threads
-* https://lobste.rs/s/4a7sxq/all_you_need_is_wide_events_not_metrics
+* https://lobste.rs/s/hl5gkk/why_choose_async_await_over_threads (https://notgull.net/why-not-threads/)
+* https://lobste.rs/s/4a7sxq/all_you_need_is_wide_events_not_metrics (https://isburmistrov.substack.com/p/all-you-need-is-wide-events-not-metrics)
 * http://www.eelis.net/C++/analogliterals.xhtml
 * https://datadome.co/bot-management-protection/store-50-million-event-per-second-in-elasticsearch/
 * https://safetydifferently.com/why-do-things-go-right/
@@ -2301,21 +2303,21 @@
 * https://cacm.acm.org/blogcacm/in-search-of-the-shortest-possible-schedule/
 * https://www.scattered-thoughts.net/writing/unexplanations-sql-is-syntactic-sugar-for-relational-algebra/
 * https://quickwit.io/blog/quickwit-0.8
-* https://news.ycombinator.com/item?id=39782356 - DuckDB as the New jq (pgrs.net)
+* https://news.ycombinator.com/item?id=39782356 (https://www.pgrs.net/2024/03/21/duckdb-as-the-new-jq/) - DuckDB as the New jq
 * https://lustre.build/
 * https://pganalyze.com/blog/5mins-postgres-jsonb-toast
 * https://aaronfrancis.com/2024/try-hard
 * https://cra.mr/work-life-balance/
 * https://rxdb.info/articles/websockets-sse-polling-webrtc-webtransport.html
 * https://whoisryosuke.com/blog/2023/getting-started-with-egui-in-rust
-* https://news.ycombinator.com/item?id=39731195 - Losing faith in testing (thorstenball.com)
+* https://news.ycombinator.com/item?id=39731195 (https://registerspill.thorstenball.com/p/a-few-words-on-testing) - Losing faith in testing
 * https://www.figma.com/blog/how-figma-scaled-to-multiple-databases
 * https://notes.eatonphil.com/2024-03-15-zig-rust-and-other-languages.html
 * https://alexandrehtrb.github.io/posts/2024/03/http2-and-http3-explained/
 * https://www.youtube.com/watch?v=8aGhZQkoFbQ - "What the heck is the event loop anyway? | Philip Roberts | JSConf EU"
 * https://www.youtube.com/watch?v=M3BM9TB-8yA - "10 Things I Regret About Node.js - Ryan Dahl - JSConf EU"
 * https://www.youtube.com/watch?v=LB8KwiiUGy0 - "Node.js: The Documentary | An origin story"
-* https://news.ycombinator.com/item?id=30833555 - Sorbet: Stripe's Type Checker for Ruby (stripe.com)
+* https://news.ycombinator.com/item?id=30833555 (https://stripe.com/blog/sorbet-stripes-type-checker-for-ruby) - Sorbet: Stripe's Type Checker for Ruby
 * https://stripe.com/blog/sorbet-stripes-type-checker-for-ruby
 * https://turbo.fish/
 * https://www.figma.com/blog/how-figmas-databases-team-lived-to-tell-the-scale/
@@ -2323,42 +2325,42 @@
 * https://www.youtube.com/watch?v=vxkbf5QMA2g - "You Need React Query Now More Than Ever"
 * https://www.youtube.com/watch?v=IqWEuh3kUCc - "The Worst Programmer | Theo Reacts"
 * http://antirez.com/news/112 - "The mythical 10x programmer" reread. seems obvious when put this way
-* https://lobste.rs/s/njr9cn/maybe_everything_is_coroutine
+* https://lobste.rs/s/njr9cn/maybe_everything_is_coroutine (https://adam.nels.onl/blog/maybe-everything-is-a-coroutine/)
 * https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb
-* https://news.ycombinator.com/item?id=39574240 - Interlisp-D and MIT CADR Lisp Machine demos for IJCAI Conference (1981) (archive.org)
+* https://news.ycombinator.com/item?id=39574240 (https://archive.org/details/xerox-parc_V-141_1) - Interlisp-D and MIT CADR Lisp Machine demos for IJCAI Conference (1981)
 * https://dreamsongs.com/WorseIsBetter.html
 * https://dreamsongs.com/RiseOfWorseIsBetter.html
 * https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
 * https://www.crunchydata.com/blog/tags-aand-postgres-arrays-a-purrfect-combination - postgres categories tags
 * https://www.postgresql.org/message-id/12553.1135634231@sss.pgh.pa.us
 * https://www.youtube.com/watch?v=f84n5oFoZBc "Hammock Driven Development - Rich Hickey"
-* https://lobste.rs/s/hru0ib/how_lose_control_your_shell
+* https://lobste.rs/s/hru0ib/how_lose_control_your_shell (https://registerspill.thorstenball.com/p/how-to-lose-control-of-your-shell)
 * https://registerspill.thorstenball.com/p/how-to-lose-control-of-your-shell
 * https://www.rowledge.org/resources/tim%27s-Home-page/Squeak/RTOSinSmalltalk.html.pdf
 * https://www.joelonsoftware.com/2002/01/06/fire-and-motion/
-* https://news.ycombinator.com/item?id=39591910 - Do literally anything (aaronfrancis.com)
+* https://news.ycombinator.com/item?id=39591910 (https://aaronfrancis.com/2024/do-literally-anything) - Do literally anything
 * https://utcc.utoronto.ca/~cks/space/blog/unix/XWindowsAllTheWayDown
 * https://www.youtube.com/watch?v=2V1FtfBDsLU "Effective Programs - 10 Years of Clojure - Rich Hickey"
 * https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts
 * https://www.justinweiss.com/articles/how-to-debug-ruby-performance-problems-in-production/
-* https://web.archive.org/web/20110903054547/http://blog.headius.com/2008/02/ruby-threadraise-threadkill-timeoutrb.htm
+* https://web.archive.org/web/20110903054547/http://blog.headius.com/2008/02/ruby-threadraise-threadkill-timeoutrb.htm (http://blog.headius.com/2008/02/ruby-threadraise-threadkill-timeoutrb.htm)
 * https://www.mikeperham.com/2015/05/08/timeout-rubys-most-dangerous-api/
-* https://news.ycombinator.com/item?id=39587947 - Twenty years is nothing (deprogrammaticaipsum.com)
-* https://news.ycombinator.com/item?id=39592771 - Improving Network Performance with Linux Flowtables (ubicloud.com)
+* https://news.ycombinator.com/item?id=39587947 (https://deprogrammaticaipsum.com/twenty-years-is-nothing/) - Twenty years is nothing
+* https://news.ycombinator.com/item?id=39592771 (https://www.ubicloud.com/blog/improving-network-performance-with-linux-flowtables) - Improving Network Performance with Linux Flowtables
 * https://keygen.sh/blog/that-one-time-keygen-went-down-for-5-hours-twice/
 * https://tailscale.com/blog/an-unlikely-database-migration
 * https://mtlynch.io/human-code-reviews-2/
 * https://mtlynch.io/human-code-reviews-1/
 * https://mtlynch.io/code-review-love/
 * https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html
-* https://news.ycombinator.com/item?id=39444674 - A response to "Erlang – overhyped or underestimated" (2010) (jlouisramblings.blogspot.com)
+* https://news.ycombinator.com/item?id=39444674 (http://jlouisramblings.blogspot.com/2010/12/response-to-erlang-overhyped-or.html) - A response to "Erlang – overhyped or underestimated" (2010)
 * https://medium.com/@mithunmk93/algorithm-behind-splitwises-debt-simplification-feature-8ac485e97688
 * https://dev.to/molly/10-tips-for-debugging-in-production-ko1
 * https://en.m.wikipedia.org/wiki/Gordon_Moore
 * https://en.m.wikipedia.org/wiki/Andy_Bechtolsheim
 * https://en.m.wikipedia.org/wiki/Ken_Thompson
 * https://en.m.wikipedia.org/wiki/Jim_Gray_(computer_scientist)
-* https://news.ycombinator.com/item?id=39420453 - RoR Debugbar (debugbar.dev)
+* https://news.ycombinator.com/item?id=39420453 (https://debugbar.dev/) - RoR Debugbar
 * https://www.compart.com/en/unicode/U+FDFD
 * https://adoptingerlang.org/docs/development/otp_high_level/
 * https://elixirforum.com/t/origin-of-the-name-elixir/2303
@@ -2373,7 +2375,7 @@
 # February 2024
 * https://www.youtube.com/watch?v=qDhTjE0XmkE "Evolution of Financial Exchange Architectures"
 * https://wiki.alopex.li/ElixirNitpicks
-* https://news.ycombinator.com/item?id=39313623&p=2 - Almost every infrastructure decision I endorse or regret (cep.dev)
+* https://news.ycombinator.com/item?id=39313623&p=2 (https://cep.dev/posts/every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup/) - Almost every infrastructure decision I endorse or regret
 * https://ferd.ca/a-distributed-systems-reading-list.html
 * https://scholar.harvard.edu/files/mickens/files/thesaddestmoment.pdf
 * https://mailchi.mp/railsspeed/to-reduce-queues-reduce-the-95th-percentile
@@ -2389,7 +2391,7 @@
 * https://blog.cloudflare.com/how-stacks-are-handled-in-go/
 * https://www.youtube.com/watch?v=1I1WmeSjRSw "GopherCon 2020: Austin Clements - Pardon the Interruption: Loop Preemption in Go 1.14"
 * https://www.youtube.com/watch?v=JwjjUT8K7po&list=PLixnExCn6lRq261O0iwo4ClYxHpM9qfVy&index=1 "How Citus Distributes PostgreSQL"
-* https://news.ycombinator.com/item?id=28776786 - Lessons learned from sharding Postgres at Notion (notion.so)
+* https://news.ycombinator.com/item?id=28776786 (https://www.notion.so/blog/sharding-postgres-at-notion) - Lessons learned from sharding Postgres at Notion
 * https://www.notion.so/blog/data-model-behind-notion
 * https://planetscale.com/blog/why-we-chose-nanoids-for-planetscales-api
 * https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/ -- re-read, see https://youtu.be/i-R704I8ySE?t=1559 "Nathaniel J Smith - Python Concurrency for Mere Mortals - Pyninsula #10"
@@ -2402,7 +2404,7 @@
 
 # January 2024
 * https://sudhir.io/the-big-little-guide-to-message-queues
-* https://news.ycombinator.com/item?id=39081948 - C23: A Slightly Better C (lemire.me)
+* https://news.ycombinator.com/item?id=39081948 (https://lemire.me/blog/2024/01/21/c23-a-slightly-better-c/) - C23: A Slightly Better C
 * https://www.mcmillen.dev/language_checklist.html
 * https://bernsteinbear.com/blog/scrapscript/
 * https://paulgraham.com/todo.html
@@ -2430,7 +2432,7 @@
 * https://www.youtube.com/watch?v=kkfIXUjkYqE "Cursed Units"
 * https://groups.google.com/g/net.unix-wizards/c/G0zSjVAD4N8/m/gdXIB0Lxf8IJ
 * https://norvig.com/21-days.html
-* https://news.ycombinator.com/item?id=39048317 - We migrated our PostgreSQL database with 11 seconds downtime (gds.blog.gov.uk)
+* https://news.ycombinator.com/item?id=39048317 (https://gds.blog.gov.uk/2024/01/17/how-we-migrated-our-postgresql-database-with-11-seconds-downtime/) - We migrated our PostgreSQL database with 11 seconds downtime
 * https://www.youtube.com/watch?v=qKQLZ9WsEQs - E14 - The One Where We Geek Out on Observability with Charity Majors
 * https://www.ycombinator.com/library/6S-on-starting-and-scaling-dropbox-yc-w07
 * https://en.wikipedia.org/wiki/Slowly_changing_dimension
@@ -2447,7 +2449,7 @@
 * https://danluu.com/empirical-pl/
 * https://www.erlang.org/blog/otp-23-highlights/#take-cpu-quotas-into-account
 * https://www.riverphillips.dev/blog/go-cfs/ how is this still a problem in 2023
-* https://web.archive.org/web/20170626010309/http://blog.barbershoplabs.com/blog/2014/04/24/screw-tdd/
+* https://web.archive.org/web/20170626010309/http://blog.barbershoplabs.com/blog/2014/04/24/screw-tdd/ (http://blog.barbershoplabs.com/blog/2014/04/24/screw-tdd/)
 * https://world.hey.com/dhh/keeping-the-lights-on-while-leaving-the-cloud-be7c2d67
 * https://en.m.wikipedia.org/wiki/The_Market_for_Lemons
 * https://gamehistory.org/eclipse-the-demo-that-sold-3d-to-nintendo/
@@ -2488,17 +2490,17 @@
 * https://brooker.co.za/blog/2023/01/06/erasure.html
 * https://www.scattered-thoughts.net/writing/pain-we-forgot/
 * https://www.scattered-thoughts.net/writing/against-sql/
-* https://news.ycombinator.com/item?id=38570261&p=2 - You are never taught how to build quality software (florianbellmann.com)
+* https://news.ycombinator.com/item?id=38570261&p=2 (https://www.florianbellmann.com/blog/never-taught-qa) - You are never taught how to build quality software
 * https://tontinton.com/posts/database-fundementals/
 * https://algorithmica.org/en/eytzinger
 * https://muratbuffalo.blogspot.com/2023/02/designing-access-methods-rum-conjecture.html
 * https://muratbuffalo.blogspot.com/2023/04/the-end-of-myth-distributed.html
 * https://muratbuffalo.blogspot.com/2023/01/is-scalable-oltp-in-cloud-solved.html
-* https://news.ycombinator.com/item?id=38688453 - I Love Ruby (eliseshaffer.com)
+* https://news.ycombinator.com/item?id=38688453 (https://eliseshaffer.com/2023/12/18/i-love-ruby/) - I Love Ruby
 * https://steve-yegge.blogspot.com/2008/02/portrait-of-n00b.html
 * https://pathelland.substack.com/p/i-am-so-glad-im-uncoordinated
 * https://pgtune.leopard.in.ua/
-* https://news.ycombinator.com/item?id=38555768 - Everyday performance rules for Ruby on Rails developers (rorvswild.com)
+* https://news.ycombinator.com/item?id=38555768 (https://www.rorvswild.com/blog/2023/everyday-performance-rules-for-ruby-on-rails-developers) - Everyday performance rules for Ruby on Rails developers
 * https://www.youtube.com/watch?v=EK32jo7i5LQ "Why do prime numbers make these spirals? | Dirichlet’s theorem and pi approximations"
 * https://www.youtube.com/watch?v=zqmOSMAtadc "Why Railroads Don't Need Expansion Joints"
 * https://www.youtube.com/watch?v=qLJCSpOrb9s "C++ and Rust At The Same Time | Prime Reacts"
@@ -2510,7 +2512,7 @@
 * https://www.scattered-thoughts.net/writing/how-safe-is-zig/
 * https://www.youtube.com/watch?v=bJ0y7Oqr4Zo "Tech Leader Speaker Series ft. Bryan Cantrill, Chief Technology Officer at Oxide" -- great Q&A!!
 * https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/
-* https://news.ycombinator.com/item?id=38392540 - Retries – An interactive study of request retry methods (encore.dev)
+* https://news.ycombinator.com/item?id=38392540 (https://encore.dev/blog/retries) - Retries – An interactive study of request retry methods
 * https://callstacking.com/
 * https://blog.rust-lang.org/inside-rust/2023/10/23/coroutines.html
 * https://riverqueue.com/docs/transactional-enqueueing
@@ -2561,13 +2563,13 @@
 * https://darekkay.com/blog/debugging-dynamic-content/
 * https://aaronfrancis.com/2023/read-the-docs-like-a-book
 * https://diamondssuck.com/
-* https://news.ycombinator.com/item?id=38285251 - How to build trust as a new engineering manager (becomingaleader.substack.com)
+* https://news.ycombinator.com/item?id=38285251 (https://becomingaleader.substack.com/p/how-to-build-trust) - How to build trust as a new engineering manager
 * https://www.youtube.com/watch?v=bQfJi7rjuEk "Intelligence is not Enough | Bryan Cantrill | Monktoberfest 2023"
-* https://news.ycombinator.com/item?id=38259148 - I accidentally a scheme (wingolog.org)
-* https://news.ycombinator.com/item?id=38257024 - My favorite coding question to give candidates (carloarg02.medium.com)
+* https://news.ycombinator.com/item?id=38259148 (https://wingolog.org/archives/2023/11/13/i-accidentally-a-scheme) - I accidentally a scheme
+* https://news.ycombinator.com/item?id=38257024 (https://carloarg02.medium.com/my-favorite-coding-question-to-give-candidates-17ea4758880c) - My favorite coding question to give candidates
 * https://brandur.org/fragments/events
 * https://www.kalzumeus.com/2020/10/09/four-years-at-stripe
-* https://news.ycombinator.com/item?id=13752887 - Qualities that I believe make the most difference in programmers’ productivity (antirez.com)
+* https://news.ycombinator.com/item?id=13752887 (http://antirez.com/news/112) - Qualities that I believe make the most difference in programmers’ productivity
 * https://danluu.com/productivity-velocity - love this one
 * https://danluu.com/corp-eng-blogs/
 * https://danluu.com/wat/
@@ -2598,7 +2600,7 @@
 * https://aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems/
 * https://www.youtube.com/watch?v=IxkSlnrRFqc "SREcon19 Europe/Middle East/Africa - Advanced Napkin Math: Estimating System..."
 * https://dukope.com/devlogs/papers-please/lcdplease/
-* https://news.ycombinator.com/item?id=38095699 - How Bear does analytics with CSS (herman.bearblog.dev)
+* https://news.ycombinator.com/item?id=38095699 (https://herman.bearblog.dev/how-bear-does-analytics-with-css/) - How Bear does analytics with CSS
 * https://users.ece.utexas.edu/~adnan/pike.html
 * https://retrocomputing.stackexchange.com/questions/27926/who-invented-file-extensions-in-file-names
 * https://sergeyteplyakov.github.io/Blog/benchmarking/2023/11/02/Performance_Comparison_For_Classes_vs_Structs.html
@@ -2618,28 +2620,28 @@
 * https://buttondown.email/hillelwayne/archive/raku-is-surprisingly-good-for-clis/
 * https://dev.betterdoc.org/docker/linux/container/signals/pid1/2021/06/18/how-docker-forced-me-to-learn-more-about-linux.html
 * https://www.youtube.com/watch?v=R_b2B5tKBUM "The Simpsons Hit & Run Source Code Comments, Read by Comic Book Guy"
-* https://news.ycombinator.com/item?id=37890453 - Background job queues and priorities may be the wrong path (bernard.io)
+* https://news.ycombinator.com/item?id=37890453 (https://alexis.bernard.io/blog/2023-10-15-background-job-queues-and-priorities-may-be-the-wrong-path.html) - Background job queues and priorities may be the wrong path
 * https://bofh.bjash.com/
 * http://www.paulgraham.com/rootsoflisp.html (https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf)
 * http://www.paulgraham.com/hundred.html
 * http://www.paulgraham.com/procrastination.html
 * http://www.paulgraham.com/gh.html
-* https://news.ycombinator.com/item?id=11104356 - Why I No Longer Use MVC Frameworks (infoq.com)
+* https://news.ycombinator.com/item?id=11104356 (http://www.infoq.com/articles/no-more-mvc-frameworks) - Why I No Longer Use MVC Frameworks
 * https://www.joelonsoftware.com/2005/01/02/advice-for-computer-science-college-students/
 * https://zverok.space/blog/2023-10-11-syntax-sugar1-numeric-block-args.html -- cool blog
 * https://zverok.space/blog/2022-01-13-it-evolves.html
-* https://news.ycombinator.com/item?id=37951343 - Which Interpreters Are Faster, AST or Bytecode? (stefan-marr.de)
+* https://news.ycombinator.com/item?id=37951343 (https://stefan-marr.de/2023/10/ast-vs-bytecode-interpreters/) - Which Interpreters Are Faster, AST or Bytecode?
 * http://www.catb.org/~esr/faqs/things-every-hacker-once-knew/#_ascii
 * https://franz.com/support/documentation/10.1/ansicl/dictentr/carcdrca.htm
 * https://www.gnu.org/software/emacs/manual/html_node/eintr/Strange-Names.html
 * https://en.m.wikipedia.org/wiki/Philips_VG-8020 -- computador do nuno
 * https://rachelbythebay.com/w/2023/10/16/env/
 * https://programming.guide/worlds-most-copied-so-snippet.html
-* https://news.ycombinator.com/item?id=37630391 - Permuting Bits with GF2P8AFFINEQB (bitmath.blogspot.com)
+* https://news.ycombinator.com/item?id=37630391 (http://bitmath.blogspot.com/2023/09/permuting-bits-with-gf2p8affineqb.html) - Permuting Bits with GF2P8AFFINEQB
 * https://zinascii.com/2023/debugging-a-zig-test-failure.html
 * https://www.youtube.com/watch?v=JqYCt9rTG8g ""Why Programming Languages Matter" by Andrew Black"
 * https://www.toptal.com/ruby/ruby-pattern-matching-tutorial
-* https://news.ycombinator.com/item?id=37532439 - Queueing Theory: An introduction for software development (github.com/joelparkerhenderson)
+* https://news.ycombinator.com/item?id=37532439 (https://github.com/joelparkerhenderson/queueing-theory) - Queueing Theory: An introduction for software development (github.com/joelparkerhenderson)
 * https://www.dtreelabs.com/blog/parallel-queries-in-rails-using-load-async
 * https://pawelurbanek.com/rails-load-async
 * https://www.youtube.com/watch?v=HyzD8pNlpwI "The Ultimate Game Boy Talk (33c3)"
@@ -2654,7 +2656,7 @@
 # September 2023
 * https://www.youtube.com/watch?v=pQ0CvjAJXz4 "GigCityElixir23 - Bryan Hunter"
 * https://www.ash-hq.org/
-* https://news.ycombinator.com/item?id=37539350 - Use your database to power state machines (lawrencejones.dev)
+* https://news.ycombinator.com/item?id=37539350 (https://blog.lawrencejones.dev/state-machines/) - Use your database to power state machines
 * https://c9x.me/compile/
 * https://100r.co/site/uxn.html
 * https://www.a1k0n.net/2011/07/20/donut-math.html
@@ -2674,7 +2676,7 @@
 * https://steve-yegge.blogspot.com/2008/10/universal-design-pattern.html?m=1
 * https://steve-yegge.blogspot.com/2006/03/execution-in-kingdom-of-nouns.html
 * https://web.citadel.edu/root/images/commandant/assistant-commandant-leadership/for-the-want-of-a-nail.pdf
-* https://web.archive.org/web/20110708065237/http://steve-yegge.blogspot.com/2006/04/lisp-is-not-acceptable-lisp.html
+* https://web.archive.org/web/20110708065237/http://steve-yegge.blogspot.com/2006/04/lisp-is-not-acceptable-lisp.html (http://steve-yegge.blogspot.com/2006/04/lisp-is-not-acceptable-lisp.html)
 * https://martinfowler.com/bliki/AnemicDomainModel.html
 * https://www.youtube.com/watch?v=wIpz4ioK0gI "Getting to know Temporal"
 * https://www.speedshop.co/2020/09/17/we-made-puma-faster-with-sleep-sort.html
@@ -2692,16 +2694,16 @@
 * https://github.com/statelyai/xstate/
 * https://jvns.ca/blog/2023/09/14/in-a-git-repository--where-do-your-files-live-/
 * https://www.youtube.com/watch?v=C2w45qRc3aU "The Absolute Best Intro to Monads For Software Engineers"
-* https://news.ycombinator.com/item?id=37459495 - Knightmare: A DevOps Cautionary Tale (2014) (dougseven.com)
-* https://news.ycombinator.com/item?id=37466475 - Unix Domain Sockets vs Loopback TCP Sockets (2014) (nicisdigital.wordpress.com)
+* https://news.ycombinator.com/item?id=37459495 (https://dougseven.com/2014/04/17/knightmare-a-devops-cautionary-tale/) - Knightmare: A DevOps Cautionary Tale (2014)
+* https://news.ycombinator.com/item?id=37466475 (https://nicisdigital.wordpress.com/2014/03/03/unix-domain-sockets-vs-loopback-tcp-sockets/) - Unix Domain Sockets vs Loopback TCP Sockets (2014)
 * https://hylang.org/
 * https://www.youtube.com/watch?v=Y29SSOS4UOc "[EN] Don't Wait For Me! Scalable Concurrency for Ruby 3! / Samuel Williams @ioquatix"
 * http://www.continuousthinking.com/2014/11/06/pedants--man.html
 * https://www.cis.upenn.edu/~bcpierce/courses/670Fall04/GreatWorksInPL.shtml
 * https://github.com/sidekiq/sidekiq/wiki/Really-Complex-Workflows-with-Batches
 * https://www.youtube.com/watch?v=BE5C2ydN0y0 "[EN] Determining Ruby Process Counts: Theory and Practice / Nate Berkopec @nateberkopec"
-* https://web.archive.org/web/20141231201113/http://blog.serverfault.com/2011/06/27/per-second-measurements-dont-cut-it
-* https://web.archive.org/web/20141018061959/http://www.snookles.com/slf-blog/2012/01/05/tcp-incast-what-is-it/
+* https://web.archive.org/web/20141231201113/http://blog.serverfault.com/2011/06/27/per-second-measurements-dont-cut-it (http://blog.serverfault.com/2011/06/27/per-second-measurements-dont-cut-it)
+* https://web.archive.org/web/20141018061959/http://www.snookles.com/slf-blog/2012/01/05/tcp-incast-what-is-it/ (http://www.snookles.com/slf-blog/2012/01/05/tcp-incast-what-is-it/)
 * http://www.paulgraham.com/icad.html
 * https://mailchi.mp/railsspeed/scaling-is-queue-management?e=0ab8ee608c
 * https://ferd.ca/queues-don-t-fix-overload.html
@@ -2715,18 +2717,18 @@
 * http://www.paulgraham.com/makersschedule.html
 * https://blog.allegro.tech/2023/08/management-engineering-acrobatics.html
 * https://www.youtube.com/watch?v=PSIPhVjWBO0 "SREcon16 - A Young Lady's Illustrated Primer to Technical Decision-Making"
-* https://news.ycombinator.com/item?id=36887091 - It's 2023, so of course I'm learning Common Lisp (schemescape.com)
+* https://news.ycombinator.com/item?id=36887091 (https://log.schemescape.com/posts/programming-languages/learning-lisp-in-2023.html) - It's 2023, so of course I'm learning Common Lisp
 * https://www.youtube.com/watch?v=KXuZi9aeGTw "User-level threads....... with threads. - Paul Turner - Google"
-* https://news.ycombinator.com/item?id=36663509 - The controller pattern is awful, and other OO heresy (2013) (eev.ee)
+* https://news.ycombinator.com/item?id=36663509 (https://eev.ee/blog/2013/03/03/the-controller-pattern-is-awful-and-other-oo-heresy/) - The controller pattern is awful, and other OO heresy (2013)
 * https://railsatscale.com//2023-06-12-rewriting-the-ruby-parser/
 * https://fresh.deno.dev/docs/getting-started/adding-interactivity
 * https://joajfreitas.com/is-prime-code-golf/
-* https://news.ycombinator.com/item?id=36719409 - Looming demise of the 10x developer – an era of enthusiast programmers is ending (testdouble.com)
+* https://news.ycombinator.com/item?id=36719409 (https://blog.testdouble.com/posts/2023-07-12-the-looming-demise-of-the-10x-developer/) - Looming demise of the 10x developer – an era of enthusiast programmers is ending
 * http://blog.syncpup.com/posts/two-erlang-patterns-i-love.html
-* https://news.ycombinator.com/item?id=37244503 - Print(“lol”) doubled the speed of my Go function (medium.com/ludirehak)
+* https://news.ycombinator.com/item?id=37244503 (https://medium.com/@ludirehak/printing-lol-doubled-the-speed-of-my-go-code-e32e02fc3f92) - Print(“lol”) doubled the speed of my Go function (medium.com/ludirehak)
 * https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826fc4
-* https://news.ycombinator.com/item?id=37272362 - Earning the privilege to work on unoriginal problems (landmines.substack.com)
-* https://news.ycombinator.com/item?id=37114457 - Thoughts on Elixir, Phoenix and LiveView after 18 months of commercial use (korban.net)
+* https://news.ycombinator.com/item?id=37272362 (https://landmines.substack.com/p/earning-the-privilege-to-work-on) - Earning the privilege to work on unoriginal problems
+* https://news.ycombinator.com/item?id=37114457 (https://korban.net/posts/2023-08-11-thoughts-on-elixir-phoenix-liveview/) - Thoughts on Elixir, Phoenix and LiveView after 18 months of commercial use
 * https://blog.jetbrains.com/dotnet/2023/07/27/introducing-predictive-debugging-a-game-changing-look-into-the-future
 * https://betterprogramming.pub/load-balancing-the-intuition-behind-the-power-of-two-random-choices-6de2e139ac2f
 * https://en.wikipedia.org/wiki/Priority_inversion
@@ -2781,8 +2783,8 @@
 * https://www.paweldabrowski.com/articles/five-things-you-did-not-know-about-rails-transactions
 * https://cohost.org/tef/post/1764930-how-not-to-write-a
 * https://www.bitecode.dev/p/hype-cycles
-* https://web.archive.org/web/20160416000938/https://circleci.com/blog/it-really-is-the-future/
-* https://web.archive.org/web/20160817120102/https://circleci.com/blog/its-the-future/
+* https://web.archive.org/web/20160416000938/https://circleci.com/blog/it-really-is-the-future/ (https://circleci.com/blog/it-really-is-the-future/)
+* https://web.archive.org/web/20160817120102/https://circleci.com/blog/its-the-future/ (https://circleci.com/blog/its-the-future/)
 * https://longliveruby.com/ruby-on-rails/how-sidekiq-really-works/
 * https://www.youtube.com/watch?v=MZvmYaFkNJI "Build a real-time Twitter clone in 15 minutes with LiveView and Phoenix 1.5"
 * https://thepugautomatic.com/2020/07/optimising-data-over-the-wire-in-phoenix-liveview/
@@ -2798,9 +2800,9 @@
 * https://docs.google.com/presentation/d/1g3XoBToWJF2jO0hDYk1n-24oSPsm5WkZCWo0Lq5fNGE/mobilepresent?slide=id.g2222d5322d9_3_1
 * https://underjord.io/the-many-states-of-elixir.html
 * http://www.aaronsw.com/weblog/rewritingreddit (RIP)
-* https://web.archive.org/web/20060206185841/http://reddit.com:80/blog/2005/12/on-lisp.html
+* https://web.archive.org/web/20060206185841/http://reddit.com:80/blog/2005/12/on-lisp.html (http://reddit.com:80/blog/2005/12/on-lisp.html)
 * https://lwn.net/SubscriberLink/934940/3abb2d4086680b78/
-* https://news.ycombinator.com/item?id=36429986 - Unexpected downsides of UUID keys in PostgreSQL (cybertec-postgresql.com)
+* https://news.ycombinator.com/item?id=36429986 (https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/) - Unexpected downsides of UUID keys in PostgreSQL
 * http://dtrace.org/blogs/bmc/2005/07/19/dtrace-safety/
 * https://blog.devgenius.io/analyzing-new-unique-identifier-formats-uuidv6-uuidv7-and-uuidv8-d6cc5cd7391a
 * https://www.umsl.edu/~siegelj/information_theory/classassignments/Lombardo/04_intractableproblems.html
@@ -2829,7 +2831,7 @@
 * https://lethain.com/migrations/
 * https://www.vector-logic.com/blog/posts/three-things-to-avoid-when-building-rails-controllers
 * http://tenderlovemaking.com/
-* https://web.archive.org/web/20110714074727/http://erlang.2086793.n4.nabble.com/Erlang-Web-Servers-challenge-td3643848.html
+* https://web.archive.org/web/20110714074727/http://erlang.2086793.n4.nabble.com/Erlang-Web-Servers-challenge-td3643848.html (http://erlang.2086793.n4.nabble.com/Erlang-Web-Servers-challenge-td3643848.html)
 * https://www.youtube.com/watch?v=LMe7hf2G1po "Eat My Data: How Everybody gets File IO Wrong"
 
 # May 2023
@@ -2865,7 +2867,7 @@
 * https://charity.wtf/2023/05/01/choose-boring-technology-culture/
 * https://www.citusdata.com/blog/2016/03/30/five-ways-to-paginate/
 * https://blog.sentry.io/2015/07/23/transaction-id-wraparound-in-postgres/
-* https://news.ycombinator.com/item?id=35790367 - Mojo – a new programming language for AI developers (modular.com)
+* https://news.ycombinator.com/item?id=35790367 (https://www.modular.com/mojo) - Mojo – a new programming language for AI developers
 * https://severalnines.com/blog/overview-caching-postgresql/
 * https://thoughtbot.com/blog/skinny-controllers-skinny-models
 * https://www.honeybadger.io/blog/ruby-exception-vs-standarderror-whats-the-difference/
@@ -2886,7 +2888,7 @@
 * https://mailchi.mp/railsspeed/gvl-sql-shotgun-memory-leaks-and-more
 * https://blog.peterzhu.ca/ruby-range-bsearch/
 * http://www.unlimitednovelty.com/2011/10/nodejs-has-jumped-shark.html
-* https://web.archive.org/web/20111107031226/http://blog.brianbeck.com/post/10967024222/node-js-cures-cancer
+* https://web.archive.org/web/20111107031226/http://blog.brianbeck.com/post/10967024222/node-js-cures-cancer (http://blog.brianbeck.com/post/10967024222/node-js-cures-cancer)
 * http://widgetsandshit.com/teddziuba/2011/10/node-js-is-cancer.html -- re-reading old drama
 * https://medium.com/@leo_hetsch/ruby-modules-include-vs-prepend-vs-extend-f09837a5b073
 * https://www.destroyallsoftware.com/talks/boundaries
@@ -2918,7 +2920,7 @@
 * https://ivoanjo.me/blog/2023/02/11/ruby-unexpected-io-vs-cpu-unfairness/
 * https://ivoanjo.me/blog/2018/10/13/spotting-unsafe-ruby-patterns/
 * https://www.youtube.com/watch?v=5VHc27SYAIw "Spotting Unsafe Concurrent Ruby Patterns (Meetup talk)"
-* https://lobste.rs/s/u7y4lk/modules_matter_most_for_masses#c_chlqbq
+* https://lobste.rs/s/u7y4lk/modules_matter_most_for_masses#c_chlqbq (https://www.pathsensitive.com/2023/03/modules-matter-most-for-masses.html)
 * https://www.honeycomb.io/blog/deploys-wrong-way-change-user-experience
 
 # March 2023
@@ -2934,7 +2936,7 @@
 * https://dnlserrano.dev/talks
 * https://api.rubyonrails.org/classes/ActiveRecord/Locking/Pessimistic.html
 * https://api.rubyonrails.org/classes/ActiveRecord/Locking/Optimistic.html
-* https://web.archive.org/web/20221007024342/https://www.2ndquadrant.com/en/blog/postgresql-anti-patterns-read-modify-write-cycles/
+* https://web.archive.org/web/20221007024342/https://www.2ndquadrant.com/en/blog/postgresql-anti-patterns-read-modify-write-cycles/ (https://www.2ndquadrant.com/en/blog/postgresql-anti-patterns-read-modify-write-cycles/)
 * https://ceronman.com/2021/07/22/my-experience-crafting-an-interpreter-with-rust/
 * https://antisoftware.club/manifesto/2020/03/16/part-1.html
 * https://www.infoq.com/articles/framework-architectural-decisions/
@@ -2990,7 +2992,7 @@
 * https://danluu.com/startup-options/
 * https://yosefk.com/blog/stock-options-a-balanced-approach.html
 * https://uselessdevblog.wordpress.com/2022/11/10/stop-lying-to-yourself-you-will-never-fix-it-later/
-* https://news.ycombinator.com/item?id=10933524 - The Unreasonable Effectiveness of Dynamic Typing for Practical Programs (greggman.com)
+* https://news.ycombinator.com/item?id=10933524 (http://games.greggman.com/game/dynamic-typing-static-typing/) - The Unreasonable Effectiveness of Dynamic Typing for Practical Programs
 * https://blog.dziban.net/coroutines/
 * https://vladmihalcea.com/optimistic-vs-pessimistic-locking/
 * https://www.postgresql.org/docs/current/explicit-locking.html - still confused

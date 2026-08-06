@@ -18,6 +18,11 @@ clean() {
   rake clean
 }
 
+remake() {
+  rake clean
+  rake
+}
+
 serve() {
   ruby -run -e httpd docs/
 }

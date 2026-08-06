@@ -14,7 +14,7 @@ prototyping, I put the `require` statement right next to its usage, in a
 loop. When I tried hoisting it outside, where `require` normally goes,
 the script started raising an error:
 
-```
+``` txt
 .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:261:in `close': uninitialized stream (IOError)
     from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:261:in `block (4 levels) in sfork'
     from .../3.1.0/gems/shell-0.8.1/lib/shell/process-controller.rb:259:in `each_object'
@@ -66,7 +66,7 @@ and introspectable, right? So I use `ObjectSpace.dump_all(output: io)`
 to dump all objects, and cross-ref with address of the failed IO object
 from my debug log. I get something like this:
 
-```
+``` txt
 {"address":"0x101315888", "type":"FILE", "class":"0x10109ea50", "file":"./build.rb", "line":14, "method":"`", "generation":16, "memsize":40}
 ```
 

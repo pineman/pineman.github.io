@@ -10,8 +10,10 @@ We initially shrugged off one of them during the first batch of emails,
 but it came back around for the second batch. Luckily it only affected
 our own dog fooding account. This is the error:
 
-    ActionView::Template::Error
-    incompatible character encodings: ASCII-8BIT and UTF-8 (ActionView::Template::Error)
+``` txt
+ActionView::Template::Error
+incompatible character encodings: ASCII-8BIT and UTF-8 (ActionView::Template::Error)
+```
 
 So, let's start at the beginning: context, mental priming, emotional
 control. What's the first thing that jumps to mind?
@@ -41,7 +43,9 @@ which is pretty easy: just call the mailer inline, using `deliver_now`,
 in the rails console connected to production (how great is that btw?
 🤠). That reveals where it blows up:
 
-    /app/vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8/lib/active_support/core_ext/string/output_safety.rb:197:in `concat': incompatible character encodings: ASCII-8BIT and UTF-8 (ActionView::Template::Error)
+``` txt
+/app/vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8/lib/active_support/core_ext/string/output_safety.rb:197:in `concat': incompatible character encodings: ASCII-8BIT and UTF-8 (ActionView::Template::Error)
+```
 
 That's cool and all, but this still doesn't tell me what string exactly,
 out of the whole html email, is causing it to blow up. At this point my
@@ -62,15 +66,19 @@ I read the method (cmd-p `output_safety`, `197G`, thanks rubymine) - it
 uses an `ActiveSupport::SafeBuffer` and calls `original_concat`. I try
 to reproduce the bug, having the emoji hunch in mind:
 
-    ActiveSupport::SafeBuffer.new("🤣").safe_concat("🤣")
+``` txt
+ActiveSupport::SafeBuffer.new("🤣").safe_concat("🤣")
+```
 
 This, of course, doesn't blow up: string literals are natively utf-8 in
 ruby, so no encoding mismatches here. Let's try forcing this mysterious
 `ASCII-8BIT` encoding (which, remember, at this point I didn't know was
 an alias for `BINARY` and for some reason just didn't google it):
 
-    ActiveSupport::SafeBuffer.new("🤣").safe_concat(128.chr.force_encoding("ASCII-8BIT"))
-    /app/vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8/lib/active_support/core_ext/string/output_safety.rb:197:in `concat': incompatible character encodings: UTF-8 and ASCII-8BIT (Encoding::CompatibilityError)
+``` txt
+ActiveSupport::SafeBuffer.new("🤣").safe_concat(128.chr.force_encoding("ASCII-8BIT"))
+/app/vendor/bundle/ruby/3.2.0/gems/activesupport-7.0.8/lib/active_support/core_ext/string/output_safety.rb:197:in `concat': incompatible character encodings: UTF-8 and ASCII-8BIT (Encoding::CompatibilityError)
+```
 
 Aha! `128.chr` just means `0b10000000`, which has the 7bit set. I
 sort-of note, in the back of my head, that the encodings are backwards
@@ -105,8 +113,10 @@ end
 
 This gets me closer - running the mailer again now prints:
 
-    (irb):312:in `write': "\xF0" from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
-    (irb):310:in `concat': incompatible character encodings: ASCII-8BIT and UTF-8 (Encoding::CompatibilityError)
+``` txt
+(irb):312:in `write': "\xF0" from ASCII-8BIT to UTF-8 (Encoding::UndefinedConversionError)
+(irb):310:in `concat': incompatible character encodings: ASCII-8BIT and UTF-8 (Encoding::CompatibilityError)
+```
 
 So we've got a mysterious `F0` byte somewhere. It's coming from the
 latter parts of the email, which our feature didn't touch. The buffer
@@ -130,7 +140,9 @@ encoding different? Sure enough, everything from the DB comes as
 
 I reproduce the bug using the mailer again. Scrolling... Wait, look!
 
-    ... f06\"> \xF0\x9F\x94\x80Rec ...
+``` txt
+... f06\"> \xF0\x9F\x94\x80Rec ...
+```
 
 Why does the buffer *already* contain an `F0`? The original buffer
 already has this emoji?! Shows up as hexa escapes though - I chalk it up

@@ -1,4 +1,6 @@
 # August 2026
+* https://byroot.github.io/ruby/performance/2026/08/05/shrinking-ruby-hashes.html
+* https://news.ycombinator.com/item?id=49184216 (https://weli.dev/blog/the-valley-of-webhooks/) - The Valley of Webhooks
 * https://john.fun/elevators
 * https://www.ben-evans.com/benedictevans/2026/7/9/ways-to-think-about-token-pricing
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-93
