@@ -52,13 +52,13 @@ HTTP.rb's behavior, so it'd be a pretty big change. Besides, our project
 doesn't use any async stuff yet, so I'd be pioneering this in. Guess
 what I did - I stuck `Timeout::timeout` in there and moved on.
 
-... Until I started getting errors I hadn't before. And the stacktrace
+... Until I started getting errors I hadn't before. And the stack trace
 makes no sense - the line where the error was raised couldn't possibly
 even raise that error. I had a rescue around all the HTTP calls I was
 making, so how wasn't it rescued there?!... Oh. God. Wait. It's
 `Timeout::timeout`, isn't it?...
 
-It was. I suspect it was doubly-bad as HTTP.rb itself uses
+It was. I suspect it was doubly bad as HTTP.rb itself uses
 `Timeout::timeout` for its timeouts [^2]. I was triggering this
 condition fairly often, in just hundreds of requests, on my machine -
 there's no way we can ship it like this.
@@ -68,7 +68,7 @@ there's no way we can ship it like this.
 Time to look for alternatives, I guess... I'll try not to get into
 hideous technical detail, for both your sake and mine. I checked, and it
 seemed to me that the stdlib Net::HTTP also used `Timeout::timeout` -
-albeit less than HTTP.rb (looks like that it's just for the open timeout
+albeit less than HTTP.rb (looks like it's just for the open timeout
 [^3]), so I skipped it for now.
 
 Then I looked at [async-http](https://github.com/socketry/async-http),

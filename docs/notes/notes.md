@@ -194,6 +194,7 @@ SELECT DISTINCT ON (url) url, request_duration
 FROM logs
 ORDER BY url, timestamp DESC
 ```
+* `SELECT DISTINCT` does not use a loose index scan: even with a suitable index, Postgres reads every matching index entry and then removes duplicates. It cannot jump from one distinct value to the next as MySQL can, so its cost scales with matching rows, not distinct values.
 * Index Scans are NOT Index Only Scans!!!!!!!!!!!
 * GIN: Generalized INverted index. Designed for handling cases where multiple values are stored in a single column (arrays, jsonb, full-text search).
 * GiST: Generalized Search Tree. Crazy stuff like quad trees and geo data.

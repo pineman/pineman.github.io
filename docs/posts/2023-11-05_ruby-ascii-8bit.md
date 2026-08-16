@@ -8,7 +8,7 @@ booleans in CSVs? Maybe don't use CSVs as persistence. But I digress).
 
 We initially shrugged off one of them during the first batch of emails,
 but it came back around for the second batch. Luckily it only affected
-our own dog fooding account. This is the error:
+our own dogfooding account. This is the error:
 
 ``` txt
 ActionView::Template::Error
@@ -198,8 +198,9 @@ concat. The buffer was `UTF-8`, but the string itself... is in
 `ASCII-8BIT`? Why...? We'd just seen that the value from the DB is
 `UTF-8`. And sure enough, as soon as this `ASCII-8BIT` string is
 concated with the buffer, it too is tainted to become `ASCII-8BIT`! It
-blows up further ahead when the now `ASCII-8BIT` tries to concat the
-second emoji string, which this time is correctly encoded as `UTF-8`!
+blows up further ahead when the now `ASCII-8BIT` buffer tries to concat
+the second emoji string, which this time is correctly encoded as
+`UTF-8`!
 
 This is when it becomes clear to my colleague that the "tainted"
 `ASCII-8BIT` string is actually coming from a CSV file we built for the
@@ -232,7 +233,7 @@ be called `ASCII-8BIT`?! What do you mean, how does that even make
 sense?!?!? ASCII is only 7 bits!!... A quick grep on ruby's source code
 confirms that `ASCII-8BIT` is an alias for `BINARY`.
 
-I remind myself of the other times I went to read up on history of a
+I remind myself of the other times I went to read up on the history of a
 particular historical change in ruby. My head is already hurting. I do
 not wish to jump into this rabbit hole after one and a half hours of
 fighting encoding errors. Not now. Maybe not ever.
