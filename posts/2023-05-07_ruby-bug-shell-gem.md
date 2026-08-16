@@ -36,12 +36,12 @@ closing and the debugger losing connection! [^2]
 I play with the gem's code, writing debug output to a file directly,
 resulting in a list of the IO objects the gem's trying to close, marking
 the one that fails. I don't know where the failing object comes from
-though, as I only have an hex address, so I come with the idea of
+though, as I only have a hex address, so I come up with the idea of
 monkey-patching `IO#initialize` [^3] to try and match up the IO objects.
 This doesn't help, as the IO object that fails to `close` doesn't show
 up in my debug log. I then try essentially the same idea using `rbtrace`
 with `rbtrace -p $(pgrep ruby) -m 'IO#initialize(self, __source__)'`.
-Still, no avail.
+Still, to no avail.
 
 I then try various ruby versions, since the shell gem is a bit outdated
 or infrequently updated. Aha! It starts failing on 3.1.0, but succeeds

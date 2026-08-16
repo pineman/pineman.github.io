@@ -67,7 +67,7 @@ there's no way we can ship it like this.
 
 Time to look for alternatives, I guess... I'll try not to get into
 hideous technical detail, for both your sake and mine. I checked, and it
-seemed to me that the stdlib Net:HTTP also used `Timeout::timeout` -
+seemed to me that the stdlib Net::HTTP also used `Timeout::timeout` -
 albeit less than HTTP.rb (looks like that it's just for the open timeout
 [^3]), so I skipped it for now.
 
@@ -108,7 +108,7 @@ wrapper around libcurl, which I know has a global timeout including
 redirects (`--max-time` through the `curl` cli). I tried it out and it's
 pretty simple, easy to use and does the right thing (of course, it's
 `curl`)! So this seems to be the endgame, the ultimate solution for my
-usecase today, at least from my testing so far.
+use case today, at least from my testing so far.
 
 ## All roads lead to curl
 

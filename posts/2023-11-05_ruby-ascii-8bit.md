@@ -53,7 +53,7 @@ colleague has the (correct) hunch that it's probably blowing up on emoji
 in the name of a string identifier we template into the view. Pedantic,
 boring old me however wants to be 100% sure.
 
-This where I notice it fails in this `concat` method - so I have the
+This is where I notice it fails in this `concat` method - so I have the
 second good idea of monkey patching it. Again, how great is that?! Here
 my co-worker notes, in a much less enthusiastic tone, that while yes
 ruby is pretty cool, in another language you probably wouldn't even have
@@ -161,13 +161,13 @@ This is where the third great idea comes in: smoke break with the
 airpods still on. It's time for some serious pair hypothesis crafting,
 despite the rain and dark.
 
-Clearly the view *does* knows how to render emojis all along. What if
-the buffer starts out as `UTF-8`, the first emoji concat works... but
-then switches to being `ASCII-8BIT` at some point, causing the second
-emoji concat to fail? Let's go for broke, print the buffer's `.encoding`
-at each call, and trace exactly when it switches (spewing large amounts
-of text to my terminal will forever be my superpower. Thanks tmux and
-vim). This is the final monkey patch:
+Clearly the view *does* know how to render emojis all along. What if the
+buffer starts out as `UTF-8`, the first emoji concat works... but then
+switches to being `ASCII-8BIT` at some point, causing the second emoji
+concat to fail? Let's go for broke, print the buffer's `.encoding` at
+each call, and trace exactly when it switches (spewing large amounts of
+text to my terminal will forever be my superpower. Thanks tmux and vim).
+This is the final monkey patch:
 
 ``` ruby
 module ActiveSupport
@@ -226,7 +226,7 @@ pub/sub](https://github.com/googleapis/google-cloud-ruby/pull/1564).
 Wait. "canonical bytes representation"? Does that just mean binary?
 Oh... That makes sense, I guess. Google doesn't make any assumptions
 about encoding (as I mistakenly thought, because what the hell does
-`ACSII-8BIT` mean), so it just says it's binary. It just happens that
+`ASCII-8BIT` mean), so it just says it's binary. It just happens that
 'binary' has to have a wacky name in ruby, of course. Why. Why must it
 be called `ASCII-8BIT`?! What do you mean, how does that even make
 sense?!?!? ASCII is only 7 bits!!... A quick grep on ruby's source code

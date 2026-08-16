@@ -1,5 +1,6 @@
 # August 2026
 * https://news.ycombinator.com/item?id=49296939 (https://github.com/inevolin/k8s-cpu-limits-analyzed) - For the love of god stop using CPU limits in Kubernetes
+* https://news.ycombinator.com/item?id=49296939 (https://github.com/inevolin/k8s-cpu-limits-analyzed) - For the love of god stop using CPU limits in Kubernetes
 * https://www.seangoedecke.com/ai-text-watermarking-is-not-a-big-deal
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-95
 * https://news.ycombinator.com/item?id=49222189 (https://blog.senko.net/code-was-never-the-hard-part-is-an-insult-to-all-programmers) - “Code was never the hard part” is an insult to all programmers
