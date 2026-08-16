@@ -184,29 +184,51 @@ end
 
 def process_links!
   lines = File.readlines(LINKS_MD)
+  processed_lines = if File.exist?("#{BUILD_DIR}/links.md")
+    File.readlines("#{BUILD_DIR}/links.md").to_h { |line| [line, true] }
+  else
+    {}
+  end
+
   modified_lines = lines.map do |line|
+    original_line = line
     line = "* #{line}" if line.start_with?("http") && !line.start_with?("* ")
 
-    # Auto-fetch titles for bare links (no description after the URL)
-    if line =~ /^\* (https:\/\/news\.ycombinator\.com\/item\?id=(\d+))\s*$/
-      hn_url, hn_id = $1, $2
-      data = JSON.parse(http_get("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json"))
-      if data && data["title"]
-        backing_link = data["url"] ? " (#{data["url"]})" : ""
-        line = "* #{hn_url}#{backing_link} - #{data["title"]}\n"
-      end
-    end
+    # docs/links.md is the source from the previous successful build. An
+    # unchanged line was already processed, including HN self-posts whose
+    # enriched form cannot be distinguished from a line with a personal note.
+    unless processed_lines.key?(original_line) || processed_lines.key?(line)
+      line = enrich_hacker_news_link(line)
 
-    if line =~ %r{^\* (https?://(?:youtu\.be/\S+|(?:www\.|m\.)?youtube\.com/watch\?\S*\bv=\S+))\s*$}
-      youtube_url = $1
-      if title = fetch_youtube_title(youtube_url)
-        line = "* #{youtube_url} - #{title}\n"
+      if line =~ %r{^\* (https?://(?:youtu\.be/\S+|(?:www\.|m\.)?youtube\.com/watch\?\S*\bv=\S+))\s*$}
+        youtube_url = $1
+        if title = fetch_youtube_title(youtube_url)
+          line = "* #{youtube_url} - #{title}\n"
+        end
       end
     end
 
     line
   end
   File.write(LINKS_MD, modified_lines.join) if modified_lines != lines
+end
+
+def enrich_hacker_news_link(line)
+  match = line.match(/^\* (https:\/\/news\.ycombinator\.com\/item\?id=(\d+))(?:\s+-\s+(.+?))?\s*$/)
+  return line unless match
+
+  hn_url, hn_id, notes = match.captures
+  data = JSON.parse(http_get("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json"))
+  return line unless data && data["title"]
+
+  title = data["title"]
+  # A Hacker News item without a backing URL (for example, Ask HN) must not
+  # get its title added again on each build.
+  return line if notes == title || notes&.start_with?("#{title} - ")
+
+  backing_link = data["url"] ? " (#{data["url"]})" : ""
+  notes_suffix = notes ? " - #{notes}" : ""
+  "* #{hn_url}#{backing_link} - #{title}#{notes_suffix}\n"
 end
 
 def fetch_youtube_title(url)

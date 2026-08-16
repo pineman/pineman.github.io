@@ -13,12 +13,11 @@ inspired by https://goncalo.mendescabrita.com/notes/things-you-should-definitely
  - you'll eventually need transactional push with bulk support (sorry sidekiq)
 
 ## sql
+ - low lock_timeout on migrations (1s) with a retry loop 
  - querytags in all queries
  - postgres-lock-logger: something to periodically inspect lock trees
  - pganalyze is sweet
- - querytags in all queries
  - you'll need a connection pooler eventually
- - maybe autovacuum killer?
  - something to reindex old indexes
  - maybe sometimes a good ole pg_squeeze
  - low statement_timeout, idle_in_transaction_session_timeout, lock_timeout, transaction_timeout, idle_session_timeout

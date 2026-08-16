@@ -186,6 +186,13 @@ JSON.parse(j)</code></pre>
 <li>puma: <code>kill -PWR &lt;pid&gt;</code></li>
 <li>sidekiq, karafka: <code>kill -TTIN &lt;pid&gt;</code></li>
 </ul>
+<ul>
+<li>falcon:</li>
+</ul>
+<ul>
+<li>if app has mixed puma/falcon usage, only load falcon on the falcon process instance, because it changes isolation level to fiber silently.</li>
+<li>probably also needs <code>use ActionDispatch::Executor, Rails.application.executor</code> in config.ru</li>
+</ul>
 <h2 id="rspec">RSpec</h2>
 <ul>
 <li>run one test only: <code>rspec ./spec/controllers/groups_controller_spec.rb:42</code></li>

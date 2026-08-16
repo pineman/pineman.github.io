@@ -1,4 +1,25 @@
 # August 2026
+* https://news.ycombinator.com/item?id=49296939 (https://github.com/inevolin/k8s-cpu-limits-analyzed) - For the love of god stop using CPU limits in Kubernetes
+* https://www.seangoedecke.com/ai-text-watermarking-is-not-a-big-deal
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-95
+* https://news.ycombinator.com/item?id=49222189 (https://blog.senko.net/code-was-never-the-hard-part-is-an-insult-to-all-programmers) - “Code was never the hard part” is an insult to all programmers
+* https://news.ycombinator.com/item?id=49244265 (https://sunilpai.dev/posts/every-company-needs-a-cassandra/) - Every Company Needs a Cassandra - thought provoking
+* https://bengodfrey.dev/blog/process/
+* https://brandur.org/fragments/postgres-without-pgbouncer
+* https://yagni.club/3mstlyuxe5s26 - HTML over the wire
+* https://planetscale.com/blog/the-dangers-of-postgres-subtransactions
+* https://news.ycombinator.com/item?id=49235349 (https://blog.andymasley.com/p/the-main-way-ive-seen-people-turn) - The main way I've seen people turn ideologically crazy (2025)
+* https://www.seangoedecke.com/i-got-an-email-about-resistance
+* https://www.seangoedecke.com/advanced-ai-sycophancy
+* https://boringsql.com/posts/mvcc-bad-bad/
+* https://planetscale.com/blog/concurrency-vs-throughput-vitess-mysql
+* https://yagni.club/3msjbjhlyrc2g - local-thirst: doing too much
+* https://x.com/natevanben/status/2085032402896707604
+* https://gocardless.com/blog/zero-downtime-postgres-migrations-the-hard-parts
+* https://vvka-141.github.io/pgmi/articles/lock-queue-fast-is-not-safe/
+* https://www.seangoedecke.com/how-to-keep-thinking
+* https://boringsql.com/posts/distinct-in-your-count/
+* https://www.snowflake.com/en/blog/engineering/postgres-count-distinct-approximation/
 * https://byroot.github.io/ruby/performance/2026/08/05/shrinking-ruby-hashes.html
 * https://news.ycombinator.com/item?id=49184216 (https://weli.dev/blog/the-valley-of-webhooks/) - The Valley of Webhooks
 * https://john.fun/elevators
@@ -20,7 +41,10 @@
 * https://www.seangoedecke.com/where-the-money-comes-from
 * https://www.seangoedecke.com/in-defense-of-not-understanding-your-codebase
 * https://theconsensus.dev/p/2026/05/18/serving-files-three-ways.html
-* https://yagni.club/
+* https://yagni.club/3mrg6mqkjrc23 - local-thirst: But Linear
+* https://yagni.club/3mrdstwwkoc26 - local-thirst
+* https://yagni.club/3m475dwkjvc2o - Misunderstanding SSE
+* https://yagni.club/3m3anpetejc23 - ui = fn(state) done right
 * https://antirez.com/news/171
 * https://matklad.github.io/2025/12/30/memory-safety-is.html
 * https://digitalmars.com/articles/C-biggest-mistake.html

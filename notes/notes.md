@@ -145,6 +145,9 @@ this is useful to bypass proxy objects and stuff
 * thread dumps:
  - puma: `kill -PWR <pid>`
  - sidekiq, karafka: `kill -TTIN <pid>`
+* falcon:
+ - if app has mixed puma/falcon usage, only load falcon on the falcon process instance, because it changes isolation level to fiber silently.
+ - probably also needs `use ActionDispatch::Executor, Rails.application.executor` in config.ru
 
 ## RSpec
 * run one test only: `rspec ./spec/controllers/groups_controller_spec.rb:42`

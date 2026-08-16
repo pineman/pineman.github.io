@@ -19,3 +19,5 @@ lightpanda - lighter browser
 https://lightpanda.io/blog/posts/introducing-lightpanda-agent-and-pandascript
 
 https://hypersolutions.co/
+
+https://freesocks.org/
