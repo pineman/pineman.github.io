@@ -241,6 +241,7 @@ WHERE (now() - pg_stat_activity.query_start) &gt; interval &#39;1 minutes&#39; A
 FROM logs
 ORDER BY url, timestamp DESC</code></pre>
 <ul>
+<li><a href="https://dbos.dev/blog/postgres-select-distinct-does-not-scale"><code>SELECT DISTINCT</code> does not use a loose index scan</a>: even with a suitable index, Postgres reads every matching index entry and then removes duplicates. It cannot jump from one distinct value to the next as MySQL can, so its cost scales with matching rows, not distinct values.</li>
 <li>Index Scans are NOT Index Only Scans!!!!!!!!!!!</li>
 <li>GIN: Generalized INverted index. Designed for handling cases where multiple values are stored in a single column (arrays, jsonb, full-text search).</li>
 <li>GiST: Generalized Search Tree. Crazy stuff like quad trees and geo data.</li>

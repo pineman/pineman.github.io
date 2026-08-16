@@ -161,7 +161,7 @@ This is where the third great idea comes in: smoke break with the
 airpods still on. It's time for some serious pair hypothesis crafting,
 despite the rain and dark.
 
-Clearly the view *does* know how to render emojis all along. What if the
+Clearly the view *has* known how to render emojis all along. What if the
 buffer starts out as `UTF-8`, the first emoji concat works... but then
 switches to being `ASCII-8BIT` at some point, causing the second emoji
 concat to fail? Let's go for broke, print the buffer's `.encoding` at

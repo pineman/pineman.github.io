@@ -37,8 +37,8 @@ incredible - it goes into the internals of how Timeout works in CRuby.
 
 As a quick summary, `Timeout::timeout` essentially spins up a whole new
 thread (if not using Fibers), just to sleep in it for the duration of
-the timeout. If the block of code runs before the timeout is elapsed,
-the thread is killed, and so it doesn't wake up. If it does wake up,
+the timeout. If the block of code runs before the timeout elapses, the
+thread is killed, and so it doesn't wake up. If it does wake up,
 however, it uses `Thread#raise` to raise an error in the calling thread
 at any point, arbitrarily, which is SUPER dangerous! There's no
 guarantee as to when exactly the sleeping thread will run or when the
@@ -47,10 +47,10 @@ problems apply.
 
 Speaking with some colleagues we noted the probable Right Way™ to solve
 this would be to use Fibers and async-http, possibly with Faraday. I,
-uh, didn't do that. My logic and testing was already very much on top of
-HTTP.rb's behavior, so it'd be a pretty big change. Besides, our project
-doesn't use any async stuff yet, so I'd be pioneering this in. Guess
-what I did - I stuck `Timeout::timeout` in there and moved on.
+uh, didn't do that. My logic and testing were already very much on top
+of HTTP.rb's behavior, so it'd be a pretty big change. Besides, our
+project doesn't use any async stuff yet, so I'd be pioneering this in.
+Guess what I did - I stuck `Timeout::timeout` in there and moved on.
 
 ... Until I started getting errors I hadn't before. And the stack trace
 makes no sense - the line where the error was raised couldn't possibly
@@ -119,9 +119,9 @@ Yes.
 
 Tongue-in-cheek. But, in retrospect, it sounds obvious - cURL is
 venerable and legendary. Lindy's law in effect! Of course though, pure
-ruby gems have many advantages compared to ffi/native gems, not least of
-which not randomly segfaulting [^5]. But we'll see how it goes for me
-and curl wrappers.
+ruby gems have many advantages compared to ffi/native gems, not least
+that they do not randomly segfault [^5]. But we'll see how it goes for
+me and curl wrappers.
 
 Also, please burn `Timeout::timeout` with fire.
 

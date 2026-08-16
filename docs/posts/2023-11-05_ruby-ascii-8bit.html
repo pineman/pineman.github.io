@@ -93,7 +93,7 @@ end</code></pre>
 <h3 id="dire-straits">Dire straits</h3>
 <p>In dire situations like these, you <strong>desperately</strong> need the initial idea that comes after the knee jerk reaction.</p>
 <p>This is where the third great idea comes in: smoke break with the airpods still on. It's time for some serious pair hypothesis crafting, despite the rain and dark.</p>
-<p>Clearly the view <em>does</em> know how to render emojis all along. What if the buffer starts out as <code>UTF-8</code>, the first emoji concat works... but then switches to being <code>ASCII-8BIT</code> at some point, causing the second emoji concat to fail? Let's go for broke, print the buffer's <code>.encoding</code> at each call, and trace exactly when it switches (spewing large amounts of text to my terminal will forever be my superpower. Thanks tmux and vim). This is the final monkey patch:</p>
+<p>Clearly the view <em>has</em> known how to render emojis all along. What if the buffer starts out as <code>UTF-8</code>, the first emoji concat works... but then switches to being <code>ASCII-8BIT</code> at some point, causing the second emoji concat to fail? Let's go for broke, print the buffer's <code>.encoding</code> at each call, and trace exactly when it switches (spewing large amounts of text to my terminal will forever be my superpower. Thanks tmux and vim). This is the final monkey patch:</p>
 <pre class="ruby"><code>module ActiveSupport
   class SafeBuffer &lt; String
     def safe_concat(value)
