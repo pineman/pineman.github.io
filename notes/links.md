@@ -1,4 +1,34 @@
 # August 2026
+* https://niki.cat/detecting-scraper-bots-through-scroll-behaviour
+* https://victoriametrics.com/blog/victorialogs-internals-columnar-storage-on-disk
+* https://www.youtube.com/watch?v=tND-wBBZ8RY - The Cost of Concurrency Coordination with Jon Gjengset
+* https://www.meta.com/thefutureisforeveryone/
+* https://modal.com/blog/scaling-to-1-million-concurrent-sandboxes-in-seconds
+* https://typesanitizer.com/blog/performance-issues.html
+* https://news.ycombinator.com/item?id=48903733 (https://typesanitizer.com/blog/job-queues.html) - Job queues are deceptively tricky
+* https://www.codeotaku.com/journal/2026-08/the-case-of-the-vanishing-fiber/index
+* https://web.archive.org/web/20211016105330/https://about.gitlab.com/blog/2021/09/29/why-we-spent-the-last-month-eliminating-postgresql-subtransactions/
+* https://postgres.ai/blog/20210831-postgresql-subtransactions-considered-harmful
+* https://www.seangoedecke.com/the-dictators-handbook
+* https://www.seangoedecke.com/help-peer
+* https://www.theregister.com/security/2026/08/06/openai-reveals-its-rogue-agent-swarm-went-a-little-bit-borg-ahead-of-hugging-face-hack/5283741
+* https://turbopuffer.com/blog/control-plane
+* https://railsatscale.com/2026-08-11-ractors-on-rails/
+* https://news.ycombinator.com/item?id=49379550 (https://blog.curiousquail.com/im-upset-again-about-a-co-creator-of-rss-being-prosecuted-for-something-meta-is-doing-with-little-consequence/) - Aaron Swartz was prosecuted for scraping, while Meta does it without consequence
+* https://webaim.org/blog/user-agent-string-history/
+* https://blog.mozilla.org/en/internet-culture/deep-dives/why-are-hyperlinks-blue/ - https://x.com/a16z/status/1972027557685141716
+* https://www.seangoedecke.com/you-should-never-be-angry-at-work
+* https://www.cloudstreaks.com/blog/2020/12/12/good-mistakes-vs-bad-mistakes
+* https://open.substack.com/pub/thorstenball/p/joy-and-curiosity-96
+* https://cymerys.com/w/im-becoming-ai-blind
+* https://lalitm.com/software-engineering-outside-the-spotlight
+* https://lalitm.com/responsibility-is-taken-before-it-is-given
+* https://wiki.c2.com/?SuperCompiler=
+* https://shkspr.mobi/blog/2026/08/and-then-the-men-with-guns-tell-you-to-do-it-anyway
+* https://tau.dev/2026/08/07/canon
+* https://thomasdullien.github.io/posts/2026-08-21-three-important-steps-in-my-maturation-process/
+* https://nicholascharriere.com/blog/being-ambitious-and-being-a-dad
+* https://thebuild.com/blog/sixteen-locks-ought-to-be-enough-for-anybody/
 * https://www.dbos.dev/blog/postgres-select-distinct-does-not-scale
 * https://news.ycombinator.com/item?id=49296939 (https://github.com/inevolin/k8s-cpu-limits-analyzed) - For the love of god stop using CPU limits in Kubernetes
 * https://www.seangoedecke.com/ai-text-watermarking-is-not-a-big-deal

@@ -21,3 +21,7 @@ https://lightpanda.io/blog/posts/introducing-lightpanda-agent-and-pandascript
 https://hypersolutions.co/
 
 https://freesocks.org/
+
+https://github.com/ytkoka/impersonate-proxy
+
+https://fingerprint-scan.com/
