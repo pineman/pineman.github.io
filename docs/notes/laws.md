@@ -118,8 +118,12 @@
 ## [Liddle's law](https://en.wikipedia.org/wiki/David_Liddle)
 "A company big enough to have a research lab is too big to know what to do with the research results."
 
+Not to be confused with [Little's Law](https://en.wikipedia.org/wiki/Little%27s_law)
+
 ## [Jakob's Law of Internet User Experience](https://www.nngroup.com/videos/jakobs-law-internet-ux/)
 "Users spend most of their time on other sites. This means that users prefer your site to work the same way as all the other sites they already know. Design for patterns for which users are accustomed."
+
+See also [Hotelling's law](https://en.wikipedia.org/wiki/Hotelling%27s_law)
 
 ## [Lubarsky's Law of Cybernetic Entomology](https://www.catb.org/jargon/html/L/Lubarskys-Law-of-Cybernetic-Entomology.html)
 "There is always one more bug." ([original?](https://groups.google.com/g/alt.folklore.computers/c/EMSU2lN7SWs/m/mptLiHYdxVEJ))

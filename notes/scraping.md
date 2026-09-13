@@ -25,3 +25,7 @@ https://freesocks.org/
 https://github.com/ytkoka/impersonate-proxy
 
 https://fingerprint-scan.com/
+
+https://lolarchiver.com/
+https://tools.osintnewsletter.com
+https://app.osint.industries/

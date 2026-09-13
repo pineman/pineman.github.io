@@ -1,4 +1,80 @@
+# September 2026
+* https://ngrok.com/blog/i-ported-kubernetes-to-the-browser
+* https://news.ycombinator.com/item?id=23285438
+* https://m.youtube.com/watch?v=87DyyMV0kCY - Black Hat USA 2026 | The 'Breaking' News: The OpenAI–Hugging Face Incident
+* https://payalsingh.me/blog/
+* https://m.youtube.com/watch?v=jVkLVRt6c1U - Mike Monteiro: F*ck You, Pay Me
+* https://paulgraham.com/boss.html
+* https://europe2031.ai/
+* https://lucumr.pocoo.org/2026/6/13/americans-only/
+* https://lucumr.pocoo.org/2025/10/21/eu-resigation/
+* https://lucumr.pocoo.org/2026/4/23/equity-for-europeans/
+* https://lucumr.pocoo.org/2025/12/9/fixing-europe/
+* https://lucumr.pocoo.org/2025/9/14/whats-an-foreigner/
+* https://www.pgedge.com/blog/looking-forward-to-postgres-19-its-about-time
+* https://tonsky.me/blog/every-frame-perfect/
+* https://browser-use.com/posts/firecracker-browser-infra
+* https://newsletter.kentbeck.com/p/hey-n00b-we-didnt-hire-you-to-complete
+* https://news.ycombinator.com/item?id=48613555 (https://www.cell.com/neuron/fulltext/S0896-6273(26)00339-9) - Slow breathing modulates brain function and risk behavior
+* https://david.newgas.net/did-my-old-job-only-exist-because-of-fraud/
+* https://www.benkuhn.net/impatient/
+* https://www.benkuhn.net/abyss/
+* https://jchri.st/blog/in-praise-of-memcached
+* https://eieio.games/blog/legibility-of-effort/
+* https://news.ycombinator.com/item?id=48713832 (https://danunparsed.com/p/hackerrank-open-source-ats) - HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88
+* https://dev.to/harry_do/part-2-mysql-vs-postgresql-storage-architecture-2ki1
+* https://lobste.rs/s/asi79o/clickhouse_is_winning_observability
+* https://lwn.net/Articles/752063/
+* https://ardentperf.com/2026/06/24/happiness-hint-alarm-on-checkpoint-time/
+* https://news.ycombinator.com/item?id=48765639 (https://www.dbos.dev/blog/co-locating-workflow-state-with-your-data) - Postgres transactions are a distributed systems superpower
+* https://www.dbos.dev/blog/co-locating-workflow-state-with-your-data
+* https://brandur.org/job-drain
+* https://linuxblog.io/the-two-generals-problem/
+* https://www.lucasfcosta.com/blog/backpressure-is-all-you-need
+* https://hakibenita.com/postgresql-partition-pruning
+* https://bun.com/blog/bun-in-rust
+* https://news.ycombinator.com/item?id=48951898 (https://curiouscoding.nl/posts/static-search-tree/) - Static search trees: 40x faster than binary search (2024)
+* https://news.ycombinator.com/item?id=36429986 (https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/) - Unexpected downsides of UUID keys in PostgreSQL
+* https://hatchet.run/blog/postgres-survival-guide
+* https://www.seangoedecke.com/powerful-ais-might-escape-by-releasing-open-weight-models
+* https://antirez.com/news/170
+* https://news.ycombinator.com/item?id=49040296 (https://www.dbos.dev/blog/postgres-listen-notify-scalability) - Postgres LISTEN/NOTIFY actually scales
+* https://www.seangoedecke.com/llms-reward-expertise/
+* https://medium.com/towards-data-engineering/we-open-sourced-an-ai-skill-for-debugging-production-database-incidents-48b091e5f4ff
+* https://en.wikipedia.org/wiki/No._14_chair
+* https://kieranvelasquez.substack.com/p/on-the-german-mittelstand
+* https://planetscale.com/blog/the-dangers-of-postgres-subtransactions
+* https://news.ycombinator.com/item?id=49265031 (https://clickhouse.com/blog/pg_clickhouse-whats-new-july-2026) - pg_clickhouse v0.10: Subquery pushdown and 1000x faster TPC-H queries
+* https://ordinaryabundance.com/
+* https://philiptrammell.substack.com/p/gdp-and-prosperity-across-technology
+* https://lucumr.pocoo.org/2026/8/19/what-is-reasoning/
+* https://chrisburnell.com/html-can-do-that/
+* https://linuxcontainers.org/incus/
+* https://blog.cloudflare.com/dns-cache-memory-optimization-1111/
+* https://news.ycombinator.com/item?id=49468083 (https://blog.cloudflare.com/dns-cache-memory-optimization-1111/) - Saving 100 terabytes of memory by optimizing 1.1.1.1's DNS cache
+* https://danluu.com/agentic-testing/
+* https://qntm.org/mmacevedo
+* https://lucumr.pocoo.org/2026/9/7/astra-why
+* https://earendil.com/posts/measuring-code-sloppiness
+* https://www.techemails.com/p/bill-gates-tries-to-install-movie-maker
+* https://www.benkuhn.net/pjm/
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-99
+* https://www.alexmurrell.co.uk/articles/the-age-of-average
+* https://www.edwest.co.uk/p/doomscrolling-ourselves-to-death
+* https://stratechery.com/2026/write-things-down/
+* https://www.experimental-history.com/p/i-like-em-thick
+* https://www.seangoedecke.com/why-we-should-anthropomorphize-ai-agents
+* https://www.seangoedecke.com/deckard
+* https://mathstodon.xyz/@tao/117237320796901560
+* https://jyn.dev/simple-is-not-the-same-as-small/
+* https://lobste.rs/s/asjmva/inserting_state_transitions_postgres - repeatable read enough for a single row read-then-write?
+* https://fly.io/blog/sprites-mcp/
+* https://www.seangoedecke.com/radical-responsibility-means-treating-people-like-tools
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-98
+* https://bcantrill.dtrace.org/2026/09/05/the-revolt-of-the-reader/
+
 # August 2026
+* https://thebuild.com/blog/the-sixth-execution/
 * https://niki.cat/detecting-scraper-bots-through-scroll-behaviour
 * https://victoriametrics.com/blog/victorialogs-internals-columnar-storage-on-disk
 * https://www.youtube.com/watch?v=tND-wBBZ8RY - The Cost of Concurrency Coordination with Jon Gjengset
