@@ -1,4 +1,38 @@
 # September 2026
+* https://flaviocopes.com/scraping-tool/
+* https://charity.wtf/p/confessions-of-an-unrepentant-slop
+* https://yagni.club/3mtsirstdic25
+* https://baweaver.com/writing/2026/08/22/rails-sharp-parts-the-block-is-not-the-transaction/
+* https://baweaver.com/writing/2026/06/05/rails-sharp-parts-lock-is-not-a-mutex/
+* https://news.ycombinator.com/item?id=49622305 (https://gwern.net/on-really-trying) - On Really Trying (2009)
+* https://blog.castle.io/two-chicken-nuggets-and-a-claude-account/
+* https://www.seangoedecke.com/selling-out
+* https://www.seangoedecke.com/value-over-replacement/
+* https://www.seangoedecke.com/you-have-to-beat-the-models-at-something
+* https://www.seangoedecke.com/they-really-do-think-ai-might-kill-everyone
+* https://www.theguardian.com/technology/2023/jul/25/joseph-weizenbaum-inventor-eliza-chatbot-turned-against-artificial-intelligence-ai
+* https://www.seangoedecke.com/dont-build-tools-for-ai-agents
+* https://www.seangoedecke.com/ai-is-breaking-our-proxies-for-expertise
+* https://www.seangoedecke.com/slow-devex-will-bottleneck-fast-models
+* https://news.ycombinator.com/item?id=49747070 (https://sockpuppet.org/blog/2026/09/17/how-to-write-with-an-llm/) - How to Write with an LLM
+* https://www.seangoedecke.com/two-techniques-for-working-with-system-one-models
+* https://tapoueh.org/blog/2026/09/plan-advice-in-postgresql-19/
+* https://www.seangoedecke.com/tell-agents-the-why
+* https://www.unite.ai/residential-proxies-as-the-next-front-in-the-ai-wars/
+* https://archive.is/zGSyH - Comparing Popular Proxyware Bandwidth Sharing Apps
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-100
+* https://notnottalmud.substack.com/p/why-i-cant-stop-thinking-about-papua
+* https://seldo.com/posts/we-are-all-product-engineers-now/
+* https://lemire.me/blog/2026/09/19/how-did-apple-silicon-get-50-faster-in-three-years/
+* https://www.seangoedecke.com/grit-your-teeth-and-ship-it
+* https://thorstenball.com/blog/2026/09/19/what-i-believe-about-the-future-of-software-development/
+* https://laya.convaiinnovations.com/
+* https://sunilpai.dev/posts/the-senior-engineer-death-spiral/
+* https://blog.castle.io/what-sits-behind-a-private-proxy-network/
+* https://will-keleher.com/posts/small-programming-tricks-matter
+* https://www.seangoedecke.com/jev-means-structured-output-is-interesting-again/#fnref-8
+* https://www.youtube.com/watch?v=bQfJi7rjuEk - Intelligence is not Enough | Bryan Cantrill | Monktoberfest 2023
+* https://bcantrill.dtrace.org/2026/09/13/the-contagion-of-fear/
 * https://ngrok.com/blog/i-ported-kubernetes-to-the-browser
 * https://news.ycombinator.com/item?id=23285438
 * https://m.youtube.com/watch?v=87DyyMV0kCY - Black Hat USA 2026 | The 'Breaking' News: The OpenAI–Hugging Face Incident
@@ -37,7 +71,7 @@
 * https://news.ycombinator.com/item?id=36429986 (https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/) - Unexpected downsides of UUID keys in PostgreSQL
 * https://hatchet.run/blog/postgres-survival-guide
 * https://www.seangoedecke.com/powerful-ais-might-escape-by-releasing-open-weight-models
-* https://antirez.com/news/170
+* https://antirez.com/news/170 - Not just development, distribution of software may change as well
 * https://news.ycombinator.com/item?id=49040296 (https://www.dbos.dev/blog/postgres-listen-notify-scalability) - Postgres LISTEN/NOTIFY actually scales
 * https://www.seangoedecke.com/llms-reward-expertise/
 * https://medium.com/towards-data-engineering/we-open-sourced-an-ai-skill-for-debugging-production-database-incidents-48b091e5f4ff
@@ -152,7 +186,7 @@
 * https://yagni.club/3mrdstwwkoc26 - local-thirst
 * https://yagni.club/3m475dwkjvc2o - Misunderstanding SSE
 * https://yagni.club/3m3anpetejc23 - ui = fn(state) done right
-* https://antirez.com/news/171
+* https://antirez.com/news/171 - Being Linux Torvalds
 * https://matklad.github.io/2025/12/30/memory-safety-is.html
 * https://digitalmars.com/articles/C-biggest-mistake.html
 * https://matklad.github.io/2026/07/20/memory-safety-hardest-problem.html
@@ -168,7 +202,7 @@
 * https://dark.ronacher.eu/2026/7/17/live-by-deporting/
 * https://human-in-the-loop.bearblog.dev/llms-are-eroding-my-software-engineering-career-and-i-dont-know-what-to-do/
 * https://tenderlovemaking.com/2026/07/15/detecting-full-table-scans-with-sqlite/
-* https://antirez.com/news/169
+* https://antirez.com/news/169 - Control the ideas, not the code
 * https://en.wikipedia.org/wiki/Benford%27s_law
 * https://news.ycombinator.com/item?id=48896672 (https://www.joanwestenberg.com/p/the-bread-paradox-why-convenience) - The bread paradox: why convenience always wins, and why SaaS isn't doomed
 * https://wangcong.org/2026-06-30-why-i-stopped-arguing-with-people.html
@@ -637,7 +671,7 @@
 * https://news.ycombinator.com/item?id=46766961 (https://www.greptile.com/blog/ai-code-review-bubble) - There is an AI code review bubble
 * https://nolanlawson.com/2026/01/24/ai-tribalism/
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-72
-* https://antirez.com/news/159
+* https://antirez.com/news/159 - Automatic programming
 * https://www.seangoedecke.com/how-does-ai-impact-skill-formation
 * https://cloud.google.com/blog/topics/threat-intelligence/disrupting-largest-residential-proxy-network
 * https://infrequently.org/2024/11/if-not-react-then-what/
@@ -815,7 +849,7 @@
 * https://www.reuters.com/world/china/how-china-built-its-manhattan-project-rival-west-ai-chips-2025-12-17/
 * https://world.hey.com/jason/idea-protectionism-01ef4f59
 * https://signalvnoise.com/posts/3124-give-it-five-minutes
-* https://antirez.com/news/157
+* https://antirez.com/news/157 - Reflections on AI at the end of 2025
 * https://jsomers.net/blog/speed-matters
 * https://blog.jakobschwichtenberg.com/p/slowness-is-a-virtue - ... for research
 * https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html
@@ -1189,7 +1223,7 @@
 * https://www.atlasobscura.com/articles/pointing-and-calling-japan-trains
 * https://kirshatrov.com/posts/pg-shmem
 * https://una.im/5-css-functions/
-* https://antirez.com/news/155
+* https://antirez.com/news/155 - AI is different
 * https://www.ag-grid.com/react-data-grid/getting-started/
 * https://www.crunchydata.com/blog/indexing-jsonb-in-postgres
 * https://www.youtube.com/watch?v=f30PceqQWko - Don't Forget To Flush by Andrew Kelley
@@ -1366,7 +1400,7 @@
 * https://antinote.io/
 * https://www.galois.com/articles/what-works-and-doesnt-selling-formal-methods
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-41
-* https://antirez.com/news/153
+* https://antirez.com/news/153 - Human coders are still better than LLMs
 * https://byroot.github.io/ruby/performance/2025/05/24/unlocking-ractors-class-variables.html
 * https://tanelpoder.com/posts/using-pg-test-fsync-for-testing-low-latency-writes/
 * https://github.com/almottier/rivertui
@@ -1685,7 +1719,7 @@
 * https://gist.github.com/rtfeldman/77fb430ee57b42f5f2ca973a3992532f
 * https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/
 * https://world.hey.com/davidsenra/working-backwards-insights-stories-and-secrets-from-inside-amazon-d81f5559
-* https://antirez.com/news/145
+* https://antirez.com/news/145 - We are destroying software
 * https://registerspill.thorstenball.com/p/joy-and-curiosity-26
 * https://news.ycombinator.com/item?id=42962363 (https://www.seangoedecke.com/being-right-a-lot/) - Good engineers are right, a lot
 * https://www.elastic.co/blog/understanding-query-then-fetch-vs-dfs-query-then-fetch
@@ -1994,7 +2028,7 @@
 * https://news.ycombinator.com/item?id=11065933 (http://antirez.com/news/101) - Is Redlock Safe? Reply to Redlock Analysis
 * https://en.wikipedia.org/wiki/Test_and_test-and-set
 * https://en.wikipedia.org/wiki/Test-and-set
-* http://antirez.com/news/101
+* http://antirez.com/news/101 - Is Redlock safe?
 * https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html - redislock, redlock
 * https://registerspill.thorstenball.com/p/glad-i-did-it-in-go
 * https://www.youtube.com/watch?v=LcJKxPXYudE - "Microservices are Technical Debt"

@@ -206,6 +206,14 @@ def process_links!
           line = "* #{youtube_url} - #{title}\n"
         end
       end
+
+      if line =~ %r{^\* (https?://antirez\.com/news/\d+)\s*$}
+        antirez_url = $1
+        html = http_get(antirez_url, headers: { "User-Agent" => "Mozilla/5.0" })
+        title = html[/<title[^>]*>(.*?)<\/title>/im, 1]
+        title = CGI.unescapeHTML(title.to_s).gsub(/\s+/, " ").strip.sub(/\s+-\s+<antirez>\z/, "")
+        line = "* #{antirez_url} - #{title}\n" unless title.empty?
+      end
     end
 
     line
