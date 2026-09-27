@@ -34,3 +34,4 @@ https://github.com/kaifcodec/user-scanner
 https://github.com/ytkoka/impersonate-proxy
 https://github.com/sofianeelhor/ghostwire
 https://proxy.kyc.red/
+https://github.com/maximilianfeix/proxy-scraper

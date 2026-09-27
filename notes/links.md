@@ -1,4 +1,12 @@
 # September 2026
+* https://stormatics.tech/blogs/postgresql-storage-bottleneck-azure-disk-caching -- WHY IS EVERYTHING WRITTEN BY AI NOW
+* https://maxleiter.com/blog/embedding-emoji-search
+* https://lobste.rs/s/rvvqos/what_about_rails
+* https://intertwingly.net/blog/2026/09/19/Two-JITs-Opposite-Signs.html
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-101
+* https://www.seangoedecke.com/you-should-all-be-asking-way-more-questions
+* https://blog.verygoodsoftwarenotvirus.dev/posts/2026/09/23/why-didnt-anybody-tell-me-about-hash-slots/
+* https://www.nobodywho.ai/posts/jev-in-25-lines/
 * https://flaviocopes.com/scraping-tool/
 * https://charity.wtf/p/confessions-of-an-unrepentant-slop
 * https://yagni.club/3mtsirstdic25
@@ -3200,3 +3208,4 @@
 * https://www.youtube.com/watch?v=CZ3wIuvmHeM "Mastering Chaos - A Netflix Guide to Microservices"
 * https://blog.miris.design/not-a-programmer
 * http://www.paulgraham.com/avg.html
+* https://quuxplusone.github.io/blog/2022/01/06/memcached-interview/
