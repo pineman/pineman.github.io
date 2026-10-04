@@ -1,4 +1,13 @@
 # September 2026
+* https://wilhelm.substack.com/p/building-a-personal-super-app
+* https://modernmotherfuckingwebsite.dreamstation.systems/
+* https://vondra.me/posts/are-we-reverting-patches-because-of-bugs-found-by-ai/
+* https://vondra.me/posts/the-ai-inversion/
+* https://bcantrill.dtrace.org/2026/09/20/what-sun-got-wrong/
+* https://www.seangoedecke.com/advice-to-a-beginning-software-engineer
+* https://www.seangoedecke.com/human-ai-partnerships-are-for-alignment-not-capability
+* https://bcantrill.dtrace.org/2026/09/27/fools-expertise/
+* https://danluu.com/brain-off
 * https://stormatics.tech/blogs/postgresql-storage-bottleneck-azure-disk-caching -- WHY IS EVERYTHING WRITTEN BY AI NOW
 * https://maxleiter.com/blog/embedding-emoji-search
 * https://lobste.rs/s/rvvqos/what_about_rails

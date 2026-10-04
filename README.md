@@ -5,6 +5,8 @@ http://bettermotherfuckingwebsite.com/
 
 https://thebestmotherfucking.website/
 
+https://modernmotherfuckingwebsite.dreamstation.systems/
+
 # Instructions
 Compile with `./make`
 

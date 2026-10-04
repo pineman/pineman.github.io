@@ -9,8 +9,9 @@
 - bee's knees
 - pot calling the kettle black
 - to stonewall - to delay, be uncooperative, or refuse to answer questions
+- to sandbag
 
 # Rarer words
 - copacetic
 - germane
-
+- ballyhoo
