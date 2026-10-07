@@ -307,6 +307,10 @@ class Post
       html = Nokogiri::HTML.fragment(File.read(@html_file))
       @title = html.at("h1").text
       html.at("h1").remove
+      html.css("img").each do |img|
+        img["loading"] = "lazy"
+        img["decoding"] = "async"
+      end
       @html = html.to_s
       @text_descr = truncate_text(@html)
     end
