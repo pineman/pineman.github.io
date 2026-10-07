@@ -2,6 +2,7 @@
 <html lang="en-US">
 <head>
   <%== render_erb('templates/head.html.erb', binding) %>
+  <!-- Icons: Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0) Copyright 2024 Fonticons, Inc. -->
   <%== render_erb('templates/article-head.html.erb', binding) %>
   <link rel="alternate" type="text/markdown" href="<%= post.filename %>.md">
   <meta property="og:url" content="<%= SITE_ROOT %>/<%= post.url %>" />
@@ -55,7 +56,7 @@
 
       const iconContainer = document.createElement('span');
       iconContainer.className = 'icon-container';
-      iconContainer.innerHTML = '<i class="fa-solid fa-link"></i>';
+      iconContainer.innerHTML = <%== icon("link").to_json %>;
 
       copyLink.appendChild(iconContainer);
       heading.appendChild(copyLink);

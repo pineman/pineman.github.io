@@ -31,24 +31,19 @@ a {
     text-decoration-color: var(--oceanic-fg);
   }
 }
-i {
-  padding-right: 0.5rem;
-}
 .icon-container {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 0.8em;
   height: 0.8em;
   vertical-align: middle;
   margin-right: 0.4em;
 }
-.icon-container i {
-  font-size: 1em;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-right: 0;
+/* Like Font Awesome: 1em tall, natural width, overflowing the box centered */
+.icon-container svg {
+  flex: none;
+  height: 1em;
 }
 @media (prefers-color-scheme: dark) {
   body {

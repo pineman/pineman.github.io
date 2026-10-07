@@ -51,6 +51,7 @@ TEMPLATE_HEAD = "#{TEMPLATES_DIR}/head.html.erb"
 TEMPLATE_ARTICLE_HEAD = "#{TEMPLATES_DIR}/article-head.html.erb"
 TEMPLATE_PINECONE = "#{TEMPLATES_DIR}/pinecone.html"
 TEMPLATE_LINK_PREVIEW = "#{TEMPLATES_DIR}/link-preview.svg.erb"
+ICONS = FileList["#{TEMPLATES_DIR}/icons/*.svg"]
 
 POSTS_MD = FileList["#{POSTS_DIR}/*.md"]
 POSTS_HTML = POSTS_MD.pathmap("#{BUILD_POSTS_DIR}/%n.html")
@@ -90,7 +91,7 @@ directory BUILD_NOTES_DIR
 directory POSTS_HTML_DIR
 directory NOTES_HTML_DIR
 
-file INDEX_HTML => [BUILD_DIR, TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE] do |t|
+file INDEX_HTML => [BUILD_DIR, TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE, *ICONS] do |t|
   write_html(t.name, TEMPLATE_INDEX, posts: POSTS_MD.map { |md| Post.new(md) })
 end
 
@@ -126,7 +127,7 @@ rule %r{^#{POSTS_HTML_DIR}/.*\.html$} => [->(f) { f.pathmap("#{POSTS_DIR}/%n.md"
 end
 
 POSTS_HTML.each do |post_html|
-  file post_html => [BUILD_POSTS_DIR, post_html.pathmap("#{POSTS_HTML_DIR}/%f"), TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+  file post_html => [BUILD_POSTS_DIR, post_html.pathmap("#{POSTS_HTML_DIR}/%f"), TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD, *ICONS] do |t|
     write_html(t.name, TEMPLATE_POST, post: Post.new(t.name.pathmap("#{POSTS_DIR}/%n.md")))
   end
 end
@@ -166,6 +167,15 @@ module Helpers
     y -= 1 if today.month < date.month || today.month == date.month && today.day < date.day
     y
   end
+end
+
+# Inline Font Awesome Free icon. Its embedded license comment is dropped:
+# pages using icons carry a single CC BY 4.0 attribution comment instead.
+def icon(name)
+  File.read("#{TEMPLATES_DIR}/icons/#{name}.svg")
+    .sub(/<!--.*?-->/m, "")
+    .sub("<svg ", '<svg aria-hidden="true" fill="currentColor" ')
+    .strip
 end
 
 def render_erb(template_file, caller_binding)
