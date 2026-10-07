@@ -91,8 +91,7 @@ directory POSTS_HTML_DIR
 directory NOTES_HTML_DIR
 
 file INDEX_HTML => [BUILD_DIR, TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE] do |t|
-  posts = POSTS_MD.map { |md| Post.new(md) }
-  write_html(t.name, TEMPLATE_INDEX, binding)
+  write_html(t.name, TEMPLATE_INDEX, posts: POSTS_MD.map { |md| Post.new(md) })
 end
 
 file INDEX_MD => [BUILD_DIR, INDEX_HTML] do |t|
@@ -105,12 +104,11 @@ end
 
 file LINKS_HTML => [BUILD_DIR, TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
   process_links!
-  write_html(t.name, TEMPLATE_LINKS, binding)
+  write_html(t.name, TEMPLATE_LINKS)
 end
 
 file NOTES_HTML => [BUILD_DIR, TEMPLATE_NOTES, *NOTE_HTML, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-  notes = NOTES_MD.map { |md| Note.new(md) }
-  write_html(t.name, TEMPLATE_NOTES, binding)
+  write_html(t.name, TEMPLATE_NOTES, notes: NOTES_MD.map { |md| Note.new(md) })
 end
 
 rule %r{^#{NOTES_HTML_DIR}/.*\.html$} => [->(f) { f.pathmap("#{NOTES_DIR}/%n.md") }, NOTES_HTML_DIR] do |t|
@@ -119,8 +117,7 @@ end
 
 NOTE_HTML.each do |note_html|
   file note_html => [BUILD_NOTES_DIR, note_html.pathmap("#{NOTES_HTML_DIR}/%f"), TEMPLATE_NOTE, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-    note = Note.new(t.name.pathmap("#{NOTES_DIR}/%n.md"))
-    write_html(t.name, TEMPLATE_NOTE, binding)
+    write_html(t.name, TEMPLATE_NOTE, note: Note.new(t.name.pathmap("#{NOTES_DIR}/%n.md")))
   end
 end
 
@@ -130,8 +127,7 @@ end
 
 POSTS_HTML.each do |post_html|
   file post_html => [BUILD_POSTS_DIR, post_html.pathmap("#{POSTS_HTML_DIR}/%f"), TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-    post = Post.new(t.name.pathmap("#{POSTS_DIR}/%n.md"))
-    write_html(t.name, TEMPLATE_POST, binding)
+    write_html(t.name, TEMPLATE_POST, post: Post.new(t.name.pathmap("#{POSTS_DIR}/%n.md")))
   end
 end
 
@@ -170,10 +166,6 @@ module Helpers
     y -= 1 if today.month < date.month || today.month == date.month && today.day < date.day
     y
   end
-end
-
-def site_link(path)
-  "#{@root}#{path}"
 end
 
 def render_erb(template_file, caller_binding)
@@ -252,9 +244,26 @@ def http_get(url, headers: {})
   end
 end
 
-def write_html(html_file, template_file, caller_binding)
-  html = render_erb(template_file, caller_binding)
-  File.write(html_file, html)
+# The context a page template is evaluated in: its data (post, notes, ...) as
+# methods, and links relative to wherever the page is written.
+class Page
+  def initialize(html_file, **data)
+    # e.g. "../" for docs/posts/*.html
+    @root = "../" * html_file.delete_prefix("#{BUILD_DIR}/").count("/")
+    data.each { |name, value| define_singleton_method(name) { value } }
+  end
+
+  def site_link(path)
+    "#{@root}#{path}"
+  end
+
+  def render(template_file)
+    render_erb(template_file, binding)
+  end
+end
+
+def write_html(html_file, template_file, **data)
+  File.write(html_file, Page.new(html_file, **data).render(template_file))
 end
 
 def html_to_md(html, md_filename)
