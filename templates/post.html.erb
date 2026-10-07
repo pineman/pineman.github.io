@@ -25,7 +25,8 @@
 </head>
 <body>
 <div id="wrap">
-<a href="<%= site_link("index.html") %>">&lt; back</a>
+<nav><a href="<%= site_link("index.html") %>">&lt; back</a></nav>
+<main>
 <article>
   <header>
     <h1><%= post.title %></h1>
@@ -33,7 +34,8 @@
   </header>
 <%== post.html %>
 </article>
-<a href="<%= site_link("index.html") %>">&lt; back</a>
+</main>
+<footer><a href="<%= site_link("index.html") %>">&lt; back</a></footer>
 </div>
 </body>
 <link rel="stylesheet" href="<%= site_link("assets/oceanicnext.min.css") %>">

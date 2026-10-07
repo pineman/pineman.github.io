@@ -21,7 +21,8 @@
 </head>
 <body>
 <div id="wrap">
-<a href="<%= site_link("index.html") %>">&lt; back</a>
+<nav><a href="<%= site_link("index.html") %>">&lt; back</a></nav>
+<main>
 <article>
   <h1>Some of what I read on the internets</h1>
 <% file.readlines.each do |l| %>
@@ -39,7 +40,8 @@
   <% end %>
 <% end %>
 </article>
-<a href="<%= site_link("index.html") %>">&lt; back</a>
+</main>
+<footer><a href="<%= site_link("index.html") %>">&lt; back</a></footer>
 </div>
 </body>
 </html>

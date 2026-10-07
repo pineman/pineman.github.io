@@ -9,12 +9,14 @@
 </head>
 <body>
 <div id="wrap">
-<a href="<%= site_link("notes.html") %>">&lt; back</a>
+<nav><a href="<%= site_link("notes.html") %>">&lt; back</a></nav>
+<main>
 <article>
   <h1><%= note.name %></h1>
   <%== note.html %>
 </article>
-<a href="<%= site_link("notes.html") %>">&lt; back</a>
+</main>
+<footer><a href="<%= site_link("notes.html") %>">&lt; back</a></footer>
 </div>
 </body>
 </html>

@@ -274,6 +274,8 @@ end
 
 def index_to_md(index_html_filename, index_md_filename)
   html = File.read(index_html_filename).gsub(/<span class="icon-container".*?>.*?<\/span>/m, "")
+  # pandoc only converts <main> when present, which would drop the header
+  html = html.gsub(/<\/?main>/, "")
   html = html.gsub(/href="#{POSTS_DIR}\/(\d{4}-\d{2}-\d{2}_.*?)\.html"/, "href=\"#{POSTS_DIR}/\\1.md\"")
   html = html.gsub("href=\"links.html\"", "href=\"#{LINKS_MD}\"")
   html_to_md(html, index_md_filename)
