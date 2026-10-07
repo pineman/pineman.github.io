@@ -1,8 +1,17 @@
-# September 2026
+# October 2026
+* https://en.wikipedia.org/wiki/Incubation_(psychology)
+* https://www.seangoedecke.com/superpersuasion-will-look-like-bribery
+* https://oldmoe.blog/2026/10/02/its-about-time/
+* https://fractaledmind.com/2026/10/04/code-is-cheap-now/
+* https://www.seangoedecke.com/shipping-is-the-foundation/
+* https://www.sbnation.com/a/17776-football
 * https://wilhelm.substack.com/p/building-a-personal-super-app
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-102
 * https://modernmotherfuckingwebsite.dreamstation.systems/
 * https://vondra.me/posts/are-we-reverting-patches-because-of-bugs-found-by-ai/
 * https://vondra.me/posts/the-ai-inversion/
+
+# September 2026
 * https://bcantrill.dtrace.org/2026/09/20/what-sun-got-wrong/
 * https://www.seangoedecke.com/advice-to-a-beginning-software-engineer
 * https://www.seangoedecke.com/human-ai-partnerships-are-for-alignment-not-capability
