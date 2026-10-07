@@ -21,6 +21,17 @@
   <meta name="twitter:description" content="<%= post.text_descr %>">
   <meta name="twitter:image" content="<%= SITE_ROOT %>/assets/link_previews/<%= post.filename %>.png">
   <meta name="twitter:image:alt" content="<%= post.title %>">
+  <%== json_ld({
+    "@context" => "https://schema.org",
+    "@type" => "BlogPosting",
+    "headline" => post.title,
+    "description" => post.text_descr,
+    "datePublished" => post.date.iso8601,
+    "dateModified" => post.date.iso8601,
+    "url" => "#{SITE_ROOT}/#{post.url}",
+    "image" => "#{SITE_ROOT}/assets/link_previews/#{post.filename}.png",
+    "author" => { "@type" => "Person", "name" => "João Pinheiro", "url" => "#{SITE_ROOT}/" },
+  }) %>
 </head>
 <body>
 <div id="wrap">

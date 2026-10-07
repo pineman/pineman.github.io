@@ -178,6 +178,11 @@ def icon(name)
     .strip
 end
 
+def json_ld(data)
+  # Escape "<" so the JSON can never close the script tag
+  %(<script type="application/ld+json">#{JSON.pretty_generate(data).gsub("<", "\\u003c")}</script>)
+end
+
 def render_erb(template_file, caller_binding)
   bufvar = "@_buf_#{Random.rand(1_000_000)}"
   template = Erubi::Engine.new(File.read(template_file), escape: true, bufvar: bufvar)

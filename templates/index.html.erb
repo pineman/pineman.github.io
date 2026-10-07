@@ -17,6 +17,23 @@
   <meta property="profile:last_name" content="Pinheiro" />
   <meta property="profile:username" content="pineman" />
   <meta property="profile:gender" content="male" />
+  <%== json_ld({
+    "@context" => "https://schema.org",
+    "@type" => "ProfilePage",
+    "url" => "#{SITE_ROOT}/",
+    "mainEntity" => {
+      "@type" => "Person",
+      "name" => "João Pinheiro",
+      "alternateName" => "pineman",
+      "url" => "#{SITE_ROOT}/",
+      "image" => "#{SITE_ROOT}/assets/me.webp",
+      "sameAs" => [
+        "https://github.com/pineman",
+        "https://www.linkedin.com/in/joaocastropinheiro",
+        "https://twitter.com/pineman_",
+      ],
+    },
+  }) %>
 </head>
 <%== File.read('templates/pinecone.html') %>
 <body>
