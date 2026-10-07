@@ -1,6 +1,7 @@
 /* TODO: use css preprocessor/just include files? */
 /* Global */
 :root {
+  color-scheme: light dark;
   --oceanic-bg: #1b2b34;
   --oceanic-fg: #c0c5ce;
 }
