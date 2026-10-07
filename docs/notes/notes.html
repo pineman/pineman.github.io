@@ -10,6 +10,28 @@
 <meta name="keywords" content="technology computer software engineering" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="João Pinheiro" />
+<script type="speculationrules">
+{
+  "prerender": [{
+    "where": {
+      "or": [
+        { "href_matches": "/index.html" },
+        { "href_matches": "/posts/*.html" }
+      ]
+    },
+    "eagerness": "immediate"
+  }, {
+    "where": {
+      "and": [
+        { "href_matches": "/*.html" },
+        { "not": { "href_matches": "/index.html" } },
+        { "not": { "href_matches": "/posts/*.html" } }
+      ]
+    },
+    "eagerness": "moderate"
+  }]
+}
+</script>
 
   <meta property="og:type" content="article" />
 <meta property="article:author" content="https://pineman.github.io" />
