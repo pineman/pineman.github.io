@@ -26,19 +26,27 @@
 <main>
 <article>
   <h1>Some of what I read on the internets</h1>
+<% list_open = false %>
 <% file.readlines.each do |l| %>
   <% l.strip! %>
   <% if l.match?(/^# /) %>
     <h4><%= l[2..] %></h4>
     <ul>
+    <% list_open = true %>
   <% elsif l.match?(/^* https?:\/\//) %>
     <% url, descr = l[2..].split(" ", 2) %>
     <li><a href="<%= url %>"><%= url %></a> <%= descr %></li>
   <% elsif l.empty? %>
+    <% if list_open %>
     </ul>
+    <% list_open = false %>
+    <% end %>
   <% else %>
     <li><%= l[2..] %></li>
   <% end %>
+<% end %>
+<% if list_open %>
+    </ul>
 <% end %>
 </article>
 </main>
