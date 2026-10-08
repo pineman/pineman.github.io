@@ -70,7 +70,7 @@ The `docs/` directory is the GitHub Pages root. Static assets (`docs/assets/`, `
 
 ### Output Structure
 
-- `docs/index.html`, `docs/links.html`, `docs/notes.html`, `docs/atom.xml`, `docs/sitemap.xml` (generated)
+- `docs/index.html`, `docs/links.html`, `docs/notes.html`, `docs/atom.xml`, `docs/sitemap.xml`, `docs/404.html` (generated)
 - `docs/robots.txt` (static, points crawlers at the sitemap)
 - `docs/posts/*.html` and `docs/posts/*.md` (compiled posts + copied source markdown)
 - `docs/notes/*.html` and `docs/notes/*.md` (compiled notes + copied source markdown)

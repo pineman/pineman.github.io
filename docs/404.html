@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/style.css" />
+<link rel="alternate" type="application/atom+xml" title="pineman" href="/atom.xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light dark" />
+<meta name="author" content="João Pinheiro" />
+<meta name="keywords" content="technology computer software engineering" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="João Pinheiro" />
+<meta name="twitter:site" content="@pineman_" />
+<meta name="twitter:creator" content="@pineman_" />
+<script type="speculationrules">
+{
+  "prerender": [{
+    "where": {
+      "or": [
+        { "href_matches": "/index.html" },
+        { "href_matches": "/posts/*.html" }
+      ]
+    },
+    "eagerness": "immediate"
+  }, {
+    "where": {
+      "and": [
+        { "href_matches": "/*.html" },
+        { "not": { "href_matches": "/index.html" } },
+        { "not": { "href_matches": "/posts/*.html" } }
+      ]
+    },
+    "eagerness": "moderate"
+  }]
+}
+</script>
+
+  <title>Page not found</title>
+  <meta name="robots" content="noindex" />
+</head>
+<body>
+<div id="wrap">
+<nav><a href="/index.html">&lt; home</a></nav>
+<main>
+<article>
+  <h1>Page not found</h1>
+  <p>There's nothing here. Try the <a href="/index.html">home page</a>.</p>
+</article>
+</main>
+</div>
+</body>
+</html>

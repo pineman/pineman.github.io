@@ -25,6 +25,7 @@ SITE_ROOT = "https://pineman.github.io"
 BUILD_DIR = "docs"
 
 INDEX_HTML = "#{BUILD_DIR}/index.html"
+NOT_FOUND_HTML = "#{BUILD_DIR}/404.html"
 INDEX_MD = "#{BUILD_DIR}/index.md"
 LINKS_HTML = "#{BUILD_DIR}/links.html"
 NOTES_HTML = "#{BUILD_DIR}/notes.html"
@@ -44,6 +45,7 @@ BUILD_NOTES_DIR = "#{BUILD_DIR}/notes"
 
 TEMPLATES_DIR = "templates"
 TEMPLATE_INDEX = "#{TEMPLATES_DIR}/index.html.erb"
+TEMPLATE_NOT_FOUND = "#{TEMPLATES_DIR}/404.html.erb"
 TEMPLATE_POST = "#{TEMPLATES_DIR}/post.html.erb"
 TEMPLATE_LINKS = "#{TEMPLATES_DIR}/links.html.erb"
 TEMPLATE_NOTES = "#{TEMPLATES_DIR}/notes.html.erb"
@@ -84,7 +86,7 @@ CLEAN.include(
 )
 
 multitask default: [:all]
-multitask all: [INDEX_HTML, INDEX_MD, LINKS_HTML, NOTES_HTML, NOTES_INDEX_MD, *NOTE_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML, SITEMAP_XML, :copy_assets, :generate_redirects, :copy_markdown_sources]
+multitask all: [INDEX_HTML, NOT_FOUND_HTML, INDEX_MD, LINKS_HTML, NOTES_HTML, NOTES_INDEX_MD, *NOTE_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML, SITEMAP_XML, :copy_assets, :generate_redirects, :copy_markdown_sources]
 
 directory BUILD_DIR
 directory BUILD_POSTS_DIR
@@ -94,6 +96,12 @@ directory NOTES_HTML_DIR
 
 file INDEX_HTML => [BUILD_DIR, TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE, *ICONS] do |t|
   write_html(t.name, TEMPLATE_INDEX, posts: POSTS_MD.map { |md| Post.new(md) })
+end
+
+# GitHub Pages serves this at any missing URL, however deeply nested, so its
+# links must be root-relative
+file NOT_FOUND_HTML => [BUILD_DIR, TEMPLATE_NOT_FOUND, TEMPLATE_HEAD] do |t|
+  write_html(t.name, TEMPLATE_NOT_FOUND, root: "/")
 end
 
 file INDEX_MD => [BUILD_DIR, INDEX_HTML] do |t|
@@ -288,9 +296,9 @@ end
 # The context a page template is evaluated in: its data (post, notes, ...) as
 # methods, and links relative to wherever the page is written.
 class Page
-  def initialize(html_file, **data)
+  def initialize(html_file, root: nil, **data)
     # e.g. "../" for docs/posts/*.html
-    @root = "../" * html_file.delete_prefix("#{BUILD_DIR}/").count("/")
+    @root = root || "../" * html_file.delete_prefix("#{BUILD_DIR}/").count("/")
     data.each { |name, value| define_singleton_method(name) { value } }
   end
 
