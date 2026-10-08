@@ -376,11 +376,23 @@ class Post
           item.link = "#{SITE_ROOT}/#{post.url}"
           item.published = post.date.iso8601
           item.updated = post.date.iso8601
-          item.description = post.html
+          item.description = post.feed_html
         end
       end
     end
     rss.to_s.gsub!("<summary>", '<summary type="html">')
+  end
+
+  # Feed readers resolve relative URLs against the feed, not the post, so make
+  # them absolute. In-page #fragment links are left as they are.
+  def feed_html
+    doc = Nokogiri::HTML.fragment(html)
+    doc.css("[src], [href]").each do |el|
+      attr = el.key?("src") ? "src" : "href"
+      next if el[attr].start_with?("#") || el[attr].match?(/\A[a-z][a-z0-9+.-]*:/i)
+      el[attr] = URI.join("#{SITE_ROOT}/#{url}", el[attr]).to_s
+    end
+    doc.to_s
   end
 
   def build_intermediate_html!
