@@ -25,7 +25,7 @@
   <% items.each do |item| %>
     <% if item.match?(%r{\Ahttps?://}) %>
       <% url, description = item.split(" ", 2) %>
-    <li><a href="<%= url %>"><%= url %></a> <%= description %></li>
+    <li><a href="<%= url %>"><%= url %></a><% if description %> <%= description %><% end %></li>
     <% else %>
     <li><%= item %></li>
     <% end %>
