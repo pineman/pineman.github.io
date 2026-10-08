@@ -481,11 +481,14 @@ data = [AVRO.decode(Base64.decode64('string from kafka-ui'))]
  - https://fresha.github.io/northstar/
 
 ### pager
+```sql
 pager cut -c 1-1000
 SHOW PROCESSLIST\G
 nopager
+```
 
 ### profiling
+```sql
 SET enable_query_cache = false;
 SET query_cache_entry_max_bytes = 0;
 SET query_cache_entry_max_rows = 0;
@@ -495,3 +498,4 @@ SET skip_local_disk_cache = true;
 SET enable_profile = true;
 <query>
 SELECT get_query_profile(last_query_id());
+```

@@ -589,9 +589,19 @@ data = [AVRO.decode(Base64.decode64(&#39;string from kafka-ui&#39;))]</code></pr
 <li><a href="https://fresha.github.io/northstar/">https://fresha.github.io/northstar/</a></li>
 </ul>
 <h3 id="pager">pager</h3>
-<p>pager cut -c 1-1000 SHOW PROCESSLIST\G nopager</p>
+<pre class="sql"><code>pager cut -c 1-1000
+SHOW PROCESSLIST\G
+nopager</code></pre>
 <h3 id="profiling">profiling</h3>
-<p>SET enable_query_cache = false; SET query_cache_entry_max_bytes = 0; SET query_cache_entry_max_rows = 0; SET use_page_cache = false; SET skip_page_cache = true; SET skip_local_disk_cache = true; SET enable_profile = true; <query> SELECT get_query_profile(last_query_id());</p>
+<pre class="sql"><code>SET enable_query_cache = false;
+SET query_cache_entry_max_bytes = 0;
+SET query_cache_entry_max_rows = 0;
+SET use_page_cache = false;
+SET skip_page_cache = true;
+SET skip_local_disk_cache = true;
+SET enable_profile = true;
+&lt;query&gt;
+SELECT get_query_profile(last_query_id());</code></pre>
 
 </article>
 </main>
