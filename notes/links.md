@@ -1,4 +1,5 @@
 # October 2026
+* https://news.ycombinator.com/item?id=49998895 (https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007) - Margaret Hamilton has died
 * https://en.wikipedia.org/wiki/Incubation_(psychology)
 * https://www.seangoedecke.com/superpersuasion-will-look-like-bribery
 * https://oldmoe.blog/2026/10/02/its-about-time/
