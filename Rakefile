@@ -36,6 +36,7 @@ NOTES_HTML_DIR = "#{TMP_DIR}/notes"
 POSTS_HTML_DIR = "#{TMP_DIR}/posts"
 LINKS_MD = "notes/links.md"
 ATOM_XML = "#{BUILD_DIR}/atom.xml"
+SITEMAP_XML = "#{BUILD_DIR}/sitemap.xml"
 LINK_PREVIEWS_DIR = "#{BUILD_DIR}/assets/link_previews"
 
 BUILD_POSTS_DIR = "#{BUILD_DIR}/posts"
@@ -83,7 +84,7 @@ CLEAN.include(
 )
 
 multitask default: [:all]
-multitask all: [INDEX_HTML, INDEX_MD, LINKS_HTML, NOTES_HTML, NOTES_INDEX_MD, *NOTE_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML, :copy_assets, :generate_redirects, :copy_markdown_sources]
+multitask all: [INDEX_HTML, INDEX_MD, LINKS_HTML, NOTES_HTML, NOTES_INDEX_MD, *NOTE_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML, SITEMAP_XML, :copy_assets, :generate_redirects, :copy_markdown_sources]
 
 directory BUILD_DIR
 directory BUILD_POSTS_DIR
@@ -141,6 +142,13 @@ file ATOM_XML => [BUILD_DIR, *POSTS_HTML] do |t|
   File.write(t.name, Post.build_rss(posts))
 end
 
+file SITEMAP_XML => [BUILD_DIR, *POSTS_HTML, *NOTE_HTML] do |t|
+  pages = ["", "links.html", "notes.html", "cv/index.html"].map { |path| [path, nil] }
+  pages += POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date).reverse.map { |post| [post.url, post.date] }
+  pages += NOTES_MD.map { |md| [Note.new(md).url, nil] }
+  File.write(t.name, sitemap(pages))
+end
+
 task copy_assets: [BUILD_DIR, BUILD_POSTS_DIR] do
   cp "templates/style.css", "#{BUILD_DIR}/style.css"
   cp_r "posts/assets/.", "#{BUILD_POSTS_DIR}/assets/"
@@ -181,6 +189,15 @@ end
 def json_ld(data)
   # Escape "<" so the JSON can never close the script tag
   %(<script type="application/ld+json">#{JSON.pretty_generate(data).gsub("<", "\\u003c")}</script>)
+end
+
+# [path, last modified date or nil] pairs as a sitemaps.org sitemap
+def sitemap(pages)
+  urls = pages.map do |path, lastmod|
+    lastmod = "\n    <lastmod>#{lastmod.strftime("%Y-%m-%d")}</lastmod>" if lastmod
+    "  <url>\n    <loc>#{CGI.escapeHTML("#{SITE_ROOT}/#{path}")}</loc>#{lastmod}\n  </url>\n"
+  end
+  %(<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n#{urls.join}</urlset>\n)
 end
 
 def render_erb(template_file, caller_binding)
