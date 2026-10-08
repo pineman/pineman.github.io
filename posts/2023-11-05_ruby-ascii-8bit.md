@@ -35,7 +35,7 @@ by most accounts. [What else am I gonna blog
 about](https://twitter.com/pineman_/status/1720426537768386659)? Let's
 dive in.
 
-### Investigation
+## Investigation
 
 Like all good things in life, you need the initial idea that comes after
 the knee jerk reaction. The first good idea is to reproduce the bug,
@@ -152,7 +152,7 @@ earlier part of the email is the new part that we created for the
 feature. Why is it breaking further down the line in code we didn't
 touch?
 
-### Dire straits
+## Dire straits
 
 In dire situations like these, you **desperately** need the initial idea
 that comes after the knee jerk reaction.
@@ -212,7 +212,7 @@ encoding is coming from GCloud as `ASCII-8BIT`, so my coworker does a
 simple `.force_encoding(Encoding::UTF8)` on it, which cleanly fixes the
 bug.
 
-### ASCII-8BIT? WHY GOOGLE WHY
+## ASCII-8BIT? WHY GOOGLE WHY
 
 I'm not satisfied yet, and now I'm just angry. I go spelunking to find
 out why files from gcloud storage, using the official ruby sdk, are
