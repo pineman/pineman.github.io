@@ -173,7 +173,7 @@ SELECT *, (now() - query_start) AS running_time
 FROM pg_stat_activity
 WHERE (now() - pg_stat_activity.query_start) > interval '1 minutes' AND state='active' ORDER BY running_time DESC;
 ```
-* psql: select DATE(<timestamp like created_at>) as day order by day
+* psql: `select DATE(<timestamp like created_at>) as day order by day`
 * postgres: create replication slot - saves LSN at time x. do a base backup to get to time x. enable replication to sync starting from time x.
 * select sample of table `SELECT m.id,m.nylas_message_id,e.nylas_id,e.is_bounce FROM message_sent_records m TABLESAMPLE SYSTEM ((100000 * 100) / 37000000.0) inner join email_messages e on m.nylas_message_id = e.nylas_id where e.is_bounce is true;`
 * EXPLAIN (ANALYZE, COSTS, VERBOSE, BUFFERS, SETTINGS, FORMAT JSON)

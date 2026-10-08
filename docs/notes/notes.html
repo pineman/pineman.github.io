@@ -249,7 +249,7 @@ JSON.parse(j)</code></pre>
 FROM pg_stat_activity
 WHERE (now() - pg_stat_activity.query_start) &gt; interval &#39;1 minutes&#39; AND state=&#39;active&#39; ORDER BY running_time DESC;</code></pre>
 <ul>
-<li>psql: select DATE(<timestamp like created_at>) as day order by day</li>
+<li>psql: <code>select DATE(&lt;timestamp like created_at&gt;) as day order by day</code></li>
 <li>postgres: create replication slot - saves LSN at time x. do a base backup to get to time x. enable replication to sync starting from time x.</li>
 <li>select sample of table <code>SELECT m.id,m.nylas_message_id,e.nylas_id,e.is_bounce FROM message_sent_records m TABLESAMPLE SYSTEM ((100000 * 100) / 37000000.0) inner join email_messages e on m.nylas_message_id = e.nylas_id where e.is_bounce is true;</code></li>
 <li>EXPLAIN (ANALYZE, COSTS, VERBOSE, BUFFERS, SETTINGS, FORMAT JSON)</li>
