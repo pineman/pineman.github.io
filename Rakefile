@@ -105,7 +105,7 @@ end
 
 file LINKS_HTML => [BUILD_DIR, TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
   process_links!
-  write_html(t.name, TEMPLATE_LINKS)
+  write_html(t.name, TEMPLATE_LINKS, months: links_by_month, updated: File.mtime(LINKS_MD))
 end
 
 file NOTES_HTML => [BUILD_DIR, TEMPLATE_NOTES, *NOTE_HTML, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
@@ -199,6 +199,7 @@ def process_links!
 
   modified_lines = lines.map do |line|
     original_line = line
+    line = line.gsub("?utm_source=substack&utm_medium=email", "")
     line = "* #{line}" if line.start_with?("http") && !line.start_with?("* ")
 
     # docs/links.md is the source from the previous successful build. An
@@ -226,6 +227,14 @@ def process_links!
     line
   end
   File.write(LINKS_MD, modified_lines.join) if modified_lines != lines
+end
+
+# notes/links.md as [month, items] pairs, where each item is the text after "* "
+def links_by_month
+  File.read(LINKS_MD).split(/^(?=# )/).map do |section|
+    heading, *items = section.lines.map(&:strip).reject(&:empty?)
+    [heading.delete_prefix("# "), items.map { |item| item.delete_prefix("* ") }]
+  end
 end
 
 def enrich_hacker_news_link(line)

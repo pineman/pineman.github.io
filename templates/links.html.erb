@@ -4,16 +4,9 @@
   <%== render_erb('templates/head.html.erb', binding) %>
   <%== render_erb('templates/article-head.html.erb', binding) %>
   <link rel="alternate" type="text/markdown" href="<%= site_link("links.md") %>">
-  <%
-    content = File.read(LINKS_MD)
-    if content.include?("?utm_source=substack&utm_medium=email")
-      File.write(LINKS_MD, content.gsub(/\?utm_source=substack&utm_medium=email/, ""))
-    end
-    file = File.new(LINKS_MD)
-  %>
   <meta property="og:url" content="<%= SITE_ROOT %>/links.html" />
-  <meta property="article:published_time" content="<%= file.mtime.iso8601 %>" />
-  <meta property="article:modified_time" content="<%= file.mtime.iso8601 %>" />
+  <meta property="article:published_time" content="<%= updated.iso8601 %>" />
+  <meta property="article:modified_time" content="<%= updated.iso8601 %>" />
   <title>What I read</title>
   <meta property="og:title" content="What I read" />
   <meta name="description" content="What I read" />
@@ -26,27 +19,18 @@
 <main>
 <article>
   <h1>Some of what I read on the internets</h1>
-<% list_open = false %>
-<% file.readlines.each do |l| %>
-  <% l.strip! %>
-  <% if l.match?(/^# /) %>
-    <h4><%= l[2..] %></h4>
-    <ul>
-    <% list_open = true %>
-  <% elsif l.match?(/^* https?:\/\//) %>
-    <% url, descr = l[2..].split(" ", 2) %>
-    <li><a href="<%= url %>"><%= url %></a> <%= descr %></li>
-  <% elsif l.empty? %>
-    <% if list_open %>
-    </ul>
-    <% list_open = false %>
+<% months.each do |month, items| %>
+  <h4><%= month %></h4>
+  <ul>
+  <% items.each do |item| %>
+    <% if item.match?(%r{\Ahttps?://}) %>
+      <% url, description = item.split(" ", 2) %>
+    <li><a href="<%= url %>"><%= url %></a> <%= description %></li>
+    <% else %>
+    <li><%= item %></li>
     <% end %>
-  <% else %>
-    <li><%= l[2..] %></li>
   <% end %>
-<% end %>
-<% if list_open %>
-    </ul>
+  </ul>
 <% end %>
 </article>
 </main>
