@@ -32,6 +32,7 @@
     "image" => "#{SITE_ROOT}/assets/link_previews/#{post.filename}.png",
     "author" => { "@type" => "Person", "name" => "João Pinheiro", "url" => "#{SITE_ROOT}/" },
   }) %>
+  <link rel="stylesheet" href="<%= site_link("assets/oceanicnext.min.css") %>">
 </head>
 <body>
 <div id="wrap">
@@ -47,8 +48,6 @@
 </main>
 <footer><a href="<%= site_link("index.html") %>">&lt; back</a></footer>
 </div>
-</body>
-<link rel="stylesheet" href="<%= site_link("assets/oceanicnext.min.css") %>">
 <script src="<%= site_link("assets/highlight.min.js") %>"></script>
 <script>hljs.highlightAll();</script>
 <script>
@@ -72,4 +71,5 @@
     });
   });
 </script>
+</body>
 </html>
