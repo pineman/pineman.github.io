@@ -20,7 +20,7 @@
 <article>
   <h1>Some of what I read on the internets</h1>
 <% months.each do |month, items| %>
-  <h4><%= month %></h4>
+  <h2 class="links-month"><%= month %></h2>
   <ul>
   <% items.each do |item| %>
     <% if item.match?(%r{\Ahttps?://}) %>

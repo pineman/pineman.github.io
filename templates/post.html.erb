@@ -40,7 +40,7 @@
 <article>
   <header>
     <h1><%= post.title %></h1>
-    <h5><time datetime="<%= post.date.iso8601 %>"><%= post.date.strftime("%Y-%m-%d") %></time></h5>
+    <p class="post-date"><time datetime="<%= post.date.iso8601 %>"><%= post.date.strftime("%Y-%m-%d") %></time></p>
   </header>
 <%== post.html %>
 </article>

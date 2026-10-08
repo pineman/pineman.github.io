@@ -140,6 +140,12 @@ summary h2 {
 }
 
 /* Posts */
+/* A date isn't a heading, but keep the look of the <h5> it used to be */
+.post-date {
+  font-size: 0.83em;
+  font-weight: bold;
+  margin: 1.67em 0;
+}
 .heading-link {
   opacity: 0;
   padding-left: 0.5em;
@@ -179,6 +185,12 @@ pre code {
 code:not(pre code) {
   /* Inlines */
   padding: 0.2em;
+}
+/* Links */
+/* Sized like the <h4> it used to be, overriding the index's h2 margins */
+.links-month {
+  font-size: 1em;
+  margin: 1.33em 0;
 }
 .footnote-back {
   margin-left: 0.3em;

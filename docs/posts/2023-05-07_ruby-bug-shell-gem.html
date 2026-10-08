@@ -85,7 +85,7 @@
 <article>
   <header>
     <h1>I found a (microscopic) ruby bug and it got fixed in 3 hours</h1>
-    <h5><time datetime="2023-05-07T00:00:00+00:00">2023-05-07</time></h5>
+    <p class="post-date"><time datetime="2023-05-07T00:00:00+00:00">2023-05-07</time></p>
   </header>
 
 <p>I'm using <a href="https://highlightjs.org/">highlight.js</a> for syntax highlighting in this blog, client-side. I was looking to pre-compute it statically, so I wrote a little node.js helper that reads stdin, highlights the html using the library, and prints to stdout (not only is it more unixy, I already have too many temp files being created). So to call it from ruby, I found the <a href="https://github.com/ruby/shell">shell gem</a>. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It used to be in the stdlib and the DSL syntax is super cool, with me being a rubyist now and all.</p>
