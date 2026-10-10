@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <%== render_erb('templates/head.html.erb', binding) %>
-  <%== render_erb('templates/article-head.html.erb', binding) %>
+  <%== render("templates/head.html.erb") %>
+  <%== render("templates/article-head.html.erb") %>
   <meta property="og:url" content="<%= SITE_ROOT %>/notes/<%= note.name %>.html" />
   <title><%= note.name %></title>
   <meta property="og:title" content="<%= note.name %>" />

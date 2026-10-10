@@ -148,8 +148,7 @@ end
 
 task generate_redirects: [BUILD_DIR] do
   LEGACY_REDIRECTS.each do |filename|
-    html = render_erb(TEMPLATE_REDIRECT, binding)
-    File.write("#{BUILD_DIR}/#{filename}.html", html)
+    write_html("#{BUILD_DIR}/#{filename}.html", TEMPLATE_REDIRECT, filename: filename)
   end
 end
 
@@ -157,36 +156,6 @@ task copy_markdown_sources: [BUILD_POSTS_DIR, BUILD_NOTES_DIR, LINKS_HTML] do
   POSTS_MD.each { |f| cp f, "#{BUILD_POSTS_DIR}/#{File.basename(f)}" }
   NOTES_MD.each { |f| cp f, "#{BUILD_NOTES_DIR}/#{File.basename(f)}" }
   cp LINKS_MD, "#{BUILD_DIR}/links.md"
-end
-
-module Helpers
-  def self.years_ago(date)
-    date = Date.parse(date)
-    today = Date.today
-    y = today.year - date.year
-    y -= 1 if today.month < date.month || today.month == date.month && today.day < date.day
-    y
-  end
-end
-
-# Inline Font Awesome Free icon. Its embedded license comment is dropped:
-# pages using icons carry a single CC BY 4.0 attribution comment instead.
-def icon(name)
-  File.read("#{TEMPLATES_DIR}/icons/#{name}.svg")
-    .sub(/<!--.*?-->/m, "")
-    .sub("<svg ", '<svg aria-hidden="true" fill="currentColor" ')
-    .strip
-end
-
-def json_ld(data)
-  # Escape "<" so the JSON can never close the script tag
-  %(<script type="application/ld+json">#{JSON.pretty_generate(data).gsub("<", "\\u003c")}</script>)
-end
-
-def render_erb(template_file, caller_binding)
-  bufvar = "@_buf_#{Random.rand(1_000_000)}"
-  template = Erubi::Engine.new(File.read(template_file), escape: true, bufvar: bufvar)
-  eval(template.src, caller_binding)
 end
 
 def process_links!
@@ -282,8 +251,30 @@ class Page
     "#{@root}#{path}"
   end
 
+  def years_ago(date)
+    date = Date.parse(date)
+    today = Date.today
+    y = today.year - date.year
+    y -= 1 if today.month < date.month || today.month == date.month && today.day < date.day
+    y
+  end
+
+  # Inline Font Awesome Free icon. Its embedded license comment is dropped:
+  # pages using icons carry a single CC BY 4.0 attribution comment instead.
+  def icon(name)
+    File.read("#{TEMPLATES_DIR}/icons/#{name}.svg")
+      .sub(/<!--.*?-->/m, "")
+      .sub("<svg ", '<svg aria-hidden="true" fill="currentColor" ')
+      .strip
+  end
+
+  def json_ld(data)
+    # Escape "<" so the JSON can never close the script tag
+    %(<script type="application/ld+json">#{JSON.pretty_generate(data).gsub("<", "\\u003c")}</script>)
+  end
+
   def render(template_file)
-    render_erb(template_file, binding)
+    instance_eval(Erubi::Engine.new(File.read(template_file), escape: true).src, template_file)
   end
 end
 
@@ -345,11 +336,9 @@ class Post
   def gen_img!
     width = 1200
     height = 630
-    post = self
-    svg = render_erb(TEMPLATE_LINK_PREVIEW, binding)
     t = @filename
     mkdir_p TMP_DIR
-    File.write("#{TMP_DIR}/#{t}.svg", svg)
+    write_html("#{TMP_DIR}/#{t}.svg", TEMPLATE_LINK_PREVIEW, post: self, width: width, height: height)
     sh(<<~SCRIPT, verbose: false)
       #{CHROME_BINARY} --headless --screenshot="#{TMP_DIR}/screenshot-#{t}.png" --window-size=#{width},#{height + 400} "file://$(pwd)/#{TMP_DIR}/#{t}.svg" &>/dev/null
       docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye #{TMP_DIR}/screenshot-#{t}.png -quality 80 -crop x630+0+0 -strip #{TMP_DIR}/#{t}.png

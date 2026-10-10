@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <%== render_erb('templates/head.html.erb', binding) %>
+  <%== render("templates/head.html.erb") %>
   <%== File.read('templates/pinecone.html') %>
   <!-- Icons: Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0) Copyright 2024 Fonticons, Inc. -->
   <link rel="alternate" type="text/markdown" href="<%= site_link("index.md") %>">
@@ -83,7 +83,7 @@
 </header>
 <main>
 <article>
-  <p>Hi! My name is João Pinheiro (aka pineman), I'm from Lisbon, Portugal and I like computers.<!-- I started programming when I was <span title="<%= Helpers.years_ago("2014-02-01") %> years ago">16</span> with Python and I've loved software ever since.--> Currently at <a href="https://www.amplemarket.com/">amplemarket</a>!</p>
+  <p>Hi! My name is João Pinheiro (aka pineman), I'm from Lisbon, Portugal and I like computers.<!-- I started programming when I was <span title="<%= years_ago("2014-02-01") %> years ago">16</span> with Python and I've loved software ever since.--> Currently at <a href="https://www.amplemarket.com/">amplemarket</a>!</p>
   <h2><a href="<%= site_link("atom.xml") %>"><span class="icon-container"><%== icon("square-rss") %></span>Blog</a></h2>
   <ul>
     <% posts.sort_by(&:date).reverse.each do |post| %>
