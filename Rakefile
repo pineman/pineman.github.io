@@ -398,5 +398,6 @@ module Pandoc
     IO.popen(["pandoc", "--wrap=none", "-f", "html", "-t", "gfm-raw_html", "-o", md_file], "w") do |io|
       io.write(html)
     end
+    raise "pandoc failed for #{md_file}" unless $?.success?
   end
 end
