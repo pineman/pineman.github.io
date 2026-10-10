@@ -87,24 +87,32 @@ directory POSTS_HTML_DIR
 directory NOTES_HTML_DIR
 
 file INDEX_HTML => [BUILD_DIR, TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE, *ICONS] do |t|
-  write_html(t.name, TEMPLATE_INDEX, posts: POSTS_MD.map { |md| Post.new(md) })
+  Page.new(t.name, posts: POSTS_MD.map { |md| Post.new(md) }).write(TEMPLATE_INDEX)
 end
 
 file INDEX_MD => [BUILD_DIR, INDEX_HTML] do |t|
-  index_to_md(INDEX_HTML, t.name)
+  html = File.read(INDEX_HTML).gsub(/<span class="icon-container".*?>.*?<\/span>/m, "")
+  # pandoc only converts <main> when present, which would drop the header
+  html = html.gsub(/<\/?main>/, "")
+  html = html.gsub(/href="#{POSTS_DIR}\/(\d{4}-\d{2}-\d{2}_.*?)\.html"/, "href=\"#{POSTS_DIR}/\\1.md\"")
+  html = html.gsub("href=\"links.html\"", "href=\"#{LINKS_MD}\"")
+  Pandoc.html_to_md(html, t.name)
 end
 
 file NOTES_INDEX_MD => [BUILD_DIR, NOTES_HTML] do |t|
-  notes_to_md(NOTES_HTML, t.name)
+  html = File.read(NOTES_HTML)
+  html = html.gsub(/href="#{NOTES_DIR}\/(.+?)\.html"/, "href=\"#{NOTES_DIR}/\\1.md\"")
+  html = html.gsub(/<a href="[^"]*">&lt; back<\/a>/, "")
+  Pandoc.html_to_md(html, t.name)
 end
 
 file LINKS_HTML => [BUILD_DIR, TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-  process_links!
-  write_html(t.name, TEMPLATE_LINKS, months: links_by_month, updated: File.mtime(LINKS_MD))
+  Links.process!
+  Page.new(t.name, months: Links.by_month, updated: File.mtime(LINKS_MD)).write(TEMPLATE_LINKS)
 end
 
 file NOTES_HTML => [BUILD_DIR, TEMPLATE_NOTES, *NOTE_HTML, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-  write_html(t.name, TEMPLATE_NOTES, notes: NOTES_MD.map { |md| Note.new(md) })
+  Page.new(t.name, notes: NOTES_MD.map { |md| Note.new(md) }).write(TEMPLATE_NOTES)
 end
 
 rule %r{^#{NOTES_HTML_DIR}/.*\.html$} => [->(f) { f.pathmap("#{NOTES_DIR}/%n.md") }, NOTES_HTML_DIR] do |t|
@@ -113,7 +121,7 @@ end
 
 NOTE_HTML.each do |note_html|
   file note_html => [BUILD_NOTES_DIR, note_html.pathmap("#{NOTES_HTML_DIR}/%f"), TEMPLATE_NOTE, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-    write_html(t.name, TEMPLATE_NOTE, note: Note.new(t.name.pathmap("#{NOTES_DIR}/%n.md")))
+    Page.new(t.name, note: Note.new(t.name.pathmap("#{NOTES_DIR}/%n.md"))).write(TEMPLATE_NOTE)
   end
 end
 
@@ -123,7 +131,7 @@ end
 
 POSTS_HTML.each do |post_html|
   file post_html => [BUILD_POSTS_DIR, post_html.pathmap("#{POSTS_HTML_DIR}/%f"), TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD, *ICONS] do |t|
-    write_html(t.name, TEMPLATE_POST, post: Post.new(t.name.pathmap("#{POSTS_DIR}/%n.md")))
+    Page.new(t.name, post: Post.new(t.name.pathmap("#{POSTS_DIR}/%n.md"))).write(TEMPLATE_POST)
   end
 end
 
@@ -132,13 +140,13 @@ rule %r{^#{LINK_PREVIEWS_DIR}/.*\.png$} => [->(f) { f.pathmap("#{POSTS_HTML_DIR}
 end
 
 file ATOM_XML => [BUILD_DIR, TEMPLATE_ATOM, *POSTS_HTML] do |t|
-  write_html(t.name, TEMPLATE_ATOM, posts: POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date))
+  Page.new(t.name, posts: POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date)).write(TEMPLATE_ATOM)
 end
 
 file SITEMAP_XML => [BUILD_DIR, TEMPLATE_SITEMAP, *POSTS_HTML, *NOTE_HTML] do |t|
-  write_html(t.name, TEMPLATE_SITEMAP,
+  Page.new(t.name,
     posts: POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date).reverse,
-    notes: NOTES_MD.map { |md| Note.new(md) })
+    notes: NOTES_MD.map { |md| Note.new(md) }).write(TEMPLATE_SITEMAP)
 end
 
 task copy_assets: [BUILD_DIR, BUILD_POSTS_DIR] do
@@ -148,7 +156,7 @@ end
 
 task generate_redirects: [BUILD_DIR] do
   LEGACY_REDIRECTS.each do |filename|
-    write_html("#{BUILD_DIR}/#{filename}.html", TEMPLATE_REDIRECT, filename: filename)
+    Page.new("#{BUILD_DIR}/#{filename}.html", filename: filename).write(TEMPLATE_REDIRECT)
   end
 end
 
@@ -158,92 +166,13 @@ task copy_markdown_sources: [BUILD_POSTS_DIR, BUILD_NOTES_DIR, LINKS_HTML] do
   cp LINKS_MD, "#{BUILD_DIR}/links.md"
 end
 
-def process_links!
-  lines = File.readlines(LINKS_MD)
-  processed_lines = if File.exist?("#{BUILD_DIR}/links.md")
-    File.readlines("#{BUILD_DIR}/links.md").to_h { |line| [line, true] }
-  else
-    {}
-  end
-
-  modified_lines = lines.map do |line|
-    original_line = line
-    line = line.gsub("?utm_source=substack&utm_medium=email", "")
-    line = "* #{line}" if line.start_with?("http") && !line.start_with?("* ")
-
-    # docs/links.md is the source from the previous successful build. An
-    # unchanged line was already processed, including HN self-posts whose
-    # enriched form cannot be distinguished from a line with a personal note.
-    unless processed_lines.key?(original_line) || processed_lines.key?(line)
-      line = enrich_hacker_news_link(line)
-
-      if line =~ %r{^\* (https?://(?:youtu\.be/\S+|(?:www\.|m\.)?youtube\.com/watch\?\S*\bv=\S+))\s*$}
-        youtube_url = $1
-        if title = fetch_youtube_title(youtube_url)
-          line = "* #{youtube_url} - #{title}\n"
-        end
-      end
-
-      if line =~ %r{^\* (https?://antirez\.com/news/\d+)\s*$}
-        antirez_url = $1
-        html = http_get(antirez_url, headers: { "User-Agent" => "Mozilla/5.0" })
-        title = html[/<title[^>]*>(.*?)<\/title>/im, 1]
-        title = CGI.unescapeHTML(title.to_s).gsub(/\s+/, " ").strip.sub(/\s+-\s+<antirez>\z/, "")
-        line = "* #{antirez_url} - #{title}\n" unless title.empty?
-      end
-    end
-
-    line
-  end
-  File.write(LINKS_MD, modified_lines.join) if modified_lines != lines
-end
-
-# notes/links.md as [month, items] pairs, where each item is the text after "* "
-def links_by_month
-  File.read(LINKS_MD).split(/^(?=# )/).map do |section|
-    heading, *items = section.lines.map(&:strip).reject(&:empty?)
-    [heading.delete_prefix("# "), items.map { |item| item.delete_prefix("* ") }]
-  end
-end
-
-def enrich_hacker_news_link(line)
-  match = line.match(/^\* (https:\/\/news\.ycombinator\.com\/item\?id=(\d+))(?:\s+-\s+(.+?))?\s*$/)
-  return line unless match
-
-  hn_url, hn_id, notes = match.captures
-  data = JSON.parse(http_get("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json"))
-  return line unless data && data["title"]
-
-  title = data["title"]
-  # A Hacker News item without a backing URL (for example, Ask HN) must not
-  # get its title added again on each build.
-  return line if notes == title || notes&.start_with?("#{title} - ")
-
-  backing_link = data["url"] ? " (#{data["url"]})" : ""
-  notes_suffix = notes ? " - #{notes}" : ""
-  "* #{hn_url}#{backing_link} - #{title}#{notes_suffix}\n"
-end
-
-def fetch_youtube_title(url)
-  html = http_get(url, headers: { "User-Agent" => "Mozilla/5.0" })
-  title = html[/<title[^>]*>(.*?)<\/title>/im, 1]
-  title = CGI.unescapeHTML(title.to_s).gsub(/\s+/, " ").strip.sub(/\s+-\s+YouTube\z/, "")
-  title unless title.empty?
-end
-
-def http_get(url, headers: {})
-  header_args = headers.flat_map { |name, value| ["-H", "#{name}: #{value}"] }
-  body = IO.popen(["curl", "-sSL", "--max-redirs", "5", "--max-time", "15", "--retry", "3", *header_args, url], &:read)
-  raise "curl failed for #{url}" unless $?.success?
-  body
-end
-
 # The context a page template is evaluated in: its data (post, notes, ...) as
 # methods, and links relative to wherever the page is written.
 class Page
-  def initialize(html_file, **data)
+  def initialize(file, **data)
+    @file = file
     # e.g. "../" for docs/posts/*.html
-    @root = "../" * html_file.delete_prefix("#{BUILD_DIR}/").count("/")
+    @root = "../" * file.delete_prefix("#{BUILD_DIR}/").count("/")
     data.each { |name, value| define_singleton_method(name) { value } }
   end
 
@@ -276,36 +205,10 @@ class Page
   def render(template_file)
     instance_eval(Erubi::Engine.new(File.read(template_file), escape: true).src, template_file)
   end
-end
 
-def write_html(html_file, template_file, **data)
-  File.write(html_file, Page.new(html_file, **data).render(template_file))
-end
-
-def html_to_md(html, md_filename)
-  IO.popen(["pandoc", "--wrap=none", "-f", "html", "-t", "gfm-raw_html", "-o", md_filename], "w") do |io|
-    io.write(html)
+  def write(template_file)
+    File.write(@file, render(template_file))
   end
-end
-
-def index_to_md(index_html_filename, index_md_filename)
-  html = File.read(index_html_filename).gsub(/<span class="icon-container".*?>.*?<\/span>/m, "")
-  # pandoc only converts <main> when present, which would drop the header
-  html = html.gsub(/<\/?main>/, "")
-  html = html.gsub(/href="#{POSTS_DIR}\/(\d{4}-\d{2}-\d{2}_.*?)\.html"/, "href=\"#{POSTS_DIR}/\\1.md\"")
-  html = html.gsub("href=\"links.html\"", "href=\"#{LINKS_MD}\"")
-  html_to_md(html, index_md_filename)
-end
-
-def notes_to_md(html_filename, md_filename)
-  html = File.read(html_filename)
-  html = html.gsub(/href="#{NOTES_DIR}\/(.+?)\.html"/, "href=\"#{NOTES_DIR}/\\1.md\"")
-  html = html.gsub(/<a href="[^"]*">&lt; back<\/a>/, "")
-  html_to_md(html, md_filename)
-end
-
-def md_to_html(md_file, html_file)
-  sh("pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}", verbose: false)
 end
 
 class Post
@@ -338,7 +241,7 @@ class Post
     height = 630
     t = @filename
     mkdir_p TMP_DIR
-    write_html("#{TMP_DIR}/#{t}.svg", TEMPLATE_LINK_PREVIEW, post: self, width: width, height: height)
+    Page.new("#{TMP_DIR}/#{t}.svg", post: self, width: width, height: height).write(TEMPLATE_LINK_PREVIEW)
     sh(<<~SCRIPT, verbose: false)
       #{CHROME_BINARY} --headless --screenshot="#{TMP_DIR}/screenshot-#{t}.png" --window-size=#{width},#{height + 400} "file://$(pwd)/#{TMP_DIR}/#{t}.svg" &>/dev/null
       docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye #{TMP_DIR}/screenshot-#{t}.png -quality 80 -crop x630+0+0 -strip #{TMP_DIR}/#{t}.png
@@ -362,7 +265,7 @@ class Post
 
   def build_intermediate_html!
     sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}", verbose: false) if !ENV["NOFORMAT"]
-    md_to_html(@md_file, @html_file)
+    Pandoc.md_to_html(@md_file, @html_file)
   end
 
   private
@@ -397,6 +300,106 @@ class Note
   end
 
   def build_intermediate_html!
-    md_to_html(@md_file, @html_file)
+    Pandoc.md_to_html(@md_file, @html_file)
+  end
+end
+
+module Links
+  extend self
+
+  def process!
+    lines = File.readlines(LINKS_MD)
+    processed_lines = if File.exist?("#{BUILD_DIR}/links.md")
+      File.readlines("#{BUILD_DIR}/links.md").to_h { |line| [line, true] }
+    else
+      {}
+    end
+
+    modified_lines = lines.map do |line|
+      original_line = line
+      line = line.gsub("?utm_source=substack&utm_medium=email", "")
+      line = "* #{line}" if line.start_with?("http") && !line.start_with?("* ")
+
+      # docs/links.md is the source from the previous successful build. An
+      # unchanged line was already processed, including HN self-posts whose
+      # enriched form cannot be distinguished from a line with a personal note.
+      unless processed_lines.key?(original_line) || processed_lines.key?(line)
+        line = enrich_hacker_news(line)
+
+        if line =~ %r{^\* (https?://(?:youtu\.be/\S+|(?:www\.|m\.)?youtube\.com/watch\?\S*\bv=\S+))\s*$}
+          youtube_url = $1
+          if title = fetch_title(youtube_url, /\s+-\s+YouTube\z/)
+            line = "* #{youtube_url} - #{title}\n"
+          end
+        end
+
+        if line =~ %r{^\* (https?://antirez\.com/news/\d+)\s*$}
+          antirez_url = $1
+          if title = fetch_title(antirez_url, /\s+-\s+<antirez>\z/)
+            line = "* #{antirez_url} - #{title}\n"
+          end
+        end
+      end
+
+      line
+    end
+    File.write(LINKS_MD, modified_lines.join) if modified_lines != lines
+  end
+
+  # notes/links.md as [month, items] pairs, where each item is the text after "* "
+  def by_month
+    File.read(LINKS_MD).split(/^(?=# )/).map do |section|
+      heading, *items = section.lines.map(&:strip).reject(&:empty?)
+      [heading.delete_prefix("# "), items.map { |item| item.delete_prefix("* ") }]
+    end
+  end
+
+  private
+
+  def enrich_hacker_news(line)
+    match = line.match(/^\* (https:\/\/news\.ycombinator\.com\/item\?id=(\d+))(?:\s+-\s+(.+?))?\s*$/)
+    return line unless match
+
+    hn_url, hn_id, notes = match.captures
+    data = JSON.parse(http_get("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json"))
+    return line unless data && data["title"]
+
+    title = data["title"]
+    # A Hacker News item without a backing URL (for example, Ask HN) must not
+    # get its title added again on each build.
+    return line if notes == title || notes&.start_with?("#{title} - ")
+
+    backing_link = data["url"] ? " (#{data["url"]})" : ""
+    notes_suffix = notes ? " - #{notes}" : ""
+    "* #{hn_url}#{backing_link} - #{title}#{notes_suffix}\n"
+  end
+
+  def fetch_title(url, suffix)
+    html = http_get(url, headers: { "User-Agent" => "Mozilla/5.0" })
+    title = html[/<title[^>]*>(.*?)<\/title>/im, 1]
+    title = CGI.unescapeHTML(title.to_s).gsub(/\s+/, " ").strip.sub(suffix, "")
+    title unless title.empty?
+  end
+
+  def http_get(url, headers: {})
+    header_args = headers.flat_map { |name, value| ["-H", "#{name}: #{value}"] }
+    body = IO.popen(["curl", "-sSL", "--max-redirs", "5", "--max-time", "15", "--retry", "3", *header_args, url], &:read)
+    raise "curl failed for #{url}" unless $?.success?
+    body
+  end
+end
+
+module Pandoc
+  extend self
+  include FileUtils
+
+  def md_to_html(md_file, html_file)
+    sh("pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}", verbose: false)
+  end
+
+  def html_to_md(html, md_file)
+    IO.popen(["pandoc", "--wrap=none", "-f", "html", "-t", "gfm-raw_html", "-o", md_file], "w") do |io|
+      io.write(html)
+    end
   end
 end
