@@ -9,7 +9,6 @@
 - [lessons](notes/lessons.md)
 - [notes](notes/notes.md)
 - [quotes](notes/quotes.md)
-- [save_llm_threads](notes/save_llm_threads.md)
 - [scraping](notes/scraping.md)
 - [stats](notes/stats.md)
 - [things_you_need](notes/things_you_need.md)
