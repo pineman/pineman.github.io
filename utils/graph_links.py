@@ -6,7 +6,8 @@ from datetime import datetime
 months = []
 counts = []
 
-with open("../notes/links.md") as f:
+links_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "notes", "links.md")
+with open(links_path) as f:
     current_count = 0
     current_month = None
     for line in f:

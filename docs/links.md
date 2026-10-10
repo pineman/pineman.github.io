@@ -1,4 +1,12 @@
 # October 2026
+* https://www.youtube.com/watch?v=cWDDx74s090 - I have come to bury the BIOS, not to open it The need for holistic systems Bryan Cantrill
+* https://www.youtube.com/watch?v=3kbPyuAtk7g - Bryan Cantrill: Keynote: "Rust, In Sickness & In Health" | RustConf 2026
+* https://news.ycombinator.com/item?id=50020838 (https://marcobambini.substack.com/p/we-solved-sqlites-single-writer-limitation) - We solved SQLite's single-writer limitation
+* https://news.ycombinator.com/item?id=50014185 (https://www.bleepingcomputer.com/news/security/low-cost-android-phones-ship-with-residential-proxy-malware/) - Low-cost Android phones ship with residential proxy malware
+* https://news.ycombinator.com/item?id=49967165 (https://view.e.apollo.com/?vawpToken=7L5HV5YJ6JNUHBYA6QBXXEV6CY.120045&utm_source=mce&utm_medium=email&utm_campaign=701Dp00000017sOIAQ&utm_content=https%3a%2f%2fview.e.apollo.com%2f%3fvawpToken%3d%25%25tokenized_vawp_metadata%25%25&utm_id=76effdac4c9a922585b0715a3796d544&mce_id=208988442) - No Signs of AI in the Productivity Data
+* https://www.dbos.dev/blog/scaling-deletions-in-postgres
+* https://charity.wtf/p/if-your-team-is-happy-are-you-doing
+* https://www.seangoedecke.com/how-to-read-code
 * https://news.ycombinator.com/item?id=49998895 (https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007) - Margaret Hamilton has died
 * https://en.wikipedia.org/wiki/Incubation_(psychology)
 * https://www.seangoedecke.com/superpersuasion-will-look-like-bribery

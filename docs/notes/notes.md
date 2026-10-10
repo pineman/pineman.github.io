@@ -60,8 +60,11 @@ Sidekiq::Workers.new.filter { |process_id, thread_id, work| work.queue == "defau
 * job_id is preserved through retries
 * queue latency means: the age in seconds of the oldest job currently in the queue
 * disable transactional push: https://github.com/amplemarket/ampledash/pull/25648/files (due to lib/utilities/sidekiq_transactional_client.rb)
-* > If an individual job is rescheduled by the limiter more than 20 times (approximately one day with the default linear backoff), OverLimit will be re-raised as if it were a job failure and the job retried as usual.
-Use `max_limiter_retries` key in `sidekiq_options` to configure this to be more than 20.
+* Sidekiq switches from overrated retries to normal retries when job["overrated"] >= maximum_reschedules. It checks the count when a limiter error occurs.
+  The maximum comes from the first available value:
+  1. The job’s `max_limiter_retries` option.
+  2. The limiter’s reschedule: setting.
+  3. The default: 20. (Sidekiq docs (https://github.com/sidekiq/sidekiq/wiki/Ent-Rate-Limiting#reschedules))
 * poison pill: SuperFetch moves jobs to private per process queues in redis. The, periodically, a single random worker process will run the orphan check code (`cleanup_the_dead`). If a job is recovered three times in a 72h span, it will be classified as a poison pill and moved to the dead code. That same random worker process will emit the 'Killed poison pill' log (default, configurable msg).
 
 ## Ruby/rails

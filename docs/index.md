@@ -32,7 +32,7 @@ Hi! My name is João Pinheiro (aka pineman), I'm from Lisbon, Portugal and I lik
 - [LEDmatrix](https://github.com/pineman/LEDmatrix) - A 20 \* 10 pixel LED matrix (python)
 - [r2p](https://github.com/pineman/r2p) - Play remote games via RDP on a Raspberry Pi (C++, Qt)
 - [aoc](https://github.com/pineman/aoc) - Advent of Code solutions
-- [code](https://github.com/pineman/code) - Everything else - challenges, old projects, experiments
+- [code](https://github.com/pineman/code) - Everything else: challenges, old projects, experiments
 
 Academic selection:
 
