@@ -15,24 +15,10 @@
 <meta name="twitter:creator" content="@pineman_" />
 <script type="speculationrules">
 {
-  "prerender": [{
-    "where": {
-      "or": [
-        { "href_matches": "/index.html" },
-        { "href_matches": "/posts/*.html" }
-      ]
-    },
-    "eagerness": "immediate"
-  }, {
-    "where": {
-      "and": [
-        { "href_matches": "/*.html" },
-        { "not": { "href_matches": "/index.html" } },
-        { "not": { "href_matches": "/posts/*.html" } }
-      ]
-    },
-    "eagerness": "moderate"
-  }]
+  "prerender": [
+    {"eagerness": "immediate", "where": {"or": [{"href_matches": "/index.html"}, {"href_matches": "/posts/*.html"}]}},
+    {"eagerness": "moderate", "where": {"and": [{"href_matches": "/*.html"}, {"not": {"href_matches": "/index.html"}}, {"not": {"href_matches": "/posts/*.html"}}]}}
+  ]
 }
 </script>
 
