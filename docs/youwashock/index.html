@@ -15,21 +15,70 @@
         width: 100vw;
         height: 100vh;
       }
+      #click-me {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        white-space: nowrap;
+        padding: 0.5em 1em;
+        border: 4px solid red;
+        background: black;
+        color: red;
+        font: bold min(3rem, 7vw) monospace;
+        cursor: pointer;
+        animation: blink 0.5s steps(1) infinite;
+      }
+      #click-me img {
+        height: 2em;
+      }
+      #click-me img:last-child {
+        transform: scaleX(-1);
+      }
+      #click-me small {
+        display: block;
+        font-size: 0.4em;
+      }
+      #click-me[hidden] {
+        display: none;
+      }
+      @keyframes blink {
+        50% {
+          color: yellow;
+          border-color: yellow;
+        }
+      }
     </style>
-    <script>
-      window.addEventListener("click", function () {
-        document.querySelector("video").play();
-        document.querySelector("audio").play();
-        window.removeEventListener("click", this);
-      });
-    </script>
   </head>
   <body>
-    <video autoplay loop>
+    <video loop muted playsinline preload="auto" hidden>
       <source src="youwashock.webm" type="video/webm" />
     </video>
-    <audio autoplay loop>
+    <audio loop preload="auto">
       <source src="youwashock.ogg" type="audio/ogg" />
     </audio>
+    <button id="click-me">
+      <img src="atatatatatatatatatatatatata.gif" alt="" />
+      <span>
+        click me
+        <small>🔊 volume warning 🔊</small>
+      </span>
+      <img src="atatatatatatatatatatatatata.gif" alt="" />
+    </button>
+    <script>
+      const video = document.querySelector("video");
+      const audio = document.querySelector("audio");
+      const clickMe = document.querySelector("#click-me");
+
+      window.addEventListener("click", () => {
+        clickMe.hidden = true;
+        video.hidden = false;
+        video.play();
+        audio.play();
+      });
+    </script>
   </body>
 </html>
