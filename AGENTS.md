@@ -4,6 +4,7 @@ Static site generator for a personal homepage: Ruby Rake + ERB + pandoc. `Rakefi
 
 ## Commands
 
+- `bundle install`: install the Ruby gems
 - `./make`: build the site into `docs/`
 - `./make serve`: serve `docs/` locally
 - `./make watch`: rebuild on change (needs `entr` and `ts`)

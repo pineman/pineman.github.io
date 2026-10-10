@@ -1,11 +1,7 @@
 #!/usr/bin/env ruby
 
-require "bundler/inline"
-gemfile do
-  source "https://rubygems.org"
-  gem "nokogiri", "1.16.2"
-  gem "erubi", "1.13.1"
-end
+require "erubi"
+require "nokogiri"
 
 require "cgi"
 require "date"
