@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require "erubi"
 require "nokogiri"
 
@@ -11,7 +9,7 @@ require "uri"
 
 Rake::FileUtilsExt.verbose(false)
 
-CHROME_BINARY = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"'
+CHROME_BINARY = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SITE_ROOT = "https://pineman.github.io"
 
 BUILD_DIR = "docs"
@@ -33,6 +31,10 @@ LINK_PREVIEWS_DIR = "#{BUILD_DIR}/assets/link_previews"
 
 BUILD_POSTS_DIR = "#{BUILD_DIR}/posts"
 BUILD_NOTES_DIR = "#{BUILD_DIR}/notes"
+POST_ASSETS_DIR = "#{POSTS_DIR}/assets"
+BUILD_POST_ASSETS_DIR = "#{BUILD_POSTS_DIR}/assets"
+BUILD_STYLE_CSS = "#{BUILD_DIR}/style.css"
+BUILD_LINKS_MD = "#{BUILD_DIR}/links.md"
 
 TEMPLATES_DIR = "templates"
 TEMPLATE_INDEX = "#{TEMPLATES_DIR}/index.html.erb"
@@ -43,19 +45,23 @@ TEMPLATE_NOTE = "#{TEMPLATES_DIR}/note.html.erb"
 TEMPLATE_HEAD = "#{TEMPLATES_DIR}/head.html.erb"
 TEMPLATE_ARTICLE_HEAD = "#{TEMPLATES_DIR}/article-head.html.erb"
 TEMPLATE_PINECONE = "#{TEMPLATES_DIR}/pinecone.html"
-TEMPLATE_LINK_PREVIEW = "#{TEMPLATES_DIR}/link-preview.svg.erb"
+TEMPLATE_LINK_PREVIEW = "#{TEMPLATES_DIR}/link-preview.html.erb"
 TEMPLATE_ATOM = "#{TEMPLATES_DIR}/atom.xml.erb"
 TEMPLATE_SITEMAP = "#{TEMPLATES_DIR}/sitemap.xml.erb"
+TEMPLATE_REDIRECT = "#{TEMPLATES_DIR}/redirect.html.erb"
 ICONS = FileList["#{TEMPLATES_DIR}/icons/*.svg"]
 
 POSTS_MD = FileList["#{POSTS_DIR}/*.md"]
 POSTS_HTML = POSTS_MD.pathmap("#{BUILD_POSTS_DIR}/%n.html")
 POSTS_INTERMEDIATE_HTML = POSTS_MD.pathmap("#{POSTS_HTML_DIR}/%n.html")
 LINK_PREVIEWS = POSTS_MD.pathmap("#{LINK_PREVIEWS_DIR}/%n.png")
+BUILD_POSTS_MD = POSTS_MD.pathmap("#{BUILD_POSTS_DIR}/%f")
+BUILD_POST_ASSETS = FileList["#{POST_ASSETS_DIR}/*"].pathmap("#{BUILD_POST_ASSETS_DIR}/%f")
 
 NOTES_MD = FileList["#{NOTES_DIR}/*.md"].exclude(LINKS_MD)
 NOTE_HTML = NOTES_MD.pathmap("#{BUILD_NOTES_DIR}/%n.html")
 NOTES_INTERMEDIATE_HTML = NOTES_MD.pathmap("#{NOTES_HTML_DIR}/%n.html")
+BUILD_NOTES_MD = NOTES_MD.pathmap("#{BUILD_NOTES_DIR}/%f")
 
 LEGACY_REDIRECTS = %w[
   2022-12-03_aoc3
@@ -64,7 +70,7 @@ LEGACY_REDIRECTS = %w[
   2024-05-25_just-use-curl
   2025-02-01_k8s-dns
 ]
-TEMPLATE_REDIRECT = "#{TEMPLATES_DIR}/redirect.html.erb"
+REDIRECTS_HTML = LEGACY_REDIRECTS.map { |filename| "#{BUILD_DIR}/#{filename}.html" }
 
 # Only clean generated files, not static assets in docs/
 CLEAN.include(
@@ -72,13 +78,14 @@ CLEAN.include(
   "#{BUILD_DIR}/*.html",
   "#{BUILD_DIR}/*.md",
   "#{BUILD_DIR}/*.xml",
-  "#{BUILD_DIR}/style.css",
+  BUILD_STYLE_CSS,
   "#{BUILD_POSTS_DIR}",
-  "#{BUILD_NOTES_DIR}"
+  "#{BUILD_NOTES_DIR}",
+  LINK_PREVIEWS_DIR
 )
 
 multitask default: [:all]
-multitask all: [INDEX_HTML, INDEX_MD, LINKS_HTML, NOTES_HTML, NOTES_INDEX_MD, *NOTE_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML, SITEMAP_XML, :copy_assets, :generate_redirects, :copy_markdown_sources]
+multitask all: [INDEX_HTML, INDEX_MD, LINKS_HTML, NOTES_HTML, NOTES_INDEX_MD, *NOTE_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML, SITEMAP_XML, BUILD_STYLE_CSS, *BUILD_POST_ASSETS, *REDIRECTS_HTML, *BUILD_POSTS_MD, *BUILD_NOTES_MD, BUILD_LINKS_MD]
 
 directory BUILD_DIR
 directory BUILD_POSTS_DIR
@@ -86,6 +93,7 @@ directory BUILD_NOTES_DIR
 directory POSTS_HTML_DIR
 directory NOTES_HTML_DIR
 directory LINK_PREVIEWS_DIR
+directory BUILD_POST_ASSETS_DIR
 
 file INDEX_HTML => [BUILD_DIR, TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE, *ICONS] do |t|
   posts = POSTS_MD.map { |md| Post.new(md) }
@@ -151,21 +159,30 @@ file SITEMAP_XML => [BUILD_DIR, TEMPLATE_SITEMAP, *POSTS_HTML, *NOTE_HTML] do |t
   Page.new(t.name, posts:, notes:).write(TEMPLATE_SITEMAP)
 end
 
-task copy_assets: [BUILD_DIR, BUILD_POSTS_DIR] do
-  cp "templates/style.css", "#{BUILD_DIR}/style.css"
-  cp_r "posts/assets/.", "#{BUILD_POSTS_DIR}/assets/"
+file BUILD_STYLE_CSS => ["#{TEMPLATES_DIR}/style.css", BUILD_DIR] do |t|
+  cp t.source, t.name
 end
 
-task generate_redirects: [BUILD_DIR] do
-  LEGACY_REDIRECTS.each do |filename|
-    Page.new("#{BUILD_DIR}/#{filename}.html", filename:).write(TEMPLATE_REDIRECT)
+rule %r{^#{BUILD_POST_ASSETS_DIR}/} => [->(f) { f.pathmap("#{POST_ASSETS_DIR}/%f") }, BUILD_POST_ASSETS_DIR] do |t|
+  cp t.source, t.name
+end
+
+LEGACY_REDIRECTS.zip(REDIRECTS_HTML).each do |filename, redirect_html|
+  file redirect_html => [TEMPLATE_REDIRECT, BUILD_DIR] do |t|
+    Page.new(t.name, filename:).write(TEMPLATE_REDIRECT)
   end
 end
 
-task copy_markdown_sources: [BUILD_POSTS_DIR, BUILD_NOTES_DIR, LINKS_HTML] do
-  POSTS_MD.each { |f| cp f, "#{BUILD_POSTS_DIR}/#{File.basename(f)}" }
-  NOTES_MD.each { |f| cp f, "#{BUILD_NOTES_DIR}/#{File.basename(f)}" }
-  cp LINKS_MD, "#{BUILD_DIR}/links.md"
+rule %r{^#{BUILD_POSTS_DIR}/.*\.md$} => [->(f) { f.pathmap("#{POSTS_DIR}/%f") }, ->(f) { f.pathmap("#{POSTS_HTML_DIR}/%n.html") }, BUILD_POSTS_DIR] do |t|
+  cp t.source, t.name
+end
+
+rule %r{^#{BUILD_NOTES_DIR}/.*\.md$} => [->(f) { f.pathmap("#{NOTES_DIR}/%f") }, BUILD_NOTES_DIR] do |t|
+  cp t.source, t.name
+end
+
+file BUILD_LINKS_MD => [LINKS_MD, LINKS_HTML] do |t|
+  cp t.source, t.name
 end
 
 # The context a page template is evaluated in: its data (post, notes, ...) as
@@ -239,16 +256,13 @@ class Post
 
   # props to https://github.com/ordepdev/ordepdev.github.io/blob/1bee021898a6c2dd06a803c5d739bd753dbe700a/scripts/generate-social-images.js#L26
   def gen_img!
-    width = 1200
-    height = 630
-    t = @filename
-    Page.new("#{TMP_DIR}/#{t}.svg", post: self, width:, height:).write(TEMPLATE_LINK_PREVIEW)
-    sh(<<~SCRIPT, verbose: false)
-      #{CHROME_BINARY} --headless --screenshot="#{TMP_DIR}/screenshot-#{t}.png" --window-size=#{width},#{height + 400} "file://$(pwd)/#{TMP_DIR}/#{t}.svg" &>/dev/null
-      docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye #{TMP_DIR}/screenshot-#{t}.png -quality 80 -crop x630+0+0 -strip #{TMP_DIR}/#{t}.png
-      rm -f #{TMP_DIR}/#{t}.svg #{TMP_DIR}/screenshot-#{t}.png
-      mv #{TMP_DIR}/#{t}.png #{LINK_PREVIEWS_DIR}/
-    SCRIPT
+    page = "#{TMP_DIR}/#{@filename}.html"
+    screenshot = "#{TMP_DIR}/#{@filename}.png"
+    Page.new(page, post: self).write(TEMPLATE_LINK_PREVIEW)
+    sh(CHROME_BINARY, "--headless", "--screenshot=#{screenshot}", "--window-size=1200,630",
+      "file://#{File.expand_path(page)}", out: File::NULL, err: File::NULL)
+    sh("docker", "run", "--rm", "-v", "#{Dir.pwd}:/imgs", "dpokidov/imagemagick:7.1.1-8-bullseye",
+      screenshot, "-quality", "80", "-strip", "#{LINK_PREVIEWS_DIR}/#{@filename}.png")
   end
 
   # Feed readers resolve relative URLs against the feed, not the post, so make
@@ -264,7 +278,7 @@ class Post
   end
 
   def build_intermediate_html!
-    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}", verbose: false) if !ENV["NOFORMAT"]
+    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}") if !ENV["NOFORMAT"]
     Pandoc.md_to_html(@md_file, @html_file)
   end
 
@@ -285,7 +299,6 @@ class Post
 end
 
 class Note
-  include FileUtils
   attr_reader :url, :html, :name, :filename, :title, :date, :text_descr
 
   def initialize(md_file)
@@ -309,7 +322,7 @@ module Links
 
   def process!
     lines = File.readlines(LINKS_MD)
-    cache = "#{BUILD_DIR}/links.md"
+    cache = BUILD_LINKS_MD
     processed_lines = File.exist?(cache) ? File.readlines(cache).to_set : Set.new
 
     modified_lines = lines.map do |line|
@@ -391,7 +404,7 @@ module Pandoc
   include FileUtils
 
   def md_to_html(md_file, html_file)
-    sh("pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}", verbose: false)
+    sh("pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}")
   end
 
   def html_to_md(html, md_file)
