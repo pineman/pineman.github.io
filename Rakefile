@@ -6,15 +6,11 @@ gemfile do
   gem "nokogiri", "1.16.2"
   gem "erubi", "1.13.1"
   gem "rss", "0.3.2"
-  gem "http", "6.0.3"
-  gem "retriable", "4.1.1"
 end
 
 require "rss"
 require "cgi"
-require "http"
 require "json"
-require "retriable"
 require "rake/clean"
 
 Rake::FileUtilsExt.verbose(false)
@@ -280,9 +276,10 @@ def fetch_youtube_title(url)
 end
 
 def http_get(url, headers: {})
-  Retriable.retriable do
-    HTTP.follow(max_hops: 5).headers(headers).get(url).to_s
-  end
+  header_args = headers.flat_map { |name, value| ["-H", "#{name}: #{value}"] }
+  body = IO.popen(["curl", "-sSL", "--max-redirs", "5", "--max-time", "15", "--retry", "3", *header_args, url], &:read)
+  raise "curl failed for #{url}" unless $?.success?
+  body
 end
 
 # The context a page template is evaluated in: its data (post, notes, ...) as
