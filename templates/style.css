@@ -201,3 +201,9 @@ article p:has(> img) {
 article img {
   max-width: 100%;
 }
+blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  border-left: 3px solid grey;
+  opacity: 0.8;
+}
