@@ -1,5 +1,6 @@
 require "erubi"
 require "nokogiri"
+require "vips"
 
 require "cgi"
 require "date"
@@ -9,7 +10,6 @@ require "uri"
 
 Rake::FileUtilsExt.verbose(false)
 
-CHROME_BINARY = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SITE_ROOT = "https://pineman.github.io"
 
 BUILD_DIR = "docs"
@@ -45,7 +45,6 @@ TEMPLATE_NOTE = "#{TEMPLATES_DIR}/note.html.erb"
 TEMPLATE_HEAD = "#{TEMPLATES_DIR}/head.html.erb"
 TEMPLATE_ARTICLE_HEAD = "#{TEMPLATES_DIR}/article-head.html.erb"
 TEMPLATE_PINECONE = "#{TEMPLATES_DIR}/pinecone.html"
-TEMPLATE_LINK_PREVIEW = "#{TEMPLATES_DIR}/link-preview.html.erb"
 TEMPLATE_ATOM = "#{TEMPLATES_DIR}/atom.xml.erb"
 TEMPLATE_SITEMAP = "#{TEMPLATES_DIR}/sitemap.xml.erb"
 TEMPLATE_REDIRECT = "#{TEMPLATES_DIR}/redirect.html.erb"
@@ -144,7 +143,7 @@ rule %r{^#{BUILD_POSTS_DIR}/.*\.html$} => [->(f) { f.pathmap("#{POSTS_HTML_DIR}/
   Page.new(t.name, post:).write(TEMPLATE_POST)
 end
 
-rule %r{^#{LINK_PREVIEWS_DIR}/.*\.png$} => [->(f) { f.pathmap("#{POSTS_HTML_DIR}/%n.html") }, LINK_PREVIEWS_DIR, TEMPLATE_LINK_PREVIEW] do |t|
+rule %r{^#{LINK_PREVIEWS_DIR}/.*\.png$} => [->(f) { f.pathmap("#{POSTS_HTML_DIR}/%n.html") }, LINK_PREVIEWS_DIR] do |t|
   Post.new(t.source.pathmap("#{POSTS_DIR}/%n.md")).gen_img!
 end
 
@@ -256,13 +255,15 @@ class Post
 
   # props to https://github.com/ordepdev/ordepdev.github.io/blob/1bee021898a6c2dd06a803c5d739bd753dbe700a/scripts/generate-social-images.js#L26
   def gen_img!
-    page = "#{TMP_DIR}/#{@filename}.html"
-    screenshot = "#{TMP_DIR}/#{@filename}.png"
-    Page.new(page, post: self).write(TEMPLATE_LINK_PREVIEW)
-    sh(CHROME_BINARY, "--headless", "--screenshot=#{screenshot}", "--window-size=1200,630",
-      "file://#{File.expand_path(page)}", out: File::NULL, err: File::NULL)
-    sh("docker", "run", "--rm", "-v", "#{Dir.pwd}:/imgs", "dpokidov/imagemagick:7.1.1-8-bullseye",
-      screenshot, "-quality", "80", "-strip", "#{LINK_PREVIEWS_DIR}/#{@filename}.png")
+    title_mask = Vips::Image.text("<b>#{CGI.escapeHTML(title)}</b>", font: "Menlo 60", width: 1100, dpi: 72)
+    descr_mask = Vips::Image.text(CGI.escapeHTML(text_descr), font: "Menlo 40", width: 1100, dpi: 72)
+    footer_mask = Vips::Image.text("pineman #{date.strftime("%Y-%m-%d")}", font: "Menlo 30", dpi: 72)
+    Vips::Image.black(1200, 630)
+      .insert(title_mask, 50, 50)
+      .insert(descr_mask, 50, 50 + title_mask.height + 40)
+      .insert(footer_mask, 1200 - 50 - footer_mask.width, 630 - 50 - footer_mask.height)
+      .ifthenelse([0xda, 0xda, 0xdb], [0x1d, 0x1e, 0x20], blend: true)
+      .write_to_file("#{LINK_PREVIEWS_DIR}/#{@filename}.png", palette: true, Q: 80, strip: true)
   end
 
   # Feed readers resolve relative URLs against the feed, not the post, so make
