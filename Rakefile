@@ -5,13 +5,13 @@ gemfile do
   source "https://rubygems.org"
   gem "nokogiri", "1.16.2"
   gem "erubi", "1.13.1"
-  gem "rss", "0.3.2"
 end
 
-require "rss"
 require "cgi"
+require "date"
 require "json"
 require "rake/clean"
+require "uri"
 
 Rake::FileUtilsExt.verbose(false)
 
@@ -48,6 +48,8 @@ TEMPLATE_HEAD = "#{TEMPLATES_DIR}/head.html.erb"
 TEMPLATE_ARTICLE_HEAD = "#{TEMPLATES_DIR}/article-head.html.erb"
 TEMPLATE_PINECONE = "#{TEMPLATES_DIR}/pinecone.html"
 TEMPLATE_LINK_PREVIEW = "#{TEMPLATES_DIR}/link-preview.svg.erb"
+TEMPLATE_ATOM = "#{TEMPLATES_DIR}/atom.xml.erb"
+TEMPLATE_SITEMAP = "#{TEMPLATES_DIR}/sitemap.xml.erb"
 ICONS = FileList["#{TEMPLATES_DIR}/icons/*.svg"]
 
 POSTS_MD = FileList["#{POSTS_DIR}/*.md"]
@@ -133,16 +135,14 @@ rule %r{^#{LINK_PREVIEWS_DIR}/.*\.png$} => [->(f) { f.pathmap("#{POSTS_HTML_DIR}
   Post.new(t.source.pathmap("#{POSTS_DIR}/%n.md")).gen_img!
 end
 
-file ATOM_XML => [BUILD_DIR, *POSTS_HTML] do |t|
-  posts = POSTS_MD.map { |md| Post.new(md) }
-  File.write(t.name, Post.build_rss(posts))
+file ATOM_XML => [BUILD_DIR, TEMPLATE_ATOM, *POSTS_HTML] do |t|
+  write_html(t.name, TEMPLATE_ATOM, posts: POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date))
 end
 
-file SITEMAP_XML => [BUILD_DIR, *POSTS_HTML, *NOTE_HTML] do |t|
-  pages = ["", "links.html", "notes.html", "cv/index.html"].map { |path| [path, nil] }
-  pages += POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date).reverse.map { |post| [post.url, post.date] }
-  pages += NOTES_MD.map { |md| [Note.new(md).url, nil] }
-  File.write(t.name, sitemap(pages))
+file SITEMAP_XML => [BUILD_DIR, TEMPLATE_SITEMAP, *POSTS_HTML, *NOTE_HTML] do |t|
+  write_html(t.name, TEMPLATE_SITEMAP,
+    posts: POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date).reverse,
+    notes: NOTES_MD.map { |md| Note.new(md) })
 end
 
 task copy_assets: [BUILD_DIR, BUILD_POSTS_DIR] do
@@ -185,15 +185,6 @@ end
 def json_ld(data)
   # Escape "<" so the JSON can never close the script tag
   %(<script type="application/ld+json">#{JSON.pretty_generate(data).gsub("<", "\\u003c")}</script>)
-end
-
-# [path, last modified date or nil] pairs as a sitemaps.org sitemap
-def sitemap(pages)
-  urls = pages.map do |path, lastmod|
-    lastmod = "\n    <lastmod>#{lastmod.strftime("%Y-%m-%d")}</lastmod>" if lastmod
-    "  <url>\n    <loc>#{CGI.escapeHTML("#{SITE_ROOT}/#{path}")}</loc>#{lastmod}\n  </url>\n"
-  end
-  %(<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n#{urls.join}</urlset>\n)
 end
 
 def render_erb(template_file, caller_binding)
@@ -370,31 +361,6 @@ class Post
       mkdir -p #{LINK_PREVIEWS_DIR}
       mv #{TMP_DIR}/#{t}.png #{LINK_PREVIEWS_DIR}/
     SCRIPT
-  end
-
-  def self.build_rss(posts)
-    posts = posts.sort_by(&:date)
-    rss = RSS::Maker.make("atom") do |maker|
-      maker.channel.links.new_link do |link|
-        link.href = "#{SITE_ROOT}/atom.xml"
-        link.rel = "self"
-      end
-      maker.channel.author = "pineman"
-      maker.channel.title = "pineman"
-      maker.channel.about = "#{SITE_ROOT}/"
-      maker.channel.updated = posts.last.date.iso8601
-      maker.image.url = "#{SITE_ROOT}/assets/me.webp"
-      posts.each do |post|
-        maker.items.new_item do |item|
-          item.title = post.title
-          item.link = "#{SITE_ROOT}/#{post.url}"
-          item.published = post.date.iso8601
-          item.updated = post.date.iso8601
-          item.description = post.feed_html
-        end
-      end
-    end
-    rss.to_s.gsub!("<summary>", '<summary type="html">')
   end
 
   # Feed readers resolve relative URLs against the feed, not the post, so make

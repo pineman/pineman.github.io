@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<% ["", "links.html", "notes.html", "cv/index.html"].each do |path| %>
+  <url>
+    <loc><%= SITE_ROOT %>/<%= path %></loc>
+  </url>
+<% end %>
+<% posts.each do |post| %>
+  <url>
+    <loc><%= SITE_ROOT %>/<%= post.url %></loc>
+    <lastmod><%= post.date.strftime("%Y-%m-%d") %></lastmod>
+  </url>
+<% end %>
+<% notes.each do |note| %>
+  <url>
+    <loc><%= SITE_ROOT %>/<%= note.url %></loc>
+  </url>
+<% end %>
+</urlset>
