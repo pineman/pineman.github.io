@@ -85,9 +85,11 @@ directory BUILD_POSTS_DIR
 directory BUILD_NOTES_DIR
 directory POSTS_HTML_DIR
 directory NOTES_HTML_DIR
+directory LINK_PREVIEWS_DIR
 
 file INDEX_HTML => [BUILD_DIR, TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE, *ICONS] do |t|
-  Page.new(t.name, posts: POSTS_MD.map { |md| Post.new(md) }).write(TEMPLATE_INDEX)
+  posts = POSTS_MD.map { |md| Post.new(md) }
+  Page.new(t.name, posts:).write(TEMPLATE_INDEX)
 end
 
 file INDEX_MD => [BUILD_DIR, INDEX_HTML] do |t|
@@ -107,46 +109,46 @@ file NOTES_INDEX_MD => [BUILD_DIR, NOTES_HTML] do |t|
 end
 
 file LINKS_HTML => [BUILD_DIR, TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-  Links.process!
-  Page.new(t.name, months: Links.by_month, updated: File.mtime(LINKS_MD)).write(TEMPLATE_LINKS)
+  months = Links.process!
+  Page.new(t.name, months:, updated: File.mtime(LINKS_MD)).write(TEMPLATE_LINKS)
 end
 
 file NOTES_HTML => [BUILD_DIR, TEMPLATE_NOTES, *NOTE_HTML, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-  Page.new(t.name, notes: NOTES_MD.map { |md| Note.new(md) }).write(TEMPLATE_NOTES)
+  notes = NOTES_MD.map { |md| Note.new(md) }
+  Page.new(t.name, notes:).write(TEMPLATE_NOTES)
 end
 
 rule %r{^#{NOTES_HTML_DIR}/.*\.html$} => [->(f) { f.pathmap("#{NOTES_DIR}/%n.md") }, NOTES_HTML_DIR] do |t|
   Note.new(t.prerequisites.first).build_intermediate_html!
 end
 
-NOTE_HTML.each do |note_html|
-  file note_html => [BUILD_NOTES_DIR, note_html.pathmap("#{NOTES_HTML_DIR}/%f"), TEMPLATE_NOTE, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
-    Page.new(t.name, note: Note.new(t.name.pathmap("#{NOTES_DIR}/%n.md"))).write(TEMPLATE_NOTE)
-  end
+rule %r{^#{BUILD_NOTES_DIR}/.*\.html$} => [->(f) { f.pathmap("#{NOTES_HTML_DIR}/%f") }, BUILD_NOTES_DIR, TEMPLATE_NOTE, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
+  note = Note.new(t.name.pathmap("#{NOTES_DIR}/%n.md"))
+  Page.new(t.name, note:).write(TEMPLATE_NOTE)
 end
 
 rule %r{^#{POSTS_HTML_DIR}/.*\.html$} => [->(f) { f.pathmap("#{POSTS_DIR}/%n.md") }, POSTS_HTML_DIR] do |t|
   Post.new(t.prerequisites.first).build_intermediate_html!
 end
 
-POSTS_HTML.each do |post_html|
-  file post_html => [BUILD_POSTS_DIR, post_html.pathmap("#{POSTS_HTML_DIR}/%f"), TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD, *ICONS] do |t|
-    Page.new(t.name, post: Post.new(t.name.pathmap("#{POSTS_DIR}/%n.md"))).write(TEMPLATE_POST)
-  end
+rule %r{^#{BUILD_POSTS_DIR}/.*\.html$} => [->(f) { f.pathmap("#{POSTS_HTML_DIR}/%f") }, BUILD_POSTS_DIR, TEMPLATE_POST, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD, *ICONS] do |t|
+  post = Post.new(t.name.pathmap("#{POSTS_DIR}/%n.md"))
+  Page.new(t.name, post:).write(TEMPLATE_POST)
 end
 
-rule %r{^#{LINK_PREVIEWS_DIR}/.*\.png$} => [->(f) { f.pathmap("#{POSTS_HTML_DIR}/%n.html") }, TEMPLATE_LINK_PREVIEW] do |t|
+rule %r{^#{LINK_PREVIEWS_DIR}/.*\.png$} => [->(f) { f.pathmap("#{POSTS_HTML_DIR}/%n.html") }, LINK_PREVIEWS_DIR, TEMPLATE_LINK_PREVIEW] do |t|
   Post.new(t.source.pathmap("#{POSTS_DIR}/%n.md")).gen_img!
 end
 
 file ATOM_XML => [BUILD_DIR, TEMPLATE_ATOM, *POSTS_HTML] do |t|
-  Page.new(t.name, posts: POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date)).write(TEMPLATE_ATOM)
+  posts = POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date)
+  Page.new(t.name, posts:).write(TEMPLATE_ATOM)
 end
 
 file SITEMAP_XML => [BUILD_DIR, TEMPLATE_SITEMAP, *POSTS_HTML, *NOTE_HTML] do |t|
-  Page.new(t.name,
-    posts: POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date).reverse,
-    notes: NOTES_MD.map { |md| Note.new(md) }).write(TEMPLATE_SITEMAP)
+  posts = POSTS_MD.map { |md| Post.new(md) }.sort_by(&:date).reverse
+  notes = NOTES_MD.map { |md| Note.new(md) }
+  Page.new(t.name, posts:, notes:).write(TEMPLATE_SITEMAP)
 end
 
 task copy_assets: [BUILD_DIR, BUILD_POSTS_DIR] do
@@ -156,7 +158,7 @@ end
 
 task generate_redirects: [BUILD_DIR] do
   LEGACY_REDIRECTS.each do |filename|
-    Page.new("#{BUILD_DIR}/#{filename}.html", filename: filename).write(TEMPLATE_REDIRECT)
+    Page.new("#{BUILD_DIR}/#{filename}.html", filename:).write(TEMPLATE_REDIRECT)
   end
 end
 
@@ -240,13 +242,11 @@ class Post
     width = 1200
     height = 630
     t = @filename
-    mkdir_p TMP_DIR
-    Page.new("#{TMP_DIR}/#{t}.svg", post: self, width: width, height: height).write(TEMPLATE_LINK_PREVIEW)
+    Page.new("#{TMP_DIR}/#{t}.svg", post: self, width:, height:).write(TEMPLATE_LINK_PREVIEW)
     sh(<<~SCRIPT, verbose: false)
       #{CHROME_BINARY} --headless --screenshot="#{TMP_DIR}/screenshot-#{t}.png" --window-size=#{width},#{height + 400} "file://$(pwd)/#{TMP_DIR}/#{t}.svg" &>/dev/null
       docker run --rm -v $(pwd):/imgs dpokidov/imagemagick:7.1.1-8-bullseye #{TMP_DIR}/screenshot-#{t}.png -quality 80 -crop x630+0+0 -strip #{TMP_DIR}/#{t}.png
       rm -f #{TMP_DIR}/#{t}.svg #{TMP_DIR}/screenshot-#{t}.png
-      mkdir -p #{LINK_PREVIEWS_DIR}
       mv #{TMP_DIR}/#{t}.png #{LINK_PREVIEWS_DIR}/
     SCRIPT
   end
@@ -309,11 +309,8 @@ module Links
 
   def process!
     lines = File.readlines(LINKS_MD)
-    processed_lines = if File.exist?("#{BUILD_DIR}/links.md")
-      File.readlines("#{BUILD_DIR}/links.md").to_h { |line| [line, true] }
-    else
-      {}
-    end
+    cache = "#{BUILD_DIR}/links.md"
+    processed_lines = File.exist?(cache) ? File.readlines(cache).to_set : Set.new
 
     modified_lines = lines.map do |line|
       original_line = line
@@ -323,7 +320,7 @@ module Links
       # docs/links.md is the source from the previous successful build. An
       # unchanged line was already processed, including HN self-posts whose
       # enriched form cannot be distinguished from a line with a personal note.
-      unless processed_lines.key?(original_line) || processed_lines.key?(line)
+      unless processed_lines.include?(original_line) || processed_lines.include?(line)
         line = enrich_hacker_news(line)
 
         if line =~ %r{^\* (https?://(?:youtu\.be/\S+|(?:www\.|m\.)?youtube\.com/watch\?\S*\bv=\S+))\s*$}
@@ -343,12 +340,12 @@ module Links
 
       line
     end
-    File.write(LINKS_MD, modified_lines.join) if modified_lines != lines
-  end
 
-  # notes/links.md as [month, items] pairs, where each item is the text after "* "
-  def by_month
-    File.read(LINKS_MD).split(/^(?=# )/).map do |section|
+    links_md = modified_lines.join
+
+    File.write(LINKS_MD, links_md) if modified_lines != lines
+
+    links_md.split(/^(?=# )/).map do |section|
       heading, *items = section.lines.map(&:strip).reject(&:empty?)
       [heading.delete_prefix("# "), items.map { |item| item.delete_prefix("* ") }]
     end
