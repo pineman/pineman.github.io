@@ -7,6 +7,7 @@
   <title><%= note.name %></title>
   <meta property="og:title" content="<%= note.name %>" />
   <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="<%= site_link("assets/oceanicnext.min.css") %>">
 </head>
 <body>
 <div id="wrap">
@@ -19,5 +20,7 @@
 </main>
 <footer><a href="<%= site_link("notes.html") %>">&lt; back</a></footer>
 </div>
+<script src="<%= site_link("assets/highlight.min.js") %>"></script>
+<script>hljs.highlightAll();</script>
 </body>
 </html>

@@ -35,6 +35,7 @@
   <title>notes</title>
   <meta property="og:title" content="notes" />
   <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../assets/oceanicnext.min.css">
 </head>
 <body>
 <div id="wrap">
@@ -46,7 +47,7 @@
 <ul>
 <li>desperate sidekiq info for job <a href="https://github.com/sidekiq/sidekiq/wiki/Pro-API/4b723ee5eed2e7a6d0599e0be8ea7a61525cfb7f">https://github.com/sidekiq/sidekiq/wiki/Pro-API/4b723ee5eed2e7a6d0599e0be8ea7a61525cfb7f</a></li>
 </ul>
-<pre><code>jid=&#39;a5f9c821485ba4c7d2da148f&#39;
+<pre class="ruby"><code>jid=&#39;a5f9c821485ba4c7d2da148f&#39;
 Sidekiq::JobSet.find_job(jid)
 
 Sidekiq::Queue.new.delete_by_class(MyWorker)
@@ -73,7 +74,7 @@ Sidekiq::Batch.new(&#39;batch_id&#39;).jids</code></pre>
 <ul>
 <li>print all running jobs:</li>
 </ul>
-<pre><code>Sidekiq::Workers.new.filter_map do |process_id, thread_id, work|
+<pre class="ruby"><code>Sidekiq::Workers.new.filter_map do |process_id, thread_id, work|
   &quot;#{work.job.jid} #{work.job.klass}: #{work.job.args}&quot; if work.queue == &quot;default&quot;
 end
 Sidekiq::Workers.new.filter_map do |process_id, thread_id, work|
@@ -90,7 +91,7 @@ Sidekiq::Workers.new.each do |process_id, thread_id, work|
   p work if work.job.klass==&quot;someclass&quot;
 end; nil</code></pre>
 <p>if a queue is overloaded, what is currently running from that queue? also need to check what is currently running on the worker that consumes that queue, since it might be busy with other queues work</p>
-<pre><code>Sidekiq::Workers.new.filter { |process_id, thread_id, work| work.queue == &quot;default&quot; }.map { JSON.parse(_3.payload)[&quot;class&quot;] }.tally</code></pre>
+<pre class="ruby"><code>Sidekiq::Workers.new.filter { |process_id, thread_id, work| work.queue == &quot;default&quot; }.map { JSON.parse(_3.payload)[&quot;class&quot;] }.tally</code></pre>
 <ul>
 <li>cancel batch: <code>Sidekiq::Batch.new(bid).invalidate_all</code></li>
 <li>missing jobs:
@@ -119,7 +120,7 @@ end; nil</code></pre>
 <li><code>bin/rails db:rollback:primary STEP=5</code></li>
 <li>test if a particular url helper exists:</li>
 </ul>
-<pre><code>app # idk why we need this in dev, but it needs to load first
+<pre class="ruby"><code>app # idk why we need this in dev, but it needs to load first
 Rails.application.routes.url_helpers.dashboard_lead_list(&#39;some-id&#39;)</code></pre>
 <p>(in case you're skeptic of <code>rails routes</code>?)</p>
 <ul>
@@ -132,7 +133,7 @@ Rails.application.routes.url_helpers.dashboard_lead_list(&#39;some-id&#39;)</cod
 <li>install <code>debug</code> gem from prod console:</li>
 </ul></li>
 </ul>
-<pre><code>gem_name = &quot;debug&quot;
+<pre class="ruby"><code>gem_name = &quot;debug&quot;
 `export DEBIAN_FRONTEND=&quot;noninteractive&quot;; apt update -y &amp;&amp; apt install -y build-essential &amp;&amp; gem install #{gem_name}`
 gem_folder_path = `gem which #{gem_name}`.strip.toutf8.gsub(&quot;#{gem_name}.rb&quot;, &quot;&quot;)
 $: &lt;&lt; gem_folder_path</code></pre>
@@ -161,21 +162,21 @@ $: &lt;&lt; gem_folder_path</code></pre>
 <li><code>IRB.conf[:USE_PAGER] = false</code></li>
 <li>bulk insert and get model instances back</li>
 </ul>
-<pre><code>results = Model.insert_all(hashes_or_models, record_timestamps: true, returning: Arel.sql(&quot;*&quot;))
+<pre class="ruby"><code>results = Model.insert_all(hashes_or_models, record_timestamps: true, returning: Arel.sql(&quot;*&quot;))
 models = results.map { |result| Model.instantiate(result) }</code></pre>
 <ul>
 <li>default dict with arrays: <code>h = Hash.new { |h, k| h[k] = []}</code></li>
 <li><code>!model.timestamp&amp;.after?(1.day.ago)</code> is not the same as <code>model.timestamp&amp;.before?(1.day.ago)</code> if <code>model.timestamp == nil</code>!!</li>
 <li>parse json:</li>
 </ul>
-<pre><code>j = &lt;&lt;-&#39;JSON&#39;
+<pre class="ruby"><code>j = &lt;&lt;-&#39;JSON&#39;
 {&quot;my_json&quot;: 1}
 JSON
 JSON.parse(j)</code></pre>
 <ul>
 <li>in <code>debugger</code>, can set breakpoints interactively:</li>
 </ul>
-<pre><code>* `b[reak] &lt;file&gt;:&lt;line&gt;` or `&lt;file&gt; &lt;line&gt;`
+<pre class="txt"><code>* `b[reak] &lt;file&gt;:&lt;line&gt;` or `&lt;file&gt; &lt;line&gt;`
   * Set breakpoint on `&lt;file&gt;:&lt;line&gt;`.
 * `b[reak] &lt;class&gt;#&lt;name&gt;`
    * Set breakpoint on the method `&lt;class&gt;#&lt;name&gt;`.
@@ -253,7 +254,7 @@ WHERE (now() - pg_stat_activity.query_start) &gt; interval &#39;1 minutes&#39; A
 <li><code>UPDATE table SET column = false</code> will update ALL rows, even those that are false already - so the query will take a long time and generate a lot of WAL.</li>
 <li><code>DISTINCT ON</code>: pull a different column from a group by agg:</li>
 </ul>
-<pre><code>SELECT DISTINCT ON (url) url, request_duration
+<pre class="sql"><code>SELECT DISTINCT ON (url) url, request_duration
 FROM logs
 ORDER BY url, timestamp DESC</code></pre>
 <ul>
@@ -307,7 +308,7 @@ ORDER BY url, timestamp DESC</code></pre>
 <li>index predicates need to match the query exactly, even things like <code>where column is true</code> vs <code>where column = true</code></li>
 <li>check visibility map for e.g. index only scans causing heap fetches:</li>
 </ul>
-<pre><code>WITH not_visible_pages AS (
+<pre class="sql"><code>WITH not_visible_pages AS (
     SELECT blkno::bigint
     FROM pg_visibility(&#39;orders&#39;)
     WHERE NOT all_visible
@@ -331,7 +332,7 @@ ORDER BY url, timestamp DESC</code></pre>
 <li>care with select for update under repeatable read: repeatable read forces a snapshot at txn begin. even if you later take a lock, that same snapshot persists.</li>
 <li>Postgres EXPLAIN BUFFERS counts buffer hits per loop, not distinct pages; nested loops/SubPlans can make shared hit look massively inflated. See: <a href="https://pganalyze.com/blog/5mins-explain-analyze-buffers-nested-loops">https://pganalyze.com/blog/5mins-explain-analyze-buffers-nested-loops</a>. eg</li>
 </ul>
-<pre><code>  Buffers: shared hit=6,286,343 read=76,851
+<pre class="txt"><code>  Buffers: shared hit=6,286,343 read=76,851
   SubPlan loops: 485,119</code></pre>
 <ul>
 <li>correlated subquery trap: if outer table is huge and inner table is sparse, don't ask the sparse table a question once per outer row. bad shape:</li>
@@ -377,7 +378,7 @@ WHERE lle.lead_list_id = :lead_list_id</code></pre>
 </ul>
 <h2 id="elastic">Elastic</h2>
 <p>Fetch a document (get_doc)</p>
-<pre><code>def person_doc(id)
+<pre class="ruby"><code>def person_doc(id)
   Searchkick.client.get(index: Person.searchkick_index.name, id:)[&quot;_source&quot;]
 end
 doc = person_doc(person_id)
@@ -386,7 +387,7 @@ def company_doc(id)
 end
 or Person.searchkick_index.retrieve(Person.new(id: person_id))</code></pre>
 <p>Update a document directly</p>
-<pre><code>Person.search(&#39;*&#39;, where: { company_domain: &quot;youtube.com&quot;}).pluck(:id).each { |id|
+<pre class="ruby"><code>Person.search(&#39;*&#39;, where: { company_domain: &quot;youtube.com&quot;}).pluck(:id).each { |id|
   doc = person_doc(id)
   doc[&quot;excluded_domains_accounts&quot;] = []
   Searchkick.client.update(
@@ -411,11 +412,11 @@ or Person.searchkick_index.retrieve(Person.new(id: person_id))</code></pre>
 <li><p>Person.first.reindex(mode: :inline)</p></li>
 <li><p>get all</p></li>
 </ul>
-<pre><code>GET _cat/indices?v</code></pre>
+<pre class="txt"><code>GET _cat/indices?v</code></pre>
 <ul>
 <li>When adding a new field to elastic, the mappings must be updated:</li>
 </ul>
-<pre><code>PUT /people_staging/_mapping
+<pre class="txt"><code>PUT /people_staging/_mapping
 {
     &quot;properties&quot;: {
         &quot;seniorities_classifier&quot;: {
@@ -426,7 +427,7 @@ or Person.searchkick_index.retrieve(Person.new(id: person_id))</code></pre>
 <ul>
 <li>Sample of docs:</li>
 </ul>
-<pre><code>Person.search(
+<pre class="ruby"><code>Person.search(
   body: {
     size: 1000,
     _source: false,
@@ -482,14 +483,14 @@ or Person.searchkick_index.retrieve(Person.new(id: person_id))</code></pre>
 <li>producing to topics silently fails if the topic has less than min.insync.replicas (topic or cluster wide config)</li>
 <li>kafka.tools.GetOffsetsTool has been renamed: bin/kafka-get-offsets.sh --broker-list 10.74.3.196:9092 --topic collected_contacts_reindex --time -2 <a href="https://github.com/apache/kafka/pull/13321#issuecomment-2058597443">https://github.com/apache/kafka/pull/13321#issuecomment-2058597443</a></li>
 </ul>
-<pre><code>kafkacat -b 10.74.3.196:9092 -t collected_contacts_reindex -p 6 -o beginning -C -e
+<pre class="bash"><code>kafkacat -b 10.74.3.196:9092 -t collected_contacts_reindex -p 6 -o beginning -C -e
 kafkacat -b 10.74.3.196:9092 -t collected_contacts_reindex -p 6 -o end -C -e
 ./kafka-get-offsets.sh  --broker-list 10.74.3.196:9092 --topic collected_contacts_reindex --time -1
 ./kafka-get-offsets.sh  --broker-list 10.74.3.196:9092 --topic collected_contacts_reindex --time -2</code></pre>
 <ul>
 <li>manually import a message:</li>
 </ul>
-<pre><code>require &quot;avro_turf/messaging&quot;
+<pre class="ruby"><code>require &quot;avro_turf/messaging&quot;
 AVRO = AvroTurf::Messaging.new(
   registry_url: ENV.fetch(&quot;KAFKA_SCHEMA_REGISTRY&quot;)
 )
@@ -551,5 +552,7 @@ SELECT get_query_profile(last_query_id());</code></pre>
 </main>
 <footer><a href="../notes.html">&lt; back</a></footer>
 </div>
+<script src="../assets/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </body>
 </html>

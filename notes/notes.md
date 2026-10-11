@@ -1,7 +1,7 @@
 ## Sidekiq
 * desperate sidekiq info for job
 https://github.com/sidekiq/sidekiq/wiki/Pro-API/4b723ee5eed2e7a6d0599e0be8ea7a61525cfb7f
-```
+```ruby
 jid='a5f9c821485ba4c7d2da148f'
 Sidekiq::JobSet.find_job(jid)
 
@@ -29,7 +29,7 @@ Sidekiq::Batch.new('batch_id').jids
 ```
 
 * print all running jobs:
-```
+```ruby
 Sidekiq::Workers.new.filter_map do |process_id, thread_id, work|
   "#{work.job.jid} #{work.job.klass}: #{work.job.args}" if work.queue == "default"
 end
@@ -48,7 +48,7 @@ Sidekiq::Workers.new.each do |process_id, thread_id, work|
 end; nil
 ```
 if a queue is overloaded, what is currently running from that queue? also need to check what is currently running on the worker that consumes that queue, since it might be busy with other queues work
-```
+```ruby
 Sidekiq::Workers.new.filter { |process_id, thread_id, work| work.queue == "default" }.map { JSON.parse(_3.payload)["class"] }.tally
 ```
 * cancel batch: `Sidekiq::Batch.new(bid).invalidate_all`
@@ -73,7 +73,7 @@ Sidekiq::Workers.new.filter { |process_id, thread_id, work| work.queue == "defau
 * `bin/rails db:migrate:redo:primary VERSION=20230329094520`
 * `bin/rails db:rollback:primary STEP=5`
 * test if a particular url helper exists:
-```
+```ruby
 app # idk why we need this in dev, but it needs to load first
 Rails.application.routes.url_helpers.dashboard_lead_list('some-id')
 ```
@@ -82,7 +82,7 @@ Rails.application.routes.url_helpers.dashboard_lead_list('some-id')
   - multi-line code eval: drop into irb with `irb`
 * prod console debugging:
   - install `debug` gem from prod console:
-```
+```ruby
 gem_name = "debug"
 `export DEBIAN_FRONTEND="noninteractive"; apt update -y && apt install -y build-essential && gem install #{gem_name}`
 gem_folder_path = `gem which #{gem_name}`.strip.toutf8.gsub("#{gem_name}.rb", "")
@@ -109,21 +109,21 @@ $: << gem_folder_path
 * https://edgeguides.rubyonrails.org/configuring.html#config-active-record-permanent-connection-checkout
 * `IRB.conf[:USE_PAGER] = false`
 * bulk insert and get model instances back
-```
+```ruby
 results = Model.insert_all(hashes_or_models, record_timestamps: true, returning: Arel.sql("*"))
 models = results.map { |result| Model.instantiate(result) }
 ```
 * default dict with arrays: `h = Hash.new { |h, k| h[k] = []}`
 * `!model.timestamp&.after?(1.day.ago)` is not the same as `model.timestamp&.before?(1.day.ago)` if `model.timestamp == nil`!!
 * parse json:
-```
+```ruby
 j = <<-'JSON'
 {"my_json": 1}
 JSON
 JSON.parse(j)
 ```
 * in `debugger`, can set breakpoints interactively:
-```
+```txt
 * `b[reak] <file>:<line>` or `<file> <line>`
   * Set breakpoint on `<file>:<line>`.
 * `b[reak] <class>#<name>`
@@ -192,7 +192,7 @@ Postgres doesn't automatically create indexes for foreign keys. This may come as
 * semi-join: only need one row "joined" 
 * `UPDATE table SET column = false` will update ALL rows, even those that are false already - so the query will take a long time and generate a lot of WAL.
 * `DISTINCT ON`: pull a different column from a group by agg:
-```
+```sql
 SELECT DISTINCT ON (url) url, request_duration
 FROM logs
 ORDER BY url, timestamp DESC
@@ -233,7 +233,7 @@ tables are processed with adaptive delays to prevent heavy IO and replication la
 * `select for update` vs `select for no key update` https://goncalo.mendescabrita.com/blog/cross-table-lock/: a KEY is from the perspective of the locked table: "am I changing the columns that make this row a target for other tables' references?" - so the targets of other table's FK constraints
 * index predicates need to match the query exactly, even things like `where column is true` vs `where column = true`
 * check visibility map for e.g. index only scans causing heap fetches:
-```
+```sql
 WITH not_visible_pages AS (
     SELECT blkno::bigint
     FROM pg_visibility('orders')
@@ -257,7 +257,7 @@ WITH not_visible_pages AS (
 * JOIN LATERAL and forcing nested loops: A regular `INNER JOIN (subquery)` is a "derived table" — PostgreSQL evaluates it _in isolation_, so it can't reference the table in FROM. LATERAL explicitly grants the subquery access to columns from preceding FROM items. That's the whole point of the keyword, and it's also why PostgreSQL is forced into a nested loop — the subquery depends on each outer row.
 * care with select for update under repeatable read: repeatable read forces a snapshot at txn begin. even if you later take a lock, that same snapshot persists.
 * Postgres EXPLAIN BUFFERS counts buffer hits per loop, not distinct pages; nested loops/SubPlans can make shared hit look massively inflated. See: https://pganalyze.com/blog/5mins-explain-analyze-buffers-nested-loops. eg
-```
+```txt
   Buffers: shared hit=6,286,343 read=76,851
   SubPlan loops: 485,119
 ```
@@ -312,7 +312,7 @@ https://github.com/erezsh/reladiff
 
 ## Elastic
 Fetch a document (get_doc)
-```
+```ruby
 def person_doc(id)
   Searchkick.client.get(index: Person.searchkick_index.name, id:)["_source"]
 end
@@ -323,7 +323,7 @@ end
 or Person.searchkick_index.retrieve(Person.new(id: person_id))
 ```
 Update a document directly
-```
+```ruby
 Person.search('*', where: { company_domain: "youtube.com"}).pluck(:id).each { |id|
   doc = person_doc(id)
   doc["excluded_domains_accounts"] = []
@@ -357,12 +357,12 @@ more results: include `"size": 1000` in query
 * Person.first.reindex(mode: :inline)
 
 * get all 
-```
+```txt
 GET _cat/indices?v
 ```
 
 * When adding a new field to elastic, the mappings must be updated:
-```
+```txt
 PUT /people_staging/_mapping
 {
     "properties": {
@@ -374,7 +374,7 @@ PUT /people_staging/_mapping
 ```
 
 * Sample of docs:
-```
+```ruby
 Person.search(
   body: {
     size: 1000,
@@ -427,14 +427,14 @@ https://k9scli.io/topics/commands/
 * partitions are assigned to worker threads
 * producing to topics silently fails if the topic has less than min.insync.replicas (topic or cluster wide config)
 * kafka.tools.GetOffsetsTool has been renamed: bin/kafka-get-offsets.sh --broker-list 10.74.3.196:9092 --topic collected_contacts_reindex --time -2  https://github.com/apache/kafka/pull/13321#issuecomment-2058597443
-```
+```bash
 kafkacat -b 10.74.3.196:9092 -t collected_contacts_reindex -p 6 -o beginning -C -e
 kafkacat -b 10.74.3.196:9092 -t collected_contacts_reindex -p 6 -o end -C -e
 ./kafka-get-offsets.sh  --broker-list 10.74.3.196:9092 --topic collected_contacts_reindex --time -1
 ./kafka-get-offsets.sh  --broker-list 10.74.3.196:9092 --topic collected_contacts_reindex --time -2
 ```
 * manually import a message:
-```
+```ruby
 require "avro_turf/messaging"
 AVRO = AvroTurf::Messaging.new(
   registry_url: ENV.fetch("KAFKA_SCHEMA_REGISTRY")

@@ -150,6 +150,15 @@ LEGACY_REDIRECTS.zip(REDIRECTS_HTML).each do |filename, redirect_html|
   end
 end
 
+module Pandoc
+  extend self
+  include FileUtils
+
+  def md_to_html(md_file, html_file)
+    sh("pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}")
+  end
+end
+
 # The context a page template is evaluated in: its data (post, notes, ...) as
 # methods, and links relative to wherever the page is written.
 class Page
@@ -352,14 +361,5 @@ module Links
     body = IO.popen(["curl", "-sSL", "--max-redirs", "5", "--max-time", "15", "--retry", "3", *header_args, url], &:read)
     raise "curl failed for #{url}" unless $?.success?
     body
-  end
-end
-
-module Pandoc
-  extend self
-  include FileUtils
-
-  def md_to_html(md_file, html_file)
-    sh("pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}")
   end
 end
