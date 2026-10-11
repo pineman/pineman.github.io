@@ -15,10 +15,8 @@ SITE_ROOT = "https://pineman.github.io"
 BUILD_DIR = "docs"
 
 INDEX_HTML = "#{BUILD_DIR}/index.html"
-INDEX_MD = "#{BUILD_DIR}/index.md"
 LINKS_HTML = "#{BUILD_DIR}/links.html"
 NOTES_HTML = "#{BUILD_DIR}/notes.html"
-NOTES_INDEX_MD = "#{BUILD_DIR}/notes.md"
 NOTES_DIR = "notes"
 POSTS_DIR = "posts"
 TMP_DIR = ".tmp"
@@ -34,7 +32,6 @@ BUILD_NOTES_DIR = "#{BUILD_DIR}/notes"
 POST_ASSETS_DIR = "#{POSTS_DIR}/assets"
 BUILD_POST_ASSETS_DIR = "#{BUILD_POSTS_DIR}/assets"
 BUILD_STYLE_CSS = "#{BUILD_DIR}/style.css"
-BUILD_LINKS_MD = "#{BUILD_DIR}/links.md"
 
 TEMPLATES_DIR = "templates"
 TEMPLATE_INDEX = "#{TEMPLATES_DIR}/index.html.erb"
@@ -54,13 +51,11 @@ POSTS_MD = FileList["#{POSTS_DIR}/*.md"]
 POSTS_HTML = POSTS_MD.pathmap("#{BUILD_POSTS_DIR}/%n.html")
 POSTS_INTERMEDIATE_HTML = POSTS_MD.pathmap("#{POSTS_HTML_DIR}/%n.html")
 LINK_PREVIEWS = POSTS_MD.pathmap("#{LINK_PREVIEWS_DIR}/%n.png")
-BUILD_POSTS_MD = POSTS_MD.pathmap("#{BUILD_POSTS_DIR}/%f")
 BUILD_POST_ASSETS = FileList["#{POST_ASSETS_DIR}/*"].pathmap("#{BUILD_POST_ASSETS_DIR}/%f")
 
 NOTES_MD = FileList["#{NOTES_DIR}/*.md"].exclude(LINKS_MD)
 NOTE_HTML = NOTES_MD.pathmap("#{BUILD_NOTES_DIR}/%n.html")
 NOTES_INTERMEDIATE_HTML = NOTES_MD.pathmap("#{NOTES_HTML_DIR}/%n.html")
-BUILD_NOTES_MD = NOTES_MD.pathmap("#{BUILD_NOTES_DIR}/%f")
 
 LEGACY_REDIRECTS = %w[
   2022-12-03_aoc3
@@ -75,7 +70,6 @@ REDIRECTS_HTML = LEGACY_REDIRECTS.map { |filename| "#{BUILD_DIR}/#{filename}.htm
 CLEAN.include(
   TMP_DIR,
   "#{BUILD_DIR}/*.html",
-  "#{BUILD_DIR}/*.md",
   "#{BUILD_DIR}/*.xml",
   BUILD_STYLE_CSS,
   "#{BUILD_POSTS_DIR}",
@@ -84,7 +78,7 @@ CLEAN.include(
 )
 
 multitask default: [:all]
-multitask all: [INDEX_HTML, INDEX_MD, LINKS_HTML, NOTES_HTML, NOTES_INDEX_MD, *NOTE_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML, SITEMAP_XML, BUILD_STYLE_CSS, *BUILD_POST_ASSETS, *REDIRECTS_HTML, *BUILD_POSTS_MD, *BUILD_NOTES_MD, BUILD_LINKS_MD]
+multitask all: [INDEX_HTML, LINKS_HTML, NOTES_HTML, *NOTE_HTML, *POSTS_HTML, *LINK_PREVIEWS, ATOM_XML, SITEMAP_XML, BUILD_STYLE_CSS, *BUILD_POST_ASSETS, *REDIRECTS_HTML]
 
 directory BUILD_DIR
 directory BUILD_POSTS_DIR
@@ -97,22 +91,6 @@ directory BUILD_POST_ASSETS_DIR
 file INDEX_HTML => [BUILD_DIR, TEMPLATE_INDEX, *POSTS_HTML, TEMPLATE_HEAD, TEMPLATE_PINECONE, *ICONS] do |t|
   posts = POSTS_MD.map { |md| Post.new(md) }
   Page.new(t.name, posts:).write(TEMPLATE_INDEX)
-end
-
-file INDEX_MD => [BUILD_DIR, INDEX_HTML] do |t|
-  html = File.read(INDEX_HTML).gsub(/<span class="icon-container".*?>.*?<\/span>/m, "")
-  # pandoc only converts <main> when present, which would drop the header
-  html = html.gsub(/<\/?main>/, "")
-  html = html.gsub(/href="#{POSTS_DIR}\/(\d{4}-\d{2}-\d{2}_.*?)\.html"/, "href=\"#{POSTS_DIR}/\\1.md\"")
-  html = html.gsub("href=\"links.html\"", "href=\"#{LINKS_MD}\"")
-  Pandoc.html_to_md(html, t.name)
-end
-
-file NOTES_INDEX_MD => [BUILD_DIR, NOTES_HTML] do |t|
-  html = File.read(NOTES_HTML)
-  html = html.gsub(/href="#{NOTES_DIR}\/(.+?)\.html"/, "href=\"#{NOTES_DIR}/\\1.md\"")
-  html = html.gsub(/<a href="[^"]*">&lt; back<\/a>/, "")
-  Pandoc.html_to_md(html, t.name)
 end
 
 file LINKS_HTML => [BUILD_DIR, TEMPLATE_LINKS, LINKS_MD, TEMPLATE_HEAD, TEMPLATE_ARTICLE_HEAD] do |t|
@@ -170,18 +148,6 @@ LEGACY_REDIRECTS.zip(REDIRECTS_HTML).each do |filename, redirect_html|
   file redirect_html => [TEMPLATE_REDIRECT, BUILD_DIR] do |t|
     Page.new(t.name, filename:).write(TEMPLATE_REDIRECT)
   end
-end
-
-rule %r{^#{BUILD_POSTS_DIR}/.*\.md$} => [->(f) { f.pathmap("#{POSTS_DIR}/%f") }, ->(f) { f.pathmap("#{POSTS_HTML_DIR}/%n.html") }, BUILD_POSTS_DIR] do |t|
-  cp t.source, t.name
-end
-
-rule %r{^#{BUILD_NOTES_DIR}/.*\.md$} => [->(f) { f.pathmap("#{NOTES_DIR}/%f") }, BUILD_NOTES_DIR] do |t|
-  cp t.source, t.name
-end
-
-file BUILD_LINKS_MD => [LINKS_MD, LINKS_HTML] do |t|
-  cp t.source, t.name
 end
 
 # The context a page template is evaluated in: its data (post, notes, ...) as
@@ -322,18 +288,14 @@ module Links
 
   def process!
     lines = File.readlines(LINKS_MD)
-    cache = BUILD_LINKS_MD
-    processed_lines = File.exist?(cache) ? File.readlines(cache).to_set : Set.new
 
     modified_lines = lines.map do |line|
-      original_line = line
       line = line.gsub("?utm_source=substack&utm_medium=email", "")
       line = "* #{line}" if line.start_with?("http") && !line.start_with?("* ")
 
-      # docs/links.md is the source from the previous successful build. An
-      # unchanged line was already processed, including HN self-posts whose
-      # enriched form cannot be distinguished from a line with a personal note.
-      unless processed_lines.include?(original_line) || processed_lines.include?(line)
+      # Only a bare link is enriched. An enriched line always gets a title, so
+      # the next build leaves it alone.
+      if line.match?(/^\* \S+\s*$/)
         line = enrich_hacker_news(line)
 
         if line =~ %r{^\* (https?://(?:youtu\.be/\S+|(?:www\.|m\.)?youtube\.com/watch\?\S*\bv=\S+))\s*$}
@@ -367,21 +329,15 @@ module Links
   private
 
   def enrich_hacker_news(line)
-    match = line.match(/^\* (https:\/\/news\.ycombinator\.com\/item\?id=(\d+))(?:\s+-\s+(.+?))?\s*$/)
+    match = line.match(/^\* (https:\/\/news\.ycombinator\.com\/item\?id=(\d+))\s*$/)
     return line unless match
 
-    hn_url, hn_id, notes = match.captures
+    hn_url, hn_id = match.captures
     data = JSON.parse(http_get("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json"))
     return line unless data && data["title"]
 
-    title = data["title"]
-    # A Hacker News item without a backing URL (for example, Ask HN) must not
-    # get its title added again on each build.
-    return line if notes == title || notes&.start_with?("#{title} - ")
-
     backing_link = data["url"] ? " (#{data["url"]})" : ""
-    notes_suffix = notes ? " - #{notes}" : ""
-    "* #{hn_url}#{backing_link} - #{title}#{notes_suffix}\n"
+    "* #{hn_url}#{backing_link} - #{data["title"]}\n"
   end
 
   def fetch_title(url, suffix)
@@ -405,12 +361,5 @@ module Pandoc
 
   def md_to_html(md_file, html_file)
     sh("pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}")
-  end
-
-  def html_to_md(html, md_file)
-    IO.popen(["pandoc", "--wrap=none", "-f", "html", "-t", "gfm-raw_html", "-o", md_file], "w") do |io|
-      io.write(html)
-    end
-    raise "pandoc failed for #{md_file}" unless $?.success?
   end
 end
