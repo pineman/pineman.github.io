@@ -43,30 +43,47 @@
 <article>
   <h1>stats</h1>
   <ul>
-<li>Univariate statistics: analyzing one predictor at a time.</li>
-<li>Multivariate statistics: analyzing several variables together.</li>
-<li>Correlation and regression: measuring relationships and controlling for other variables.</li>
+<li>correlation and regression: how variables relate, controlling for the others</li>
 </ul>
-<p>False positives and false negatives belong more specifically to classification evaluation or diagnostic testing. They come from a confusion matrix:</p>
-<pre><code>                         Actually positive      Actually negative
-━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━
- Predicted positive     True positive (TP)    False positive (FP)
-────────────────────  ─────────────────────  ─────────────────────
- Predicted negative    False negative (FN)     True negative (TN)</code></pre>
-<p>Common divisions you may be remembering:</p>
+<p>confusion matrix (classifiers, diagnostic tests):</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Actually positive</th>
+<th>Actually negative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Predicted positive</strong></td>
+<td>True positive (TP)</td>
+<td>False positive (FP)</td>
+</tr>
+<tr>
+<td><strong>Predicted negative</strong></td>
+<td>False negative (FN)</td>
+<td>True negative (TN)</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>Accuracy = (TP + TN) / all cases<br />
-How often was the prediction correct overall?</li>
-<li>Precision = TP / (TP + FP)<br />
-Of the positive predictions, how many were right?</li>
-<li>Recall / sensitivity / true-positive rate = TP / (TP + FN)<br />
-Of the actual positives, how many did we find?</li>
-<li>Specificity = TN / (TN + FP)<br />
-Of the actual negatives, how many did we reject correctly?</li>
-<li>False-positive rate = FP / (FP + TN)</li>
-<li>False-negative rate = FN / (FN + TP)</li>
-<li>Precision asks: “Of the queries we flagged as expensive, how many really were?”</li>
-<li>Recall/hit rate asks: “Of all truly expensive queries, how many did we flag?”</li>
+<li><p>Accuracy<br />
+How often was the prediction correct overall?<br />
+<code>(TP + TN) / all cases</code></p></li>
+<li><p>Precision<br />
+Of the positive predictions, how many were right?<br />
+<code>TP / (TP + FP)</code></p></li>
+<li><p>Recall / sensitivity / true-positive rate<br />
+Of the actual positives, how many did we find?<br />
+<code>TP / (TP + FN)</code></p></li>
+<li><p>Specificity<br />
+Of the actual negatives, how many did we reject correctly?<br />
+<code>TN / (TN + FP)</code></p></li>
+<li><p>False-positive rate<br />
+<code>FP / (FP + TN)</code></p></li>
+<li><p>False-negative rate<br />
+<code>FN / (FN + TP)</code></p></li>
 </ul>
 
 </article>

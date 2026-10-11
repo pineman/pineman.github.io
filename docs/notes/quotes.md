@@ -1,5 +1,3 @@
-# Quotes
-
 ## Linus
 
 I'm a huge proponent of designing your code around the data, rather than
