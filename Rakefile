@@ -49,13 +49,11 @@ ICONS = FileList["#{TEMPLATES_DIR}/icons/*.svg"]
 
 POSTS_MD = FileList["#{POSTS_DIR}/*.md"]
 POSTS_HTML = POSTS_MD.pathmap("#{BUILD_POSTS_DIR}/%n.html")
-POSTS_INTERMEDIATE_HTML = POSTS_MD.pathmap("#{POSTS_HTML_DIR}/%n.html")
 LINK_PREVIEWS = POSTS_MD.pathmap("#{LINK_PREVIEWS_DIR}/%n.png")
 BUILD_POST_ASSETS = FileList["#{POST_ASSETS_DIR}/*"].pathmap("#{BUILD_POST_ASSETS_DIR}/%f")
 
 NOTES_MD = FileList["#{NOTES_DIR}/*.md"].exclude(LINKS_MD)
 NOTE_HTML = NOTES_MD.pathmap("#{BUILD_NOTES_DIR}/%n.html")
-NOTES_INTERMEDIATE_HTML = NOTES_MD.pathmap("#{NOTES_HTML_DIR}/%n.html")
 
 LEGACY_REDIRECTS = %w[
   2022-12-03_aoc3
@@ -144,6 +142,15 @@ rule %r{^#{BUILD_POST_ASSETS_DIR}/} => [->(f) { f.pathmap("#{POST_ASSETS_DIR}/%f
   cp t.source, t.name
 end
 
+desc "Reformat posts/*.md in place with pandoc"
+multitask format: POSTS_MD.map { |md| "format:#{md}" }
+
+POSTS_MD.each do |md|
+  task "format:#{md}" do
+    sh("pandoc #{md} -f gfm -t gfm -o #{md}")
+  end
+end
+
 LEGACY_REDIRECTS.zip(REDIRECTS_HTML).each do |filename, redirect_html|
   file redirect_html => [TEMPLATE_REDIRECT, BUILD_DIR] do |t|
     Page.new(t.name, filename:).write(TEMPLATE_REDIRECT)
@@ -156,6 +163,23 @@ module Pandoc
 
   def md_to_html(md_file, html_file)
     sh("pandoc --wrap=none --syntax-highlighting=none #{md_file} -f gfm -t html5 -o #{html_file}")
+  end
+end
+
+module Text
+  extend self
+
+  def truncate(html)
+    text = Nokogiri::HTML.fragment(html).text
+    words = text.split(/\s+/)
+    truncated = ""
+    words.each do |word|
+      test_string = truncated.empty? ? word : "#{truncated} #{word}"
+      break if test_string.length > 160
+      truncated = test_string
+    end
+    suffix = truncated.end_with?(".") ? " ..." : "..." if truncated.length < text.length
+    "#{truncated}#{suffix}"
   end
 end
 
@@ -223,7 +247,7 @@ class Post
         img["decoding"] = "async"
       end
       @html = html.to_s
-      @text_descr = truncate_text(@html)
+      @text_descr = Text.truncate(@html)
     end
   end
 
@@ -253,28 +277,12 @@ class Post
   end
 
   def build_intermediate_html!
-    sh("pandoc #{@md_file} -f gfm -t gfm -o #{@md_file}") if !ENV["NOFORMAT"]
     Pandoc.md_to_html(@md_file, @html_file)
-  end
-
-  private
-
-  def truncate_text(html)
-    text = Nokogiri::HTML.fragment(html).text
-    words = text.split(/\s+/)
-    truncated = ""
-    words.each do |word|
-      test_string = truncated.empty? ? word : "#{truncated} #{word}"
-      break if test_string.length > 160
-      truncated = test_string
-    end
-    suffix = truncated.end_with?(".") ? " ..." : "..." if truncated.length < text.length
-    "#{truncated}#{suffix}"
   end
 end
 
 class Note
-  attr_reader :url, :html, :name, :filename, :title, :date, :text_descr
+  attr_reader :url, :html, :name
 
   def initialize(md_file)
     @md_file = md_file
@@ -343,7 +351,12 @@ module Links
 
     hn_url, hn_id = match.captures
     data = JSON.parse(http_get("https://hacker-news.firebaseio.com/v0/item/#{hn_id}.json"))
-    return line unless data && data["title"]
+    return line unless data
+
+    if data["type"] == "comment" && data["text"]
+      return "* #{hn_url} - #{Text.truncate(data["text"].gsub("<p>", " "))}\n"
+    end
+    return line unless data["title"]
 
     backing_link = data["url"] ? " (#{data["url"]})" : ""
     "* #{hn_url}#{backing_link} - #{data["title"]}\n"

@@ -69,7 +69,7 @@
 * https://www.youtube.com/watch?v=bQfJi7rjuEk - Intelligence is not Enough | Bryan Cantrill | Monktoberfest 2023
 * https://bcantrill.dtrace.org/2026/09/13/the-contagion-of-fear/
 * https://ngrok.com/blog/i-ported-kubernetes-to-the-browser
-* https://news.ycombinator.com/item?id=23285438
+* https://news.ycombinator.com/item?id=23285438 - Yes, there are tons of resources but I'll try to offer some simple tips. 1. Sales is a lot like golf. You can make it so complicated as to be impossible or you...
 * https://m.youtube.com/watch?v=87DyyMV0kCY - Black Hat USA 2026 | The 'Breaking' News: The OpenAI–Hugging Face Incident
 * https://payalsingh.me/blog/
 * https://m.youtube.com/watch?v=jVkLVRt6c1U - Mike Monteiro: F*ck You, Pay Me
@@ -439,7 +439,7 @@
 * https://bcantrill.dtrace.org/2026/04/12/the-peril-of-laziness-lost/
 * https://thedailywtf.com/articles/The_Complicator_0x27_s_Gloves
 * https://blog.samaltman.com/2279512
-* https://news.ycombinator.com/item?id=47694515
+* https://news.ycombinator.com/item?id=47694515 - I've seen more than one half-joke-half-serious chunk of code that would "encode" arbitrary info into stack traces simply by recursively calling `fn_a`, then...
 * https://github.com/jtolio/gls
 * https://www.allthingsdistributed.com/2026/04/s3-files-and-the-changing-face-of-s3.html
 * https://lalitm.com/post/building-syntaqlite-ai/
@@ -956,7 +956,7 @@
 * https://buttondown.com/jaffray/archive/data-independence/
 * https://news.ycombinator.com/item?id=45985306 (https://imedadel.com/outcrop/) - I built a faster Notion in Rust
 * https://news.ycombinator.com/item?id=42288956 (https://bilbof.com/posts/kubernetes-on-hetzner) - Kubernetes on Hetzner: cutting my infra bill by 75%
-* https://news.ycombinator.com/item?id=9040551
+* https://news.ycombinator.com/item?id=9040551 - Provided without comment, here's Cantrill on Twitter relatively recently criticizing Linus Torvalds' "idiocy" in a usenet post from 2000:...
 * https://lkml.org/lkml/2000/9/6/65
 * https://www.tritondatacenter.com/blog/the-power-of-a-pronoun
 * https://web.stanford.edu/class/e145/2007_fall/materials/noyce.html
@@ -2206,7 +2206,7 @@
 * https://registerspill.thorstenball.com/p/things-you-can-to-with-codebases
 * https://news.ycombinator.com/item?id=41108068 - 1 man saas playbook
 * https://news.ycombinator.com/item?id=41111324 - advice
-* https://news.ycombinator.com/item?id=41147787
+* https://news.ycombinator.com/item?id=41147787 - When I started at my first company, they had a very complex VB application running on dozens of customers around the country, each having some particular needs...
 * https://eli.thegreenplace.net/2024/notes-on-taylor-and-maclaurin-series
 * https://lobste.rs/s/z0vpdn/go_reasonable_good_language (https://kokada.capivaras.dev/blog/go-a-reasonable-good-language/)
 * https://web.archive.org/web/20230607033544/https://old.reddit.com/r/rails/comments/6jz7tq/source_code_lobsters_a_hacker_news_clone_built/ (https://old.reddit.com/r/rails/comments/6jz7tq/source_code_lobsters_a_hacker_news_clone_built/)
@@ -2279,7 +2279,7 @@
 * https://news.ycombinator.com/item?id=40818809 - Ask HN: What is the best code base you ever worked on?
 * https://jonathan-frere.com/posts/why-test/
 * https://strangestloop.io/essays/things-that-arent-doing-the-thing
-* https://news.ycombinator.com/item?id=890558
+* https://news.ycombinator.com/item?id=890558 - DJB's code is a lot of things, but when someone says "beautiful" is one of them, I start thinking about how I might quiz them to get them to prove that they've...
 * https://news.ycombinator.com/item?id=40835274 (https://lcamtuf.substack.com/p/weekend-projects-getting-silly-with) - Weekend projects: getting silly with C
 * https://news.ycombinator.com/item?id=40829607 (https://mbuffett.com/posts/programming-advice-younger-self/) - A bunch of programming advice I'd give to myself 15 years ago
 * https://qntm.org/assist

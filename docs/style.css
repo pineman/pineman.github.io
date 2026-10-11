@@ -142,6 +142,7 @@ code:not(pre code) {
   display: inline-block;
 }
 summary h2 {
+  display: inline;
   cursor: pointer;
 }
 /*

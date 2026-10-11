@@ -8,10 +8,13 @@ build() {
 
 watch() {
   echo "file://$(pwd)/docs/index.html"
-  export NOFORMAT=
   ls posts/*.md notes/*.md templates/* Rakefile | \
     entr -s 'echo "Detected change in: $0"; bundle exec rake' | \
     ts '[%Y-%m-%d %H:%M:%S]'
+}
+
+format() {
+  bundle exec rake format
 }
 
 clean() {
@@ -19,8 +22,7 @@ clean() {
 }
 
 remake() {
-  bundle exec rake clean
-  bundle exec rake
+  bundle exec rake clean default
 }
 
 serve() {
