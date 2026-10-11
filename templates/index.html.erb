@@ -99,6 +99,10 @@
       }, 300);
     }, 6500);
   </script>-->
+  <script>
+    const doing = <%== doing.to_json %>;
+    document.getElementById("doing").innerHTML = doing[Math.floor(Math.random() * doing.length)];
+  </script>
   <h2><a href="<%= site_link("atom.xml") %>"><span class="icon-container"><%== icon("square-rss") %></span>Blog</a></h2>
   <ul>
     <% posts.sort_by(&:date).reverse.each do |post| %>
