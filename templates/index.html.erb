@@ -85,7 +85,7 @@
 <article>
   <% doing = ["Hacking the planet", "Building cool stuff", "Hunting bugs", "Staring at graphs", "Deploying bugs", "Prompting agents", "Running EXPLAIN ANALYZE", "Finding heuristics using Snowflake and regexes", "Deleting code", "Asking 'can this be simpler?'", "Merging PRs called <code>fix</code>", "Denormalizing things", "Rescuing errors", "Fixing data", "Moving stuff to Redis", "Migrating to another database", "Handling edge cases in people's names", "Throwing stuff at production and seeing what happens"] %>
   <p>Hi! My name is João Pinheiro (aka pineman), I live in Porto, Portugal and I like computers.<!-- I started programming when I was <span title="<%= years_ago("2014-02-01") %> years ago">16</span> with Python and I've loved software ever since.--><br>
-  <span id="doing"><%== doing.sample %></span> at <a href="https://www.amplemarket.com/">amplemarket</a>!</p>
+  <span id="doing"><%== doing[0] %></span> at <a href="https://www.amplemarket.com/">amplemarket</a>!</p>
   <!--<script>
     const doing = <%== doing.to_json %>;
     let i = Math.floor(Math.random() * doing.length);
