@@ -10,7 +10,8 @@ and I like computers
 - [GitHub](https://github.com/pineman)
 - [Twitter](https://twitter.com/pineman_)
 
-Hi! My name is João Pinheiro (aka pineman), I'm from Lisbon, Portugal and I like computers. Currently at [amplemarket](https://www.amplemarket.com/)!
+Hi! My name is João Pinheiro (aka pineman), I live in Porto, Portugal and I like computers.\
+Rescuing errors at [amplemarket](https://www.amplemarket.com/)!
 
 ## [Blog](atom.xml)
 

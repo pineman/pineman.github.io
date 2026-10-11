@@ -16,11 +16,12 @@ html {
   overflow-wrap: break-word;
 }
 body {
-  margin: 1rem;
+  margin: 0;
   display: flex;
   justify-content: center;
 }
 #wrap {
+  padding: 1rem;
   max-width: 41rem;
   width: 100%;
 }
@@ -57,6 +58,7 @@ a {
 #index-header {
   display: grid;
   grid-template-columns: 35% 65%;
+  margin-bottom: 1.5em;
   #index-header-img {
     display: flex;
     justify-content: center;
@@ -97,6 +99,9 @@ a {
       list-style-type: none;
     }
   }
+}
+#doing {
+  transition: opacity 0.3s;
 }
 h2 {
   margin: 0.5em 0;
@@ -186,6 +191,7 @@ code:not(pre code) {
   /* Inlines */
   padding: 0.2em;
 }
+
 /* Links */
 /* Sized like the <h4> it used to be, overriding the index's h2 margins */
 .links-month {
@@ -207,3 +213,4 @@ blockquote {
   border-left: 3px solid grey;
   opacity: 0.8;
 }
+
