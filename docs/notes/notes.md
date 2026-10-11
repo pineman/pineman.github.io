@@ -16,6 +16,7 @@ Sidekiq::DeadSet.new.find_job(jid)
 Sidekiq::Queue.new(queue_name).find_job(jid)
 
 Sidekiq::Queue.new("default").to_a.map { _1.klass }.tally.sort_by{_2}
+Sidekiq::Queue.new('default').filter_map { _1.args if _1.klass == 'someclass' }
 Sidekiq::ScheduledSet.new.to_a.map(&:klass).tally.sort_by{_2}
 Sidekiq::RetrySet.new.to_a.map(&:klass).tally.sort_by{_2}
 Sidekiq::BatchSet.new.to_a
@@ -25,9 +26,8 @@ Sidekiq::ScheduledSet.new.to_a.each { it.reschedule(Time.current) if it.klass ==
 
 # List of jobs for batch
 Sidekiq::Batch.new('batch_id').jids
-
-* `Sidekiq::Queue.new('default').filter_map { _1.args if _1.klass == 'someclass' }`
 ```
+
 * print all running jobs:
 ```
 Sidekiq::Workers.new.filter_map do |process_id, thread_id, work|
@@ -219,20 +219,11 @@ tables are processed with adaptive delays to prevent heavy IO and replication la
 * updates on non-indexed columns can be HOT if theres enough space on the page. fillfactor helps here. otherwise, updates create new tuple versions. check fillfactor with `SELECT * FROM pg_stat_user_tables WHERE relname='gmail_accounts';`
 * Bloat on UPDATES
 
-| Operation       | How it's Affected by Dead Tuples (Bloat)            | Visibility Check Process                     |
-| --------------- | --------------------------------------------------- | -------------------------------------------- |
-| Table Scan      | High Impact. Must read every tuple (live            | Checks xmin/xmax of every tuple              |
-|                 | and dead) from disk and perform a visibility        | against the transaction snapshot.            |
-|                 | check on all of them, discarding the dead ones.     |                                              |
-|                 |                                                     |                                              |
-| Index Scan      | Low Impact. The index points directly to the new,   | Jumps directly to the live tuple's location  |
-|                 | live tuple, bypassing all old, dead versions of     | (ctid) and performs a visibility check only  |
-|                 | that row.                                           | on that single tuple.                        |
-|                 |                                                     |                                              |
-| Index-Only Scan | Low Impact. Doesn't visit the heap at all if the    | Checks the Visibility Map first. If the      |
-|                 | page is marked "all-visible" in the Visibility Map. | page is "all-visible," no heap fetch or      |
-|                 |                                                     | per-tuple check is needed. Otherwise, it     |
-|                 |                                                     | must visit the heap.                         |
+| Operation       | How it's Affected by Dead Tuples (Bloat)                                                                                              | Visibility Check Process                                                                                                                      |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Table Scan      | High Impact. Must read every tuple (live and dead) from disk and perform a visibility check on all of them, discarding the dead ones. | Checks xmin/xmax of every tuple against the transaction snapshot.                                                                             |
+| Index Scan      | Low Impact. The index points directly to the new, live tuple, bypassing all old, dead versions of that row.                           | Jumps directly to the live tuple's location (ctid) and performs a visibility check only on that single tuple.                                 |
+| Index-Only Scan | Low Impact. Doesn't visit the heap at all if the page is marked "all-visible" in the Visibility Map.                                  | Checks the Visibility Map first. If the page is "all-visible," no heap fetch or per-tuple check is needed. Otherwise, it must visit the heap. |
 
 
 * max_standby_streaming_delay: It doesn't matter if we see the replica lag chart go to +30m. What matters is if the chart never goes to 0 in 30 consecutive minutes. It might not be a single slow query but many consecutive  slow ones that never allow the replica to catch up on the WAL.

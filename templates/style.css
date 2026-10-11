@@ -5,6 +5,7 @@
   --oceanic-bg: #1b2b34;
   --oceanic-fg: #c0c5ce;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -19,6 +20,12 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1d1e20;
+    color: #dadadb;
+  }
 }
 #wrap {
   padding: 1rem;
@@ -47,11 +54,38 @@ a {
   flex: none;
   height: 1em;
 }
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #1d1e20;
-    color: #dadadb;
-  }
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid grey;
+  padding: 0.3em 0.6em;
+}
+blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  border-left: 3px solid grey;
+  opacity: 0.8;
+}
+pre {
+  overflow: auto;
+}
+code {
+  border-radius: 0.25em;
+  border: 0.25px #4e585d solid;
+  color: var(--oceanic-fg);
+  background: var(--oceanic-bg);
+  font-size: 16px;
+}
+pre code {
+  /* Early apply of hljs styles to avoid FOUC */
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+code:not(pre code) {
+  /* Inlines */
+  padding: 0.2em;
 }
 
 /* Index */
@@ -103,21 +137,12 @@ a {
 #doing {
   transition: opacity 0.3s;
 }
-h2 {
-  margin: 0.5em 0;
-}
 .index-post-time {
   min-width: 5.7rem;
   display: inline-block;
 }
 summary h2 {
   cursor: pointer;
-}
-.img-link {
-  border-bottom: none;
-}
-.img-link:hover {
-  border-bottom: none;
 }
 /*
   Formula: fontsize * (#wrap max-width + 2*body margin)
@@ -145,7 +170,6 @@ summary h2 {
 }
 
 /* Posts */
-/* A date isn't a heading, but keep the look of the <h5> it used to be */
 .post-date {
   font-size: 0.83em;
   font-weight: bold;
@@ -171,33 +195,6 @@ h6:hover .heading-link {
   align-items: center;
   vertical-align: middle;
 }
-pre {
-  overflow: auto;
-}
-code {
-  border-radius: 0.25em;
-  border: 0.25px #4e585d solid;
-  color: var(--oceanic-fg);
-  background: var(--oceanic-bg);
-  font-size: 16px;
-}
-pre code {
-  /* Early apply of hljs styles to avoid FOUC */
-  display: block;
-  overflow-x: auto;
-  padding: 1em;
-}
-code:not(pre code) {
-  /* Inlines */
-  padding: 0.2em;
-}
-
-/* Links */
-/* Sized like the <h4> it used to be, overriding the index's h2 margins */
-.links-month {
-  font-size: 1em;
-  margin: 1.33em 0;
-}
 .footnote-back {
   margin-left: 0.3em;
 }
@@ -207,10 +204,11 @@ article p:has(> img) {
 article img {
   max-width: 100%;
 }
-blockquote {
-  margin-left: 0;
-  padding-left: 1em;
-  border-left: 3px solid grey;
-  opacity: 0.8;
+
+/* Links */
+/* Sized like the <h4> it used to be, overriding the index's h2 margins */
+.links-month {
+  font-size: 1em;
+  margin: 1.33em 0;
 }
 

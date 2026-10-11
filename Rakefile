@@ -216,7 +216,6 @@ class Page
   end
 
   def json_ld(data)
-    # Escape "<" so the JSON can never close the script tag
     %(<script type="application/ld+json">#{JSON.pretty_generate(data).gsub("<", "\\u003c")}</script>)
   end
 

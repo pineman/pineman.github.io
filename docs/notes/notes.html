@@ -60,6 +60,7 @@ Sidekiq::DeadSet.new.find_job(jid)
 Sidekiq::Queue.new(queue_name).find_job(jid)
 
 Sidekiq::Queue.new(&quot;default&quot;).to_a.map { _1.klass }.tally.sort_by{_2}
+Sidekiq::Queue.new(&#39;default&#39;).filter_map { _1.args if _1.klass == &#39;someclass&#39; }
 Sidekiq::ScheduledSet.new.to_a.map(&amp;:klass).tally.sort_by{_2}
 Sidekiq::RetrySet.new.to_a.map(&amp;:klass).tally.sort_by{_2}
 Sidekiq::BatchSet.new.to_a
@@ -68,9 +69,7 @@ Sidekiq::BatchSet.new.to_a
 Sidekiq::ScheduledSet.new.to_a.each { it.reschedule(Time.current) if it.klass == &quot;someclass&quot; }
 
 # List of jobs for batch
-Sidekiq::Batch.new(&#39;batch_id&#39;).jids
-
-* `Sidekiq::Queue.new(&#39;default&#39;).filter_map { _1.args if _1.klass == &#39;someclass&#39; }`</code></pre>
+Sidekiq::Batch.new(&#39;batch_id&#39;).jids</code></pre>
 <ul>
 <li>print all running jobs:</li>
 </ul>
@@ -284,63 +283,18 @@ ORDER BY url, timestamp DESC</code></pre>
 <tbody>
 <tr>
 <td>Table Scan</td>
-<td>High Impact. Must read every tuple (live</td>
-<td>Checks xmin/xmax of every tuple</td>
-</tr>
-<tr>
-<td></td>
-<td>and dead) from disk and perform a visibility</td>
-<td>against the transaction snapshot.</td>
-</tr>
-<tr>
-<td></td>
-<td>check on all of them, discarding the dead ones.</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<td>High Impact. Must read every tuple (live and dead) from disk and perform a visibility check on all of them, discarding the dead ones.</td>
+<td>Checks xmin/xmax of every tuple against the transaction snapshot.</td>
 </tr>
 <tr>
 <td>Index Scan</td>
-<td>Low Impact. The index points directly to the new,</td>
-<td>Jumps directly to the live tuple's location</td>
-</tr>
-<tr>
-<td></td>
-<td>live tuple, bypassing all old, dead versions of</td>
-<td>(ctid) and performs a visibility check only</td>
-</tr>
-<tr>
-<td></td>
-<td>that row.</td>
-<td>on that single tuple.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<td>Low Impact. The index points directly to the new, live tuple, bypassing all old, dead versions of that row.</td>
+<td>Jumps directly to the live tuple's location (ctid) and performs a visibility check only on that single tuple.</td>
 </tr>
 <tr>
 <td>Index-Only Scan</td>
-<td>Low Impact. Doesn't visit the heap at all if the</td>
-<td>Checks the Visibility Map first. If the</td>
-</tr>
-<tr>
-<td></td>
-<td>page is marked "all-visible" in the Visibility Map.</td>
-<td>page is "all-visible," no heap fetch or</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>per-tuple check is needed. Otherwise, it</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>must visit the heap.</td>
+<td>Low Impact. Doesn't visit the heap at all if the page is marked "all-visible" in the Visibility Map.</td>
+<td>Checks the Visibility Map first. If the page is "all-visible," no heap fetch or per-tuple check is needed. Otherwise, it must visit the heap.</td>
 </tr>
 </tbody>
 </table>

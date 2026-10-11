@@ -42,10 +42,7 @@
 <main>
 <article>
   <h1>stats</h1>
-  <ul>
-<li>correlation and regression: how variables relate, controlling for the others</li>
-</ul>
-<p>confusion matrix (classifiers, diagnostic tests):</p>
+  <p>confusion matrix (classifiers, diagnostic tests):</p>
 <table>
 <thead>
 <tr>
@@ -67,24 +64,27 @@
 </tr>
 </tbody>
 </table>
-<ul>
-<li><p>Accuracy<br />
-How often was the prediction correct overall?<br />
-<code>(TP + TN) / all cases</code></p></li>
-<li><p>Precision<br />
-Of the positive predictions, how many were right?<br />
-<code>TP / (TP + FP)</code></p></li>
-<li><p>Recall / sensitivity / true-positive rate<br />
-Of the actual positives, how many did we find?<br />
-<code>TP / (TP + FN)</code></p></li>
-<li><p>Specificity<br />
-Of the actual negatives, how many did we reject correctly?<br />
-<code>TN / (TN + FP)</code></p></li>
-<li><p>False-positive rate<br />
-<code>FP / (FP + TN)</code></p></li>
-<li><p>False-negative rate<br />
-<code>FN / (FN + TP)</code></p></li>
-</ul>
+<dl>
+  <dt><strong>Accuracy</strong></dt>
+  <dd>How often was the prediction correct overall?</dd>
+  <dd><code>(TP + TN) / (TP + TN + FP + FN)</code></dd>
+  <dt><strong>Precision / Positive Predictive Value</strong> (PPV)</dt>
+  <dd>Of the positive predictions, how many were right?</dd>
+  <dd><code>TP / (TP + FP)</code></dd>
+  <dt><strong>Negative Predictive Value</strong> (NPV)</dt>
+  <dd>Of the negative predictions, how many were right?</dd>
+  <dd><code>TN / (TN + FN)</code></dd>
+  <dt><strong>True positive rate</strong> (Recall / Sensitivity / Hit rate / Power)</dt>
+  <dd>Of the actual positives, how many did we find?</dd>
+  <dd><code>TP / (TP + FN)</code></dd>
+  <dt><strong>True negative rate</strong> (Specificity)</dt>
+  <dd>Of the actual negatives, how many did we reject correctly?</dd>
+  <dd><code>TN / (TN + FP)</code></dd>
+  <dt><strong>False positive rate</strong> (Fall-out)</dt>
+  <dd><code>FP / (FP + TN)</code></dd>
+  <dt><strong>False negative rate</strong> (Miss rate)</dt>
+  <dd><code>FN / (FN + TP)</code></dd>
+</dl>
 
 </article>
 </main>
