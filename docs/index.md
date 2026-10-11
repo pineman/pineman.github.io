@@ -11,7 +11,7 @@ and I like computers
 - [Twitter](https://twitter.com/pineman_)
 
 Hi! My name is João Pinheiro (aka pineman), I live in Porto, Portugal and I like computers.\
-Rescuing errors at [amplemarket](https://www.amplemarket.com/)!
+Building cool stuff at [amplemarket](https://www.amplemarket.com/)!
 
 ## [Blog](atom.xml)
 
