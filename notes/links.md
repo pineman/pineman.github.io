@@ -1,4 +1,47 @@
 # October 2026
+* https://www.seangoedecke.com/software-is-slow-because-of-bad-design-not-slow-languages/
+* https://incident.io/blog/how-savepoints-quietly-throttled-our-postgres-queue
+* https://www.seangoedecke.com/writing-is-no-longer-proof-of-work/
+* https://www.seangoedecke.com/what-requirements-dont-you-have/
+* https://planetscale.com/blog/i-dont-like-delete-cascade
+* https://www.theguardian.com/technology/2023/jul/25/joseph-weizenbaum-inventor-eliza-chatbot-turned-against-artificial-intelligence-ai
+* https://gruhn.me/blog/2026-08-03/
+* https://fullhoffman.com/2006/03/20/the-sun-doesnt-shine-on-me/
+* https://news.ycombinator.com/item?id=49815466 (https://michaelheap.com/i-dont-want-the-details/) - I don't want the details
+* https://howtounclench.com/#margin-ref-effortless-1
+* https://sockpuppet.org/blog/2026/09/25/what-even-is-an-os-now/
+* https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities
+* https://www.google.com/search?q=a+philosophy+of+software+design&ie=UTF-8&oe=UTF-8&hl=en-us&client=safari
+* https://news.ycombinator.com/item?id=49901973 (https://railcode.dev/blog/vibe-coded-website) - How our vibe coded website looks like a designer made it
+* https://m.youtube.com/watch?v=flRSWqq4OUI&pp=iggCQAE%3D&ra=m - Peter Thiel on AI’s Impact: Math vs Word Skills
+* https://readrare.com/
+* https://untested.sonnet.io/notes/dog-mode/
+* https://m.youtube.com/watch?v=NnV_cWeoo5Q&ra=m - Kernel Recipes 2026 - Security in the LLM age
+* https://yyhh.org/blog/2026/10/ai-is-a-tool/
+* https://yyhh.org/blog/2026/08/ai-coding-has-erased-the-supposed-advantage-of-statically-typed-languages/
+* https://www.linkedin.com/pulse/ai-tool-rich-hickey-kjl8e
+* https://news.ycombinator.com/item?id=50086165 (https://github.com/timescale/pg_vectorsearch) - Pg_vectorsearch: An index that is faster than pgvector's IVFFlat and HNSW
+* https://exobench.ai/blog/explain-analyze-is-a-sample-size-of-one
+* https://blog.danromik.com/the-abelian-sandpile-of-research-mathematics
+
+* https://andrewchen.com/the-next-feature-fallacy-the-fallacy-that-the-next-new-feature-will-suddenly-make-people-use-your-product
+* https://dashbit.co/blog/websockets-vs-sse
+* https://hawksley.dev/blog/get-free-arpa-domain
+* https://antirez.com/news/172 - The real AI risk is inside the labs
+* https://lemire.me/blog/2026/10/01/parsing-compressed-json-at-40-gb-s/- If you control how your JSON files are written, consider using zstd with many frames. You get files about as small as with gzip, and you can read them many times faster with multiple threads.
+* https://nightd.dev/blog/impersonating-grok-bot-for-fun-and-no-profit/
+* https://www.natemeyvis.com/where-is-all-the-new-good-software/
+* https://www.seangoedecke.com/ai-is-driving-a-boom-in-modestly-successful-software
+* https://lemire.me/blog/2026/10/15/redis-now-has-compressed-bitmaps-roaring/
+* https://news.ycombinator.com/item?id=50115478 (https://www.rockdata.net/blog/2026-postgres-performance-benchmark-report/) - We added undo segments to Postgres, and got 20% higher OLTP throughput
+* https://www.anthropic.com/research/ecdsa-curve-origins
+* https://words.filippo.io/seeds-solved/
+* https://danluu.com/cache-incidents/
+* https://www.seangoedecke.com/softwares-centaur-age-may-last-decades/#fnref-2
+* https://www.seangoedecke.com/dont-diagnose-your-opponents
+* https://www.seangoedecke.com/software-engineers-dont-get-to-be-luddites-about-ai
+* https://deadsimpletech.com/blog/llms-arent-inevitable
+* https://blog.glyph.im/2026/10/programming-isnt-special.html
 * https://www.youtube.com/watch?v=cWDDx74s090 - I have come to bury the BIOS, not to open it The need for holistic systems Bryan Cantrill
 * https://www.youtube.com/watch?v=3kbPyuAtk7g - Bryan Cantrill: Keynote: "Rust, In Sickness & In Health" | RustConf 2026
 * https://news.ycombinator.com/item?id=50020838 (https://marcobambini.substack.com/p/we-solved-sqlites-single-writer-limitation) - We solved SQLite's single-writer limitation
