@@ -1,4 +1,14 @@
 # October 2026
+* https://karrisaarinen.com/posts/someone-behind-the-software/
+* https://archive.ph/kD622
+* https://gource.io/
+* https://danluu.com/ambitious
+* https://registerspill.thorstenball.com/p/joy-and-curiosity-103
+* https://buildinghealthier.substack.com/p/reflections-on-1-to-0-and-exploring
+* https://stevekrouse.com/ends
+* https://openai.com/index/securing-our-frontier-model-training-environment
+* https://alifeengineered.substack.com/p/on-the-death-of-amazons-writing-culture
+* https://web.archive.org/web/20250424125004/https://www.cracked.com/blog/6-harsh-truths-that-will-make-you-better-person
 * https://www.seangoedecke.com/software-is-slow-because-of-bad-design-not-slow-languages/
 * https://incident.io/blog/how-savepoints-quietly-throttled-our-postgres-queue
 * https://www.seangoedecke.com/writing-is-no-longer-proof-of-work/
