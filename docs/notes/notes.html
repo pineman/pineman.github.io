@@ -232,7 +232,7 @@ JSON.parse(j)</code></pre>
 <li>REMEMBER \e for vim editor mode</li>
 <li>remember \copy (client-side COPY)</li>
 <li><code>\d+ table_name</code> shows foreign keys pointing to table_name (referenced_by)</li>
-<li>count number of rows fast estimate: SELECT reltuples AS estimate FROM pg_class where relname = 'mytable';</li>
+<li>count number of rows fast estimate: <code>SELECT reltuples AS estimate FROM pg_class where relname = 'mytable';</code></li>
 <li>long running queries. note "state='active'"!!</li>
 </ul>
 <pre class="sql"><code>SELECT *, (now() - query_start) AS running_time

@@ -1,4 +1,8 @@
 # October 2026
+* https://www.seangoedecke.com/getting-good-at-ai-takes-time-and-practice/
+* https://www.anthropic.com/research/agents-judgment-calls
+* https://brooker.co.za/blog/2026/10/23/animations.html
+* https://www.seangoedecke.com/dont-anthropomorphize-big-tech-companies/
 * https://karrisaarinen.com/posts/someone-behind-the-software/
 * https://archive.ph/kD622
 * https://gource.io/

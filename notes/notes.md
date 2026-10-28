@@ -168,8 +168,7 @@ this is useful to bypass proxy objects and stuff
 * REMEMBER \e for vim editor mode
 * remember \copy (client-side COPY)
 * `\d+ table_name` shows foreign keys pointing to table_name (referenced_by)
-* count number of rows fast estimate:
-SELECT reltuples AS estimate FROM pg_class where relname = 'mytable';
+* count number of rows fast estimate: `SELECT reltuples AS estimate FROM pg_class where relname = 'mytable';`
 * long running queries. note "state='active'"!!
 ```sql
 SELECT *, (now() - query_start) AS running_time
