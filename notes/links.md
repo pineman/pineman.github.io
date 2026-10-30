@@ -1,4 +1,6 @@
 # October 2026
+* https://borretti.me/article/we-wont-just-hang-out
+* https://felixrieseberg.com/hunger-beats-tenure-advice-for-junior-engineers/
 * https://www.seangoedecke.com/getting-good-at-ai-takes-time-and-practice/
 * https://www.anthropic.com/research/agents-judgment-calls
 * https://brooker.co.za/blog/2026/10/23/animations.html

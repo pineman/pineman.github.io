@@ -16,5 +16,5 @@ Static site generator for a personal homepage: Ruby Rake + ERB + pandoc. `Rakefi
 - The build rewrites `notes/links.md`: it fetches titles from Hacker News, YouTube and antirez.com, so it needs network access. It only enriches a line that is a bare link, so it does not fetch a link again after it adds a title.
 - `docs/` is the GitHub Pages root. Generated files in it are committed, so commit them with the source change. `rake clean` only deletes generated files, not the static ones in `docs/`.
 - Pages are written at different depths. In templates, use `site_link(path)` for internal links.
-- Each new post needs a link preview image, made with libvips (`brew install vips`).
+- Each new post needs a link preview image. The build makes it with libvips in a Docker image (`link_preview/`), so Docker must be running.
 - `posts/ideas/` is not built.
